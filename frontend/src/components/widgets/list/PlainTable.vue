@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-toolbar card dense color="transparent">
-      <v-toolbar-title><h4>Project</h4></v-toolbar-title>
+      <v-toolbar-title><h4>Developers</h4></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>more_vert</v-icon>
@@ -23,16 +23,10 @@
               </v-avatar>
             </td>
             <td>{{ props.item.name }}</td>
-            <td class="text-xs-left">{{ props.item.deadline }}</td>
-            <td class="text-xs-left"><v-progress-linear :value="props.item.progress" height="5" :color="props.item.color"></v-progress-linear> </td>
-            <td class="text-xs-right">
-              <v-btn flat icon color="grey">
-                <v-icon>edit</v-icon>
-              </v-btn>
-              <v-btn flat icon color="grey">
-                <v-icon>delete</v-icon>
-              </v-btn>
-            </td>
+            <td class="text-xs-left">{{ props.item.loc }}</td>
+            <td class="text-xs-left">{{ props.item.commits }}</td>
+            <td class="text-xs-left">{{ props.item.firstCommit }}</td>
+            <td class="text-xs-left">{{ props.item.lastCommit }}</td>
           </template>
         </v-data-table>
       </template>
@@ -58,10 +52,10 @@ export default {
           align: 'left',
           value: 'name'
         },
-        { text: 'Deadline', value: 'deadline' },
-        { text: 'Progress', value: 'progress' },
-        { text: 'Action', value: 'action', align: 'right' },
-
+        { text: 'LOC', value: 'loc' },
+        { text: 'Commits', value: 'commits' },
+        { text: 'First Commit', value: 'firstCommit' },
+        { text: 'Last Commit', value: 'lastCommit' }
       ],
     };
   },
