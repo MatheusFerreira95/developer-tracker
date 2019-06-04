@@ -104,7 +104,6 @@
   </v-navigation-drawer>
 </template>
 <script>
-import menu from "@/api/menu";
 import VuePerfectScrollbar from "vue-perfect-scrollbar";
 export default {
   name: "app-drawer",
@@ -120,7 +119,15 @@ export default {
   data: () => ({
     mini: false,
     drawer: true,
-    menus: menu,
+    menus: [
+      { header: "Filters" },
+      {
+        title: "By Branch",
+        group: "apps",
+        icon: "dashboard",
+        name: "Dashboard"
+      }
+    ],
     scrollSettings: {
       maxScrollbarLength: 160
     }

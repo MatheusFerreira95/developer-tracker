@@ -2,10 +2,6 @@
   <v-card>
     <v-toolbar card dense color="transparent">
       <v-toolbar-title><h4>Developers</h4></v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>more_vert</v-icon>
-      </v-btn>
     </v-toolbar>
     <v-divider></v-divider>
     <v-card-text class="pa-0">
@@ -23,7 +19,6 @@
               </v-avatar>
             </td>
             <td>{{ props.item.name }}</td>
-            <td class="text-xs-left">{{ props.item.loc }}</td>
             <td class="text-xs-left">{{ props.item.commits }}</td>
             <td class="text-xs-left">{{ props.item.firstCommit }}</td>
             <td class="text-xs-left">{{ props.item.lastCommit }}</td>
@@ -52,7 +47,6 @@ export default {
           align: 'left',
           value: 'name'
         },
-        { text: 'LOC', value: 'loc' },
         { text: 'Commits', value: 'commits' },
         { text: 'First Commit', value: 'firstCommit' },
         { text: 'Last Commit', value: 'lastCommit' }
