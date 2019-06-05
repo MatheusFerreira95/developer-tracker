@@ -7,7 +7,7 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-title>
-      <span>Team Tracker</span>
+      <span>Tracker Team</span>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>

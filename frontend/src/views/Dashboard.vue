@@ -1,7 +1,27 @@
 <template>
   <div id="pageDashboard">
     <v-container grid-list-xl fluid>
-      <v-layout row wrap>
+      <!-- Mensagem vazio -->
+      <v-layout row wrap v-if="!project.name" class="mensagem">
+        <v-flex xs8 offset-xs2>
+          <v-card class="blue-grey--text">
+            <v-card-title primary-title class="center">
+              <div class="text-md-center center">
+                <div class="headline">
+                  Welcome to the
+                  <strong>Tracker Team</strong>,
+                </div>
+                <span>Report a project to start tracking!</span>
+              </div>
+            </v-card-title>
+            <v-card-actions>
+              <v-btn flat dark>Listen now</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
+
+      <v-layout row wrap v-if="project.name">
         <!-- perspectiva -->
         <v-flex sm12>
           <v-card>
@@ -77,6 +97,7 @@ export default {
     loc: 5000,
     util: Util,
     activeDays: 47,
+    project: { name: "" },
     programmingLanguages: [
       {
         value: 50,
@@ -122,6 +143,11 @@ export default {
       animate();
     }
   },
+  created() {
+    window.getApp.$on("UPDATE_PROJECT", project => {
+      this.project = project;
+    });
+  },
   mounted() {
     this.tween("commits");
     this.tween("loc");
@@ -132,3 +158,17 @@ export default {
   }
 };
 </script>
+<style lang="stylus">
+.center {
+  width: 100%;
+  height: 55px;
+}
+
+.mensagem {
+  padding-top: 40px;
+}
+
+.sub-header {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+</style>

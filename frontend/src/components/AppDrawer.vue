@@ -109,6 +109,10 @@ export default {
         this.filter.repositryPath.lastIndexOf("/") + 1,
         this.filter.repositryPath.lastIndexOf(".git")
       );
+
+      window.getApp.$emit("UPDATE_PROJECT", { name: this.nameProject });
+
+      if (!this.nameProject) this.nameProject = "Repository";
     }
   }
 };

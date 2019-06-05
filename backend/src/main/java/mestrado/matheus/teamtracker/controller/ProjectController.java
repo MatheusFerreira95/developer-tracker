@@ -1,6 +1,5 @@
 package mestrado.matheus.teamtracker.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -51,7 +50,7 @@ public class ProjectController {
 	 * A partir do filtro deve retornar os dados de exploração do projeto (relação
 	 * de desenvolvedores com artefatos)
 	 **/
-	@RequestMapping(path = "/", method = RequestMethod.POST)
+	@RequestMapping(path = "/explore", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
 	public @ResponseBody String getExploreProject(@RequestParam Filter filter) {
 
