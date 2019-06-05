@@ -17,7 +17,7 @@
           item-key="name"
         >
           <template slot="items" slot-scope="props">
-            <tr @click="props.expanded = !props.expanded">
+            <tr class="click-pointer" @click="props.expanded = !props.expanded">
               <td>
                 <v-avatar size="36px">
                   <img :src="props.item.avatar" :alt="props.item.username">
@@ -68,100 +68,97 @@ export default {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Jhon",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         },
         {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Snow",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         },
         {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Jhon Snow",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         },
         {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Jhon Snow",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         },
         {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Dessie Snow",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         },
         {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Dessie",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         },
         {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Jhon Dessie",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         },
         {
           commits: "Dessie",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg",
-          firstCommit:
-            "10/10/2017",
+          firstCommit: "10/10/2017",
           name: "Ramires Snow",
           lastCommit: "10/10/2018",
           activeDays: 10,
           loc: 90,
-          fileCountCommits: "Java - 10%; JS - 90%",
+          fileCountCommits: "Java - 10%; JS - 90%"
         }
       ]
     };
   }
 };
 </script>
+<style lang="stylus" scoped>
+.click-pointer {
+  cursor: pointer;
+}
+</style>

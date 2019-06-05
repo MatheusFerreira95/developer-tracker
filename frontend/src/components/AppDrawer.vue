@@ -123,9 +123,15 @@ export default {
       { header: "Filters" },
       {
         title: "By Branch",
-        group: "apps",
-        icon: "dashboard",
-        name: "Dashboard"
+        group: "filters",
+        icon: "filter_list",
+        name: "Branch"
+      },
+      {
+        title: "By Date Range",
+        group: "filters",
+        icon: "date_range",
+        name: "Date Range"
       }
     ],
     scrollSettings: {

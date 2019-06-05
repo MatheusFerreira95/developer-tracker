@@ -2,6 +2,18 @@
   <div id="pageDashboard">
     <v-container grid-list-xl fluid>
       <v-layout row wrap>
+        <v-flex sm12>
+          <v-card>
+            <v-toolbar class="elevation-0" color="white">
+              <v-toolbar-title class="primary--text">Project Name</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn color="primary" dark>
+                Explore
+                <v-icon dark right>keyboard_arrow_right</v-icon>
+              </v-btn>
+            </v-toolbar>
+          </v-card>
+        </v-flex>
         <v-flex lg3 sm6 xs12>
           <mini-statistic icon="check" :title="commits" sub-title="Commits" color="green"></mini-statistic>
         </v-flex>
@@ -12,17 +24,17 @@
           <mini-statistic icon="date_range" sub-title="10/10/2017 to 10/10/2018" color="light-blue"></mini-statistic>
         </v-flex>
         <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="today" :title="activeDays" sub-title="Active days" color="purple"></mini-statistic>
+          <mini-statistic icon="today" :title="activeDays" sub-title="Active days" color="amber"></mini-statistic>
         </v-flex>
 
-        <v-flex lg5 sm12 xs12>
+        <v-flex lg5 sm12 xs12 v-if="colors.length > 0">
           <v-widget title="Programming Languages" content-bg="white">
             <div slot="widget-content">
               <e-chart
                 :path-option="[
-                  ['dataset.source', locationData],
+                  ['dataset.source', programmingLanguages],
                   ['legend.bottom', '0'],
-                  ['color', [color.lightBlue.base, color.indigo.base, color.pink.base, color.green.base, color.cyan.base, color.teal.base]],
+                  ['color', colors],
                   ['xAxis.show', false],
                   ['yAxis.show', false],
                   ['series[0].type', 'pie'],
@@ -47,24 +59,24 @@
 <script>
 import EChart from "@/components/chart/echart";
 import PlainTable from "@/components/widgets/list/PlainTable";
-import Material from "vuetify/es5/util/colors";
 import MiniStatistic from "@/components/widgets/statistic/MiniStatistic";
 import VWidget from "@/components/VWidget";
+import Util from "@/util";
 
 export default {
   components: {
     EChart,
     PlainTable,
-    Material,
     VWidget,
     MiniStatistic
   },
   data: () => ({
-    color: Material,
+    title: "oi",
     commits: 352,
     loc: 5000,
+    util: Util,
     activeDays: 47,
-    locationData: [
+    programmingLanguages: [
       {
         value: 50,
         name: "Java"
@@ -80,15 +92,12 @@ export default {
       {
         value: 10,
         name: "CSS"
-      },
-      {
-        value: 10,
-        name: "Shell"
       }
-    ]
+    ],
+    colors: []
   }),
   methods: {
-    tween: function(propName) {
+    tween(propName) {
       var vm = this;
 
       function animate() {
@@ -116,6 +125,9 @@ export default {
     this.tween("commits");
     this.tween("loc");
     this.tween("activeDays");
+    this.colors = this.util
+      .getColors()
+      .slice(0, this.programmingLanguages.length);
   }
 };
 </script>
