@@ -6,14 +6,9 @@
 
     <v-spacer></v-spacer>
 
-    <v-text-field
-      flat
-      solo-inverted
-      prepend-inner-icon="link"
-      label="Insert Link to Git Project..."
-      single-line
-      hide-details
-    ></v-text-field>
+    <v-toolbar-title>
+      <span>Team Tracker</span>
+    </v-toolbar-title>
 
     <v-spacer></v-spacer>
 

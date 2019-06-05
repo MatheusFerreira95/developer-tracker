@@ -6,6 +6,7 @@ public class Filter {
 	public String dateRange;
 	public String directory;
 	public String branch;
+	
 	@Override
 	public String toString() {
 		return "Filter [repositoryPath=" + repositoryPath + ", dateRange=" + dateRange + ", directory=" + directory

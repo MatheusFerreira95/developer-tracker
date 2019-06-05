@@ -2,18 +2,17 @@
   <div id="pageDashboard">
     <v-container grid-list-xl fluid>
       <v-layout row wrap>
+        <!-- perspectiva -->
         <v-flex sm12>
           <v-card>
-            <v-toolbar class="elevation-0" color="white">
-              <v-toolbar-title class="primary--text">Project Name</v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-btn color="primary" dark>
-                Explore
-                <v-icon dark right>keyboard_arrow_right</v-icon>
-              </v-btn>
-            </v-toolbar>
+            <v-tabs v-model="active" grow slider-color="primary">
+              <v-tab ripple>Overview</v-tab>
+              <v-tab ripple>Explore</v-tab>
+            </v-tabs>
           </v-card>
         </v-flex>
+
+        <!-- cartões -->
         <v-flex lg3 sm6 xs12>
           <mini-statistic icon="check" :title="commits" sub-title="Commits" color="green"></mini-statistic>
         </v-flex>
@@ -27,6 +26,7 @@
           <mini-statistic icon="today" :title="activeDays" sub-title="Active days" color="amber"></mini-statistic>
         </v-flex>
 
+        <!-- Grafico -->
         <v-flex lg5 sm12 xs12 v-if="colors.length > 0">
           <v-widget title="Programming Languages" content-bg="white">
             <div slot="widget-content">
@@ -48,6 +48,7 @@
           </v-widget>
         </v-flex>
 
+        <!-- desenvolvedores -->
         <v-flex lg7 sm12 xs12>
           <plain-table></plain-table>
         </v-flex>
