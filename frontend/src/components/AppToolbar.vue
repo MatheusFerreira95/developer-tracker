@@ -1,6 +1,8 @@
 <template>
   <v-toolbar color="primary" fixed dark app>
-    <v-toolbar-side-icon @click.stop="handleDrawerToggle"></v-toolbar-side-icon>
+    <v-toolbar-side-icon @click.stop="handleDrawerToggle">
+      <v-icon>menu</v-icon>
+    </v-toolbar-side-icon>
 
     <v-spacer></v-spacer>
 
@@ -22,7 +24,6 @@
     <v-btn icon>
       <v-icon>settings</v-icon>
     </v-btn>
-
   </v-toolbar>
 </template>
 
