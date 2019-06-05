@@ -14,11 +14,30 @@ import mestrado.matheus.teamtracker.domain.Filter;
 @RequestMapping("/project")
 public class ProjectController {
 
-
+	/**
+	 * A partir do filtro deve 
+	 * retornar os dados de gerais do projeto (loc, commits, data de primeiro e último commit,
+	 * dias ativos (qtd de dias com commit), linguagens de programaçao e Desenvolvedores)
+	 * **/
 	@RequestMapping(path = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public @ResponseBody String addNewUser(@RequestParam Filter filter) {
+	public @ResponseBody String getProject(@RequestParam Filter filter) {
 
+		
+		
+		return filter.toString();
+	}
+	
+	/**
+	 * A partir do filtro deve 
+	 * retornar os dados de exploração do projeto (relação de desenvolvedores com artefatos)
+	 * **/
+	@RequestMapping(path = "/", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public @ResponseBody String getExploreProject(@RequestParam Filter filter) {
+
+		
+		
 		return filter.toString();
 	}
 	
