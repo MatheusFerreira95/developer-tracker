@@ -6,7 +6,7 @@
           <mini-statistic icon="check" title="100+" sub-title="Commits" color="green"></mini-statistic>
         </v-flex>
         <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="code" title="150+" sub-title="Lines of code" color="red"></mini-statistic>
+          <mini-statistic icon="code" :title="computeLOC" sub-title="Lines of code" color="red"></mini-statistic>
         </v-flex>
         <v-flex lg3 sm6 xs12>
           <mini-statistic icon="date_range" sub-title="10/10/2017 to 10/10/2018" color="light-blue"></mini-statistic>
@@ -45,7 +45,6 @@
 </template>
 
 <script>
-import API from "@/api";
 import EChart from "@/components/chart/echart";
 import PlainTable from "@/components/widgets/list/PlainTable";
 import Material from "vuetify/es5/util/colors";
@@ -62,28 +61,63 @@ export default {
   },
   data: () => ({
     color: Material,
+    tweeningValue: 0,
     locationData: [
-        {
-          value: 50,
-          name: "Java"
-        },
-        {
-          value: 35,
-          name: "JavaScript"
-        },
-        {
-          value: 25,
-          name: "HTML"
-        },
-        {
-          value: 10,
-          name: "CSS"
-        },
-        {
-          value: 10,
-          name: "Shell"
+      {
+        value: 50,
+        name: "Java"
+      },
+      {
+        value: 35,
+        name: "JavaScript"
+      },
+      {
+        value: 25,
+        name: "HTML"
+      },
+      {
+        value: 10,
+        name: "CSS"
+      },
+      {
+        value: 10,
+        name: "Shell"
+      }
+    ]
+  }),
+  methods: {
+    tween: function(startValue, endValue) {
+      var vm = this;
+
+      function animate() {
+        if (TWEEN.update()) {
+          requestAnimationFrame(animate);
         }
-      ]
-  })
+      }
+      new TWEEN.Tween({
+        tweeningValue: startValue
+      })
+        .to(
+          {
+            tweeningValue: endValue
+          },
+          500
+        )
+        .onUpdate(function() {
+          vm.tweeningValue = this.tweeningValue.toFixed(0);
+        })
+        .start();
+      animate();
+    }
+  },
+  computed: {
+    computeLOC() {
+      let loc = this.tweeningValue + "";
+      return loc;
+    }
+  },
+  mounted() {
+    this.tween(0, 50);
+  }
 };
 </script>

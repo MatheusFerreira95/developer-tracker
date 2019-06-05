@@ -15,7 +15,7 @@
         </div>
       </v-container>
     </v-card-text>
-  </v-card>    
+  </v-card>
 </template>
 
 <script>
