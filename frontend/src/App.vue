@@ -1,31 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <template v-if="!$route.meta.public">
+      <v-app id="inspire" class="app">
+        <app-drawer class="app--drawer"></app-drawer>
+
+        <app-toolbar class="app--toolbar"></app-toolbar>
+
+        <v-content>
+          <div class="page-wrapper">
+            <router-view></router-view>
+          </div>
+        </v-content>
+      </v-app>
+    </template>
   </div>
 </template>
+<script>
+import AppDrawer from "@/components/AppDrawer";
+import AppToolbar from "@/components/AppToolbar";
+import AppEvents from "./event";
+export default {
+  components: {
+    AppDrawer,
+    AppToolbar
+  },
+  data: () => ({}),
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+  computed: {},
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  created() {
+    AppEvents.forEach(item => {
+      this.$on(item.name, item.callback);
+    });
+    window.getApp = this;
+  }
+};
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+
+<style lang="stylus" scoped>
+.page-wrapper {
+  min-height: calc(100vh - 64px - 50px - 81px);
 }
 </style>
