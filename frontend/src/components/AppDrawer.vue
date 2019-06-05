@@ -22,14 +22,18 @@
         <!-- campo de busca -->
         <v-flex sm12>
           <v-card>
-            <div class="v-subheader theme--light">Repository</div>
+            <div
+              class="v-subheader theme--light"
+              :class="{ 'primary--text': nameProject !== 'Repository' }"
+            >{{nameProject}}</div>
             <v-text-field
               flat
               solo
               prepend-inner-icon="link"
               placeholder="Enter link to Git..."
               hide-details
-              @keyup.enter="submit"
+              @keyup.enter="getProjectInformations"
+              v-model="filter.repositryPath"
             ></v-text-field>
           </v-card>
         </v-flex>
@@ -64,7 +68,7 @@
 
         <!-- botão de aplicar -->
         <v-flex sm12>
-          <v-btn color="primary" dark block>
+          <v-btn color="primary" dark block @click="getProjectInformations">
             Apply
             <v-icon dark right>check</v-icon>
           </v-btn>
@@ -84,12 +88,28 @@ export default {
   },
   data: () => ({
     mini: false,
-    drawer: true
+    drawer: true,
+    nameProject: "Repository",
+    filter: {
+      repositryPath: ""
+    }
   }),
   created() {
     window.getApp.$on("APP_DRAWER_TOGGLED", () => {
       this.drawer = !this.drawer;
     });
+  },
+  methods: {
+    getProjectInformations() {
+      //verificar perspectiva para saber qual rota chamar
+
+      //se serviço retornar sucesso -> alterar nome label de projeto selecionado
+
+      this.nameProject = this.filter.repositryPath.substring(
+        this.filter.repositryPath.lastIndexOf("/") + 1,
+        this.filter.repositryPath.lastIndexOf(".git")
+      );
+    }
   }
 };
 </script>
