@@ -3,16 +3,16 @@
     <v-container grid-list-xl fluid>
       <v-layout row wrap>
         <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="check" title="100+" sub-title="Commits" color="green"></mini-statistic>
+          <mini-statistic icon="check" :title="commits" sub-title="Commits" color="green"></mini-statistic>
         </v-flex>
         <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="code" :title="computeLOC" sub-title="Lines of code" color="red"></mini-statistic>
+          <mini-statistic icon="code" :title="loc" sub-title="Lines of code" color="red"></mini-statistic>
         </v-flex>
         <v-flex lg3 sm6 xs12>
           <mini-statistic icon="date_range" sub-title="10/10/2017 to 10/10/2018" color="light-blue"></mini-statistic>
         </v-flex>
         <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="today" title="50+" sub-title="Active days" color="purple"></mini-statistic>
+          <mini-statistic icon="today" :title="activeDays" sub-title="Active days" color="purple"></mini-statistic>
         </v-flex>
 
         <v-flex lg5 sm12 xs12>
@@ -61,7 +61,9 @@ export default {
   },
   data: () => ({
     color: Material,
-    tweeningValue: 0,
+    commits: 352,
+    loc: 5000,
+    activeDays: 47,
     locationData: [
       {
         value: 50,
@@ -86,7 +88,7 @@ export default {
     ]
   }),
   methods: {
-    tween: function(startValue, endValue) {
+    tween: function(propName) {
       var vm = this;
 
       function animate() {
@@ -95,29 +97,25 @@ export default {
         }
       }
       new TWEEN.Tween({
-        tweeningValue: startValue
+        tweeningValue: 0
       })
         .to(
           {
-            tweeningValue: endValue
+            tweeningValue: vm[propName]
           },
-          500
+          1000
         )
         .onUpdate(function() {
-          vm.tweeningValue = this.tweeningValue.toFixed(0);
+          vm[propName] = this.tweeningValue.toFixed(0);
         })
         .start();
       animate();
     }
   },
-  computed: {
-    computeLOC() {
-      let loc = this.tweeningValue + "";
-      return loc;
-    }
-  },
   mounted() {
-    this.tween(0, 50);
+    this.tween("commits");
+    this.tween("loc");
+    this.tween("activeDays");
   }
 };
 </script>
