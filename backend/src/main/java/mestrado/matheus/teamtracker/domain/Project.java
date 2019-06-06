@@ -37,9 +37,17 @@ public class Project {
 		Developer dev = new Developer();
 		dev.email = "email.com";
 		dev.name = "Toe";
+		dev.firstCommit = "10/10/2016";
+		dev.lastCommit = "10/10/2018";
+		dev.numLoc = 1000;
+		dev.numCommits = 98;
+		dev.numActiveDays = 30;
+		dev.numFileProgrammingLanguageList = new ArrayList<NumFileProgrammingLanguage>();
+		dev.numFileProgrammingLanguageList.add(lp);
 		dev.fileAuthorList = new ArrayList<String>();
 		dev.fileAuthorList.add("com/arquivo.java");
-
+		dev.avatar = "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg";
+		
 		this.developerList = new ArrayList<Developer>();
 		this.developerList.add(dev);
 	}

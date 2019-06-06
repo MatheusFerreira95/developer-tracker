@@ -70,7 +70,7 @@
             ></mini-statistic>
           </v-flex>
 
-          <!-- Grafico -->
+          <!-- Grafico Linguagem de programacao-->
           <v-flex lg5 sm12 xs12 v-if="project.numFileProgrammingLanguageList.length > 0">
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
@@ -82,8 +82,8 @@
                   ['xAxis.show', false],
                   ['yAxis.show', false],
                   ['series[0].type', 'pie'],
-                  ['series[0].avoidLabelOverlap', true],         
-                  ['series[0].radius', ['50%', '70%']],                      
+                  ['series[0].avoidLabelOverlap', true],
+                  ['series[0].radius', ['50%', '70%']],
                 ]"
                   height="400px"
                   width="100%"
@@ -94,7 +94,48 @@
 
           <!-- desenvolvedores -->
           <v-flex lg7 sm12 xs12>
-            <plain-table></plain-table>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>Developers</h4>
+                </v-toolbar-title>
+              </v-toolbar>
+              <v-divider></v-divider>
+              <v-card-text class="pa-0">
+                <template>
+                  <v-data-table
+                    :headers="headers"
+                    :items="project.developerList"
+                    hide-actions
+                    class="elevation-0"
+                    :expand="expand"
+                    item-key="name"
+                  >
+                    <template slot="items" slot-scope="props">
+                      <tr class="click-pointer" @click="props.expanded = !props.expanded">
+                        <td>
+                          <v-avatar size="36px">
+                            <img :src="props.item.avatar" :alt="props.item.name">
+                          </v-avatar>
+                        </td>
+                        <td>{{ props.item.name }}</td>
+                        <td class="text-xs-left">{{ props.item.numCommits }}</td>
+                        <td class="text-xs-left">{{ props.item.firstCommit }}</td>
+                        <td class="text-xs-left">{{ props.item.lastCommit }}</td>
+                      </tr>
+                    </template>
+                    <template v-slot:expand="props">
+                      <v-card flat>
+                        <v-card-text>Active Days: {{props.item.numActiveDays}}</v-card-text>
+                        <v-card-text>LOC: {{props.item.numLoc}}</v-card-text>
+                        <!-- <v-card-text>Commits per type file: {{props.item.numFileProgrammingLanguageList}}</v-card-text> -->
+                      </v-card>
+                    </template>
+                  </v-data-table>
+                </template>
+                <v-divider></v-divider>
+              </v-card-text>
+            </v-card>
           </v-flex>
         </template>
 
@@ -117,7 +158,6 @@
 
 <script>
 import EChart from "@/components/chart/echart";
-import PlainTable from "@/components/widgets/list/PlainTable";
 import MiniStatistic from "@/components/widgets/statistic/MiniStatistic";
 import VWidget from "@/components/VWidget";
 import Util from "@/util";
@@ -125,7 +165,6 @@ import Util from "@/util";
 export default {
   components: {
     EChart,
-    PlainTable,
     VWidget,
     MiniStatistic
   },
@@ -142,7 +181,23 @@ export default {
       developerList: [],
       localRepository: ""
     },
-    colors: []
+    colors: [],
+    headers: [
+      {
+        text: "",
+        align: "center",
+        sortable: false,
+        value: "avatar"
+      },
+      {
+        text: "Name",
+        align: "left",
+        value: "name"
+      },
+      { text: "Commits", value: "commits" },
+      { text: "First Commit", value: "firstCommit" },
+      { text: "Last Commit", value: "lastCommit" }
+    ]
   }),
   methods: {
     tween(propName) {
@@ -198,5 +253,9 @@ export default {
 
 .sub-header {
   color: hsla(0, 0%, 100%, 0.7);
+}
+
+.click-pointer {
+  cursor: pointer;
 }
 </style>
