@@ -1,8 +1,6 @@
 package mestrado.matheus.teamtracker.controller;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import mestrado.matheus.teamtracker.domain.Filter;
+import mestrado.matheus.teamtracker.domain.Project;
 import mestrado.matheus.teamtracker.util.Git;
-import mestrado.matheus.teamtracker.util.Util;
 
 @RestController()
 @RequestMapping("/project")
@@ -27,11 +25,13 @@ public class ProjectController {
 	 * linguagens de programaçao e Desenvolvedores)
 	 **/
 	@RequestMapping(path = "", method = RequestMethod.POST)
-	public @ResponseBody Filter getProject(@RequestBody Filter filter) {
+	public @ResponseBody Project getProject(@RequestBody Filter filter) {
 
+		Project project = null;
+		
 		try {
 
-			Git.gitClone(Util.getLocalPath(filter.repositoryPath), filter.repositoryPath);
+			project = Git.gitClone(filter.remoteRepository);
 
 		} catch (IOException e) {
 
@@ -42,7 +42,7 @@ public class ProjectController {
 			e.printStackTrace();
 		}
 
-		return filter;
+		return project;
 	}
 
 	/**

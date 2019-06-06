@@ -2,7 +2,13 @@
   <div id="pageDashboard">
     <v-container grid-list-xl fluid>
       <!-- Mensagem vazio -->
-      <v-layout row wrap v-if="!project.cloned" class="mensagem" transition="slide-x-transition">
+      <v-layout
+        row
+        wrap
+        v-if="!project.localRepository"
+        class="mensagem"
+        transition="slide-x-transition"
+      >
         <v-flex xs8 offset-xs2>
           <v-card class="blue-grey--text">
             <v-card-title primary-title class="center">
@@ -18,7 +24,7 @@
         </v-flex>
       </v-layout>
 
-      <v-layout row wrap v-if="project.cloned">
+      <v-layout row wrap v-if="project.localRepository">
         <!-- perspectiva -->
         <v-flex sm12>
           <v-card>

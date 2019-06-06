@@ -8,10 +8,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
+import mestrado.matheus.teamtracker.domain.Project;
+
 public class Git {
 
-	public static void gitClone(Path directory, String originUrl) throws IOException, InterruptedException {
-		runCommand(directory.getParent(), "git", "clone", originUrl, directory.getFileName().toString() + System.getProperty("file.separator"));
+	public static Project gitClone(String remoteRepository) throws IOException, InterruptedException {
+		
+		Path directory = Util.getLocalPath(remoteRepository);
+		
+		runCommand(directory.getParent(), "git", "clone", remoteRepository, directory.getFileName().toString() + System.getProperty("file.separator"));
+		
+		return new Project(directory.getFileName().toString());
 	}
 
 	public static void runCommand(Path directory, String... command) throws IOException, InterruptedException {

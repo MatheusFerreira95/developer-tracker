@@ -33,7 +33,7 @@
               placeholder="Enter link to Git..."
               hide-details
               @keyup.enter="getProjectInformations"
-              v-model="filter.repositoryPath"
+              v-model="filter.remoteRepository"
             ></v-text-field>
           </v-card>
         </v-flex>
@@ -93,7 +93,8 @@ export default {
     drawer: true,
     nameProject: "Repository",
     filter: {
-      repositoryPath: "",
+      remoteRepository: "",
+      localRepository: "",
       dateRange: "",
       directory: "",
       branch: ""
@@ -124,15 +125,11 @@ export default {
       getProject(this.filter)
         .then(
           response => {
+            this.project = response.data;
+            this.updateNameRepository();
+
+            window.getApp.$emit("UPDATE_PROJECT", this.project);
             window.getApp.$emit("STOP_LOADING");
-
-            this.nameProject = this.filter.repositoryPath.substring(
-              this.filter.repositoryPath.lastIndexOf("/") + 1,
-              this.filter.repositoryPath.lastIndexOf(".git")
-            );
-
-            window.getApp.$emit("UPDATE_PROJECT", project);
-            if (!this.nameProject) this.nameProject = "Repository";
           },
           error => {
             alert("Erro: " + error);
@@ -142,6 +139,14 @@ export default {
         .catch(function(error) {
           window.getApp.$emit("STOP_LOADING");
         });
+    },
+
+    updateNameRepository() {
+      this.nameProject = this.filter.remoteRepository.substring(
+        this.filter.remoteRepository.lastIndexOf("/") + 1,
+        this.filter.remoteRepository.lastIndexOf(".git")
+      );
+      if (!this.nameProject) this.nameProject = "Repository";
     }
   }
 };
