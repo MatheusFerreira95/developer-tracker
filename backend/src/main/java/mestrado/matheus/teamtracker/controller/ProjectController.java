@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,15 @@ import mestrado.matheus.teamtracker.util.Util;
 @RequestMapping("/project")
 public class ProjectController {
 
+	
+	@CrossOrigin
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody String get() {
+
+		return "fooooi";
+	}
+	
 	/**
 	 * A partir do filtro deve retornar os dados de gerais do projeto (loc, commits,
 	 * data de primeiro e último commit, dias ativos (qtd de dias com commit),

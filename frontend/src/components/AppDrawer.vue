@@ -78,6 +78,8 @@
   </v-navigation-drawer>
 </template>
 <script>
+import { getInfo } from "@/api/project";
+
 export default {
   name: "app-drawer",
   props: {
@@ -105,18 +107,20 @@ export default {
       //verificar perspectiva para saber qual rota chamar
 
       //se serviço retornar sucesso -> alterar nome label de projeto selecionado
-      let that = this;
-      setTimeout(function() {
+
+      getInfo().then(response => {
+        console.log(response);
+
         window.getApp.$emit("STOP_LOADING");
 
-        that.nameProject = that.filter.repositryPath.substring(
-          that.filter.repositryPath.lastIndexOf("/") + 1,
-          that.filter.repositryPath.lastIndexOf(".git")
+        this.nameProject = this.filter.repositryPath.substring(
+          this.filter.repositryPath.lastIndexOf("/") + 1,
+          this.filter.repositryPath.lastIndexOf(".git")
         );
 
-        window.getApp.$emit("UPDATE_PROJECT", { name: that.nameProject });
-        if (!that.nameProject) that.nameProject = "Repository";
-      }, 2000);
+        window.getApp.$emit("UPDATE_PROJECT", { name: this.nameProject });
+        if (!this.nameProject) this.nameProject = "Repository";
+      });
     }
   }
 };
