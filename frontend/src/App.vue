@@ -2,10 +2,19 @@
   <div id="app">
     <template v-if="!$route.meta.public">
       <v-app id="inspire" class="app">
+        <!-- loading -->
+        <v-dialog v-model="loading" persistent fullscreen content-class="loading-dialog">
+          <v-container fill-height>
+            <v-layout row justify-center align-center>
+              <v-progress-circular indeterminate :size="90" :width="3" color="primary"></v-progress-circular>
+            </v-layout>
+          </v-container>
+        </v-dialog>
+        <!-- drawer -->
         <app-drawer class="app--drawer"></app-drawer>
-
+        <!-- toolbar -->
         <app-toolbar class="app--toolbar"></app-toolbar>
-
+        <!-- pages -->
         <v-content>
           <div class="page-wrapper">
             <router-view></router-view>
@@ -24,9 +33,9 @@ export default {
     AppDrawer,
     AppToolbar
   },
-  data: () => ({}),
-
-  computed: {},
+  data: () => ({
+    loading: false
+  }),
 
   created() {
     AppEvents.forEach(item => {
@@ -41,5 +50,9 @@ export default {
 <style lang="stylus" scoped>
 .page-wrapper {
   min-height: calc(100vh - 64px - 50px - 81px);
+}
+
+.v-dialog__content--active {
+  background-color: #ffffffa8;
 }
 </style>

@@ -101,18 +101,22 @@ export default {
   },
   methods: {
     getProjectInformations() {
+      window.getApp.$emit("START_LOADING");
       //verificar perspectiva para saber qual rota chamar
 
       //se serviço retornar sucesso -> alterar nome label de projeto selecionado
+      let that = this;
+      setTimeout(function() {
+        window.getApp.$emit("STOP_LOADING");
 
-      this.nameProject = this.filter.repositryPath.substring(
-        this.filter.repositryPath.lastIndexOf("/") + 1,
-        this.filter.repositryPath.lastIndexOf(".git")
-      );
+        that.nameProject = that.filter.repositryPath.substring(
+          that.filter.repositryPath.lastIndexOf("/") + 1,
+          that.filter.repositryPath.lastIndexOf(".git")
+        );
 
-      window.getApp.$emit("UPDATE_PROJECT", { name: this.nameProject });
-
-      if (!this.nameProject) this.nameProject = "Repository";
+        window.getApp.$emit("UPDATE_PROJECT", { name: that.nameProject });
+        if (!that.nameProject) that.nameProject = "Repository";
+      }, 2000);
     }
   }
 };

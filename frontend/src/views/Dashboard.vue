@@ -2,21 +2,18 @@
   <div id="pageDashboard">
     <v-container grid-list-xl fluid>
       <!-- Mensagem vazio -->
-      <v-layout row wrap v-if="!project.name" class="mensagem">
+      <v-layout row wrap v-if="!project.name" class="mensagem" transition="slide-x-transition">
         <v-flex xs8 offset-xs2>
           <v-card class="blue-grey--text">
             <v-card-title primary-title class="center">
               <div class="text-md-center center">
                 <div class="headline">
                   Welcome to the
-                  <strong>Tracker Team</strong>,
+                  <strong>Team Tracker</strong>,
                 </div>
                 <span>Report a project to start tracking!</span>
               </div>
             </v-card-title>
-            <v-card-actions>
-              <v-btn flat dark>Listen now</v-btn>
-            </v-card-actions>
           </v-card>
         </v-flex>
       </v-layout>
@@ -26,32 +23,38 @@
         <v-flex sm12>
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab ripple>Overview</v-tab>
-              <v-tab ripple>Explore</v-tab>
+              <v-tab ripple @click="perspective = 'Overview'">Overview</v-tab>
+              <v-tab ripple @click="perspective = 'Explore'">Explore</v-tab>
             </v-tabs>
           </v-card>
         </v-flex>
 
-        <!-- cartões -->
-        <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="check" :title="commits" sub-title="Commits" color="green"></mini-statistic>
-        </v-flex>
-        <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="code" :title="loc" sub-title="Lines of code" color="red"></mini-statistic>
-        </v-flex>
-        <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="date_range" sub-title="10/10/2017 to 10/10/2018" color="light-blue"></mini-statistic>
-        </v-flex>
-        <v-flex lg3 sm6 xs12>
-          <mini-statistic icon="today" :title="activeDays" sub-title="Active days" color="amber"></mini-statistic>
-        </v-flex>
+        <!-- Overview -->
+        <template v-if="perspective === 'Overview' && project.name">
+          <!-- cartões -->
+          <v-flex lg3 sm6 xs12>
+            <mini-statistic icon="check" :title="commits" sub-title="Commits" color="green"></mini-statistic>
+          </v-flex>
+          <v-flex lg3 sm6 xs12>
+            <mini-statistic icon="code" :title="loc" sub-title="Lines of code" color="red"></mini-statistic>
+          </v-flex>
+          <v-flex lg3 sm6 xs12>
+            <mini-statistic
+              icon="date_range"
+              sub-title="10/10/2017 to 10/10/2018"
+              color="light-blue"
+            ></mini-statistic>
+          </v-flex>
+          <v-flex lg3 sm6 xs12>
+            <mini-statistic icon="today" :title="activeDays" sub-title="Active days" color="amber"></mini-statistic>
+          </v-flex>
 
-        <!-- Grafico -->
-        <v-flex lg5 sm12 xs12 v-if="colors.length > 0">
-          <v-widget title="Programming Languages" content-bg="white">
-            <div slot="widget-content">
-              <e-chart
-                :path-option="[
+          <!-- Grafico -->
+          <v-flex lg5 sm12 xs12 v-if="colors.length > 0">
+            <v-widget title="Programming Languages" content-bg="white">
+              <div slot="widget-content">
+                <e-chart
+                  :path-option="[
                   ['dataset.source', programmingLanguages],
                   ['legend.bottom', '0'],
                   ['color', colors],
@@ -61,17 +64,31 @@
                   ['series[0].avoidLabelOverlap', true],         
                   ['series[0].radius', ['50%', '70%']],                      
                 ]"
-                height="400px"
-                width="100%"
-              ></e-chart>
-            </div>
-          </v-widget>
-        </v-flex>
+                  height="400px"
+                  width="100%"
+                ></e-chart>
+              </div>
+            </v-widget>
+          </v-flex>
 
-        <!-- desenvolvedores -->
-        <v-flex lg7 sm12 xs12>
-          <plain-table></plain-table>
-        </v-flex>
+          <!-- desenvolvedores -->
+          <v-flex lg7 sm12 xs12>
+            <plain-table></plain-table>
+          </v-flex>
+        </template>
+
+        <!-- Explore -->
+        <template v-if="perspective === 'Explore'">
+          <v-flex xs8 offset-xs2>
+            <v-card class="blue-grey--text">
+              <v-card-title primary-title class="center">
+                <div class="text-md-center center">
+                  <div class="headline">Explore</div>
+                </div>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+        </template>
       </v-layout>
     </v-container>
   </div>
@@ -93,6 +110,7 @@ export default {
   },
   data: () => ({
     title: "oi",
+    perspective: "Overview",
     commits: 352,
     loc: 5000,
     util: Util,
@@ -146,12 +164,12 @@ export default {
   created() {
     window.getApp.$on("UPDATE_PROJECT", project => {
       this.project = project;
+      this.tween("commits");
+      this.tween("loc");
+      this.tween("activeDays");
     });
   },
   mounted() {
-    this.tween("commits");
-    this.tween("loc");
-    this.tween("activeDays");
     this.colors = this.util
       .getColors()
       .slice(0, this.programmingLanguages.length);
@@ -161,7 +179,6 @@ export default {
 <style lang="stylus">
 .center {
   width: 100%;
-  height: 55px;
 }
 
 .mensagem {
