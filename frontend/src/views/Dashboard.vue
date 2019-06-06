@@ -39,29 +39,44 @@
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
           <v-flex lg3 sm6 xs12>
-            <mini-statistic icon="check" :title="commits" sub-title="Commits" color="green"></mini-statistic>
+            <mini-statistic
+              icon="check"
+              :title="project.numCommits"
+              sub-title="Commits"
+              color="green"
+            ></mini-statistic>
           </v-flex>
           <v-flex lg3 sm6 xs12>
-            <mini-statistic icon="code" :title="loc" sub-title="Lines of code" color="red"></mini-statistic>
+            <mini-statistic
+              icon="code"
+              :title="project.numLoc"
+              sub-title="Lines of code"
+              color="red"
+            ></mini-statistic>
           </v-flex>
           <v-flex lg3 sm6 xs12>
             <mini-statistic
               icon="date_range"
-              sub-title="10/10/2017 to 10/10/2018"
+              :sub-title="project.firstCommit + ' to ' + project.lastCommit"
               color="light-blue"
             ></mini-statistic>
           </v-flex>
           <v-flex lg3 sm6 xs12>
-            <mini-statistic icon="today" :title="activeDays" sub-title="Active days" color="amber"></mini-statistic>
+            <mini-statistic
+              icon="today"
+              :title="project.numActiveDays"
+              sub-title="Active days"
+              color="amber"
+            ></mini-statistic>
           </v-flex>
 
           <!-- Grafico -->
-          <v-flex lg5 sm12 xs12 v-if="colors.length > 0">
+          <v-flex lg5 sm12 xs12 v-if="project.numFileProgrammingLanguageList.length > 0">
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
                 <e-chart
                   :path-option="[
-                  ['dataset.source', programmingLanguages],
+                  ['dataset.source', project.numFileProgrammingLanguageList],
                   ['legend.bottom', '0'],
                   ['color', colors],
                   ['xAxis.show', false],
@@ -115,31 +130,18 @@ export default {
     MiniStatistic
   },
   data: () => ({
-    title: "oi",
     perspective: "Overview",
-    commits: 352,
-    loc: 5000,
     util: Util,
-    activeDays: 47,
-    project: { name: "" },
-    programmingLanguages: [
-      {
-        value: 50,
-        name: "Java"
-      },
-      {
-        value: 35,
-        name: "JavaScript"
-      },
-      {
-        value: 25,
-        name: "HTML"
-      },
-      {
-        value: 10,
-        name: "CSS"
-      }
-    ],
+    project: {
+      numLoc: 0,
+      numCommits: 0,
+      numActiveDays: 0,
+      firstCommit: "",
+      LastCommit: "",
+      numFileProgrammingLanguageList: [],
+      developerList: [],
+      localRepository: ""
+    },
     colors: []
   }),
   methods: {
@@ -156,29 +158,32 @@ export default {
       })
         .to(
           {
-            tweeningValue: vm[propName]
+            tweeningValue: vm.project[propName]
           },
           1000
         )
         .onUpdate(function() {
-          vm[propName] = this.tweeningValue.toFixed(0);
+          vm.project[propName] = this.tweeningValue.toFixed(0);
         })
         .start();
       animate();
+    },
+    setProject(newProject) {
+      this.project = newProject;
+
+      this.colors = this.util
+        .getColors()
+        .slice(0, this.project.numFileProgrammingLanguageList.length);
+
+      this.tween("numCommits");
+      this.tween("numLoc");
+      this.tween("numActiveDays");
     }
   },
   created() {
     window.getApp.$on("UPDATE_PROJECT", project => {
-      this.project = project;
-      this.tween("commits");
-      this.tween("loc");
-      this.tween("activeDays");
+      this.setProject(project);
     });
-  },
-  mounted() {
-    this.colors = this.util
-      .getColors()
-      .slice(0, this.programmingLanguages.length);
   }
 };
 </script>

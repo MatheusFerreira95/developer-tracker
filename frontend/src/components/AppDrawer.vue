@@ -107,7 +107,7 @@ export default {
       LastCommit: "",
       numFileProgrammingLanguageList: [],
       developerList: [],
-      cloned: false
+      localRepository: ""
     }
   }),
   created() {
