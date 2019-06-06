@@ -2,7 +2,7 @@
   <div id="pageDashboard">
     <v-container grid-list-xl fluid>
       <!-- Mensagem vazio -->
-      <v-layout row wrap v-if="!project.name" class="mensagem" transition="slide-x-transition">
+      <v-layout row wrap v-if="!project.cloned" class="mensagem" transition="slide-x-transition">
         <v-flex xs8 offset-xs2>
           <v-card class="blue-grey--text">
             <v-card-title primary-title class="center">
@@ -18,7 +18,7 @@
         </v-flex>
       </v-layout>
 
-      <v-layout row wrap v-if="project.name">
+      <v-layout row wrap v-if="project.cloned">
         <!-- perspectiva -->
         <v-flex sm12>
           <v-card>
@@ -30,7 +30,7 @@
         </v-flex>
 
         <!-- Overview -->
-        <template v-if="perspective === 'Overview' && project.name">
+        <template v-if="perspective === 'Overview'">
           <!-- cartões -->
           <v-flex lg3 sm6 xs12>
             <mini-statistic icon="check" :title="commits" sub-title="Commits" color="green"></mini-statistic>

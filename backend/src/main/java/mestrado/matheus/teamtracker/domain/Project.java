@@ -9,6 +9,7 @@ public class Project {
 	public Integer numActiveDays;
 	public String firstCommit;
 	public String LastCommit;
+	public Boolean cloned = true;
 	public List<NumFileProgrammingLanguage> numFileProgrammingLanguageList;
 	public List<Developer> developerList;
 }

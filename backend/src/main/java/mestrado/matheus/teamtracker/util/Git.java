@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Git {
 
 	public static void gitClone(Path directory, String originUrl) throws IOException, InterruptedException {
-		runCommand(directory.getParent(), "git", "clone", originUrl, directory.getFileName().toString());
+		runCommand(directory.getParent(), "git", "clone", originUrl, directory.getFileName().toString() + System.getProperty("file.separator"));
 	}
 
 	public static void runCommand(Path directory, String... command) throws IOException, InterruptedException {

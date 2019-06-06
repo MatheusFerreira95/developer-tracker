@@ -33,7 +33,7 @@
               placeholder="Enter link to Git..."
               hide-details
               @keyup.enter="getProjectInformations"
-              v-model="filter.repositryPath"
+              v-model="filter.repositoryPath"
             ></v-text-field>
           </v-card>
         </v-flex>
@@ -78,7 +78,7 @@
   </v-navigation-drawer>
 </template>
 <script>
-import { getInfo } from "@/api/project";
+import { getProject } from "@/api/project";
 
 export default {
   name: "app-drawer",
@@ -93,7 +93,20 @@ export default {
     drawer: true,
     nameProject: "Repository",
     filter: {
-      repositryPath: ""
+      repositoryPath: "",
+      dateRange: "",
+      directory: "",
+      branch: ""
+    },
+    project: {
+      numLoc: 0,
+      numCommits: 0,
+      numActiveDays: 0,
+      firstCommit: "",
+      LastCommit: "",
+      numFileProgrammingLanguageList: [],
+      developerList: [],
+      cloned: false
     }
   }),
   created() {
@@ -108,19 +121,27 @@ export default {
 
       //se serviço retornar sucesso -> alterar nome label de projeto selecionado
 
-      getInfo().then(response => {
-        console.log(response);
+      getProject(this.filter)
+        .then(
+          response => {
+            window.getApp.$emit("STOP_LOADING");
 
-        window.getApp.$emit("STOP_LOADING");
+            this.nameProject = this.filter.repositoryPath.substring(
+              this.filter.repositoryPath.lastIndexOf("/") + 1,
+              this.filter.repositoryPath.lastIndexOf(".git")
+            );
 
-        this.nameProject = this.filter.repositryPath.substring(
-          this.filter.repositryPath.lastIndexOf("/") + 1,
-          this.filter.repositryPath.lastIndexOf(".git")
-        );
-
-        window.getApp.$emit("UPDATE_PROJECT", { name: this.nameProject });
-        if (!this.nameProject) this.nameProject = "Repository";
-      });
+            window.getApp.$emit("UPDATE_PROJECT", project);
+            if (!this.nameProject) this.nameProject = "Repository";
+          },
+          error => {
+            alert("Erro: " + error);
+            window.getApp.$emit("STOP_LOADING");
+          }
+        )
+        .catch(function(error) {
+          window.getApp.$emit("STOP_LOADING");
+        });
     }
   }
 };

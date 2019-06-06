@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,28 +21,17 @@ import mestrado.matheus.teamtracker.util.Util;
 @RequestMapping("/project")
 public class ProjectController {
 
-	
-	@CrossOrigin
-	@RequestMapping(path = "/", method = RequestMethod.GET)
-	@ResponseStatus(HttpStatus.OK)
-	public @ResponseBody String get() {
-
-		return "fooooi";
-	}
-	
 	/**
 	 * A partir do filtro deve retornar os dados de gerais do projeto (loc, commits,
 	 * data de primeiro e último commit, dias ativos (qtd de dias com commit),
 	 * linguagens de programaçao e Desenvolvedores)
 	 **/
-	@RequestMapping(path = "/", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.OK)
-	public @ResponseBody String getProject(@RequestParam Filter filter) {
+	@RequestMapping(path = "", method = RequestMethod.POST)
+	public @ResponseBody Filter getProject(@RequestBody Filter filter) {
 
 		try {
-			
-			Path localPath = Paths.get(Util.getLocalPath(filter.repositoryPath));
-			Git.gitClone(localPath, filter.repositoryPath);
+
+			Git.gitClone(Util.getLocalPath(filter.repositoryPath), filter.repositoryPath);
 
 		} catch (IOException e) {
 
@@ -53,7 +42,7 @@ public class ProjectController {
 			e.printStackTrace();
 		}
 
-		return filter.toString();
+		return filter;
 	}
 
 	/**
