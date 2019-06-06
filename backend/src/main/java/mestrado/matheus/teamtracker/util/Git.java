@@ -1,53 +1,96 @@
 package mestrado.matheus.teamtracker.util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import mestrado.matheus.teamtracker.domain.Project;
 
 public class Git {
 
-	public static Project gitClone(String remoteRepository) throws IOException, InterruptedException {
-		
-		Path directory = Util.getLocalPath(remoteRepository);
-		
-		runCommand(directory.getParent(), "git", "clone", remoteRepository, directory.getFileName().toString() + System.getProperty("file.separator"));
-		
-		return new Project(directory.getFileName().toString());
+	public List<String> outputList = new ArrayList<String>();
+	public List<String> errorList = new ArrayList<String>();
+	public Project project;
+
+	public Git(String remoteRepository) throws IOException, InterruptedException {
+
+		this.project = new Project(this.getLocalPath(remoteRepository));
+
+		runCommand("git", "clone", remoteRepository);
+
+//		runCommand(directory, "git", "ls-files");
 	}
 
-	public static void runCommand(Path directory, String... command) throws IOException, InterruptedException {
-		Objects.requireNonNull(directory, "directory");
-		if (!Files.exists(directory)) {
-			throw new RuntimeException("can't run command in non-existing directory '" + directory + "'");
-		}
-		ProcessBuilder pb = new ProcessBuilder().command(command).directory(directory.toFile());
+	public void runCommand(String... command) throws IOException, InterruptedException {
+
+		this.validateLocalRepository();
+
+		ProcessBuilder pb = new ProcessBuilder().command(command).directory(new File(project.localRepository));
 		Process p = pb.start();
-		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR");
-		StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT");
+
+		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", this);
+		StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", this);
 		outputGobbler.start();
 		errorGobbler.start();
+
 		int exit = p.waitFor();
+
 		errorGobbler.join();
 		outputGobbler.join();
+
 		if (exit != 0) {
+			
 			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
+	}
+
+	private void validateLocalRepository() {
+
+		Path pathLocalRepository = project.getPathLocalRepository();
+
+		Objects.requireNonNull(pathLocalRepository, "directory");
+
+		if (!Files.exists(pathLocalRepository)) {
+
+			throw new RuntimeException("can't run command in non-existing directory '" + pathLocalRepository + "'");
+
+		}
+	}
+	
+	private String getLocalPath(String repositoryPath) throws IOException {
+
+		String nameLocalRepository = repositoryPath.substring(repositoryPath.lastIndexOf("/"),
+				repositoryPath.indexOf(".git"));
+		
+		File cloneFolder = new File("clones");
+		if (!cloneFolder.exists()) cloneFolder.mkdir();
+		
+		File localRepository = new File("clones/" + nameLocalRepository + "-" + new Date().getTime());
+		if (!localRepository.exists()) localRepository.mkdir();
+		
+		
+		return localRepository.getPath();
+
 	}
 
 	private static class StreamGobbler extends Thread {
 
 		private final InputStream is;
 		private final String type;
+		private final Git gitInstance;
 
-		private StreamGobbler(InputStream is, String type) {
+		private StreamGobbler(InputStream is, String type, Git gitInstance) {
 			this.is = is;
 			this.type = type;
+			this.gitInstance = gitInstance;
 		}
 
 		@Override
@@ -55,7 +98,11 @@ public class Git {
 			try (BufferedReader br = new BufferedReader(new InputStreamReader(is));) {
 				String line;
 				while ((line = br.readLine()) != null) {
-					System.out.println(type + "> " + line);
+
+					if (type == "ERROR")
+						this.gitInstance.errorList.add(line);
+					if (type == "OUTPUT")
+						this.gitInstance.outputList.add(line);
 				}
 			} catch (IOException ioe) {
 				ioe.printStackTrace();

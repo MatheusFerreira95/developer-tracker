@@ -1,5 +1,7 @@
 package mestrado.matheus.teamtracker.domain;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class Project {
@@ -14,6 +16,12 @@ public class Project {
 	public List<Developer> developerList;
 
 	public Project(String locaRepository) {
+		
 		this.localRepository = locaRepository;
+	}
+
+	public Path getPathLocalRepository() {
+		
+		return Paths.get(this.localRepository);
 	}
 }

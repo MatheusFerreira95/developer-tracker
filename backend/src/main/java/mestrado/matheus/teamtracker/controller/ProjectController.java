@@ -27,11 +27,11 @@ public class ProjectController {
 	@RequestMapping(path = "", method = RequestMethod.POST)
 	public @ResponseBody Project getProject(@RequestBody Filter filter) {
 
-		Project project = null;
+		Git git = null;
 		
 		try {
 
-			project = Git.gitClone(filter.remoteRepository);
+			git = new Git(filter.remoteRepository);
 
 		} catch (IOException e) {
 
@@ -42,7 +42,7 @@ public class ProjectController {
 			e.printStackTrace();
 		}
 
-		return project;
+		return git.project;
 	}
 
 	/**
