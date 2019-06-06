@@ -149,6 +149,11 @@ export default {
       );
       if (!this.nameProject) this.nameProject = "Repository";
     }
+  },
+  watch: {
+    "filter.remoteRepository": function(value) {
+      this.filter.localRepository = "";
+    }
   }
 };
 </script>

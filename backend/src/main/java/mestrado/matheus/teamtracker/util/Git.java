@@ -23,6 +23,9 @@ public class Git {
 
 	public Git(String remoteRepository) throws IOException, InterruptedException {
 
+		this.outputList = new ArrayList<String>();
+		this.errorList = new ArrayList<String>();
+
 		this.project = new Project(this.getLocalPath(remoteRepository));
 
 		runCommand("git", "clone", remoteRepository);
