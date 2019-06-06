@@ -126,6 +126,7 @@ export default {
         .then(
           response => {
             this.project = response.data;
+            this.filter.localRepository = this.project.localRepository;
             this.updateNameRepository();
 
             window.getApp.$emit("UPDATE_PROJECT", this.project);

@@ -12,12 +12,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
 
 public class Git {
 
-	public List<String> outputList = new ArrayList<String>();
-	public List<String> errorList = new ArrayList<String>();
+	public List<String> outputList;
+	public List<String> errorList;
 	public Project project;
 
 	public Git(String remoteRepository) throws IOException, InterruptedException {
@@ -25,8 +26,41 @@ public class Git {
 		this.project = new Project(this.getLocalPath(remoteRepository));
 
 		runCommand("git", "clone", remoteRepository);
+	}
 
-//		runCommand(directory, "git", "ls-files");
+	public Git() {
+
+		this.outputList = new ArrayList<String>();
+		this.errorList = new ArrayList<String>();
+	}
+
+	public static Git gitBuilder(Filter filter) {
+
+		Git git = null;
+
+		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
+
+			git = new Git();
+
+			git.project = new Project(filter.localRepository);
+
+			return git;
+		}
+
+		try {
+
+			git = new Git(filter.remoteRepository);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+		return git;
 	}
 
 	public void runCommand(String... command) throws IOException, InterruptedException {
@@ -47,7 +81,7 @@ public class Git {
 		outputGobbler.join();
 
 		if (exit != 0) {
-			
+
 			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
 	}
@@ -64,19 +98,20 @@ public class Git {
 
 		}
 	}
-	
+
 	private String getLocalPath(String repositoryPath) throws IOException {
 
 		String nameLocalRepository = repositoryPath.substring(repositoryPath.lastIndexOf("/"),
 				repositoryPath.indexOf(".git"));
-		
+
 		File cloneFolder = new File("clones");
-		if (!cloneFolder.exists()) cloneFolder.mkdir();
-		
+		if (!cloneFolder.exists())
+			cloneFolder.mkdir();
+
 		File localRepository = new File("clones/" + nameLocalRepository + "-" + new Date().getTime());
-		if (!localRepository.exists()) localRepository.mkdir();
-		
-		
+		if (!localRepository.exists())
+			localRepository.mkdir();
+
 		return localRepository.getPath();
 
 	}
@@ -109,5 +144,4 @@ public class Git {
 			}
 		}
 	}
-
 }

@@ -27,20 +27,7 @@ public class ProjectController {
 	@RequestMapping(path = "", method = RequestMethod.POST)
 	public @ResponseBody Project getProject(@RequestBody Filter filter) {
 
-		Git git = null;
-		
-		try {
-
-			git = new Git(filter.remoteRepository);
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-
-		} catch (InterruptedException e) {
-
-			e.printStackTrace();
-		}
+		Git git = Git.gitBuilder(filter);
 
 		return git.project;
 	}

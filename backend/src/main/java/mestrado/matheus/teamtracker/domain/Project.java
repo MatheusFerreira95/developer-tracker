@@ -15,9 +15,9 @@ public class Project {
 	public List<NumFileProgrammingLanguage> numFileProgrammingLanguageList;
 	public List<Developer> developerList;
 
-	public Project(String locaRepository) {
+	public Project(String localRepository) {
 		
-		this.localRepository = locaRepository;
+		this.localRepository = localRepository;
 	}
 
 	public Path getPathLocalRepository() {
