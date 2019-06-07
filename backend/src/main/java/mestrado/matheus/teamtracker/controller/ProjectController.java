@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
-import mestrado.matheus.teamtracker.util.Git;
 
 @RestController()
 @RequestMapping("/project")
@@ -25,11 +24,23 @@ public class ProjectController {
 	 * linguagens de programaçao e Desenvolvedores)
 	 **/
 	@RequestMapping(path = "", method = RequestMethod.POST)
-	public @ResponseBody Project getProject(@RequestBody Filter filter) {
+	public @ResponseBody Project getProjectOverview(@RequestBody Filter filter) {
 
-		Git git = Git.gitBuilder(filter);
+		try {
 
-		return git.project;
+			return Project.buildOverview(filter);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+
+		}
+
+		return null;
 	}
 
 	/**

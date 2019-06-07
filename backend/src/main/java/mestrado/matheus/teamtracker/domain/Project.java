@@ -1,9 +1,11 @@
 package mestrado.matheus.teamtracker.domain;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import mestrado.matheus.teamtracker.util.Git;
+import mestrado.matheus.teamtracker.util.GitOutput;
 
 public class Project {
 
@@ -47,13 +49,50 @@ public class Project {
 		dev.fileAuthorList = new ArrayList<String>();
 		dev.fileAuthorList.add("com/arquivo.java");
 		dev.avatar = "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg";
-		
+
 		this.developerList = new ArrayList<Developer>();
 		this.developerList.add(dev);
 	}
 
-	public Path getPathLocalRepository() {
+	public void calcNumCommits() throws IOException, InterruptedException {
 
-		return Paths.get(this.localRepository);
+		GitOutput gitOutput = Git.runCommand(this, "git rev-list --all --count");
+		this.numCommits = Integer.parseInt(gitOutput.outputList.get(0));
+	}
+
+	public void calcNumLoc() throws IOException, InterruptedException {
+
+		GitOutput gitOutput = Git.runCommand(this, "git ls-files | xargs cat | wc -l");
+		this.numLoc = Integer.parseInt(gitOutput.outputList.get(0));
+	}
+
+	public static Project buildOverview(Filter filter) throws IOException, InterruptedException {
+
+		Project project = Project.builderProject(filter);
+
+		project.localRepository += "/" + project.localRepository.substring(project.localRepository.lastIndexOf("/") + 1,
+				project.localRepository.lastIndexOf("-"));
+
+		project.calcNumCommits();
+		project.calcNumLoc();
+
+		return project;
+
+	}
+
+	private static Project builderProject(Filter filter) {
+
+		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
+
+			return new Project(filter.localRepository);
+
+		} else if (filter.remoteRepository != null && !filter.remoteRepository.isEmpty()) {
+
+			return Git.clone(filter.remoteRepository);
+
+		} else {
+
+			throw new RuntimeException();
+		}
 	}
 }

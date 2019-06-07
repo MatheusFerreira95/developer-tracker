@@ -7,52 +7,25 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
 
 public class Git {
 
-	public List<String> outputList;
-	public List<String> errorList;
-	public Project project;
+	public static Project clone(String remoteRepository) {
 
-	public Git(String remoteRepository) throws IOException, InterruptedException {
-
-		this.outputList = new ArrayList<String>();
-		this.errorList = new ArrayList<String>();
-
-		this.project = new Project(this.getLocalPath(remoteRepository));
-
-		runCommand("git", "clone", remoteRepository);
-	}
-
-	public Git() {
-
-		this.outputList = new ArrayList<String>();
-		this.errorList = new ArrayList<String>();
-	}
-
-	public static Git gitBuilder(Filter filter) {
-
-		Git git = null;
-
-		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
-
-			git = new Git();
-
-			git.project = new Project(filter.localRepository);
-
-			return git;
-		}
+		Project project = null;
 
 		try {
 
-			git = new Git(filter.remoteRepository);
+			project = new Project(getLocalRepository(remoteRepository));
+
+			runCommand(project, "git clone " + remoteRepository);
 
 		} catch (IOException e) {
 
@@ -63,18 +36,25 @@ public class Git {
 			e.printStackTrace();
 		}
 
-		return git;
+		return project;
 	}
 
-	public void runCommand(String... command) throws IOException, InterruptedException {
+	public static GitOutput runCommand(Project project, String command) throws IOException, InterruptedException {
 
-		this.validateLocalRepository();
+		GitOutput gitOutput = new GitOutput();
+		
+		validateLocalRepository(project.localRepository);
 
-		ProcessBuilder pb = new ProcessBuilder().command(command).directory(new File(project.localRepository));
+		List<String> commands = new ArrayList<String>();
+		commands.add("/bin/sh");
+		commands.add("-c");
+		commands.add(command);
+
+		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
 		Process p = pb.start();
 
-		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", this);
-		StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", this);
+		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
+		StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", gitOutput);
 		outputGobbler.start();
 		errorGobbler.start();
 
@@ -87,11 +67,13 @@ public class Git {
 
 			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
+
+		return gitOutput;
 	}
 
-	private void validateLocalRepository() {
+	private static void validateLocalRepository(String localRepository) {
 
-		Path pathLocalRepository = project.getPathLocalRepository();
+		Path pathLocalRepository = Paths.get(localRepository);
 
 		Objects.requireNonNull(pathLocalRepository, "directory");
 
@@ -102,16 +84,19 @@ public class Git {
 		}
 	}
 
-	private String getLocalPath(String repositoryPath) throws IOException {
+	private static String getLocalRepository(String remoteRepository) throws IOException {
 
-		String nameLocalRepository = repositoryPath.substring(repositoryPath.lastIndexOf("/"),
-				repositoryPath.indexOf(".git"));
+		String nameLocalRepository = remoteRepository.substring(remoteRepository.lastIndexOf("/"),
+				remoteRepository.indexOf(".git"));
 
-		File cloneFolder = new File("clones");
-		if (!cloneFolder.exists())
-			cloneFolder.mkdir();
+		File cloneFolder = new File("/home/team-tracker-clones");
+		if (!cloneFolder.exists()) {
+			System.out.println("pasta de clones não existe");
+			throw new RuntimeException();
+		}
 
-		File localRepository = new File("clones/" + nameLocalRepository + "-" + new Date().getTime());
+		File localRepository = new File(
+				"/home/team-tracker-clones/" + nameLocalRepository + "-" + new Date().getTime());
 		if (!localRepository.exists())
 			localRepository.mkdir();
 
@@ -123,12 +108,12 @@ public class Git {
 
 		private final InputStream is;
 		private final String type;
-		private final Git gitInstance;
+		private final GitOutput gitOutput;
 
-		private StreamGobbler(InputStream is, String type, Git gitInstance) {
+		private StreamGobbler(InputStream is, String type, GitOutput gitOutput) {
 			this.is = is;
 			this.type = type;
-			this.gitInstance = gitInstance;
+			this.gitOutput = gitOutput;
 		}
 
 		@Override
@@ -138,9 +123,9 @@ public class Git {
 				while ((line = br.readLine()) != null) {
 
 					if (type == "ERROR")
-						this.gitInstance.errorList.add(line);
+						this.gitOutput.errorList.add(line);
 					if (type == "OUTPUT")
-						this.gitInstance.outputList.add(line);
+						this.gitOutput.outputList.add(line);
 				}
 			} catch (IOException ioe) {
 				ioe.printStackTrace();
