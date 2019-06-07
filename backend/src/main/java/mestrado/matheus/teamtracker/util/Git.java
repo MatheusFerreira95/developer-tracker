@@ -26,6 +26,9 @@ public class Git {
 			project = new Project(getLocalRepository(remoteRepository));
 
 			runCommand(project, "git clone " + remoteRepository);
+			
+			project.localRepository = project.localRepository += "/" + project.localRepository.substring(project.localRepository.lastIndexOf("/") + 1,
+					project.localRepository.lastIndexOf("-"));
 
 		} catch (IOException e) {
 

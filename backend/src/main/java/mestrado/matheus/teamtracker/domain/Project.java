@@ -70,9 +70,6 @@ public class Project {
 
 		Project project = Project.builderProject(filter);
 
-		project.localRepository += "/" + project.localRepository.substring(project.localRepository.lastIndexOf("/") + 1,
-				project.localRepository.lastIndexOf("-"));
-
 		project.calcNumCommits();
 		project.calcNumLoc();
 
