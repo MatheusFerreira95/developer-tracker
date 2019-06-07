@@ -66,12 +66,23 @@ public class Project {
 		this.numLoc = Integer.parseInt(gitOutput.outputList.get(0));
 	}
 
+	public void calcNumActiveDaysAndFirstCommitAndLastCommit() throws IOException, InterruptedException {
+
+		GitOutput gitOutput = Git.runCommand(this, "git log --date=short --pretty=format:%ad | sort | uniq -c");
+		this.numActiveDays = gitOutput.outputList.size();
+		this.firstCommit = gitOutput.outputList.get(0).substring(gitOutput.outputList.get(0).lastIndexOf(" "));
+		this.lastCommit = gitOutput.outputList.get(this.numActiveDays - 1)
+				.substring(gitOutput.outputList.get(this.numActiveDays - 1).lastIndexOf(" "));
+
+	}
+
 	public static Project buildOverview(Filter filter) throws IOException, InterruptedException {
 
 		Project project = Project.builderProject(filter);
 
 		project.calcNumCommits();
 		project.calcNumLoc();
+		project.calcNumActiveDaysAndFirstCommitAndLastCommit();
 
 		return project;
 
