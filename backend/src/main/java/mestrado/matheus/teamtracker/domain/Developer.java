@@ -12,6 +12,6 @@ public class Developer {
 	public String firstCommit;
 	public String lastCommit;
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList;
-	public String avatar;
+	public Integer avatar;
 
 }

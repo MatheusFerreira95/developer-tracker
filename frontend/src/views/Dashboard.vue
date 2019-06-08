@@ -71,7 +71,7 @@
           </v-flex>
 
           <!-- Grafico Linguagem de programacao-->
-          <v-flex lg5 sm12 xs12>
+          <v-flex lg7 sm12 xs12>
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
                 <e-chart
@@ -95,7 +95,7 @@
           </v-flex>
 
           <!-- desenvolvedores -->
-          <v-flex lg7 sm12 xs12>
+          <v-flex lg5 sm12 xs12>
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
@@ -116,20 +116,18 @@
                     <template slot="items" slot-scope="props">
                       <tr class="click-pointer" @click="props.expanded = !props.expanded">
                         <td>
-                          <v-avatar size="36px">
-                            <img :src="props.item.avatar" :alt="props.item.name">
-                          </v-avatar>
+                          <v-icon dark right :color="util.getColors()[props.item.avatar]">person</v-icon>
                         </td>
-                        <td>{{ props.item.name }}</td>
+                        <td class="text-xs-left">{{ props.item.name }} - {{props.item.email}}</td>
                         <td class="text-xs-left">{{ props.item.numCommits }}</td>
-                        <td class="text-xs-left">{{ props.item.firstCommit }}</td>
-                        <td class="text-xs-left">{{ props.item.lastCommit }}</td>
                       </tr>
                     </template>
                     <template v-slot:expand="props">
                       <v-card flat>
-                        <v-card-text>Active Days: {{props.item.numActiveDays}}</v-card-text>
                         <v-card-text>LOC: {{props.item.numLoc}}</v-card-text>
+                        <v-card-text>Active Days: {{props.item.numActiveDays}}</v-card-text>
+                        <v-card-text>First commit: {{props.item.firstCommit}}</v-card-text>
+                        <v-card-text>Last commit: {{props.item.lastCommit}}</v-card-text>
                         <!-- <v-card-text>Commits per type file: {{props.item.numLocProgrammingLanguageList}}</v-card-text> -->
                       </v-card>
                     </template>
@@ -191,14 +189,8 @@ export default {
         sortable: false,
         value: "avatar"
       },
-      {
-        text: "Name",
-        align: "left",
-        value: "name"
-      },
-      { text: "Commits", value: "commits" },
-      { text: "First Commit", value: "firstCommit" },
-      { text: "Last Commit", value: "lastCommit" }
+      { text: "Name - Email", value: "name" },
+      { text: "Commits", value: "commits" }
     ]
   }),
   methods: {

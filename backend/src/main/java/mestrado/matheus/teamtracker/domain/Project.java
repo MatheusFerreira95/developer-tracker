@@ -18,41 +18,12 @@ public class Project {
 	public String firstCommit;
 	public String lastCommit;
 	public String localRepository;
-	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList;
-	public List<Developer> developerList;
+	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList = new ArrayList<NumLocProgrammingLanguage>();
+	public List<Developer> developerList = new ArrayList<Developer>();
 
 	public Project(String localRepository) {
 
 		this.localRepository = localRepository;
-
-		// Fake
-		this.numLoc = 5090;
-		this.numCommits = 356;
-		this.numActiveDays = 42;
-		this.firstCommit = "03/10/2016";
-		this.lastCommit = "03/10/2018";
-
-//		NumLocProgrammingLanguage lp = new NumLocProgrammingLanguage("Java", "20%");
-
-		this.numLocProgrammingLanguageList = new ArrayList<NumLocProgrammingLanguage>();
-//		this.numLocProgrammingLanguageList.add(lp);
-
-		Developer dev = new Developer();
-		dev.email = "email.com";
-		dev.name = "Toe";
-		dev.firstCommit = "10/10/2016";
-		dev.lastCommit = "10/10/2018";
-		dev.numLoc = 1000;
-		dev.numCommits = 98;
-		dev.numActiveDays = 30;
-		dev.numLocProgrammingLanguageList = new ArrayList<NumLocProgrammingLanguage>();
-//		dev.numLocProgrammingLanguageList.add(lp);
-		dev.fileAuthorList = new ArrayList<String>();
-		dev.fileAuthorList.add("com/arquivo.java");
-		dev.avatar = "https://s3.amazonaws.com/uifaces/faces/twitter/ludwiczakpawel/128.jpg";
-
-		this.developerList = new ArrayList<Developer>();
-		this.developerList.add(dev);
 	}
 
 	public void calcNumCommits() throws IOException, InterruptedException {
