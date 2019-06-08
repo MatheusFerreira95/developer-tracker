@@ -3,8 +3,8 @@
  * ECharts Vue Wrapper
  * Michael Wang
  */
-import colors from 'vuetify/es5/util/colors';
 import _object from 'lodash/object';
+import colors from 'vuetify/es5/util/colors';
 
 const ECharts = window.echarts || undefined;
 if (ECharts === undefined) {
@@ -15,7 +15,7 @@ const colorPalette = [];
 Object.entries(colors).forEach((item) => {
   if (item[1].base) {
     colorPalette.push(item[1].base);
-    
+
   }
 });
 // default 
@@ -49,7 +49,7 @@ Object.entries(colors).forEach((item) => {
 export default {
   name: 'v-echart',
 
-  render (h) {
+  render(h) {
     const data = {
       staticClass: 'v-chart',
       style: this.canvasStyle,
@@ -69,7 +69,7 @@ export default {
     },
     // instace.setOption 
     pathOption: [Object, Array],
-    option: Object, 
+    option: Object,
     // general config
     textStyle: Object,
     title: Object,
@@ -79,8 +79,8 @@ export default {
     xAxis: [Object, Array],
     yAxis: [Object, Array],
     series: [Object, Array],
-    axisPointer: Object,        
-    dataset: { type: [Object, Array], default () { return {} } }, // option.dataSet
+    axisPointer: Object,
+    dataset: { type: [Object, Array], default() { return {} } }, // option.dataSet
     colors: Array, // echarts.option.color
     backgroundColor: [Object, String],
     toolbox: { type: [Object, Array] },
@@ -94,13 +94,14 @@ export default {
     chartInstance: null,
     clientWidth: null,
     allowedOptions: [
-      'textStyle', 'title', 'legend', 'xAxis', 
-      'yAxis', 'series', 'tooltip', 'axisPointer', 
+      'textStyle', 'title', 'legend', 'xAxis',
+      'yAxis', 'series', 'tooltip', 'axisPointer',
       'grid', 'dataset', 'colors', 'backgroundColor'
     ],
     _defaultOption: {
       tooltip: {
         show: true,
+        formatter: '{b0}: {d}%'
       },
       title: {
         show: true,
@@ -132,7 +133,7 @@ export default {
         },
         axisLabel: {
           show: false
-        }          
+        }
       },
       yAxis: {
         show: true,
@@ -146,7 +147,7 @@ export default {
         axisLabel: {
           show: false,
           // color: 'rgba(0, 0, 0 , .54)'
-        },        
+        },
         splitLine: {
           lineStyle: {
             type: 'dashed'
@@ -159,7 +160,7 @@ export default {
             color: 'rgba(0, 0, 0 , .54)',
             type: 'dashed'
           }
-        }        
+        }
       },
       series: [{
         type: 'line'
@@ -168,7 +169,7 @@ export default {
     }
   }),
   computed: {
-    canvasStyle () {
+    canvasStyle() {
       return {
         width: this.width,
         height: this.height,
@@ -177,7 +178,7 @@ export default {
 
   },
   methods: {
-    init () {
+    init() {
       const { widthChangeDelay } = this;
       // set 
       if (this.pathOption) {
@@ -191,23 +192,23 @@ export default {
         setTimeout(_ => {
           this.chartInstance.resize();
         }, this.widthChangeDelay);
-      });      
+      });
     },
 
 
-    resize () {
+    resize() {
       this.chartInstance.resize();
     },
-    clean () {
+    clean() {
       window.removeEventListener('resize', this.chartInstance.resize);
       this.chartInstance.clear();
-    }    
+    }
   },
-  mounted () {
+  mounted() {
     this.init();
   },
 
-  beforeDestroy () {
+  beforeDestroy() {
     this.clean();
   }
 };

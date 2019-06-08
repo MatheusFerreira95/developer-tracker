@@ -11,7 +11,7 @@ public class Developer {
 	public Integer numActiveDays;
 	public String firstCommit;
 	public String lastCommit;
-	public List<NumFileProgrammingLanguage> numFileProgrammingLanguageList;
+	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList;
 	public String avatar;
 
 }

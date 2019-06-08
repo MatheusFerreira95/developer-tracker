@@ -71,12 +71,12 @@
           </v-flex>
 
           <!-- Grafico Linguagem de programacao-->
-          <v-flex lg5 sm12 xs12 v-if="project.numFileProgrammingLanguageList.length > 0">
+          <v-flex lg5 sm12 xs12 v-if="project.numLocProgrammingLanguageList.length > 0">
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
                 <e-chart
                   :path-option="[
-                  ['dataset.source', project.numFileProgrammingLanguageList],
+                  ['dataset.source', project.numLocProgrammingLanguageList],
                   ['legend.bottom', '0'],
                   ['color', colors],
                   ['xAxis.show', false],
@@ -128,7 +128,7 @@
                       <v-card flat>
                         <v-card-text>Active Days: {{props.item.numActiveDays}}</v-card-text>
                         <v-card-text>LOC: {{props.item.numLoc}}</v-card-text>
-                        <!-- <v-card-text>Commits per type file: {{props.item.numFileProgrammingLanguageList}}</v-card-text> -->
+                        <!-- <v-card-text>Commits per type file: {{props.item.numLocProgrammingLanguageList}}</v-card-text> -->
                       </v-card>
                     </template>
                   </v-data-table>
@@ -177,7 +177,7 @@ export default {
       numActiveDays: 0,
       firstCommit: "",
       LastCommit: "",
-      numFileProgrammingLanguageList: [],
+      numLocProgrammingLanguageList: [],
       developerList: [],
       localRepository: ""
     },
@@ -228,7 +228,7 @@ export default {
 
       this.colors = this.util
         .getColors()
-        .slice(0, this.project.numFileProgrammingLanguageList.length);
+        .slice(0, this.project.numLocProgrammingLanguageList.length);
 
       this.tween("numCommits");
       this.tween("numLoc");
