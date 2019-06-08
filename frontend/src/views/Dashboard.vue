@@ -71,7 +71,7 @@
           </v-flex>
 
           <!-- Grafico Linguagem de programacao-->
-          <v-flex lg5 sm12 xs12 v-if="project.numLocProgrammingLanguageList.length > 0">
+          <v-flex lg5 sm12 xs12>
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
                 <e-chart
@@ -87,7 +87,9 @@
                 ]"
                   height="400px"
                   width="100%"
+                  v-if="project.numLocProgrammingLanguageList.length > 0"
                 ></e-chart>
+                <div v-else>Does not apply to this project</div>
               </div>
             </v-widget>
           </v-flex>
