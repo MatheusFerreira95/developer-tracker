@@ -65,7 +65,8 @@ public class Project {
 			}
 		}
 
-		if (!outputFileCreated) return;
+		if (!outputFileCreated)
+			return;
 
 		while (!outpupFile.exists()) {
 
@@ -131,6 +132,26 @@ public class Project {
 		}
 	}
 
+	private void calcDeveloperList() throws IOException, InterruptedException {
+
+		GitOutput gitOutput = Git.runCommand(this, "git", "shortlog", "-sne");
+		
+		Integer avatar = 0;
+		for (String line : gitOutput.outputList) {
+		
+			String email = line.substring(line.indexOf("<") + 1, line.indexOf(">"));
+			line = line.substring(0, line.indexOf("<")); //remove email
+			
+			String[] lineCutSpaces = line.split("\\s+", 1);
+			Integer numCommits = Integer.parseInt(lineCutSpaces[0]);
+			String name = lineCutSpaces[1];
+
+			this.developerList.add(new Developer(name, email, numCommits, avatar++));
+		}
+		
+
+	}
+
 	public static Project buildOverview(Filter filter) throws IOException, InterruptedException {
 
 		Project project = Project.builderProject(filter);
@@ -139,6 +160,7 @@ public class Project {
 		project.calcNumLoc();
 		project.calcNumActiveDaysAndFirstCommitAndLastCommit();
 		project.calcNumLocProgrammingLanguageList();
+//		project.calcDeveloperList();
 
 		return project;
 

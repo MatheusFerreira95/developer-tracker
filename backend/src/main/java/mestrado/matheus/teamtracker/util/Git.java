@@ -74,6 +74,33 @@ public class Git {
 		return gitOutput;
 	}
 
+	public static GitOutput runCommand(Project project, String ...commands) throws IOException, InterruptedException {
+
+		GitOutput gitOutput = new GitOutput();
+		
+		validateLocalRepository(project.localRepository);
+
+		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
+		Process p = pb.start();
+
+		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
+		StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", gitOutput);
+		outputGobbler.start();
+		errorGobbler.start();
+
+		int exit = p.waitFor();
+
+		errorGobbler.join();
+		outputGobbler.join();
+
+		if (exit != 0) {
+
+			throw new AssertionError(String.format("runCommand returned %d", exit));
+		}
+
+		return gitOutput;
+	}
+
 	private static void validateLocalRepository(String localRepository) {
 
 		Path pathLocalRepository = Paths.get(localRepository);

@@ -13,5 +13,14 @@ public class Developer {
 	public String lastCommit;
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList;
 	public Integer avatar;
+	
+	public Developer(String name, String email, Integer numCommits, Integer avatar) {
+		this.name = name;
+		this.email = email;
+		this.numCommits = numCommits;
+		this.avatar = avatar;
+	}
+	
+	
 
 }
