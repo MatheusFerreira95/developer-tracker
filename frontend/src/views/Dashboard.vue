@@ -118,7 +118,9 @@
                         <td>
                           <v-icon dark right :color="util.getColors()[props.item.avatar]">person</v-icon>
                         </td>
-                        <td class="text-xs-left">{{ props.item.name + "(" + props.item.email + ")"}}</td>
+                        <td
+                          class="text-xs-left"
+                        >{{ props.item.name + " (" + props.item.email + ")"}}</td>
                         <td class="text-xs-left">{{ props.item.numCommits }}</td>
                       </tr>
                     </template>
@@ -128,7 +130,7 @@
                         <v-card-text>Active Days: {{props.item.numActiveDays}}</v-card-text>
                         <v-card-text>First commit: {{props.item.firstCommit}}</v-card-text>
                         <v-card-text>Last commit: {{props.item.lastCommit}}</v-card-text>
-                        <!-- <v-card-text>Commits per type file: {{props.item.numLocProgrammingLanguageList}}</v-card-text> -->
+                        <v-card-text>Commits per type file: {{props.item.numLocProgrammingLanguageList}}</v-card-text>
                       </v-card>
                     </template>
                   </v-data-table>

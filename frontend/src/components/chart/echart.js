@@ -101,7 +101,7 @@ export default {
     _defaultOption: {
       tooltip: {
         show: true,
-        formatter: '{b0}: {d}%'
+        formatter: '{b0}: {d}% (LOC)'
       },
       title: {
         show: true,
