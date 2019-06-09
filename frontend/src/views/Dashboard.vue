@@ -226,6 +226,8 @@ export default {
         .getColors()
         .slice(0, this.project.numLocProgrammingLanguageList.length);
 
+      window.getApp.$emit("UPDATE_CHART");
+
       this.tween("numCommits");
       this.tween("numLoc");
       this.tween("numActiveDays");

@@ -59,6 +59,14 @@ export default {
     return h('div', data);
   },
 
+  created() {
+    window.getApp.$on("UPDATE_CHART", () => {
+      this.clean();
+      this.resize();
+      this.init();
+    });
+  },
+
   props: {
     // args of  ECharts.init(dom, theme, opts)
     width: { type: String, default: 'auto' },
