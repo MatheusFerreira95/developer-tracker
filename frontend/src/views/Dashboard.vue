@@ -71,7 +71,7 @@
           </v-flex>
 
           <!-- Grafico Linguagem de programacao-->
-          <v-flex lg7 sm12 xs12>
+          <v-flex lg6 sm12 xs12>
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
                 <e-chart
@@ -95,7 +95,7 @@
           </v-flex>
 
           <!-- desenvolvedores -->
-          <v-flex lg5 sm12 xs12>
+          <v-flex lg6 sm12 xs12>
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
-import mestrado.matheus.teamtracker.util.LanguageExcludeCLOC;
+import mestrado.matheus.teamtracker.util.CLOC;
 
 public class Project {
 
@@ -50,86 +50,8 @@ public class Project {
 
 	private void calcNumLocProgrammingLanguageList() throws IOException, InterruptedException {
 
-		// Requer https://github.com/AlDanial/cloc/blob/master/cloc instalada
+		CLOC.buildNumLocProgrammingLanguageList(this);
 
-		GitOutput gitOutput = Git.runCommand(this,
-				"cloc ./ --json --exclude-lang=\"" + LanguageExcludeCLOC.ALL + "\" --out cloc-out.txt");
-
-		File outpupFile = new File(this.localRepository + "/cloc-out.txt");
-
-		Boolean outputFileCreated = false;
-		for (String line : gitOutput.outputList) {
-			if (line.contains("cloc-out.txt")) {
-				outputFileCreated = true;
-				break;
-			}
-		}
-
-		if (!outputFileCreated)
-			return;
-
-		while (!outpupFile.exists()) {
-
-			System.out.println("loading...");
-		}
-
-		Scanner scanner = new Scanner(outpupFile);
-
-		while (scanner.hasNextLine()) {
-			String line = scanner.nextLine();
-
-			String nameProgrammingLanguage = line.substring(1, line.lastIndexOf("\""));
-			if (!line.contains("{") || line.contains("header"))
-				continue;
-
-			String lastCaracter = ",";
-			if (!nameProgrammingLanguage.contentEquals("SUM")) {
-
-				lastCaracter = "}";
-				line = scanner.nextLine();
-
-			}
-
-			line = scanner.nextLine();
-			String blank = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(","));
-
-			line = scanner.nextLine();
-			String comment = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(","));
-
-			line = scanner.nextLine();
-			String code = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(lastCaracter));
-
-			Integer sumLOC = Integer.parseInt(blank) + Integer.parseInt(comment) + Integer.parseInt(code);
-
-			this.numLocProgrammingLanguageList.add(new NumLocProgrammingLanguage(nameProgrammingLanguage, sumLOC));
-		}
-
-		Integer sumTotal = this.numLocProgrammingLanguageList
-				.get(this.numLocProgrammingLanguageList.size() - 1).percentLOC;
-		this.numLocProgrammingLanguageList.remove(this.numLocProgrammingLanguageList.size() - 1);
-
-		Integer hightTotal = 0;
-		Integer index = 0;
-
-		// recalculando porcentagem e excluindo os insignificantes
-		for (NumLocProgrammingLanguage numLocProgrammingLanguage : this.numLocProgrammingLanguageList) {
-
-			index++;
-
-			if (hightTotal < 93) {
-
-				numLocProgrammingLanguage.percentLOC = numLocProgrammingLanguage.percentLOC * 100 / sumTotal;
-				hightTotal += numLocProgrammingLanguage.percentLOC;
-
-			} else {
-
-				this.numLocProgrammingLanguageList.add(index - 1,
-						new NumLocProgrammingLanguage("Others", 100 - hightTotal));
-				this.numLocProgrammingLanguageList = this.numLocProgrammingLanguageList.subList(0, index);
-				break;
-			}
-
-		}
 	}
 
 	private void calcDeveloperList() throws IOException, InterruptedException {
@@ -148,20 +70,21 @@ public class Project {
 
 			Developer dev = new Developer(name, email, numCommits, avatar++);
 
-			if (this.developerList.contains(dev)) {
+//			descomente if/else para usar normalização de devs
+//			if (this.developerList.contains(dev)) {
+//
+//				for (Developer developer : this.developerList) {
+//
+//					if (developer.equals(dev)) {
+//
+//						developer.numCommits += dev.numCommits;
+//					}
+//				}
+//
+//			} else {
 
-				for (Developer developer : this.developerList) {
-
-					if (developer.equals(dev)) {
-
-						developer.numCommits += dev.numCommits;
-					}
-				}
-
-			} else {
-
-				this.developerList.add(dev);
-			}
+			this.developerList.add(dev);
+//			}
 		}
 	}
 
