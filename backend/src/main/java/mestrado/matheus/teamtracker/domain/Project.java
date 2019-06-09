@@ -134,22 +134,35 @@ public class Project {
 
 	private void calcDeveloperList() throws IOException, InterruptedException {
 
-		GitOutput gitOutput = Git.runCommand(this, "git", "shortlog", "-sne");
-		
+		GitOutput gitOutput = Git.runCommand(this, "git log | grep Author: | sort | uniq -c | sort -nr");
+
 		Integer avatar = 0;
 		for (String line : gitOutput.outputList) {
-		
+
 			String email = line.substring(line.indexOf("<") + 1, line.indexOf(">"));
-			line = line.substring(0, line.indexOf("<")); //remove email
-			
-			String[] lineCutSpaces = line.split("\\s+", 1);
-			Integer numCommits = Integer.parseInt(lineCutSpaces[0]);
-			String name = lineCutSpaces[1];
+			line = line.substring(0, line.indexOf("<")); // remove email
 
-			this.developerList.add(new Developer(name, email, numCommits, avatar++));
+			String name = line.substring(line.indexOf("Author: ") + 8, line.lastIndexOf(" "));
+
+			Integer numCommits = Integer.parseInt(line.substring(0, line.indexOf(" Author:")).trim());
+
+			Developer dev = new Developer(name, email, numCommits, avatar++);
+
+			if (this.developerList.contains(dev)) {
+
+				for (Developer developer : this.developerList) {
+
+					if (developer.equals(dev)) {
+
+						developer.numCommits += dev.numCommits;
+					}
+				}
+
+			} else {
+
+				this.developerList.add(dev);
+			}
 		}
-		
-
 	}
 
 	public static Project buildOverview(Filter filter) throws IOException, InterruptedException {
@@ -160,7 +173,7 @@ public class Project {
 		project.calcNumLoc();
 		project.calcNumActiveDaysAndFirstCommitAndLastCommit();
 		project.calcNumLocProgrammingLanguageList();
-//		project.calcDeveloperList();
+		project.calcDeveloperList();
 
 		return project;
 

@@ -26,9 +26,9 @@ public class Git {
 			project = new Project(getLocalRepository(remoteRepository));
 
 			runCommand(project, "git clone " + remoteRepository);
-			
-			project.localRepository = project.localRepository += "/" + project.localRepository.substring(project.localRepository.lastIndexOf("/") + 1,
-					project.localRepository.lastIndexOf("-"));
+
+			project.localRepository = project.localRepository += "/" + project.localRepository
+					.substring(project.localRepository.lastIndexOf("/") + 1, project.localRepository.lastIndexOf("-"));
 
 		} catch (IOException e) {
 
@@ -45,7 +45,7 @@ public class Git {
 	public static GitOutput runCommand(Project project, String command) throws IOException, InterruptedException {
 
 		GitOutput gitOutput = new GitOutput();
-		
+
 		validateLocalRepository(project.localRepository);
 
 		List<String> commands = new ArrayList<String>();
@@ -74,31 +74,80 @@ public class Git {
 		return gitOutput;
 	}
 
-	public static GitOutput runCommand(Project project, String ...commands) throws IOException, InterruptedException {
+	public static void runCommand(Project project, String command, File outputFile)
+			throws IOException, InterruptedException {
 
 		GitOutput gitOutput = new GitOutput();
-		
+
+		List<String> commands = new ArrayList<String>();
+		commands.add("/bin/sh");
+		commands.add("-c");
+		commands.add(command);
+
 		validateLocalRepository(project.localRepository);
 
 		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
 		Process p = pb.start();
 
-		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
-		StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", gitOutput);
-		outputGobbler.start();
-		errorGobbler.start();
+		InputStream is = p.getInputStream();
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
+		String line = new String();
+		Boolean ok = true;
+		try {
+			while ((line = br.readLine()) != null) {
+				System.out.println(line);
+				ok = line.endsWith("0") ? Boolean.valueOf(true) : Boolean.valueOf(false);
+			}
+			if (ok.booleanValue()) {
+				System.out.println("================fim");
 
-		int exit = p.waitFor();
+			} else {
+				System.out.println("================erro");
+			}
+		} catch (IOException e2) {
+			System.out.println("================erro mais ainda");
 
-		errorGobbler.join();
-		outputGobbler.join();
-
-		if (exit != 0) {
-
-			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
 
-		return gitOutput;
+	}
+	
+
+	public static void runtime(Project project, String command, File outputFile)
+			throws IOException, InterruptedException {
+
+		GitOutput gitOutput = new GitOutput();
+
+		List<String> commands = new ArrayList<String>();
+		commands.add("/bin/sh");
+		commands.add("-c");
+		commands.add(command);
+
+		validateLocalRepository(project.localRepository);
+		
+		ProcessBuilder builder = new ProcessBuilder(commands).directory(new File(project.localRepository));
+		builder.redirectErrorStream(true);
+		final Process process = builder.start();
+
+		// Watch the process
+		watch(process);
+
+	}
+	
+	private static void watch(final Process process) {
+	    new Thread() {
+	        public void run() {
+	            BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream()));
+	            String line = null; 
+	            try {
+	                while ((line = input.readLine()) != null) {
+	                    System.out.println("+++" + line);
+	                }
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }.start();
 	}
 
 	private static void validateLocalRepository(String localRepository) {

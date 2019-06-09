@@ -118,7 +118,7 @@
                         <td>
                           <v-icon dark right :color="util.getColors()[props.item.avatar]">person</v-icon>
                         </td>
-                        <td class="text-xs-left">{{ props.item.name }} - {{props.item.email}}</td>
+                        <td class="text-xs-left">{{ props.item.name + "(" + props.item.email + ")"}}</td>
                         <td class="text-xs-left">{{ props.item.numCommits }}</td>
                       </tr>
                     </template>
@@ -189,7 +189,7 @@ export default {
         sortable: false,
         value: "avatar"
       },
-      { text: "Name - Email", value: "name" },
+      { text: "Name (e-mail)", value: "name" },
       { text: "Commits", value: "commits" }
     ]
   }),
