@@ -1,0 +1,40 @@
+FILE: .gitignore
+      3 Eric Ferraiuolo
+FILE: .npmignore
+      6 Eric Ferraiuolo
+FILE: .travis.yml
+      4 Eric Ferraiuolo
+      1 Ryuichi Okumura
+FILE: LICENSE
+     27 Eric Ferraiuolo
+FILE: README.md
+     97 Eric Ferraiuolo
+     16 Bruno Herfst
+     11 Nico Jansen
+      5 Tim Perry
+      2 Ethan Resnick
+      2 Caridy Patino
+      1 Peter Marton
+FILE: index.js
+     88 Eric Ferraiuolo
+     28 Ruslan Boliev
+     22 Tim Perry
+     17 Ethan Resnick
+      8 Edd Yerburgh
+      4 Bruno Herfst
+FILE: package-lock.json
+    476 sbertal
+    106 Ryuichi Okumura
+FILE: package.json
+     28 Eric Ferraiuolo
+      4 Ryuichi Okumura
+      1 sbertal
+FILE: test/benchmark/serialize.js
+     45 Eric Ferraiuolo
+      6 Bruno Herfst
+FILE: test/unit/serialize.js
+    216 Eric Ferraiuolo
+     44 Tim Perry
+     21 Ethan Resnick
+     18 Bruno Herfst
+     16 Ruslan Boliev

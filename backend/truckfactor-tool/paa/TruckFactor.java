@@ -23,7 +23,7 @@ class TruckFactor {
 
 	static Map<String, List<String>> authors = new HashMap<String, List<String>>();
 	static Map<String, List<String>> files = new HashMap<String, List<String>>();
-	static List<String> instances = new ArrayList<String>(Arrays.asList("input.txt", "input2.txt"));
+	static List<String> instances = new ArrayList<String>(Arrays.asList("resque.txt"));
 	static String htmlContent = "";
 	static Instant startReadInputFile;
 	static Instant finishReadInputFile;
@@ -250,26 +250,26 @@ class TruckFactor {
 
 		String colorBarTruckFactor = "";
 		for (String author : authorsTF) {
-			colorBarTruckFactor += "'rgba(255, 99, 132, 0.2)',";
+			colorBarTruckFactor += "\"rgba(255, 99, 132, 0.2)\",";
 		}
 
 		String authorsHtml = "";
 		String dataHtml = "";
 		for (Map.Entry<String, List<String>> author : authors.entrySet()) {
-			authorsHtml += "'" + author.getKey() + "',";
-			dataHtml += "'" + author.getValue().size() + "',";
+			authorsHtml += "\"" + author.getKey() + "\",";
+			dataHtml += "\"" + author.getValue().size() + "\",";
 		}
 
-		String chartsHtml = "<div class='flex-container'> <div> <canvas id='" + instance
-				+ "' width='500' height='300'></canvas> </div>";
-		String datailHtml = "<div class='detail'> <p>Truck Factor: " + authorsTF.size() + "</p> <p>Time Grredy Truck Factor: "
+		String chartsHtml = "<div class=\"flex-container\"> <div> <canvas id=\"" + instance
+				+ "\" width=\"900\" height=\"300\"></canvas> </div>";
+		String datailHtml = "<div class=\"detail\"> <p>Truck Factor: " + authorsTF.size() + "</p> <p>Time Grredy Truck Factor: "
 				+ timeGredyTruckFactor + " ms</p> <p>Time Order: " + timeOrder + " ms</p> <p>Time Read Instance: "
 				+ timeReadInputFile + " ms</p> </div> </div>";
-		String chartsScript = " var ctx = document.getElementById('" + instance
-				+ "'); var myChart = new Chart(ctx, { type: 'bar',data: { labels: [" + authorsHtml
-				+ "], datasets: [{ label: 'Truck Factor for " + instance + "', data: [" + dataHtml + "], backgroundColor: ["
+		String chartsScript = " var ctx = document.getElementById(\"" + instance
+				+ "\"); var myChart = new Chart(ctx, { type: \"bar\",data: { labels: [" + authorsHtml
+				+ "], datasets: [{ label: \"Truck Factor for " + instance + "\", data: [" + dataHtml + "], backgroundColor: ["
 				+ colorBarTruckFactor
-				+ "], borderWidth: 1 }] }, options: { tooltips: { callbacks: { label: function(tooltipItem, data) { return 'Num files that author: ' + data['datasets'][0]['data'][tooltipItem['index']]; } },}, responsive: false, scales: { xAxes: [{ ticks: { maxRotation: 90, minRotation: 80 } }], yAxes: [{ ticks: { beginAtZero: true } }] } } });";
+				+ "], borderWidth: 1 }] }, options: { tooltips: { callbacks: { label: function(tooltipItem, data) { return \"Num files that author: \" + data[\"datasets\"][0][\"data\"][tooltipItem[\"index\"]]; } },}, responsive: false, scales: { xAxes: [{ ticks: { maxRotation: 90, minRotation: 80 } }], yAxes: [{ ticks: { beginAtZero: true } }] } } });";
 
 		String divider = "<br><hr><br>";
 
@@ -281,11 +281,11 @@ class TruckFactor {
 	 * excução
 	 **/
 	private static void showHtmlFile(long timeElapsed) throws IOException {
-		String style = "<style> .flex-container { display: flex; flex-wrap: nowrap; justify-content: center;} .flex-container > div { width: 500px; margin: 50px; text-align: center;} .detail {border: 1px solid #aaa; width:300px !important; height:151px;} body {text-align:center; min-width: 900px; color: #555} </style>";
+		String style = "<style> .flex-container { display: flex; flex-wrap: nowrap; justify-content: center;} .flex-container > div { width: 900px; margin: 20px; text-align: center;} .detail {border: 1px solid #aaa; width:300px !important; height:151px;} body {text-align:center; min-width: 900px; color: #555} </style>";
 		String header = "<h3>Truck Factor - Matheus Silva Ferreira</h3> <p>Num instances: " + instances.size()
 				+ "</p> <p>Total Time: " + timeElapsed + " ms</p>";
-		String start = "<!DOCTYPE html> <html> <head> <meta charset='UTF-8'> <title>Truck Factor</title> " + style
-				+ " </head> <body> <script src='Chart.min.js'></script> " + header;
+		String start = "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Truck Factor</title> " + style
+				+ " </head> <body> <script src=\"Chart.min.js\"></script> " + header;
 		String end = "</body> </html>";
 
 		String codeHtml = start + htmlContent + end;

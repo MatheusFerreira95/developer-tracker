@@ -1,0 +1,6883 @@
+FILE: .gitattributes
+Michele Locati
+Jordi Boggiano
+FILE: .gitignore
+Marc Abramowitz
+Matt Lehner
+Jordi Boggiano
+Jonathan A. Schweder
+FILE: .php_cs
+Jordi Boggiano
+FILE: .travis.yml
+pborreli
+Jordi Boggiano
+Mponos George
+Andrey Bolonin
+Jordi Boggiano
+Markus Staab
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+FILE: CHANGELOG.md
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+klemens
+Jordi Boggiano
+klemens
+Jordi Boggiano
+klemens
+Jordi Boggiano
+FILE: LICENSE
+Jeroen Stolp
+Jordi Boggiano
+FILE: README.md
+Jordi Boggiano
+Andrea Giuliano
+Jordi Boggiano
+Pascal Borreli
+Jordi Boggiano
+Oskar Stark
+Jordi Boggiano
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Jonathan André Schweder
+Marc Abramowitz
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Samuel NELA
+Jeroen van der Gulik
+Jeroen v.d. Gulik
+Jordi Boggiano
+Paul M. Jones
+Filip Procházka
+Jordi Boggiano
+William Skates
+Adam Meech
+ilyaplot
+Marco Bunge
+Jordi Boggiano
+Marc Abramowitz
+Jordi Boggiano
+Jos Ahrens
+Jordi Boggiano
+FILE: UPGRADE.md
+Jordi Boggiano
+FILE: composer.json
+Jordi Boggiano
+Andreas Möller
+Grégoire Paris
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Andreas Möller
+Jordi Boggiano
+Benjamin Zikarsky
+dasmfm
+Markus Bachmann
+skymeyer
+Avtandil Kikabidze
+Grégoire Paris
+Jordi Boggiano
+Jeremy Mikola
+Paul Statezny
+barbushin
+Jordi Boggiano
+Henrique Moody
+Hari K T
+Jordi Boggiano
+Hari K T
+Jordi Boggiano
+Bryan Davis
+Andreas Möller
+Jordi Boggiano
+FILE: doc/01-usage.md
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Peter Kokot
+Jordi Boggiano
+Peter Kokot
+Jordi Boggiano
+Christophe Coevoet
+StevenW
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+klemens
+Christophe Coevoet
+StevenW
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Peter Dietrich
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Samuel NELA
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Tomasz Ducin
+Jordi Boggiano
+Tomasz Ducin
+Pierre Tachoire
+Tomasz Ducin
+Jordi Boggiano
+FILE: doc/02-handlers-formatters-processors.md
+Jordi Boggiano
+Westin Shafer
+Jordi Boggiano
+Westin Shafer
+Jordi Boggiano
+Gabriel Machado
+Julien Breux
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Roel Harbers
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Jonathan André Schweder
+Jordi Boggiano
+mahone3297
+Jordi Boggiano
+FILE: doc/03-utilities.md
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+FILE: doc/04-extending.md
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Toni Uebernickel
+Christophe Coevoet
+Markus Staab
+Christophe Coevoet
+StevenW
+Christophe Coevoet
+Jordi Boggiano
+FILE: doc/message-structure.md
+Remon van de Kamp
+Michael Dwyer
+Remon van de Kamp
+FILE: doc/sockets.md
+Pablo Belloc
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+StevenW
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+FILE: phpunit.xml.dist
+Jordi Boggiano
+DQNEO
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+FILE: src/Monolog/DateTimeImmutable.php
+Jordi Boggiano
+	 * @Menno Holtkamp
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+FILE: src/Monolog/ErrorHandler.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Adam Kiss
+Jordi Boggiano
+Damian Mooyman
+Jordi Boggiano
+Aerendir
+Jordi Boggiano
+Adam Kiss
+Jordi Boggiano
+David Neilsen
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+David Neilsen
+Jordi Boggiano
+David Neilsen
+Jordi Boggiano
+George Mponos
+Hinrik Örn Sigurðsson
+Jordi Boggiano
+Adam Kiss
+Jordi Boggiano
+Lesnykh Ilia
+Jordi Boggiano
+Damian Mooyman
+Jordi Boggiano
+Damian Mooyman
+Jordi Boggiano
+David Neilsen
+Jordi Boggiano
+FILE: src/Monolog/Formatter/ChromePHPFormatter.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+pomaxa
+Christophe Coevoet
+pomaxa
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+FILE: src/Monolog/Formatter/ElasticaFormatter.php
+Jordi Boggiano
+skymeyer
+	 * @Jelle Vink <jelle.vink@gmail.com>
+skymeyer
+Jordi Boggiano
+skymeyer
+Malte Blättermann
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+FILE: src/Monolog/Formatter/ElasticsearchFormatter.php
+Avtandil Kikabidze
+	 * @Avtandil Kikabidze <akalongman@gmail.com>
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+FILE: src/Monolog/Formatter/FlowdockFormatter.php
+Jordi Boggiano
+Dominik Liebler
+	 * @Dominik Liebler <liebler.dominik@gmail.com>
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+FILE: src/Monolog/Formatter/FluentdFormatter.php
+Jordi Boggiano
+fordnox
+	 * @Andrius Putna <fordnox@gmail.com>
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+tnucera
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+FILE: src/Monolog/Formatter/FormatterInterface.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+FILE: src/Monolog/Formatter/GelfMessageFormatter.php
+Jordi Boggiano
+Matt Lehner
+Marc Abramowitz
+Mike Schinkel
+Matt Lehner
+	 * @Matt Lehner <mlehner@gmail.com>
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Enleur
+Matt Lehner
+Jordi Boggiano
+Matt Labrum
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Enleur
+Jordi Boggiano
+Matt Lehner
+Leny BERNARD
+Enleur
+Jordi Boggiano
+Matt Lehner
+Leny BERNARD
+Enleur
+Jordi Boggiano
+Matt Lehner
+Thomas Ploch
+Tarjei Huse
+Matt Lehner
+FILE: src/Monolog/Formatter/HtmlFormatter.php
+Jordi Boggiano
+Tiago Brito
+alsar
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+	 * @Tiago Brito <tlfbrito@gmail.com>
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+George Mponos
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Matthieu Verrecchia
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+George Mponos
+Tiago Brito
+Jordi Boggiano
+Jildert Miedema
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Jildert Miedema
+Tiago Brito
+Jordi Boggiano
+Matthieu Verrecchia
+Jordi Boggiano
+Matthieu Verrecchia
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jordi Boggiano
+Tiago Brito
+Jeroen Thora
+Tiago Brito
+FILE: src/Monolog/Formatter/JsonFormatter.php
+Jordi Boggiano
+Nerijus Eimanavičius
+Javier Spagnoletti
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Ala Eddine Khefifi
+Lesnykh Ilia
+Javier Spagnoletti
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Pascal Borreli
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Javier Spagnoletti
+Adam Pancutt
+Jordi Boggiano
+Christophe Coevoet
+Javier Spagnoletti
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Tom Rochette
+Nils Adermann
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Minh-Quan TRAN
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+FILE: src/Monolog/Formatter/LineFormatter.php
+Jordi Boggiano
+Nicolas Grekas
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Gunnar Lium
+Dawid Nowak
+Jordi Boggiano
+Christophe Coevoet
+George Mponos
+Christophe Coevoet
+Jordi Boggiano
+Gunnar Lium
+Dawid Nowak
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Matthias Pigulla
+Sergey Rabochiy
+Matthias Pigulla
+Sergey Rabochiy
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Sergey Rabochiy
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Gunnar Lium
+Jordi Boggiano
+Gunnar Lium
+Jordi Boggiano
+Gunnar Lium
+Jordi Boggiano
+Gunnar Lium
+Matthias Pigulla
+andyexeter
+Matthias Pigulla
+Jordi Boggiano
+FILE: src/Monolog/Formatter/LogglyFormatter.php
+Jordi Boggiano
+Adam Pancutt
+	 * @Adam Pancutt <adam@pancutt.com>
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Diego Saint Esteben
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+FILE: src/Monolog/Formatter/LogmaticFormatter.php
+Julien Breux
+	 * @Julien Breux <julien.breux@gmail.com>
+Julien Breux
+Jordi Boggiano
+Guillaume Polaert
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Guillaume Polaert
+Julien Breux
+Guillaume Polaert
+Julien Breux
+Jordi Boggiano
+Guillaume Polaert
+Julien Breux
+FILE: src/Monolog/Formatter/LogstashFormatter.php
+Jordi Boggiano
+Tim Mower
+Jordi Boggiano
+Florent Viel
+Tim Mower
+	 * @Tim Mower <timothy.mower@gmail.com>
+Tim Mower
+Carson Full
+Tim Mower
+Carson Full
+Tim Mower
+Carson Full
+Tim Mower
+Carson Full
+Tim Mower
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Tim Mower
+Albert Casademont
+Tim Mower
+Jordi Boggiano
+Tim Mower
+Carson Full
+Tim Mower
+Jordi Boggiano
+Tim Mower
+Oliver Byford
+Bruno Pedro
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Bruno Pedro
+Benjamin Pentzold
+Jordi Boggiano
+Benjamin Pentzold
+Oliver Byford
+Bruno Pedro
+Carson Full
+Oliver Byford
+Bruno Pedro
+Carson Full
+Oliver Byford
+Jordi Boggiano
+Tim Mower
+FILE: src/Monolog/Formatter/MongoDBFormatter.php
+Jordi Boggiano
+Florian Plattner
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Florian Plattner
+	 * @Florian Plattner <me@florianplattner.de>
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Mark Garrett
+Florian Plattner
+Mark Garrett
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Nikola Posa
+Jordi Boggiano
+Nikola Posa
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Nikola Posa
+Jordi Boggiano
+Nikola Posa
+Florian Plattner
+FILE: src/Monolog/Formatter/NormalizerFormatter.php
+Jordi Boggiano
+Mponos George
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Mponos George
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Mponos George
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Minh-Quan TRAN
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Anton Sergeyev
+Jordi Boggiano
+Dmitrii Raev
+Jordi Boggiano
+Mike Sherov
+Jordi Boggiano
+Francis Besset
+Jordi Boggiano
+Thomas Ploch
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Mponos George
+Bryan Davis
+Elan Ruusamäe
+klemens
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+FILE: src/Monolog/Formatter/ScalarFormatter.php
+Jordi Boggiano
+adlawson
+	 * @Andrew Lawson <adlawson@gmail.com>
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+FILE: src/Monolog/Formatter/WildfireFormatter.php
+Jordi Boggiano
+Eric Clemmons
+	 * @Eric Clemmons (@ericclemmons) <eric@uxdriven.com>
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Kirill chEbba Chebunin
+	 * @Kirill chEbba Chebunin <iam@chebba.org>
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Christophe Coevoet
+Kirill chEbba Chebunin
+Christophe Coevoet
+Kirill chEbba Chebunin
+Christophe Coevoet
+Jordi Boggiano
+Benjamin Grandfond
+Jordi Boggiano
+Benjamin Grandfond
+Jordi Boggiano
+Benjamin Grandfond
+Jordi Boggiano
+Witold Wasiczko
+Jordi Boggiano
+Witold Wasiczko
+Eric Clemmons
+Jordi Boggiano
+Witold Wasiczko
+Christophe Coevoet
+Witold Wasiczko
+Jordi Boggiano
+Witold Wasiczko
+Jordi Boggiano
+Benjamin Grandfond
+Eric Clemmons
+Christophe Coevoet
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+FILE: src/Monolog/Handler/AbstractHandler.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Martin Meredith
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Erik Booij
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Erik Booij
+Christophe Coevoet
+Jordi Boggiano
+FILE: src/Monolog/Handler/AbstractProcessingHandler.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Brian Reavis
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+FILE: src/Monolog/Handler/AbstractSyslogHandler.php
+Jordi Boggiano
+FILE: src/Monolog/Handler/AmqpHandler.php
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+Andrew Tch
+Jordi Boggiano
+Andrew Tch
+pomaxa
+Andrew Tch
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+Andrew Tch
+pomaxa
+Jordi Boggiano
+pomaxa
+Ronald Drenth
+Andrew Tch
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Jean-Baptiste Nahan
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+Jeroen Thora
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+Jordi Boggiano
+Ronald Drenth
+pomaxa
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+FILE: src/Monolog/Handler/BrowserConsoleHandler.php
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+	 * @Olivier Poitrey <rs@dailymotion.com>
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Pascal Borreli
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jakub Piasecki
+Olivier Poitrey
+Jakub Piasecki
+Jordi Boggiano
+Olivier Poitrey
+Daniel Blok
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jakub Piasecki
+Jordi Boggiano
+Olivier Poitrey
+Jakub Piasecki
+Jordi Boggiano
+Jakub Piasecki
+Jordi Boggiano
+Jakub Piasecki
+Daniel Blok
+Grégoire Pineau
+Olivier Poitrey
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Jakub Piasecki
+Olivier Poitrey
+Jakub Piasecki
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Jakub Piasecki
+Jordi Boggiano
+Olivier Poitrey
+Jakub Piasecki
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jakub Piasecki
+Olivier Poitrey
+Jakub Piasecki
+Olivier Poitrey
+Jakub Piasecki
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Jakub Piasecki
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+FILE: src/Monolog/Handler/BufferHandler.php
+Jordi Boggiano
+Christophe Coevoet
+Grégoire Pineau
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Erik Booij
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+George Mponos
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Shreef
+FILE: src/Monolog/Handler/ChromePHPHandler.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Pascal
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christian Flothmann
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Erik Booij
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Ryan LaHue
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Pascal
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Pascal
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Ryan LaHue
+Jordi Boggiano
+Christophe Coevoet
+Lesnykh Ilia
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Ryan LaHue
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Hennadiy Verkh
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+FILE: src/Monolog/Handler/CouchDBHandler.php
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+	 * @Markus Bachmann <markus.bachmann@bachi.biz>
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+FILE: src/Monolog/Handler/CubeHandler.php
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+	 * @Wan Chen <kami@kamisama.me>
+Kamisama
+pomaxa
+Jordi Boggiano
+Kamisama
+Andreas Möller
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Kamisama
+Jordi Boggiano
+Elan Ruusamäe
+Kamisama
+Elan Ruusamäe
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Elan Ruusamäe
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+pomaxa
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+Kamisama
+Jordi Boggiano
+pomaxa
+Kamisama
+Rob Loach
+FILE: src/Monolog/Handler/Curl/Util.php
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Ahmet Soormally
+Jordi Boggiano
+Ahmet Soormally
+Jordi Boggiano
+FILE: src/Monolog/Handler/DeduplicationHandler.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Erik Booij
+Jordi Boggiano
+FILE: src/Monolog/Handler/DoctrineCouchDBHandler.php
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+	 * @Markus Bachmann <markus.bachmann@bachi.biz>
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+FILE: src/Monolog/Handler/DynamoDbHandler.php
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+	 * @Andrew Lawson <adlawson@gmail.com>
+adlawson
+George Mponos
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+FILE: src/Monolog/Handler/ElasticaHandler.php
+Jordi Boggiano
+skymeyer
+Avtandil Kikabidze
+skymeyer
+	 * @Jelle Vink <jelle.vink@gmail.com>
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+FILE: src/Monolog/Handler/ElasticsearchHandler.php
+Avtandil Kikabidze
+	 * @Avtandil Kikabidze <akalongman@gmail.com>
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+FILE: src/Monolog/Handler/ErrorLogHandler.php
+Jordi Boggiano
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+	 * @Elan Ruusamäe <glen@delfi.ee>
+Elan Ruusamäe
+George Mponos
+Henrique Moody
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Henrique Moody
+Elan Ruusamäe
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Elan Ruusamäe
+Henrique Moody
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Westin Shafer
+Jordi Boggiano
+Westin Shafer
+Jordi Boggiano
+Westin Shafer
+Jordi Boggiano
+Elan Ruusamäe
+FILE: src/Monolog/Handler/FilterHandler.php
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+	 * @Hennadiy Verkh
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+jeroendedauw
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Erik Booij
+Hennadiy Verkh
+Jordi Boggiano
+Erik Booij
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+FILE: src/Monolog/Handler/FingersCrossed/ActivationStrategyInterface.php
+Jordi Boggiano
+	 * @Johannes M. Schmitt <schmittjoh@gmail.com>
+Jordi Boggiano
+FILE: src/Monolog/Handler/FingersCrossed/ChannelLevelActivationStrategy.php
+Jordi Boggiano
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+	 * @Mike Meessen <netmikey@gmail.com>
+Mike Meessen
+Kat
+Jordi Boggiano
+Kat
+Mike Meessen
+Kat
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+Kat
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+Kat
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+FILE: src/Monolog/Handler/FingersCrossed/ErrorLevelActivationStrategy.php
+Jordi Boggiano
+	 * @Johannes M. Schmitt <schmittjoh@gmail.com>
+Jordi Boggiano
+Kat
+Jordi Boggiano
+Kat
+Jordi Boggiano
+Kat
+Jordi Boggiano
+Kat
+Jordi Boggiano
+Kat
+Jordi Boggiano
+FILE: src/Monolog/Handler/FingersCrossedHandler.php
+Jordi Boggiano
+Johannes M. Schmitt
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Johannes M. Schmitt
+Jordi Boggiano
+Christophe Coevoet
+David Simon
+George Mponos
+Jordi Boggiano
+Johannes M. Schmitt
+Jordi Boggiano
+Johannes M. Schmitt
+Jordi Boggiano
+Johannes M. Schmitt
+Jordi Boggiano
+Christophe Coevoet
+Reinier Kip
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Nils Adermann
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Johannes M. Schmitt
+Nils Adermann
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+David Simon
+Jordi Boggiano
+David Simon
+Jordi Boggiano
+David Simon
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Christophe Coevoet
+FILE: src/Monolog/Handler/FirePHPHandler.php
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+	 * @Eric Clemmons (@ericclemmons) <eric@uxdriven.com>
+Eric Clemmons
+Christophe Coevoet
+Eric Clemmons
+Pascal
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Ryan LaHue
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Christophe Coevoet
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Ryan LaHue
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Pascal
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Ryan LaHue
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+FILE: src/Monolog/Handler/FleepHookHandler.php
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+	 * @Ando Roots <ando@sqroot.eu>
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+FILE: src/Monolog/Handler/FlowdockHandler.php
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+	 * @Dominik Liebler <liebler.dominik@gmail.com>
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+FILE: src/Monolog/Handler/FormattableHandlerInterface.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+FILE: src/Monolog/Handler/FormattableHandlerTrait.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+FILE: src/Monolog/Handler/GelfHandler.php
+Jordi Boggiano
+Matt Lehner
+Marc Abramowitz
+Matt Lehner
+Benjamin Zikarsky
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+	 * @Matt Lehner <mlehner@gmail.com>
+Benjamin Zikarsky
+	 * @Benjamin Zikarsky <benjamin@zikarsky.de>
+Matt Lehner
+Marc Abramowitz
+Jordi Boggiano
+Matt Lehner
+Marc Abramowitz
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+FILE: src/Monolog/Handler/GroupHandler.php
+Jordi Boggiano
+lenar
+Joris Berthelot
+Grégoire Pineau
+Joris Berthelot
+lenar
+	 * @Lenar Lõhmus <lenar@city.ee>
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+George Mponos
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Christophe Coevoet
+lenar
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Christophe Coevoet
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Joris Berthelot
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Joris Berthelot
+Jordi Boggiano
+Joris Berthelot
+lenar
+FILE: src/Monolog/Handler/Handler.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Filip Procházka
+Jordi Boggiano
+FILE: src/Monolog/Handler/HandlerInterface.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Pascal Borreli
+Erik Booij
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+FILE: src/Monolog/Handler/HandlerWrapper.php
+Jordi Boggiano
+Alexey Karapetov
+Grégoire Pineau
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+	 * @Alexey Karapetov <alexey@karapetov.com>
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Andrzej Kupczyk
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Alexey Karapetov
+Grégoire Pineau
+Jordi Boggiano
+FILE: src/Monolog/Handler/HipChatHandler.php
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+	 * @Rafael Dohms <rafael@doh.ms>
+Rafael Dohms
+Leevi Graham
+Jordi Boggiano
+Leevi Graham
+Rafael Dohms
+Christian Flothmann
+Rafael Dohms
+Christian Flothmann
+Rafael Dohms
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Jannik Zschiesche
+Jordi Boggiano
+Jannik Zschiesche
+Eric Salter
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Leevi Graham
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Leevi Graham
+Jordi Boggiano
+pkraeutli
+Leevi Graham
+Pascal Borreli
+Leevi Graham
+Jordi Boggiano
+Pascal Borreli
+Leevi Graham
+Jordi Boggiano
+Leevi Graham
+Pascal Borreli
+Leevi Graham
+Jordi Boggiano
+Leevi Graham
+pkraeutli
+Leevi Graham
+Jordi Boggiano
+Leevi Graham
+Jordi Boggiano
+Leevi Graham
+pkraeutli
+Leevi Graham
+pkraeutli
+Milos Levacic
+Leevi Graham
+Milos Levacic
+Jordi Boggiano
+Milos Levacic
+Leevi Graham
+Milos Levacic
+Leevi Graham
+Milos Levacic
+Rafael Dohms
+FILE: src/Monolog/Handler/IFTTTHandler.php
+Jordi Boggiano
+Nehal Patel
+Jordi Boggiano
+Nehal Patel
+	 * @Nehal Patel <nehal@nehalpatel.me>
+Nehal Patel
+Jordi Boggiano
+FILE: src/Monolog/Handler/InsightOpsHandler.php
+Jordi Boggiano
+gmsantos
+Jordi Boggiano
+gmsantos
+Jordi Boggiano
+gmsantos
+	 * @Robert Kaufmann III <rok3@rok3.me>
+gmsantos
+	 * @Gabriel Machado <gabriel.ms1@hotmail.com>
+gmsantos
+Jordi Boggiano
+gmsantos
+Jordi Boggiano
+gmsantos
+Jordi Boggiano
+gmsantos
+FILE: src/Monolog/Handler/LogEntriesHandler.php
+Jordi Boggiano
+Robert Kaufmann III
+	 * @Robert Kaufmann III <rok3@rok3.me>
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Pascal Borreli
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Matt K
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+FILE: src/Monolog/Handler/LogglyHandler.php
+Jordi Boggiano
+Przemek Sobstel
+psquickitjayant
+Przemek Sobstel
+Jordi Boggiano
+Adam Pancutt
+Przemek Sobstel
+psquickitjayant
+	 * @Przemek Sobstel <przemek@sobstel.org>
+psquickitjayant
+	 * @Adam Pancutt <adam@pancutt.com>
+psquickitjayant
+	 * @Gregory Barchard <gregory@barchard.net>
+psquickitjayant
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Arnas L
+barchard
+Jordi Boggiano
+barchard
+Jordi Boggiano
+Arnas L
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+barchard
+Przemek Sobstel
+Adam Pancutt
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Jordi Boggiano
+Przemek Sobstel
+Adam Pancutt
+Przemek Sobstel
+FILE: src/Monolog/Handler/LogmaticHandler.php
+Julien Breux
+	 * @Julien Breux <julien.breux@gmail.com>
+Julien Breux
+Guillaume Polaert
+Julien Breux
+Guillaume Polaert
+Julien Breux
+Guillaume Polaert
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+FILE: src/Monolog/Handler/MailHandler.php
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+	 * @Gyula Sallai
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+Christophe Coevoet
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Christophe Coevoet
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+FILE: src/Monolog/Handler/MandrillHandler.php
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+	 * @Adam Nicholson <adamnicholson10@gmail.com>
+Adam Nicholson
+François-Xavier de Guillebon
+Adam Nicholson
+Jordi Boggiano
+Erik Booij
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+Adam Nicholson
+Jordi Boggiano
+FILE: src/Monolog/Handler/MissingExtensionException.php
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+	 * @Christian Bergau <cbergau86@gmail.com>
+ChristianB
+FILE: src/Monolog/Handler/MongoDBHandler.php
+Jordi Boggiano
+armetiz
+Jordi Boggiano
+armetiz
+Jeremy Mikola
+Will Banfield
+Jeremy Mikola
+Jordi Boggiano
+armetiz
+Jeremy Mikola
+armetiz
+Jeremy Mikola
+armetiz
+Jeremy Mikola
+armetiz
+Jordi Boggiano
+Jeremy Mikola
+Will Banfield
+Jeremy Mikola
+armetiz
+Will Banfield
+Jeremy Mikola
+Jordi Boggiano
+Will Banfield
+Jordi Boggiano
+Jeremy Mikola
+Will Banfield
+Jeremy Mikola
+Will Banfield
+Jeremy Mikola
+Will Banfield
+armetiz
+Jordi Boggiano
+Jeremy Mikola
+Will Banfield
+Jeremy Mikola
+Boris Momčilović
+armetiz
+Jordi Boggiano
+FILE: src/Monolog/Handler/NativeMailerHandler.php
+Jordi Boggiano
+Mark Garrett
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Mark Garrett
+	 * @Mark Garrett <mark@moderndeveloperllc.com>
+Christophe Coevoet
+Mark Garrett
+Menno Holtkamp
+Mark Garrett
+Christophe Coevoet
+Mark Garrett
+Christophe Coevoet
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Liam O'Boyle
+Jordi Boggiano
+Liam O'Boyle
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Julio Montoya
+Christophe Coevoet
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Markus Staab
+Julio Montoya
+Jiří Petřek
+Mark Garrett
+Jordi Boggiano
+Jiří Petřek
+Jordi Boggiano
+Jiří Petřek
+Markus Staab
+Jordi Boggiano
+Markus Staab
+Jiří Petřek
+Liam O'Boyle
+Christophe Coevoet
+Liam O'Boyle
+Jordi Boggiano
+Liam O'Boyle
+Jordi Boggiano
+Liam O'Boyle
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Elan Ruusamäe
+Jiří Petřek
+Jordi Boggiano
+Jiří Petřek
+Christophe Coevoet
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+FILE: src/Monolog/Handler/NewRelicHandler.php
+Jordi Boggiano
+Alessandro Nadalin
+Jordi Boggiano
+Alessandro Nadalin
+Steve Pavarno
+Jordi Boggiano
+Mark Garrett
+Steve Pavarno
+Alessandro Nadalin
+Jordi Boggiano
+odino
+Jordi Boggiano
+odino
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+odino
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+odino
+Mark Garrett
+Florian Plattner
+Jordi Boggiano
+Alessandro Nadalin
+Jordi Boggiano
+Alessandro Nadalin
+Jordi Boggiano
+Alessandro Nadalin
+Jordi Boggiano
+odino
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+George Mponos
+Jordi Boggiano
+Alessandro Nadalin
+Jordi Boggiano
+Alessandro Nadalin
+Jordi Boggiano
+Michael Moussa
+Mark Garrett
+Alessandro Nadalin
+Ray Ward
+Jordi Boggiano
+Michael Moussa
+Mark Garrett
+Ray Ward
+odino
+Jordi Boggiano
+odino
+Jordi Boggiano
+odino
+Jordi Boggiano
+odino
+Jordi Boggiano
+Alessandro Nadalin
+odino
+Florian Plattner
+odino
+Jordi Boggiano
+odino
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+odino
+Jordi Boggiano
+odino
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Alessandro Nadalin
+FILE: src/Monolog/Handler/NoopHandler.php
+Roel Harbers
+Jordi Boggiano
+Roel Harbers
+	 * @Roel Harbers <roelharbers@gmail.com>
+Roel Harbers
+FILE: src/Monolog/Handler/NullHandler.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Gabriel Caruso
+Jordi Boggiano
+FILE: src/Monolog/Handler/PHPConsoleHandler.php
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+StevenW
+barbushin
+	 * @Sergey Barbushin https://www.linkedin.com/in/barbushin
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+Lesnykh Ilia
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+FILE: src/Monolog/Handler/ProcessHandler.php
+Jordi Boggiano
+kolja
+	 * @Kolja Zuelsdorf <koljaz@web.de>
+kolja
+Jordi Boggiano
+kolja
+George Mponos
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+George Mponos
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+FILE: src/Monolog/Handler/ProcessableHandlerInterface.php
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+FILE: src/Monolog/Handler/ProcessableHandlerTrait.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+FILE: src/Monolog/Handler/PsrHandler.php
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+	 * @Michael Moussa <michael.moussa@gmail.com>
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Erik Booij
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+FILE: src/Monolog/Handler/PushoverHandler.php
+Jordi Boggiano
+Sebastian Goettschkes
+	 * @Sebastian Göttschkes <sebastian.goettschkes@googlemail.com>
+Sebastian Goettschkes
+Emmanuel Vella
+Sebastian Goettschkes
+Jordi Boggiano
+ghanbari
+Jordi Boggiano
+Artur Moczulski
+DJ Sipe
+Jordi Boggiano
+Richard van Laak
+Jordi Boggiano
+Rvanlaak
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Erik Booij
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Alex Butter
+Sebastian Goettschkes
+Emmanuel Vella
+Jordi Boggiano
+ghanbari
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+DJ Sipe
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Rvanlaak
+Artur Moczulski
+ghanbari
+Rvanlaak
+Artur Moczulski
+Jordi Boggiano
+Richard van Laak
+Jordi Boggiano
+Richard van Laak
+Rvanlaak
+Artur Moczulski
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Alex Butter
+Jordi Boggiano
+Alex Butter
+Emmanuel Vella
+Jordi Boggiano
+Emmanuel Vella
+Jordi Boggiano
+Alex Butter
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+DJ Sipe
+Jordi Boggiano
+DJ Sipe
+Jordi Boggiano
+DJ Sipe
+Jordi Boggiano
+FILE: src/Monolog/Handler/RavenHandler.php
+Jordi Boggiano
+Marc Abramowitz
+Pascal Borreli
+Fabien Potencier
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+thewilkybarkid
+Nicolas Grekas
+Marc Abramowitz
+	 * @Marc Abramowitz <marc@marc-abramowitz.com>
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Dimitri Gritsajuk
+Jordi Boggiano
+Dimitri Gritsajuk
+Grégoire Paris
+Ramil Valitov
+Grégoire Paris
+Marc Abramowitz
+Fabien Potencier
+George Mponos
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Marc Abramowitz
+Jordi Boggiano
+Erik Booij
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+pvanliefland
+Fabien Potencier
+pvanliefland
+Jordi Boggiano
+pvanliefland
+Jordi Boggiano
+pvanliefland
+Jordi Boggiano
+Tugdual Saunier
+Florian Pfitzer
+pvanliefland
+Florian Pfitzer
+pvanliefland
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Dimitri Gritsajuk
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Jordi Boggiano
+Stepan Mazurov
+Jordi Boggiano
+David Windell
+Jordi Boggiano
+ipsq
+Dmitriy Garanzha
+ryr
+Tomasz Wójcik
+Jordi Boggiano
+Tomasz Wójcik
+Pascal Borreli
+Stepan Mazurov
+Pascal Borreli
+Dimitri Gritsajuk
+Grégoire Paris
+Jordi Boggiano
+Ben Dubuisson
+David Windell
+Stepan Mazurov
+Jordi Boggiano
+Stepan Mazurov
+Jordi Boggiano
+Dimitri Gritsajuk
+David Windell
+Marc Abramowitz
+Pascal Borreli
+Jordi Boggiano
+Pascal Borreli
+Fabien Potencier
+Dimitri Gritsajuk
+Fabien Potencier
+Tomasz Wójcik
+Dimitri Gritsajuk
+Tomasz Wójcik
+Jordi Boggiano
+Tomasz Wójcik
+Grégoire Paris
+Jordi Boggiano
+Lesnykh Ilia
+Grégoire Paris
+Dimitri Gritsajuk
+Grégoire Paris
+Dimitri Gritsajuk
+Jordi Boggiano
+Dimitri Gritsajuk
+Jordi Boggiano
+Dimitri Gritsajuk
+Jordi Boggiano
+Dimitri Gritsajuk
+Jordi Boggiano
+Dimitri Gritsajuk
+Marc Abramowitz
+FILE: src/Monolog/Handler/RedisHandler.php
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Carson Full
+Jeremy Kitchen
+	 * @Thomas Tourlourat <thomas@tourlourat.com>
+Jeremy Kitchen
+Matt Wells
+Jeremy Kitchen
+Carson Full
+Matt Wells
+Jordi Boggiano
+Carson Full
+Jordi Boggiano
+Jeremy Kitchen
+Matt Wells
+Jeremy Kitchen
+Matt Wells
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+shiyangwu520
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+FILE: src/Monolog/Handler/RollbarHandler.php
+Jordi Boggiano
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+Artur Moczulski
+Jordi Boggiano
+Joseph Pugh
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+	 * @Paul Statezny <paulstatezny@gmail.com>
+Paul Statezny
+Artur Moczulski
+Paul Statezny
+Artur Moczulski
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+Artur Moczulski
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+Jordi Boggiano
+Moshe Brevda
+Artur Moczulski
+Paul Statezny
+Artur Moczulski
+Paul Statezny
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Paul Statezny
+Jordi Boggiano
+Paul Statezny
+FILE: src/Monolog/Handler/RotatingFileHandler.php
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+	 * @Christophe Coevoet <stof@notk.org>
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+George Mponos
+Remon van de Kamp
+Christophe Coevoet
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+George Mponos
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Luis Cordova
+Jordi Boggiano
+Luis Cordova
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+From now on, you will speak only when spoken to, and the first and last words out of your filthy sewers will be "Sir!
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+Luis Cordova
+Jordi Boggiano
+FILE: src/Monolog/Handler/SamplingHandler.php
+Jordi Boggiano
+Kunal Mehta
+	 * @Bryan Davis <bd808@wikimedia.org>
+Kunal Mehta
+	 * @Kunal Mehta <legoktm@gmail.com>
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+FILE: src/Monolog/Handler/SendGridHandler.php
+Jordi Boggiano
+Ricardo Fontanelli
+	 * @Ricardo Fontanelli <ricardo.fontanelli@hotmail.com>
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+Jordi Boggiano
+Ricardo Fontanelli
+FILE: src/Monolog/Handler/Slack/SlackRecord.php
+Jordi Boggiano
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+	 * @Greg Kedzierski <greg@gregkedzierski.com>
+Haralan Dobrev
+	 * @Haralan Dobrev <hkdobrev@gmail.com>
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+Anton Nizhegorodov
+Kat
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Kat
+Anton Nizhegorodov
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Kat
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Jordi Boggiano
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Kat
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Kat
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+dis1
+Haralan Dobrev
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Kat
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Kat
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Kat
+Anton Nizhegorodov
+Haralan Dobrev
+FILE: src/Monolog/Handler/SlackHandler.php
+Jordi Boggiano
+gkedzierski
+Anton Nizhegorodov
+gkedzierski
+Haralan Dobrev
+gkedzierski
+	 * @Greg Kedzierski <greg@gregkedzierski.com>
+gkedzierski
+Haralan Dobrev
+Patrick Landolt
+Haralan Dobrev
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+Daniel Gimenes
+gkedzierski
+Daniel Gimenes
+Jordi Boggiano
+Haralan Dobrev
+gkedzierski
+Jordi Boggiano
+MilesChou
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+Andrey Artemov
+Jordi Boggiano
+gkedzierski
+Haralan Dobrev
+Jordi Boggiano
+Anton Nizhegorodov
+Derek Clapham
+Jordi Boggiano
+Andrey Artemov
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jamie Learmonth
+Anton Nizhegorodov
+Jamie Learmonth
+gkedzierski
+FILE: src/Monolog/Handler/SlackWebhookHandler.php
+Jordi Boggiano
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+	 * @Haralan Dobrev <hkdobrev@gmail.com>
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+George Mponos
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+MilesChou
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+Harm Bandstra
+Jordi Boggiano
+Haralan Dobrev
+Harm Bandstra
+Haralan Dobrev
+Harm Bandstra
+Haralan Dobrev
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Haralan Dobrev
+FILE: src/Monolog/Handler/SocketHandler.php
+Jordi Boggiano
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+summary add licensce and move @to phpdoc
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+summary add licensce and move @to phpdoc
+	 * @Pablo de Leon Belloc <pablolb@gmail.com>
+Pablo de Leon Belloc
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Danilo Silva
+Jordi Boggiano
+Klemen Bratec
+Pablo Belloc
+Pablo de Leon Belloc
+Remi Collet
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Sebastian Goettschkes
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Danilo Silva
+Jordi Boggiano
+Danilo Silva
+Jordi Boggiano
+Danilo Silva
+Jordi Boggiano
+Danilo Silva
+Klemen Bratec
+Jordi Boggiano
+Klemen Bratec
+Jordi Boggiano
+Klemen Bratec
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Danilo Silva
+Jordi Boggiano
+Danilo Silva
+Klemen Bratec
+Jordi Boggiano
+Klemen Bratec
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Martin Hasoň
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Martin Hasoň
+Jordi Boggiano
+Sebastian Goettschkes
+Martin Kačmar
+Pablo de Leon Belloc
+Klemen Bratec
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Martin Hasoň
+Pablo de Leon Belloc
+Sebastian Goettschkes
+Pablo de Leon Belloc
+Pablo Belloc
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Pablo Belloc
+Klemen Bratec
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Pablo de Leon Belloc
+Pablo Belloc
+Pablo de Leon Belloc
+Pablo Belloc
+Pablo de Leon Belloc
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Klemen Bratec
+Jordi Boggiano
+Pablo Belloc
+Danilo Silva
+Pablo Belloc
+Martin Hasoň
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Danilo Silva
+Pablo Belloc
+Danilo Silva
+Jordi Boggiano
+Danilo Silva
+Jordi Boggiano
+Danilo Silva
+Pablo Belloc
+FILE: src/Monolog/Handler/SqsHandler.php
+Martijn van Calker
+	 * @Martijn van Calker <git@amvc.nl>
+Martijn van Calker
+Honza Machala
+Jordi Boggiano
+Honza Machala
+Jordi Boggiano
+Honza Machala
+Martijn van Calker
+Jordi Boggiano
+Martijn van Calker
+Jordi Boggiano
+Martijn van Calker
+Honza Machala
+Jordi Boggiano
+Honza Machala
+Martijn van Calker
+Honza Machala
+Martijn van Calker
+FILE: src/Monolog/Handler/StreamHandler.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Birkir A. Barkarson
+Pankaj Garg
+Jordi Boggiano
+William Johnston
+Jordi Boggiano
+Theo Kouzelis
+Jordi Boggiano
+Erik Booij
+Theo Kouzelis
+Erik Booij
+Theo Kouzelis
+Dominik Zogg
+Jeroen De Dauw
+Jordi Boggiano
+Theo Kouzelis
+Jordi Boggiano
+Theo Kouzelis
+Jordi Boggiano
+Pankaj Garg
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+hidenorigoto
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Johann Zelger
+Jordi Boggiano
+William Johnston
+Birkir A. Barkarson
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Birkir A. Barkarson
+Jordi Boggiano
+Ian Babrou
+Jordi Boggiano
+Ian Babrou
+Jay MOULIN
+Ian Babrou
+Jordi Boggiano
+Ian Babrou
+Jordi Boggiano
+Birkir A. Barkarson
+Jay MOULIN
+Jordi Boggiano
+Jay MOULIN
+Jordi Boggiano
+Jay MOULIN
+Jordi Boggiano
+Jay MOULIN
+Jordi Boggiano
+Dominik Zogg
+Jordi Boggiano
+Dominik Zogg
+Jordi Boggiano
+Birkir A. Barkarson
+William Johnston
+Jordi Boggiano
+William Johnston
+Jordi Boggiano
+William Johnston
+Jordi Boggiano
+William Johnston
+Josh McRae
+William Johnston
+hidenorigoto
+FILE: src/Monolog/Handler/SwiftMailerHandler.php
+Jordi Boggiano
+Gyula Sallai
+Sergey Zaika
+Jordi Boggiano
+Alex Rock Ancelet
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+	 * @Gyula Sallai
+Gyula Sallai
+Jordi Boggiano
+Christophe Coevoet
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Christophe Coevoet
+John Kary
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+John Kary
+Sergey Zaika
+Jordi Boggiano
+Sergey Zaika
+Jordi Boggiano
+Sergey Zaika
+John Kary
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+Aleksei Shmelev
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+Sergey Zaika
+Jordi Boggiano
+Alex Rock Ancelet
+Christophe Coevoet
+John Kary
+Gyula Sallai
+Jordi Boggiano
+FILE: src/Monolog/Handler/SyslogHandler.php
+Jordi Boggiano
+Sven Paulus
+Geoffrey Tran
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+	 * @Sven Paulus <sven@karlsruhe.org>
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+davewwww
+Sven Paulus
+Christophe Coevoet
+Jordi Boggiano
+Sven Paulus
+Christophe Coevoet
+Sven Paulus
+Christophe Coevoet
+Jordi Boggiano
+Sven Paulus
+davewwww
+Jordi Boggiano
+Sven Paulus
+FILE: src/Monolog/Handler/SyslogUdp/UdpSocket.php
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+François-Xavier de Guillebon
+Jordi Boggiano
+François-Xavier de Guillebon
+Jordi Boggiano
+François-Xavier de Guillebon
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Adam Brodziak
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+FILE: src/Monolog/Handler/SyslogUdpHandler.php
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+	 * @Jesper Skovgaard Nielsen <nulpunkt@gmail.com>
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+François-Xavier de Guillebon
+ont
+François-Xavier de Guillebon
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+ont
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+ont
+Jordi Boggiano
+ont
+Jordi Boggiano
+ont
+Jordi Boggiano
+ont
+Jordi Boggiano
+ont
+Jordi Boggiano
+ont
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+FILE: src/Monolog/Handler/TestHandler.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Austin Hyde
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Austin Hyde
+Richard Tuin
+Jordi Boggiano
+Richard Tuin
+Jordi Boggiano
+Austin Hyde
+Jordi Boggiano
+Austin Hyde
+Jordi Boggiano
+Austin Hyde
+Jordi Boggiano
+Grégoire Pineau
+Austin Hyde
+Jordi Boggiano
+Richard Tuin
+Austin Hyde
+Richard Tuin
+Christophe Coevoet
+Jordi Boggiano
+Austin Hyde
+Julien Falque
+Austin Hyde
+Jordi Boggiano
+Austin Hyde
+Jordi Boggiano
+FILE: src/Monolog/Handler/WebRequestRecognizerTrait.php
+Pascal
+Jordi Boggiano
+Pascal
+FILE: src/Monolog/Handler/WhatFailureGroupHandler.php
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+	 * @Craig D'Amelio <craig@damelio.ca>
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Filip Procházka
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Chris Wilkinson
+Craig D'Amelio
+Filip Procházka
+Craig D'Amelio
+FILE: src/Monolog/Handler/ZendMonitorHandler.php
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+	 * @ Christian Bergau <cbergau86@gmail.com>
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+FILE: src/Monolog/Logger.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Frederic G. MARAND
+George Mponos
+Frederic G. MARAND
+Jordi Boggiano
+Chris Sedlmayr
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Frederic G. MARAND
+George Mponos
+Frederic G. MARAND
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Peter Kokot
+Jordi Boggiano
+Peter Kokot
+Jordi Boggiano
+Robbie Averill
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Vincent Paré
+Christophe Coevoet
+Jordi Boggiano
+George Mponos
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Artem Nezvigin
+Jordi Boggiano
+Christophe Coevoet
+Chris Sedlmayr
+Christophe Coevoet
+Jordi Boggiano
+Ron Kirschler
+Jordi Boggiano
+Christophe Coevoet
+Chris Sedlmayr
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Christophe Coevoet
+Chris Sedlmayr
+Christophe Coevoet
+Jordi Boggiano
+Ron Kirschler
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Edson Medina
+Ivan Kurnosov
+Jordi Boggiano
+Ivan Kurnosov
+Edson Medina
+Jordi Boggiano
+Edson Medina
+Ivan Kurnosov
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Edson Medina
+Jordi Boggiano
+Vincent Paré
+Matt Johnson
+Ivan Kurnosov
+Jordi Boggiano
+Matt Johnson
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Grégoire Pineau
+Joshua Jabbour
+Jordi Boggiano
+Joshua Jabbour
+Jordi Boggiano
+Joshua Jabbour
+Christophe Coevoet
+krzysiekpiasecki
+Christophe Coevoet
+Jordi Boggiano
+Aizat Faiz
+Jordi Boggiano
+krzysiekpiasecki
+Jordi Boggiano
+Chris Sedlmayr
+Jordi Boggiano
+Eduardo Oliveira
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Reda Bouchaala
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+tiagowbpr
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+FILE: src/Monolog/Processor/GitProcessor.php
+Jordi Boggiano
+otternq
+Jordi Boggiano
+otternq
+	 * @Nick Otter
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+otternq
+Nicolas Grekas
+otternq
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+otternq
+Jordi Boggiano
+otternq
+Jordi Boggiano
+otternq
+Jordi Boggiano
+otternq
+Jordi Boggiano
+otternq
+Jordi Boggiano
+otternq
+FILE: src/Monolog/Processor/HostnameProcessor.php
+mahone3297
+Jordi Boggiano
+mahone3297
+FILE: src/Monolog/Processor/IntrospectionProcessor.php
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Nicolas Grekas
+Jordi Boggiano
+Kris Wallsmith
+Artur Geraschenko
+Jordi Boggiano
+mtopolski
+Jordi Boggiano
+Artur Geraschenko
+George Mponos
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+mtopolski
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Luke Waite
+Jordi Boggiano
+Artur Geraschenko
+Frederik Bosch
+Jordi Boggiano
+mtopolski
+Jordi Boggiano
+Frederik Bosch
+Jordi Boggiano
+Frederik Bosch
+Jordi Boggiano
+FILE: src/Monolog/Processor/MemoryPeakUsageProcessor.php
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+	 * @Rob Jensen
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Hennadiy Verkh
+Rob Jensen
+Nikita
+Rob Jensen
+FILE: src/Monolog/Processor/MemoryProcessor.php
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+	 * @Rob Jensen
+Rob Jensen
+Nicolas Grekas
+Rob Jensen
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Rob Jensen
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Hennadiy Verkh
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Hennadiy Verkh
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+FILE: src/Monolog/Processor/MemoryUsageProcessor.php
+Jordi Boggiano
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+	 * @Rob Jensen
+Rob Jensen
+Jordi Boggiano
+Rob Jensen
+Hennadiy Verkh
+Rob Jensen
+Markus Staab
+Rob Jensen
+FILE: src/Monolog/Processor/MercurialProcessor.php
+Jordi Boggiano
+Jonathan A. Schweder
+Jordi Boggiano
+Jonathan A. Schweder
+	 * @Jonathan A. Schweder <jonathanschweder@gmail.com>
+Jonathan A. Schweder
+Nicolas Grekas
+Jonathan A. Schweder
+George Mponos
+Jonathan A. Schweder
+Jordi Boggiano
+Jonathan A. Schweder
+Jordi Boggiano
+Jonathan A. Schweder
+Jordi Boggiano
+Jonathan A. Schweder
+FILE: src/Monolog/Processor/ProcessIdProcessor.php
+Jordi Boggiano
+anho
+	 * @Andreas Hörnicke
+anho
+Nicolas Grekas
+anho
+Jordi Boggiano
+anho
+Andrey Ryaguzov
+anho
+FILE: src/Monolog/Processor/ProcessorInterface.php
+Jordi Boggiano
+Nicolas Grekas
+	 * @Nicolas Grekas <p@tchwork.com>
+Nicolas Grekas
+FILE: src/Monolog/Processor/PsrLogMessageProcessor.php
+Jordi Boggiano
+Nicolas Grekas
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Nicolas Grekas
+Jordi Boggiano
+George Mponos
+Piers Warmers
+George Mponos
+Piers Warmers
+Jakub Chábek
+Piers Warmers
+George Mponos
+Piers Warmers
+Jordi Boggiano
+Piers Warmers
+Jordi Boggiano
+Jakub Chábek
+Piers Warmers
+Jordi Boggiano
+Jakub Chábek
+Jordi Boggiano
+Jakub Chábek
+Piers Warmers
+Jordi Boggiano
+Lars Strojny
+Jordi Boggiano
+Jakub Chábek
+Harry Truong
+Jordi Boggiano
+FILE: src/Monolog/Processor/TagProcessor.php
+Jordi Boggiano
+ipsq
+	 * @Martijn Riemers
+ipsq
+Nicolas Grekas
+ipsq
+Jordi Boggiano
+ipsq
+Jordi Boggiano
+ipsq
+Jordi Boggiano
+ipsq
+FILE: src/Monolog/Processor/UidProcessor.php
+Jordi Boggiano
+Simon Mönch
+Grégoire Pineau
+Simon Mönch
+	 * @Simon Mönch <sm@webfactory.de>
+Simon Mönch
+Jordi Boggiano
+Simon Mönch
+Jordi Boggiano
+Simon Mönch
+George Mponos
+Jordi Boggiano
+Simon Mönch
+Jordi Boggiano
+Grégoire Pineau
+Simon Mönch
+Jordi Boggiano
+Simon Mönch
+Jared Markell
+Jordi Boggiano
+Jared Markell
+Grégoire Pineau
+George Mponos
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+FILE: src/Monolog/Processor/WebProcessor.php
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Nicolas Grekas
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Menno Holtkamp
+Jordi Boggiano
+Dawid Nowak
+Lesnykh Ilia
+Dawid Nowak
+Christophe Coevoet
+Matthias Pigulla
+Dawid Nowak
+Matthias Pigulla
+Dawid Nowak
+Jordi Boggiano
+FILE: src/Monolog/Registry.php
+Jordi Boggiano
+Tomáš Tatarko
+StevenW
+Tomáš Tatarko
+	 * @Tomas Tatarko <tomas@tatarko.sk>
+Tomáš Tatarko
+Elan Ruusamäe
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+dtarasov
+Jordi Boggiano
+dtarasov
+Jordi Boggiano
+dtarasov
+Jordi Boggiano
+dtarasov
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+Tomáš Tatarko
+Jordi Boggiano
+FILE: src/Monolog/ResettableInterface.php
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+	 * @Grégoire Pineau <lyrixx@lyrixx.info>
+Grégoire Pineau
+George Mponos
+Grégoire Pineau
+FILE: src/Monolog/SignalHandler.php
+Jordi Boggiano
+Robert Gust-Bardon
+	 * @Robert Gust-Bardon <robert@gust-bardon.org>
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+FILE: src/Monolog/Test/TestCase.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+	 * @Jordi Boggiano <j.boggiano@seld.be>
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+FILE: src/Monolog/Utils.php
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+FILE: tests/Monolog/ErrorHandlerTest.php
+Jordi Boggiano
+Níckolas Daniel da Silva
+Jordi Boggiano
+Níckolas Daniel da Silva
+Jordi Boggiano
+Níckolas Daniel da Silva
+Jordi Boggiano
+Níckolas Daniel da Silva
+Jordi Boggiano
+Níckolas Daniel da Silva
+Jordi Boggiano
+Níckolas Daniel da Silva
+Jordi Boggiano
+FILE: tests/Monolog/Formatter/ChromePHPFormatterTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+FILE: tests/Monolog/Formatter/ElasticaFormatterTest.php
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+FILE: tests/Monolog/Formatter/ElasticsearchFormatterTest.php
+Avtandil Kikabidze
+George Mponos
+Avtandil Kikabidze
+FILE: tests/Monolog/Formatter/FlowdockFormatterTest.php
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+FILE: tests/Monolog/Formatter/FluentdFormatterTest.php
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+tnucera
+Jordi Boggiano
+fordnox
+Jordi Boggiano
+fordnox
+tnucera
+Jordi Boggiano
+fordnox
+FILE: tests/Monolog/Formatter/GelfMessageFormatterTest.php
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Marc Abramowitz
+Benjamin Zikarsky
+Remon van de Kamp
+Marc Abramowitz
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Benjamin Zikarsky
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Tarjei Huse
+Jordi Boggiano
+Tarjei Huse
+Jordi Boggiano
+Tarjei Huse
+Jordi Boggiano
+Tarjei Huse
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Jordi Boggiano
+Matt Lehner
+Benjamin Zikarsky
+Jordi Boggiano
+Christian Flothmann
+Jordi Boggiano
+Christian Flothmann
+Enleur
+Jordi Boggiano
+Enleur
+Jordi Boggiano
+Enleur
+Jordi Boggiano
+Benjamin Zikarsky
+Matt Lehner
+FILE: tests/Monolog/Formatter/JsonFormatterTest.php
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Mponos George
+Jordi Boggiano
+Mponos George
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Javier Spagnoletti
+Nerijus Eimanavičius
+Javier Spagnoletti
+Nerijus Eimanavičius
+Javier Spagnoletti
+Nerijus Eimanavičius
+Javier Spagnoletti
+Nerijus Eimanavičius
+Javier Spagnoletti
+Nerijus Eimanavičius
+Tom Rochette
+Jordi Boggiano
+Tom Rochette
+Jordi Boggiano
+Tom Rochette
+Jordi Boggiano
+Tom Rochette
+Jordi Boggiano
+Tom Rochette
+Nerijus Eimanavičius
+Jordi Boggiano
+Nerijus Eimanavičius
+Jordi Boggiano
+Nerijus Eimanavičius
+Jordi Boggiano
+Nerijus Eimanavičius
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Nerijus Eimanavičius
+Jordi Boggiano
+Javier Spagnoletti
+Jordi Boggiano
+Nerijus Eimanavičius
+Jordi Boggiano
+Nerijus Eimanavičius
+Jordi Boggiano
+Nerijus Eimanavičius
+Jordi Boggiano
+Nerijus Eimanavičius
+Javier Spagnoletti
+Minh-Quan TRAN
+Jordi Boggiano
+FILE: tests/Monolog/Formatter/LineFormatterTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Sergey Rabochiy
+Jordi Boggiano
+Sergey Rabochiy
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Matthias Pigulla
+Jordi Boggiano
+andyexeter
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Gunnar Lium
+Jordi Boggiano
+Gunnar Lium
+Jordi Boggiano
+Gunnar Lium
+Jordi Boggiano
+Gunnar Lium
+Jordi Boggiano
+Gunnar Lium
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+FILE: tests/Monolog/Formatter/LogglyFormatterTest.php
+Jordi Boggiano
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+Diego Saint Esteben
+Adam Pancutt
+Jordi Boggiano
+Adam Pancutt
+FILE: tests/Monolog/Formatter/LogmaticFormatterTest.php
+Julien Breux
+	 * @Julien Breux <julien.breux@gmail.com>
+Julien Breux
+FILE: tests/Monolog/Formatter/LogstashFormatterTest.php
+Jordi Boggiano
+Tim Mower
+Jordi Boggiano
+Tim Mower
+Bryan Davis
+DQNEO
+Jordi Boggiano
+Bryan Davis
+Oliver Byford
+Carson Full
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Albert Casademont
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Carson Full
+Oliver Byford
+Carson Full
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Elnur Abdurrakhimov
+Oliver Byford
+Carson Full
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Carson Full
+Oliver Byford
+Carson Full
+Oliver Byford
+Carson Full
+Oliver Byford
+Carson Full
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Elnur Abdurrakhimov
+Oliver Byford
+Carson Full
+Oliver Byford
+Carson Full
+Oliver Byford
+Carson Full
+Jordi Boggiano
+Oliver Byford
+Jordi Boggiano
+Oliver Byford
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Elnur Abdurrakhimov
+Bryan Davis
+Tim Mower
+FILE: tests/Monolog/Formatter/MongoDBFormatterTest.php
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+	 * @Florian Plattner <me@florianplattner.de>
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jeremy Mikola
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jeremy Mikola
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jeremy Mikola
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+George Mponos
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+FILE: tests/Monolog/Formatter/NormalizerFormatterTest.php
+Jordi Boggiano
+Bryan Davis
+DQNEO
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Mike Sherov
+Jordi Boggiano
+Francis Besset
+Jordi Boggiano
+Francis Besset
+Jordi Boggiano
+Francis Besset
+Jordi Boggiano
+Francis Besset
+Jordi Boggiano
+Francis Besset
+Jordi Boggiano
+Francis Besset
+Anton Sergeyev
+Chris Forrence
+Jordi Boggiano
+Anton Sergeyev
+Jordi Boggiano
+Anton Sergeyev
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Thomas Ploch
+Minh-Quan TRAN
+Jordi Boggiano
+Minh-Quan TRAN
+Jordi Boggiano
+Bryan Davis
+Jeroen Thora
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jeroen Thora
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Chris Forrence
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Thomas Ploch
+Jordi Boggiano
+Thomas Ploch
+Jordi Boggiano
+Thomas Ploch
+Jordi Boggiano
+Thomas Ploch
+Jordi Boggiano
+Thomas Ploch
+Jordi Boggiano
+Mponos George
+Jordi Boggiano
+Thomas Ploch
+Jordi Boggiano
+Thomas Ploch
+Anton Sergeyev
+Jordi Boggiano
+FILE: tests/Monolog/Formatter/ScalarFormatterTest.php
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+François-Xavier de Guillebon
+adlawson
+Jordi Boggiano
+adlawson
+Jeroen Thora
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Mike Sherov
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Mike Sherov
+adlawson
+Jordi Boggiano
+adlawson
+FILE: tests/Monolog/Formatter/WildfireFormatterTest.php
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Christophe Coevoet
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Eric Clemmons
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+snapshotpl
+Jordi Boggiano
+snapshotpl
+Jordi Boggiano
+snapshotpl
+Jordi Boggiano
+snapshotpl
+Eric Clemmons
+FILE: tests/Monolog/Handler/AbstractHandlerTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+FILE: tests/Monolog/Handler/AbstractProcessingHandlerTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Matthias Pigulla
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Matthias Pigulla
+Jordi Boggiano
+FILE: tests/Monolog/Handler/AmqpHandlerTest.php
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+Andrew Tch
+Jordi Boggiano
+Andrew Tch
+Jordi Boggiano
+Andrew Tch
+Jordi Boggiano
+Jeroen Thora
+Jordi Boggiano
+Jean-Baptiste Nahan
+Jordi Boggiano
+Andrew Tch
+Jordi Boggiano
+pomaxa
+Jordi Boggiano
+Jeroen Thora
+Jordi Boggiano
+FILE: tests/Monolog/Handler/BrowserConsoleHandlerTest.php
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Grégoire Pineau
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+Olivier Poitrey
+Jordi Boggiano
+FILE: tests/Monolog/Handler/BufferHandlerTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+FILE: tests/Monolog/Handler/ChromePHPHandlerTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Grégoire Pineau
+Jordi Boggiano
+Christophe Coevoet
+Douglas Reith
+Christophe Coevoet
+Douglas Reith
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Douglas Reith
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Pascal
+Jordi Boggiano
+FILE: tests/Monolog/Handler/CouchDBHandlerTest.php
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+FILE: tests/Monolog/Handler/DeduplicationHandlerTest.php
+Jordi Boggiano
+FILE: tests/Monolog/Handler/DoctrineCouchDBHandlerTest.php
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+Jordi Boggiano
+Markus Bachmann
+FILE: tests/Monolog/Handler/DynamoDbHandlerTest.php
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+François-Xavier de Guillebon
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+Jordi Boggiano
+adlawson
+FILE: tests/Monolog/Handler/ElasticaHandlerTest.php
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+Avtandil Kikabidze
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+Avtandil Kikabidze
+skymeyer
+Chris Forrence
+skymeyer
+Jordi Boggiano
+skymeyer
+Avtandil Kikabidze
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Avtandil Kikabidze
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+Jordi Boggiano
+skymeyer
+FILE: tests/Monolog/Handler/ElasticsearchHandlerTest.php
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+Jordi Boggiano
+Avtandil Kikabidze
+FILE: tests/Monolog/Handler/ErrorLogHandlerTest.php
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Flavio Maria De Stefano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+Jordi Boggiano
+Henrique Moody
+FILE: tests/Monolog/Handler/FilterHandlerTest.php
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+Hennadiy Verkh
+Jordi Boggiano
+FILE: tests/Monolog/Handler/FingersCrossedHandlerTest.php
+Jordi Boggiano
+Mike Meessen
+Reinier Kip
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+David Simon
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+David Simon
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Grégoire Pineau
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+David Simon
+Christophe Coevoet
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Grégoire Pineau
+Christophe Coevoet
+David Simon
+Christophe Coevoet
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Nils Adermann
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Nils Adermann
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+Jordi Boggiano
+Mike Meessen
+Jordi Boggiano
+Nils Adermann
+Jordi Boggiano
+David Simon
+Reinier Kip
+Jordi Boggiano
+FILE: tests/Monolog/Handler/FirePHPHandlerTest.php
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Grégoire Pineau
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Kirill chEbba Chebunin
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Kirill chEbba Chebunin
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Kirill chEbba Chebunin
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Kirill chEbba Chebunin
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Kirill chEbba Chebunin
+Jordi Boggiano
+Kirill chEbba Chebunin
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Eric Clemmons
+Jordi Boggiano
+Pascal
+Jordi Boggiano
+FILE: tests/Monolog/Handler/Fixtures/.gitkeep
+FILE: tests/Monolog/Handler/FleepHookHandlerTest.php
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+Jordi Boggiano
+Ando Roots
+FILE: tests/Monolog/Handler/FlowdockHandlerTest.php
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+	 * @Dominik Liebler <liebler.dominik@gmail.com>
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+Jordi Boggiano
+Dominik Liebler
+FILE: tests/Monolog/Handler/GelfHandlerTest.php
+Jordi Boggiano
+Marc Abramowitz
+Benjamin Zikarsky
+Jordi Boggiano
+Marc Abramowitz
+Matt Lehner
+Marc Abramowitz
+Jordi Boggiano
+Benjamin Zikarsky
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Benjamin Zikarsky
+Marc Abramowitz
+Benjamin Zikarsky
+Marc Abramowitz
+Benjamin Zikarsky
+Marc Abramowitz
+Benjamin Zikarsky
+Marc Abramowitz
+Benjamin Zikarsky
+Marc Abramowitz
+Matt Lehner
+Benjamin Zikarsky
+Matt Lehner
+Marc Abramowitz
+FILE: tests/Monolog/Handler/GroupHandlerTest.php
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+Jordi Boggiano
+lenar
+FILE: tests/Monolog/Handler/HandlerWrapperTest.php
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+	 * @Alexey Karapetov <alexey@karapetov.com>
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+Jordi Boggiano
+Alexey Karapetov
+FILE: tests/Monolog/Handler/HipChatHandlerTest.php
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+	 * @Rafael Dohms <rafael@doh.ms>
+Rafael Dohms
+Jannik Zschiesche
+Rafael Dohms
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Roberto Araujo
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Eric Salter
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Eric Salter
+Jordi Boggiano
+Roberto Araujo
+Jordi Boggiano
+Roberto Araujo
+Jordi Boggiano
+Roberto Araujo
+Jordi Boggiano
+Jannik Zschiesche
+Jordi Boggiano
+Jannik Zschiesche
+Jordi Boggiano
+Jannik Zschiesche
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+pkraeutli
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Jordi Boggiano
+Rafael Dohms
+Milos Levacic
+Jordi Boggiano
+Eric Salter
+Rafael Dohms
+FILE: tests/Monolog/Handler/InsightOpsHandlerTest.php
+Jordi Boggiano
+gmsantos
+Jordi Boggiano
+gmsantos
+Jordi Boggiano
+gmsantos
+	 * @Robert Kaufmann III <rok3@rok3.me>
+gmsantos
+	 * @Gabriel Machado <gabriel.ms1@hotmail.com>
+gmsantos
+Sergey Zaika
+gmsantos
+Sergey Zaika
+gmsantos
+Sergey Zaika
+gmsantos
+FILE: tests/Monolog/Handler/LogEntriesHandlerTest.php
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+	 * @Robert Kaufmann III <rok3@rok3.me>
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+Jordi Boggiano
+Robert Kaufmann III
+FILE: tests/Monolog/Handler/LogmaticHandlerTest.php
+Julien Breux
+	 * @Julien Breux <julien.breux@gmail.com>
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+Jordi Boggiano
+Julien Breux
+FILE: tests/Monolog/Handler/MailHandlerTest.php
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+Christophe Coevoet
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Christophe Coevoet
+Gyula Sallai
+Christophe Coevoet
+Gyula Sallai
+Christophe Coevoet
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Gyula Sallai
+Jordi Boggiano
+FILE: tests/Monolog/Handler/MockRavenClient-gte-0-16-0.php
+Shawn Iwinski
+FILE: tests/Monolog/Handler/MockRavenClient.php
+Jordi Boggiano
+Marc Abramowitz
+Dimitri Gritsajuk
+Marc Abramowitz
+Stepan Mazurov
+Marc Abramowitz
+FILE: tests/Monolog/Handler/MongoDBHandlerTest.php
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Jeremy Mikola
+Jordi Boggiano
+Will Banfield
+Jeremy Mikola
+Will Banfield
+Jeremy Mikola
+Will Banfield
+Jeremy Mikola
+Jordi Boggiano
+FILE: tests/Monolog/Handler/NativeMailerHandlerTest.php
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Elan Ruusamäe
+Markus Staab
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Markus Staab
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Markus Staab
+Jordi Boggiano
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+Jordi Boggiano
+Elan Ruusamäe
+George Mponos
+Elan Ruusamäe
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Markus Staab
+FILE: tests/Monolog/Handler/NewRelicHandlerTest.php
+Jordi Boggiano
+Alessandro Nadalin
+Michael Moussa
+Jordi Boggiano
+Alessandro Nadalin
+Jordi Boggiano
+odino
+Ray Ward
+Florian Plattner
+odino
+Ray Ward
+Jordi Boggiano
+Florian Plattner
+odino
+Jordi Boggiano
+odino
+Jordi Boggiano
+odino
+Jordi Boggiano
+odino
+Jordi Boggiano
+Ray Ward
+odino
+Jordi Boggiano
+Ray Ward
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Ray Ward
+Jordi Boggiano
+Ray Ward
+Jordi Boggiano
+Ray Ward
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Mark Garrett
+Ray Ward
+Jordi Boggiano
+Ray Ward
+Jordi Boggiano
+Mark Garrett
+Jordi Boggiano
+Ray Ward
+odino
+Michael Moussa
+odino
+Ray Ward
+odino
+Jordi Boggiano
+odino
+Ray Ward
+odino
+Jordi Boggiano
+odino
+Ray Ward
+odino
+Florian Plattner
+Pascal Borreli
+Florian Plattner
+Jordi Boggiano
+Florian Plattner
+odino
+Alessandro Nadalin
+Jordi Boggiano
+Alessandro Nadalin
+odino
+Alessandro Nadalin
+odino
+Jordi Boggiano
+odino
+Jordi Boggiano
+odino
+Florian Plattner
+Ray Ward
+Jordi Boggiano
+Ray Ward
+Jordi Boggiano
+odino
+FILE: tests/Monolog/Handler/NoopHandlerTest.php
+Roel Harbers
+Jordi Boggiano
+Roel Harbers
+FILE: tests/Monolog/Handler/NullHandlerTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+FILE: tests/Monolog/Handler/PHPConsoleHandlerTest.php
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+George Mponos
+barbushin
+	 * @Sergey Barbushin https://www.linkedin.com/in/barbushin
+barbushin
+George Mponos
+barbushin
+George Mponos
+barbushin
+George Mponos
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+Jordi Boggiano
+barbushin
+FILE: tests/Monolog/Handler/ProcessHandlerTest.php
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+DQNEO
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+DQNEO
+kolja
+Jordi Boggiano
+kolja
+DQNEO
+kolja
+DQNEO
+kolja
+Jordi Boggiano
+kolja
+Jordi Boggiano
+kolja
+DQNEO
+kolja
+FILE: tests/Monolog/Handler/PsrHandlerTest.php
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+Jordi Boggiano
+Michael Moussa
+FILE: tests/Monolog/Handler/PushoverHandlerTest.php
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+	 * @Sebastian Göttschkes <sebastian.goettschkes@googlemail.com>
+Sebastian Goettschkes
+Jordi Boggiano
+Artur Moczulski
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Artur Moczulski
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Artur Moczulski
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+Sebastian Goettschkes
+Jordi Boggiano
+FILE: tests/Monolog/Handler/RavenHandlerTest.php
+Jordi Boggiano
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Fabien Potencier
+Shawn Iwinski
+Marc Abramowitz
+Stepan Mazurov
+Shawn Iwinski
+Marc Abramowitz
+Shawn Iwinski
+Marc Abramowitz
+Dimitri Gritsajuk
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Stepan Mazurov
+Marc Abramowitz
+Stepan Mazurov
+Marc Abramowitz
+Jordi Boggiano
+ipsq
+Jordi Boggiano
+ipsq
+Marc Abramowitz
+Tomasz Wójcik
+Tim Strijdhorst
+Jordi Boggiano
+Tomasz Wójcik
+Tim Strijdhorst
+Tomasz Wójcik
+Dmitriy Garanzha
+Jordi Boggiano
+Dmitriy Garanzha
+Stepan Mazurov
+Jordi Boggiano
+Stepan Mazurov
+Jordi Boggiano
+Stepan Mazurov
+Jordi Boggiano
+Stepan Mazurov
+Jordi Boggiano
+Stepan Mazurov
+Jordi Boggiano
+Stepan Mazurov
+George Mponos
+Stepan Mazurov
+Dimitri Gritsajuk
+Stepan Mazurov
+Jordi Boggiano
+Stepan Mazurov
+Marc Abramowitz
+Jordi Boggiano
+Marc Abramowitz
+Dimitri Gritsajuk
+Marc Abramowitz
+Fabien Potencier
+Florian Pfitzer
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Florian Pfitzer
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Tugdual Saunier
+Jordi Boggiano
+Tugdual Saunier
+Jordi Boggiano
+Tugdual Saunier
+Jordi Boggiano
+Fabien Potencier
+Jordi Boggiano
+Fabien Potencier
+Grégoire Paris
+Jordi Boggiano
+Grégoire Paris
+Dimitri Gritsajuk
+George Mponos
+Dimitri Gritsajuk
+George Mponos
+Dimitri Gritsajuk
+George Mponos
+Jordi Boggiano
+Dimitri Gritsajuk
+Marc Abramowitz
+FILE: tests/Monolog/Handler/RedisHandlerTest.php
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Jordi Boggiano
+Jeremy Kitchen
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jordi Boggiano
+Matt Wells
+Jeremy Kitchen
+FILE: tests/Monolog/Handler/RollbarHandlerTest.php
+Erik Johansson
+George Mponos
+Artur Moczulski
+Erik Johansson
+	 * @Erik Johansson <erik.pm.johansson@gmail.com>
+Erik Johansson
+Artur Moczulski
+Erik Johansson
+Artur Moczulski
+Erik Johansson
+Artur Moczulski
+Erik Johansson
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Jordi Boggiano
+Artur Moczulski
+Erik Johansson
+Artur Moczulski
+Erik Johansson
+Artur Moczulski
+Erik Johansson
+Artur Moczulski
+Erik Johansson
+Jordi Boggiano
+Erik Johansson
+FILE: tests/Monolog/Handler/RotatingFileHandlerTest.php
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Grégoire Pineau
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Grégoire Pineau
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Christophe Coevoet
+Remon van de Kamp
+Christophe Coevoet
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+DQNEO
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+Remon van de Kamp
+DQNEO
+Remon van de Kamp
+Jordi Boggiano
+Alban Kora
+Jordi Boggiano
+Alban Kora
+Jordi Boggiano
+Alban Kora
+Jordi Boggiano
+Alban Kora
+Jordi Boggiano
+Alban Kora
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Remon van de Kamp
+Jordi Boggiano
+FILE: tests/Monolog/Handler/SamplingHandlerTest.php
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+Jordi Boggiano
+Kunal Mehta
+FILE: tests/Monolog/Handler/Slack/SlackRecordTest.php
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Jordi Boggiano
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+George Mponos
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+George Mponos
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Anton Nizhegorodov
+Haralan Dobrev
+FILE: tests/Monolog/Handler/SlackHandlerTest.php
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+Haralan Dobrev
+gkedzierski
+	 * @Greg Kedzierski <greg@gregkedzierski.com>
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Anton Nizhegorodov
+Derek Clapham
+Jordi Boggiano
+Anton Nizhegorodov
+Jordi Boggiano
+Derek Clapham
+Jordi Boggiano
+Derek Clapham
+Jordi Boggiano
+Derek Clapham
+Anton Nizhegorodov
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Anton Nizhegorodov
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Haralan Dobrev
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+Jordi Boggiano
+gkedzierski
+FILE: tests/Monolog/Handler/SlackWebhookHandlerTest.php
+Jordi Boggiano
+Haralan Dobrev
+Jordi Boggiano
+Haralan Dobrev
+	 * @Haralan Dobrev <hkdobrev@gmail.com>
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+Anton Nizhegorodov
+Haralan Dobrev
+FILE: tests/Monolog/Handler/SocketHandlerTest.php
+Jordi Boggiano
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+George Mponos
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+summary Add license header and move @to phpdoc
+	 * @Pablo de Leon Belloc <pablolb@gmail.com>
+Pablo Belloc
+summary Add license header and move @to phpdoc
+Pablo Belloc
+George Mponos
+Pablo Belloc
+Martin Hasoň
+Pablo Belloc
+Martin Hasoň
+Pablo Belloc
+Danilo Silva
+Klemen Bratec
+Pablo Belloc
+Pablo de Leon Belloc
+Pablo Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Pablo Belloc
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo Belloc
+Klemen Bratec
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+George Mponos
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Danilo Silva
+Jordi Boggiano
+Danilo Silva
+Pablo Belloc
+Jordi Boggiano
+Pablo Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Pablo de Leon Belloc
+Jordi Boggiano
+Klemen Bratec
+Jordi Boggiano
+Pablo Belloc
+FILE: tests/Monolog/Handler/StreamHandlerTest.php
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Ian Babrou
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Theo Kouzelis
+Jordi Boggiano
+Theo Kouzelis
+Jordi Boggiano
+Theo Kouzelis
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Dominik Zogg
+Jordi Boggiano
+Dominik Zogg
+Jordi Boggiano
+Dominik Zogg
+Jordi Boggiano
+FILE: tests/Monolog/Handler/SwiftMailerHandlerTest.php
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+George Mponos
+John Kary
+George Mponos
+John Kary
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+John Kary
+Jordi Boggiano
+John Kary
+Aleksei Shmelev
+Jordi Boggiano
+Alex Rock Ancelet
+Aleksei Shmelev
+Jordi Boggiano
+Aleksei Shmelev
+Jordi Boggiano
+Aleksei Shmelev
+John Kary
+FILE: tests/Monolog/Handler/SyslogHandlerTest.php
+Jordi Boggiano
+Sven Paulus
+Jordi Boggiano
+David Zuelke
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+Jordi Boggiano
+David Zuelke
+Sven Paulus
+Jordi Boggiano
+Sven Paulus
+Chris Forrence
+Jordi Boggiano
+Sven Paulus
+FILE: tests/Monolog/Handler/SyslogUdpHandlerTest.php
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Laurent Laville
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+ont
+Jordi Boggiano
+ont
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Dimitri Gritsajuk
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+ont
+Jesper Skovgaard Nielsen
+ont
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Dimitri Gritsajuk
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+FILE: tests/Monolog/Handler/TestHandlerTest.php
+Jordi Boggiano
+Julien Falque
+Austin Hyde
+Jordi Boggiano
+Austin Hyde
+Jordi Boggiano
+Austin Hyde
+Julien Falque
+Austin Hyde
+Jordi Boggiano
+Austin Hyde
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+Petter Blomberg
+Jordi Boggiano
+FILE: tests/Monolog/Handler/UdpSocketTest.php
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Laurent Laville
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Dimitri Gritsajuk
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Dimitri Gritsajuk
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+Jordi Boggiano
+Jesper Skovgaard Nielsen
+FILE: tests/Monolog/Handler/WhatFailureGroupHandlerTest.php
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Chris Wilkinson
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+Craig D'Amelio
+Jordi Boggiano
+FILE: tests/Monolog/Handler/ZendMonitorHandlerTest.php
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+Jordi Boggiano
+ChristianB
+FILE: tests/Monolog/LoggerTest.php
+Jordi Boggiano
+Artem Nezvigin
+Christophe Coevoet
+Artem Nezvigin
+Jordi Boggiano
+Reda Bouchaala
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Sam Minnee
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Sam-Burns
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+Bryan Davis
+Jordi Boggiano
+George Mponos
+Jordi Boggiano
+Bryan Davis
+Vincent Paré
+Jordi Boggiano
+Vincent Paré
+Jordi Boggiano
+Vincent Paré
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+Grégoire Pineau
+Jordi Boggiano
+FILE: tests/Monolog/Processor/GitProcessorTest.php
+Jordi Boggiano
+otternq
+Jordi Boggiano
+otternq
+FILE: tests/Monolog/Processor/HostnameProcessorTest.php
+mahone3297
+George Mponos
+mahone3297
+FILE: tests/Monolog/Processor/IntrospectionProcessorTest.php
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+George Mponos
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+Kris Wallsmith
+George Mponos
+Jordi Boggiano
+Kris Wallsmith
+Jordi Boggiano
+FILE: tests/Monolog/Processor/MemoryPeakUsageProcessorTest.php
+Jordi Boggiano
+Hennadiy Verkh
+George Mponos
+Hennadiy Verkh
+Jordi Boggiano
+FILE: tests/Monolog/Processor/MemoryUsageProcessorTest.php
+Jordi Boggiano
+Hennadiy Verkh
+George Mponos
+Hennadiy Verkh
+Jordi Boggiano
+FILE: tests/Monolog/Processor/MercurialProcessorTest.php
+Jordi Boggiano
+Jonathan A. Schweder
+Jordi Boggiano
+Jonathan A. Schweder
+Jordi Boggiano
+Jonathan A. Schweder
+Jordi Boggiano
+Jonathan A. Schweder
+FILE: tests/Monolog/Processor/ProcessIdProcessorTest.php
+Jordi Boggiano
+anho
+Jordi Boggiano
+anho
+George Mponos
+anho
+Jordi Boggiano
+anho
+FILE: tests/Monolog/Processor/PsrLogMessageProcessorTest.php
+Jordi Boggiano
+Jakub Chábek
+Jordi Boggiano
+Piers Warmers
+Jakub Chábek
+Piers Warmers
+Jordi Boggiano
+Piers Warmers
+Jordi Boggiano
+Piers Warmers
+Jordi Boggiano
+Lars Strojny
+Jordi Boggiano
+FILE: tests/Monolog/Processor/TagProcessorTest.php
+Jordi Boggiano
+ipsq
+Jordi Boggiano
+ipsq
+Jordi Boggiano
+ipsq
+Jordi Boggiano
+ipsq
+Jordi Boggiano
+ipsq
+FILE: tests/Monolog/Processor/UidProcessorTest.php
+Jordi Boggiano
+Simon Mönch
+Jordi Boggiano
+Simon Mönch
+Jordi Boggiano
+Jared Markell
+Simon Mönch
+FILE: tests/Monolog/Processor/WebProcessorTest.php
+Jordi Boggiano
+Tiago Ribeiro
+Jordi Boggiano
+Matthias Pigulla
+Jordi Boggiano
+Tiago Ribeiro
+Jordi Boggiano
+Matthias Pigulla
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Jordi Boggiano
+Christophe Coevoet
+Tiago Ribeiro
+Jordi Boggiano
+Tiago Ribeiro
+Jordi Boggiano
+Tiago Ribeiro
+Jordi Boggiano
+Tiago Ribeiro
+Matthias Pigulla
+Jordi Boggiano
+Matthias Pigulla
+Jordi Boggiano
+Matthias Pigulla
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+Dawid Nowak
+Jordi Boggiano
+FILE: tests/Monolog/PsrLogCompatTest.php
+Jordi Boggiano
+FILE: tests/Monolog/RegistryTest.php
+Jordi Boggiano
+dtarasov
+Jordi Boggiano
+dtarasov
+Jordi Boggiano
+dtarasov
+Jordi Boggiano
+dtarasov
+Jordi Boggiano
+dtarasov
+Jordi Boggiano
+dtarasov
+Kevin M Granger
+Chris Forrence
+Kevin M Granger
+Chris Forrence
+Kevin M Granger
+Jordi Boggiano
+Kevin M Granger
+dtarasov
+FILE: tests/Monolog/SignalHandlerTest.php
+Jordi Boggiano
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+	 * @Robert Gust-Bardon <robert@gust-bardon.org>
+Robert Gust-Bardon
+Jordi Boggiano
+Robert Gust-Bardon
+FILE: tests/bootstrap.php
+Jordi Boggiano
+DQNEO

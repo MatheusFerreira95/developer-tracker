@@ -1,0 +1,1164 @@
+FILE: .gitattributes
+Ankur Kumar
+FILE: .gitignore
+Mark van der Velden
+FILE: .travis.yml
+Gabriel Caruso
+FILE: CHANGELOG.md
+Francois Zaninotto
+FILE: CONTRIBUTING.md
+Francois Zaninotto
+FILE: LICENSE
+Graham Campbell
+FILE: Makefile
+Andreas Möller
+FILE: composer.json
+Francois Zaninotto
+FILE: phpunit.xml.dist
+Andreas Möller
+FILE: readme.md
+Francois Zaninotto
+FILE: src/Faker/Calculator/Iban.php
+Ankit Pokhrel
+FILE: src/Faker/Calculator/Inn.php
+Aleksandr Novikov
+FILE: src/Faker/Calculator/Luhn.php
+Ankit Pokhrel
+FILE: src/Faker/Calculator/TCNo.php
+Aykut Aras
+FILE: src/Faker/DefaultGenerator.php
+Ankit Pokhrel
+FILE: src/Faker/Documentor.php
+Daniel Müller
+FILE: src/Faker/Factory.php
+Francois Zaninotto
+FILE: src/Faker/Generator.php
+Tabakhase
+FILE: src/Faker/Guesser/Name.php
+Daniel Müller
+FILE: src/Faker/ORM/CakePHP/ColumnTypeGuesser.php
+Francois Zaninotto
+FILE: src/Faker/ORM/CakePHP/EntityPopulator.php
+Francois Zaninotto
+FILE: src/Faker/ORM/CakePHP/Populator.php
+Daniel Müller
+FILE: src/Faker/ORM/Doctrine/ColumnTypeGuesser.php
+Oleg Voronkovich
+FILE: src/Faker/ORM/Doctrine/EntityPopulator.php
+Ross Mitchell
+FILE: src/Faker/ORM/Doctrine/Populator.php
+Daniel Müller
+FILE: src/Faker/ORM/Mandango/ColumnTypeGuesser.php
+Daniel Müller
+FILE: src/Faker/ORM/Mandango/EntityPopulator.php
+Daniel Müller
+FILE: src/Faker/ORM/Mandango/Populator.php
+Daniel Müller
+FILE: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+Gabriel Caruso
+FILE: src/Faker/ORM/Propel/EntityPopulator.php
+Francois Zaninotto
+FILE: src/Faker/ORM/Propel/Populator.php
+Daniel Müller
+FILE: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+Gabriel Caruso
+FILE: src/Faker/ORM/Propel2/EntityPopulator.php
+Dhaval Patel
+FILE: src/Faker/ORM/Propel2/Populator.php
+Dhaval Patel
+FILE: src/Faker/ORM/Spot/ColumnTypeGuesser.php
+Yurii Savka
+FILE: src/Faker/ORM/Spot/EntityPopulator.php
+Gabriel Caruso
+FILE: src/Faker/ORM/Spot/Populator.php
+urisavka
+FILE: src/Faker/Provider/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/Barcode.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/Base.php
+Richard Quadling
+FILE: src/Faker/Provider/Biased.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/Color.php
+Francois Zaninotto
+FILE: src/Faker/Provider/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/DateTime.php
+Tom Rochette
+FILE: src/Faker/Provider/File.php
+pomaxa
+FILE: src/Faker/Provider/HtmlLorem.php
+Gabriel Caruso
+FILE: src/Faker/Provider/Image.php
+Erik Berkun-Drevnig
+FILE: src/Faker/Provider/Internet.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/Lorem.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/Miscellaneous.php
+Thomas Praxl
+FILE: src/Faker/Provider/Payment.php
+Chad Smith
+FILE: src/Faker/Provider/Person.php
+pomaxa
+FILE: src/Faker/Provider/PhoneNumber.php
+Dale Attree
+FILE: src/Faker/Provider/Text.php
+ppelgrims
+FILE: src/Faker/Provider/UserAgent.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/Uuid.php
+pomaxa
+FILE: src/Faker/Provider/ar_JO/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/ar_JO/Company.php
+zaid-86
+FILE: src/Faker/Provider/ar_JO/Internet.php
+zaid-86
+FILE: src/Faker/Provider/ar_JO/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/ar_JO/Text.php
+Ibrahim AshShohail
+FILE: src/Faker/Provider/ar_SA/Address.php
+Ibrahim AshShohail
+FILE: src/Faker/Provider/ar_SA/Color.php
+Hamoud Alhoqbani
+FILE: src/Faker/Provider/ar_SA/Company.php
+Mohamed Abidi
+FILE: src/Faker/Provider/ar_SA/Internet.php
+Ibrahim AshShohail
+FILE: src/Faker/Provider/ar_SA/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/ar_SA/Person.php
+Mohamed Abidi
+FILE: src/Faker/Provider/ar_SA/Text.php
+Ibrahim AshShohail
+FILE: src/Faker/Provider/at_AT/Payment.php
+Gabriel Caruso
+FILE: src/Faker/Provider/bg_BG/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/bg_BG/Payment.php
+Gabriel Caruso
+FILE: src/Faker/Provider/bg_BG/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/bg_BG/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/bn_BD/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/bn_BD/Company.php
+David Stensland
+FILE: src/Faker/Provider/bn_BD/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/bn_BD/PhoneNumber.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/bn_BD/Utils.php
+Francois Zaninotto
+FILE: src/Faker/Provider/cs_CZ/Address.php
+Mikulas
+FILE: src/Faker/Provider/cs_CZ/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/cs_CZ/DateTime.php
+Francois Zaninotto
+FILE: src/Faker/Provider/cs_CZ/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/cs_CZ/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/cs_CZ/Person.php
+Juha Remes
+FILE: src/Faker/Provider/cs_CZ/PhoneNumber.php
+Tomas Bedrich
+FILE: src/Faker/Provider/cs_CZ/Text.php
+Francois Zaninotto
+FILE: src/Faker/Provider/da_DK/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/da_DK/Company.php
+toin0u
+FILE: src/Faker/Provider/da_DK/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/da_DK/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/da_DK/Person.php
+David Tolnem
+FILE: src/Faker/Provider/da_DK/PhoneNumber.php
+toin0u
+FILE: src/Faker/Provider/de_AT/Address.php
+Markus Poerschke
+FILE: src/Faker/Provider/de_AT/Company.php
+Bernhard Essl
+FILE: src/Faker/Provider/de_AT/Internet.php
+Francois Zaninotto
+FILE: src/Faker/Provider/de_AT/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/de_AT/Person.php
+xelan
+FILE: src/Faker/Provider/de_AT/PhoneNumber.php
+Bernhard Essl
+FILE: src/Faker/Provider/de_AT/Text.php
+Findus23
+FILE: src/Faker/Provider/de_CH/Address.php
+Markus Poerschke
+FILE: src/Faker/Provider/de_CH/Company.php
+r3h6
+FILE: src/Faker/Provider/de_CH/Internet.php
+stoffo
+FILE: src/Faker/Provider/de_CH/Payment.php
+r3h6
+FILE: src/Faker/Provider/de_CH/Person.php
+z38
+FILE: src/Faker/Provider/de_CH/PhoneNumber.php
+z38
+FILE: src/Faker/Provider/de_CH/Text.php
+r3h6
+FILE: src/Faker/Provider/de_DE/Address.php
+Adam Stachowicz
+FILE: src/Faker/Provider/de_DE/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/de_DE/Internet.php
+stoffo
+FILE: src/Faker/Provider/de_DE/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/de_DE/Person.php
+Juha Remes
+FILE: src/Faker/Provider/de_DE/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/de_DE/Text.php
+Francois Zaninotto
+FILE: src/Faker/Provider/el_CY/Address.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Company.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Internet.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Payment.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/el_CY/PhoneNumber.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_GR/Address.php
+Drakakis.Vbox
+FILE: src/Faker/Provider/el_GR/Company.php
+Eagle
+FILE: src/Faker/Provider/el_GR/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/el_GR/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/el_GR/PhoneNumber.php
+Sébastien Nikolaou
+FILE: src/Faker/Provider/el_GR/Text.php
+alex
+FILE: src/Faker/Provider/en_AU/Address.php
+Juha Remes
+FILE: src/Faker/Provider/en_AU/Internet.php
+Rick Cuddy
+FILE: src/Faker/Provider/en_AU/PhoneNumber.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/en_CA/Address.php
+Julien Chaumond
+FILE: src/Faker/Provider/en_CA/PhoneNumber.php
+marchanlon
+FILE: src/Faker/Provider/en_GB/Address.php
+Adrian Tombu
+FILE: src/Faker/Provider/en_GB/Internet.php
+Tim Düsterhus
+FILE: src/Faker/Provider/en_GB/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_GB/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_GB/PhoneNumber.php
+nickwebcouk
+FILE: src/Faker/Provider/en_HK/Address.php
+Michael Tsang
+FILE: src/Faker/Provider/en_HK/Internet.php
+Michael Tsang
+FILE: src/Faker/Provider/en_HK/PhoneNumber.php
+Michael Tsang
+FILE: src/Faker/Provider/en_IN/Address.php
+Jivesh
+FILE: src/Faker/Provider/en_IN/Internet.php
+Kartik Somani
+FILE: src/Faker/Provider/en_IN/Person.php
+Kartik Somani
+FILE: src/Faker/Provider/en_IN/PhoneNumber.php
+Kartik Somani
+FILE: src/Faker/Provider/en_NG/Address.php
+raphaeldealmeida
+FILE: src/Faker/Provider/en_NG/Internet.php
+raphaeldealmeida
+FILE: src/Faker/Provider/en_NG/Person.php
+raphaeldealmeida
+FILE: src/Faker/Provider/en_NG/PhoneNumber.php
+raphaeldealmeida
+FILE: src/Faker/Provider/en_NZ/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_NZ/Internet.php
+Chris Burgess
+FILE: src/Faker/Provider/en_NZ/PhoneNumber.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/en_PH/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_PH/PhoneNumber.php
+Napoleon Carino Jr
+FILE: src/Faker/Provider/en_SG/Address.php
+KimSia Sim
+FILE: src/Faker/Provider/en_SG/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_UG/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_UG/Internet.php
+tharoldD
+FILE: src/Faker/Provider/en_UG/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_UG/PhoneNumber.php
+tharoldD
+FILE: src/Faker/Provider/en_US/Address.php
+Adrian Tombu
+FILE: src/Faker/Provider/en_US/Company.php
+samoldenburg
+FILE: src/Faker/Provider/en_US/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/en_US/Person.php
+Mark
+FILE: src/Faker/Provider/en_US/PhoneNumber.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/en_US/Text.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_ZA/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_ZA/Company.php
+Andre Smith
+FILE: src/Faker/Provider/en_ZA/Internet.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_ZA/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/en_ZA/PhoneNumber.php
+Andre Smith
+FILE: src/Faker/Provider/es_AR/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_AR/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_AR/Person.php
+Ivan Mirson
+FILE: src/Faker/Provider/es_AR/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_ES/Address.php
+David Fernández
+FILE: src/Faker/Provider/es_ES/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_ES/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/es_ES/Payment.php
+Miguel Gonzalez
+FILE: src/Faker/Provider/es_ES/Person.php
+Francisco J. Figuereo Moya
+FILE: src/Faker/Provider/es_ES/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_ES/Text.php
+David Fernández
+FILE: src/Faker/Provider/es_PE/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_PE/Company.php
+Carlos Salvatierra
+FILE: src/Faker/Provider/es_PE/Person.php
+Jaime G. Wong
+FILE: src/Faker/Provider/es_PE/PhoneNumber.php
+Carlos Salvatierra
+FILE: src/Faker/Provider/es_VE/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_VE/Company.php
+Domingo Oropeza
+FILE: src/Faker/Provider/es_VE/Internet.php
+Francois Zaninotto
+FILE: src/Faker/Provider/es_VE/Person.php
+Gabriel Caruso
+FILE: src/Faker/Provider/es_VE/PhoneNumber.php
+Domingo Oropeza
+FILE: src/Faker/Provider/fa_IR/Address.php
+thisissorna
+FILE: src/Faker/Provider/fa_IR/Company.php
+thisissorna
+FILE: src/Faker/Provider/fa_IR/Internet.php
+nambra
+FILE: src/Faker/Provider/fa_IR/Person.php
+Arsalan
+FILE: src/Faker/Provider/fa_IR/PhoneNumber.php
+thisissorna
+FILE: src/Faker/Provider/fa_IR/Text.php
+Mohammad Zolfaghari
+FILE: src/Faker/Provider/fi_FI/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/fi_FI/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/fi_FI/Internet.php
+Tim Düsterhus
+FILE: src/Faker/Provider/fi_FI/Payment.php
+oittaa
+FILE: src/Faker/Provider/fi_FI/Person.php
+Simo Heinonen
+FILE: src/Faker/Provider/fi_FI/PhoneNumber.php
+Tommi Finnilä
+FILE: src/Faker/Provider/fr_BE/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/fr_BE/Company.php
+Adnan RIHAN
+FILE: src/Faker/Provider/fr_BE/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/fr_BE/Payment.php
+Gabriel Caruso
+FILE: src/Faker/Provider/fr_BE/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/fr_BE/PhoneNumber.php
+Pascal Borreli
+FILE: src/Faker/Provider/fr_CA/Address.php
+Alexi Tessier
+FILE: src/Faker/Provider/fr_CA/Company.php
+Adnan RIHAN
+FILE: src/Faker/Provider/fr_CA/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/fr_CA/Text.php
+Martin Boudreau
+FILE: src/Faker/Provider/fr_CH/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/fr_CH/Company.php
+Pierre-André Vullioud
+FILE: src/Faker/Provider/fr_CH/Internet.php
+r3h6
+FILE: src/Faker/Provider/fr_CH/Payment.php
+r3h6
+FILE: src/Faker/Provider/fr_CH/Person.php
+z38
+FILE: src/Faker/Provider/fr_CH/PhoneNumber.php
+z38
+FILE: src/Faker/Provider/fr_CH/Text.php
+r3h6
+FILE: src/Faker/Provider/fr_FR/Address.php
+Nicolas de Marqué Fromentin
+FILE: src/Faker/Provider/fr_FR/Company.php
+ppelgrims
+FILE: src/Faker/Provider/fr_FR/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/fr_FR/Payment.php
+ppelgrims
+FILE: src/Faker/Provider/fr_FR/Person.php
+Thomas Bordinat
+FILE: src/Faker/Provider/fr_FR/PhoneNumber.php
+ppelgrims
+FILE: src/Faker/Provider/fr_FR/Text.php
+Francois Zaninotto
+FILE: src/Faker/Provider/he_IL/Address.php
+Jonathan Rom
+FILE: src/Faker/Provider/he_IL/Company.php
+Jonathan Rom
+FILE: src/Faker/Provider/he_IL/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/he_IL/Person.php
+Jonathan Rom
+FILE: src/Faker/Provider/he_IL/PhoneNumber.php
+Jonathan Rom
+FILE: src/Faker/Provider/hr_HR/Address.php
+Toni Perić
+FILE: src/Faker/Provider/hr_HR/Company.php
+Toni Perić
+FILE: src/Faker/Provider/hr_HR/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/hr_HR/Person.php
+Toni Perić
+FILE: src/Faker/Provider/hr_HR/PhoneNumber.php
+toniperic
+FILE: src/Faker/Provider/hu_HU/Address.php
+Tamás Nagy
+FILE: src/Faker/Provider/hu_HU/Company.php
+Sági-Kazár Márk
+FILE: src/Faker/Provider/hu_HU/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/hu_HU/Person.php
+balping
+FILE: src/Faker/Provider/hu_HU/PhoneNumber.php
+Sági-Kazár Márk
+FILE: src/Faker/Provider/hu_HU/Text.php
+lintaba
+FILE: src/Faker/Provider/hy_AM/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/hy_AM/Color.php
+mhamlet
+FILE: src/Faker/Provider/hy_AM/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/hy_AM/Internet.php
+mhamlet
+FILE: src/Faker/Provider/hy_AM/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/hy_AM/PhoneNumber.php
+mhamlet
+FILE: src/Faker/Provider/id_ID/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/id_ID/Company.php
+Budi Irawan
+FILE: src/Faker/Provider/id_ID/Internet.php
+Budi Irawan
+FILE: src/Faker/Provider/id_ID/Person.php
+Kaupo Juhkam
+FILE: src/Faker/Provider/id_ID/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/is_IS/Address.php
+Charles SANQUER
+FILE: src/Faker/Provider/is_IS/Company.php
+Pascal Borreli
+FILE: src/Faker/Provider/is_IS/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/is_IS/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/is_IS/Person.php
+Arthúr Ólafsson
+FILE: src/Faker/Provider/is_IS/PhoneNumber.php
+Bernhard Essl
+FILE: src/Faker/Provider/it_CH/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/it_CH/Company.php
+r3h6
+FILE: src/Faker/Provider/it_CH/Internet.php
+r3h6
+FILE: src/Faker/Provider/it_CH/Payment.php
+r3h6
+FILE: src/Faker/Provider/it_CH/Person.php
+z38
+FILE: src/Faker/Provider/it_CH/PhoneNumber.php
+z38
+FILE: src/Faker/Provider/it_CH/Text.php
+r3h6
+FILE: src/Faker/Provider/it_IT/Address.php
+Mark van der Velden
+FILE: src/Faker/Provider/it_IT/Company.php
+Marco Vito Moscaritolo
+FILE: src/Faker/Provider/it_IT/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/it_IT/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/it_IT/Person.php
+brainrepo
+FILE: src/Faker/Provider/it_IT/PhoneNumber.php
+Mark van der Velden
+FILE: src/Faker/Provider/it_IT/Text.php
+Manuel Dalla Lana
+FILE: src/Faker/Provider/ja_JP/Address.php
+YAMANE Nana
+FILE: src/Faker/Provider/ja_JP/Company.php
+YAMANE Nana
+FILE: src/Faker/Provider/ja_JP/Internet.php
+itigoppo
+FILE: src/Faker/Provider/ja_JP/Person.php
+itigoppo
+FILE: src/Faker/Provider/ja_JP/PhoneNumber.php
+itigoppo
+FILE: src/Faker/Provider/ja_JP/Text.php
+hejunwei
+FILE: src/Faker/Provider/ka_GE/Address.php
+George Kotchlamazashvili
+FILE: src/Faker/Provider/ka_GE/Color.php
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Company.php
+George Kotchlamazashvili
+FILE: src/Faker/Provider/ka_GE/DateTime.php
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Internet.php
+George Kotchlamazashvili
+FILE: src/Faker/Provider/ka_GE/Payment.php
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Person.php
+George Kotchlamazashvili
+FILE: src/Faker/Provider/ka_GE/PhoneNumber.php
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Text.php
+Levan Velijanashvili
+FILE: src/Faker/Provider/kk_KZ/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/kk_KZ/Color.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Company.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Internet.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/kk_KZ/Person.php
+Vadim Dvorovenko
+FILE: src/Faker/Provider/kk_KZ/PhoneNumber.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Text.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/ko_KR/Address.php
+coozplz
+FILE: src/Faker/Provider/ko_KR/Company.php
+pearlc
+FILE: src/Faker/Provider/ko_KR/Internet.php
+pearlc
+FILE: src/Faker/Provider/ko_KR/Person.php
+TaeL Kim
+FILE: src/Faker/Provider/ko_KR/PhoneNumber.php
+Enosh Yu
+FILE: src/Faker/Provider/ko_KR/Text.php
+jdssem
+FILE: src/Faker/Provider/lt_LT/Address.php
+Eimantas Kateiva
+FILE: src/Faker/Provider/lt_LT/Company.php
+Justinas Bolys
+FILE: src/Faker/Provider/lt_LT/Internet.php
+Eimantas Kateiva
+FILE: src/Faker/Provider/lt_LT/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/lt_LT/Person.php
+Gabriel Caruso
+FILE: src/Faker/Provider/lt_LT/PhoneNumber.php
+Eimantas Kateiva
+FILE: src/Faker/Provider/lv_LV/Address.php
+Ronalds
+FILE: src/Faker/Provider/lv_LV/Color.php
+pomaxa
+FILE: src/Faker/Provider/lv_LV/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/lv_LV/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/lv_LV/Person.php
+veisis
+FILE: src/Faker/Provider/lv_LV/PhoneNumber.php
+veisis
+FILE: src/Faker/Provider/me_ME/Address.php
+Mehmet Aydin Bahadir
+FILE: src/Faker/Provider/me_ME/Company.php
+David Stensland
+FILE: src/Faker/Provider/me_ME/Payment.php
+ognjen miletic
+FILE: src/Faker/Provider/me_ME/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/me_ME/PhoneNumber.php
+ognjen miletic
+FILE: src/Faker/Provider/mn_MN/Person.php
+selmonal
+FILE: src/Faker/Provider/mn_MN/PhoneNumber.php
+selmonal
+FILE: src/Faker/Provider/ms_MY/Address.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Company.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Miscellaneous.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Payment.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Person.php
+Gabriel Caruso
+FILE: src/Faker/Provider/ms_MY/PhoneNumber.php
+Ken
+FILE: src/Faker/Provider/nb_NO/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/nb_NO/Company.php
+Alexander Hjorth
+FILE: src/Faker/Provider/nb_NO/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/nb_NO/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/nb_NO/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/ne_NP/Address.php
+Adrian Tombu
+FILE: src/Faker/Provider/ne_NP/Internet.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/ne_NP/Person.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/ne_NP/PhoneNumber.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/nl_BE/Address.php
+Anthony Vanden Bossche
+FILE: src/Faker/Provider/nl_BE/Company.php
+Wim Vandersmissen
+FILE: src/Faker/Provider/nl_BE/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/nl_BE/Payment.php
+Gabriel Caruso
+FILE: src/Faker/Provider/nl_BE/Person.php
+ppelgrims
+FILE: src/Faker/Provider/nl_BE/PhoneNumber.php
+Pascal Borreli
+FILE: src/Faker/Provider/nl_BE/Text.php
+rauwebieten
+FILE: src/Faker/Provider/nl_NL/Address.php
+ametad
+FILE: src/Faker/Provider/nl_NL/Color.php
+Ben
+FILE: src/Faker/Provider/nl_NL/Company.php
+Laurens Laman
+FILE: src/Faker/Provider/nl_NL/Internet.php
+Tim Düsterhus
+FILE: src/Faker/Provider/nl_NL/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/nl_NL/Person.php
+Gijs Jorissen
+FILE: src/Faker/Provider/nl_NL/PhoneNumber.php
+Kees Kluskens
+FILE: src/Faker/Provider/nl_NL/Text.php
+endroid
+FILE: src/Faker/Provider/pl_PL/Address.php
+piotrooo
+FILE: src/Faker/Provider/pl_PL/Company.php
+David Stensland
+FILE: src/Faker/Provider/pl_PL/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/pl_PL/Payment.php
+Ion Bazan
+FILE: src/Faker/Provider/pl_PL/Person.php
+Krzysztof Grabania
+FILE: src/Faker/Provider/pl_PL/PhoneNumber.php
+Piotr Antosik
+FILE: src/Faker/Provider/pl_PL/Text.php
+piotrooo
+FILE: src/Faker/Provider/pt_BR/Address.php
+francinaldo
+FILE: src/Faker/Provider/pt_BR/Company.php
+Thiago Talma
+FILE: src/Faker/Provider/pt_BR/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/pt_BR/Payment.php
+Igor Santos
+FILE: src/Faker/Provider/pt_BR/Person.php
+Igor Santos
+FILE: src/Faker/Provider/pt_BR/PhoneNumber.php
+Jack Miras
+FILE: src/Faker/Provider/pt_BR/check_digit.php
+Igor Santos
+FILE: src/Faker/Provider/pt_PT/Address.php
+raphaeldealmeida
+FILE: src/Faker/Provider/pt_PT/Payment.php
+Hugo Fonseca
+FILE: src/Faker/Provider/pt_PT/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/pt_PT/PhoneNumber.php
+Hugo Fonseca
+FILE: src/Faker/Provider/ro_MD/Address.php
+AlexanderC
+FILE: src/Faker/Provider/ro_MD/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/ro_MD/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/ro_MD/PhoneNumber.php
+AlexanderC
+FILE: src/Faker/Provider/ro_MD/Text.php
+wecerny
+FILE: src/Faker/Provider/ro_RO/Address.php
+Calina Cenan
+FILE: src/Faker/Provider/ro_RO/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/ro_RO/Person.php
+the-noob
+FILE: src/Faker/Provider/ro_RO/PhoneNumber.php
+Gabriel Caruso
+FILE: src/Faker/Provider/ro_RO/Text.php
+Francois Zaninotto
+FILE: src/Faker/Provider/ru_RU/Address.php
+Ilya Hoilik
+FILE: src/Faker/Provider/ru_RU/Color.php
+Andriy Semenets
+FILE: src/Faker/Provider/ru_RU/Company.php
+Aleksey Klimov
+FILE: src/Faker/Provider/ru_RU/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/ru_RU/Payment.php
+Sayapin Alexander
+FILE: src/Faker/Provider/ru_RU/Person.php
+Dmitriy Simushev
+FILE: src/Faker/Provider/ru_RU/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/ru_RU/Text.php
+iamraccoon
+FILE: src/Faker/Provider/sk_SK/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sk_SK/Company.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sk_SK/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/sk_SK/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sk_SK/Person.php
+Graham Campbell
+FILE: src/Faker/Provider/sk_SK/PhoneNumber.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sl_SI/Address.php
+Shawn Iwinski
+FILE: src/Faker/Provider/sl_SI/Company.php
+Aleš Vaupotič
+FILE: src/Faker/Provider/sl_SI/Internet.php
+Shawn Iwinski
+FILE: src/Faker/Provider/sl_SI/Payment.php
+Shawn Iwinski
+FILE: src/Faker/Provider/sl_SI/Person.php
+Aleš Farčnik
+FILE: src/Faker/Provider/sl_SI/PhoneNumber.php
+Shawn Iwinski
+FILE: src/Faker/Provider/sr_Cyrl_RS/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sr_Cyrl_RS/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sr_Cyrl_RS/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/sr_Latn_RS/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sr_Latn_RS/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sr_Latn_RS/Person.php
+Charles SANQUER
+FILE: src/Faker/Provider/sr_RS/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sr_RS/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sr_RS/Person.php
+bogdanpet
+FILE: src/Faker/Provider/sv_SE/Address.php
+Ulrik Johansson
+FILE: src/Faker/Provider/sv_SE/Company.php
+Vincent Klaiber
+FILE: src/Faker/Provider/sv_SE/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/sv_SE/Person.php
+Francois Zaninotto
+FILE: src/Faker/Provider/sv_SE/PhoneNumber.php
+Ulrik Johansson
+FILE: src/Faker/Provider/th_TH/Address.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/Color.php
+Naruedom
+FILE: src/Faker/Provider/th_TH/Company.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/Internet.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/Payment.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/PhoneNumber.php
+Preeti Yuankrathok
+FILE: src/Faker/Provider/tr_TR/Address.php
+Francois Zaninotto
+FILE: src/Faker/Provider/tr_TR/Color.php
+Behram ÇELEN
+FILE: src/Faker/Provider/tr_TR/Company.php
+yuks
+FILE: src/Faker/Provider/tr_TR/DateTime.php
+Behram ÇELEN
+FILE: src/Faker/Provider/tr_TR/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/tr_TR/Payment.php
+Francois Zaninotto
+FILE: src/Faker/Provider/tr_TR/Person.php
+Aykut Aras
+FILE: src/Faker/Provider/tr_TR/PhoneNumber.php
+Gökhan Öztürk
+FILE: src/Faker/Provider/uk_UA/Address.php
+Jarosław Goszowski
+FILE: src/Faker/Provider/uk_UA/Color.php
+ruden
+FILE: src/Faker/Provider/uk_UA/Company.php
+iamraccoon
+FILE: src/Faker/Provider/uk_UA/Internet.php
+Hugo Fonseca
+FILE: src/Faker/Provider/uk_UA/Payment.php
+zhenja.zholkevskij
+FILE: src/Faker/Provider/uk_UA/Person.php
+vladbuk
+FILE: src/Faker/Provider/uk_UA/PhoneNumber.php
+iamraccoon
+FILE: src/Faker/Provider/uk_UA/Text.php
+newman101
+FILE: src/Faker/Provider/vi_VN/Address.php
+Adrian Tombu
+FILE: src/Faker/Provider/vi_VN/Color.php
+Huy TQ
+FILE: src/Faker/Provider/vi_VN/Internet.php
+Francois Zaninotto
+FILE: src/Faker/Provider/vi_VN/Person.php
+Huy TQ
+FILE: src/Faker/Provider/vi_VN/PhoneNumber.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/zh_CN/Address.php
+Hans Zhang
+FILE: src/Faker/Provider/zh_CN/Color.php
+z-song
+FILE: src/Faker/Provider/zh_CN/Company.php
+z-song
+FILE: src/Faker/Provider/zh_CN/DateTime.php
+z-song
+FILE: src/Faker/Provider/zh_CN/Internet.php
+z-song
+FILE: src/Faker/Provider/zh_CN/Payment.php
+z-song
+FILE: src/Faker/Provider/zh_CN/Person.php
+Phoenix Gao
+FILE: src/Faker/Provider/zh_CN/PhoneNumber.php
+zhwei
+FILE: src/Faker/Provider/zh_TW/Address.php
+YiXiang
+FILE: src/Faker/Provider/zh_TW/Color.php
+Francois Zaninotto
+FILE: src/Faker/Provider/zh_TW/Company.php
+DESKTOP-ATRT1VG\Dago
+FILE: src/Faker/Provider/zh_TW/DateTime.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Internet.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Payment.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Person.php
+DESKTOP-ATRT1VG\Dago
+FILE: src/Faker/Provider/zh_TW/PhoneNumber.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Text.php
+Yi-Xiang Wang
+FILE: src/Faker/UniqueGenerator.php
+Ankit Pokhrel
+FILE: src/Faker/ValidGenerator.php
+Ankit Pokhrel
+FILE: src/autoload.php
+Roman 'pomaxa' Shvets
+FILE: test/Faker/Calculator/IbanTest.php
+Gabriel Caruso
+FILE: test/Faker/Calculator/InnTest.php
+Gabriel Caruso
+FILE: test/Faker/Calculator/LuhnTest.php
+Gabriel Caruso
+FILE: test/Faker/Calculator/TCNoTest.php
+Aykut Aras
+FILE: test/Faker/DefaultGeneratorTest.php
+Gabriel Caruso
+FILE: test/Faker/GeneratorTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/BarcodeTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/BaseTest.php
+Andrew
+FILE: test/Faker/Provider/BiasedTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ColorTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/DateTimeTest.php
+Ross Mitchell
+FILE: test/Faker/Provider/HtmlLoremTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ImageTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/LocalizationTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/LoremTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/MiscellaneousTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/PaymentTest.php
+Chad Smith
+FILE: test/Faker/Provider/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ProviderOverrideTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/UserAgentTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/UuidTest.php
+Remi Collet
+FILE: test/Faker/Provider/ar_JO/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ar_SA/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/at_AT/PaymentTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/bg_BG/PaymentTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/bn_BD/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/cs_CZ/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/da_DK/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/de_AT/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/de_AT/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/de_CH/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/de_CH/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/de_CH/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/de_DE/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/el_GR/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_AU/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_CA/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_GB/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_IN/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_NG/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_NG/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_NG/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_NG/PhoneNumberTest.php
+Arsalan
+FILE: test/Faker/Provider/en_NZ/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_PH/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_SG/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_SG/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_UG/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_US/CompanyTest.php
+Wilson Whitaker
+FILE: test/Faker/Provider/en_US/PaymentTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_US/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_US/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_ZA/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_ZA/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_ZA/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/en_ZA/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/es_ES/PaymentTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/es_ES/PersonTest.php
+Francisco J. Figuereo Moya
+FILE: test/Faker/Provider/es_ES/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/es_PE/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/es_VE/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/es_VE/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fa_IR/PersonTest.php
+Arsalan
+FILE: test/Faker/Provider/fi_FI/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fi_FI/PersonTest.php
+Remi Collet
+FILE: test/Faker/Provider/fr_BE/PaymentTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fr_CH/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fr_CH/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fr_CH/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fr_FR/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fr_FR/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fr_FR/PaymentTest.php
+ppelgrims
+FILE: test/Faker/Provider/fr_FR/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/fr_FR/PhoneNumberTest.php
+Wilson Whitaker
+FILE: test/Faker/Provider/fr_FR/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/id_ID/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/it_CH/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/it_CH/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/it_CH/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/it_IT/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/it_IT/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ja_JP/InternetTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ja_JP/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ja_JP/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ka_GE/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/kk_KZ/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/kk_KZ/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/kk_KZ/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ko_KR/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/mn_MN/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ms_MY/PersonTest.php
+Ken
+FILE: test/Faker/Provider/nl_BE/PaymentTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/nl_BE/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/nl_NL/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/nl_NL/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/pl_PL/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/pl_PL/PersonTest.php
+Krzysztof Grabania
+FILE: test/Faker/Provider/pt_BR/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/pt_BR/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/pt_PT/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/pt_PT/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/pt_PT/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ro_RO/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ro_RO/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/ru_RU/CompanyTest.php
+Aleksey Klimov
+FILE: test/Faker/Provider/ru_RU/TextTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/sv_SE/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/tr_TR/CompanyTest.php
+Wilson Whitaker
+FILE: test/Faker/Provider/tr_TR/PaymentTest.php
+Aykut Aras
+FILE: test/Faker/Provider/tr_TR/PersonTest.php
+Aykut Aras
+FILE: test/Faker/Provider/tr_TR/PhoneNumberTest.php
+Aykut Aras
+FILE: test/Faker/Provider/uk_UA/AddressTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/uk_UA/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/uk_UA/PhoneNumberTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/zh_TW/CompanyTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/zh_TW/PersonTest.php
+Gabriel Caruso
+FILE: test/Faker/Provider/zh_TW/TextTest.php
+Gabriel Caruso
+FILE: test/documentor.php
+Mark van der Velden
+FILE: test/test.php
+Francois Zaninotto
