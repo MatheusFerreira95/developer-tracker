@@ -77,6 +77,9 @@ class TruckFactor {
 
 		String fileName = null;
 
+		List<String> authorsFromFile = new ArrayList<String>();
+		Integer totalCommits = 0;
+		List<Integer> commitsPerAuthor = new ArrayList<Integer>();
 		// lendo cada linha do arquivo de entrada e carregando para as listas de autores
 		// e de arquivos
 		while (scanner.hasNextLine()) {
@@ -86,12 +89,23 @@ class TruckFactor {
 			if (getFileName(line) != null) {
 
 				fileName = getFileName(line);
+
+				if (authorsFromFile.size() > 0) {
+
+					setAuthor(authorsFromFile, commitsPerAuthor, totalCommits, fileName);
+					authorsFromFile = new ArrayList<String>();
+					commitsPerAuthor = new ArrayList<Integer>();
+					totalCommits = 0;
+				}
+
 				continue;
 			}
 
-			String authorName = line;
+			authorsFromFile.add(line.substring(7));
+			Integer commitThatAuthor = Integer.parseInt(line.substring(0, 7).trim());
+			commitsPerAuthor.add(commitThatAuthor);
+			totalCommits += commitThatAuthor;
 
-			setAuthor(authorName, fileName);
 		}
 
 		System.out.println();
@@ -174,20 +188,26 @@ class TruckFactor {
 	private static void removeFiles(Entry<String, List<String>> author) {
 
 		List<String> remove = new ArrayList<String>();
+		List<String> removeAuthor = new ArrayList<String>();
 
 		Iterator<Entry<String, List<String>>> it = files.entrySet().iterator();
 		while (it.hasNext()) {
 			Entry<String, List<String>> file = it.next();
-			// remove author from file
-			List<String> authorsFile = (List<String>) file.getValue();
-			for (String authorFile : authorsFile) {
 
-				if (authorFile.equals(author)) {
-					authorsFile.remove(authorFile);
+			// remove author from file
+			for (int i = 0; i < file.getValue().size(); i++) {
+
+				if (file.getValue().get(i).equals(author.getKey())) {
+					removeAuthor.add(file.getValue().get(i));
 				}
 			}
+
+			for (String index : removeAuthor) {
+				file.getValue().remove(index);
+			}
+
 			// remove file with zero authors
-			if (authorsFile.size() == 0) {
+			if (file.getValue().size() == 0) {
 				remove.add(file.getKey());
 			}
 		}
@@ -202,30 +222,29 @@ class TruckFactor {
 	 * autoria) e a lista de arquivos (adicionando os autores responsáveis por sua
 	 * autoria)
 	 **/
-	private static void setAuthor(String authorName, String fileName) {
+	private static void setAuthor(List<String> authorsFromFile, List<Integer> commitsPerAuthor, Integer totalCommits,
+			String fileName) {
 
-		// set list files
-		List<String> authorsFile = files.get(fileName);
+		Integer commitsAdded = 0;
+		for (int i = 0; i < authorsFromFile.size(); i++) {
+			authors.putIfAbsent(authorsFromFile.get(i), new ArrayList<String>());
+			files.putIfAbsent(fileName, new ArrayList<String>());
 
-		if (authorsFile != null) {
+			commitsAdded += commitsPerAuthor.get(i);
 
-			authorsFile.add(authorName);
+			if (i > 0) {
+				Boolean ok = ((commitsAdded * 100) / totalCommits) < 90;
 
-		} else {
+				if (ok) {
+					authors.get(authorsFromFile.get(i)).add(fileName);
+					files.get(fileName).add(authorsFromFile.get(i));
+				}
+			} else {
 
-			files.put(fileName, new ArrayList<String>());
-		}
+				authors.get(authorsFromFile.get(i)).add(fileName);
+				files.get(fileName).add(authorsFromFile.get(i));
+			}
 
-		// set list authors
-		List<String> filesAuthor = authors.get(authorName);
-
-		if (filesAuthor != null) {
-
-			filesAuthor.add(fileName);
-
-		} else {
-
-			authors.put(authorName, new ArrayList<String>());
 		}
 	}
 
@@ -261,10 +280,10 @@ class TruckFactor {
 		}
 
 		String chartsHtml = "<div class=\"flex-container\"> <div> <canvas id=\"" + instance
-				+ "\" width=\"900\" height=\"300\"></canvas> </div>";
-		String datailHtml = "<div class=\"detail\"> <p>Truck Factor: " + authorsTF.size() + "</p> <p>Time Grredy Truck Factor: "
-				+ timeGredyTruckFactor + " ms</p> <p>Time Order: " + timeOrder + " ms</p> <p>Time Read Instance: "
-				+ timeReadInputFile + " ms</p> </div> </div>";
+				+ "\" width=\"1000\" height=\"300\"></canvas> </div>";
+		String datailHtml = "<div class=\"detail\"> <p>Truck Factor: " + authorsTF.size()
+				+ "</p> <p>Time Grredy Truck Factor: " + timeGredyTruckFactor + " ms</p> <p>Time Order: " + timeOrder
+				+ " ms</p> <p>Time Read Instance: " + timeReadInputFile + " ms</p> </div> </div>";
 		String chartsScript = " var ctx = document.getElementById(\"" + instance
 				+ "\"); var myChart = new Chart(ctx, { type: \"bar\",data: { labels: [" + authorsHtml
 				+ "], datasets: [{ label: \"Truck Factor for " + instance + "\", data: [" + dataHtml + "], backgroundColor: ["
@@ -281,7 +300,7 @@ class TruckFactor {
 	 * excução
 	 **/
 	private static void showHtmlFile(long timeElapsed) throws IOException {
-		String style = "<style> .flex-container { display: flex; flex-wrap: nowrap; justify-content: center;} .flex-container > div { width: 900px; margin: 20px; text-align: center;} .detail {border: 1px solid #aaa; width:300px !important; height:151px;} body {text-align:center; min-width: 900px; color: #555} </style>";
+		String style = "<style> .flex-container { display: flex; flex-wrap: nowrap; justify-content: center;} .flex-container > div { width: 1000px; margin: 20px; text-align: center;} .detail {border: 1px solid #aaa; width:250px !important; height:151px;} body {text-align:center; min-width: 1300px; color: #555} </style>";
 		String header = "<h3>Truck Factor - Matheus Silva Ferreira</h3> <p>Num instances: " + instances.size()
 				+ "</p> <p>Total Time: " + timeElapsed + " ms</p>";
 		String start = "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Truck Factor</title> " + style
