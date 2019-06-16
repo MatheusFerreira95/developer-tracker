@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -26,6 +28,8 @@ class TruckFactor {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
+		Instant start = Instant.now();
+
 		String inputFileName = args.length > 0 ? args[0] : null;
 
 		if (inputFileName != null) {
@@ -45,7 +49,10 @@ class TruckFactor {
 			++index;
 		}
 
-		showHtmlFile();
+		Instant finish = Instant.now();
+		long timeElapsed = Duration.between(start, finish).toMillis();
+
+		showHtmlFile(timeElapsed);
 	}
 
 	/**
@@ -250,10 +257,12 @@ class TruckFactor {
 	 * Método que Edita o arquivo index.html e abre o navegador com a resposta da
 	 * excução
 	 **/
-	private static void showHtmlFile() throws IOException {
+	private static void showHtmlFile(long timeElapsed) throws IOException {
 		String style = "<style> body {text-align:center} canvas { display: inline !important; }</style>";
-		String header = "<h3>Truck Factor - Matheus Silva Ferreira</h3> <p>Num instances: 2</p> <p>Total Time: 0.33 s</p>";
-		String start = "<!DOCTYPE html> <html> <head> <meta charset='UTF-8'> <title>Truck Factor</title> "+ style +" </head> <body> <script src='Chart.min.js'></script> " + header;
+		String header = "<h3>Truck Factor - Matheus Silva Ferreira</h3> <p>Num instances: " + instances.size()
+				+ "</p> <p>Total Time: " + timeElapsed + "</p>";
+		String start = "<!DOCTYPE html> <html> <head> <meta charset='UTF-8'> <title>Truck Factor</title> " + style
+				+ " </head> <body> <script src='Chart.min.js'></script> " + header;
 		String end = "</body> </html>";
 
 		String codeHtml = start + htmlContent + end;
