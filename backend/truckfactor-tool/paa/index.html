@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Truck Factor</title>
+</head>
+
+<body>
+  <script src='Chart.min.js'></script>
+
+  <h5>Y = Num Files Author</h5>
+  <h5>X = Name Author</h5>
+  <canvas id="myChart" width="500" height="300"></canvas>
+  <script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["dev 1", "dev 2", "dev 3", "dev 4"],
+        datasets: [{
+          label: 'Truck Factor',
+          data: [1, 2, 3, 4],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(54, 162, 235, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          xAxes: [{
+            ticks: {
+              maxRotation: 90,
+              minRotation: 80
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

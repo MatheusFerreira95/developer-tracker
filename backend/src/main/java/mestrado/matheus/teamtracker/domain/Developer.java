@@ -13,6 +13,7 @@ public class Developer {
 	public String lastCommit;
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList;
 	public Integer avatar;
+	public Boolean truckFactor = false;
 
 	public Developer(String name, String email, Integer numCommits, Integer avatar) {
 		this.name = name;

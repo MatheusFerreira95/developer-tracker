@@ -19,7 +19,9 @@ class TruckFactor {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		readInputFile("/home/matheus/Área de trabalho/input.txt");
+		String inputFileName = args.length > 0 ? args[1] : "input.txt";
+		
+		readInputFile(inputFileName);
 		greedyTruckFactor();
 
 	}
@@ -56,6 +58,11 @@ class TruckFactor {
 		//ordenando a lista de autores de forma que o maior autor seja o primeiro da lista
 		orderAuthors();
 
+		System.out.println();
+		System.out.println("Total Developers: " + authors.size());
+		System.out.println("Total Files: " + files.size());
+		System.out.println();
+
 	}
 
 	/** Método que implementa o Algoritmo Guloso que calcula o valor de truck factor **/
@@ -80,12 +87,13 @@ class TruckFactor {
 			//verificando se mais da metade dos arquivos são orfaos
 			if (files.size() < halfFiles) {
 
-				//parando execução do algoritmo e retornando resultado
-				printTruckFactor(authorsTF);
+				//parando execução do algoritmo
 				break;
 			}
 		}
 
+		//exibindo resultado
+		printTruckFactor(authorsTF);
 	}
 
 	/** ------------------------------------------ **/
@@ -112,6 +120,7 @@ class TruckFactor {
 	/** Método para imprimir o resultado final **/
 	private static void printTruckFactor(List<String> authorsTF) {
 
+		System.out.println();
 		System.out.println("TF: " + authorsTF.size());
 		System.out.println("Developer(s):");
 

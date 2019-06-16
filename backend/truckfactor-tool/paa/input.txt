@@ -1,0 +1,4053 @@
+FILE: .gitignore
+Rafael Mendonça
+David Barbosa
+Cleiton
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+FILE: Integracao_SCA.eu
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+FILE: Integracao_SCA_producao_dezembro_2018.eu
+Matheus Silva Ferreira
+FILE: backend/app/common/models/MComboComposto.java
+Rafael Mendonça
+FILE: backend/app/common/models/MNotification.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/MPessoa.java
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+FILE: backend/app/common/models/filters/Filter.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterConversa.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterEmpreendimento.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterGeo.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterIdPlanoNumeroFonteForChart.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterPlanoTrabalho.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterVwRecursoWithFonte.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/FilterVwRecursoWithPlano.java
+Matheus Silva Ferreira
+FILE: backend/app/common/models/filters/builders/FilterConversaBuilder.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/AtividadeController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/AtividadePlanoAplicacaoController.java
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: backend/app/controllers/ConversaController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/DefaultController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/DespesaController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/DocumentoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/DocumentoPlanoAplicacaoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/EmpreendimentoController.java
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: backend/app/controllers/EstadoController.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/controllers/FileController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/HistoricoSaldoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/MensagemController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/MotivoReprovacaoDespesaController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/NaturezaController.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/controllers/NotaEmpenhoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/NotaLancamentoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/NotaReforcoController.java
+João Paulo Vilela
+FILE: backend/app/controllers/NotificacaoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/OrdemBancariaController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/PDFPlanoDeTrabalhoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/PagamentoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/PessoaFisicaController.java
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/app/controllers/PlanoDeAplicacaoController.java
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/app/controllers/PlanoDeTrabalhoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/ProgramaController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/RecursoController.java
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: backend/app/controllers/SecureController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/SolicitacaoCancelamentoRecursoGerenteController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/StatusPlanoAplicacaoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/StatusPlanoTrabalhoController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/TipoDespesaController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/TipoLicencaController.java
+Matheus Silva Ferreira
+FILE: backend/app/controllers/UnidadeConservacaoController.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/controllers/VwUnidadeConservacaoController.java
+Matheus Silva Ferreira
+FILE: backend/app/deserializer/DateDeserializer.java
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/deserializer/GeometryDeserializer.java
+Rafael Mendonça
+FILE: backend/app/enums/EAcao.java
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+FILE: backend/app/enums/EPercentual.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/EPerfil.java
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/enums/EStatusConversa.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/EStatusDocumentoPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/EStatusMensagem.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/EStatusPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/EStatusPlanoTrabalho.java
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+FILE: backend/app/enums/EStatusRecurso.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/ETipoDocumento.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/ETipoDocumentoPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/enums/ETipoPagamento.java
+Matheus Silva Ferreira
+FILE: backend/app/exceptions/ApplicationException.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/exceptions/EUException.java
+Matheus Silva Ferreira
+FILE: backend/app/exceptions/ValidationException.java
+Matheus Silva Ferreira
+FILE: backend/app/jobs/AtualizarPessoas.java
+Matheus Silva Ferreira
+FILE: backend/app/models/PDF/pdfPlanoTrabalhoPorFonte.java
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+FILE: backend/app/models/PDF/pdfPlanoTrabalhoPorUC.java
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+FILE: backend/app/models/base_corporativa/Documento.java
+Matheus Silva Ferreira
+FILE: backend/app/models/base_corporativa/Estado.java
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/models/base_corporativa/EstadoGeometria.java
+Matheus Silva Ferreira
+FILE: backend/app/models/base_corporativa/Municipio.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/models/base_corporativa/MunicipioGeometria.java
+Matheus Silva Ferreira
+FILE: backend/app/models/base_corporativa/PessoaFisica.java
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/app/models/base_corporativa/Programa.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/models/base_corporativa/TipoDocumento.java
+Matheus Silva Ferreira
+David Barbosa
+FILE: backend/app/models/base_corporativa/UnidadeConservacao.java
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/models/base_corporativa/VwUnidadeConservacao.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/AnexoMensagem.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/Assunto.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/Conversa.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/Mensagem.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/RelConversaStatus.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/RelMensagemStatus.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/RemetenteDestinatario.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/StatusConversa.java
+Matheus Silva Ferreira
+FILE: backend/app/models/central_comunicacao/StatusMensagem.java
+Matheus Silva Ferreira
+FILE: backend/app/models/empreendimento/Empreendimento.java
+Matheus Silva Ferreira
+FILE: backend/app/models/empreendimento/EnderecoEmpreendimento.java
+Matheus Silva Ferreira
+David Barbosa
+FILE: backend/app/models/empreendimento/Licenca.java
+Matheus Silva Ferreira
+FILE: backend/app/models/empreendimento/Natureza.java
+Matheus Silva Ferreira
+FILE: backend/app/models/empreendimento/RelEmpreendimentoResponsavelLegal.java
+Matheus Silva Ferreira
+FILE: backend/app/models/empreendimento/Telefone.java
+Matheus Silva Ferreira
+FILE: backend/app/models/empreendimento/TipoLicenca.java
+Matheus Silva Ferreira
+FILE: backend/app/models/empreendimento/UnidadeConservacaoBeneficiaria.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/AtividadePlanoAplicacao.java
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/DocumentoPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/Historico.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/MembroComissaoTecnica.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/PagamentoPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/PlanoDeAplicacao.java
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+FILE: backend/app/models/plano_de_aplicacao/RelPlanoAplicacaoResponsavel.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/SituacaoDocumentoPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/StatusDocumentoPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/StatusPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_aplicacao/TipoDocumentoPlanoAplicacao.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_trabalho/Atividade.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_trabalho/PlanoDeTrabalho.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_trabalho/RelPlanoTrabalhoResponsavel.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_trabalho/StatusPlanoTrabalho.java
+Matheus Silva Ferreira
+FILE: backend/app/models/plano_de_trabalho/VwPlanoDeTrabalhoPdf.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/models/recurso/Despesa.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/HistoricoSaldo.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/MotivoReprovacaoDespesa.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/NotaEmpenho.java
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/NotaLancamento.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/NotaReforco.java
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+FILE: backend/app/models/recurso/OrdemBancaria.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/Pagamento.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/Recurso.java
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/SolicitacaoCancelamentoRecursoGerente.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/StatusRecurso.java
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+FILE: backend/app/models/recurso/TipoDespesa.java
+Matheus Silva Ferreira
+FILE: backend/app/models/recurso/VwRecurso.java
+Matheus Silva Ferreira
+FILE: backend/app/plugins/JsonBinderPlugin.java
+Matheus Silva Ferreira
+FILE: backend/app/secure/AuthenticationServiceFactory.java
+Matheus Silva Ferreira
+FILE: backend/app/secure/CodigoAcao.java
+Matheus Silva Ferreira
+FILE: backend/app/secure/IAuthenticatedUser.java
+Matheus Silva Ferreira
+FILE: backend/app/secure/IAuthenticationService.java
+Matheus Silva Ferreira
+FILE: backend/app/secure/Permissao.java
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+FILE: backend/app/secure/UsuarioSCA.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/AtividadePlanoAplicacaoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/AtividadeSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/ConversaSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/DateSerializer.java
+Rafael Mendonça
+FILE: backend/app/serializers/DespesaSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/EmpreendimentoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/EstadoSerializer.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/serializers/HistoricoSaldoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/MotivoReprovacaoDespesaSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/PessoaFisicaSerializer.java
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/app/serializers/PlanoDeAplicacaoSerializer.java
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+FILE: backend/app/serializers/PlanoDeTrabalhoSerializer.java
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/serializers/RecursoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/SecureSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/StatusPlanoDeTrabalhoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/TipoDespesaSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/TipoLicencaSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/UnidadeConservacaoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/VwRecursoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/serializers/VwUnidadeConservacaoSerializer.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/AtividadePlanoAplicacaoUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/CodificacaoUtils.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/Config.java
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/utils/ContatoUtils.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/DateUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/Email.java
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+FILE: backend/app/utils/FileManager.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/Formatacao.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/GeoJsonUtils.java
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/app/utils/GraficoUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/IlikeNoAccents.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/InetAddressComparator.java
+Rafael Mendonça
+FILE: backend/app/utils/ListUtils.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/MascaraUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/MessagesUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/ObjectUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/PermissaoUtils.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/PessoaUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/SaidaUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/ValidationUtil.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/WebService.java
+Rafael Mendonça
+FILE: backend/app/utils/flexJson/GeometryTransformer.java
+Matheus Silva Ferreira
+FILE: backend/app/utils/tags/TagPDF.java
+Matheus Silva Ferreira
+FILE: backend/app/views/ConversaController/pdfConversa.html
+Matheus Silva Ferreira
+FILE: backend/app/views/PDFPlanoDeTrabalhoController/pdfPlanoTrabalhoPorFonte.html
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+FILE: backend/app/views/PDFPlanoDeTrabalhoController/pdfPlanoTrabalhoPorUC.html
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+FILE: backend/conf/application.conf
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Mario de Carvalho Joaquim Filho
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/conf/application_homologacao.conf
+Matheus Silva Ferreira
+FILE: backend/conf/application_producao.conf
+Matheus Silva Ferreira
+FILE: backend/conf/dependencies.yml
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/conf/log4j.properties
+Matheus Silva Ferreira
+FILE: backend/conf/messages
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/conf/play.plugins
+Rafael Mendonça
+FILE: backend/conf/routes
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+João Paulo Vilela
+Rafael Mendonça
+FILE: backend/db/evolutions/01.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/02.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/03.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/04.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/05.sql
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+FILE: backend/db/evolutions/06.sql
+David Barbosa
+FILE: backend/db/evolutions/07.sql
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+FILE: backend/db/evolutions/08.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/09.sql
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+FILE: backend/db/evolutions/10.sql
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+FILE: backend/db/evolutions/11.sql
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Tiago Paraizo
+David Barbosa
+Cleiton
+FILE: backend/db/evolutions/12.sql
+David Barbosa
+Cleiton
+David Barbosa
+FILE: backend/db/evolutions/13.sql
+David Barbosa
+FILE: backend/db/evolutions/14.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/15.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/16.sql
+David Barbosa
+FILE: backend/db/evolutions/17.sql
+David Barbosa
+FILE: backend/db/evolutions/18.sql
+Matheus Silva Ferreira
+David Barbosa
+FILE: backend/db/evolutions/19.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/20.sql
+David Barbosa
+FILE: backend/db/evolutions/21.sql
+David Barbosa
+FILE: backend/db/evolutions/22.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/23.sql
+Rafael Mendonça
+FILE: backend/db/evolutions/24.sql
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/db/evolutions/25.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/26.sql
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/db/evolutions/27.sql
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/db/evolutions/28.sql
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/db/evolutions/29.sql
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: backend/db/evolutions/30.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/31.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/32.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/33.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/34.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/35.sql
+Matheus Silva Ferreira
+David Barbosa
+FILE: backend/db/evolutions/36.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/37.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/38.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/39.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/40.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/41.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/42.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/43.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/44.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/45.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/46.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/47.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/48.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/49.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/50.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/51.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/52.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/53.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/54.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/55.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/56.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/57.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/58.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/59.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/60.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/61.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/62.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/63.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/64.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/65.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/66.sql
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/67.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/68.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/69.sql
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+FILE: backend/db/evolutions/70.sql
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/71.sql
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/72.sql
+Rafael Mendonça
+Tiago Paraizo
+Rafael Mendonça
+Tiago Paraizo
+Rafael Mendonça
+Tiago Paraizo
+Rafael Mendonça
+Tiago Paraizo
+Rafael Mendonça
+Tiago Paraizo
+Rafael Mendonça
+FILE: backend/db/evolutions/73.sql
+Matheus Silva Ferreira
+FILE: backend/db/evolutions/_00.sql
+Rafael Mendonça
+FILE: backend/db/permissoes_eu/01.sql
+Matheus Silva Ferreira
+FILE: backend/db/permissoes_eu/02.sql
+Matheus Silva Ferreira
+FILE: backend/db/permissoes_eu/03.sql
+Matheus Silva Ferreira
+FILE: backend/db/permissoes_eu/04.sql
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: backend/db/permissoes_eu/05.sql
+Rafael Mendonça
+FILE: backend/db/permissoes_eu/06.sql
+Rafael Mendonça
+FILE: backend/db/seed/01.sql
+Matheus Silva Ferreira
+FILE: backend/db/utils/grants.sql
+Matheus Silva Ferreira
+Tiago Paraizo
+Matheus Silva Ferreira
+Tiago Paraizo
+FILE: backend/external-libs/cadastro-unificado-oauth-client-1.0.0.jar
+Matheus Silva Ferreira
+FILE: deploy.sh
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Mario de Carvalho Joaquim Filho
+Rafael Mendonça
+Matheus Silva Ferreira
+Mario de Carvalho Joaquim Filho
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Mario de Carvalho Joaquim Filho
+Rafael Mendonça
+Mario de Carvalho Joaquim Filho
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Mario de Carvalho Joaquim Filho
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Mario de Carvalho Joaquim Filho
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: deployPresentation.sh
+Matheus Silva Ferreira
+FILE: frontend/.babelrc
+Cleiton
+FILE: frontend/.eslintrc.json
+Cleiton
+FILE: frontend/index.html
+Cleiton
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Cleiton
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+FILE: frontend/intern.json
+Cleiton
+FILE: frontend/package.json
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+João Paulo Vilela
+Cleiton
+Rafael Mendonça
+Cleiton
+João Paulo Vilela
+Rafael Mendonça
+Cleiton
+João Paulo Vilela
+David Barbosa
+Matheus Silva Ferreira
+Cleiton
+João Paulo Vilela
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/app.js
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/css/angular-data-grid.scss
+Cleiton
+FILE: frontend/src/app/css/angular-tooltips.css
+Matheus Silva Ferreira
+FILE: frontend/src/app/css/base.scss
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/css/cards.scss
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/css/index.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/css/leaflet.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/css/messages.scss
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/css/modais.scss
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/css/nv.d3.css
+David Barbosa
+FILE: frontend/src/app/css/pagination.scss
+Cleiton
+FILE: frontend/src/app/css/telefone.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/css/variables.scss
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/images/_icon.icoBinaryClick
+FILE: to
+FILE: download.desktop
+FILE: frontend/src/app/images/central-administrador.png
+Rafael Mendonça
+FILE: frontend/src/app/images/central-comunicacao.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/compensacao.png
+Cleiton
+FILE: frontend/src/app/images/empreendimento.png
+Cleiton
+FILE: frontend/src/app/images/favicon.ico
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/favicon.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/fundo-login.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/gerente.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/icon_chrome.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/icon_firefox.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/logo-branca.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/logo-ideflor.svg
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/logo.png
+Cleiton
+Rafael Mendonça
+FILE: frontend/src/app/images/marker_icon.svg
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/membroComissaoTecnicaSCA.png
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/plano-aplicacao.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/plano-trabalho.png
+Cleiton
+FILE: frontend/src/app/images/recursos-financeiros.png
+Cleiton
+FILE: frontend/src/app/images/responsavelLegal.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/responsavelPAED.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/responsavelPT.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/sistema-informacao-geografica.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/spritesheet.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/images/tecnico.png
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/commons.module.js
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+David Barbosa
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/acoes-grid/acoes-grid.js
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+FILE: frontend/src/app/modules/common/components/acoes-grid/acoes-grid.pug
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/authenticade-user/authenticade-user.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/breadcrumb/breadcrumb.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/breadcrumb/breadcrumb.pug
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/breadcrumb/breadcrumb.scss
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+FILE: frontend/src/app/modules/common/components/cnpj-input-search/cnpj-input-search.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/cnpj-input-search/cnpj-input-search.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/cnpj-input/cnpj-input.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/cnpj-input/cnpj-input.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/cpf-input-search/cpf-input-search.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/cpf-input-search/cpf-input-search.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/cpf-input/cpf-input.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/cpf-input/cpf-input.pug
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/crud/crud.controller.js
+Cleiton
+FILE: frontend/src/app/modules/common/components/crud/crud.js
+Cleiton
+FILE: frontend/src/app/modules/common/components/footer/footer.js
+Cleiton
+FILE: frontend/src/app/modules/common/components/footer/footer.pug
+Cleiton
+FILE: frontend/src/app/modules/common/components/footer/footer.scss
+Cleiton
+FILE: frontend/src/app/modules/common/components/header/header.js
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/header/header.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/header/header.scss
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/home/home.js
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/home/home.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/icon-message/icon-message.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/icon-message/icon-message.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/icon-message/icon-message.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/icon-total/icon-total.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/icon-total/icon-total.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/icon-total/icon-total.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/legend-grid/legend-grid.js
+Cleiton
+FILE: frontend/src/app/modules/common/components/legend-grid/legend-grid.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/login/login.js
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/login/login.pug
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/login/login.scss
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/login/modal-cadastrar.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/login/modal-cadastrar.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/modal-documentacao-plano-aplicacao/modal-documentacao-plano-aplicacao.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/modal-documentacao-plano-aplicacao/modal-documentacao-plano-aplicacao.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/modal-generica/modal-generica.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/modal-generica/modal-generica.pug
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/modal-perfil/modal-perfil.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/modal-perfil/modal-perfil.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/modal-perfil/modal-perfil.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/modal-pessoa-entrada-unica/modal-pessoa-entrada-unica.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/modal-pessoa-entrada-unica/modal-pessoa-entrada-unica.pug
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/modal-vincular-gerente-uc/modal-vincular-gerente-uc.js
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/modal-vincular-gerente-uc/modal-vincular-gerente-uc.pug
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/module-menu/module-menu.js
+Cleiton
+FILE: frontend/src/app/modules/common/components/module-menu/module-menu.pug
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/module-menu/module-menu.scss
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+David Barbosa
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/notification/notification.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/notification/notification.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/notification/notification.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaCC/pesquisaCC.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaCC/pesquisaCC.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaCC/pesquisaCC.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaEP/pesquisaEP.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaEP/pesquisaEP.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaEP/pesquisaEP.scss
+Matheus Silva Ferreira
+David Barbosa
+FILE: frontend/src/app/modules/common/components/pesquisaPA/pesquisaPA.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaPA/pesquisaPA.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaPA/pesquisaPA.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaPT/pesquisaPT.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaPT/pesquisaPT.pug
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaPT/pesquisaPT.scss
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/pesquisaSR-avancada/pesquisaSR-avancada.js
+João Paulo Vilela
+FILE: frontend/src/app/modules/common/components/pesquisaSR-avancada/pesquisaSR-avancada.pug
+João Paulo Vilela
+FILE: frontend/src/app/modules/common/components/pesquisaSR-avancada/pesquisaSR-avancada.scss
+João Paulo Vilela
+FILE: frontend/src/app/modules/common/components/pesquisaSR/pesquisaSR.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaSR/pesquisaSR.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/pesquisaSR/pesquisaSR.scss
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/side-menu-item/side-menu-item.js
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/side-menu-item/side-menu-item.pug
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/side-menu-item/side-menu-item.scss
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+David Barbosa
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/side-menu/side-menu.js
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/side-menu/side-menu.pug
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/common/components/side-menu/side-menu.scss
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/sig-modal-detalhes-uc/sig-modal-detalhes-uc.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/sig-modal-detalhes-uc/sig-modal-detalhes-uc.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/sig-modal-detalhes-uc/sig-modal-detalhes-uc.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/sig/sig.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/sig/sig.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/sig/sig.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/sign-out/sign-out.js
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/sign-out/sign-out.pug
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/sign-out/sign-out.scss
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/user-info/user-info.js
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/user-info/user-info.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/user-info/user-info.scss
+Cleiton
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/src/app/modules/common/components/validate/validate.js
+Cleiton
+FILE: frontend/src/app/modules/common/components/validate/validate.pug
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/components/validate/validate.scss
+Cleiton
+FILE: frontend/src/app/modules/common/constants/constants.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/services/bootbox.js
+Cleiton
+FILE: frontend/src/app/modules/common/services/httpInterceptor.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/services/message.js
+Cleiton
+FILE: frontend/src/app/modules/common/templates/pagination.pug
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/common/templates/templates.js
+Cleiton
+FILE: frontend/src/app/modules/compensacao-ambiental/compensacao-ambiental.module.js
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-administrador/listaCA/listaCA.js
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-administrador/listaCA/listaCA.pug
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-administrador/visualizacaoCA/visualizacaoCA.js
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-administrador/visualizacaoCA/visualizacaoCA.pug
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-comunicacao/cadastroCC/cadastroCC.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-comunicacao/cadastroCC/cadastroCC.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-comunicacao/listaCC/listaCC.js
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-comunicacao/listaCC/listaCC.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-comunicacao/visualizacaoCC/visualizacaoCC.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/central-comunicacao/visualizacaoCC/visualizacaoCC.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/cadastroEP/cadastroEP.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/cadastroEP/cadastroEP.pug
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/cadastroEP/modal-latLngEP.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/cadastroEP/modal-latLngEP.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/cadastroEP/modal-licencaEP.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/cadastroEP/modal-licencaEP.pug
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/listaEP/listaEP.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/listaEP/listaEP.pug
+Matheus Silva Ferreira
+David Barbosa
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/visualizacaoEP/visualizacaoEP.js
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/empreendimento/visualizacaoEP/visualizacaoEP.pug
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/cadastroPA/cadastroPA.js
+David Barbosa
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Matheus Silva Ferreira
+David Barbosa
+João Paulo Vilela
+David Barbosa
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/cadastroPA/cadastroPA.pug
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+David Barbosa
+Rafael Mendonça
+David Barbosa
+João Paulo Vilela
+David Barbosa
+João Paulo Vilela
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/cadastroPA/dados-geraisPA.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/cadastroPA/dados-geraisPA.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/cadastroPA/modal-atividadePA.js
+João Paulo Vilela
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/cadastroPA/modal-atividadePA.pug
+João Paulo Vilela
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/gerenciar-comissaoPA/gerenciar-comissaoPA.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/gerenciar-comissaoPA/gerenciar-comissaoPA.pug
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/gerenciar-documentacaoPA/gerenciar-documentacaoPA.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/gerenciar-documentacaoPA/gerenciar-documentacaoPA.pug
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/gerenciar-documentacaoPA/modal-gerenciar-documentacaoPA.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/gerenciar-documentacaoPA/modal-gerenciar-documentacaoPA.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/listaPA/listaPA.js
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/listaPA/listaPA.pug
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/pagamentoPA/modal-pagamentoPA.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/pagamentoPA/modal-pagamentoPA.pug
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/pagamentoPA/pagamentoPA.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/pagamentoPA/pagamentoPA.pug
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/solicitacao-de-documentacaoPA/solicitacao-de-documentacaoPA.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/solicitacao-de-documentacaoPA/solicitacao-de-documentacaoPA.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/validacao-de-documentacao-pagamentosPA/validacao-de-documentacao-pagamentosPA.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/validacao-de-documentacao-pagamentosPA/validacao-de-documentacao-pagamentosPA.pug
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/validacao-de-documentacao-pagamentosPA/validacao-de-documentacao-pagamentosPA.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/visualizacaoPA/visualizacaoPA.js
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-aplicacao/visualizacaoPA/visualizacaoPA.pug
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/cadastroPT/cadastroPT.js
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+João Paulo Vilela
+David Barbosa
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Cleiton
+David Barbosa
+Cleiton
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/cadastroPT/cadastroPT.pug
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/cadastroPT/dados-geraisPT.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/cadastroPT/dados-geraisPT.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/cadastroPT/modal-atividadePT.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/cadastroPT/modal-atividadePT.pug
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/listaEPPT/listaEPPT.js
+João Paulo Vilela
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/listaEPPT/listaEPPT.pug
+João Paulo Vilela
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/listaPT/listaPT.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/listaPT/listaPT.pug
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/listaPT/modal-pdfsPT.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/listaPT/modal-pdfsPT.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/validacaoPT/validacaoPT.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+Rafael Mendonça
+David Barbosa
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/validacaoPT/validacaoPT.pug
+Matheus Silva Ferreira
+David Barbosa
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/visualizacaoPT/visualizacaoPT.js
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/plano-trabalho/visualizacaoPT/visualizacaoPT.pug
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/cadastroSR-gerente/cadastroSR-gerente.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/cadastroSR-gerente/cadastroSR-gerente.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/cadastroSR-gerente/modal-despesaSR-gerente.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/cadastroSR-gerente/modal-despesaSR-gerente.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/gestaoSR-gerente/gestaoSR-gerente.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/gestaoSR-gerente/gestaoSR-gerente.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/gestaoSR-gerente/gestaoSR-gerente.scss
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/visualizacaoSR-gerente/visualizacaoSR-gerente.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/gerenteSR/visualizacaoSR-gerente/visualizacaoSR-gerente.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/aprovacaoSR-tecnico/aprovacaoSR-tecnico.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/aprovacaoSR-tecnico/aprovacaoSR-tecnico.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/deferir-cancelamentoSR-tecnico/deferir-cancelamentoSR-tecnico.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/deferir-cancelamentoSR-tecnico/deferir-cancelamentoSR-tecnico.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/gestaoSR-tecnico/gestaoSR-tecnico.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/gestaoSR-tecnico/gestaoSR-tecnico.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/pagamentoSR-tecnico/modal-pagamentoSR-tecnico.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/pagamentoSR-tecnico/modal-pagamentoSR-tecnico.pug
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/pagamentoSR-tecnico/pagamentoSR-tecnico.js
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/pagamentoSR-tecnico/pagamentoSR-tecnico.pug
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/visualizacaoSR-tecnico/visualizacaoSR-tecnico.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/gestaoSR/tecnicoSR/visualizacaoSR-tecnico/visualizacaoSR-tecnico.pug
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/listaSR/listaSR.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/components/solicitacao-de-recursos/listaSR/listaSR.pug
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/atividade.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/atividadePlanoAplicacao.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Rafael Mendonça
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/conversa.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/despesa.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/documento.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/documentoPlanoAplicacao.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/empreendimento.js
+Matheus Silva Ferreira
+João Paulo Vilela
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/estado.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/file.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/historicoSaldo.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/httpRequest.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/login.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/mensagem.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/motivoReprovacaoDespesa.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/natureza.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/notaEmpenho.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/notaLancamento.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/notaReforco.js
+João Paulo Vilela
+FILE: frontend/src/app/modules/compensacao-ambiental/services/notification.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/ordemBancaria.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/pagamento.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/pessoa.js
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/planoAplicacao.js
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+FILE: frontend/src/app/modules/compensacao-ambiental/services/planoTrabalho.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/programa.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/recurso.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/responsavelLegal.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/responsavelPlanoAplicacao.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/solicitacaoCancelamentoRecursoGerente.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/statusPlanoAplicacao.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/statusPlanoTrabalho.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/tipoDespesa.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/tipoLicenca.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/uc.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/compensacao-ambiental/services/vwUc.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/main/components/main/main.js
+Cleiton
+FILE: frontend/src/app/modules/main/components/main/main.pug
+Cleiton
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/main/leaflet-draw-pt-br.js
+Matheus Silva Ferreira
+FILE: frontend/src/app/modules/main/main.module.js
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+Cleiton
+David Barbosa
+Matheus Silva Ferreira
+Rafael Mendonça
+Matheus Silva Ferreira
+David Barbosa
+Rafael Mendonça
+David Barbosa
+Rafael Mendonça
+Matheus Silva Ferreira
+Cleiton
+Rafael Mendonça
+João Paulo Vilela
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+FILE: frontend/src/app/modules/main/main.routes.js
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+Cleiton
+Rafael Mendonça
+João Paulo Vilela
+Rafael Mendonça
+Matheus Silva Ferreira
+Rafael Mendonça
+Cleiton
+FILE: frontend/src/index.js
+Matheus Silva Ferreira
+FILE: frontend/webpack.common.js
+Cleiton
+Matheus Silva Ferreira
+Cleiton
+FILE: frontend/webpack.dev.js
+Cleiton
+FILE: frontend/webpack.prod.js
+Cleiton
