@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -20,14 +21,31 @@ class TruckFactor {
 
 	static Map<String, List<String>> authors = new HashMap<String, List<String>>();
 	static Map<String, List<String>> files = new HashMap<String, List<String>>();
+	static List<String> instances = new ArrayList<String>(Arrays.asList("input.txt", "input2.txt"));
+	static String htmlContent = "";
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		String inputFileName = args.length > 0 ? args[1] : "input.txt";
+		String inputFileName = args.length > 0 ? args[1] : null;
 
-		readInputFile(inputFileName);
-		greedyTruckFactor();
+		if (inputFileName != null) {
 
+			instances = new ArrayList<String>(Arrays.asList(inputFileName));
+		}
+
+		Integer index = 1;
+
+		for (String instance : instances) {
+
+			authors = new HashMap<String, List<String>>();
+			files = new HashMap<String, List<String>>();
+
+			readInputFile(instance);
+			greedyTruckFactor("instance-" + index);
+			++index;
+		}
+
+		showHtmlFile();
 	}
 
 	/**
@@ -74,7 +92,7 @@ class TruckFactor {
 	/**
 	 * Método que implementa o Algoritmo Guloso que calcula o valor de truck factor
 	 **/
-	private static void greedyTruckFactor() throws IOException {
+	private static void greedyTruckFactor(String inputFileName) throws IOException {
 
 		System.out.println("Calculating Truck Factor...");
 
@@ -103,8 +121,8 @@ class TruckFactor {
 			}
 		}
 
-		// exibindo resultado
-		printTruckFactor(authorsTF);
+		// adicioanndo ao resultado final em html
+		addResultToHtml(inputFileName, authorsTF);
 	}
 
 	/** ------------------------------------------ **/
@@ -125,25 +143,6 @@ class TruckFactor {
 				.collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
 		authors = sortedMap;
-	}
-
-	/** Método para imprimir o resultado final **/
-	private static void printTruckFactor(List<String> authorsTF) throws IOException {
-
-		System.out.println();
-		System.out.println("TF: " + authorsTF.size());
-		System.out.println("Developer(s):");
-
-		for (String author : authorsTF) {
-
-			System.out.println(author);
-		}
-
-		wiretHtmlFile();
-
-		File htmlFile = new File("index.html");
-		Desktop.getDesktop().browse(htmlFile.toURI());
-
 	}
 
 	/**
@@ -221,24 +220,49 @@ class TruckFactor {
 	/**
 	 * Método que Edita o arquivo index.html da saída
 	 **/
-	private static void wiretHtmlFile() throws IOException{
-		String start = "<!DOCTYPE html> 		<html lang='en'> 		 		<head> 			<meta charset='UTF-8'> 			<title>Truck Factor</title> 		</head> 		 		<body> 			<script src='Chart.min.js'></script> 		 			<h5>Y = Num Files Author</h5> 			<h5>X = Name Author</h5>";
-		String end = "  </script> </body> 		</html>";
-		String projectName = "projectName";
-		String script = "<script>";
+	private static void addResultToHtml(String instance, List<String> authorsTF) throws IOException {
 
-		String devs = "'dev 1', 'dev 2', 'dev 3', 'dev 4'";
-		String colorBarTruckFactor = "'rgba(255, 99, 132, 0.2)','rgba(255, 99, 132, 0.2)',";
+		String colorBarTruckFactor = "";
+		for (String author : authorsTF) {
+			colorBarTruckFactor += "'rgba(255, 99, 132, 0.2)',";
+		}
 
-		String chartsHtml = "<canvas id='"+ projectName+"' width='500' height='300'></canvas>";
-		
-		String chartsScript = " var ctx = document.getElementById('"+projectName+"');     var myChart = new Chart(ctx, {       type: 'bar',       data: {         labels: ["+devs+"],         datasets: [{           label: '"+projectName+"',           data: [1, 2, 3, 4],           backgroundColor: ["+colorBarTruckFactor+"],           borderWidth: 1         }]       },       options: {         responsive: false,         scales: {           xAxes: [{             ticks: {               maxRotation: 90,               minRotation: 80             }           }],           yAxes: [{             ticks: {               beginAtZero: true             }           }]         }       }     });";
+		String authorsHtml = "";
+		String dataHtml = "";
+		for (Map.Entry<String, List<String>> author : authors.entrySet()) {
+			authorsHtml += "'" + author.getKey() + "',";
+			dataHtml += "'" + author.getValue().size() + "',";
+		}
 
-		String codeHtml = start + chartsHtml + script + chartsScript + end;
+		String chartsHtml = "<canvas id='" + instance + "' width='500' height='300'></canvas>";
+		String chartsScript = " var ctx = document.getElementById('" + instance
+				+ "'); var myChart = new Chart(ctx, { type: 'bar',data: { labels: [" + authorsHtml
+				+ "], datasets: [{ label: 'Truck Factor for " + instance + "', data: [" + dataHtml + "], backgroundColor: ["
+				+ colorBarTruckFactor
+				+ "], borderWidth: 1 }] }, options: { tooltips: { callbacks: { label: function(tooltipItem, data) { return 'Num files that author: ' + data['datasets'][0]['data'][tooltipItem['index']]; } },}, responsive: false, scales: { xAxes: [{ ticks: { maxRotation: 90, minRotation: 80 } }], yAxes: [{ ticks: { beginAtZero: true } }] } } });";
+
+		String divider = "<br><hr><br>";
+
+		htmlContent += divider + chartsHtml + "<script>" + chartsScript + "</script>";
+	}
+
+	/**
+	 * Método que Edita o arquivo index.html e abre o navegador com a resposta da
+	 * excução
+	 **/
+	private static void showHtmlFile() throws IOException {
+		String style = "<style> body {text-align:center} canvas { display: inline !important; }</style>";
+		String header = "<h3>Truck Factor - Matheus Silva Ferreira</h3> <p>Num instances: 2</p> <p>Total Time: 0.33 s</p>";
+		String start = "<!DOCTYPE html> <html> <head> <meta charset='UTF-8'> <title>Truck Factor</title> "+ style +" </head> <body> <script src='Chart.min.js'></script> " + header;
+		String end = "</body> </html>";
+
+		String codeHtml = start + htmlContent + end;
 
 		BufferedWriter writer = new BufferedWriter(new FileWriter("index.html"));
-    writer.write(codeHtml);
-     
-    writer.close();
+		writer.write(codeHtml);
+		writer.close();
+
+		File htmlFile = new File("index.html");
+		Desktop.getDesktop().browse(htmlFile.toURI());
 	}
 }
