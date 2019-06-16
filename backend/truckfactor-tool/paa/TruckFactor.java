@@ -25,6 +25,12 @@ class TruckFactor {
 	static Map<String, List<String>> files = new HashMap<String, List<String>>();
 	static List<String> instances = new ArrayList<String>(Arrays.asList("input.txt", "input2.txt"));
 	static String htmlContent = "";
+	static Instant startReadInputFile;
+	static Instant finishReadInputFile;
+	static Instant startOrder;
+	static Instant finishOrder;
+	static Instant startGreedyTruckFactor;
+	static Instant finishGreedyTruckFactor;
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
@@ -45,6 +51,7 @@ class TruckFactor {
 			files = new HashMap<String, List<String>>();
 
 			readInputFile(instance);
+			orderAuthors();
 			greedyTruckFactor("instance-" + index);
 			++index;
 		}
@@ -59,6 +66,8 @@ class TruckFactor {
 	 * Método responsável por carregar e organizar os dados do arquivo de entrada
 	 **/
 	private static void readInputFile(String inputFileName) throws FileNotFoundException {
+
+		startReadInputFile = Instant.now();
 
 		System.out.println("Reading input file...");
 
@@ -85,21 +94,20 @@ class TruckFactor {
 			setAuthor(authorName, fileName);
 		}
 
-		// ordenando a lista de autores de forma que o maior autor seja o primeiro da
-		// lista
-		orderAuthors();
-
 		System.out.println();
 		System.out.println("Total Developers: " + authors.size());
 		System.out.println("Total Files: " + files.size());
 		System.out.println();
 
+		finishReadInputFile = Instant.now();
 	}
 
 	/**
 	 * Método que implementa o Algoritmo Guloso que calcula o valor de truck factor
 	 **/
 	private static void greedyTruckFactor(String inputFileName) throws IOException {
+
+		startGreedyTruckFactor = Instant.now();
 
 		System.out.println("Calculating Truck Factor...");
 
@@ -128,6 +136,8 @@ class TruckFactor {
 			}
 		}
 
+		finishGreedyTruckFactor = Instant.now();
+
 		// adicioanndo ao resultado final em html
 		addResultToHtml(inputFileName, authorsTF);
 	}
@@ -141,6 +151,9 @@ class TruckFactor {
 	 * seja o primeiro da lista
 	 **/
 	private static void orderAuthors() {
+
+		startOrder = Instant.now();
+
 		System.out.println("Order list authors...");
 
 		Comparator<Entry<String, List<String>>> valueComparator = (e1,
@@ -150,6 +163,8 @@ class TruckFactor {
 				.collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
 		authors = sortedMap;
+
+		finishOrder = Instant.now();
 	}
 
 	/**
@@ -229,6 +244,10 @@ class TruckFactor {
 	 **/
 	private static void addResultToHtml(String instance, List<String> authorsTF) throws IOException {
 
+		long timeReadInputFile = Duration.between(startReadInputFile, finishReadInputFile).toMillis();
+		long timeOrder = Duration.between(startOrder, finishOrder).toMillis();
+		long timeGredyTruckFactor = Duration.between(startGreedyTruckFactor, finishGreedyTruckFactor).toMillis();
+
 		String colorBarTruckFactor = "";
 		for (String author : authorsTF) {
 			colorBarTruckFactor += "'rgba(255, 99, 132, 0.2)',";
@@ -241,8 +260,11 @@ class TruckFactor {
 			dataHtml += "'" + author.getValue().size() + "',";
 		}
 
-		String chartsHtml = "<div class='flex-container'> <div> <canvas id='" + instance + "' width='500' height='300'></canvas> </div>";
-		String datailHtml = "<div class='detail'> <p>Truck Factor: 1</p> <p>Time TF: 2 ms</p> <p>Time Order: 2 ms</p> <p>Time Rad Instance: 2 ms</p> </div> </div>";
+		String chartsHtml = "<div class='flex-container'> <div> <canvas id='" + instance
+				+ "' width='500' height='300'></canvas> </div>";
+		String datailHtml = "<div class='detail'> <p>Truck Factor: " + authorsTF.size() + "</p> <p>Time Grredy Truck Factor: "
+				+ timeGredyTruckFactor + " ms</p> <p>Time Order: " + timeOrder + " ms</p> <p>Time Read Instance: "
+				+ timeReadInputFile + " ms</p> </div> </div>";
 		String chartsScript = " var ctx = document.getElementById('" + instance
 				+ "'); var myChart = new Chart(ctx, { type: 'bar',data: { labels: [" + authorsHtml
 				+ "], datasets: [{ label: 'Truck Factor for " + instance + "', data: [" + dataHtml + "], backgroundColor: ["

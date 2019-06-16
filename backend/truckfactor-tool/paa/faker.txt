@@ -1,0 +1,6383 @@
+FILE: .gitattributes
+Ankur Kumar
+FILE: .gitignore
+Mark van der Velden
+FILE: .travis.yml
+cedriclombardot
+Antoine Corcy
+Zachary Flower
+Mark van der Velden
+Antoine Corcy
+Graham Campbell
+Tomáš Votruba
+oittaa
+Gabriel Caruso
+Hidde Boomsma
+Antoine Corcy
+Francois Zaninotto
+Andreas Möller
+Antoine Corcy
+Graham Campbell
+Andreas Möller
+Antoine Corcy
+David Stensland
+FILE: CHANGELOG.md
+Francois Zaninotto
+Graham Campbell
+Francois Zaninotto
+FILE: CONTRIBUTING.md
+Francois Zaninotto
+Graham Campbell
+Francois Zaninotto
+FILE: LICENSE
+toin0u
+Francois Zaninotto
+Graham Campbell
+FILE: Makefile
+David Stensland
+Andreas Möller
+David Stensland
+Graham Campbell
+FILE: composer.json
+William DURAND
+Jordi Boggiano
+William DURAND
+Vincent Klaiber
+William DURAND
+Lucas
+Gabriel Caruso
+Vincent Klaiber
+Jonathan A. Schweder
+David Stensland
+William DURAND
+Graham Campbell
+Andreas Möller
+Mark van der Velden
+Jordi Boggiano
+Francois Zaninotto
+toin0u
+William DURAND
+FILE: phpunit.xml.dist
+yohang
+Andreas Möller
+yohang
+Graham Campbell
+FILE: readme.md
+Phil Sturgeon
+Francois Zaninotto
+Phil Sturgeon
+Francois Zaninotto
+Andreas Möller
+Francois Zaninotto
+Camilo Payan
+Francois Zaninotto
+Camilo Payan
+Francois Zaninotto
+Camilo Payan
+Francois Zaninotto
+Camilo Payan
+slyngel@gmail.com
+Daniel Iancu
+Camilo Payan
+Francois Zaninotto
+Jean-Christophe Cuvelier
+Francois Zaninotto
+Jean-Christophe Cuvelier
+Francois Zaninotto
+Samuel NELA
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Kristian Lewis Jones
+vlakoff
+Francois Zaninotto
+⭐ B3none
+Francois Zaninotto
+Lee Pownall
+Francois Zaninotto
+Miroslav Sustek
+Francois Zaninotto
+Charles SANQUER
+kielabokkie
+Charles SANQUER
+Francois Zaninotto
+aydnbhdr
+Francois Zaninotto
+Owen Kieffer-Jones
+Dale Attree
+Francois Zaninotto
+toin0u
+Greg Duckworth
+Francois Zaninotto
+John Was
+Francois Zaninotto
+Charles Sanquer
+Travis Elkins
+Charles Sanquer
+Travis Elkins
+Charles Sanquer
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+kielabokkie
+Francois Zaninotto
+kielabokkie
+Francois Zaninotto
+Benjamin Laugueux
+toin0u
+Benjamin Laugueux
+Francois Zaninotto
+Ando Roots
+Francois Zaninotto
+Owen Kieffer-Jones
+Ando Roots
+lsv
+Francois Zaninotto
+Stefano Sala
+Francois Zaninotto
+emir
+Andrey Helldar
+Francois Zaninotto
+Andrey Helldar
+Francois Zaninotto
+John Was
+Sergey Kasatkin
+Francois Zaninotto
+John Was
+Francois Zaninotto
+Daniel Iancu
+Francois Zaninotto
+Thomas Moorhouse
+Francois Zaninotto
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+slyngel@gmail.com
+Tim Düsterhus
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+⭐ B3none
+Francois Zaninotto
+⭐ B3none
+Francois Zaninotto
+Mihai Zaharie
+Robert Reinhard
+Joshua Jabbour
+Francois Zaninotto
+⭐ B3none
+Francois Zaninotto
+Joshua Jabbour
+Emanuele Minotto
+Eric Aken Roberts
+Joshua Jabbour
+Francois Zaninotto
+⭐ B3none
+Francois Zaninotto
+Robert Reinhard
+Andrew
+Francois Zaninotto
+Taylan Kasap
+Francois Zaninotto
+⭐ B3none
+Francois Zaninotto
+guidocella
+Francois Zaninotto
+Aubry
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+Paul Valla
+Jad Bitar
+Francois Zaninotto
+Paul Valla
+Francois Zaninotto
+Paul Valla
+Francois Zaninotto
+Juan Treminio
+Francois Zaninotto
+Juan Treminio
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+⭐ B3none
+Ankit Pokhrel
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Geoffrey Brier
+Ibrahim AshShohail
+Francois Zaninotto
+Ronan Guilloux
+Ibrahim AshShohail
+Mohamed Abidi
+Ronan Guilloux
+Owen Kieffer-Jones
+Ronan Guilloux
+Owen Kieffer-Jones
+Ronan Guilloux
+Francois Zaninotto
+Ronan Guilloux
+Francois Zaninotto
+Ronan Guilloux
+Mikulas
+Francois Zaninotto
+Geoffrey Brier
+Mikulas
+Geoffrey Brier
+Mikulas
+Francois Zaninotto
+Geoffrey Brier
+Mikulas
+Geoffrey Brier
+Mikulas
+Francois Zaninotto
+Mikulas
+Geoffrey Brier
+Mikulas
+Geoffrey Brier
+Tomas Bedrich
+Francois Zaninotto
+Tomas Bedrich
+Geoffrey Brier
+toin0u
+Owen Kieffer-Jones
+toin0u
+Michael Tsang
+raphaeldealmeida
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Zachary Flower
+Francois Zaninotto
+Geoffrey Brier
+Zachary Flower
+Andre Smith
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Bernard Brink
+Francois Zaninotto
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Francois Zaninotto
+Francisco J. Figuereo Moya
+Francois Zaninotto
+Miguel Gonzalez
+Jaime G. Wong
+Arsalan
+thisissorna
+oittaa
+Anthony Van Zandycke
+Geoffrey Brier
+Domingo Oropeza
+Geoffrey Brier
+Nicolas de Marqué Fromentin
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Baptiste Donaux
+Thomas Bordinat
+ppelgrims
+Owen Kieffer-Jones
+Francois Zaninotto
+Kaupo Juhkam
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Geoffrey Brier
+Mikulas
+toin0u
+Mikulas
+itigoppo
+toin0u
+Mikulas
+itigoppo
+toin0u
+Mikulas
+YAMANE Nana
+toin0u
+Matiss Janis Aboltins
+Owen Kieffer-Jones
+Yerlen Zhubangaliyev
+Owen Kieffer-Jones
+Yerlen Zhubangaliyev
+Owen Kieffer-Jones
+Yerlen Zhubangaliyev
+pearlc
+John Hobbs
+Enosh Yu
+Owen Kieffer-Jones
+pearlc
+Matiss Janis Aboltins
+brainrepo
+Matiss Janis Aboltins
+Ken
+Francois Zaninotto
+Matiss Janis Aboltins
+Francois Zaninotto
+Matiss Janis Aboltins
+Francois Zaninotto
+Matiss Janis Aboltins
+toin0u
+Anthony Van Zandycke
+ppelgrims
+Laurens Laman
+Anthony Van Zandycke
+Laurens Laman
+Arto Rozenga
+Espen Nilsen
+Owen Kieffer-Jones
+Matiss Janis Aboltins
+toin0u
+John Was
+toin0u
+John Was
+Mikulas
+Kazuyuki Hayashi
+Mikulas
+Kazuyuki Hayashi
+francinaldo
+Kazuyuki Hayashi
+francinaldo
+Kazuyuki Hayashi
+Igor Santos
+Ankit Pokhrel
+Igor Santos
+Leandro Henrique Reis
+iget-master
+Ankit Pokhrel
+iget-master
+Igor Santos
+Owen Kieffer-Jones
+Igor Santos
+Mihai Zaharie
+Johannes Nagl
+Mihai Zaharie
+Johannes Nagl
+Mihai Zaharie
+the-noob
+Mihai Zaharie
+the-noob
+Mihai Zaharie
+Sayapin Alexander
+Aleksandr Novikov
+Sayapin Alexander
+Owen Kieffer-Jones
+JasonMortonNZ
+Owen Kieffer-Jones
+JasonMortonNZ
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Ankit Pokhrel
+Aykut Aras
+Ankit Pokhrel
+Song
+Ulrik Johansson
+Song
+Ulrik Johansson
+lfkd
+DESKTOP-ATRT1VG\Dago
+Ankit Pokhrel
+DESKTOP-ATRT1VG\Dago
+Ankit Pokhrel
+DESKTOP-ATRT1VG\Dago
+Ankit Pokhrel
+DESKTOP-ATRT1VG\Dago
+Francois Zaninotto
+Théo FIDRY
+Jordi Boggiano
+Francois Zaninotto
+Emanuele Minotto
+Francois Zaninotto
+Dennis Heckman
+Francois Zaninotto
+Grégoire HUBERT
+Jordi Boggiano
+Marc Würth
+Bruce Heller
+Evan Lovely
+guidocella
+Francois Zaninotto
+João A. Zonta
+Aalaap Ghag
+Peter Elmered
+Mohammad Eftekhari
+Przemysław eRIZ Pawliczuk
+Xvlad (Vladyslav Volynets)
+Francois Zaninotto
+cedriclombardot
+FILE: src/Faker/Calculator/Iban.php
+Owen Kieffer-Jones
+Daniel Müller
+Ankit Pokhrel
+Daniel Müller
+Owen Kieffer-Jones
+Roman 'pomaxa' Shvets
+Owen Kieffer-Jones
+Daniel Müller
+Owen Kieffer-Jones
+FILE: src/Faker/Calculator/Inn.php
+Aleksandr Novikov
+FILE: src/Faker/Calculator/Luhn.php
+Francois Zaninotto
+Mohamed Abidi
+Francois Zaninotto
+Mohamed Abidi
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Mohamed Abidi
+Ankit Pokhrel
+Mohamed Abidi
+Francois Zaninotto
+FILE: src/Faker/Calculator/TCNo.php
+Aykut Aras
+FILE: src/Faker/DefaultGenerator.php
+Joshua Jabbour
+pomaxa
+Joshua Jabbour
+Daniel Müller
+Ankit Pokhrel
+Daniel Müller
+Joshua Jabbour
+Daniel Müller
+Ankit Pokhrel
+Daniel Müller
+Joshua Jabbour
+FILE: src/Faker/Documentor.php
+Francois Zaninotto
+toin0u
+Daniel Müller
+jeroendedauw
+Francois Zaninotto
+toin0u
+Daniel Müller
+Francois Zaninotto
+Roman 'pomaxa' Shvets
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+FILE: src/Faker/Factory.php
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Tony Nelson
+Francois Zaninotto
+Tony Nelson
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Daniel Müller
+Francois Zaninotto
+vlakoff
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+FILE: src/Faker/Generator.php
+Francois Zaninotto
+ThallisPHP
+Hugo Fonseca
+Tommi Finnilä
+Hugo Fonseca
+Tommi Finnilä
+Christophe Coevoet
+Hugo Fonseca
+Christophe Coevoet
+Tommi Finnilä
+Christophe Coevoet
+ThallisPHP
+Hugo Fonseca
+ThallisPHP
+Hugo Fonseca
+Sergey Kasatkin
+John Was
+Hugo Fonseca
+Ankur Kumar
+ThallisPHP
+Hugo Fonseca
+Greg Duckworth
+ThallisPHP
+Hugo Fonseca
+Christophe Coevoet
+Hugo Fonseca
+Jean Jung
+Hugo Fonseca
+Owen Kieffer-Jones
+Ronan Guilloux
+John Was
+Hugo Fonseca
+Christophe Coevoet
+Tim Düsterhus
+Hugo Fonseca
+Christophe Coevoet
+Hugo Fonseca
+Christophe Coevoet
+Hugo Fonseca
+Christophe Coevoet
+Hugo Fonseca
+ThallisPHP
+Hugo Fonseca
+Tom Rochette
+Hugo Fonseca
+Tom Rochette
+Hugo Fonseca
+Andreas Möller
+Christophe Coevoet
+Andreas Möller
+Christophe Coevoet
+Tom Rochette
+Andreas Möller
+hisomura
+KeithYeh
+Andreas Möller
+ThallisPHP
+Hugo Fonseca
+Christophe Coevoet
+Hugo Fonseca
+Christophe Coevoet
+Pavel Kovář
+Christophe Coevoet
+ThallisPHP
+Hugo Fonseca
+Christophe Coevoet
+vlakoff
+Christophe Coevoet
+Andreas Möller
+Tabakhase
+Christophe Coevoet
+Hugo Fonseca
+Christophe Coevoet
+ThallisPHP
+Hugo Fonseca
+ThallisPHP
+Hugo Fonseca
+Christophe Coevoet
+Andrey Helldar
+ThallisPHP
+Christophe Coevoet
+Hugo Fonseca
+Christophe Coevoet
+Hugo Fonseca
+slyngel@gmail.com
+ThallisPHP
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Fabian Schmengler
+oittaa
+Fabian Schmengler
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Mark van der Velden
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Daniel Müller
+Ankit Pokhrel
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Ankit Pokhrel
+Daniel Müller
+Francois Zaninotto
+Grégoire Pineau
+Francois Zaninotto
+FILE: src/Faker/Guesser/Name.php
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Andy Waterman
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Andy Waterman
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Andy Waterman
+David Stensland
+Francois Zaninotto
+Andy Waterman
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Andy Waterman
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Andy Waterman
+David Stensland
+Francois Zaninotto
+Andy Waterman
+David Stensland
+Andy Waterman
+David Stensland
+Francois Zaninotto
+Andy Waterman
+David Stensland
+Francois Zaninotto
+Andy Waterman
+David Stensland
+Francois Zaninotto
+FILE: src/Faker/ORM/CakePHP/ColumnTypeGuesser.php
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Francois Zaninotto
+Jad Bitar
+Francois Zaninotto
+Jad Bitar
+FILE: src/Faker/ORM/CakePHP/EntityPopulator.php
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+David Yell
+Jad Bitar
+FILE: src/Faker/ORM/CakePHP/Populator.php
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Daniel Müller
+Jad Bitar
+Dustin Haggard
+Jad Bitar
+Daniel Müller
+Jad Bitar
+FILE: src/Faker/ORM/Doctrine/ColumnTypeGuesser.php
+Benjamin Eberlei
+Francois Zaninotto
+Benjamin Eberlei
+Daniel Müller
+Francois Zaninotto
+Benjamin Eberlei
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Oleg Voronkovich
+Francois Zaninotto
+FILE: src/Faker/ORM/Doctrine/EntityPopulator.php
+Francois Zaninotto
+Mario Giustiniani
+Cyrille Bourgois
+Francois Zaninotto
+rogamoore
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Miloslav Nenadal
+Daniel Müller
+Miloslav Nenadal
+Daniel Müller
+Miloslav Nenadal
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Andy Waterman
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Miloslav Nenadal
+Jonathan Petitcolas
+Cyrille Bourgois
+Miloslav Nenadal
+David Stensland
+Jonathan Petitcolas
+pomaxa
+Jonathan Petitcolas
+Miloslav Nenadal
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Mario Giustiniani
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Justin Fargione
+Francois Zaninotto
+Justin Fargione
+Francois Zaninotto
+Justin Fargione
+Ross Mitchell
+Justin Fargione
+Miloslav Nenadal
+Javier Martinez Fernandez
+Miloslav Nenadal
+Daniel Müller
+Cyrille Bourgois
+Daniel Müller
+Cyrille Bourgois
+Miloslav Nenadal
+Cyrille Bourgois
+Miloslav Nenadal
+Cyrille Bourgois
+Miloslav Nenadal
+pomaxa
+Francois Zaninotto
+Miloslav Nenadal
+Benjamin Eberlei
+FILE: src/Faker/ORM/Doctrine/Populator.php
+Benjamin Eberlei
+Francois Zaninotto
+Miloslav Nenadal
+Benjamin Eberlei
+Daniel Müller
+Francois Zaninotto
+Benjamin Eberlei
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Alvaro Marcos
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Benjamin Eberlei
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Benjamin Eberlei
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Miloslav Nenadal
+Francois Zaninotto
+Benjamin Eberlei
+Francois Zaninotto
+Benjamin Eberlei
+FILE: src/Faker/ORM/Mandango/ColumnTypeGuesser.php
+pablodip
+Francois Zaninotto
+pablodip
+Daniel Müller
+Francois Zaninotto
+pablodip
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+pablodip
+FILE: src/Faker/ORM/Mandango/EntityPopulator.php
+pablodip
+David Stensland
+pablodip
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+pablodip
+FILE: src/Faker/ORM/Mandango/Populator.php
+pablodip
+Francois Zaninotto
+pablodip
+Daniel Müller
+Francois Zaninotto
+pablodip
+Francois Zaninotto
+pablodip
+Francois Zaninotto
+pablodip
+Francois Zaninotto
+pablodip
+FILE: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Roman 'pomaxa' Shvets
+Francois Zaninotto
+FILE: src/Faker/ORM/Propel/EntityPopulator.php
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Andy Waterman
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+FILE: src/Faker/ORM/Propel/Populator.php
+Francois Zaninotto
+Daniel Müller
+Francois Zaninotto
+William DURAND
+Francois Zaninotto
+William DURAND
+Francois Zaninotto
+William DURAND
+Francois Zaninotto
+William DURAND
+Francois Zaninotto
+William DURAND
+Francois Zaninotto
+William DURAND
+Francois Zaninotto
+William DURAND
+FILE: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+Dhaval Patel
+Gabriel Caruso
+Dhaval Patel
+FILE: src/Faker/ORM/Propel2/EntityPopulator.php
+Dhaval Patel
+FILE: src/Faker/ORM/Propel2/Populator.php
+Dhaval Patel
+FILE: src/Faker/ORM/Spot/ColumnTypeGuesser.php
+urisavka
+Yurii Savka
+urisavka
+Yurii Savka
+urisavka
+Yurii Savka
+urisavka
+Yurii Savka
+urisavka
+FILE: src/Faker/ORM/Spot/EntityPopulator.php
+urisavka
+Juha Remes
+urisavka
+Gabriel Caruso
+urisavka
+michal-borek
+Gabriel Caruso
+urisavka
+Gabriel Caruso
+urisavka
+Gabriel Caruso
+urisavka
+FILE: src/Faker/ORM/Spot/Populator.php
+urisavka
+FILE: src/Faker/Provider/Address.php
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+jmauerhan
+Francois Zaninotto
+Mehmet Aydin Bahadir
+aydnbhdr
+Francois Zaninotto
+Mehmet Aydin Bahadir
+Francois Zaninotto
+aydnbhdr
+Francois Zaninotto
+Mehmet Aydin Bahadir
+aydnbhdr
+Francois Zaninotto
+Mehmet Aydin Bahadir
+Francois Zaninotto
+aydnbhdr
+Francois Zaninotto
+Mehmet Aydin Bahadir
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/Barcode.php
+John Was
+Sergey Kasatkin
+John Was
+pomaxa
+John Was
+David Stensland
+John Was
+pomaxa
+John Was
+Francois Zaninotto
+John Was
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Matthieu Mota
+John Was
+Francois Zaninotto
+John Was
+Francois Zaninotto
+John Was
+Sergey Kasatkin
+pomaxa
+Sergey Kasatkin
+John Was
+Sergey Kasatkin
+pomaxa
+Sergey Kasatkin
+pomaxa
+Sergey Kasatkin
+FILE: src/Faker/Provider/Base.php
+Francois Zaninotto
+Andrew
+Francois Zaninotto
+Benjamin Grandfond
+Francois Zaninotto
+Benjamin Grandfond
+Francois Zaninotto
+Benjamin Grandfond
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Andreas Möller
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Ryan Verner
+Francois Zaninotto
+Ryan Verner
+Francois Zaninotto
+Ryan Verner
+Francois Zaninotto
+Ryan Verner
+Francois Zaninotto
+Andrew
+Francois Zaninotto
+David Stensland
+Miroslav Sustek
+David Stensland
+Richard Quadling
+vlakoff
+David Stensland
+Francois Zaninotto
+David Stensland
+Andrew
+David Stensland
+Andrew
+David Stensland
+vlakoff
+David Stensland
+vlakoff
+David Stensland
+Andrew
+David Stensland
+Francois Zaninotto
+Andrew
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+alanglade
+aRn0D
+Francois Zaninotto
+Michaël Lecerf
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Hidde Boomsma
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Jan Waś
+Francois Zaninotto
+Jan Waś
+Francois Zaninotto
+Jan Waś
+Francois Zaninotto
+Jan Waś
+Francois Zaninotto
+Jan Waś
+Francois Zaninotto
+Jan Waś
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Eric Aken Roberts
+Francois Zaninotto
+Eric Aken Roberts
+Francois Zaninotto
+Robert Reinhard
+Eric Aken Roberts
+Emanuele Minotto
+Robert Reinhard
+Joshua Jabbour
+Robert Reinhard
+Emanuele Minotto
+Francois Zaninotto
+Emanuele Minotto
+Francois Zaninotto
+Joshua Jabbour
+Robert Reinhard
+Francois Zaninotto
+Bernhard Essl
+Christophe Coevoet
+Francois Zaninotto
+Peter Schultz
+Francois Zaninotto
+jasir
+FILE: src/Faker/Provider/Biased.php
+Tim Düsterhus
+pomaxa
+Tim Düsterhus
+Ankit Pokhrel
+Tim Düsterhus
+Ankit Pokhrel
+Tim Düsterhus
+FILE: src/Faker/Provider/Color.php
+lsv
+Francois Zaninotto
+	 * @lsv
+Francois Zaninotto
+lsv
+Francois Zaninotto
+Benjamin Jeanjean
+Francois Zaninotto
+lsv
+Francois Zaninotto
+Pascal Borreli
+lsv
+Francois Zaninotto
+lsv
+Francois Zaninotto
+lsv
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+lsv
+Francois Zaninotto
+lsv
+Francois Zaninotto
+lsv
+Benjamin Jeanjean
+Francois Zaninotto
+lsv
+Francois Zaninotto
+FILE: src/Faker/Provider/Company.php
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Greg Duckworth
+Francois Zaninotto
+Greg Duckworth
+toin0u
+FILE: src/Faker/Provider/DateTime.php
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Travis Elkins
+Tom Rochette
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+bishop
+Bishop Bettini
+Francois Zaninotto
+Bishop Bettini
+Francois Zaninotto
+bishop
+Travis Elkins
+bishop
+Francois Zaninotto
+Tom Rochette
+Francois Zaninotto
+bishop
+Bishop Bettini
+Francois Zaninotto
+Bishop Bettini
+Francois Zaninotto
+Remi Collet
+bishop
+Remi Collet
+Travis Elkins
+bishop
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Théo FIDRY
+Tom Rochette
+Francois Zaninotto
+bishop
+Bishop Bettini
+Francois Zaninotto
+Bishop Bettini
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+bishop
+Travis Elkins
+bishop
+Francois Zaninotto
+Nicolas de Marqué Fromentin
+Tom Rochette
+Nicolas de Marqué Fromentin
+bishop
+Bishop Bettini
+Nicolas de Marqué Fromentin
+Bishop Bettini
+Nicolas de Marqué Fromentin
+Fabien Lucas
+Nicolas de Marqué Fromentin
+Bishop Bettini
+Travis Elkins
+Bishop Bettini
+Nicolas de Marqué Fromentin
+Francois Zaninotto
+Tom Rochette
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Tom Rochette
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Tom Rochette
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Tom Rochette
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Travis Elkins
+Francois Zaninotto
+Charles Sanquer
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Christophe Coevoet
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Tom Rochette
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Benjamin Laugueux
+Christophe Coevoet
+Benjamin Laugueux
+bishop
+Ankit Pokhrel
+Tom Rochette
+Ankit Pokhrel
+Tom Rochette
+bishop
+Travis Elkins
+Tom Rochette
+Travis Elkins
+Tom Rochette
+Travis Elkins
+bishop
+toin0u
+FILE: src/Faker/Provider/File.php
+Ando Roots
+pomaxa
+Ando Roots
+Francois Zaninotto
+Ando Roots
+Francois Zaninotto
+Ando Roots
+Francois Zaninotto
+Ando Roots
+Francois Zaninotto
+Stefano Sala
+Christophe Coevoet
+Stefano Sala
+Francois Zaninotto
+Bernhard Essl
+Francois Zaninotto
+Stefano Sala
+Severin Neumann
+Stefano Sala
+Severin Neumann
+Stefano Sala
+Francois Zaninotto
+FILE: src/Faker/Provider/HtmlLorem.php
+slyngel@gmail.com
+vlakoff
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+vlakoff
+slyngel@gmail.com
+Ankit Pokhrel
+slyngel@gmail.com
+vlakoff
+slyngel@gmail.com
+steffen
+slyngel@gmail.com
+steffen
+slyngel@gmail.com
+steffen
+slyngel@gmail.com
+Gabriel Caruso
+slyngel@gmail.com
+vlakoff
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Ankit Pokhrel
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+Francois Zaninotto
+slyngel@gmail.com
+FILE: src/Faker/Provider/Image.php
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+Nicolas Appriou
+Francois Zaninotto
+Ankit Pokhrel
+Robert Reinhard
+neutralrockets
+Robert Reinhard
+Jeff Puckett
+neutralrockets
+Ankit Pokhrel
+neutralrockets
+Ankit Pokhrel
+Robert Reinhard
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+emir
+Robert Reinhard
+Francois Zaninotto
+Nicolas Appriou
+neutralrockets
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+emir
+Francois Zaninotto
+Ronan Guilloux
+Robert Reinhard
+Francois Zaninotto
+Stefano Sala
+Francois Zaninotto
+emir
+Francois Zaninotto
+Gula Andrij
+Erik Berkun-Drevnig
+Gula Andrij
+Erik Berkun-Drevnig
+Gula Andrij
+Francois Zaninotto
+Stefano Sala
+Robert Reinhard
+Francois Zaninotto
+FILE: src/Faker/Provider/Internet.php
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Mark van der Velden
+Francois Zaninotto
+Mark van der Velden
+Francois Zaninotto
+Mark van der Velden
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Tim Düsterhus
+Charles SANQUER
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+vlakoff
+Francois Zaninotto
+vlakoff
+Francois Zaninotto
+Marc Würth
+Francois Zaninotto
+kielabokkie
+Francois Zaninotto
+kielabokkie
+Ankit Pokhrel
+kielabokkie
+Ankit Pokhrel
+kielabokkie
+vlakoff
+Kévin Dunglas
+vlakoff
+toin0u
+FILE: src/Faker/Provider/Lorem.php
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+FILE: src/Faker/Provider/Miscellaneous.php
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Thomas Moorhouse
+Andrew Nicols
+Francois Zaninotto
+Gilles Doge
+Francois Zaninotto
+Gilles Doge
+Paul Rysevets
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Paul Rysevets
+Domingo Oropeza
+Paul Rysevets
+Francois Zaninotto
+Sacha Telgenhof Oude Koehorst
+Jackey Cheung
+Thomas Praxl
+Sacha Telgenhof Oude Koehorst
+Jackey Cheung
+Thomas Praxl
+Sacha Telgenhof Oude Koehorst
+Francois Zaninotto
+Thomas Moorhouse
+Francois Zaninotto
+Christophe Coevoet
+Thomas Moorhouse
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Bernhard Essl
+Francois Zaninotto
+Paul Rysevets
+Francois Zaninotto
+Thomas Moorhouse
+Gilles Doge
+Francois Zaninotto
+Benjamin Laugueux
+Gilles Doge
+Thomas Moorhouse
+Gilles Doge
+Francois Zaninotto
+Sacha Telgenhof Oude Koehorst
+Thomas Moorhouse
+Sacha Telgenhof Oude Koehorst
+Thomas Moorhouse
+Francois Zaninotto
+FILE: src/Faker/Provider/Payment.php
+Roman Shvets
+Owen Kieffer-Jones
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Chad Smith
+Francois Zaninotto
+Andy Snell
+Francois Zaninotto
+Roman Shvets
+Chad Smith
+Francois Zaninotto
+Andy Snell
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Marcin Twardowski
+Francois Zaninotto
+oittaa
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+John Was
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Igor Santos
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+wmeldon
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Christophe Coevoet
+Roman Shvets
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+John Was
+Francois Zaninotto
+Max Nedelcu
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+John Was
+Owen Kieffer-Jones
+John Was
+Francois Zaninotto
+John Was
+Ronan Guilloux
+Roman Shvets
+FILE: src/Faker/Provider/Person.php
+Francois Zaninotto
+pomaxa
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Christophe Coevoet
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Christophe Coevoet
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+toin0u
+FILE: src/Faker/Provider/PhoneNumber.php
+Francois Zaninotto
+acfreitas
+pomaxa
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Dale Attree
+acfreitas
+toin0u
+FILE: src/Faker/Provider/Text.php
+Tim Düsterhus
+pomaxa
+Tim Düsterhus
+Tz-Huan Huang
+pomaxa
+Tim Düsterhus
+LagunaJavier
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Francois Zaninotto
+Charles SANQUER
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+Tim Düsterhus
+Tz-Huan Huang
+David Stensland
+Tim Düsterhus
+Francois Zaninotto
+Tz-Huan Huang
+Tim Düsterhus
+Tz-Huan Huang
+Tim Düsterhus
+Tz-Huan Huang
+Tim Düsterhus
+Francois Zaninotto
+lapause
+Francois Zaninotto
+Tz-Huan Huang
+Francois Zaninotto
+Tim Düsterhus
+Tz-Huan Huang
+Tim Düsterhus
+Tz-Huan Huang
+LagunaJavier
+Levan Velijanashvili
+LagunaJavier
+Tz-Huan Huang
+ppelgrims
+Tz-Huan Huang
+Tim Düsterhus
+FILE: src/Faker/Provider/UserAgent.php
+Benjamin Laugueux
+pomaxa
+Benjamin Laugueux
+pomaxa
+Benjamin Laugueux
+Bernhard Essl
+Benjamin Laugueux
+ajbdev
+Benjamin Laugueux
+ajbdev
+Benjamin Laugueux
+ajbdev
+Benjamin Laugueux
+Ankit Pokhrel
+ajbdev
+Andy Baird
+Benjamin Laugueux
+ajbdev
+Benjamin Laugueux
+ajbdev
+Benjamin Laugueux
+ajbdev
+Benjamin Laugueux
+Tom Kay
+Benjamin Laugueux
+FILE: src/Faker/Provider/Uuid.php
+Maik Penz
+pomaxa
+Maik Penz
+David Stensland
+Maik Penz
+FILE: src/Faker/Provider/ar_JO/Address.php
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+FILE: src/Faker/Provider/ar_JO/Company.php
+zaid-86
+FILE: src/Faker/Provider/ar_JO/Internet.php
+zaid-86
+FILE: src/Faker/Provider/ar_JO/Person.php
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+zaid-86
+FILE: src/Faker/Provider/ar_JO/Text.php
+zaid-86
+Ibrahim AshShohail
+zaid-86
+Ibrahim AshShohail
+zaid-86
+FILE: src/Faker/Provider/ar_SA/Address.php
+Ibrahim AshShohail
+FILE: src/Faker/Provider/ar_SA/Color.php
+Hamoud Alhoqbani
+FILE: src/Faker/Provider/ar_SA/Company.php
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+FILE: src/Faker/Provider/ar_SA/Internet.php
+Ibrahim AshShohail
+FILE: src/Faker/Provider/ar_SA/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/ar_SA/Person.php
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+Mohamed Abidi
+Ibrahim AshShohail
+FILE: src/Faker/Provider/ar_SA/Text.php
+Ibrahim AshShohail
+FILE: src/Faker/Provider/at_AT/Payment.php
+Ronan Guilloux
+Gabriel Caruso
+Ronan Guilloux
+Akram Fares
+Ronan Guilloux
+FILE: src/Faker/Provider/bg_BG/Internet.php
+Kiril Angov
+Francois Zaninotto
+Kiril Angov
+FILE: src/Faker/Provider/bg_BG/Payment.php
+John Was
+Francois Zaninotto
+Ronan Guilloux
+Gabriel Caruso
+Ronan Guilloux
+John Was
+FILE: src/Faker/Provider/bg_BG/Person.php
+Kiril Angov
+Francois Zaninotto
+Kiril Angov
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Kiril Angov
+FILE: src/Faker/Provider/bg_BG/PhoneNumber.php
+Kiril Angov
+Francois Zaninotto
+Kiril Angov
+FILE: src/Faker/Provider/bn_BD/Address.php
+Abu Ashraf Masnun
+Francois Zaninotto
+Abu Ashraf Masnun
+Francois Zaninotto
+Abu Ashraf Masnun
+FILE: src/Faker/Provider/bn_BD/Company.php
+Abu Ashraf Masnun
+FILE: src/Faker/Provider/bn_BD/Person.php
+Abu Ashraf Masnun
+Charles SANQUER
+Abu Ashraf Masnun
+Charles SANQUER
+Abu Ashraf Masnun
+Charles SANQUER
+Abu Ashraf Masnun
+Charles SANQUER
+Abu Ashraf Masnun
+Charles SANQUER
+Abu Ashraf Masnun
+FILE: src/Faker/Provider/bn_BD/PhoneNumber.php
+Abu Ashraf Masnun
+Owen Kieffer-Jones
+Abu Ashraf Masnun
+FILE: src/Faker/Provider/bn_BD/Utils.php
+Abu Ashraf Masnun
+Francois Zaninotto
+Abu Ashraf Masnun
+Francois Zaninotto
+FILE: src/Faker/Provider/cs_CZ/Address.php
+Mikulas
+FILE: src/Faker/Provider/cs_CZ/Company.php
+Mikulas
+Francois Zaninotto
+Mikulas
+Francois Zaninotto
+Mikulas
+FILE: src/Faker/Provider/cs_CZ/DateTime.php
+Mikulas
+Francois Zaninotto
+Mikulas
+FILE: src/Faker/Provider/cs_CZ/Internet.php
+Tomáš Klapka
+Francois Zaninotto
+Tomáš Klapka
+FILE: src/Faker/Provider/cs_CZ/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/cs_CZ/Person.php
+Tomáš Klapka
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Filip Halaxa
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Tomas Bedrich
+Juha Remes
+Tomas Bedrich
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Tomáš Klapka
+FILE: src/Faker/Provider/cs_CZ/PhoneNumber.php
+Tomáš Klapka
+Francois Zaninotto
+Tomas Bedrich
+Francois Zaninotto
+Tomáš Klapka
+FILE: src/Faker/Provider/cs_CZ/Text.php
+Mikulas
+Francois Zaninotto
+Mikulas
+FILE: src/Faker/Provider/da_DK/Address.php
+toin0u
+	 * @Antoine Corcy <contact@sbin.dk>
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/da_DK/Company.php
+toin0u
+	 * @Antoine Corcy <contact@sbin.dk>
+toin0u
+FILE: src/Faker/Provider/da_DK/Internet.php
+toin0u
+	 * @Antoine Corcy <contact@sbin.dk>
+toin0u
+FILE: src/Faker/Provider/da_DK/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/da_DK/Person.php
+toin0u
+	 * @Antoine Corcy <contact@sbin.dk>
+toin0u
+Charles SANQUER
+toin0u
+Charles SANQUER
+David Tolnem
+Charles SANQUER
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/da_DK/PhoneNumber.php
+toin0u
+	 * @Antoine Corcy <contact@sbin.dk>
+toin0u
+FILE: src/Faker/Provider/de_AT/Address.php
+David Herrmann
+Markus Poerschke
+toin0u
+Francois Zaninotto
+David Herrmann
+Francois Zaninotto
+David Herrmann
+Francois Zaninotto
+toin0u
+Findus23
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+David Herrmann
+Francois Zaninotto
+David Herrmann
+Francois Zaninotto
+David Herrmann
+Francois Zaninotto
+Findus23
+Markus Poerschke
+David Herrmann
+FILE: src/Faker/Provider/de_AT/Company.php
+Bernhard Essl
+FILE: src/Faker/Provider/de_AT/Internet.php
+Bernhard Essl
+FILE: src/Faker/Provider/de_AT/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/de_AT/Person.php
+David Herrmann
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+David Herrmann
+Findus23
+Francois Zaninotto
+Findus23
+Francois Zaninotto
+David Herrmann
+Findus23
+Francois Zaninotto
+Findus23
+xelan
+Findus23
+Francois Zaninotto
+David Herrmann
+Findus23
+Francois Zaninotto
+Findus23
+Francois Zaninotto
+David Herrmann
+Charles SANQUER
+David Herrmann
+Francois Zaninotto
+David Herrmann
+Francois Zaninotto
+David Herrmann
+FILE: src/Faker/Provider/de_AT/PhoneNumber.php
+Bernhard Essl
+FILE: src/Faker/Provider/de_AT/Text.php
+Findus23
+FILE: src/Faker/Provider/de_CH/Address.php
+r3h6
+Markus Poerschke
+r3h6
+Markus Poerschke
+r3h6
+FILE: src/Faker/Provider/de_CH/Company.php
+r3h6
+FILE: src/Faker/Provider/de_CH/Internet.php
+r3h6
+stoffo
+r3h6
+FILE: src/Faker/Provider/de_CH/Payment.php
+r3h6
+FILE: src/Faker/Provider/de_CH/Person.php
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: src/Faker/Provider/de_CH/PhoneNumber.php
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: src/Faker/Provider/de_CH/Text.php
+r3h6
+FILE: src/Faker/Provider/de_DE/Address.php
+pdaether
+Markus Poerschke
+toin0u
+Francois Zaninotto
+pdaether
+Francois Zaninotto
+pdaether
+Stefano Kowalke
+Francois Zaninotto
+Stefano Kowalke
+Adam Stachowicz
+Stefano Kowalke
+Adam Stachowicz
+Stefano Kowalke
+Francois Zaninotto
+Thomas Rothe
+Francois Zaninotto
+Thomas Rothe
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+pdaether
+Francois Zaninotto
+pdaether
+Francois Zaninotto
+pdaether
+Francois Zaninotto
+Thomas Rothe
+Markus Poerschke
+pdaether
+FILE: src/Faker/Provider/de_DE/Company.php
+pdaether
+Francois Zaninotto
+pdaether
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/de_DE/Internet.php
+pdaether
+stoffo
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/de_DE/Payment.php
+John Was
+Francois Zaninotto
+Owen Kieffer-Jones
+John Was
+FILE: src/Faker/Provider/de_DE/Person.php
+pdaether
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+pdaether
+Findus23
+Francois Zaninotto
+Findus23
+Juha Remes
+Findus23
+Francois Zaninotto
+Findus23
+Francois Zaninotto
+pdaether
+Michael Härtl
+Francois Zaninotto
+Findus23
+Francois Zaninotto
+pdaether
+Findus23
+Francois Zaninotto
+Findus23
+Francois Zaninotto
+pdaether
+Christian Bartels
+pdaether
+Francois Zaninotto
+pdaether
+Francois Zaninotto
+pdaether
+FILE: src/Faker/Provider/de_DE/PhoneNumber.php
+pdaether
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/de_DE/Text.php
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+FILE: src/Faker/Provider/el_CY/Address.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Company.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Internet.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Payment.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/Person.php
+Iacovos Constantinou
+Francois Zaninotto
+Iacovos Constantinou
+Francois Zaninotto
+Iacovos Constantinou
+Francois Zaninotto
+Iacovos Constantinou
+Francois Zaninotto
+Iacovos Constantinou
+Francois Zaninotto
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_CY/PhoneNumber.php
+Iacovos Constantinou
+FILE: src/Faker/Provider/el_GR/Address.php
+George Haritonidis
+Drakakis.Vbox
+George Haritonidis
+Drakakis.Vbox
+George Haritonidis
+Francois Zaninotto
+George Haritonidis
+Francois Zaninotto
+George Haritonidis
+FILE: src/Faker/Provider/el_GR/Company.php
+Drakakis.Vbox
+George Drakakis
+Drakakis.Vbox
+George Drakakis
+Drakakis.Vbox
+George Drakakis
+Drakakis.Vbox
+Eagle
+Drakakis.Vbox
+George Drakakis
+Drakakis.Vbox
+George Drakakis
+Drakakis.Vbox
+George Drakakis
+Drakakis.Vbox
+Eagle
+Drakakis.Vbox
+George Drakakis
+FILE: src/Faker/Provider/el_GR/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/el_GR/Person.php
+George Haritonidis
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+George Haritonidis
+Charles SANQUER
+George Haritonidis
+Charles SANQUER
+George Haritonidis
+Charles SANQUER
+George Haritonidis
+Francois Zaninotto
+Charles SANQUER
+George Haritonidis
+Charles SANQUER
+George Haritonidis
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+George Haritonidis
+Francois Zaninotto
+FILE: src/Faker/Provider/el_GR/PhoneNumber.php
+George Haritonidis
+Sébastien Nikolaou
+George Haritonidis
+Sébastien Nikolaou
+George Haritonidis
+Sébastien Nikolaou
+George Haritonidis
+Sébastien Nikolaou
+George Haritonidis
+Sébastien Nikolaou
+George Haritonidis
+Sébastien Nikolaou
+George Haritonidis
+Sébastien Nikolaou
+George Haritonidis
+FILE: src/Faker/Provider/el_GR/Text.php
+alex
+FILE: src/Faker/Provider/en_AU/Address.php
+Rick Cuddy
+Sebastian Klaus
+Rick Cuddy
+Ryan Verner
+Rick Cuddy
+Sebastian Klaus
+Rick Cuddy
+Sebastian Klaus
+Rick Cuddy
+Juha Remes
+Rick Cuddy
+Juha Remes
+Rick Cuddy
+FILE: src/Faker/Provider/en_AU/Internet.php
+Rick Cuddy
+FILE: src/Faker/Provider/en_AU/PhoneNumber.php
+Rick Cuddy
+FILE: src/Faker/Provider/en_CA/Address.php
+Colin Viebrock
+Julien Chaumond
+Colin Viebrock
+Bernhard Essl
+Colin Viebrock
+Mark van der Velden
+Colin Viebrock
+FILE: src/Faker/Provider/en_CA/PhoneNumber.php
+Colin Viebrock
+marchanlon
+Colin Viebrock
+FILE: src/Faker/Provider/en_GB/Address.php
+Matt Lody
+Francois Zaninotto
+the-noob
+Matt Lody
+Francois Zaninotto
+Matt Lody
+Francois Zaninotto
+Adrian Tombu
+Francois Zaninotto
+the-noob
+Francois Zaninotto
+Matt Lody
+Francois Zaninotto
+Matt Lody
+Francois Zaninotto
+Matt Lody
+Francois Zaninotto
+the-noob
+toin0u
+FILE: src/Faker/Provider/en_GB/Internet.php
+Matt Lody
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/en_GB/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/en_GB/Person.php
+AlexCutts
+Francois Zaninotto
+AlexCutts
+FILE: src/Faker/Provider/en_GB/PhoneNumber.php
+Matt Lody
+Francois Zaninotto
+nickwebcouk
+Francois Zaninotto
+nickwebcouk
+Francois Zaninotto
+DavidBlake
+toin0u
+FILE: src/Faker/Provider/en_HK/Address.php
+Michael Tsang
+FILE: src/Faker/Provider/en_HK/Internet.php
+Michael Tsang
+FILE: src/Faker/Provider/en_HK/PhoneNumber.php
+Michael Tsang
+FILE: src/Faker/Provider/en_IN/Address.php
+Kartik Somani
+Jivesh
+Kartik Somani
+Adrian Tombu
+Kartik Somani
+Jivesh
+Kartik Somani
+Jivesh
+Kartik Somani
+FILE: src/Faker/Provider/en_IN/Internet.php
+Kartik Somani
+FILE: src/Faker/Provider/en_IN/Person.php
+Kartik Somani
+FILE: src/Faker/Provider/en_IN/PhoneNumber.php
+Kartik Somani
+FILE: src/Faker/Provider/en_NG/Address.php
+andela-celisha-wigwe
+raphaeldealmeida
+andela-celisha-wigwe
+FILE: src/Faker/Provider/en_NG/Internet.php
+andela-celisha-wigwe
+raphaeldealmeida
+andela-celisha-wigwe
+FILE: src/Faker/Provider/en_NG/Person.php
+andela-celisha-wigwe
+raphaeldealmeida
+andela-celisha-wigwe
+FILE: src/Faker/Provider/en_NG/PhoneNumber.php
+andela-celisha-wigwe
+raphaeldealmeida
+andela-celisha-wigwe
+FILE: src/Faker/Provider/en_NZ/Address.php
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+JasonMortonNZ
+Francois Zaninotto
+FILE: src/Faker/Provider/en_NZ/Internet.php
+JasonMortonNZ
+Francois Zaninotto
+Chris Burgess
+Francois Zaninotto
+JasonMortonNZ
+Chris Burgess
+Francois Zaninotto
+JasonMortonNZ
+FILE: src/Faker/Provider/en_NZ/PhoneNumber.php
+JasonMortonNZ
+Owen Kieffer-Jones
+JasonMortonNZ
+FILE: src/Faker/Provider/en_PH/Address.php
+Randy garces
+Francois Zaninotto
+Randy garces
+Francois Zaninotto
+Randy garces
+Francois Zaninotto
+Randy garces
+Francois Zaninotto
+Randy garces
+Francois Zaninotto
+Randy garces
+Francois Zaninotto
+FILE: src/Faker/Provider/en_PH/PhoneNumber.php
+lozadaOmr
+Napoleon Carino Jr
+lozadaOmr
+Napoleon Carino Jr
+lozadaOmr
+Napoleon Carino Jr
+lozadaOmr
+Napoleon Carino Jr
+lozadaOmr
+FILE: src/Faker/Provider/en_SG/Address.php
+KimSia Sim
+FILE: src/Faker/Provider/en_SG/PhoneNumber.php
+KimSia Sim
+Francois Zaninotto
+KimSia Sim
+FILE: src/Faker/Provider/en_UG/Address.php
+tharoldD
+Francois Zaninotto
+tharoldD
+Francois Zaninotto
+tharoldD
+FILE: src/Faker/Provider/en_UG/Internet.php
+tharoldD
+FILE: src/Faker/Provider/en_UG/Person.php
+tharoldD
+Francois Zaninotto
+tharoldD
+Francois Zaninotto
+tharoldD
+Francois Zaninotto
+tharoldD
+Francois Zaninotto
+tharoldD
+Francois Zaninotto
+tharoldD
+FILE: src/Faker/Provider/en_UG/PhoneNumber.php
+tharoldD
+FILE: src/Faker/Provider/en_US/Address.php
+Francois Zaninotto
+jmauerhan
+Francois Zaninotto
+Jonathan Garbee
+Francois Zaninotto
+YAMANE Nana
+Francois Zaninotto
+Adrian Tombu
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/en_US/Company.php
+Francois Zaninotto
+Greg Duckworth
+Francois Zaninotto
+Greg Duckworth
+Francois Zaninotto
+Greg Duckworth
+Francois Zaninotto
+samoldenburg
+Greg Duckworth
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Greg Duckworth
+Francois Zaninotto
+Greg Duckworth
+Francois Zaninotto
+Greg Duckworth
+Francois Zaninotto
+Greg Duckworth
+aiden
+Greg Duckworth
+Attila Szeremi
+Greg Duckworth
+Francois Zaninotto
+Zachary Flower
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Zachary Flower
+toin0u
+FILE: src/Faker/Provider/en_US/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/en_US/Person.php
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Mark
+Joshua Jabbour
+Francois Zaninotto
+toin0u
+Yapp Ka Howe
+Francois Zaninotto
+Zachary Flower
+toin0u
+FILE: src/Faker/Provider/en_US/PhoneNumber.php
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+toin0u
+FILE: src/Faker/Provider/en_US/Text.php
+Tim Düsterhus
+FILE: src/Faker/Provider/en_ZA/Address.php
+David Faux
+Francois Zaninotto
+David Faux
+Andre Smith
+David Faux
+Andre Smith
+David Faux
+Andre Smith
+David Faux
+Andre Smith
+David Faux
+FILE: src/Faker/Provider/en_ZA/Company.php
+Andre Smith
+FILE: src/Faker/Provider/en_ZA/Internet.php
+David Faux
+Andre Smith
+Francois Zaninotto
+Andre Smith
+David Faux
+FILE: src/Faker/Provider/en_ZA/Person.php
+David Faux
+Andre Smith
+David Faux
+Charles SANQUER
+David Faux
+Charles SANQUER
+Juha Remes
+David Faux
+Andre Smith
+Charles SANQUER
+David Faux
+Charles SANQUER
+David Faux
+Charles SANQUER
+Andre Smith
+Charles SANQUER
+Andre Smith
+Le-Roux Enslin
+Bernard Brink
+Andre Smith
+Bernard Brink
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Bernard Brink
+David Faux
+FILE: src/Faker/Provider/en_ZA/PhoneNumber.php
+David Faux
+Andre Smith
+David Faux
+Andre Smith
+David Faux
+FILE: src/Faker/Provider/es_AR/Address.php
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+Ivan Mirson
+Francois Zaninotto
+Ivan Mirson
+Francois Zaninotto
+Ivan Mirson
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/es_AR/Company.php
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/es_AR/Person.php
+José Nahuel Cuesta Luengo
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Ivan Mirson
+Charles SANQUER
+Ivan Mirson
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Charles SANQUER
+toin0u
+Charles SANQUER
+José Nahuel Cuesta Luengo
+Charles SANQUER
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+José Nahuel Cuesta Luengo
+FILE: src/Faker/Provider/es_AR/PhoneNumber.php
+José Nahuel Cuesta Luengo
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/es_ES/Address.php
+Ivannis Suárez Jérez
+Francois Zaninotto
+David Fernández
+Francois Zaninotto
+David Fernández
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+FILE: src/Faker/Provider/es_ES/Company.php
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+FILE: src/Faker/Provider/es_ES/Internet.php
+Lito
+FILE: src/Faker/Provider/es_ES/Payment.php
+John Was
+Miguel Gonzalez
+Francois Zaninotto
+Miguel Gonzalez
+John Was
+FILE: src/Faker/Provider/es_ES/Person.php
+Ivannis Suárez Jérez
+Mikk Tendermann
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+David Fernández
+Charles SANQUER
+David Fernández
+Charles SANQUER
+David Fernández
+Charles SANQUER
+David Fernández
+Charles SANQUER
+David Fernández
+Charles SANQUER
+Francois Zaninotto
+David Fernández
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Francisco J. Figuereo Moya
+Francois Zaninotto
+Mikk Tendermann
+Francois Zaninotto
+Mikk Tendermann
+Francois Zaninotto
+Mikk Tendermann
+Francois Zaninotto
+Mikk Tendermann
+Francisco J. Figuereo Moya
+Ivannis Suárez Jérez
+FILE: src/Faker/Provider/es_ES/PhoneNumber.php
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+Francois Zaninotto
+Ivannis Suárez Jérez
+FILE: src/Faker/Provider/es_ES/Text.php
+David Fernández
+FILE: src/Faker/Provider/es_PE/Address.php
+Carlos Salvatierra
+Francois Zaninotto
+Carlos Salvatierra
+FILE: src/Faker/Provider/es_PE/Company.php
+Carlos Salvatierra
+FILE: src/Faker/Provider/es_PE/Person.php
+Carlos Salvatierra
+Charles SANQUER
+Carlos Salvatierra
+Charles SANQUER
+Yamir Ramirez
+Carlos Salvatierra
+Charles SANQUER
+Carlos Salvatierra
+Yamir Ramirez
+Carlos Salvatierra
+Charles SANQUER
+Carlos Salvatierra
+Jaime G. Wong
+Carlos Salvatierra
+FILE: src/Faker/Provider/es_PE/PhoneNumber.php
+Carlos Salvatierra
+FILE: src/Faker/Provider/es_VE/Address.php
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+FILE: src/Faker/Provider/es_VE/Company.php
+Domingo Oropeza
+FILE: src/Faker/Provider/es_VE/Internet.php
+Domingo Oropeza
+FILE: src/Faker/Provider/es_VE/Person.php
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Francois Zaninotto
+Domingo Oropeza
+Carlos Celis Flen-Bers
+Domingo Oropeza
+Carlos Celis Flen-Bers
+Domingo Oropeza
+Gabriel Caruso
+Carlos Celis
+Domingo Oropeza
+Carlos Celis Flen-Bers
+Domingo Oropeza
+Gabriel Caruso
+Domingo Oropeza
+FILE: src/Faker/Provider/es_VE/PhoneNumber.php
+Domingo Oropeza
+FILE: src/Faker/Provider/fa_IR/Address.php
+thisissorna
+FILE: src/Faker/Provider/fa_IR/Company.php
+thisissorna
+FILE: src/Faker/Provider/fa_IR/Internet.php
+Mohammad Zolfaghari
+Barathel
+nambra
+Barathel
+nambra
+Mohammad Zolfaghari
+Barathel
+Mohammad Zolfaghari
+FILE: src/Faker/Provider/fa_IR/Person.php
+Mohammad Zolfaghari
+Arsalan
+Mohammad Zolfaghari
+FILE: src/Faker/Provider/fa_IR/PhoneNumber.php
+mohammadninja
+thisissorna
+mohammadninja
+FILE: src/Faker/Provider/fa_IR/Text.php
+Mohammad Zolfaghari
+FILE: src/Faker/Provider/fi_FI/Address.php
+drodil
+Francois Zaninotto
+drodil
+Francois Zaninotto
+drodil
+Francois Zaninotto
+drodil
+Francois Zaninotto
+drodil
+FILE: src/Faker/Provider/fi_FI/Company.php
+drodil
+Francois Zaninotto
+drodil
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+drodil
+Francois Zaninotto
+drodil
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+drodil
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+drodil
+FILE: src/Faker/Provider/fi_FI/Internet.php
+drodil
+Francois Zaninotto
+drodil
+FILE: src/Faker/Provider/fi_FI/Payment.php
+oittaa
+FILE: src/Faker/Provider/fi_FI/Person.php
+drodil
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Simo Heinonen
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Simo Heinonen
+Francois Zaninotto
+toin0u
+Charles SANQUER
+drodil
+Charles SANQUER
+oittaa
+drodil
+FILE: src/Faker/Provider/fi_FI/PhoneNumber.php
+drodil
+Tommi Finnilä
+Francois Zaninotto
+Tommi Finnilä
+Francois Zaninotto
+Tommi Finnilä
+drodil
+FILE: src/Faker/Provider/fr_BE/Address.php
+Jean-francois lefebvre
+Francois Zaninotto
+Jean-francois lefebvre
+Michaël
+Jean-francois lefebvre
+Michaël
+Jean-francois lefebvre
+Michaël Lecerf
+Jean-francois lefebvre
+Michaël
+Jean-francois lefebvre
+Francois Zaninotto
+Jean-francois lefebvre
+Francois Zaninotto
+Jean-francois lefebvre
+FILE: src/Faker/Provider/fr_BE/Company.php
+Jean-francois lefebvre
+Adnan RIHAN
+Jean-francois lefebvre
+FILE: src/Faker/Provider/fr_BE/Internet.php
+Jean-francois lefebvre
+FILE: src/Faker/Provider/fr_BE/Payment.php
+John Was
+Francois Zaninotto
+Anthony Van Zandycke
+Gabriel Caruso
+Anthony Van Zandycke
+John Was
+FILE: src/Faker/Provider/fr_BE/Person.php
+Jean-francois lefebvre
+Charles SANQUER
+Jean-francois lefebvre
+Francois Zaninotto
+Jean-francois lefebvre
+Charles SANQUER
+Jean-francois lefebvre
+Charles SANQUER
+Jean-francois lefebvre
+FILE: src/Faker/Provider/fr_BE/PhoneNumber.php
+Jean-francois lefebvre
+FILE: src/Faker/Provider/fr_CA/Address.php
+marcaube
+Francois Zaninotto
+marcaube
+Alexi Tessier
+marcaube
+FILE: src/Faker/Provider/fr_CA/Company.php
+Adnan RIHAN
+FILE: src/Faker/Provider/fr_CA/Person.php
+marcaube
+Charles SANQUER
+marcaube
+Charles SANQUER
+marcaube
+FILE: src/Faker/Provider/fr_CA/Text.php
+Martin Boudreau
+FILE: src/Faker/Provider/fr_CH/Address.php
+r3h6
+Francois Zaninotto
+r3h6
+FILE: src/Faker/Provider/fr_CH/Company.php
+r3h6
+Adnan RIHAN
+r3h6
+Pierre-André Vullioud
+r3h6
+FILE: src/Faker/Provider/fr_CH/Internet.php
+r3h6
+FILE: src/Faker/Provider/fr_CH/Payment.php
+r3h6
+FILE: src/Faker/Provider/fr_CH/Person.php
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: src/Faker/Provider/fr_CH/PhoneNumber.php
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: src/Faker/Provider/fr_CH/Text.php
+r3h6
+FILE: src/Faker/Provider/fr_FR/Address.php
+Francois Zaninotto
+Ronan Guilloux
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Leif Högberg
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Nicolas de Marqué Fromentin
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/fr_FR/Company.php
+Francois Zaninotto
+Adnan RIHAN
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+ppelgrims
+Francois Zaninotto
+ppelgrims
+Francois Zaninotto
+ppelgrims
+Francois Zaninotto
+Alexandre Segura
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Francois Zaninotto
+Adnan RIHAN
+toin0u
+FILE: src/Faker/Provider/fr_FR/Internet.php
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/fr_FR/Payment.php
+John Was
+Baptiste Donaux
+ppelgrims
+Baptiste Donaux
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/fr_FR/Person.php
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+Thomas Bordinat
+toin0u
+FILE: src/Faker/Provider/fr_FR/PhoneNumber.php
+Francois Zaninotto
+Chabot Vincent
+Francois Zaninotto
+ppelgrims
+Chabot Vincent
+Francois Zaninotto
+ppelgrims
+Chabot Vincent
+Francois Zaninotto
+ppelgrims
+Chabot Vincent
+Francois Zaninotto
+ppelgrims
+Chabot Vincent
+Francois Zaninotto
+kletellier
+Steven Van Poeck
+kletellier
+Steven Van Poeck
+Francois Zaninotto
+kletellier
+Steven Van Poeck
+kletellier
+Steven Van Poeck
+kletellier
+ppelgrims
+Francois Zaninotto
+ppelgrims
+kletellier
+Steven Van Poeck
+kletellier
+Steven Van Poeck
+kletellier
+ppelgrims
+Francois Zaninotto
+FILE: src/Faker/Provider/fr_FR/Text.php
+Francois Zaninotto
+FILE: src/Faker/Provider/he_IL/Address.php
+Jonathan Rom
+Francois Zaninotto
+Jonathan Rom
+Francois Zaninotto
+Jonathan Rom
+FILE: src/Faker/Provider/he_IL/Company.php
+Jonathan Rom
+FILE: src/Faker/Provider/he_IL/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/he_IL/Person.php
+Jonathan Rom
+FILE: src/Faker/Provider/he_IL/PhoneNumber.php
+Jonathan Rom
+FILE: src/Faker/Provider/hr_HR/Address.php
+toniperic
+Toni Perić
+toniperic
+Toni Perić
+toniperic
+Toni Perić
+toniperic
+Toni Perić
+toniperic
+FILE: src/Faker/Provider/hr_HR/Company.php
+toniperic
+Toni Perić
+toniperic
+FILE: src/Faker/Provider/hr_HR/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/hr_HR/Person.php
+toniperic
+Toni Perić
+toniperic
+Toni Perić
+toniperic
+Toni Perić
+toniperic
+Toni Perić
+toniperic
+FILE: src/Faker/Provider/hr_HR/PhoneNumber.php
+toniperic
+FILE: src/Faker/Provider/hu_HU/Address.php
+Sági-Kazár Márk
+balping
+Francois Zaninotto
+balping
+Sági-Kazár Márk
+balping
+Sági-Kazár Márk
+balping
+Francois Zaninotto
+balping
+Francois Zaninotto
+balping
+Francois Zaninotto
+balping
+Tamás Nagy
+Francois Zaninotto
+Sági-Kazár Márk
+FILE: src/Faker/Provider/hu_HU/Company.php
+Sági-Kazár Márk
+FILE: src/Faker/Provider/hu_HU/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/hu_HU/Person.php
+Sági-Kazár Márk
+Charles SANQUER
+Sági-Kazár Márk
+Charles SANQUER
+balping
+Charles SANQUER
+balping
+Charles SANQUER
+balping
+Charles SANQUER
+balping
+Charles SANQUER
+balping
+Charles SANQUER
+balping
+Sági-Kazár Márk
+balping
+Sági-Kazár Márk
+Charles SANQUER
+balping
+Sági-Kazár Márk
+Charles SANQUER
+Sági-Kazár Márk
+Charles SANQUER
+Sági-Kazár Márk
+Charles SANQUER
+Sági-Kazár Márk
+FILE: src/Faker/Provider/hu_HU/PhoneNumber.php
+Sági-Kazár Márk
+FILE: src/Faker/Provider/hu_HU/Text.php
+lintaba
+FILE: src/Faker/Provider/hy_AM/Address.php
+Hamlet
+Francois Zaninotto
+Hamlet
+FILE: src/Faker/Provider/hy_AM/Color.php
+mhamlet
+FILE: src/Faker/Provider/hy_AM/Company.php
+Hamlet
+Francois Zaninotto
+Hamlet
+FILE: src/Faker/Provider/hy_AM/Internet.php
+Hamlet
+mhamlet
+Francois Zaninotto
+Hamlet
+FILE: src/Faker/Provider/hy_AM/Person.php
+Hamlet
+Charles SANQUER
+Francois Zaninotto
+Hamlet
+Charles SANQUER
+Francois Zaninotto
+Hamlet
+Francois Zaninotto
+Hamlet
+Charles SANQUER
+Hamlet
+Charles SANQUER
+Hamlet
+Charles SANQUER
+Hamlet
+Francois Zaninotto
+FILE: src/Faker/Provider/hy_AM/PhoneNumber.php
+Hamlet
+mhamlet
+Francois Zaninotto
+mhamlet
+Francois Zaninotto
+mhamlet
+Hamlet
+FILE: src/Faker/Provider/id_ID/Address.php
+Aprilus Lumbantoruan
+Francois Zaninotto
+Aprilus Lumbantoruan
+Francois Zaninotto
+Aprilus Lumbantoruan
+FILE: src/Faker/Provider/id_ID/Company.php
+Budi Irawan
+FILE: src/Faker/Provider/id_ID/Internet.php
+Budi Irawan
+FILE: src/Faker/Provider/id_ID/Person.php
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Francois Zaninotto
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Aprilus Lumbantoruan
+Budi Irawan
+Francois Zaninotto
+Budi Irawan
+Aprilus Lumbantoruan
+Kaupo Juhkam
+Aprilus Lumbantoruan
+FILE: src/Faker/Provider/id_ID/PhoneNumber.php
+Aprilus Lumbantoruan
+Francois Zaninotto
+Aprilus Lumbantoruan
+FILE: src/Faker/Provider/is_IS/Address.php
+Birkir Rafn Gudjonsson
+	 * @Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+FILE: src/Faker/Provider/is_IS/Company.php
+Birkir Rafn Gudjonsson
+	 * @Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
+Birkir Rafn Gudjonsson
+FILE: src/Faker/Provider/is_IS/Internet.php
+Birkir Rafn Gudjonsson
+	 * @Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
+Birkir Rafn Gudjonsson
+FILE: src/Faker/Provider/is_IS/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/is_IS/Person.php
+Birkir Rafn Gudjonsson
+	 * @Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Francois Zaninotto
+Birkir Rafn Gudjonsson
+Francois Zaninotto
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Arthúr Ólafsson
+Birkir Rafn Gudjonsson
+Charles SANQUER
+Birkir Rafn Gudjonsson
+Arthúr Ólafsson
+Birkir Rafn Gudjonsson
+Pascal Borreli
+Birkir Rafn Gudjonsson
+Pascal Borreli
+Birkir Rafn Gudjonsson
+Francois Zaninotto
+Birkir Rafn Gudjonsson
+Francois Zaninotto
+Birkir Rafn Gudjonsson
+Francois Zaninotto
+Birkir Rafn Gudjonsson
+Pascal Borreli
+Birkir Rafn Gudjonsson
+FILE: src/Faker/Provider/is_IS/PhoneNumber.php
+Birkir Rafn Gudjonsson
+	 * @Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
+Birkir Rafn Gudjonsson
+Bernhard Essl
+Birkir Rafn Gudjonsson
+FILE: src/Faker/Provider/it_CH/Address.php
+r3h6
+Francois Zaninotto
+r3h6
+FILE: src/Faker/Provider/it_CH/Company.php
+r3h6
+FILE: src/Faker/Provider/it_CH/Internet.php
+r3h6
+FILE: src/Faker/Provider/it_CH/Payment.php
+r3h6
+FILE: src/Faker/Provider/it_CH/Person.php
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: src/Faker/Provider/it_CH/PhoneNumber.php
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: src/Faker/Provider/it_CH/Text.php
+r3h6
+FILE: src/Faker/Provider/it_IT/Address.php
+matteosister
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+matteosister
+FILE: src/Faker/Provider/it_IT/Company.php
+matteosister
+Marco Vito Moscaritolo
+matteosister
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+matteosister
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+brainrepo
+Marco Vito Moscaritolo
+brainrepo
+Francois Zaninotto
+FILE: src/Faker/Provider/it_IT/Internet.php
+Emanuele Minotto
+FILE: src/Faker/Provider/it_IT/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/it_IT/Person.php
+matteosister
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Charles SANQUER
+toin0u
+Charles SANQUER
+matteosister
+Charles SANQUER
+matteosister
+Francois Zaninotto
+brainrepo
+toin0u
+FILE: src/Faker/Provider/it_IT/PhoneNumber.php
+matteosister
+Francois Zaninotto
+Emanuele Minotto
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/it_IT/Text.php
+Manuel Dalla Lana
+FILE: src/Faker/Provider/ja_JP/Address.php
+YAMANE Nana
+FILE: src/Faker/Provider/ja_JP/Company.php
+YAMANE Nana
+FILE: src/Faker/Provider/ja_JP/Internet.php
+YAMANE Nana
+itigoppo
+YAMANE Nana
+itigoppo
+YAMANE Nana
+itigoppo
+YAMANE Nana
+itigoppo
+YAMANE Nana
+itigoppo
+YAMANE Nana
+itigoppo
+YAMANE Nana
+itigoppo
+YAMANE Nana
+FILE: src/Faker/Provider/ja_JP/Person.php
+YAMANE Nana
+Charles SANQUER
+YAMANE Nana
+Charles SANQUER
+YAMANE Nana
+Charles SANQUER
+YAMANE Nana
+Charles SANQUER
+YAMANE Nana
+Charles SANQUER
+YAMANE Nana
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+YAMANE Nana
+Kazuyuki Hayashi
+YAMANE Nana
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+YAMANE Nana
+FILE: src/Faker/Provider/ja_JP/PhoneNumber.php
+YAMANE Nana
+itigoppo
+YAMANE Nana
+itigoppo
+YAMANE Nana
+FILE: src/Faker/Provider/ja_JP/Text.php
+Shunsuke Takahashi
+hejunwei
+Shunsuke Takahashi
+hejunwei
+Shunsuke Takahashi
+FILE: src/Faker/Provider/ka_GE/Address.php
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Color.php
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Company.php
+George Kotchlamazashvili
+FILE: src/Faker/Provider/ka_GE/DateTime.php
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Internet.php
+LONGMAN
+George Kotchlamazashvili
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Payment.php
+Owen Kieffer-Jones
+LONGMAN
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/ka_GE/Person.php
+Lasha Pertakhia
+LONGMAN
+Lasha Pertakhia
+George Kotchlamazashvili
+Lasha Pertakhia
+FILE: src/Faker/Provider/ka_GE/PhoneNumber.php
+LONGMAN
+FILE: src/Faker/Provider/ka_GE/Text.php
+Lasha Pertakhia
+Levan Velijanashvili
+Lasha Pertakhia
+FILE: src/Faker/Provider/kk_KZ/Address.php
+Yerlen Zhubangaliyev
+Francois Zaninotto
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Color.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Company.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Internet.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Payment.php
+Yerlen Zhubangaliyev
+Owen Kieffer-Jones
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Person.php
+Yerlen Zhubangaliyev
+Vadim Dvorovenko
+Yerlen Zhubangaliyev
+Vadim Dvorovenko
+Yerlen Zhubangaliyev
+Vadim Dvorovenko
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/PhoneNumber.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/kk_KZ/Text.php
+Yerlen Zhubangaliyev
+FILE: src/Faker/Provider/ko_KR/Address.php
+pearlc
+coozplz
+pearlc
+FILE: src/Faker/Provider/ko_KR/Company.php
+pearlc
+FILE: src/Faker/Provider/ko_KR/Internet.php
+pearlc
+FILE: src/Faker/Provider/ko_KR/Person.php
+pearlc
+TaeL Kim
+pearlc
+FILE: src/Faker/Provider/ko_KR/PhoneNumber.php
+pearlc
+Enosh Yu
+pearlc
+Enosh Yu
+pearlc
+Enosh Yu
+pearlc
+FILE: src/Faker/Provider/ko_KR/Text.php
+jdssem
+FILE: src/Faker/Provider/lt_LT/Address.php
+Eimantas Kateiva
+FILE: src/Faker/Provider/lt_LT/Company.php
+Eimantas Kateiva
+Justinas Bolys
+Eimantas Kateiva
+FILE: src/Faker/Provider/lt_LT/Internet.php
+Eimantas Kateiva
+FILE: src/Faker/Provider/lt_LT/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/lt_LT/Person.php
+Eimantas Kateiva
+Gabriel Caruso
+Eimantas Kateiva
+Gabriel Caruso
+Eimantas Kateiva
+Gabriel Caruso
+Eimantas Kateiva
+FILE: src/Faker/Provider/lt_LT/PhoneNumber.php
+Eimantas Kateiva
+FILE: src/Faker/Provider/lv_LV/Address.php
+Roman Shvets
+Matiss Janis Aboltins
+Roman Shvets
+Ronalds
+Roman Shvets
+Ronalds
+Roman Shvets
+Matiss Janis Aboltins
+Roman Shvets
+FILE: src/Faker/Provider/lv_LV/Color.php
+pomaxa
+FILE: src/Faker/Provider/lv_LV/Internet.php
+Roman Shvets
+FILE: src/Faker/Provider/lv_LV/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/lv_LV/Person.php
+Roman Shvets
+Matiss Janis Aboltins
+pomaxa
+Matiss Janis Aboltins
+Roman Shvets
+veisis
+Charles SANQUER
+veisis
+Charles SANQUER
+Roman Shvets
+veisis
+Charles SANQUER
+veisis
+Roman Shvets
+pomaxa
+Roman Shvets
+pomaxa
+Roman Shvets
+Matiss Janis Aboltins
+pomaxa
+Matiss Janis Aboltins
+Roman Shvets
+FILE: src/Faker/Provider/lv_LV/PhoneNumber.php
+Roman Shvets
+veisis
+Roman Shvets
+veisis
+Roman Shvets
+FILE: src/Faker/Provider/me_ME/Address.php
+ognjen miletic
+Francois Zaninotto
+ognjen miletic
+Francois Zaninotto
+ognjen miletic
+Francois Zaninotto
+ognjen miletic
+Mehmet Aydin Bahadir
+ognjen miletic
+Mehmet Aydin Bahadir
+ognjen miletic
+FILE: src/Faker/Provider/me_ME/Company.php
+ognjen miletic
+Francois Zaninotto
+ognjen miletic
+FILE: src/Faker/Provider/me_ME/Payment.php
+ognjen miletic
+FILE: src/Faker/Provider/me_ME/Person.php
+ognjen miletic
+Francois Zaninotto
+ognjen miletic
+Francois Zaninotto
+ognjen miletic
+FILE: src/Faker/Provider/me_ME/PhoneNumber.php
+ognjen miletic
+FILE: src/Faker/Provider/mn_MN/Person.php
+selmonal
+FILE: src/Faker/Provider/mn_MN/PhoneNumber.php
+selmonal
+FILE: src/Faker/Provider/ms_MY/Address.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Company.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Miscellaneous.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Payment.php
+Ken
+FILE: src/Faker/Provider/ms_MY/Person.php
+Ken
+Gabriel Caruso
+Ken
+FILE: src/Faker/Provider/ms_MY/PhoneNumber.php
+Ken
+FILE: src/Faker/Provider/nb_NO/Address.php
+Peter Haza
+Francois Zaninotto
+Peter Haza
+FILE: src/Faker/Provider/nb_NO/Company.php
+Peter Haza
+Francois Zaninotto
+Peter Haza
+Alexander Hjorth
+Peter Haza
+FILE: src/Faker/Provider/nb_NO/Payment.php
+Owen Kieffer-Jones
+Francois Zaninotto
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/nb_NO/Person.php
+Peter Haza
+Francois Zaninotto
+Peter Haza
+Francois Zaninotto
+Peter Haza
+Francois Zaninotto
+Peter Haza
+Francois Zaninotto
+Peter Haza
+Francois Zaninotto
+Peter Haza
+Francois Zaninotto
+Peter Haza
+FILE: src/Faker/Provider/nb_NO/PhoneNumber.php
+Peter Haza
+Francois Zaninotto
+Peter Haza
+FILE: src/Faker/Provider/ne_NP/Address.php
+Ankit Pokhrel
+Adrian Tombu
+Ankit Pokhrel
+FILE: src/Faker/Provider/ne_NP/Internet.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/ne_NP/Person.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/ne_NP/PhoneNumber.php
+Ankit Pokhrel
+FILE: src/Faker/Provider/nl_BE/Address.php
+Wim Vandersmissen
+Anthony Vanden Bossche
+Wim Vandersmissen
+Anthony Vanden Bossche
+Wim Vandersmissen
+FILE: src/Faker/Provider/nl_BE/Company.php
+Wim Vandersmissen
+FILE: src/Faker/Provider/nl_BE/Internet.php
+Wim Vandersmissen
+FILE: src/Faker/Provider/nl_BE/Payment.php
+John Was
+Francois Zaninotto
+Anthony Van Zandycke
+Gabriel Caruso
+Anthony Van Zandycke
+John Was
+FILE: src/Faker/Provider/nl_BE/Person.php
+Wim Vandersmissen
+ppelgrims
+Wim Vandersmissen
+Charles SANQUER
+Wim Vandersmissen
+Charles SANQUER
+Wim Vandersmissen
+ppelgrims
+Wim Vandersmissen
+FILE: src/Faker/Provider/nl_BE/PhoneNumber.php
+Wim Vandersmissen
+FILE: src/Faker/Provider/nl_BE/Text.php
+rauwebieten
+FILE: src/Faker/Provider/nl_NL/Address.php
+WouterJ
+ametad
+WouterJ
+killerog
+WouterJ
+Mark van der Velden
+WouterJ
+Mark van der Velden
+WouterJ
+Mark van der Velden
+WouterJ
+Mark van der Velden
+WouterJ
+Mark van der Velden
+WouterJ
+Mark van der Velden
+WouterJ
+Mark van der Velden
+Francois Zaninotto
+Mark van der Velden
+WouterJ
+mijgame
+Mark van der Velden
+WouterJ
+ametad
+WouterJ
+FILE: src/Faker/Provider/nl_NL/Color.php
+Ben
+FILE: src/Faker/Provider/nl_NL/Company.php
+WouterJ
+Laurens Laman
+WouterJ
+FILE: src/Faker/Provider/nl_NL/Internet.php
+WouterJ
+FILE: src/Faker/Provider/nl_NL/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/nl_NL/Person.php
+WouterJ
+Charles SANQUER
+WouterJ
+Charles SANQUER
+Mark van der Velden
+WouterJ
+Caspar Dunant
+Mark van der Velden
+Gerben Geijteman
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+Niels Keurentjes
+Gerben Geijteman
+Mark van der Velden
+Gerben Geijteman
+Mark van der Velden
+Niels Keurentjes
+Gijs Jorissen
+Mark van der Velden
+Gerben Geijteman
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+Niels Keurentjes
+Gerben Geijteman
+Niels Keurentjes
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+Paul Edenburg
+Mark van der Velden
+Paul Edenburg
+Mark van der Velden
+Charles SANQUER
+Mark van der Velden
+Charles SANQUER
+Mark van der Velden
+Charles SANQUER
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+Niels Keurentjes
+Mark van der Velden
+WouterJ
+Charles SANQUER
+WouterJ
+Charles SANQUER
+Mark van der Velden
+Charles SANQUER
+WouterJ
+Charles SANQUER
+WouterJ
+Mark van der Velden
+WouterJ
+Gerben Geijteman
+Arto Rozenga
+Francois Zaninotto
+FILE: src/Faker/Provider/nl_NL/PhoneNumber.php
+WouterJ
+Kees Kluskens
+WouterJ
+FILE: src/Faker/Provider/nl_NL/Text.php
+endroid
+FILE: src/Faker/Provider/pl_PL/Address.php
+John Was
+Francois Zaninotto
+Mert Can ESEN
+Francois Zaninotto
+Mert Can ESEN
+Francois Zaninotto
+Mert Can ESEN
+Francois Zaninotto
+Mert Can ESEN
+Francois Zaninotto
+Mert Can ESEN
+Francois Zaninotto
+Mert Can ESEN
+Francois Zaninotto
+Mert Can ESEN
+Francois Zaninotto
+John Was
+piotrooo
+John Was
+FILE: src/Faker/Provider/pl_PL/Company.php
+John Was
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/pl_PL/Internet.php
+Radosław Mejer
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/pl_PL/Payment.php
+John Was
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+John Was
+Francois Zaninotto
+John Was
+Francois Zaninotto
+John Was
+Francois Zaninotto
+Ion Bazan
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/pl_PL/Person.php
+Radosław Mejer
+Charles SANQUER
+Radosław Mejer
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Francois Zaninotto
+toin0u
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+toin0u
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+John Was
+Francois Zaninotto
+Krzysztof Grabania
+Francois Zaninotto
+Krzysztof Grabania
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+David Stensland
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/pl_PL/PhoneNumber.php
+Radosław Mejer
+Francois Zaninotto
+Piotr Antosik
+Francois Zaninotto
+Piotr Antosik
+Francois Zaninotto
+Piotr Antosik
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/pl_PL/Text.php
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+piotrooo
+John Was
+	              intended by the of the work, although tilde
+John Was
+FILE: src/Faker/Provider/pt_BR/Address.php
+Evandro Oliveira
+Francois Zaninotto
+francinaldo
+Francois Zaninotto
+francinaldo
+Evandro Oliveira
+FILE: src/Faker/Provider/pt_BR/Company.php
+Evandro Oliveira
+Igor Santos
+Evandro Oliveira
+Francois Zaninotto
+Thiago Talma
+Francois Zaninotto
+Evandro Oliveira
+Thiago Talma
+Igor Santos
+Evandro Oliveira
+FILE: src/Faker/Provider/pt_BR/Internet.php
+Pedro Junior
+Kennedy Tedesco
+Pedro Junior
+FILE: src/Faker/Provider/pt_BR/Payment.php
+John Was
+Igor Santos
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/pt_BR/Person.php
+Evandro Oliveira
+Igor Santos
+Evandro Oliveira
+Charles SANQUER
+Francois Zaninotto
+Evandro Oliveira
+Charles SANQUER
+Francois Zaninotto
+Evandro Oliveira
+Francois Zaninotto
+Pedro Junior
+Francois Zaninotto
+Evandro Oliveira
+Charles SANQUER
+Evandro Oliveira
+Charles SANQUER
+Evandro Oliveira
+Igor Santos
+Evandro Oliveira
+Francois Zaninotto
+Igor Santos
+Evandro Oliveira
+FILE: src/Faker/Provider/pt_BR/PhoneNumber.php
+Evandro Oliveira
+Leandro Henrique Reis
+Igor Santos
+Leandro Henrique Reis
+Guilherme Pressutto
+Igor Santos
+Jack Miras
+Igor Santos
+Jack Miras
+Igor Santos
+Guilherme Pressutto
+Igor Santos
+Guilherme Pressutto
+Igor Santos
+Guilherme Pressutto
+Igor Santos
+Guilherme Pressutto
+Igor Santos
+Guilherme Pressutto
+Igor Santos
+Owen Kieffer-Jones
+Igor Santos
+FILE: src/Faker/Provider/pt_BR/check_digit.php
+Igor Santos
+FILE: src/Faker/Provider/pt_PT/Address.php
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+raphaeldealmeida
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+FILE: src/Faker/Provider/pt_PT/Payment.php
+Hugo Fonseca
+FILE: src/Faker/Provider/pt_PT/Person.php
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+FILE: src/Faker/Provider/pt_PT/PhoneNumber.php
+Hugo Fonseca
+FILE: src/Faker/Provider/ro_MD/Address.php
+AlexanderC
+FILE: src/Faker/Provider/ro_MD/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/ro_MD/Person.php
+AlexanderC
+Charles SANQUER
+AlexanderC
+Charles SANQUER
+AlexanderC
+Charles SANQUER
+AlexanderC
+Charles SANQUER
+AlexanderC
+FILE: src/Faker/Provider/ro_MD/PhoneNumber.php
+AlexanderC
+FILE: src/Faker/Provider/ro_MD/Text.php
+wecerny
+FILE: src/Faker/Provider/ro_RO/Address.php
+Calina Cenan
+FILE: src/Faker/Provider/ro_RO/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/ro_RO/Person.php
+Calina Cenan
+Charles SANQUER
+Calina Cenan
+Charles SANQUER
+Calina Cenan
+Charles SANQUER
+Calina Cenan
+Charles SANQUER
+the-noob
+Calina Cenan
+FILE: src/Faker/Provider/ro_RO/PhoneNumber.php
+Mihai Zaharie
+Owen Kieffer-Jones
+Mihai Zaharie
+Gabriel Caruso
+Mihai Zaharie
+FILE: src/Faker/Provider/ro_RO/Text.php
+the-noob
+FILE: src/Faker/Provider/ru_RU/Address.php
+Yuriy Ishchenko
+Francois Zaninotto
+Yuriy Ishchenko
+glagola
+Yuriy Ishchenko
+Francois Zaninotto
+Revin Roman
+Ilya Hoilik
+Francois Zaninotto
+Ilya Hoilik
+Francois Zaninotto
+Revin Roman
+Francois Zaninotto
+Dmytro Karpovych
+Francois Zaninotto
+glagola
+Francois Zaninotto
+Yuriy Ishchenko
+FILE: src/Faker/Provider/ru_RU/Color.php
+Roman Shvets
+Andriy Semenets
+Roman Shvets
+Andriy Semenets
+Roman Shvets
+Francois Zaninotto
+FILE: src/Faker/Provider/ru_RU/Company.php
+Stepan Anchugov
+Aleksandr Novikov
+Stepan Anchugov
+Aleksandr Novikov
+Stepan Anchugov
+Aleksandr Novikov
+Stepan Anchugov
+Aleksandr Novikov
+Aleksey Klimov
+Aleksandr Novikov
+Stepan Anchugov
+Aleksey Klimov
+Stepan Anchugov
+Aleksandr Novikov
+Stepan Anchugov
+FILE: src/Faker/Provider/ru_RU/Internet.php
+Francois Zaninotto
+ruden
+Francois Zaninotto
+FILE: src/Faker/Provider/ru_RU/Payment.php
+Sayapin Alexander
+FILE: src/Faker/Provider/ru_RU/Person.php
+Yuriy Ishchenko
+Charles SANQUER
+gietos
+Charles SANQUER
+gietos
+Charles SANQUER
+gietos
+Francois Zaninotto
+Yuriy Ishchenko
+Francois Zaninotto
+Charles SANQUER
+Mark
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Ilya Antipenko
+Charles SANQUER
+Francois Zaninotto
+Yuriy Ishchenko
+gietos
+Francois Zaninotto
+Revin Roman
+Francois Zaninotto
+Yuriy Ishchenko
+gietos
+Francois Zaninotto
+Yuriy Ishchenko
+Francois Zaninotto
+gietos
+Francois Zaninotto
+gietos
+Francois Zaninotto
+gietos
+Francois Zaninotto
+Dmitriy Simushev
+gietos
+FILE: src/Faker/Provider/ru_RU/PhoneNumber.php
+Yuriy Ishchenko
+Francois Zaninotto
+Yuriy Ishchenko
+FILE: src/Faker/Provider/ru_RU/Text.php
+Terion
+iamraccoon
+Terion
+FILE: src/Faker/Provider/sk_SK/Address.php
+bazo
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/sk_SK/Company.php
+bazo
+Francois Zaninotto
+bazo
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+bazo
+Francois Zaninotto
+bazo
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+bazo
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+toin0u
+FILE: src/Faker/Provider/sk_SK/Internet.php
+bazo
+cinan
+Francois Zaninotto
+bazo
+FILE: src/Faker/Provider/sk_SK/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/sk_SK/Person.php
+bazo
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Graham Campbell
+Francois Zaninotto
+cinan
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+bazo
+FILE: src/Faker/Provider/sk_SK/PhoneNumber.php
+bazo
+Francois Zaninotto
+bazo
+FILE: src/Faker/Provider/sl_SI/Address.php
+Aleš Farčnik
+FILE: src/Faker/Provider/sl_SI/Company.php
+Aleš Vaupotič
+FILE: src/Faker/Provider/sl_SI/Internet.php
+Aleš Farčnik
+FILE: src/Faker/Provider/sl_SI/Payment.php
+Aleš Farčnik
+FILE: src/Faker/Provider/sl_SI/Person.php
+Aleš Farčnik
+FILE: src/Faker/Provider/sl_SI/PhoneNumber.php
+Aleš Farčnik
+FILE: src/Faker/Provider/sr_Cyrl_RS/Address.php
+umpirsky
+Francois Zaninotto
+umpirsky
+Francois Zaninotto
+umpirsky
+Francois Zaninotto
+umpirsky
+FILE: src/Faker/Provider/sr_Cyrl_RS/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/sr_Cyrl_RS/Person.php
+umpirsky
+Charles SANQUER
+umpirsky
+Francois Zaninotto
+umpirsky
+FILE: src/Faker/Provider/sr_Latn_RS/Address.php
+umpirsky
+Francois Zaninotto
+umpirsky
+Francois Zaninotto
+umpirsky
+Francois Zaninotto
+umpirsky
+FILE: src/Faker/Provider/sr_Latn_RS/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/sr_Latn_RS/Person.php
+umpirsky
+Charles SANQUER
+umpirsky
+Charles SANQUER
+umpirsky
+Francois Zaninotto
+umpirsky
+FILE: src/Faker/Provider/sr_RS/Address.php
+umpirsky
+Francois Zaninotto
+umpirsky
+Francois Zaninotto
+umpirsky
+Francois Zaninotto
+umpirsky
+FILE: src/Faker/Provider/sr_RS/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/sr_RS/Person.php
+umpirsky
+Charles SANQUER
+bogdanpet
+umpirsky
+Charles SANQUER
+umpirsky
+Charles SANQUER
+bogdanpet
+umpirsky
+Francois Zaninotto
+umpirsky
+FILE: src/Faker/Provider/sv_SE/Address.php
+Ulrik Johansson
+FILE: src/Faker/Provider/sv_SE/Company.php
+Ulrik Johansson
+Vincent Klaiber
+Ulrik Johansson
+FILE: src/Faker/Provider/sv_SE/Payment.php
+Owen Kieffer-Jones
+FILE: src/Faker/Provider/sv_SE/Person.php
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+FILE: src/Faker/Provider/sv_SE/PhoneNumber.php
+Ulrik Johansson
+FILE: src/Faker/Provider/th_TH/Address.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/Color.php
+Naruedom
+FILE: src/Faker/Provider/th_TH/Company.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/Internet.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/Payment.php
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/th_TH/PhoneNumber.php
+Unnawut Leepaisalsuwanna
+Preeti Yuankrathok
+Unnawut Leepaisalsuwanna
+FILE: src/Faker/Provider/tr_TR/Address.php
+Hasan Degismez
+Ogün Karakuş
+Hasan Degismez
+Francois Zaninotto
+Hasan Degismez
+Francois Zaninotto
+Hasan Degismez
+Francois Zaninotto
+FILE: src/Faker/Provider/tr_TR/Color.php
+Behram ÇELEN
+FILE: src/Faker/Provider/tr_TR/Company.php
+yuks
+FILE: src/Faker/Provider/tr_TR/DateTime.php
+Behram ÇELEN
+FILE: src/Faker/Provider/tr_TR/Internet.php
+Ferid Mövsümov
+Ogün Karakuş
+Hasan Degismez
+Ferid Mövsümov
+FILE: src/Faker/Provider/tr_TR/Payment.php
+John Was
+Francois Zaninotto
+John Was
+FILE: src/Faker/Provider/tr_TR/Person.php
+Ferid Mövsümov
+Aykut Aras
+Ferid Mövsümov
+Ogün Karakuş
+Charles SANQUER
+Francois Zaninotto
+Ferid Mövsümov
+Charles SANQUER
+Ogün Karakuş
+Francois Zaninotto
+Ogün Karakuş
+Charles SANQUER
+Ogün Karakuş
+Charles SANQUER
+Ogün Karakuş
+Francois Zaninotto
+Ogün Karakuş
+Charles SANQUER
+Ogün Karakuş
+Francois Zaninotto
+Ferid Mövsümov
+Ogün Karakuş
+Francois Zaninotto
+Ogün Karakuş
+Francois Zaninotto
+Ogün Karakuş
+Francois Zaninotto
+Ferid Mövsümov
+Charles SANQUER
+Ferid Mövsümov
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Aykut Aras
+Ferid Mövsümov
+FILE: src/Faker/Provider/tr_TR/PhoneNumber.php
+Ferid Mövsümov
+Francois Zaninotto
+Ogün Karakuş
+Gökhan Öztürk
+Ogün Karakuş
+Gökhan Öztürk
+Francois Zaninotto
+Ferid Mövsümov
+FILE: src/Faker/Provider/uk_UA/Address.php
+ruden
+Jarosław Goszowski
+ruden
+Jarosław Goszowski
+ruden
+zhenja.zholkevskij
+ruden
+iamraccoon
+ruden
+iamraccoon
+ruden
+FILE: src/Faker/Provider/uk_UA/Color.php
+ruden
+FILE: src/Faker/Provider/uk_UA/Company.php
+ruden
+iamraccoon
+ruden
+FILE: src/Faker/Provider/uk_UA/Internet.php
+Roman Vasilyev
+ruden
+Roman Vasilyev
+FILE: src/Faker/Provider/uk_UA/Payment.php
+lfkd
+zhenja.zholkevskij
+lfkd
+iamraccoon
+lfkd
+iamraccoon
+lfkd
+iamraccoon
+lfkd
+iamraccoon
+lfkd
+FILE: src/Faker/Provider/uk_UA/Person.php
+ruden
+Charles SANQUER
+vladbuk
+ruden
+Charles SANQUER
+vladbuk
+Charles SANQUER
+Ilya Antipenko
+Charles SANQUER
+Ilya Antipenko
+ruden
+vladbuk
+ruden
+vladbuk
+ruden
+Nazar Mokrynskyi
+ruden
+vladbuk
+ruden
+vladbuk
+ruden
+vladbuk
+ruden
+FILE: src/Faker/Provider/uk_UA/PhoneNumber.php
+Roman Vasilyev
+ruden
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+iamraccoon
+Roman Vasilyev
+FILE: src/Faker/Provider/uk_UA/Text.php
+Terion
+FILE: src/Faker/Provider/vi_VN/Address.php
+Huy TQ
+Adrian Tombu
+Huy TQ
+FILE: src/Faker/Provider/vi_VN/Color.php
+Huy TQ
+FILE: src/Faker/Provider/vi_VN/Internet.php
+Huy TQ
+FILE: src/Faker/Provider/vi_VN/Person.php
+Huy TQ
+FILE: src/Faker/Provider/vi_VN/PhoneNumber.php
+Huy TQ
+Owen Kieffer-Jones
+Huy TQ
+FILE: src/Faker/Provider/zh_CN/Address.php
+likai
+Hans Zhang
+likai
+Hans Zhang
+likai
+Hans Zhang
+likai
+Hans Zhang
+likai
+Francois Zaninotto
+likai
+FILE: src/Faker/Provider/zh_CN/Color.php
+z-song
+FILE: src/Faker/Provider/zh_CN/Company.php
+likai
+z-song
+likai
+z-song
+likai
+z-song
+likai
+FILE: src/Faker/Provider/zh_CN/DateTime.php
+z-song
+FILE: src/Faker/Provider/zh_CN/Internet.php
+Bravise
+z-song
+Bravise
+FILE: src/Faker/Provider/zh_CN/Payment.php
+z-song
+FILE: src/Faker/Provider/zh_CN/Person.php
+likai
+Charles SANQUER
+Phoenix Gao
+Charles SANQUER
+likai
+Charles SANQUER
+Phoenix Gao
+likai
+Phoenix Gao
+Charles SANQUER
+likai
+Phoenix Gao
+Charles SANQUER
+Phoenix Gao
+Charles SANQUER
+likai
+FILE: src/Faker/Provider/zh_CN/PhoneNumber.php
+likai
+zhwei
+Zhao vistart
+likai
+zhwei
+likai
+Owen Kieffer-Jones
+likai
+zhwei
+Francois Zaninotto
+zhwei
+likai
+FILE: src/Faker/Provider/zh_TW/Address.php
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+YiXiang
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Color.php
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Company.php
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+DESKTOP-ATRT1VG\Dago
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/DateTime.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Internet.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Payment.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Person.php
+Tz-Huan Huang
+DESKTOP-ATRT1VG\Dago
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+Francois Zaninotto
+Tz-Huan Huang
+DESKTOP-ATRT1VG\Dago
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/PhoneNumber.php
+Tz-Huan Huang
+FILE: src/Faker/Provider/zh_TW/Text.php
+Tz-Huan Huang
+Yi-Xiang Wang
+BePsvPT
+Yi-Xiang Wang
+Tz-Huan Huang
+Yi-Xiang Wang
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Tz-Huan Huang
+BePsvPT
+Juha Remes
+BePsvPT
+Tz-Huan Huang
+FILE: src/Faker/UniqueGenerator.php
+Francois Zaninotto
+Daniel Müller
+Ankit Pokhrel
+Daniel Müller
+vlakoff
+Francois Zaninotto
+Daniel Müller
+Dale Attree
+Francois Zaninotto
+Daniel Müller
+Dale Attree
+Francois Zaninotto
+Emanuele Minotto
+Francois Zaninotto
+FILE: src/Faker/ValidGenerator.php
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+Ankit Pokhrel
+Francois Zaninotto
+FILE: src/autoload.php
+yohang
+Francois Zaninotto
+yohang
+Francois Zaninotto
+yohang
+David Stensland
+Francois Zaninotto
+yohang
+FILE: test/Faker/Calculator/IbanTest.php
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+FILE: test/Faker/Calculator/InnTest.php
+Aleksandr Novikov
+Gabriel Caruso
+Aleksandr Novikov
+Gabriel Caruso
+Aleksandr Novikov
+FILE: test/Faker/Calculator/LuhnTest.php
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Max Chernopolsky
+Francois Zaninotto
+Mohamed Abidi
+Francois Zaninotto
+FILE: test/Faker/Calculator/TCNoTest.php
+Aykut Aras
+FILE: test/Faker/DefaultGeneratorTest.php
+Joshua Jabbour
+Gabriel Caruso
+Joshua Jabbour
+Gabriel Caruso
+Joshua Jabbour
+Gabriel Caruso
+Joshua Jabbour
+Gabriel Caruso
+Joshua Jabbour
+FILE: test/Faker/GeneratorTest.php
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Fabian Schmengler
+Théo FIDRY
+Fabian Schmengler
+Francois Zaninotto
+toin0u
+FILE: test/Faker/Provider/AddressTest.php
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Mehmet Aydin Bahadir
+Francois Zaninotto
+FILE: test/Faker/Provider/BarcodeTest.php
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+Francois Zaninotto
+Bernhard Essl
+Francois Zaninotto
+Bernhard Essl
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+Pascal Borreli
+Bernhard Essl
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+Bernhard Essl
+FILE: test/Faker/Provider/BaseTest.php
+Francois Zaninotto
+Gabriel Caruso
+Andrew
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+David Stensland
+Andrew
+Francois Zaninotto
+aRn0D
+Andrew
+Francois Zaninotto
+John Was
+Jan Waś
+John Was
+Jan Waś
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+Emanuele Minotto
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+Emanuele Minotto
+Francois Zaninotto
+Emanuele Minotto
+Francois Zaninotto
+Emanuele Minotto
+Francois Zaninotto
+Robert Reinhard
+David Stensland
+Francois Zaninotto
+David Stensland
+vlakoff
+David Stensland
+toin0u
+Andrew
+FILE: test/Faker/Provider/BiasedTest.php
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+FILE: test/Faker/Provider/ColorTest.php
+lsv
+Gabriel Caruso
+lsv
+Gabriel Caruso
+lsv
+Francois Zaninotto
+Bernhard Essl
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Benjamin Jeanjean
+Francois Zaninotto
+Benjamin Jeanjean
+Bernhard Essl
+Francois Zaninotto
+FILE: test/Faker/Provider/CompanyTest.php
+Greg Duckworth
+Gabriel Caruso
+Greg Duckworth
+Gabriel Caruso
+Greg Duckworth
+FILE: test/Faker/Provider/DateTimeTest.php
+Charles Sanquer
+Gabriel Caruso
+Charles Sanquer
+Gabriel Caruso
+Charles Sanquer
+Bishop Bettini
+Travis Elkins
+Bishop Bettini
+Travis Elkins
+Bishop Bettini
+Charles Sanquer
+Gabriel Caruso
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Bishop Bettini
+bishop
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Bishop Bettini
+Charles Sanquer
+Francois Zaninotto
+Travis Elkins
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Bishop Bettini
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Nicolas de Marqué Fromentin
+bishop
+Nicolas de Marqué Fromentin
+Travis Elkins
+Nicolas de Marqué Fromentin
+bishop
+Nicolas de Marqué Fromentin
+bishop
+Nicolas de Marqué Fromentin
+Charles Sanquer
+Ross Mitchell
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+Francois Zaninotto
+Charles Sanquer
+FILE: test/Faker/Provider/HtmlLoremTest.php
+slyngel@gmail.com
+Gabriel Caruso
+slyngel@gmail.com
+Gabriel Caruso
+slyngel@gmail.com
+steffen
+slyngel@gmail.com
+steffen
+slyngel@gmail.com
+FILE: test/Faker/Provider/ImageTest.php
+Robert Reinhard
+Gabriel Caruso
+Robert Reinhard
+Gabriel Caruso
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Jeff Puckett
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Jeff Puckett
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Jeff Puckett
+Robert Reinhard
+Francois Zaninotto
+emir
+Jeff Puckett
+emir
+Francois Zaninotto
+Nicolas Appriou
+Francois Zaninotto
+Nicolas Appriou
+Francois Zaninotto
+Nicolas Appriou
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+Robert Reinhard
+Francois Zaninotto
+Sanfra1407
+Juha Remes
+Francois Zaninotto
+Robert Reinhard
+FILE: test/Faker/Provider/InternetTest.php
+Hugo Fonseca
+Francois Zaninotto
+Gabriel Caruso
+Hugo Fonseca
+Gabriel Caruso
+Hugo Fonseca
+Zachary Flower
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+vlakoff
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+Zachary Flower
+Hugo Fonseca
+vlakoff
+Francois Zaninotto
+vlakoff
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+vlakoff
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+Bernhard Essl
+Francois Zaninotto
+Hugo Fonseca
+Francois Zaninotto
+Bernhard Essl
+Francois Zaninotto
+kielabokkie
+Bernhard Essl
+kielabokkie
+Francois Zaninotto
+Bernhard Essl
+Marc Würth
+Zachary Flower
+Marc Würth
+Bernhard Essl
+kielabokkie
+Hugo Fonseca
+FILE: test/Faker/Provider/LocalizationTest.php
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+toin0u
+FILE: test/Faker/Provider/LoremTest.php
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Pascal Borreli
+Francois Zaninotto
+toin0u
+FILE: test/Faker/Provider/MiscellaneousTest.php
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+Gilles Doge
+Bernhard Essl
+Sacha Telgenhof Oude Koehorst
+Thomas Moorhouse
+Zachary Flower
+Thomas Moorhouse
+Bernhard Essl
+FILE: test/Faker/Provider/PaymentTest.php
+Roman Shvets
+Owen Kieffer-Jones
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Owen Kieffer-Jones
+Francois Zaninotto
+Roman Shvets
+Chad Smith
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Chad Smith
+Andy Snell
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Francois Zaninotto
+Roman Shvets
+Owen Kieffer-Jones
+oittaa
+Owen Kieffer-Jones
+Francois Zaninotto
+FILE: test/Faker/Provider/PersonTest.php
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Gabriel Caruso
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+Charles SANQUER
+Francois Zaninotto
+toin0u
+FILE: test/Faker/Provider/PhoneNumberTest.php
+Dale Attree
+acfreitas
+Dale Attree
+Gabriel Caruso
+Dale Attree
+Gabriel Caruso
+Dale Attree
+Francois Zaninotto
+Dale Attree
+Francois Zaninotto
+Dale Attree
+acfreitas
+Dale Attree
+FILE: test/Faker/Provider/ProviderOverrideTest.php
+Mark van der Velden
+	 * @Mark van der Velden <mark@dynom.nl>
+Mark van der Velden
+Gabriel Caruso
+Mark van der Velden
+Gabriel Caruso
+Mark van der Velden
+vlakoff
+Mark van der Velden
+Charles SANQUER
+Mark van der Velden
+Francois Zaninotto
+Mark van der Velden
+FILE: test/Faker/Provider/TextTest.php
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Gabriel Caruso
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+Francois Zaninotto
+Tim Düsterhus
+FILE: test/Faker/Provider/UserAgentTest.php
+Benjamin Laugueux
+Gabriel Caruso
+Benjamin Laugueux
+Gabriel Caruso
+Benjamin Laugueux
+toin0u
+FILE: test/Faker/Provider/UuidTest.php
+Maik Penz
+oittaa
+Maik Penz
+Gabriel Caruso
+Maik Penz
+Gabriel Caruso
+Maik Penz
+Remi Collet
+oittaa
+Maik Penz
+FILE: test/Faker/Provider/ar_JO/InternetTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/ar_SA/InternetTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/at_AT/PaymentTest.php
+Ronan Guilloux
+Gabriel Caruso
+Ronan Guilloux
+Gabriel Caruso
+Ronan Guilloux
+FILE: test/Faker/Provider/bg_BG/PaymentTest.php
+Ronan Guilloux
+Gabriel Caruso
+Ronan Guilloux
+Gabriel Caruso
+Ronan Guilloux
+FILE: test/Faker/Provider/bn_BD/PersonTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/cs_CZ/PersonTest.php
+Tomas Bedrich
+Gabriel Caruso
+Tomas Bedrich
+Gabriel Caruso
+Tomas Bedrich
+Gabriel Caruso
+Tomas Bedrich
+Marek Skiba
+Tomas Bedrich
+FILE: test/Faker/Provider/da_DK/InternetTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/de_AT/InternetTest.php
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+FILE: test/Faker/Provider/de_AT/PhoneNumberTest.php
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+Gabriel Caruso
+Bernhard Essl
+FILE: test/Faker/Provider/de_CH/AddressTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+FILE: test/Faker/Provider/de_CH/InternetTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+FILE: test/Faker/Provider/de_CH/PhoneNumberTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+z38
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: test/Faker/Provider/de_DE/InternetTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/el_GR/TextTest.php
+ppelgrims
+FILE: test/Faker/Provider/en_AU/AddressTest.php
+Juha Remes
+Gabriel Caruso
+Juha Remes
+Gabriel Caruso
+Juha Remes
+FILE: test/Faker/Provider/en_CA/AddressTest.php
+Juha Remes
+Gabriel Caruso
+Juha Remes
+Gabriel Caruso
+Juha Remes
+FILE: test/Faker/Provider/en_GB/AddressTest.php
+the-noob
+Gabriel Caruso
+the-noob
+Gabriel Caruso
+the-noob
+FILE: test/Faker/Provider/en_IN/AddressTest.php
+Juha Remes
+Gabriel Caruso
+Juha Remes
+Gabriel Caruso
+Juha Remes
+FILE: test/Faker/Provider/en_NG/AddressTest.php
+andela-celisha-wigwe
+raphaeldealmeida
+Gabriel Caruso
+andela-celisha-wigwe
+Gabriel Caruso
+andela-celisha-wigwe
+Gabriel Caruso
+FILE: test/Faker/Provider/en_NG/InternetTest.php
+andela-celisha-wigwe
+raphaeldealmeida
+Gabriel Caruso
+andela-celisha-wigwe
+Gabriel Caruso
+andela-celisha-wigwe
+FILE: test/Faker/Provider/en_NG/PersonTest.php
+andela-celisha-wigwe
+raphaeldealmeida
+Gabriel Caruso
+andela-celisha-wigwe
+Gabriel Caruso
+andela-celisha-wigwe
+FILE: test/Faker/Provider/en_NG/PhoneNumberTest.php
+andela-celisha-wigwe
+raphaeldealmeida
+Gabriel Caruso
+andela-celisha-wigwe
+Gabriel Caruso
+andela-celisha-wigwe
+Arsalan
+andela-celisha-wigwe
+FILE: test/Faker/Provider/en_NZ/PhoneNumberTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/en_PH/AddressTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/en_SG/AddressTest.php
+KimSia Sim
+Gabriel Caruso
+KimSia Sim
+Gabriel Caruso
+KimSia Sim
+FILE: test/Faker/Provider/en_SG/PhoneNumberTest.php
+KimSia Sim
+Gabriel Caruso
+KimSia Sim
+Gabriel Caruso
+KimSia Sim
+Markus Poerschke
+KimSia Sim
+Markus Poerschke
+KimSia Sim
+FILE: test/Faker/Provider/en_UG/AddressTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/en_US/CompanyTest.php
+Zachary Flower
+Wilson Whitaker
+Zachary Flower
+Wilson Whitaker
+Zachary Flower
+FILE: test/Faker/Provider/en_US/PaymentTest.php
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+FILE: test/Faker/Provider/en_US/PersonTest.php
+Zachary Flower
+Gabriel Caruso
+Zachary Flower
+Gabriel Caruso
+Zachary Flower
+FILE: test/Faker/Provider/en_US/PhoneNumberTest.php
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+Gabriel Caruso
+Owen Kieffer-Jones
+FILE: test/Faker/Provider/en_ZA/CompanyTest.php
+Andre Smith
+Gabriel Caruso
+Andre Smith
+Gabriel Caruso
+Andre Smith
+Gabriel Caruso
+FILE: test/Faker/Provider/en_ZA/InternetTest.php
+Andre Smith
+Gabriel Caruso
+Andre Smith
+Gabriel Caruso
+Andre Smith
+FILE: test/Faker/Provider/en_ZA/PersonTest.php
+Andre Smith
+Francois Zaninotto
+Gabriel Caruso
+Andre Smith
+Gabriel Caruso
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Le-Roux Enslin
+Andre Smith
+Francois Zaninotto
+Andre Smith
+Le-Roux Enslin
+Andre Smith
+Bernard Brink
+Le-Roux Enslin
+Francois Zaninotto
+FILE: test/Faker/Provider/en_ZA/PhoneNumberTest.php
+Andre Smith
+Gabriel Caruso
+Andre Smith
+Gabriel Caruso
+Andre Smith
+Gabriel Caruso
+FILE: test/Faker/Provider/es_ES/PaymentTest.php
+Miguel Gonzalez
+Gabriel Caruso
+Miguel Gonzalez
+Gabriel Caruso
+Miguel Gonzalez
+Francois Zaninotto
+Miguel Gonzalez
+Francois Zaninotto
+Miguel Gonzalez
+FILE: test/Faker/Provider/es_ES/PersonTest.php
+Mikk Tendermann
+Gabriel Caruso
+Mikk Tendermann
+Gabriel Caruso
+Mikk Tendermann
+Francisco J. Figuereo Moya
+Mikk Tendermann
+FILE: test/Faker/Provider/es_ES/TextTest.php
+David Fernández
+Gabriel Caruso
+David Fernández
+Gabriel Caruso
+David Fernández
+FILE: test/Faker/Provider/es_PE/PersonTest.php
+Jaime G. Wong
+Gabriel Caruso
+Jaime G. Wong
+Gabriel Caruso
+Jaime G. Wong
+FILE: test/Faker/Provider/es_VE/CompanyTest.php
+Domingo Oropeza
+Gabriel Caruso
+Domingo Oropeza
+Gabriel Caruso
+Domingo Oropeza
+FILE: test/Faker/Provider/es_VE/PersonTest.php
+Domingo Oropeza
+Gabriel Caruso
+Domingo Oropeza
+Gabriel Caruso
+Domingo Oropeza
+FILE: test/Faker/Provider/fa_IR/PersonTest.php
+Arsalan
+FILE: test/Faker/Provider/fi_FI/InternetTest.php
+newman101
+Gabriel Caruso
+newman101
+Gabriel Caruso
+newman101
+FILE: test/Faker/Provider/fi_FI/PersonTest.php
+oittaa
+Gabriel Caruso
+oittaa
+Gabriel Caruso
+oittaa
+Remi Collet
+oittaa
+Remi Collet
+oittaa
+Remi Collet
+oittaa
+FILE: test/Faker/Provider/fr_BE/PaymentTest.php
+Ronan Guilloux
+Anthony Van Zandycke
+Ronan Guilloux
+Anthony Van Zandycke
+Gabriel Caruso
+Ronan Guilloux
+Gabriel Caruso
+Ronan Guilloux
+FILE: test/Faker/Provider/fr_CH/AddressTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+FILE: test/Faker/Provider/fr_CH/InternetTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+FILE: test/Faker/Provider/fr_CH/PhoneNumberTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+z38
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: test/Faker/Provider/fr_FR/AddressTest.php
+Nicolas de Marqué Fromentin
+FILE: test/Faker/Provider/fr_FR/CompanyTest.php
+Geoffrey Brier
+Francois Zaninotto
+Geoffrey Brier
+Gabriel Caruso
+Alexandre Segura
+Gabriel Caruso
+Geoffrey Brier
+Francois Zaninotto
+Alexandre Segura
+Francois Zaninotto
+Alexandre Segura
+Francois Zaninotto
+Alexandre Segura
+Francois Zaninotto
+Alexandre Segura
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+FILE: test/Faker/Provider/fr_FR/PaymentTest.php
+ppelgrims
+FILE: test/Faker/Provider/fr_FR/PersonTest.php
+Thomas Bordinat
+Gabriel Caruso
+Thomas Bordinat
+Gabriel Caruso
+Thomas Bordinat
+Gabriel Caruso
+Thomas Bordinat
+Gabriel Caruso
+Thomas Bordinat
+FILE: test/Faker/Provider/fr_FR/PhoneNumberTest.php
+Steven Van Poeck
+Wilson Whitaker
+Steven Van Poeck
+Wilson Whitaker
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+ppelgrims
+Steven Van Poeck
+Wilson Whitaker
+ppelgrims
+Steven Van Poeck
+FILE: test/Faker/Provider/fr_FR/TextTest.php
+ppelgrims
+FILE: test/Faker/Provider/id_ID/PersonTest.php
+Budi Irawan
+Gabriel Caruso
+Budi Irawan
+Gabriel Caruso
+Budi Irawan
+FILE: test/Faker/Provider/it_CH/AddressTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+FILE: test/Faker/Provider/it_CH/InternetTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+FILE: test/Faker/Provider/it_CH/PhoneNumberTest.php
+r3h6
+Gabriel Caruso
+r3h6
+Gabriel Caruso
+r3h6
+z38
+r3h6
+z38
+r3h6
+z38
+r3h6
+FILE: test/Faker/Provider/it_IT/CompanyTest.php
+brainrepo
+Gabriel Caruso
+brainrepo
+Gabriel Caruso
+brainrepo
+Gabriel Caruso
+brainrepo
+FILE: test/Faker/Provider/it_IT/PersonTest.php
+brainrepo
+Gabriel Caruso
+brainrepo
+Gabriel Caruso
+brainrepo
+Gabriel Caruso
+brainrepo
+FILE: test/Faker/Provider/ja_JP/InternetTest.php
+itigoppo
+Gabriel Caruso
+itigoppo
+Gabriel Caruso
+itigoppo
+FILE: test/Faker/Provider/ja_JP/PersonTest.php
+Kazuyuki Hayashi
+Gabriel Caruso
+Kazuyuki Hayashi
+Gabriel Caruso
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+itigoppo
+Kazuyuki Hayashi
+YAMANE Nana
+Kazuyuki Hayashi
+YAMANE Nana
+Kazuyuki Hayashi
+Francois Zaninotto
+FILE: test/Faker/Provider/ja_JP/PhoneNumberTest.php
+itigoppo
+Gabriel Caruso
+itigoppo
+Gabriel Caruso
+itigoppo
+FILE: test/Faker/Provider/ka_GE/TextTest.php
+ppelgrims
+FILE: test/Faker/Provider/kk_KZ/CompanyTest.php
+Yerlen Zhubangaliyev
+Gabriel Caruso
+Yerlen Zhubangaliyev
+Gabriel Caruso
+Yerlen Zhubangaliyev
+FILE: test/Faker/Provider/kk_KZ/PersonTest.php
+Yerlen Zhubangaliyev
+Gabriel Caruso
+Yerlen Zhubangaliyev
+Gabriel Caruso
+Yerlen Zhubangaliyev
+Gabriel Caruso
+Yerlen Zhubangaliyev
+FILE: test/Faker/Provider/kk_KZ/TextTest.php
+ppelgrims
+FILE: test/Faker/Provider/ko_KR/TextTest.php
+ppelgrims
+FILE: test/Faker/Provider/mn_MN/PersonTest.php
+selmonal
+Gabriel Caruso
+selmonal
+Gabriel Caruso
+selmonal
+FILE: test/Faker/Provider/ms_MY/PersonTest.php
+Ken
+FILE: test/Faker/Provider/nl_BE/PaymentTest.php
+Anthony Van Zandycke
+Gabriel Caruso
+Anthony Van Zandycke
+Gabriel Caruso
+Anthony Van Zandycke
+FILE: test/Faker/Provider/nl_BE/PersonTest.php
+ppelgrims
+Gabriel Caruso
+ppelgrims
+Gabriel Caruso
+ppelgrims
+FILE: test/Faker/Provider/nl_NL/CompanyTest.php
+Laurens Laman
+Gabriel Caruso
+Laurens Laman
+Gabriel Caruso
+Laurens Laman
+FILE: test/Faker/Provider/nl_NL/PersonTest.php
+Arto Rozenga
+Gabriel Caruso
+Arto Rozenga
+Gabriel Caruso
+Arto Rozenga
+FILE: test/Faker/Provider/pl_PL/AddressTest.php
+piotrooo
+Gabriel Caruso
+piotrooo
+Gabriel Caruso
+piotrooo
+FILE: test/Faker/Provider/pl_PL/PersonTest.php
+Krzysztof Grabania
+FILE: test/Faker/Provider/pt_BR/CompanyTest.php
+Igor Santos
+Gabriel Caruso
+Igor Santos
+Gabriel Caruso
+Igor Santos
+FILE: test/Faker/Provider/pt_BR/PersonTest.php
+Igor Santos
+Gabriel Caruso
+Igor Santos
+Gabriel Caruso
+Igor Santos
+FILE: test/Faker/Provider/pt_PT/AddressTest.php
+Hugo Fonseca
+raphaeldealmeida
+Gabriel Caruso
+Hugo Fonseca
+Gabriel Caruso
+Hugo Fonseca
+Francois Zaninotto
+Hugo Fonseca
+raphaeldealmeida
+Hugo Fonseca
+FILE: test/Faker/Provider/pt_PT/PersonTest.php
+Hugo Fonseca
+Gabriel Caruso
+Hugo Fonseca
+Gabriel Caruso
+Hugo Fonseca
+FILE: test/Faker/Provider/pt_PT/PhoneNumberTest.php
+Hugo Fonseca
+Gabriel Caruso
+Hugo Fonseca
+Gabriel Caruso
+Hugo Fonseca
+FILE: test/Faker/Provider/ro_RO/PersonTest.php
+the-noob
+Gabriel Caruso
+the-noob
+Gabriel Caruso
+the-noob
+Travis Elkins
+the-noob
+Travis Elkins
+the-noob
+Gabriel Caruso
+the-noob
+FILE: test/Faker/Provider/ro_RO/PhoneNumberTest.php
+Mihai Zaharie
+Gabriel Caruso
+Mihai Zaharie
+Gabriel Caruso
+Mihai Zaharie
+the-noob
+Mihai Zaharie
+FILE: test/Faker/Provider/ru_RU/CompanyTest.php
+Aleksandr Novikov
+Gabriel Caruso
+Aleksandr Novikov
+Gabriel Caruso
+Aleksandr Novikov
+Aleksey Klimov
+Aleksandr Novikov
+FILE: test/Faker/Provider/ru_RU/TextTest.php
+ppelgrims
+FILE: test/Faker/Provider/sv_SE/PersonTest.php
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Gabriel Caruso
+Ulrik Johansson
+Gabriel Caruso
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+Francois Zaninotto
+Ulrik Johansson
+FILE: test/Faker/Provider/tr_TR/CompanyTest.php
+Aykut Aras
+Wilson Whitaker
+Aykut Aras
+Wilson Whitaker
+Aykut Aras
+FILE: test/Faker/Provider/tr_TR/PaymentTest.php
+Aykut Aras
+FILE: test/Faker/Provider/tr_TR/PersonTest.php
+Aykut Aras
+FILE: test/Faker/Provider/tr_TR/PhoneNumberTest.php
+Aykut Aras
+FILE: test/Faker/Provider/uk_UA/AddressTest.php
+Serge Kuharev
+Gabriel Caruso
+Serge Kuharev
+Gabriel Caruso
+Serge Kuharev
+Francois Zaninotto
+Serge Kuharev
+Francois Zaninotto
+Serge Kuharev
+FILE: test/Faker/Provider/uk_UA/PersonTest.php
+vladbuk
+Gabriel Caruso
+vladbuk
+Gabriel Caruso
+vladbuk
+FILE: test/Faker/Provider/uk_UA/PhoneNumberTest.php
+Serge Kuharev
+Gabriel Caruso
+Serge Kuharev
+Gabriel Caruso
+Serge Kuharev
+Francois Zaninotto
+FILE: test/Faker/Provider/zh_TW/CompanyTest.php
+DESKTOP-ATRT1VG\Dago
+Gabriel Caruso
+DESKTOP-ATRT1VG\Dago
+Gabriel Caruso
+DESKTOP-ATRT1VG\Dago
+FILE: test/Faker/Provider/zh_TW/PersonTest.php
+DESKTOP-ATRT1VG\Dago
+Gabriel Caruso
+DESKTOP-ATRT1VG\Dago
+Gabriel Caruso
+DESKTOP-ATRT1VG\Dago
+Gabriel Caruso
+DESKTOP-ATRT1VG\Dago
+FILE: test/Faker/Provider/zh_TW/TextTest.php
+BePsvPT
+Gabriel Caruso
+BePsvPT
+DESKTOP-ATRT1VG\Dago
+BePsvPT
+DESKTOP-ATRT1VG\Dago
+BePsvPT
+DESKTOP-ATRT1VG\Dago
+BePsvPT
+DESKTOP-ATRT1VG\Dago
+BePsvPT
+FILE: test/documentor.php
+Francois Zaninotto
+Mark van der Velden
+yohang
+Francois Zaninotto
+toin0u
+Francois Zaninotto
+FILE: test/test.php
+Francois Zaninotto
+Mark van der Velden
+zaid-86
+Francois Zaninotto
+bateller
+Francois Zaninotto
+zaid-86
+Francois Zaninotto
+toin0u
+Francois Zaninotto
