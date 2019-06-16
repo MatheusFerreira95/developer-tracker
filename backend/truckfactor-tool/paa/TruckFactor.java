@@ -26,7 +26,7 @@ class TruckFactor {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		String inputFileName = args.length > 0 ? args[1] : null;
+		String inputFileName = args.length > 0 ? args[0] : null;
 
 		if (inputFileName != null) {
 
