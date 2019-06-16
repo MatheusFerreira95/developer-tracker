@@ -1,6 +1,10 @@
 
+import java.awt.Desktop;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -17,10 +21,10 @@ class TruckFactor {
 	static Map<String, List<String>> authors = new HashMap<String, List<String>>();
 	static Map<String, List<String>> files = new HashMap<String, List<String>>();
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		String inputFileName = args.length > 0 ? args[1] : "input.txt";
-		
+
 		readInputFile(inputFileName);
 		greedyTruckFactor();
 
@@ -39,7 +43,8 @@ class TruckFactor {
 
 		String fileName = null;
 
-		//lendo cada linha do arquivo de entrada e carregando para as listas de autores e de arquivos
+		// lendo cada linha do arquivo de entrada e carregando para as listas de autores
+		// e de arquivos
 		while (scanner.hasNextLine()) {
 
 			String line = scanner.nextLine();
@@ -55,7 +60,8 @@ class TruckFactor {
 			setAuthor(authorName, fileName);
 		}
 
-		//ordenando a lista de autores de forma que o maior autor seja o primeiro da lista
+		// ordenando a lista de autores de forma que o maior autor seja o primeiro da
+		// lista
 		orderAuthors();
 
 		System.out.println();
@@ -65,34 +71,39 @@ class TruckFactor {
 
 	}
 
-	/** Método que implementa o Algoritmo Guloso que calcula o valor de truck factor **/
-	private static void greedyTruckFactor() {
+	/**
+	 * Método que implementa o Algoritmo Guloso que calcula o valor de truck factor
+	 **/
+	private static void greedyTruckFactor() throws IOException {
 
 		System.out.println("Calculating Truck Factor...");
 
-		//lista de autores que foram retirados, ou seja, que entram no cálculo do truck factor
+		// lista de autores que foram retirados, ou seja, que entram no cálculo do truck
+		// factor
 		List<String> authorsTF = new ArrayList<String>();
-		
-		//variável que guarda a quantidade que representa a metade dos arquivos totais do projeto
+
+		// variável que guarda a quantidade que representa a metade dos arquivos totais
+		// do projeto
 		Integer halfFiles = files.size() / 2;
-		
+
 		for (Map.Entry<String, List<String>> author : authors.entrySet()) {
 
-			//adicionando autor à lista de truck factor
+			// adicionando autor à lista de truck factor
 			authorsTF.add((String) author.getKey());
 
-			//removendo autoria do autor dos arquivos do projeto e removendo arquivos orfaos
+			// removendo autoria do autor dos arquivos do projeto e removendo arquivos
+			// orfaos
 			removeFiles(author);
 
-			//verificando se mais da metade dos arquivos são orfaos
+			// verificando se mais da metade dos arquivos são orfaos
 			if (files.size() < halfFiles) {
 
-				//parando execução do algoritmo
+				// parando execução do algoritmo
 				break;
 			}
 		}
 
-		//exibindo resultado
+		// exibindo resultado
 		printTruckFactor(authorsTF);
 	}
 
@@ -108,8 +119,7 @@ class TruckFactor {
 		System.out.println("Order list authors...");
 
 		Comparator<Entry<String, List<String>>> valueComparator = (e1,
-				e2) -> e1.getValue().size() > e2.getValue().size() ? -1
-						: e1.getValue().size() < e2.getValue().size() ? 1 : 0;
+				e2) -> e1.getValue().size() > e2.getValue().size() ? -1 : e1.getValue().size() < e2.getValue().size() ? 1 : 0;
 
 		Map<String, List<String>> sortedMap = authors.entrySet().stream().sorted(valueComparator)
 				.collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
@@ -118,7 +128,7 @@ class TruckFactor {
 	}
 
 	/** Método para imprimir o resultado final **/
-	private static void printTruckFactor(List<String> authorsTF) {
+	private static void printTruckFactor(List<String> authorsTF) throws IOException {
 
 		System.out.println();
 		System.out.println("TF: " + authorsTF.size());
@@ -128,6 +138,12 @@ class TruckFactor {
 
 			System.out.println(author);
 		}
+
+		wiretHtmlFile();
+
+		File htmlFile = new File("index.html");
+		Desktop.getDesktop().browse(htmlFile.toURI());
+
 	}
 
 	/**
@@ -202,4 +218,27 @@ class TruckFactor {
 		return null;
 	}
 
+	/**
+	 * Método que Edita o arquivo index.html da saída
+	 **/
+	private static void wiretHtmlFile() throws IOException{
+		String start = "<!DOCTYPE html> 		<html lang='en'> 		 		<head> 			<meta charset='UTF-8'> 			<title>Truck Factor</title> 		</head> 		 		<body> 			<script src='Chart.min.js'></script> 		 			<h5>Y = Num Files Author</h5> 			<h5>X = Name Author</h5>";
+		String end = "  </script> </body> 		</html>";
+		String projectName = "projectName";
+		String script = "<script>";
+
+		String devs = "'dev 1', 'dev 2', 'dev 3', 'dev 4'";
+		String colorBarTruckFactor = "'rgba(255, 99, 132, 0.2)','rgba(255, 99, 132, 0.2)',";
+
+		String chartsHtml = "<canvas id='"+ projectName+"' width='500' height='300'></canvas>";
+		
+		String chartsScript = " var ctx = document.getElementById('"+projectName+"');     var myChart = new Chart(ctx, {       type: 'bar',       data: {         labels: ["+devs+"],         datasets: [{           label: '"+projectName+"',           data: [1, 2, 3, 4],           backgroundColor: ["+colorBarTruckFactor+"],           borderWidth: 1         }]       },       options: {         responsive: false,         scales: {           xAxes: [{             ticks: {               maxRotation: 90,               minRotation: 80             }           }],           yAxes: [{             ticks: {               beginAtZero: true             }           }]         }       }     });";
+
+		String codeHtml = start + chartsHtml + script + chartsScript + end;
+
+		BufferedWriter writer = new BufferedWriter(new FileWriter("index.html"));
+    writer.write(codeHtml);
+     
+    writer.close();
+	}
 }
