@@ -1,0 +1,427 @@
+FILE: .circleci/config.yml
+     50 Guillaume Chau
+FILE: .eslintignore
+      4 Guillaume Chau
+FILE: .eslintrc.js
+     30 Guillaume Chau
+FILE: .github/FUNDING.yml
+      3 Guillaume Chau
+FILE: .gitignore
+      2 Guillaume Chau
+      1 joe-re
+FILE: .npmignore
+      4 Guillaume Chau
+      1 joe-re
+FILE: .vscode/settings.json
+      8 Guillaume Chau
+FILE: LICENSE
+     21 Guillaume Chau
+FILE: README.md
+     55 Guillaume Chau
+FILE: babel.config.js
+      8 Guillaume Chau
+FILE: build/rollup.config.base.js
+     26 Guillaume Chau
+FILE: build/rollup.config.browser.js
+     15 Guillaume Chau
+FILE: build/rollup.config.es.js
+     11 Guillaume Chau
+FILE: build/rollup.config.umd.js
+     11 Guillaume Chau
+FILE: dist/vue-apollo.esm.js
+   5143 Guillaume Chau
+      8 David Duarte
+      5 Paweł Grabarz
+FILE: dist/vue-apollo.min.js
+      1 Guillaume Chau
+FILE: dist/vue-apollo.umd.js
+   5138 Guillaume Chau
+     31 David Duarte
+      1 Paweł Grabarz
+FILE: docs/.vuepress/config.js
+    194 高英健
+     13 Natalia Tepluhina
+     13 Guillaume Chau
+FILE: docs/.vuepress/public/favicon.png
+      9 Guillaume Chau
+FILE: docs/.vuepress/public/logo.png
+    108 Natalia Tepluhina
+FILE: docs/.vuepress/style.styl
+     17 Guillaume Chau
+FILE: docs/README.md
+     42 Guillaume Chau
+     12 Natalia Tepluhina
+FILE: docs/api/README.md
+      4 Guillaume Chau
+      3 Natalia Tepluhina
+FILE: docs/api/apollo-mutation.md
+     45 Guillaume Chau
+      1 Natalia Tepluhina
+      1 Darryl Hein
+      1 Alexandru Savin
+FILE: docs/api/apollo-provider.md
+     36 Natalia Tepluhina
+      7 Guillaume Chau
+      4 Sing
+FILE: docs/api/apollo-query.md
+     64 Guillaume Chau
+      2 高英健
+      1 Natalia Tepluhina
+      1 Darryl Hein
+FILE: docs/api/apollo-subscribe-to-more.md
+     54 Guillaume Chau
+      1 Natalia Tepluhina
+FILE: docs/api/dollar-apollo.md
+     19 Guillaume Chau
+      2 Natalia Tepluhina
+      1 LachlanStuart
+FILE: docs/api/smart-query.md
+    240 Guillaume Chau
+      7 高英健
+      3 Natalia Tepluhina
+      1 mx
+      1 Jan Tajovský
+FILE: docs/api/smart-subscription.md
+     42 Guillaume Chau
+      3 Natalia Tepluhina
+      1 高英健
+      1 Eligijus Krėpšta
+      1 Darryl Hein
+FILE: docs/api/ssr.md
+     45 Guillaume Chau
+FILE: docs/guide/README.md
+     64 Guillaume Chau
+     26 Natalia Tepluhina
+      1 Mohit kumar Bajoria
+      1 Drew Bartlett
+FILE: docs/guide/apollo/README.md
+     96 Guillaume Chau
+      1 Andrew Hlavats
+FILE: docs/guide/apollo/mutations.md
+    106 Natalia Tepluhina
+     10 Guillaume Chau
+      3 高英健
+      2 Ramon Wenger
+      2 Claas Augner
+FILE: docs/guide/apollo/pagination.md
+     80 Natalia Tepluhina
+     11 Guillaume Chau
+      3 高英健
+      2 Nulla Wu
+FILE: docs/guide/apollo/queries.md
+    357 Natalia Tepluhina
+     44 Guillaume Chau
+      7 高英健
+      1 Jake Ingman
+FILE: docs/guide/apollo/special-options.md
+     75 Guillaume Chau
+FILE: docs/guide/apollo/subscriptions.md
+    246 Natalia Tepluhina
+     51 Guillaume Chau
+      7 高英健
+      3 Thomas Waldecker
+      3 hannes
+      1 James Harrington
+      1 Jake Ingman
+FILE: docs/guide/components/README.md
+     29 Guillaume Chau
+FILE: docs/guide/components/mutation.md
+    208 Guillaume Chau
+      1 Darryl Hein
+      1 Claas Augner
+FILE: docs/guide/components/query.md
+    423 Guillaume Chau
+      4 Darryl Hein
+FILE: docs/guide/components/subscribe-to-more.md
+    100 Guillaume Chau
+FILE: docs/guide/installation.md
+     95 Guillaume Chau
+     22 Sara Vieira
+     18 Natalia Tepluhina
+      3 Илья
+      2 Agustin Bacigalup
+      1 Reed Jones
+      1 cbeninati
+      1 Andrey Pospeev
+FILE: docs/guide/local-state.md
+    273 Natalia Tepluhina
+      3 高英健
+      2 Óscar
+      2 Guillaume Chau
+FILE: docs/guide/multiple-clients.md
+     47 Matt Thomas
+     22 Natalia Tepluhina
+      3 Guillaume Chau
+FILE: docs/guide/ssr.md
+    170 Natalia Tepluhina
+    150 Guillaume Chau
+      1 高英健
+FILE: docs/guide/testing.md
+    120 Natalia Tepluhina
+     32 高英健
+FILE: docs/migration/README.md
+    195 Natalia Tepluhina
+      1 高英健
+FILE: docs/zh-cn/README.md
+     42 高英健
+     16 Guillaume Chau
+FILE: docs/zh-cn/api/README.md
+      7 高英健
+FILE: docs/zh-cn/api/apollo-mutation.md
+     47 高英健
+      1 Darryl Hein
+FILE: docs/zh-cn/api/apollo-provider.md
+     47 高英健
+FILE: docs/zh-cn/api/apollo-query.md
+     67 高英健
+      1 Darryl Hein
+FILE: docs/zh-cn/api/apollo-subscribe-to-more.md
+     55 高英健
+FILE: docs/zh-cn/api/dollar-apollo.md
+     22 高英健
+FILE: docs/zh-cn/api/smart-query.md
+    247 高英健
+FILE: docs/zh-cn/api/smart-subscription.md
+     47 高英健
+FILE: docs/zh-cn/api/ssr.md
+     45 高英健
+FILE: docs/zh-cn/guide/README.md
+     78 高英健
+     16 Guillaume Chau
+FILE: docs/zh-cn/guide/apollo/README.md
+     97 高英健
+FILE: docs/zh-cn/guide/apollo/mutations.md
+    121 高英健
+FILE: docs/zh-cn/guide/apollo/pagination.md
+     95 高英健
+FILE: docs/zh-cn/guide/apollo/queries.md
+    409 高英健
+FILE: docs/zh-cn/guide/apollo/special-options.md
+     75 高英健
+FILE: docs/zh-cn/guide/apollo/subscriptions.md
+    311 高英健
+FILE: docs/zh-cn/guide/components/README.md
+     29 高英健
+FILE: docs/zh-cn/guide/components/mutation.md
+    209 高英健
+      1 Darryl Hein
+FILE: docs/zh-cn/guide/components/query.md
+    428 高英健
+FILE: docs/zh-cn/guide/components/subscribe-to-more.md
+    100 高英健
+FILE: docs/zh-cn/guide/installation.md
+    143 高英健
+FILE: docs/zh-cn/guide/local-state.md
+    280 高英健
+FILE: docs/zh-cn/guide/multiple-clients.md
+     72 高英健
+FILE: docs/zh-cn/guide/ssr.md
+    321 高英健
+FILE: docs/zh-cn/guide/testing.md
+    152 高英健
+FILE: docs/zh-cn/migration/README.md
+    196 高英健
+FILE: lib/consts.js
+     15 Guillaume Chau
+FILE: lib/utils.js
+     35 Guillaume Chau
+      3 David Duarte
+      1 Juraj Pikora
+FILE: package.json
+     70 Guillaume Chau
+      5 joe-re
+      4 Natalia Tepluhina
+      2 Austio
+FILE: src/apollo-provider.js
+     21 Guillaume Chau
+FILE: src/components/ApolloMutation.js
+     92 Guillaume Chau
+      6 Hugome
+      1 mekhami
+FILE: src/components/ApolloQuery.js
+    204 Guillaume Chau
+     12 Omar Jbara
+      3 Yordis Prieto
+      1 mekhami
+      1 Darryl Hein
+      1 Binyomin Greenes
+FILE: src/components/ApolloSubscribeToMore.js
+     74 Guillaume Chau
+FILE: src/dollar-apollo.js
+    185 Guillaume Chau
+      3 ciscorn
+FILE: src/index.js
+     86 Guillaume Chau
+FILE: src/mixin.js
+    164 Guillaume Chau
+      1 Christopher Bartling (Agosto account)
+FILE: src/smart-apollo.js
+    191 Guillaume Chau
+      1 Darryl Hein
+      1 Alexandre Bonaventure Geissmann
+FILE: src/smart-query.js
+    291 Guillaume Chau
+      6 karl
+      5 HS Song
+      4 gaberudy
+      2 Luke Konopka
+      2 Dominic Garms
+      1 Fnoop
+FILE: src/smart-subscription.js
+     60 Guillaume Chau
+      1 karlito40
+      1 Fnoop
+FILE: ssr/index.js
+     22 Guillaume Chau
+FILE: tests/demo/.eslintignore
+      2 Guillaume Chau
+FILE: tests/demo/.eslintrc.js
+     31 Guillaume Chau
+FILE: tests/demo/.gitignore
+     26 Guillaume Chau
+FILE: tests/demo/.graphqlconfig.yml
+      8 Guillaume Chau
+FILE: tests/demo/.postcssrc.js
+      5 Guillaume Chau
+FILE: tests/demo/README.md
+     13 Guillaume Chau
+      4 hannes
+FILE: tests/demo/apollo-server/connectors/channels.js
+     13 Guillaume Chau
+FILE: tests/demo/apollo-server/connectors/messages.js
+     97 Guillaume Chau
+FILE: tests/demo/apollo-server/connectors/users.js
+     79 Guillaume Chau
+FILE: tests/demo/apollo-server/context.js
+     30 Guillaume Chau
+FILE: tests/demo/apollo-server/directives.js
+      5 Guillaume Chau
+FILE: tests/demo/apollo-server/directives/private.js
+     12 Guillaume Chau
+FILE: tests/demo/apollo-server/mocks.js
+      5 Guillaume Chau
+FILE: tests/demo/apollo-server/resolvers.js
+     45 Guillaume Chau
+FILE: tests/demo/apollo-server/schema.graphql
+     84 Guillaume Chau
+FILE: tests/demo/apollo-server/triggers.js
+      3 Guillaume Chau
+FILE: tests/demo/apollo-server/type-defs.js
+      4 Guillaume Chau
+FILE: tests/demo/babel.config.js
+      5 Guillaume Chau
+FILE: tests/demo/cypress.json
+      3 Guillaume Chau
+FILE: tests/demo/package.json
+     44 Guillaume Chau
+FILE: tests/demo/public/favicon.ico
+      1 Guillaume Chau
+FILE: tests/demo/public/index.html
+     20 Guillaume Chau
+FILE: tests/demo/src/App.vue
+     96 Guillaume Chau
+FILE: tests/demo/src/components/ChannelList.vue
+     84 Guillaume Chau
+FILE: tests/demo/src/components/ChannelView.vue
+    151 Guillaume Chau
+FILE: tests/demo/src/components/MessageForm.vue
+     77 Guillaume Chau
+FILE: tests/demo/src/components/MessageItem.vue
+     58 Guillaume Chau
+FILE: tests/demo/src/components/MockSendMessage.vue
+     34 Guillaume Chau
+FILE: tests/demo/src/components/UserCurrent.vue
+     63 Guillaume Chau
+FILE: tests/demo/src/components/UserLogin.vue
+    186 Guillaume Chau
+FILE: tests/demo/src/components/WelcomeView.vue
+     31 Guillaume Chau
+FILE: tests/demo/src/graphql/channel.gql
+     11 Guillaume Chau
+FILE: tests/demo/src/graphql/channelFragment.gql
+      4 Guillaume Chau
+FILE: tests/demo/src/graphql/channels.gql
+      7 Guillaume Chau
+FILE: tests/demo/src/graphql/messageAdd.gql
+      7 Guillaume Chau
+FILE: tests/demo/src/graphql/messageChanged.gql
+     10 Guillaume Chau
+FILE: tests/demo/src/graphql/messageFragment.gql
+     11 Guillaume Chau
+FILE: tests/demo/src/graphql/messageRemove.gql
+      7 Guillaume Chau
+FILE: tests/demo/src/graphql/messageUpdate.gql
+      7 Guillaume Chau
+FILE: tests/demo/src/graphql/userCurrent.gql
+      8 Guillaume Chau
+FILE: tests/demo/src/graphql/userFragment.gql
+      4 Guillaume Chau
+FILE: tests/demo/src/graphql/userLogin.gql
+     15 Guillaume Chau
+FILE: tests/demo/src/graphql/userLogout.gql
+      3 Guillaume Chau
+FILE: tests/demo/src/graphql/userRegister.gql
+      3 Guillaume Chau
+FILE: tests/demo/src/main.js
+     16 Guillaume Chau
+FILE: tests/demo/src/mixins/UserCurrent.js
+      8 Guillaume Chau
+FILE: tests/demo/src/router.js
+     29 Guillaume Chau
+FILE: tests/demo/src/store.js
+     16 Guillaume Chau
+FILE: tests/demo/src/style/imports.styl
+      2 Guillaume Chau
+FILE: tests/demo/src/vue-apollo.js
+    107 Guillaume Chau
+FILE: tests/demo/tests/e2e/.eslintrc
+     12 Guillaume Chau
+FILE: tests/demo/tests/e2e/plugins/index.js
+     11 Guillaume Chau
+FILE: tests/demo/tests/e2e/specs/test.js
+    105 Guillaume Chau
+FILE: tests/demo/tests/e2e/support/commands.js
+     25 Guillaume Chau
+FILE: tests/demo/tests/e2e/support/index.js
+     20 Guillaume Chau
+FILE: tests/demo/vue.config.js
+     22 Guillaume Chau
+FILE: tests/demo/yarn.lock
+   9821 Guillaume Chau
+FILE: types/apollo-provider.d.ts
+     22 joe-re
+FILE: types/index.d.ts
+      4 joe-re
+      2 Guillaume Chau
+FILE: types/options.d.ts
+     54 joe-re
+     17 Guillaume Chau
+      2 Hugo Alliaume
+      2 Daniel Hritzkiv
+      2 bảo.thiên.ngô
+      1 Markus Lanthaler
+FILE: types/test/App.ts
+    195 joe-re
+      4 Guillaume Chau
+      1 LachlanStuart
+FILE: types/test/Decorator.ts
+     10 Guillaume Chau
+FILE: types/test/index.ts
+     22 Guillaume Chau
+     17 joe-re
+FILE: types/test/tsconfig.json
+     28 joe-re
+FILE: types/vue-apollo.d.ts
+     49 LachlanStuart
+     13 joe-re
+      6 Guillaume Chau
+FILE: types/vue.d.ts
+      8 joe-re
+      7 Guillaume Chau
+      1 Taku Fukada
+      1 LachlanStuart
+      1 Anton Kudryavtsev
+FILE: yarn.lock
+   5558 Guillaume Chau
+   3629 Natalia Tepluhina
+     29 joe-re

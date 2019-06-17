@@ -1,0 +1,99 @@
+FILE: .babelrc
+      5 tigerb
+FILE: .gitignore
+      5 tigerb
+      1 yokots
+      1 TIGERB
+FILE: CNAME
+      1 TIGERB
+FILE: LICENSE
+     21 tigerb
+FILE: README.md
+     47 tigerb
+     36 TIGERB
+     31 Jess
+      4 yokots
+FILE: package.json
+     25 TIGERB
+     11 yokots
+      9 tigerb
+      5 Jess
+FILE: src/app.js
+     17 tigerb
+     15 yokots
+      3 TIGERB
+FILE: src/app.vue
+      9 tigerb
+      3 yokots
+      1 TIGERB
+FILE: src/components/alert.vue
+     54 yokots
+     19 tigerb
+      2 TIGERB
+FILE: src/components/barBottom.vue
+     51 yokots
+     12 TIGERB
+FILE: src/components/barTop.vue
+     26 yokots
+     17 TIGERB
+      4 tigerb
+FILE: src/components/button.vue
+     70 tigerb
+     15 yokots
+      1 TIGERB
+FILE: src/components/card.vue
+     93 TIGERB
+     35 yokots
+     11 tigerb
+FILE: src/components/list.vue
+     41 yokots
+     12 tigerb
+      7 TIGERB
+FILE: src/components/loading.vue
+     19 yokots
+     12 TIGERB
+FILE: src/components/text.vue
+     24 yokots
+     10 tigerb
+      1 TIGERB
+FILE: src/images/banner.jpg
+     46 tigerb
+FILE: src/images/easy-vue.jpg
+     83 TIGERB
+FILE: src/images/logo-3.png
+    253 tigerb
+FILE: src/images/phone.png
+     17 tigerb
+FILE: src/index.html
+     12 yokots
+FILE: src/mock/api.json
+     70 TIGERB
+     30 yokots
+FILE: src/router/index.js
+     20 yokots
+FILE: src/store/index.js
+     44 tigerb
+     26 yokots
+FILE: src/views/detail.vue
+     19 tigerb
+      9 yokots
+FILE: src/views/home.vue
+     13 yokots
+     13 TIGERB
+      8 tigerb
+FILE: src/views/lists.vue
+     13 yokots
+     12 TIGERB
+      9 tigerb
+FILE: src/views/option.vue
+     14 yokots
+     13 tigerb
+     12 TIGERB
+FILE: webpack.config.js
+     47 yokots
+     22 TIGERB
+     14 tigerb
+      1 shizhan
+FILE: yarn.lock
+   4559 TIGERB
+   1980 tigerb

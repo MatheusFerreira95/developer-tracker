@@ -1,0 +1,94 @@
+FILE: .babelrc
+     13 surmon
+FILE: .eslintignore
+      1 surmon
+FILE: .eslintrc.js
+    763 surmon
+FILE: .github/ISSUE_TEMPLATE.md
+     22 surmon
+FILE: .gitignore
+     30 surmon
+     23 Surmon
+FILE: .npmignore
+     26 surmon
+      2 unknown
+FILE: .travis.yml
+      5 surmon
+FILE: CHANGELOG.md
+     22 surmon
+FILE: LICENSE
+     21 surmon
+FILE: README.md
+    218 surmon
+     40 unknown
+      3 Tim Kamanin
+FILE: bower.json
+     27 surmon
+FILE: config/base.conf.js
+     43 surmon
+FILE: config/build.conf.js
+     36 surmon
+FILE: config/test.conf.js
+     10 surmon
+FILE: dist/ssr.js
+    181 surmon
+FILE: dist/vue-video-player.js
+      1 surmon
+FILE: examples/01-video.vue
+     94 surmon
+     41 unknown
+FILE: examples/02-video.vue
+     43 surmon
+     35 unknown
+      4 Surmon
+FILE: examples/03-video.vue
+     42 surmon
+     30 unknown
+FILE: examples/04-video.vue
+     39 surmon
+     31 unknown
+FILE: examples/05-video.vue
+     29 unknown
+     15 surmon
+FILE: examples/index.js
+     11 unknown
+      2 surmon
+FILE: examples/nuxt-ssr-example/nuxt-ssr-example.vue
+     97 surmon
+FILE: examples/nuxt-ssr-example/nuxt-video-player-plugin.js
+      5 surmon
+FILE: examples/nuxt-ssr-example/nuxt.config.js
+     11 surmon
+FILE: package.json
+    126 surmon
+     14 unknown
+FILE: src/custom-theme.css
+    180 surmon
+FILE: src/index.js
+     28 surmon
+FILE: src/player.vue
+    189 surmon
+     24 unknown
+      7 Giovanni pc
+      4 ritayzy
+      3 plus li
+      2 马赐崇
+      2 SergKazakov
+      2 baze
+      1 Zerozh
+FILE: src/ssr.js
+    210 surmon
+FILE: test/e2e/custom-assertions/elementCount.js
+     26 surmon
+FILE: test/e2e/nightwatch.conf.js
+     40 surmon
+FILE: test/e2e/runner.js
+     31 surmon
+FILE: test/unit/.eslintrc
+      9 surmon
+FILE: test/unit/index.js
+     13 surmon
+FILE: test/unit/karma.conf.js
+     41 surmon
+FILE: test/unit/specs/VueAwesomeSwiper.spec.js
+    333 surmon
