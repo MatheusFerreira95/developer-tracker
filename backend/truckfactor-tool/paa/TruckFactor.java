@@ -101,12 +101,11 @@ class TruckFactor {
 			// adicionando autor à lista de truck factor
 			authorsTF.add((String) author.getKey());
 
-			// removendo arquivos orfaos
-			removeAuthorAndOrphanFiles(author);
+			// removendo autoria de author e calcula qtd de arquivos orfaos
+			Integer orphanFiles = calculateOrphanFiles(author);
 
 			// verificando se mais da metade dos arquivos são orfaos
-			if (files.size() <= halfFiles) {
-				// parando execução do algoritmo
+			if (orphanFiles >= halfFiles) {
 				break;
 			}
 		}
@@ -223,31 +222,30 @@ class TruckFactor {
 	}
 
 	/**
-	 * Método que remove os autores de arquivos e, ainda remove os arquivos que se
-	 * tornaram 'órfãos'
+	 * Método que remove a autoria de arquivos para um autor e contabiliza os
+	 * arquivos que se tornaram 'órfãos'
 	 **/
-	private static void removeAuthorAndOrphanFiles(Entry<String, List<String>> author) {
+	private static Integer calculateOrphanFiles(Entry<String, List<String>> author) {
 
-		List<String> fileRemoveList = new ArrayList<String>();
+		Integer orphanFiles = 0;
 
 		Iterator<Entry<String, List<String>>> it = files.entrySet().iterator();
+
 		while (it.hasNext()) {
+
 			Entry<String, List<String>> file = it.next();
 
 			// remove o autor do arquivo (caso o autor esteja presente na lista de autores
 			// deste arquivo)
 			file.getValue().remove(author.getKey());
 
-			// caso o 
+			// contabilizando arquivos orfaos
 			if (file.getValue().size() == 0) {
-				fileRemoveList.add(file.getKey());
+				orphanFiles++;
 			}
 		}
 
-		// remove files maked
-		for (String fileKey : fileRemoveList) {
-			files.remove(fileKey);
-		}
+		return orphanFiles;
 	}
 
 	/**
