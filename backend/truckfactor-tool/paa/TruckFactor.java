@@ -105,7 +105,7 @@ class TruckFactor {
 			removeFiles(author);
 
 			// verificando se mais da metade dos arquivos são orfaos
-			if (files.size() < halfFiles) {
+			if (files.size() <= halfFiles) {
 				// parando execução do algoritmo
 				break;
 			}
