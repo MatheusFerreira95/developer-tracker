@@ -5,8 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -36,17 +34,17 @@ class TruckFactor {
 	static String htmlContent = "";
 
 	// variáveis para guardar o tempo de execução de cada algoritmo utilizado
-	static Instant startReadInputFile;
-	static Instant finishReadInputFile;
-	static Instant startOrder;
-	static Instant finishOrder;
-	static Instant startGreedyTruckFactor;
-	static Instant finishGreedyTruckFactor;
+	static long startReadInputFile;
+	static long finishReadInputFile;
+	static long startOrder;
+	static long finishOrder;
+	static long startGreedyTruckFactor;
+	static long finishGreedyTruckFactor;
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		// guardando momento inicial do processamento
-		Instant start = Instant.now();
+		long start = System.nanoTime();
 
 		// caso o usuário passe uma instância como parâmetro ela será considerado.
 		// Caso contrário, as instâncias pré-configuradas serão utilizadas
@@ -72,8 +70,8 @@ class TruckFactor {
 		}
 
 		// guardando tempo de execução total do programa
-		Instant finish = Instant.now();
-		long timeElapsed = Duration.between(start, finish).toMillis();
+		long finish = System.nanoTime();
+		long timeElapsed = finish - start;
 
 		// contruindo arquivo html e abrindo-o no navegador padrão do sistema
 		showHtmlFile(timeElapsed);
@@ -85,7 +83,7 @@ class TruckFactor {
 	private static void greedyTruckFactor(String instanceName) throws IOException {
 
 		// guardando instante em que o método do algoritmo guloso inicia
-		startGreedyTruckFactor = Instant.now();
+		startGreedyTruckFactor = System.nanoTime();
 		System.out.println("Calculating Truck Factor...");
 
 		// lista de autores que foram retirados, ou seja, que entram no cálculo do truck
@@ -111,7 +109,7 @@ class TruckFactor {
 		}
 
 		// guardando instante em que o algoritmo guloso termina
-		finishGreedyTruckFactor = Instant.now();
+		finishGreedyTruckFactor = System.nanoTime();
 
 		// adicioanndo resultado ao código html que será utilizado para exibição do
 		// resultado final
@@ -150,7 +148,7 @@ class TruckFactor {
 	private static void readInputFile(String inputFileName) throws FileNotFoundException {
 
 		// guardando instante em que a leitura do arquivo foi iniciada
-		startReadInputFile = Instant.now();
+		startReadInputFile = System.nanoTime();
 		System.out.println("Reading input file...");
 
 		File intputFile = new File(inputFileName);
@@ -197,7 +195,7 @@ class TruckFactor {
 		System.out.println();
 
 		// registrando instante final da leitura do arquivo de entrada para instância
-		finishReadInputFile = Instant.now();
+		finishReadInputFile = System.nanoTime();
 	}
 
 	/**
@@ -206,7 +204,7 @@ class TruckFactor {
 	 **/
 	private static void orderAuthors() {
 
-		startOrder = Instant.now();
+		startOrder = System.nanoTime();
 
 		System.out.println("Order list authors...");
 
@@ -218,7 +216,7 @@ class TruckFactor {
 
 		authors = sortedMap;
 
-		finishOrder = Instant.now();
+		finishOrder = System.nanoTime();
 	}
 
 	/**
@@ -295,9 +293,9 @@ class TruckFactor {
 	 **/
 	private static void addResultToHtml(String instance, List<String> authorsTF) throws IOException {
 
-		long timeReadInputFile = Duration.between(startReadInputFile, finishReadInputFile).toMillis();
-		long timeOrder = Duration.between(startOrder, finishOrder).toMillis();
-		long timeGredyTruckFactor = Duration.between(startGreedyTruckFactor, finishGreedyTruckFactor).toMillis();
+		long timeReadInputFile = finishReadInputFile - startReadInputFile;
+		long timeOrder = finishOrder - startOrder;
+		long timeGredyTruckFactor = finishGreedyTruckFactor - startGreedyTruckFactor;
 
 		String colorBarTruckFactor = "";
 		for (String author : authorsTF) {
@@ -314,8 +312,8 @@ class TruckFactor {
 		String chartsHtml = "<div class=\"flex-container\"> <div> <canvas id=\"" + instance
 				+ "\" width=\"1000\" height=\"300\"></canvas> </div>";
 		String datailHtml = "<div class=\"detail\"> <p>Truck Factor: " + authorsTF.size() + "</p> <p>Total developers: "
-				+ authors.size() + "</p> <p>Time Grredy Truck Factor: " + timeGredyTruckFactor + " ms</p> <p>Time Order: "
-				+ timeOrder + " ms</p> <p>Time Read Instance: " + timeReadInputFile + " ms</p> </div> </div>";
+				+ authors.size() + "</p> <p>Time Grredy Truck Factor: " + timeGredyTruckFactor + " ns</p> <p>Time Order: "
+				+ timeOrder + " ns</p> <p>Time Read Instance: " + timeReadInputFile + " ns</p> </div> </div>";
 		String chartsScript = " var ctx = document.getElementById(\"" + instance
 				+ "\"); var myChart = new Chart(ctx, { type: \"bar\",data: { labels: [" + authorsHtml
 				+ "], datasets: [{ label: \"Truck Factor for " + instance + "\", data: [" + dataHtml + "], backgroundColor: ["
@@ -332,9 +330,9 @@ class TruckFactor {
 	 * excução
 	 **/
 	private static void showHtmlFile(long timeElapsed) throws IOException {
-		String style = "<style> .flex-container { display: flex; flex-wrap: nowrap; justify-content: center;} .flex-container > div { width: 1000px; margin: 20px; text-align: center;} .detail {border: 1px solid #aaa; width:250px !important; height:190px;} body {text-align:center; min-width: 1300px; color: #555} </style>";
+		String style = "<style> .flex-container { display: flex; flex-wrap: nowrap; justify-content: center;} .flex-container > div { width: 1000px; margin: 10px; text-align: center;} .detail {border: 1px solid #aaa; width:260px !important; height:190px;} body {text-align:center; min-width: 1300px; color: #555} </style>";
 		String header = "<h3>Truck Factor - Matheus Silva Ferreira</h3> <p>Num instances: " + instances.size()
-				+ "</p> <p>Total Time: " + timeElapsed + " ms</p>";
+				+ "</p> <p>Total Time: " + timeElapsed + " ns</p>";
 		String start = "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Truck Factor</title> " + style
 				+ " </head> <body> <script src=\"Chart.min.js\"></script> " + header;
 		String end = "</body> </html>";
