@@ -101,6 +101,11 @@
                 <v-toolbar-title>
                   <h4>Developers</h4>
                 </v-toolbar-title>
+                <v-divider class="white"></v-divider>
+                <v-chip color="indigo" text-color="white">
+                  <v-icon color="amber">start</v-icon>
+                  TF: {{project.truckFactor}}
+                </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
               <v-card-text class="pa-0">
@@ -115,8 +120,9 @@
                   >
                     <template slot="items" slot-scope="props">
                       <tr class="click-pointer" @click="props.expanded = !props.expanded">
-                        <td>
-                          <v-icon dark right :color="util.getColors()[props.item.avatar]">person</v-icon>
+                        <td class="avatar-developer">
+                          <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon>
+                          <v-icon v-if="props.item.truckFactor" right color="amber">start</v-icon>
                         </td>
                         <td
                           class="text-xs-left"
@@ -255,5 +261,9 @@ export default {
 
 .click-pointer {
   cursor: pointer;
+}
+
+.avatar-developer {
+  display: flex;
 }
 </style>

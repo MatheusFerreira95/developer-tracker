@@ -20,6 +20,7 @@ public class Project {
 	public String localRepository;
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList = new ArrayList<NumLocProgrammingLanguage>();
 	public List<Developer> developerList = new ArrayList<Developer>();
+	public Integer truckFactor = 0;
 
 	public Project(String localRepository) {
 
