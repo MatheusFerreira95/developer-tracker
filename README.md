@@ -1,6 +1,6 @@
 # team-tracker
 
-System team tracker
+Este projeto está sendo desenvolvido como ferramenta computacional para apoiar uma abordagem criada para auxiliar Gerentes de Projeto a avaliarem as contribuições de desenvolvedores em projetos de software.
 
 ### Arquitetura
 
