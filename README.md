@@ -2,17 +2,28 @@
 
 System team tracker
 
-## Arquitetura
+### Arquitetura
 
-A definiçao da arquitetura utilizada foi sugerida por tal cara
+A definiçao da arquitetura utilizada foi sugerida por **https://github.com/jonashackt/spring-boot-vuejs**
 
 A estrutura de arquivos é a seguinte:
 
-copiar aqui.
+```
+team-tracker
+├─┬ backend     → módulo backend com o código Spring Boot
+│ ├── src
+│ └── pom.xml
+├─┬ frontend    → módulo frontend com o código Vue.js
+│ ├── src
+│ └── pom.xml
+└── pom.xml     → Maven que gerencia ambos os módulos
 
-## Como usar?
+```
+
+### Como usar?
 
 | Command | Description |
 | ------- | ----------- |
-| `git init` | Initialize a local Git repository |
-| `git clone ssh://git@github.com/[username]/[repository-name].git` | Create a local copy of a remote repository |
+| `mvn clean install` | Executar no diretório `raiz` para atualizar dependências dos módulos frontend e backend |
+| `npm run build` | Executar no diretório `frontend` para compilar o módulo Vue.js e enviá-lo para o projeto backend |
+| `mvn --projects backend spring-boot:run` | Executar no diretório `raiz` para executar a aplicação em http://localhost:8088/ |
