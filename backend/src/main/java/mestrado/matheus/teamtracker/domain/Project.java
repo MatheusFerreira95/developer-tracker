@@ -61,29 +61,35 @@ public class Project {
 		Integer avatar = 0;
 		for (String line : gitOutput.outputList) {
 
-			String email = line.substring(line.indexOf("<") + 1, line.indexOf(">"));
-			line = line.substring(0, line.indexOf("<")); // remove email
+			try {
 
-			String name = line.substring(line.indexOf("Author: ") + 8, line.lastIndexOf(" "));
+				String email = line.substring(line.indexOf("<") + 1, line.indexOf(">"));
+				line = line.substring(0, line.indexOf("<")); // remove email
 
-			Integer numCommits = Integer.parseInt(line.substring(0, line.indexOf(" Author:")).trim());
+				String name = line.substring(line.indexOf("Author: ") + 8, line.lastIndexOf(" "));
 
-			Developer dev = new Developer(name, email, numCommits, avatar++);
+				Integer numCommits = Integer.parseInt(line.substring(0, line.indexOf(" Author:")).trim());
 
-			if (this.developerList.contains(dev)) {
+				Developer dev = new Developer(name, email, numCommits, avatar++);
 
-				for (Developer developer : this.developerList) {
+				if (this.developerList.contains(dev)) {
 
-					if (developer.equals(dev)) {
+					for (Developer developer : this.developerList) {
 
-						developer.numCommits += dev.numCommits;
+						if (developer.equals(dev)) {
+
+							developer.numCommits += dev.numCommits;
+						}
 					}
+
+				} else {
+
+					this.developerList.add(dev);
+
 				}
+			} catch (Exception e) {
 
-			} else {
-
-				this.developerList.add(dev);
-
+				System.out.println("Devloper not add. See the line: " + line);
 			}
 		}
 
