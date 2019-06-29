@@ -73,6 +73,62 @@ public class Git {
 
 		return gitOutput;
 	}
+	
+	public static GitOutput runGitTruckFactor(Project project) throws IOException, InterruptedException {
+
+		GitOutput gitOutput = new GitOutput();
+
+		validateLocalRepository(project.localRepository);
+
+		List<String> commands = new ArrayList<String>();
+		commands.add("/bin/sh");
+		commands.add("-c");
+		commands.add("sh commit_log_script.sh " + project.localRepository);
+
+		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File("backend/truckfactor-tool/"));
+		Process p = pb.start();
+
+		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
+		StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", gitOutput);
+		outputGobbler.start();
+		errorGobbler.start();
+
+		int exit = p.waitFor();
+
+		errorGobbler.join();
+		outputGobbler.join();
+
+		if (exit != 0) {
+
+			throw new AssertionError(String.format("runCommand returned %d", exit));
+		}
+
+		commands = new ArrayList<String>();
+		commands.add("/bin/sh");
+		commands.add("-c");
+		commands.add("java -jar gittruckfactor.jar " + project.localRepository);
+
+		pb = new ProcessBuilder().command(commands).directory(new File("backend/truckfactor-tool/"));
+		p = pb.start();
+
+		errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
+		outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", gitOutput);
+		outputGobbler.start();
+		errorGobbler.start();
+
+		exit = p.waitFor();
+
+		errorGobbler.join();
+		outputGobbler.join();
+
+		if (exit != 0) {
+
+			throw new AssertionError(String.format("runCommand returned %d", exit));
+		}
+
+		
+		return gitOutput;
+	}
 
 	private static void validateLocalRepository(String localRepository) {
 

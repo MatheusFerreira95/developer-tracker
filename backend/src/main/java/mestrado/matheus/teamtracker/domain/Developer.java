@@ -2,7 +2,7 @@ package mestrado.matheus.teamtracker.domain;
 
 import java.util.List;
 
-public class Developer {
+public class Developer implements Comparable<Developer> {
 	public String name;
 	public String email;
 	public List<String> fileAuthorList;
@@ -13,13 +13,18 @@ public class Developer {
 	public String lastCommit;
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList;
 	public Integer avatar;
-	public Boolean truckFactor = true;
+	public Boolean truckFactor = false;
 
 	public Developer(String name, String email, Integer numCommits, Integer avatar) {
 		this.name = name;
 		this.email = email;
 		this.numCommits = numCommits;
 		this.avatar = avatar;
+	}
+
+	public Developer(String name) {
+
+		this.name = name;
 	}
 
 	@Override
@@ -38,6 +43,12 @@ public class Developer {
 			return false;
 
 		return true;
+	}
+
+	@Override
+	public int compareTo(Developer developer) {
+
+		return this.numCommits.compareTo(developer.numCommits);
 	}
 
 }

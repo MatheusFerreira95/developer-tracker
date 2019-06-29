@@ -1,14 +1,13 @@
 package mestrado.matheus.teamtracker.domain;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
+import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
-import mestrado.matheus.teamtracker.util.CLOC;
 
 public class Project {
 
@@ -71,22 +70,65 @@ public class Project {
 
 			Developer dev = new Developer(name, email, numCommits, avatar++);
 
-//			descomente if/else para usar normalização de devs
-//			if (this.developerList.contains(dev)) {
-//
-//				for (Developer developer : this.developerList) {
-//
-//					if (developer.equals(dev)) {
-//
-//						developer.numCommits += dev.numCommits;
-//					}
-//				}
-//
-//			} else {
+			if (this.developerList.contains(dev)) {
 
-			this.developerList.add(dev);
-//			}
+				for (Developer developer : this.developerList) {
+
+					if (developer.equals(dev)) {
+
+						developer.numCommits += dev.numCommits;
+					}
+				}
+
+			} else {
+
+				this.developerList.add(dev);
+
+			}
 		}
+
+		calcTruckFactor();
+
+		Collections.sort(this.developerList, Collections.reverseOrder());
+	}
+
+	private void calcTruckFactor() throws IOException, InterruptedException {
+
+		GitOutput gitOutput = Git.runGitTruckFactor(this);
+
+		int isAuthors = 0;
+		for (String line : gitOutput.outputList) {
+
+			System.out.println(line);
+
+			if (line.contains("TF authors")) {
+				isAuthors++;
+			}
+
+			if (isAuthors < 1)
+				continue;
+
+			if (isAuthors == 1) {
+				isAuthors++;
+				continue;
+			}
+			if (!line.contains(";")) {
+				continue;
+			}
+
+			Developer developerTF = new Developer(line.substring(0, line.indexOf(";")));
+
+			for (Developer developer : this.developerList) {
+
+				if (developer.equals(developerTF)) {
+
+					this.truckFactor++;
+					developer.truckFactor = developer.equals(developerTF);
+				}
+			}
+
+		}
+
 	}
 
 	public static Project buildOverview(Filter filter) throws IOException, InterruptedException {

@@ -113,10 +113,10 @@
                   <v-data-table
                     :headers="headers"
                     :items="project.developerList"
-                    hide-actions
                     class="elevation-0"
                     :expand="expand"
                     item-key="name"
+                    disable-initial-sort="false"
                   >
                     <template slot="items" slot-scope="props">
                       <tr class="click-pointer" @click="props.expanded = !props.expanded">
