@@ -15,7 +15,7 @@
               <div class="text-md-center center">
                 <div class="headline">
                   Welcome to the
-                  <strong>Team Tracker</strong>,
+                  <strong>Developer Tracker</strong>,
                 </div>
                 <span>Report a project to start tracking!</span>
               </div>
@@ -114,6 +114,7 @@
                     :headers="headers"
                     :items="project.developerList"
                     class="elevation-0"
+                    hide-actions
                     :expand="expand"
                     item-key="name"
                     disable-initial-sort="false"
@@ -127,7 +128,7 @@
                         <td
                           class="text-xs-left"
                         >{{ props.item.name + " (" + props.item.email + ")"}}</td>
-                        <td class="text-xs-left">{{ props.item.numCommits }}</td>
+                        <td class="text-xs-left">{{ props.item.numCommits + ""}}</td>
                       </tr>
                     </template>
                     <template v-slot:expand="props">
@@ -197,8 +198,8 @@ export default {
         sortable: false,
         value: "avatar"
       },
-      { text: "Name (e-mail)", value: "name" },
-      { text: "Commits", value: "commits" }
+      { text: "Name (email)", value: "name" },
+      { text: "Commits", value: "numCommits" }
     ]
   }),
   methods: {

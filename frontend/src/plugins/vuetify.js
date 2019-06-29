@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
-import 'vuetify/src/stylus/app.styl'
-import '../theme/default.styl'
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
+import 'vuetify/src/stylus/app.styl';
+import '../theme/default.styl';
 Vue.use(Vuetify, {
   theme: {
     primary: '#3f51b5',
@@ -12,6 +12,5 @@ Vue.use(Vuetify, {
     success: '#4CAF50',
     warning: '#FFC107'
   },
-  customProperties: true,
-  iconfont: 'fa4',
+  customProperties: true
 })
