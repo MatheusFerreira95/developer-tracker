@@ -22,10 +22,7 @@
         <!-- campo de busca -->
         <v-flex sm12>
           <v-card>
-            <div
-              class="v-subheader theme--light"
-              :class="{ 'primary--text': nameProject !== 'Repository' }"
-            >{{nameProject}}</div>
+            <div class="v-subheader theme--light primary--text">{{nameProject}}</div>
             <v-text-field
               flat
               solo
@@ -41,7 +38,7 @@
         <!-- Filtros -->
         <v-flex sm12>
           <v-card>
-            <div class="v-subheader theme--light">Filters</div>
+            <div class="v-subheader theme--light primary--text">Filters</div>
             <v-expansion-panel class="elevation-0">
               <!-- Bracnh filtro -->
               <v-expansion-panel-content>

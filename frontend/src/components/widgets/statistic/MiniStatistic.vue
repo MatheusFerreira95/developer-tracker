@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-text class="pa-0">
+    <v-card-text class="pa-0 cartao">
       <v-container class="pa-0">
         <div class="layout row ma-0">
           <div class="sm6 xs6 flex">
@@ -8,7 +8,7 @@
               <v-icon size="56px" :color="color">{{icon}}</v-icon>
             </div>
           </div>
-          <div class="sm6 xs6 flex text-sm-center py-3 white--text" :class="color">
+          <div class="sm6 xs6 flex text-sm-center py-3 white--text cartao" :class="color">
             <div class="headline">{{ title }}</div>
             <span class="caption">{{ subTitle }}</span>
           </div>
@@ -28,3 +28,8 @@ export default {
   }
 };
 </script>
+<style lang="stylus">
+.cartao {
+  height: 87px;
+}
+</style>
