@@ -14,54 +14,54 @@
     var app = {};
     option = null;
     var nodes = [{
-      name: 'no1',
-      img: 'logo.png',
+      name: 'dev 1',
+      img: 'developer.png',
       alarm: 'atenção'
     },
     {
-      name: 'no2',
-      img: 'tecnico.png'
+      name: 'dev 2',
+      img: 'developer.png'
     },
     {
-      name: 'no3',
-      img: 'tecnico.png'
+      name: 'dev 3',
+      img: 'developer.png'
     },
     {
-      name: 'no4',
-      img: 'tecnico.png'
+      name: 'index.js',
+      img: 'file.png'
     },
     {
-      name: 'no5',
-      img: 'tecnico.png',
+      name: 'style.css',
+      img: 'file.png',
       alarm: 'alerta amarelo'
     },
     {
-      name: 'no6',
-      img: 'tecnico.png'
+      name: 'pages',
+      img: 'folder.png'
     }
     ]
     var links = [{
-      source: 'no3',
-      target: 'no1',
+      source: 'dev 3',
+      target: 'pages',
       name: 'link 1'
     }, {
-      source: 'no2',
-      target: 'no1',
+      source: 'dev 2',
+      target: 'pages',
       name: 'link 2'
     },
     {
-      source: 'no1',
-      target: 'no4',
+      source: 'dev 1',
+      target: 'index.js',
       name: 'link 3'
     },
     {
-      source: 'no4',
-      target: 'no5',
+      source: 'dev 2',
+      target: 'style.css',
       name: 'link 4'
     },
     {
-      source: 'no4',
-      target: 'no6',
+      source: 'dev 3',
+      target: 'pages',
       name: 'link 5'
     }
     ]
@@ -94,19 +94,19 @@
         },
         lineStyle: {
           normal: {
-            color: '#17FFF3'
+            color: '#000'
           }
         }
       }
       charts.links.push(link)
     }
     option = {
-      backgroundColor: '#000033',
+      backgroundColor: '#fff',
       title: {
         text: 'titulo do gráfico',
         textStyle: {
           fontWeight: 'normal',
-          color: "rgb(255,224,0)",
+          color: "red",
         }
       },
       tooltip: {
@@ -122,7 +122,7 @@
         force: {
           repulsion: 1000,
           edgeLength: [150, 200],
-          layoutAnimation: true
+          layoutAnimation: false
         },
         draggable: false,
         edgeLabel: {
@@ -137,7 +137,7 @@
           normal: {
             show: true,
             position: 'bottom',
-            color: '#17FFF3'
+            color: '#000'
           }
         },
         lineStyle: {
@@ -169,7 +169,7 @@
           option.series[0].data[n].symbolSize = 60
           option.series[0].data[n].label = {
             normal: {
-              color: 'rgb(255,224,0)'
+              color: 'red'
             }
           }
           option.series[0].itemStyle.normal.label.formatter = function (item) {
@@ -188,7 +188,7 @@
           option.series[0].data[dataI[m]].symbolSize = 50
           option.series[0].data[dataI[m]].label = {
             normal: {
-              color: '#17FFF3'
+              color: '#000'
             }
           }
           option.series[0].itemStyle.normal.label.formatter = function (item) {
