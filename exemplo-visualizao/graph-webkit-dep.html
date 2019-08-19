@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript" src="echarts-en.min.js"></script>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    var nodes = [{
+      name: 'no1',
+      img: 'logo.png',
+      alarm: 'atenção'
+    },
+    {
+      name: 'no2',
+      img: 'tecnico.png'
+    },
+    {
+      name: 'no3',
+      img: 'tecnico.png'
+    },
+    {
+      name: 'no4',
+      img: 'tecnico.png'
+    },
+    {
+      name: 'no5',
+      img: 'tecnico.png',
+      alarm: 'alerta amarelo'
+    },
+    {
+      name: 'no6',
+      img: 'tecnico.png'
+    }
+    ]
+    var links = [{
+      source: 'no3',
+      target: 'no1',
+      name: 'link 1'
+    }, {
+      source: 'no2',
+      target: 'no1',
+      name: 'link 2'
+    },
+    {
+      source: 'no1',
+      target: 'no4',
+      name: 'link 3'
+    },
+    {
+      source: 'no4',
+      target: 'no5',
+      name: 'link 4'
+    },
+    {
+      source: 'no4',
+      target: 'no6',
+      name: 'link 5'
+    }
+    ]
+    var charts = {
+      nodes: [],
+      links: []
+    }
+    for (var j = 0; j < nodes.length; j++) {
+      var node = {
+        name: nodes[j].name,
+        alarm: nodes[j].alarm,
+        symbol: 'image://' + nodes[j].img,
+        itemStyle: {
+          normal: {
+            color: '#12b5d0',
+          }
+        }
+      }
+      charts.nodes.push(node)
+    }
+    for (var i = 0; i < links.length; i++) {
+      var link = {
+        source: links[i].source,
+        target: links[i].target,
+        label: {
+          normal: {
+            show: true,
+            formatter: links[i].name
+          }
+        },
+        lineStyle: {
+          normal: {
+            color: '#17FFF3'
+          }
+        }
+      }
+      charts.links.push(link)
+    }
+    option = {
+      backgroundColor: '#000033',
+      title: {
+        text: 'titulo do gráfico',
+        textStyle: {
+          fontWeight: 'normal',
+          color: "rgb(255,224,0)",
+        }
+      },
+      tooltip: {
+        formatter: function (x) {
+          return x.data.des;
+        }
+      },
+      series: [{
+        type: 'graph',
+        layout: 'force',
+        symbolSize: 50,
+        edgeSymbol: ['circle', 'arrow'],
+        force: {
+          repulsion: 1000,
+          edgeLength: [150, 200],
+          layoutAnimation: true
+        },
+        draggable: true,
+        edgeLabel: {
+          normal: {
+            show: true,
+            formatter: function (x) {
+              return x.data.name;
+            }
+          }
+        },
+        label: {
+          normal: {
+            show: true,
+            position: 'bottom',
+            color: '#17FFF3'
+          }
+        },
+        lineStyle: {
+          normal: {
+            width: 2,
+            shadowColor: 'none'
+          }
+        },
+        data: charts.nodes,
+        links: charts.links,
+        itemStyle: {
+          normal: {
+            label: {
+              show: true,
+              formatter: function (item) {
+                return item.data.name
+              }
+            }
+          }
+        }
+      }]
+    };
+    // 用于告警的动态效果
+    setInterval(() => {
+      var dataI = []
+      for (var n = 0; n < nodes.length; n++) {
+        var alarm = nodes[n].alarm
+        if (alarm !== null && alarm !== '' && alarm !== undefined) {
+          option.series[0].data[n].symbolSize = 60
+          option.series[0].data[n].label = {
+            normal: {
+              color: 'rgb(255,224,0)'
+            }
+          }
+          option.series[0].itemStyle.normal.label.formatter = function (item) {
+            if (item.data.alarm !== undefined) {
+              return item.data.name + '\n[ ' + item.data.alarm + ' ]'
+            } else {
+              return item.data.name
+            }
+          }
+          dataI.push(n)
+        }
+      }
+      myChart.setOption(option)
+      setTimeout(() => {
+        for (var m = 0; m < dataI.length; m++) {
+          option.series[0].data[dataI[m]].symbolSize = 50
+          option.series[0].data[dataI[m]].label = {
+            normal: {
+              color: '#17FFF3'
+            }
+          }
+          option.series[0].itemStyle.normal.label.formatter = function (item) {
+            return item.data.name
+          }
+        }
+        myChart.setOption(option)
+      }, 500)
+    }, 1000)
+  </script>
+</body>
+
+</html>
