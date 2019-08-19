@@ -15,8 +15,7 @@
     option = null;
     var nodes = [{
       name: 'Matheus Ferreira',
-      img: 'developer.png',
-      alarm: 'atenção'
+      img: 'developer.png'
     },
     {
       name: 'Heitor Costa',
@@ -32,8 +31,7 @@
     },
     {
       name: 'style.css',
-      img: 'file.png',
-      alarm: 'alerta amarelo'
+      img: 'file.png'
     },
     {
       name: 'pages',
@@ -94,7 +92,7 @@
         },
         lineStyle: {
           normal: {
-            color: '#000'
+            color: 'blue'
           }
         }
       }
@@ -120,7 +118,7 @@
         symbolSize: 50,
         edgeSymbol: ['circle', 'arrow'],
         force: {
-          repulsion: 1000,
+          repulsion: 500,
           edgeLength: [150, 200],
           layoutAnimation: false
         },
@@ -137,7 +135,7 @@
           normal: {
             show: true,
             position: 'bottom',
-            color: '#000'
+            color: '#777'
           }
         },
         lineStyle: {
@@ -188,7 +186,7 @@
           option.series[0].data[dataI[m]].symbolSize = 50
           option.series[0].data[dataI[m]].label = {
             normal: {
-              color: '#000'
+              color: 'blue'
             }
           }
           option.series[0].itemStyle.normal.label.formatter = function (item) {
