@@ -57,15 +57,16 @@
           <v-flex lg3 sm6 xs12>
             <mini-statistic
               icon="date_range"
-              :sub-title="project.firstCommit + ' to ' + project.lastCommit"
+              title=" "
+              :sub-title="'First commit: ' + project.firstCommit"
               color="light-blue"
             ></mini-statistic>
           </v-flex>
           <v-flex lg3 sm6 xs12>
             <mini-statistic
               icon="today"
-              :title="project.numActiveDays"
-              sub-title="Active days"
+              title=" "
+              :sub-title="'Last commit: ' + project.lastCommit"
               color="amber"
             ></mini-statistic>
           </v-flex>
@@ -104,7 +105,7 @@
                 <v-divider class="white"></v-divider>
                 <v-chip color="indigo" text-color="white">
                   <v-icon color="amber">start</v-icon>
-                  TF: {{project.truckFactor}}
+                  Truck Factor: {{project.truckFactor}}
                 </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
@@ -115,12 +116,10 @@
                     :items="project.developerList"
                     class="elevation-0"
                     hide-actions
-                    :expand="expand"
                     item-key="name"
-                    disable-initial-sort="false"
                   >
                     <template slot="items" slot-scope="props">
-                      <tr class="click-pointer" @click="props.expanded = !props.expanded">
+                      <tr>
                         <td class="avatar-developer">
                           <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon>
                           <v-icon v-if="props.item.truckFactor" right color="amber">start</v-icon>
@@ -128,17 +127,8 @@
                         <td
                           class="text-xs-left"
                         >{{ props.item.name + " (" + props.item.email + ")"}}</td>
-                        <td class="text-xs-left">{{ props.item.numCommits + ""}}</td>
+                        <td class="text-xs-left">{{ props.item.numLoc + ""}}</td>
                       </tr>
-                    </template>
-                    <template v-slot:expand="props">
-                      <v-card flat>
-                        <v-card-text>LOC: {{props.item.numLoc}}</v-card-text>
-                        <v-card-text>Active Days: {{props.item.numActiveDays}}</v-card-text>
-                        <v-card-text>First commit: {{props.item.firstCommit}}</v-card-text>
-                        <v-card-text>Last commit: {{props.item.lastCommit}}</v-card-text>
-                        <v-card-text>Commits per Programming Language: {{props.item.numLocProgrammingLanguageList}}</v-card-text>
-                      </v-card>
                     </template>
                   </v-data-table>
                 </template>
@@ -183,7 +173,6 @@ export default {
     project: {
       numLoc: 0,
       numCommits: 0,
-      numActiveDays: 0,
       firstCommit: "",
       LastCommit: "",
       numLocProgrammingLanguageList: [],
@@ -195,11 +184,10 @@ export default {
       {
         text: "",
         align: "center",
-        sortable: false,
-        value: "avatar"
+        value: "truckFactor"
       },
       { text: "Name (email)", value: "name" },
-      { text: "Commits", value: "numCommits" }
+      { text: "LOC (%)", value: "numLoc" }
     ]
   }),
   methods: {
@@ -237,7 +225,6 @@ export default {
 
       this.tween("numCommits");
       this.tween("numLoc");
-      this.tween("numActiveDays");
     }
   },
   created() {

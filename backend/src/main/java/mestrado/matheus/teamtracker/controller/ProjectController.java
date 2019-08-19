@@ -3,6 +3,7 @@ package mestrado.matheus.teamtracker.controller;
 import java.io.IOException;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +25,7 @@ public class ProjectController {
 	 * linguagens de programaçao e Desenvolvedores)
 	 **/
 	@RequestMapping(path = "", method = RequestMethod.POST)
+	@CrossOrigin(origins = "http://localhost:8081")
 	public @ResponseBody Project getProjectOverview(@RequestBody Filter filter) {
 
 		try {

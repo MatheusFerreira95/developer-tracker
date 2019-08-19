@@ -13,11 +13,7 @@
     <v-spacer></v-spacer>
 
     <v-btn icon @click="handleFullScreen()">
-      <v-icon>fullscreen</v-icon>
-    </v-btn>
-
-    <v-btn icon>
-      <v-icon>settings</v-icon>
+      <v-icon>{{iconscreen}}</v-icon>
     </v-btn>
   </v-toolbar>
 </template>
@@ -28,13 +24,17 @@ import Util from "@/util";
 export default {
   name: "app-toolbar",
 
-  data: () => ({}),
+  data: () => ({
+    iconscreen: "fullscreen"
+  }),
 
   methods: {
     handleDrawerToggle() {
       window.getApp.$emit("APP_DRAWER_TOGGLED");
     },
     handleFullScreen() {
+      this.iconscreen =
+        this.iconscreen === "fullscreen" ? "fullscreen_exit" : "fullscreen";
       Util.toggleFullScreen();
     }
   }

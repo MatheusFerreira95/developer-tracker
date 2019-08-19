@@ -35,34 +35,6 @@
           </v-card>
         </v-flex>
 
-        <!-- Filtros -->
-        <v-flex sm12>
-          <v-card>
-            <div class="v-subheader theme--light primary--text">Filters</div>
-            <v-expansion-panel class="elevation-0">
-              <!-- Bracnh filtro -->
-              <v-expansion-panel-content>
-                <template v-slot:header>
-                  <div>Branch</div>
-                </template>
-                <v-card>
-                  <v-card-text>In progress...</v-card-text>
-                </v-card>
-              </v-expansion-panel-content>
-
-              <!-- Data filtro -->
-              <v-expansion-panel-content>
-                <template v-slot:header>
-                  <div>Date Range</div>
-                </template>
-                <v-card>
-                  <v-card-text>In progress...</v-card-text>
-                </v-card>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-card>
-        </v-flex>
-
         <!-- botão de aplicar -->
         <v-flex sm12>
           <v-btn color="primary" dark block @click="getProjectInformations">
