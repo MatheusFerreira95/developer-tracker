@@ -124,7 +124,7 @@
           edgeLength: [150, 200],
           layoutAnimation: true
         },
-        draggable: true,
+        draggable: false,
         edgeLabel: {
           normal: {
             show: true,
@@ -198,6 +198,10 @@
         myChart.setOption(option)
       }, 500)
     }, 1000)
+
+    myChart.on('click', function (object) {
+      console.log(object)
+    });
   </script>
 </body>
 
