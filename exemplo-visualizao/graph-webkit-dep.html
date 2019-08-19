@@ -41,26 +41,31 @@
     var links = [{
       source: 'Luana Martins',
       target: 'pages',
-      name: '10 LOC / 1 commits'
+      loc: '10 LOC',
+      commits: '1 commits'
     }, {
       source: 'Heitor Costa',
       target: 'pages',
-      name: '20 LOC / 2 commits'
+      loc: '20 LOC',
+      commits: '2 commits'
     },
     {
       source: 'Matheus Ferreira',
       target: 'index.js',
-      name: '30 LOC / 3 commits'
+      loc: '30 LOC',
+      commits: '3 commits'
     },
     {
       source: 'Heitor Costa',
       target: 'style.css',
-      name: '40 LOC / 4 commits'
+      loc: '40 LOC',
+      commits: '4 commits'
     },
     {
       source: 'Luana Martins',
       target: 'pages',
-      name: '10 LOC / 2 commits'
+      loc: '10 LOC',
+      commits: '2 commits'
     }
     ]
     var charts = {
@@ -87,7 +92,7 @@
         label: {
           normal: {
             show: true,
-            formatter: links[i].name
+            formatter: links[i].loc + "\n" + links[i].commits
           }
         },
         lineStyle: {
@@ -158,7 +163,7 @@
         }
       }]
     };
-    // 用于告警的动态效果
+
     setInterval(() => {
       var dataI = []
       for (var n = 0; n < nodes.length; n++) {
