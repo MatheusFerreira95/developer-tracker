@@ -117,6 +117,7 @@
                     class="elevation-0"
                     hide-actions
                     item-key="name"
+                    disable-initial-sort
                   >
                     <template slot="items" slot-scope="props">
                       <tr>
@@ -127,7 +128,7 @@
                         <td
                           class="text-xs-left"
                         >{{ props.item.name + " (" + props.item.email + ")"}}</td>
-                        <td class="text-xs-left">{{ props.item.numLoc + ""}}</td>
+                        <td class="text-xs-left">{{ props.item.percentLoc + ""}}</td>
                       </tr>
                     </template>
                   </v-data-table>

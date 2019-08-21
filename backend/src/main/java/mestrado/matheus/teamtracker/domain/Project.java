@@ -56,21 +56,25 @@ public class Project {
 
 	private void calcDeveloperList() throws IOException, InterruptedException {
 
-		GitOutput gitOutput = Git.runCommand(this, "git log | grep Author: | sort | uniq -c | sort -nr");
+		GitOutput gitOutputEmail = Git.runCommand(this,
+				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
+		GitOutput gitOutputName = Git.runCommand(this,
+				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
 
 		Integer avatar = 0;
-		for (String line : gitOutput.outputList) {
+		for (String line : gitOutputName.outputList) {
 
 			try {
 
-				String email = line.substring(line.indexOf("<") + 1, line.indexOf(">"));
-				line = line.substring(0, line.indexOf("<")); // remove email
+				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
 
-				String name = line.substring(line.indexOf("Author: ") + 8, line.lastIndexOf(" "));
+				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
 
-				Integer numCommits = Integer.parseInt(line.substring(0, line.indexOf(" Author:")).trim());
+				String name = line.substring(8);
 
-				Developer dev = new Developer(name, email, numCommits, avatar++);
+				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
+
+				Developer dev = new Developer(name, email, numLoc, avatar++);
 
 				if (this.developerList.contains(dev)) {
 
@@ -78,7 +82,7 @@ public class Project {
 
 						if (developer.equals(dev)) {
 
-							developer.numCommits += dev.numCommits;
+							developer.numLoc += dev.numLoc;
 						}
 					}
 
@@ -91,6 +95,10 @@ public class Project {
 
 				System.out.println("Devloper not add. See the line: " + line);
 			}
+		}
+		
+		for (Developer developer : developerList) {
+			developer.percentLoc = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
 		}
 
 		calcTruckFactor();

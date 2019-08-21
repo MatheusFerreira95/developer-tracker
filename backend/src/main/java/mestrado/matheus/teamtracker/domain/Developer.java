@@ -14,11 +14,12 @@ public class Developer implements Comparable<Developer> {
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList;
 	public Integer avatar;
 	public Boolean truckFactor = false;
+	public Float percentLoc;
 
-	public Developer(String name, String email, Integer numCommits, Integer avatar) {
+	public Developer(String name, String email, Integer numLoc, Integer avatar) {
 		this.name = name;
 		this.email = email;
-		this.numCommits = numCommits;
+		this.numLoc = numLoc;
 		this.avatar = avatar;
 	}
 
@@ -48,7 +49,7 @@ public class Developer implements Comparable<Developer> {
 	@Override
 	public int compareTo(Developer developer) {
 
-		return this.numCommits.compareTo(developer.numCommits);
+		return this.percentLoc.compareTo(developer.percentLoc);
 	}
 
 }
