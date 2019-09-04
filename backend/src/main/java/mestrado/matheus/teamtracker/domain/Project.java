@@ -183,7 +183,7 @@ public class Project {
 
 	}
 
-	private static Project builderProject(Filter filter) {
+	static Project builderProject(Filter filter) {
 
 		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
 

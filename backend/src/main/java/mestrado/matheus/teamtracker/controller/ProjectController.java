@@ -2,16 +2,15 @@ package mestrado.matheus.teamtracker.controller;
 
 import java.io.IOException;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import mestrado.matheus.teamtracker.domain.Explore;
 import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
 
@@ -50,10 +49,24 @@ public class ProjectController {
 	 * de desenvolvedores com artefatos)
 	 **/
 	@RequestMapping(path = "/explore", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.OK)
-	public @ResponseBody String getExploreProject(@RequestParam Filter filter) {
+	@CrossOrigin(origins = "http://localhost:8081")
+	public @ResponseBody Explore getExploreProject(@RequestParam Filter filter) {
 
-		return filter.toString();
+		try {
+
+			return Explore.build(filter);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+
+		}
+
+		return null;
 	}
 
 	/*
