@@ -97,6 +97,8 @@ public class Project {
 			}
 		}
 
+		calcNumLocProjectByDeveloperList();
+
 		float percentageTotal = 0;
 		for (Developer developer : developerList) {
 			float percentage = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
@@ -111,9 +113,21 @@ public class Project {
 			}
 		}
 
+		if (percentageTotal < 100) {
+			developerList.get(0).percentLoc += 100 - percentageTotal;
+		}
+
 		calcTruckFactor();
 
 		Collections.sort(this.developerList, Collections.reverseOrder());
+	}
+
+	private void calcNumLocProjectByDeveloperList() {
+		this.numLoc = 0;
+		for (Developer developer : developerList) {
+			this.numLoc += developer.numLoc;
+		}
+
 	}
 
 	private void calcTruckFactor() throws IOException, InterruptedException {
@@ -160,7 +174,7 @@ public class Project {
 		Project project = Project.builderProject(filter);
 
 		project.calcNumCommits();
-		project.calcNumLoc();
+//		project.calcNumLoc();
 		project.calcNumActiveDaysAndFirstCommitAndLastCommit();
 		project.calcNumLocProgrammingLanguageList();
 		project.calcDeveloperList();
