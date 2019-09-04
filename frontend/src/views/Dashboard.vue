@@ -183,8 +183,7 @@ export default {
     colors: [],
     headers: [
       {
-        text: "",
-        align: "center",
+        text: "Avatar",
         value: "truckFactor"
       },
       { text: "Name (email)", value: "name" },
