@@ -96,9 +96,19 @@ public class Project {
 				System.out.println("Devloper not add. See the line: " + line);
 			}
 		}
-		
+
+		float percentageTotal = 0;
 		for (Developer developer : developerList) {
-			developer.percentLoc = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
+			float percentage = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
+			float percentageAnterior = percentageTotal;
+			percentageTotal += percentage;
+			if (percentageTotal > 100) {
+				developer.percentLoc = 100 - percentageAnterior;
+				percentageAnterior = 100;
+				percentageTotal = 100;
+			} else {
+				developer.percentLoc = percentage;
+			}
 		}
 
 		calcTruckFactor();
