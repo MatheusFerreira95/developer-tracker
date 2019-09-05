@@ -133,14 +133,19 @@
 
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
-          <v-flex xs8 offset-xs2>
-            <v-card class="blue-grey--text">
-              <v-card-title primary-title class="center">
-                <div class="text-md-center center">
-                  <div class="headline">Explore</div>
-                </div>
-              </v-card-title>
-            </v-card>
+          <v-flex lg12 sm12 xs12>
+            <v-widget title="Explore Artifacts" content-bg="white">
+              <div slot="widget-content">
+                <chart
+                  v-if="project.numLocProgrammingLanguageList.length > 0"
+                  :options="explore"
+                  :init-options="initOptions"
+                  ref="explore"
+                  autoresize
+                />
+                <div v-else>Does not apply to this project</div>
+              </div>
+            </v-widget>
           </v-flex>
         </template>
       </v-layout>
@@ -150,6 +155,7 @@
 
 <script>
 import pie from "@/components/chart/pie";
+import getExplore from "@/components/chart/explore";
 import MiniStatistic from "@/components/widgets/statistic/MiniStatistic";
 import VWidget from "@/components/VWidget";
 import Util from "@/util";
@@ -166,6 +172,7 @@ export default {
     perspective: "Overview",
     util: Util,
     pie,
+    explore: getExplore(),
     optionsChartProgrammingLanguage: null,
     initOptions: {
       renderer: "canvas"
