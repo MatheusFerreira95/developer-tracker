@@ -149,7 +149,6 @@
 </template>
 
 <script>
-import EChart from "@/components/chart/echart";
 import pie from "@/components/chart/pie";
 import MiniStatistic from "@/components/widgets/statistic/MiniStatistic";
 import VWidget from "@/components/VWidget";
@@ -159,7 +158,6 @@ import "echarts";
 
 export default {
   components: {
-    EChart,
     VWidget,
     MiniStatistic,
     chart: ECharts
