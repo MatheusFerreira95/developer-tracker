@@ -75,21 +75,13 @@
           <v-flex lg6 sm12 xs12>
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
-                <e-chart
-                  :path-option="[
-                  ['dataset.source', project.numLocProgrammingLanguageList],
-                  ['legend.bottom', '0'],
-                  ['color', colors],
-                  ['xAxis.show', false],
-                  ['yAxis.show', false],
-                  ['series[0].type', 'pie'],
-                  ['series[0].avoidLabelOverlap', true],
-                  ['series[0].radius', ['50%', '70%']],
-                ]"
-                  height="400px"
-                  width="100%"
+                <chart
                   v-if="project.numLocProgrammingLanguageList.length > 0"
-                ></e-chart>
+                  :options="optionsChartProgrammingLanguage"
+                  :init-options="initOptions"
+                  ref="pie"
+                  autoresize
+                />
                 <div v-else>Does not apply to this project</div>
               </div>
             </v-widget>
@@ -158,19 +150,28 @@
 
 <script>
 import EChart from "@/components/chart/echart";
+import pie from "@/components/chart/pie";
 import MiniStatistic from "@/components/widgets/statistic/MiniStatistic";
 import VWidget from "@/components/VWidget";
 import Util from "@/util";
+import ECharts from "@/components/chart/ECharts.vue";
+import "echarts";
 
 export default {
   components: {
     EChart,
     VWidget,
-    MiniStatistic
+    MiniStatistic,
+    chart: ECharts
   },
   data: () => ({
     perspective: "Overview",
     util: Util,
+    pie,
+    optionsChartProgrammingLanguage: null,
+    initOptions: {
+      renderer: "canvas"
+    },
     project: {
       numLoc: 0,
       numCommits: 0,
@@ -216,12 +217,9 @@ export default {
     },
     setProject(newProject) {
       this.project = newProject;
-
-      this.colors = this.util
-        .getColors()
-        .slice(0, this.project.numLocProgrammingLanguageList.length);
-
-      window.getApp.$emit("UPDATE_CHART");
+      this.pie.dataset = {};
+      this.pie.dataset.source = this.project.numLocProgrammingLanguageList;
+      this.optionsChartProgrammingLanguage = { ...pie };
 
       this.tween("numCommits");
       this.tween("numLoc");
