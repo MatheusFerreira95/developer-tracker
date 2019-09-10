@@ -54,7 +54,7 @@ public class Project {
 
 	}
 
-	private void calcDeveloperList() throws IOException, InterruptedException {
+	public void calcDeveloperList() throws IOException, InterruptedException {
 
 		GitOutput gitOutputEmail = Git.runCommand(this,
 				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");

@@ -6,9 +6,11 @@ import java.util.List;
 
 public class Explore {
 
-	public List<Artifact> artifactList = new ArrayList<Artifact>();
-	public final static String START_READ_ARTIFACT = "developer-tracker-start-read-info-file";
-	public final static String STOP_READ_ARTIFACT = "developer-tracker-stop-read-info-file";
+	public final static String START_READ = "developer-tracker-start-read-info-file";
+	public final static String STOP_READ = "developer-tracker-stop-read-info-file";
+
+	public List<NodeExplore> nodeList = new ArrayList<NodeExplore>();
+	public List<LinkExplore> linkList = new ArrayList<LinkExplore>();
 
 	public static Explore build(Filter filter) throws IOException, InterruptedException {
 
@@ -38,7 +40,20 @@ public class Explore {
 
 		Explore explore = new Explore();
 
-		explore.artifactList.add(new Artifact(project.developerList));
+		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, null);
+		explore.nodeList.add(nodeProject);
+		
+		
+		project.calcDeveloperList();
+		for (Developer developer : project.developerList) {
+
+			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null);
+			explore.nodeList.add(nodeDeveloper);
+			
+			LinkExplore link = new LinkExplore(nodeProject.name, developer.name, developer.numLoc,
+					developer.numCommits);
+			explore.linkList.add(link);
+		}
 
 		return explore;
 	}

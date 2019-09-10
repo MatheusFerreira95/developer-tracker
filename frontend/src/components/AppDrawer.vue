@@ -64,9 +64,8 @@ export default {
     filter: {
       remoteRepository: "",
       localRepository: "",
-      dateRange: "",
+      zoomPath: "./",
       directory: "",
-      branch: ""
     },
     project: {
       numLoc: 0,

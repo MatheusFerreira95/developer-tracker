@@ -1,10 +1,10 @@
 
-export default function getExplore(getDataChart, getLinks) {
+export default function getExplore(nodeList, linkList) {
   return {
     backgroundColor: '#fff',
     tooltip: {
       formatter: function (x) {
-        return x.data.name;
+        return x.data.descrition;
       }
     },
     series: [{
@@ -39,8 +39,8 @@ export default function getExplore(getDataChart, getLinks) {
           shadowColor: 'none'
         }
       },
-      data: getDataChart(),
-      links: getLinks(),
+      data: nodeList,
+      links: linkList,
       itemStyle: {
         normal: {
           label: {

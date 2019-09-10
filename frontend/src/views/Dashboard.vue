@@ -134,10 +134,10 @@
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
           <v-flex lg12 sm12 xs12>
-            <v-widget title="Explore Artifacts" content-bg="white">
+            <v-widget title content-bg="white">
               <div slot="widget-content">
                 <chart
-                  v-if="true"
+                  v-if="explore !== null"
                   :options="explore"
                   :init-options="initOptions"
                   ref="explore"
@@ -161,7 +161,7 @@ import VWidget from "@/components/VWidget";
 import Util from "@/util";
 import ECharts from "@/components/chart/ECharts.vue";
 import "echarts";
-
+import { getExploreProject } from "@/api/project";
 /* icones svg encontrados em http://svgicons.sparkk.fr/ */
 let projectIcon =
   "M17.283,5.549h-5.26V4.335c0-0.222-0.183-0.404-0.404-0.404H8.381c-0.222,0-0.404,0.182-0.404,0.404v1.214h-5.26c-0.223,0-0.405,0.182-0.405,0.405v9.71c0,0.223,0.182,0.405,0.405,0.405h14.566c0.223,0,0.404-0.183,0.404-0.405v-9.71C17.688,5.731,17.506,5.549,17.283,5.549 M8.786,4.74h2.428v0.809H8.786V4.74z M16.879,15.26H3.122v-4.046h5.665v1.201c0,0.223,0.182,0.404,0.405,0.404h1.618c0.222,0,0.405-0.182,0.405-0.404v-1.201h5.665V15.26z M9.595,9.583h0.81v2.428h-0.81V9.583zM16.879,10.405h-5.665V9.19c0-0.222-0.183-0.405-0.405-0.405H9.191c-0.223,0-0.405,0.183-0.405,0.405v1.215H3.122V6.358h13.757V10.405z";
@@ -181,6 +181,7 @@ export default {
   data: () => ({
     perspective: "Overview",
     util: Util,
+    filter: null,
     pie,
     explore: null,
     optionsChartProgrammingLanguage: null,
@@ -239,120 +240,69 @@ export default {
       this.tween("numCommits");
       this.tween("numLoc");
     },
-    getDataChart() {
-      let nodes = [
-        {
-          name: "Project",
-          img: projectIcon
-        },
-        {
-          name: "Matheus Ferreira",
-          img: developerIcon
-        },
-        {
-          name: "Heitor Costa",
-          img: developerIcon
-        },
-        {
-          name: "Luana Martins",
-          img: developerIcon
-        },
-        {
-          name: "index.js",
-          img: fileIcon
-        },
-        {
-          name: "style.css",
-          img: fileIcon
-        },
-        {
-          name: "pages",
-          img: directoryIcon
-        }
-      ];
 
-      let data = [];
-
-      for (let j = 0; j < nodes.length; j++) {
-        let node = {
-          name: nodes[j].name,
-          alarm: nodes[j].alarm,
-          symbol: "path://" + nodes[j].img,
-          itemStyle: {
-            normal: {
-              color: "#12b5d0"
-            }
+    buildExplore() {
+      window.getApp.$emit("START_LOADING");
+      let filter = {
+        directory: "",
+        localRepository: this.project.localRepository,
+        remoteRepository: this.project.remoteRepository,
+        zoomPath: "./"
+      };
+      getExploreProject(filter)
+        .then(
+          response => {
+            this.setExplore(response.data);
+            window.getApp.$emit("STOP_LOADING");
+          },
+          error => {
+            alert("Erro: " + error);
+            window.getApp.$emit("STOP_LOADING");
           }
-        };
-        data.push(node);
-      }
-
-      return data;
+        )
+        .catch(function(error) {
+          window.getApp.$emit("STOP_LOADING");
+        });
     },
 
-    getLinks() {
-      let links = [
-        {
-          source: "Luana Martins",
-          target: "pages",
-          loc: "10 LOC",
-          commits: "1 commits"
-        },
-        {
-          source: "Heitor Costa",
-          target: "pages",
-          loc: "20 LOC",
-          commits: "2 commits"
-        },
-        {
-          source: "Matheus Ferreira",
-          target: "index.js",
-          loc: "30 LOC",
-          commits: "3 commits"
-        },
-        {
-          source: "Heitor Costa",
-          target: "style.css",
-          loc: "40 LOC",
-          commits: "4 commits"
-        },
-        {
-          source: "Luana Martins",
-          target: "pages",
-          loc: "10 LOC",
-          commits: "2 commits"
-        }
-      ];
-
-      let returnedLinks = [];
-
-      for (let i = 0; i < links.length; i++) {
-        let link = {
-          source: links[i].source,
-          target: links[i].target,
-          label: {
-            normal: {
-              show: true,
-              formatter: links[i].loc + "\n" + links[i].commits
-            }
-          },
-          lineStyle: {
-            normal: {
-              color: "blue"
-            }
+    setExplore(explore) {
+      for (let i = 0; i < explore.linkList.length; i++) {
+        explore.linkList[i].label = {
+          normal: {
+            show: true,
+            formatter:
+              explore.linkList[i].loc + "\n" + explore.linkList[i].commits
           }
         };
-        returnedLinks.push(link);
+        explore.linkList[i].lineStyle = {
+          normal: {
+            color: explore.linkList[i].color
+          }
+        };
       }
 
-      return returnedLinks;
+      for (let j = 0; j < explore.nodeList.length; j++) {
+        explore.nodeList[j].itemStyle = {
+          normal: {
+            color: explore.nodeList[j].color
+          }
+        };
+      }
+
+      this.explore = getExplore(explore.nodeList, explore.linkList);
     }
   },
   created() {
     window.getApp.$on("UPDATE_PROJECT", project => {
       this.setProject(project);
     });
-    this.explore = getExplore(this.getDataChart, this.getLinks);
+  },
+  watch: {
+    perspective: function(val) {
+      if (val === "Explore") {
+        this.buildExplore();
+      }
+    }
   }
 };
 </script>
