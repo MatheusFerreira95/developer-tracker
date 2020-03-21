@@ -30,6 +30,7 @@ Linux
 - vue CLI
 - java 8+
 - spring-boot CLI
+- maven
 ```
 
 Criar pasta
