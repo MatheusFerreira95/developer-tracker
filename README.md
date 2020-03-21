@@ -24,23 +24,16 @@ team-tracker
 
 #### Pré-requisitos
 
-MacOSX
-```
-brew install node
-npm install -g @vue/cli
-```
 Linux
-
 ```
 sudo apt update
 sudo apt install node
 npm install -g @vue/cli
 ```
-Windows
 
+Criar pasta
 ```
-choco install npm
-npm install -g @vue/cli
+home/developertracker
 ```
 
 #### Comandos
