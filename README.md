@@ -22,6 +22,29 @@ team-tracker
 
 ### Como usar?
 
+## Pré-requisitos
+
+MacOSX
+```
+brew install node
+npm install -g @vue/cli
+```
+Linux
+
+```
+sudo apt update
+sudo apt install node
+npm install -g @vue/cli
+```
+Windows
+
+```
+choco install npm
+npm install -g @vue/cli
+```
+
+## Comandos
+
 | Command | Description |
 | ------- | ----------- |
 | `mvn clean install` | Executar no diretório `raiz` para atualizar dependências dos módulos frontend e backend |
