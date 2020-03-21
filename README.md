@@ -26,9 +26,10 @@ team-tracker
 
 Linux
 ```
-sudo apt update
-sudo apt install node
-npm install -g @vue/cli
+- node
+- vue CLI
+- java 8+
+- spring-boot CLI
 ```
 
 Criar pasta
