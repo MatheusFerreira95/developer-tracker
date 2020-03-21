@@ -22,7 +22,7 @@ team-tracker
 
 ### Como usar?
 
-## Pré-requisitos
+#### Pré-requisitos
 
 MacOSX
 ```
@@ -43,7 +43,7 @@ choco install npm
 npm install -g @vue/cli
 ```
 
-## Comandos
+#### Comandos
 
 | Command | Description |
 | ------- | ----------- |
