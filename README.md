@@ -35,7 +35,7 @@ Linux
 
 Criar pasta
 ```
-home/developertracker
+/home/team-tracker-clones
 ```
 
 #### Comandos
