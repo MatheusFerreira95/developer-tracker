@@ -52,6 +52,7 @@ public class Git {
 		commands.add("/bin/sh");
 		commands.add("-c");
 		commands.add(command);
+		System.out.println(command);
 
 		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
 		Process p = pb.start();
@@ -75,6 +76,7 @@ public class Git {
 	}
 	
 	public static GitOutput runGitTruckFactor(Project project) throws IOException, InterruptedException {
+		System.out.println("Run TruckFactor");
 
 		GitOutput gitOutput = new GitOutput();
 
@@ -148,14 +150,16 @@ public class Git {
 		String nameLocalRepository = remoteRepository.substring(remoteRepository.lastIndexOf("/"),
 				remoteRepository.indexOf(".git"));
 
-		File cloneFolder = new File("/home/team-tracker-clones");
+		String currentUsersHomePath = System.getProperty("user.home");
+		String cloneFolderPath = currentUsersHomePath + File.separator + "team-tracker-clones";
+
+		File cloneFolder = new File(cloneFolderPath);
 		if (!cloneFolder.exists()) {
-			System.out.println("pasta de clones não existe");
-			throw new RuntimeException();
+			cloneFolder.mkdir();
 		}
 
 		File localRepository = new File(
-				"/home/team-tracker-clones/" + nameLocalRepository + "-" + new Date().getTime());
+				cloneFolderPath + File.separator + nameLocalRepository + "-" + new Date().getTime());
 		if (!localRepository.exists())
 			localRepository.mkdir();
 
