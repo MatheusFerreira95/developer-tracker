@@ -30,6 +30,7 @@ Linux
 - vue CLI (@vue/cli 4.2.3)
 - java (openjdk 8)
 - maven (Apache Maven 3.6.3 NON-CANONICAL_2019-11-27T20:26:29Z_root)
+- cloc (https://github.com/AlDanial/cloc 1.84-1)
 ```
 
 Criar pasta
