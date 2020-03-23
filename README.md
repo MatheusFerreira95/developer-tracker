@@ -26,11 +26,10 @@ team-tracker
 
 Linux
 ```
-- node
-- vue CLI
-- java 8+
-- spring-boot CLI
-- maven
+- node (v13.10.1)
+- vue CLI (@vue/cli 4.2.3)
+- java (openjdk 8)
+- maven (Apache Maven 3.6.3 NON-CANONICAL_2019-11-27T20:26:29Z_root)
 ```
 
 Criar pasta
