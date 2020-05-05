@@ -54,8 +54,54 @@ public class Project {
 
 	}
 
-	public void calcDeveloperList() throws IOException, InterruptedException {
+	public void calcDeveloperList(String filterPath) throws IOException, InterruptedException {
 
+		filterPath = filterPath == null ? "" : filterPath;
+		
+		GitOutput gitOutputEmail = Git.runCommand(this,
+				" git ls-files " + filterPath + " | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
+		GitOutput gitOutputName = Git.runCommand(this,
+				" git ls-files " + filterPath + " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
+
+		Integer avatar = 0;
+		for (String line : gitOutputName.outputList) {
+
+			try {
+
+				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
+
+				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
+
+				String name = line.substring(8);
+
+				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
+
+				Developer dev = new Developer(name, email, numLoc, avatar++);
+
+				if (this.developerList.contains(dev)) {
+
+					for (Developer developer : this.developerList) {
+
+						if (developer.equals(dev)) {
+
+							developer.numLoc += dev.numLoc;
+						}
+					}
+
+				} else {
+
+					this.developerList.add(dev);
+
+				}
+			} catch (Exception e) {
+
+				System.out.println("Devloper not add. See the line: " + line);
+			}
+		}
+	}
+	
+	public void calcDeveloperList() throws IOException, InterruptedException {
+		
 		GitOutput gitOutputEmail = Git.runCommand(this,
 				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
 		GitOutput gitOutputName = Git.runCommand(this,

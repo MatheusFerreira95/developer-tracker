@@ -17,7 +17,7 @@ export default function getExplore(nodeList, linkList) {
         edgeLength: [150, 200],
         layoutAnimation: false
       },
-      draggable: false,
+      draggable: true,
       edgeLabel: {
         normal: {
           show: true,

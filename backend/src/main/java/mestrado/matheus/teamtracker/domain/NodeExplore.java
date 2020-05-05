@@ -50,4 +50,12 @@ public class NodeExplore {
 		this.color = color;
 		this.descrition = descrition;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		NodeExplore node = (NodeExplore) obj;
+		if (node.name.equals(this.name))
+			return true;
+		return false;
+	}
 }
