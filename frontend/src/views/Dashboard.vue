@@ -241,13 +241,13 @@ export default {
       this.tween("numLoc");
     },
 
-    buildExplore() {
+    buildExplore(zoomPath = "./") {
       window.getApp.$emit("START_LOADING");
       let filter = {
         directory: "",
         localRepository: this.project.localRepository,
         remoteRepository: this.project.remoteRepository,
-        zoomPath: "./"
+        zoomPath
       };
       getExploreProject(filter)
         .then(
@@ -267,11 +267,14 @@ export default {
 
     setExplore(explore) {
       for (let i = 0; i < explore.linkList.length; i++) {
+        explore.linkList[i].value = explore.linkList[i].numLoc;
         explore.linkList[i].label = {
           normal: {
             show: true,
+            fontWeight: "bold",
+            backgroundColor: "#ffffff",
             formatter:
-              explore.linkList[i].loc + "\n" + explore.linkList[i].commits
+              explore.linkList[i].loc + " (" + explore.linkList[i].commits + ")"
           }
         };
         explore.linkList[i].lineStyle = {
@@ -282,6 +285,7 @@ export default {
       }
 
       for (let j = 0; j < explore.nodeList.length; j++) {
+        explore.nodeList[j].value = explore.nodeList[j].numLoc;
         explore.nodeList[j].itemStyle = {
           normal: {
             color: explore.nodeList[j].color
@@ -293,8 +297,17 @@ export default {
     }
   },
   created() {
-    window.getApp.$on("UPDATE_PROJECT", project => {
-      this.setProject(project);
+    let that = this;
+    window.getApp.$on("UPDATE_PROJECT", updated => {
+      if (updated.componentSubType && updated.componentSubType === "graph") {
+        if (
+          updated.data.nodeType === "Folder" ||
+          updated.data.nodeType === "Project"
+        )
+          that.buildExplore(updated.data.descrition + "/");
+      } else {
+        that.setProject(updated);
+      }
     });
   },
   watch: {

@@ -5,7 +5,7 @@
 <style>
 .echarts {
   width: 100%;
-  height: 400px;
+  height: 600px;
 }
 </style>
 
@@ -159,6 +159,9 @@ export default {
       // expose ECharts events as custom events
       EVENTS.forEach(event => {
         chart.on(event, params => {
+          if (event === "click") {
+            window.getApp.$emit("UPDATE_PROJECT", params);
+          }
           this.$emit(event, params);
         });
       });

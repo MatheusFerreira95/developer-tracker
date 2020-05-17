@@ -12,9 +12,12 @@ export default function getExplore(nodeList, linkList) {
       layout: 'force',
       symbolSize: 50,
       edgeSymbol: ['circle', 'arrow'],
+      roam: true, // zoom mouse e movimentar grafo 
+      focusNodeAdjacency: true, // filtro -> foca em uma conexão e seus nós ou em um nó e suas conexões
+      nodeScaleRatio: 0, // o zoom do filtro de foco não impacta os nós
       force: {
-        repulsion: 500,
-        edgeLength: [150, 200],
+        repulsion: 1000,
+        edgeLength: [400, 700, 1000],
         layoutAnimation: false
       },
       draggable: true,
@@ -28,12 +31,16 @@ export default function getExplore(nodeList, linkList) {
       },
       label: {
         normal: {
+          fontWeight: 'bold',
           show: true,
           position: 'bottom',
-          color: '#777'
+          distance: 0,
+          color: '#777',
+          backgroundColor: '#ffffff'
         }
       },
       lineStyle: {
+        curveness: 0.5,
         normal: {
           width: 2,
           shadowColor: 'none'

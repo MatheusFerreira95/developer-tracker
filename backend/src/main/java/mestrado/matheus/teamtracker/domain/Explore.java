@@ -25,6 +25,10 @@ public class Explore {
 
 		}
 
+		if (isFirstZoomLevel(filter)) {
+			filter.zoomPath = "";
+		}
+
 		return buildExplore(filter, project);
 
 	}
@@ -37,8 +41,8 @@ public class Explore {
 		try {
 			gitOutputName = Git.runCommand(project, " git ls-files " + filter.zoomPath);
 
-			System.out.println("oooooooooooooooooooooooooooo " + gitOutputName.outputList.size());
-			
+			System.out.println("oooooooooooooooooooooooooooo qtd files " + gitOutputName.outputList.size());
+
 			for (String filePath : gitOutputName.outputList) {
 
 				if (filePath.startsWith(filter.zoomPath)) { // tem que verificar se quando mandar pro nivel raiz vai dar
@@ -79,7 +83,7 @@ public class Explore {
 					explore.linkList.add(link);
 				else {
 					explore.linkList.get(indexLink).increaseLoc(link.numLoc);
-					//explore.linkList.get(indexLink).increaseCommits(link.numCommits);
+					// explore.linkList.get(indexLink).increaseCommits(link.numCommits);
 				}
 			}
 
@@ -95,21 +99,23 @@ public class Explore {
 
 		NodeExplore node = null;
 
-		String pathRemovedFilter = filePath.substring(filePath.indexOf(prefixFromFilter));
+		String pathRemovedFilter = prefixFromFilter.isEmpty() ? filePath
+				: filePath.substring(prefixFromFilter.length());
 
-		System.out.println("--------------------" +pathRemovedFilter);
-		System.out.println("--------------------" +prefixFromFilter);
-		System.out.println("--------------------" +filePath);
+		System.out.println("-------------------- path removed zoom - " + pathRemovedFilter);
+		System.out.println("-------------------- prefix (zoompath) -" + prefixFromFilter);
+		System.out.println("-------------------- filepath- " + filePath);
 
 		if (pathRemovedFilter.contains("/")) {
-			
-			System.out.println("------------dd--------" +pathRemovedFilter.substring(0, filePath.indexOf("/")));
-			node = new NodeExplore(NodeExplore.NODE_FOLDER, pathRemovedFilter.substring(0, filePath.indexOf("/")),
-					prefixFromFilter);
-		}
 
-		else
+			String formattedName = pathRemovedFilter.substring(0, filePath.indexOf("/"));
+			System.out.println("------------dd--------" + formattedName);
+			node = new NodeExplore(NodeExplore.NODE_FOLDER, formattedName,
+					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter);
+		} else {
+
 			node = new NodeExplore(NodeExplore.NODE_FILE, pathRemovedFilter, filePath);
+		}
 
 		return node;
 
@@ -140,5 +146,10 @@ public class Explore {
 
 		return filter.zoomPath.equals("./");
 	}
-	
+
+	private static boolean isFirstZoomLevel(Filter filter) {
+
+		return filter.zoomPath.equals("Project/");
+	}
+
 }

@@ -4,24 +4,27 @@ public class NodeExplore {
 
 	public final static String NODE_DEVELOPER = "Developer";
 	public final static String NODE_DEVELOPER_COLOR = "#B00020";
-	public final static String NODE_DEVELOPER_SYMBOL = "path://M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z";
+	public final static String NODE_DEVELOPER_SYMBOL = "path://M27.7,24.31a11.92,11.92,0,0,0-7.76-8.65,6.5,6.5,0,1,0-7.88,0A11.92,11.92,0,0,0,4.3,24.31,3,3,0,0,0,7.23,28H24.77a3,3,0,0,0,2.92-3.69Z";
 
 	public final static String NODE_PROJECT = "Project";
 	public final static String NODE_PROJECT_COLOR = "#1B5E20";
-	public final static String NODE_PROJECT_SYMBOL = "path://M17.283,5.549h-5.26V4.335c0-0.222-0.183-0.404-0.404-0.404H8.381c-0.222,0-0.404,0.182-0.404,0.404v1.214h-5.26c-0.223,0-0.405,0.182-0.405,0.405v9.71c0,0.223,0.182,0.405,0.405,0.405h14.566c0.223,0,0.404-0.183,0.404-0.405v-9.71C17.688,5.731,17.506,5.549,17.283,5.549 M8.786,4.74h2.428v0.809H8.786V4.74z M16.879,15.26H3.122v-4.046h5.665v1.201c0,0.223,0.182,0.404,0.405,0.404h1.618c0.222,0,0.405-0.182,0.405-0.404v-1.201h5.665V15.26z M9.595,9.583h0.81v2.428h-0.81V9.583zM16.879,10.405h-5.665V9.19c0-0.222-0.183-0.405-0.405-0.405H9.191c-0.223,0-0.405,0.183-0.405,0.405v1.215H3.122V6.358h13.757V10.405z";
+	public final static String NODE_PROJECT_SYMBOL = "path://M18,4 L14,4 L14,2 L12,0 L8,0 L6,2 L6,4 L2,4 C0.9,4 0,4.9 0,6 L0,17 C0,18.1 0.9,19 2,19 L18,19 C19.1,19 20,18.1 20,17 L20,6 C20,4.9 19.1,4 18,4 L18,4 Z M12,4 L8,4 L8,2 L12,2 L12,4 L12,4 Z";
 
 	public final static String NODE_FOLDER = "Folder";
 	public final static String NODE_FOLDER_COLOR = "#FFD600";
-	public final static String NODE_FOLDER_SYMBOL = "path://M17.927,5.828h-4.41l-1.929-1.961c-0.078-0.079-0.186-0.125-0.297-0.125H4.159c-0.229,0-0.417,0.188-0.417,0.417v1.669H2.073c-0.229,0-0.417,0.188-0.417,0.417v9.596c0,0.229,0.188,0.417,0.417,0.417h15.854c0.229,0,0.417-0.188,0.417-0.417V6.245C18.344,6.016,18.156,5.828,17.927,5.828 M4.577,4.577h6.539l1.231,1.251h-7.77V4.577z M17.51,15.424H2.491V6.663H17.51V15.424z";
+	public final static String NODE_FOLDER_SYMBOL = "path://M0 4c0-1.1.9-2 2-2h7l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z";
 
 	public final static String NODE_FILE = "File";
 	public final static String NODE_FILE_COLOR = "#90A4AE";
-	public final static String NODE_FILE_SYMBOL = "path://M15.475,6.692l-4.084-4.083C11.32,2.538,11.223,2.5,11.125,2.5h-6c-0.413,0-0.75,0.337-0.75,0.75v13.5c0,0.412,0.337,0.75,0.75,0.75h9.75c0.412,0,0.75-0.338,0.75-0.75V6.94C15.609,6.839,15.554,6.771,15.475,6.692 M11.5,3.779l2.843,2.846H11.5V3.779z M14.875,16.75h-9.75V3.25h5.625V7c0,0.206,0.168,0.375,0.375,0.375h3.75V16.75z";
+	public final static String NODE_FILE_SYMBOL = "path://M19,3 L9.0085302,3 C7.8992496,3 7,3.89833832 7,5.00732994 L7,27.9926701 C7,29.1012878 7.89092539,30 8.99742191,30 L24.0025781,30 C25.1057238,30 26,29.1090746 26,28.0025781 L26,11 L21.0059191,11 C19.8980806,11 19,10.1132936 19,9.00189865 L19,3 L19,3 Z M20,3 L20,8.99707067 C20,9.55097324 20.4509752,10 20.990778,10 L26,10 L20,3 L20,3 Z M13,26 L9,22 L13,18 L13.6999998,18.6999998 L10.3999996,22 L13.6999998,25.3000002 L13,26 L13,26 Z M20,26 L24,22 L20,18 L19.3000002,18.6999998 L22.6000004,22 L19.3000002,25.3000002 L20,26 L20,26 Z M17,18 L15,26 L16,26 L18,18 L17,18 L17,18 Z";
 
 	public String name;
 	public String symbol;
 	public String color;
 	public String descrition;
+	public String nodeType;
+	//public int x;
+	//public int y;
 
 	public NodeExplore(String nodeType, String name, String descrition) {
 		String nodeName = name != null ? name : NODE_PROJECT;
@@ -29,26 +32,29 @@ public class NodeExplore {
 
 		switch (nodeType) {
 		case NODE_FOLDER:
-			this.setValues(nodeName, NODE_FOLDER_SYMBOL, NODE_FOLDER_COLOR, nodeDescrition);
+			this.setValues(nodeName, NODE_FOLDER_SYMBOL, NODE_FOLDER_COLOR, nodeDescrition, nodeType);
 			break;
 		case NODE_FILE:
-			this.setValues(nodeName, NODE_FILE_SYMBOL, NODE_FILE_COLOR, nodeDescrition);
+			this.setValues(nodeName, NODE_FILE_SYMBOL, NODE_FILE_COLOR, nodeDescrition, nodeType);
 			break;
 		case NODE_DEVELOPER:
-			this.setValues(nodeName, NODE_DEVELOPER_SYMBOL, NODE_DEVELOPER_COLOR, nodeDescrition);
+			this.setValues(nodeName, NODE_DEVELOPER_SYMBOL, NODE_DEVELOPER_COLOR, nodeDescrition, nodeType);
 			break;
 
 		default: // PROJECT
-			this.setValues(nodeName, NODE_PROJECT_SYMBOL, NODE_PROJECT_COLOR, nodeDescrition);
+			this.setValues(nodeName, NODE_PROJECT_SYMBOL, NODE_PROJECT_COLOR, nodeDescrition, nodeType);
 			break;
 		}
 	}
 
-	private void setValues(String nodeName, String symbol, String color, String descrition) {
+	private void setValues(String nodeName, String symbol, String color, String descrition, String nodeType) {
 		this.name = nodeName;
 		this.symbol = symbol;
 		this.color = color;
 		this.descrition = descrition;
+		this.nodeType = nodeType;
+		//x = 50;
+		//y = 50;
 	}
 
 	@Override
