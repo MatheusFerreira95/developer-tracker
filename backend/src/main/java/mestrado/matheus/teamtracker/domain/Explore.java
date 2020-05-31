@@ -108,10 +108,10 @@ public class Explore {
 
 		if (pathRemovedFilter.contains("/")) {
 
-			String formattedName = pathRemovedFilter.substring(0, filePath.indexOf("/"));
+			String formattedName = pathRemovedFilter.substring(0, pathRemovedFilter.indexOf("/"));
 			System.out.println("------------dd--------" + formattedName);
 			node = new NodeExplore(NodeExplore.NODE_FOLDER, formattedName,
-					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter);
+					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter + formattedName);
 		} else {
 
 			node = new NodeExplore(NodeExplore.NODE_FILE, pathRemovedFilter, filePath);
