@@ -134,7 +134,7 @@
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
           <v-flex lg12 sm12 xs12>
-            <v-widget title content-bg="white">
+            <v-widget title content-bg="white" :title2="history">
               <div slot="widget-content">
                 <chart
                   v-if="explore !== null"
@@ -181,7 +181,9 @@ export default {
   data: () => ({
     perspective: "Overview",
     util: Util,
-    filter: null,
+    history: {
+      paths: []
+    },
     pie,
     explore: null,
     optionsChartProgrammingLanguage: null,
@@ -241,14 +243,17 @@ export default {
       this.tween("numLoc");
     },
 
-    buildExplore(zoomPath = "./") {
+    buildExplore(nodeData) {
       window.getApp.$emit("START_LOADING");
       let filter = {
         directory: "",
         localRepository: this.project.localRepository,
         remoteRepository: this.project.remoteRepository,
-        zoomPath
+        zoomPath: nodeData === null ? "Project/" : nodeData.descrition + "/"
       };
+
+      if (nodeData !== null) this.updateHistory(nodeData);
+
       getExploreProject(filter)
         .then(
           response => {
@@ -263,6 +268,28 @@ export default {
         .catch(function(error) {
           window.getApp.$emit("STOP_LOADING");
         });
+    },
+
+    updateHistory(nodeData) {
+      let newHistory = [];
+      let exist = false;
+
+      this.history.paths.forEach(item => {
+        if (item.descrition === nodeData.descrition) {
+          exist = true;
+        }
+      });
+
+      if (exist) {
+        let i = 0;
+        while (i <= this.history.paths.indexOf(nodeData)) {
+          newHistory.push(this.history.paths[i]);
+          i++;
+        }
+        this.history.paths = newHistory;
+      } else {
+        this.history.paths.push(nodeData);
+      }
     },
 
     setExplore(explore) {
@@ -303,17 +330,29 @@ export default {
         if (
           updated.data.nodeType === "Folder" ||
           updated.data.nodeType === "Project"
-        )
-          that.buildExplore(updated.data.descrition + "/");
+        ) {
+          that.buildExplore(updated.data);
+        }
       } else {
         that.setProject(updated);
       }
+    });
+    window.getApp.$on("APP_LEVEL_CHANGE", index => {
+      if (index + 1 === this.history.paths.length) return;
+      if (index === "init") {
+        that.buildExplore(null);
+        return;
+      }
+
+      let nodeData = this.history.paths[index];
+      that.buildExplore(nodeData);
     });
   },
   watch: {
     perspective: function(val) {
       if (val === "Explore") {
-        this.buildExplore();
+        this.history.paths = [];
+        this.buildExplore(null);
       }
     }
   }

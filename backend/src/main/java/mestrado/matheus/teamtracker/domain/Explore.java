@@ -125,7 +125,7 @@ public class Explore {
 
 		Explore explore = new Explore();
 
-		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, null);
+		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, ".");
 		explore.nodeList.add(nodeProject);
 
 		project.calcDeveloperList();
@@ -144,12 +144,12 @@ public class Explore {
 
 	private static boolean isZoomLevelProject(Filter filter) {
 
-		return filter.zoomPath.equals("./");
+		return filter.zoomPath.equals("Project/");
 	}
 
 	private static boolean isFirstZoomLevel(Filter filter) {
 
-		return filter.zoomPath.equals("Project/");
+		return filter.zoomPath.equals("./");
 	}
 
 }

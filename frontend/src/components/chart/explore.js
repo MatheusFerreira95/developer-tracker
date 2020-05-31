@@ -10,8 +10,10 @@ export default function getExplore(nodeList, linkList) {
     series: [{
       type: 'graph',
       layout: 'force',
+      initLayout: 'circular',
       symbolSize: 50,
       edgeSymbol: ['circle', 'arrow'],
+      legendHoverLink: true,
       roam: true, // zoom mouse e movimentar grafo 
       focusNodeAdjacency: true, // filtro -> foca em uma conexão e seus nós ou em um nó e suas conexões
       nodeScaleRatio: 0, // o zoom do filtro de foco não impacta os nós
