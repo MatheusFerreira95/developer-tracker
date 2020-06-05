@@ -4,6 +4,7 @@ public class NodeExplore {
 
 	public final static String NODE_DEVELOPER = "Developer";
 	public final static String NODE_DEVELOPER_COLOR = "#B00020";
+	public final static String NODE_DEVELOPER_COLOR_TF = "darkorange";
 	public final static String NODE_DEVELOPER_SYMBOL = "path://M27.7,24.31a11.92,11.92,0,0,0-7.76-8.65,6.5,6.5,0,1,0-7.88,0A11.92,11.92,0,0,0,4.3,24.31,3,3,0,0,0,7.23,28H24.77a3,3,0,0,0,2.92-3.69Z";
 
 	public final static String NODE_PROJECT = "Project";
@@ -26,7 +27,7 @@ public class NodeExplore {
 	//public int x;
 	//public int y;
 
-	public NodeExplore(String nodeType, String name, String descrition) {
+	public NodeExplore(String nodeType, String name, String descrition, Boolean isTruckFactor) {
 		String nodeName = name != null ? name : NODE_PROJECT;
 		String nodeDescrition = descrition != null ? descrition : nodeName;
 
@@ -38,7 +39,7 @@ public class NodeExplore {
 			this.setValues(nodeName, NODE_FILE_SYMBOL, NODE_FILE_COLOR, nodeDescrition, nodeType);
 			break;
 		case NODE_DEVELOPER:
-			this.setValues(nodeName, NODE_DEVELOPER_SYMBOL, NODE_DEVELOPER_COLOR, nodeDescrition, nodeType);
+			this.setValues(nodeName, NODE_DEVELOPER_SYMBOL, isTruckFactor ? NODE_DEVELOPER_COLOR_TF : NODE_DEVELOPER_COLOR, nodeDescrition, nodeType);
 			break;
 
 		default: // PROJECT

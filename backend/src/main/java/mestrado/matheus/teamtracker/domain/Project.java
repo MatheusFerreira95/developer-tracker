@@ -98,6 +98,30 @@ public class Project {
 				System.out.println("Devloper not add. See the line: " + line);
 			}
 		}
+
+		calcNumLocProjectByDeveloperList();
+
+		float percentageTotal = 0;
+		for (Developer developer : developerList) {
+			float percentage = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
+			float percentageAnterior = percentageTotal;
+			percentageTotal += percentage;
+			if (percentageTotal > 100) {
+				developer.percentLoc = 100 - percentageAnterior;
+				percentageAnterior = 100;
+				percentageTotal = 100;
+			} else {
+				developer.percentLoc = percentage;
+			}
+		}
+
+		if (percentageTotal < 100) {
+			developerList.get(0).percentLoc += 100 - percentageTotal;
+		}
+
+		calcTruckFactor();
+
+		Collections.sort(this.developerList, Collections.reverseOrder());
 	}
 	
 	public void calcDeveloperList() throws IOException, InterruptedException {

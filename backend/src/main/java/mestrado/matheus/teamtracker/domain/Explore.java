@@ -73,7 +73,7 @@ public class Explore {
 
 			for (Developer developer : project.developerList) {
 
-				NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null);
+				NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null, developer.truckFactor);
 				if (!explore.nodeList.contains(nodeDeveloper))
 					explore.nodeList.add(nodeDeveloper);
 
@@ -111,10 +111,10 @@ public class Explore {
 			String formattedName = pathRemovedFilter.substring(0, pathRemovedFilter.indexOf("/"));
 			System.out.println("------------dd--------" + formattedName);
 			node = new NodeExplore(NodeExplore.NODE_FOLDER, formattedName,
-					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter + formattedName);
+					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter + formattedName, false);
 		} else {
 
-			node = new NodeExplore(NodeExplore.NODE_FILE, pathRemovedFilter, filePath);
+			node = new NodeExplore(NodeExplore.NODE_FILE, pathRemovedFilter, filePath, false);
 		}
 
 		return node;
@@ -125,13 +125,13 @@ public class Explore {
 
 		Explore explore = new Explore();
 
-		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, ".");
+		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, ".", false);
 		explore.nodeList.add(nodeProject);
 
 		project.calcDeveloperList();
 		for (Developer developer : project.developerList) {
 
-			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null);
+			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null, developer.truckFactor);
 			explore.nodeList.add(nodeDeveloper);
 
 			LinkExplore link = new LinkExplore(nodeProject.name, developer.name, developer.numLoc,

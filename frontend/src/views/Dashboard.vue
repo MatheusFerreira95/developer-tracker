@@ -29,8 +29,8 @@
         <v-flex sm12>
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab ripple @click="perspective = 'Overview'">Overview</v-tab>
-              <v-tab ripple @click="perspective = 'Explore'">Explore</v-tab>
+              <v-tab ripple @click="perspective = 'Overview'">Project</v-tab>
+              <v-tab ripple @click="perspective = 'Explore'">Developer</v-tab>
             </v-tabs>
           </v-card>
         </v-flex>
@@ -38,7 +38,7 @@
         <!-- Overview -->
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
-          <v-flex lg3 sm6 xs12>
+          <v-flex lg6 sm6 xs12>
             <mini-statistic
               icon="check"
               :title="project.numCommits"
@@ -46,7 +46,7 @@
               color="green"
             ></mini-statistic>
           </v-flex>
-          <v-flex lg3 sm6 xs12>
+          <v-flex lg6 sm6 xs12>
             <mini-statistic
               icon="code"
               :title="project.numLoc"
@@ -54,7 +54,7 @@
               color="red"
             ></mini-statistic>
           </v-flex>
-          <v-flex lg3 sm6 xs12>
+          <!-- <v-flex lg3 sm6 xs12>
             <mini-statistic
               icon="date_range"
               title=" "
@@ -69,7 +69,7 @@
               :sub-title="'Last commit: ' + project.lastCommit"
               color="amber"
             ></mini-statistic>
-          </v-flex>
+          </v-flex>-->
 
           <!-- Grafico Linguagem de programacao-->
           <v-flex lg6 sm12 xs12>
