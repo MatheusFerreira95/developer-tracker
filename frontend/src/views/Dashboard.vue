@@ -114,13 +114,13 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="avatar-developer">
-                          <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon>
+                          <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
                           <v-icon v-if="props.item.truckFactor" right color="amber">start</v-icon>
                         </td>
                         <td
                           class="text-xs-left"
                         >{{ props.item.name + " (" + props.item.email + ")"}}</td>
-                        <td class="text-xs-left">{{ props.item.percentLoc + ""}}</td>
+                        <td class="text-xs-left">{{ props.item.numLoc + ""}}</td>
                       </tr>
                     </template>
                   </v-data-table>
@@ -202,11 +202,11 @@ export default {
     colors: [],
     headers: [
       {
-        text: "Avatar",
+        text: "", // avatar
         value: "truckFactor"
       },
       { text: "Name (email)", value: "name" },
-      { text: "LOC (%)", value: "numLoc" }
+      { text: "NLOC", value: "numLoc" }
     ]
   }),
   methods: {
