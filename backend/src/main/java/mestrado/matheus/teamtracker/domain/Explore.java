@@ -41,8 +41,6 @@ public class Explore {
 		try {
 			gitOutputName = Git.runCommand(project, " git ls-files " + filter.zoomPath);
 
-			System.out.println("oooooooooooooooooooooooooooo qtd files " + gitOutputName.outputList.size());
-
 			for (String filePath : gitOutputName.outputList) {
 
 				if (filePath.startsWith(filter.zoomPath)) { // tem que verificar se quando mandar pro nivel raiz vai dar
@@ -83,7 +81,6 @@ public class Explore {
 					explore.linkList.add(link);
 				else {
 					explore.linkList.get(indexLink).increaseLoc(link.numLoc);
-					// explore.linkList.get(indexLink).increaseCommits(link.numCommits);
 				}
 			}
 
@@ -102,14 +99,10 @@ public class Explore {
 		String pathRemovedFilter = prefixFromFilter.isEmpty() ? filePath
 				: filePath.substring(prefixFromFilter.length());
 
-		System.out.println("-------------------- path removed zoom - " + pathRemovedFilter);
-		System.out.println("-------------------- prefix (zoompath) -" + prefixFromFilter);
-		System.out.println("-------------------- filepath- " + filePath);
-
 		if (pathRemovedFilter.contains("/")) {
 
 			String formattedName = pathRemovedFilter.substring(0, pathRemovedFilter.indexOf("/"));
-			System.out.println("------------dd--------" + formattedName);
+			
 			node = new NodeExplore(NodeExplore.NODE_FOLDER, formattedName,
 					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter + formattedName, false);
 		} else {
