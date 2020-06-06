@@ -43,8 +43,7 @@ public class Explore {
 
 			for (String filePath : gitOutputName.outputList) {
 
-				if (filePath.startsWith(filter.zoomPath)) { // tem que verificar se quando mandar pro nivel raiz vai dar
-															// certo
+				if (filePath.startsWith(filter.zoomPath)) {
 
 					NodeExplore node = buildNode(filePath, filter.zoomPath);
 					if (!explore.nodeList.contains(node))
@@ -71,7 +70,8 @@ public class Explore {
 
 			for (Developer developer : project.developerList) {
 
-				NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null, developer.truckFactor);
+				NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null,
+						developer.truckFactor);
 				if (!explore.nodeList.contains(nodeDeveloper))
 					explore.nodeList.add(nodeDeveloper);
 
@@ -81,6 +81,7 @@ public class Explore {
 					explore.linkList.add(link);
 				else {
 					explore.linkList.get(indexLink).increaseLoc(link.numLoc);
+					explore.linkList.get(indexLink).increaseCommits(link.numCommits);
 				}
 			}
 
@@ -102,7 +103,7 @@ public class Explore {
 		if (pathRemovedFilter.contains("/")) {
 
 			String formattedName = pathRemovedFilter.substring(0, pathRemovedFilter.indexOf("/"));
-			
+
 			node = new NodeExplore(NodeExplore.NODE_FOLDER, formattedName,
 					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter + formattedName, false);
 		} else {
@@ -124,7 +125,8 @@ public class Explore {
 		project.calcDeveloperList();
 		for (Developer developer : project.developerList) {
 
-			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null, developer.truckFactor);
+			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null,
+					developer.truckFactor);
 			explore.nodeList.add(nodeDeveloper);
 
 			LinkExplore link = new LinkExplore(nodeProject.name, developer.name, developer.numLoc,

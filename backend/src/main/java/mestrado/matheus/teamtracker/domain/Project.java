@@ -100,9 +100,9 @@ public class Project {
 			}
 		}
 
-	
 		calcTruckFactor();
 
+		calcCommitsDeveloperList(filterPath);
 	}
 
 	public void calcDeveloperList() throws IOException, InterruptedException {
@@ -171,6 +171,62 @@ public class Project {
 		calcTruckFactor();
 
 		Collections.sort(this.developerList, Collections.reverseOrder());
+
+		calcCommitsDeveloperList(null);
+	}
+
+	private void calcCommitsDeveloperList(String pathFile) throws IOException, InterruptedException {
+		GitOutput gitOutputName;
+		if (pathFile == null) { // project level
+
+			gitOutputName = Git.runCommand(this, " git log | grep Author: | sort | uniq -c | sort -nr");
+
+			for (String line : gitOutputName.outputList) {
+
+				try {
+
+					String name = line.substring(line.indexOf(": ") + 2, line.indexOf(" <"));
+
+					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
+
+					for (Developer developer : developerList) {
+						if (developer.name.equals(name)) {
+
+							developer.numCommits = numCommits;
+							break;
+						}
+					}
+				} catch (Exception e) {
+
+					System.out.println("Devloper not add. See the line: " + line);
+				}
+			}
+		} else {
+			gitOutputName = Git.runCommand(this,
+					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | uniq -c | sort -nr");
+
+			for (String line : gitOutputName.outputList) {
+
+				try {
+
+					String name = line.substring(8);
+
+					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
+
+					for (Developer developer : developerList) {
+						if (developer.name.equals(name)) {
+
+							developer.numCommits = numCommits;
+							break;
+						}
+					}
+				} catch (Exception e) {
+
+					System.out.println("Devloper not add. See the line: " + line);
+				}
+
+			}
+		}
 	}
 
 	private void calcNumLocProjectByDeveloperList() {
