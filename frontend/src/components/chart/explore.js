@@ -11,15 +11,15 @@ export default function getExplore(nodeList, linkList) {
       type: 'graph',
       layout: 'force',
       initLayout: 'circular',
-      symbolSize: 50,
+      symbolSize: 40,
       edgeSymbol: ['circle', 'arrow'],
       legendHoverLink: true,
       roam: true, // zoom mouse e movimentar grafo 
       focusNodeAdjacency: true, // filtro -> foca em uma conexão e seus nós ou em um nó e suas conexões
       nodeScaleRatio: 0, // o zoom do filtro de foco não impacta os nós
       force: {
-        repulsion: 1000,
-        edgeLength: [400, 700, 1000],
+        repulsion: 400,
+        edgeLength: [200, 400, 8000],
         layoutAnimation: false
       },
       draggable: true,
