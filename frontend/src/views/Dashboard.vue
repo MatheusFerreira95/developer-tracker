@@ -120,7 +120,7 @@
                         <td
                           class="text-xs-left"
                         >{{ props.item.name + " (" + props.item.email + ")"}}</td>
-                        <td class="text-xs-left">{{ props.item.numLoc + ""}}</td>
+                        <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
                       </tr>
                     </template>
                   </v-data-table>
@@ -202,11 +202,11 @@ export default {
     colors: [],
     headers: [
       {
-        text: "", // avatar
+        text: "Truck Factor", // avatar
         value: "truckFactor"
       },
-      { text: "Name (email)", value: "name" },
-      { text: "NLOC", value: "numLoc" }
+      { text: "Name (email)", value: "name" }
+      // { text: "NLOC", value: "numLoc" }
     ]
   }),
   methods: {
