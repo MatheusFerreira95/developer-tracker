@@ -129,7 +129,7 @@ public class Explore {
 					developer.truckFactor);
 			explore.nodeList.add(nodeDeveloper);
 
-			LinkExplore link = new LinkExplore(nodeProject.name, developer.name, developer.numLoc,
+			LinkExplore link = new LinkExplore(developer.name, nodeProject.name, developer.numLoc,
 					developer.numCommits);
 			explore.linkList.add(link);
 		}
