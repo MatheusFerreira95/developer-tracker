@@ -15,7 +15,7 @@
               <div class="text-md-center center">
                 <div class="headline">
                   Welcome to the
-                  <strong>Developer Tracker</strong>,
+                  <strong>Developer Tracker App</strong>,
                 </div>
                 <span>Report a project to start tracking!</span>
               </div>

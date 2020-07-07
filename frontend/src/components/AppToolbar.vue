@@ -7,7 +7,7 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-title>
-      <span>Developer Tracker</span>
+      <span>Developer Tracker App</span>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
