@@ -152,7 +152,11 @@
     </v-container>
 
     <!-- 1. Recomendation commit and loc -->
-    <div class="text-center" style="float:right" v-if="perspective === 'Overview'">
+    <div
+      class="text-center"
+      style="float:right"
+      v-if="perspective === 'Overview' && project.developerList.length > 0"
+    >
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
           <v-icon
@@ -194,7 +198,11 @@
     </div>
 
     <!-- 2. Recomendation programmimg lang -->
-    <div class="text-center" style="float:left" v-if="perspective === 'Overview'">
+    <div
+      class="text-center"
+      style="float:left"
+      v-if="perspective === 'Overview' && project.developerList.length > 0"
+    >
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
           <v-icon
@@ -234,7 +242,11 @@
     </div>
 
     <!-- 3. Recomendation Project Truck Factor -->
-    <div class="text-center" style="float:right" v-if="perspective === 'Overview'">
+    <div
+      class="text-center"
+      style="float:right"
+      v-if="perspective === 'Overview' && project.developerList.length > 0"
+    >
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
           <v-icon
@@ -266,7 +278,11 @@
     </div>
 
     <!-- 4. Recomendations developers -->
-    <div class="text-center" style="float:left" v-if="perspective === 'Explore'">
+    <div
+      class="text-center"
+      style="float:left"
+      v-if="perspective === 'Explore' && project.developerList.length > 0"
+    >
       <v-menu open-on-hover right offset-y>
         <template v-slot:activator="{ on }">
           <v-icon
@@ -298,7 +314,11 @@
     </div>
 
     <!-- 5. Recomendations developers -->
-    <div class="text-center" style="float:right" v-if="perspective === 'Explore'">
+    <div
+      class="text-center"
+      style="float:right"
+      v-if="perspective === 'Explore' && project.developerList.length > 0"
+    >
       <v-menu open-on-hover right offset-y>
         <template v-slot:activator="{ on }">
           <v-icon
@@ -339,7 +359,11 @@
       </v-menu>
     </div>
     <!-- 6. recomendations developers -->
-    <div class="text-center" style="float:left" v-if="perspective === 'Explore'">
+    <div
+      class="text-center"
+      style="float:left"
+      v-if="perspective === 'Explore' && project.developerList.length > 0"
+    >
       <v-menu open-on-hover right offset-y>
         <template v-slot:activator="{ on }">
           <v-icon
