@@ -95,9 +95,9 @@
                   <h4>Developers</h4>
                 </v-toolbar-title>
                 <v-divider class="white"></v-divider>
-                <v-chip color="indigo" text-color="white">
-                  <v-icon color="amber">start</v-icon>
-                  Truck Factor: {{project.truckFactor}}
+                <v-chip color="lightblue" text-color="gray">
+                  <v-icon color="gray">local_shipping</v-icon>
+                  &nbsp;&nbsp;&nbsp;Truck Factor: {{project.truckFactor}}
                 </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
@@ -115,7 +115,7 @@
                       <tr>
                         <td class="avatar-developer">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
-                          <v-icon v-if="props.item.truckFactor" right color="amber">start</v-icon>
+                          <v-icon v-if="props.item.truckFactor" right color="gray">local_shipping</v-icon>
                         </td>
                         <td
                           class="text-xs-left"
@@ -150,6 +150,235 @@
         </template>
       </v-layout>
     </v-container>
+
+    <!-- 1. Recomendation commit and loc -->
+    <div class="text-center" style="float:right" v-if="perspective === 'Overview'">
+      <v-menu open-on-hover left offset-x>
+        <template v-slot:activator="{ on }">
+          <v-icon
+            right
+            v-on="on"
+            color="orange"
+            class="fa-blink"
+            style="position: absolute; top: 150px; font-size:25px; right: 2px;"
+          >assistant</v-icon>
+        </template>
+
+        <v-card>
+          <v-toolbar card dense color="transparent">
+            <v-toolbar-title>
+              <h4>Project Commits and LOC</h4>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-divider></v-divider>
+          <v-card-text class="pa-0">
+            <template>
+              <span>
+                <br />&nbsp;Use to understand the dimension of the project. It serves as a parameter to analyze the connections between developers and artifacts. &nbsp;
+                <br />
+              </span>
+
+              <span>
+                <br />
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <br />
+                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <br />
+                <span>&nbsp;- When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible).</span>
+                <br />
+              </span>
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-menu>
+    </div>
+
+    <!-- 2. Recomendation programmimg lang -->
+    <div class="text-center" style="float:left" v-if="perspective === 'Overview'">
+      <v-menu open-on-hover left offset-x>
+        <template v-slot:activator="{ on }">
+          <v-icon
+            right
+            v-on="on"
+            color="orange"
+            class="fa-blink"
+            style="position: absolute; top: 350px; font-size:25px; left: -5px;"
+          >assistant</v-icon>
+        </template>
+
+        <v-card>
+          <v-toolbar card dense color="transparent">
+            <v-toolbar-title>
+              <h4>Project Programming Languages</h4>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-divider></v-divider>
+          <v-card-text class="pa-0">
+            <template>
+              <span>
+                <br />&nbsp;Use to understand the demand for technology in the project. Consider the different characteristics of programming languages ​​when analyzing this, some languages ​​may require more LOC due to their characteristics. &nbsp;
+                <br />
+              </span>
+
+              <span>
+                <br />
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <br />
+                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <br />
+              </span>
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-menu>
+    </div>
+
+    <!-- 3. Recomendation Project Truck Factor -->
+    <div class="text-center" style="float:right" v-if="perspective === 'Overview'">
+      <v-menu open-on-hover left offset-x>
+        <template v-slot:activator="{ on }">
+          <v-icon
+            right
+            v-on="on"
+            color="orange"
+            class="fa-blink"
+            style="position: absolute; top: 350px; font-size:25px; right: 2px;"
+          >assistant</v-icon>
+        </template>
+
+        <v-card>
+          <v-toolbar card dense color="transparent">
+            <v-toolbar-title>
+              <h4>Project Truck Factor</h4>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-divider></v-divider>
+          <v-card-text class="pa-0">
+            <template>
+              <span>
+                <br />&nbsp;The Truck Factor is calculated based on the degree of authorship of the developers in the project files. Consider that Truck Factor developers can concentrate knowledge on more than half of the project's files. The lower the value of the Truck Factor, the greater the concentration of knowledge. To mitigate the concentration of knowledge, consider including practices such as pair programming and running people in the source code. &nbsp;
+                <br />
+              </span>
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-menu>
+    </div>
+
+    <!-- 4. Recomendations developers -->
+    <div class="text-center" style="float:left" v-if="perspective === 'Explore'">
+      <v-menu open-on-hover right offset-y>
+        <template v-slot:activator="{ on }">
+          <v-icon
+            right
+            v-on="on"
+            color="orange"
+            class="fa-blink"
+            style="position: absolute; top: 250px; font-size:25px; left: -5px;"
+          >assistant</v-icon>
+        </template>
+
+        <v-card>
+          <v-toolbar card dense color="transparent">
+            <v-toolbar-title>
+              <h4>Truck Factor developers</h4>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-divider></v-divider>
+          <v-card-text class="pa-0">
+            <template>
+              <span>
+                <br />&nbsp;They are team members who can have a high degree of authorship and knowledge about the project version. Note in which regions of the source code practices such as practices such as pair programming and running people can be applied to distribute the concentration of knowledge. &nbsp;
+                <br />
+              </span>
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-menu>
+    </div>
+
+    <!-- 5. Recomendations developers -->
+    <div class="text-center" style="float:right" v-if="perspective === 'Explore'">
+      <v-menu open-on-hover right offset-y>
+        <template v-slot:activator="{ on }">
+          <v-icon
+            right
+            v-on="on"
+            color="orange"
+            class="fa-blink"
+            style="position: absolute; top: 325px; font-size:25px; left: -5px;"
+          >assistant</v-icon>
+        </template>
+
+        <v-card>
+          <v-toolbar card dense color="transparent">
+            <v-toolbar-title>
+              <h4>Individual connections of developers on artifacts</h4>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-divider></v-divider>
+          <v-card-text class="pa-0">
+            <template>
+              <span>
+                <br />&nbsp;This can indicate how much the developer has worked on a particular artifact. It may be possible to identify, for example, if that developer is concentrating knowledge of a certain region of the code or if he works with only a certain programming language. &nbsp;
+                <br />
+              </span>
+
+              <span>
+                <br />
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <br />
+                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <br />
+                <span>&nbsp;- When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible).</span>
+                <br />
+              </span>
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-menu>
+    </div>
+    <!-- 6. recomendations developers -->
+    <div class="text-center" style="float:left" v-if="perspective === 'Explore'">
+      <v-menu open-on-hover right offset-y>
+        <template v-slot:activator="{ on }">
+          <v-icon
+            right
+            v-on="on"
+            color="orange"
+            class="fa-blink"
+            style="position: absolute; top: 400px; font-size:25px; left: -5px;"
+          >assistant</v-icon>
+        </template>
+
+        <v-card>
+          <v-toolbar card dense color="transparent">
+            <v-toolbar-title>
+              <h4>Joint connections of developers on artifacts</h4>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-divider></v-divider>
+          <v-card-text class="pa-0">
+            <template>
+              <span>
+                <br />&nbsp;This can indicate how hard the developers worked on a particular artifact. It may be possible, for example, to identify the distribution of knowledge in the artifact and the demand for change. &nbsp;
+                <br />
+              </span>
+
+              <span>
+                <br />
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <br />
+                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <br />
+                <span>&nbsp;- When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible).</span>
+                <br />
+              </span>
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-menu>
+    </div>
   </div>
 </template>
 
@@ -356,6 +585,19 @@ export default {
       }
     }
   }
+
+  //   Recomendações
+
+  // - Commits e LOC do Projeto: Utilize para compreender a dimensão do projeto. Serve como um parâmetro para analisar as conexões entre desenvolvedores e artefatos.
+  // - Linguagens de Programação do projeto: Utilize para compreender a demanda de tencnologias no projeto. Considere as diferentes características das linguagens de programação ao analisar isso, algumas linguagens podem demandar mais LOC devido às características delas.
+  // - Truck Factor do Projeto: O Truck Factor é calculado baseado no grau de autoria dos desenvolvedores nos arquivos projeto. Considere que os desenvolvedores do Truck Factor podem concentrar o conhecimento de mais da metade dos arquivos do projeto. Quanto menor o valor do Truck Factor maior é a concentração de conhecimento. Para mitigar a concentração de conhecimento considere incluir práticas como programação em par e rodagem de pessoas no código fonte.
+  // - Desenvolvedores do Truck Factor: São os membros do time que podem possuir alto grau de autoria e conhecimento sobre a versão do projeto. Observe em quais regiões do código fonte podem ser aplicadas práticas como práticas como programação em par e rodagem de pessoas para distribuir a concentração de conhecimento.
+  // - Conexões individuais de desenvolvedores em artefatos: Isso pode indicar o quanto o desenvolvedor trabalhou em determinado artefato. Pode ser possível identificar, por exemplo, se esse desenvolvedor está concentrando o conhecimento de determinada região do código ou se ele atua com apenas uma determinada linguagem de programação.
+  // - Conexões conjuntas de desenvolvedores em artefatos: Isso pode indicar o quanto os desenvolvedores trabalharam em determinado artefato. Pode ser possível, por exemplo, identificar a distribuição de conhecimento no artefato e a demanda de alteração.
+
+  // Outras observações (Isso ajuda a mitigar o risco dos desenvolvedores distorcerem seu trabalho para adequarem-se às  métrica):
+  // - Ao observar LOC (projeto e desenvolvedores), considere que o time deve seguir os devidos padrões de código da linguagem de programação (e.g. posicionamento de "{}"). Considere também definir um processo de code review, para que outros desenvolvedores avaliem as soluções implementadas por um membro do time, evitando soluções inadequadas ou com excessivo LOC.
+  // - Ao observar commmits, considere que o time deve seguir um padrão commits (e.g. o mais atômico possível).
 };
 </script>
 <style lang="stylus">
@@ -377,5 +619,23 @@ export default {
 
 .avatar-developer {
   display: flex;
+}
+
+@keyframes fa-blink {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(35deg);
+  }
+}
+
+.fa-blink {
+  -webkit-animation: fa-blink 2.75s linear infinite;
+  -moz-animation: fa-blink 2.75s linear infinite;
+  -ms-animation: fa-blink 2.75s linear infinite;
+  -o-animation: fa-blink 2.75s linear infinite;
+  animation: fa-blink 2.75s linear infinite;
 }
 </style>
