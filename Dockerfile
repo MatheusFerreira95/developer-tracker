@@ -3,8 +3,8 @@
 # 1. Building the App with Maven
 FROM maven:3-jdk-11
 
-ADD . /springbootvuejs
-WORKDIR /springbootvuejs
+ADD . /developer-tracker
+WORKDIR /developer-tracker
 
 # Just echo so we can see, if everything is there :)
 RUN ls -l
@@ -16,12 +16,12 @@ RUN mvn clean install
 # Just using the build artifact and then removing the build-container
 FROM openjdk:11-jdk
 
-MAINTAINER Jonas Hecht
+MAINTAINER Matheus FErreira
 
 VOLUME /tmp
 
 # Add Spring Boot app.jar to Container
-COPY --from=0 "/springbootvuejs/backend/target/backend-0.0.1-SNAPSHOT.jar" app.jar
+COPY --from=0 "/developer-tracker/backend/target/backend-0.0.1-SNAPSHOT.jar" app.jar
 
 ENV JAVA_OPTS=""
 
