@@ -13,9 +13,12 @@ public class CLOC {
 
 	// Requer https://github.com/AlDanial/cloc/blob/master/cloc instalada
 	public static void buildNumLocProgrammingLanguageList(Project project) throws IOException, InterruptedException {
-
+		
+		String pathApp = new File(".").getCanonicalPath();
+		String pathCLOC = pathApp.equals("/") ? pathApp + "cloc-1.86.pl" : pathApp + "/backend/cloc-tool/cloc-1.86.pl"; // tratando para imagens docker (ver cópia realizada no arquivo dockerfile)
+		
 		GitOutput gitOutput = Git.runCommand(project,
-				"cloc ./ --json --exclude-lang=\"" + CLOC.LIST_LANG_EXLUDED + "\" --out cloc-out.txt");
+				"perl " + pathCLOC + " ./ --json --exclude-lang=\"" + CLOC.LIST_LANG_EXLUDED + "\" --out cloc-out.txt");
 
 		File outpupFile = new File(project.localRepository + "/cloc-out.txt");
 

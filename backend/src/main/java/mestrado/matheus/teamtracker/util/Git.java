@@ -82,12 +82,15 @@ public class Git {
 
 		validateLocalRepository(project.localRepository);
 
+		String pathApp = new File(".").getCanonicalPath();
+		String pathTF = pathApp.equals("/") ? pathApp + "truckfactor-tool" : "backend/truckfactor-tool"; // tratando para imagens docker (ver cópia realizada no arquivo dockerfile)
+		
 		List<String> commands = new ArrayList<String>();
 		commands.add("/bin/sh");
 		commands.add("-c");
-		commands.add("sh commit_log_script.sh " + project.localRepository);
-
-		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File("backend/truckfactor-tool/"));
+		commands.add("sh commit_log_script.sh " + project.localRepository + " " + pathTF);
+		
+		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
 		Process p = pb.start();
 
 		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
@@ -108,9 +111,9 @@ public class Git {
 		commands = new ArrayList<String>();
 		commands.add("/bin/sh");
 		commands.add("-c");
-		commands.add("java -jar gittruckfactor.jar " + project.localRepository);
+		commands.add("java -jar gittruckfactor.jar " + project.localRepository + " " + pathTF);
 
-		pb = new ProcessBuilder().command(commands).directory(new File("backend/truckfactor-tool/"));
+		pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
 		p = pb.start();
 
 		errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);

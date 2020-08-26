@@ -1,8 +1,9 @@
 #!/bin/bash
 
 path=$1
-currentpath=${PWD}
-clear
+truckfactorFolderPath=$2
+#${PWD}
+#clear
 now=$(date)
 echo -e $now: BEGIN git log extraction: $path \\n 
 
@@ -15,8 +16,9 @@ git log --pretty=format:"%H-;-%aN-;-%aE-;-%at-;-%cN-;-%cE-;-%ct-;-%f"  > commiti
 
 #Extract and format commit files information
 git log --name-status --pretty=format:"commit	%H" --find-renames > log.log
-awk -F$'\t' -f $currentpath/log.awk log.log > commitfileinfo.log
-
+awk -F$'\t' -f $truckfactorFolderPath/log.awk log.log > commitfileinfo.log
+echo "------------------------------------------------------------------------- $truckfactorFolderPath"
+echo "-----------------------------------------------------------------------** ${PWD}"
 #Get current file list
 git ls-files > filelist.log
 
