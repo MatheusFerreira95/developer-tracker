@@ -14,7 +14,7 @@ import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
 
 @RestController()
-@RequestMapping("/project")
+@RequestMapping("/api/project")
 public class ProjectController {
 
 	/**
