@@ -107,7 +107,31 @@ public class Git {
 
 			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
+		
+		commands = new ArrayList<String>();
+		commands.add("/bin/sh");
+		commands.add("-c");
+		commands.add("sh aux_commit_extract.sh " + project.localRepository + " " + pathTF);
+		System.out.println("sh aux_commit_extract.sh " + project.localRepository + " " + pathTF+"-------------------------------------------------------");
+		
+		pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
+		p = pb.start();
 
+		errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
+		outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", gitOutput);
+		outputGobbler.start();
+		errorGobbler.start();
+
+		exit = p.waitFor();
+
+		errorGobbler.join();
+		outputGobbler.join();
+
+		if (exit != 0) {
+
+			throw new AssertionError(String.format("runCommand returned %d", exit));
+		}
+		
 		commands = new ArrayList<String>();
 		commands.add("/bin/sh");
 		commands.add("-c");
