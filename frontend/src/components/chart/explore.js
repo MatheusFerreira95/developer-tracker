@@ -21,7 +21,8 @@ export default function getExplore(nodeList, linkList) {
       force: {
         repulsion: 400,
         edgeLength: [200, 400, 8000],
-        layoutAnimation: false
+        layoutAnimation: false,
+        friction: 0.1
       },
       draggable: true,
       edgeLabel: {
