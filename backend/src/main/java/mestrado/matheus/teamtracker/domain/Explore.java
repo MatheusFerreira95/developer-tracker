@@ -30,8 +30,8 @@ public class Explore {
 			filter.zoomPath = "";
 		
 		} else {
-			
-			filter.zoomPath += "/"
+
+			filter.zoomPath += "/";
 		}
 
 		return buildExplore(filter, project);
