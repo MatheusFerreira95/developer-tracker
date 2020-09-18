@@ -502,7 +502,7 @@ export default {
         directory: "",
         localRepository: this.project.localRepository,
         remoteRepository: this.project.remoteRepository,
-        zoomPath: nodeData === null ? "Project/" : nodeData.descrition + "/",
+        zoomPath: nodeData === null ? "Root" : nodeData.descrition,
       };
 
       if (nodeData !== null) this.updateHistory(nodeData);

@@ -5,7 +5,7 @@
         <v-toolbar-title style="width:100%">
           <h4 v-if="title">{{title}}</h4>
           <div v-else>
-            <v-chip outlined label @click="changeLevel('init')">Project/</v-chip>
+            <v-chip outlined label @click="changeLevel('init')">Root/</v-chip>
             <v-chip
               outlined
               label
@@ -82,19 +82,19 @@ export default {
   name: "v-widget",
   props: {
     title: {
-      type: String
+      type: String,
     },
     enableHeader: {
       type: Boolean,
-      default: true
+      default: true,
     },
     contentBg: {
       type: String,
-      default: "white"
+      default: "white",
     },
     title2: {
-      type: Object
-    }
+      type: Object,
+    },
   },
 
   data() {
@@ -104,8 +104,8 @@ export default {
     changeLevel(index) {
       if (index === "init") this.title2.paths = [];
       window.getApp.$emit("APP_LEVEL_CHANGE", index);
-    }
+    },
   },
-  computed: {}
+  computed: {},
 };
 </script>
