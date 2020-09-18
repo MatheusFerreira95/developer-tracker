@@ -2,6 +2,9 @@ package mestrado.matheus.teamtracker.util;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -74,7 +77,7 @@ public class Git {
 
 		return gitOutput;
 	}
-	
+
 	public static GitOutput runGitTruckFactor(Project project) throws IOException, InterruptedException {
 		System.out.println("Run TruckFactor");
 
@@ -83,13 +86,22 @@ public class Git {
 		validateLocalRepository(project.localRepository);
 
 		String pathApp = new File(".").getCanonicalPath();
-		String pathTF = pathApp.equals("/") ? pathApp + "truckfactor-tool" : "backend/truckfactor-tool"; // tratando para imagens docker (ver cópia realizada no arquivo dockerfile)
-		
+		String pathTF = pathApp.equals("/") ? pathApp + "truckfactor-tool" : "backend/truckfactor-tool"; // tratando
+																											// para
+																											// imagens
+																											// docker
+																											// (ver
+																											// cópia
+																											// realizada
+																											// no
+																											// arquivo
+																											// dockerfile)
+
 		List<String> commands = new ArrayList<String>();
 		commands.add("/bin/sh");
 		commands.add("-c");
 		commands.add("sh commit_log_script.sh " + project.localRepository + " " + pathTF);
-		
+
 		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
 		Process p = pb.start();
 
@@ -107,31 +119,9 @@ public class Git {
 
 			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
-		
-		commands = new ArrayList<String>();
-		commands.add("/bin/sh");
-		commands.add("-c");
-		commands.add("sh aux_commit_extract.sh " + project.localRepository + " " + pathTF);
-		System.out.println("sh aux_commit_extract.sh " + project.localRepository + " " + pathTF+"-------------------------------------------------------");
-		
-		pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
-		p = pb.start();
 
-		errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
-		outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT", gitOutput);
-		outputGobbler.start();
-		errorGobbler.start();
+		createCommitFileInfoLog(project.localRepository);
 
-		exit = p.waitFor();
-
-		errorGobbler.join();
-		outputGobbler.join();
-
-		if (exit != 0) {
-
-			throw new AssertionError(String.format("runCommand returned %d", exit));
-		}
-		
 		commands = new ArrayList<String>();
 		commands.add("/bin/sh");
 		commands.add("-c");
@@ -155,8 +145,52 @@ public class Git {
 			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
 
-		
 		return gitOutput;
+	}
+
+	private static void createCommitFileInfoLog(String localRepository) {
+
+		try {
+			FileReader reader = new FileReader(localRepository + "/log.log");
+			BufferedReader bufferedReader = new BufferedReader(reader);
+
+			FileWriter writer = new FileWriter(localRepository + "/commitfileinfo.log", true);
+
+			String readedLine;
+			String commitHash = "";
+			String action = "";
+			String filePath = "";
+
+			while ((readedLine = bufferedReader.readLine()) != null) {
+
+				if (readedLine.isEmpty())
+					continue;
+
+				if (readedLine.startsWith("commit")) {
+					commitHash = readedLine.split("	")[1];
+					continue;
+				}
+
+				action = readedLine.startsWith("A") ? "ADDED" : readedLine.startsWith("M") ? "MODIFIED" : "";
+
+				if (action.isEmpty())
+					continue;
+
+				filePath = readedLine.split("	")[1];
+
+				writer.write(commitHash + ";" + action + "; ;" + filePath);
+				writer.write("\r\n");
+
+			}
+
+			reader.close();
+			writer.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static void validateLocalRepository(String localRepository) {
