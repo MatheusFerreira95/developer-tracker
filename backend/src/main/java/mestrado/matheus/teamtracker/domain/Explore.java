@@ -26,7 +26,12 @@ public class Explore {
 		}
 
 		if (isFirstZoomLevel(filter)) {
+
 			filter.zoomPath = "";
+		
+		} else {
+			
+			filter.zoomPath += "/"
 		}
 
 		return buildExplore(filter, project);
