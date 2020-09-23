@@ -12,7 +12,8 @@ export default function getExplore(nodeList, linkList) {
       layout: 'force',
       initLayout: 'circular',
       symbolSize: 40,
-      edgeSymbol: ['circle', 'arrow'],
+      edgeSymbol: ['none', 'arrow'],
+      edgeSymbolSize: 20,
       legendHoverLink: true,
       roam: true, // zoom mouse e movimentar grafo 
       focusNodeAdjacency: true, // filtro -> foca em uma conexão e seus nós ou em um nó e suas conexões
@@ -20,7 +21,8 @@ export default function getExplore(nodeList, linkList) {
       force: {
         repulsion: 400,
         edgeLength: [200, 400, 8000],
-        layoutAnimation: false
+        layoutAnimation: false,
+        friction: 0.1
       },
       draggable: true,
       edgeLabel: {
@@ -37,8 +39,7 @@ export default function getExplore(nodeList, linkList) {
           show: true,
           position: 'bottom',
           distance: 0,
-          color: '#777',
-          backgroundColor: '#ffffff'
+          color: '#000'
         }
       },
       lineStyle: {

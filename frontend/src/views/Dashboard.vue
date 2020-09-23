@@ -429,19 +429,19 @@ export default {
   components: {
     VWidget,
     MiniStatistic,
-    chart: ECharts
+    chart: ECharts,
   },
   data: () => ({
     perspective: "Overview",
     util: Util,
     history: {
-      paths: []
+      paths: [],
     },
     pie,
     explore: null,
     optionsChartProgrammingLanguage: null,
     initOptions: {
-      renderer: "canvas"
+      renderer: "canvas",
     },
     project: {
       numLoc: 0,
@@ -450,17 +450,17 @@ export default {
       LastCommit: "",
       numLocProgrammingLanguageList: [],
       developerList: [],
-      localRepository: ""
+      localRepository: "",
     },
     colors: [],
     headers: [
       {
         text: "Truck Factor", // avatar
-        value: "truckFactor"
+        value: "truckFactor",
       },
-      { text: "Name (email)", value: "name" }
+      { text: "Name (email)", value: "name" },
       // { text: "NLOC", value: "numLoc" }
-    ]
+    ],
   }),
   methods: {
     tween(propName) {
@@ -472,15 +472,15 @@ export default {
         }
       }
       new TWEEN.Tween({
-        tweeningValue: 0
+        tweeningValue: 0,
       })
         .to(
           {
-            tweeningValue: vm.project[propName]
+            tweeningValue: vm.project[propName],
           },
           1000
         )
-        .onUpdate(function() {
+        .onUpdate(function () {
           vm.project[propName] = this.tweeningValue.toFixed(0);
         })
         .start();
@@ -502,23 +502,23 @@ export default {
         directory: "",
         localRepository: this.project.localRepository,
         remoteRepository: this.project.remoteRepository,
-        zoomPath: nodeData === null ? "Project/" : nodeData.descrition + "/"
+        zoomPath: nodeData === null ? "Root" : nodeData.descrition,
       };
 
       if (nodeData !== null) this.updateHistory(nodeData);
 
       getExploreProject(filter)
         .then(
-          response => {
+          (response) => {
             this.setExplore(response.data);
             window.getApp.$emit("STOP_LOADING");
           },
-          error => {
+          (error) => {
             alert("Erro: " + error);
             window.getApp.$emit("STOP_LOADING");
           }
         )
-        .catch(function(error) {
+        .catch(function (error) {
           window.getApp.$emit("STOP_LOADING");
         });
     },
@@ -527,7 +527,7 @@ export default {
       let newHistory = [];
       let exist = false;
 
-      this.history.paths.forEach(item => {
+      this.history.paths.forEach((item) => {
         if (item.descrition === nodeData.descrition) {
           exist = true;
         }
@@ -554,13 +554,16 @@ export default {
             fontWeight: "bold",
             backgroundColor: "#ffffff",
             formatter:
-              explore.linkList[i].loc + " (" + explore.linkList[i].commits + ")"
-          }
+              explore.linkList[i].loc +
+              " (" +
+              explore.linkList[i].commits +
+              ")",
+          },
         };
         explore.linkList[i].lineStyle = {
           normal: {
-            color: explore.linkList[i].color
-          }
+            color: explore.linkList[i].color,
+          },
         };
       }
 
@@ -568,17 +571,17 @@ export default {
         explore.nodeList[j].value = explore.nodeList[j].numLoc;
         explore.nodeList[j].itemStyle = {
           normal: {
-            color: explore.nodeList[j].color
-          }
+            color: explore.nodeList[j].color,
+          },
         };
       }
 
       this.explore = getExplore(explore.nodeList, explore.linkList);
-    }
+    },
   },
   created() {
     let that = this;
-    window.getApp.$on("UPDATE_PROJECT", updated => {
+    window.getApp.$on("UPDATE_PROJECT", (updated) => {
       if (updated.componentSubType && updated.componentSubType === "graph") {
         if (
           updated.data.nodeType === "Folder" ||
@@ -590,7 +593,7 @@ export default {
         that.setProject(updated);
       }
     });
-    window.getApp.$on("APP_LEVEL_CHANGE", index => {
+    window.getApp.$on("APP_LEVEL_CHANGE", (index) => {
       if (index + 1 === this.history.paths.length) return;
       if (index === "init") {
         that.buildExplore(null);
@@ -602,13 +605,13 @@ export default {
     });
   },
   watch: {
-    perspective: function(val) {
+    perspective: function (val) {
       if (val === "Explore") {
         this.history.paths = [];
         this.buildExplore(null);
       }
-    }
-  }
+    },
+  },
 
   //   Recomendações
 

@@ -1,8 +1,9 @@
 #!/bin/bash
 
 path=$1
-currentpath=${PWD}
-clear
+truckfactorFolderPath=$2
+#${PWD}
+#clear
 now=$(date)
 echo -e $now: BEGIN git log extraction: $path \\n 
 
@@ -14,14 +15,14 @@ git config diff.renameLimit 999999
 git log --pretty=format:"%H-;-%aN-;-%aE-;-%at-;-%cN-;-%cE-;-%ct-;-%f"  > commitinfo.log
 
 #Extract and format commit files information
-git log --name-status --pretty=format:"commit	%H" --find-renames > log.log
-awk -F$'\t' -f $currentpath/log.awk log.log > commitfileinfo.log
+git log --name-status --pretty=format:"commit	%H" --find-renames > $path/log.log
+#awk -F$'\t' -f $truckfactorFolderPath/log.awk $path/log.log > $path/commitfileinfo.log
 
 #Get current file list
 git ls-files > filelist.log
 
 #Remove temp file
-rm log.log
+#rm log.log
 
 git config --unset diff.renameLimit
 

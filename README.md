@@ -45,3 +45,13 @@ Criar pasta
 | `mvn clean install` | Executar no diretório `raiz` para atualizar dependências dos módulos frontend e backend |
 | `npm run build` | Executar no diretório `frontend` para compilar o módulo Vue.js e enviá-lo para o projeto backend |
 | `mvn --projects backend spring-boot:run` | Executar no diretório `raiz` para executar a aplicação em http://localhost:8088/ |
+
+
+
+#### Docker
+
+| Command | Description |
+| ------- | ----------- |
+| `docker build . --tag dev-tracker:latest` | Construir container |
+| `docker run -d -p 8080:8080 --name dta dev-tracker` | Executar container |
+| `docker exec -it dta bash` | Entrar no terminal do container |
