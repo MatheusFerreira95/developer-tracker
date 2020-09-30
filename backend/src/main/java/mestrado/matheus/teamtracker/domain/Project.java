@@ -300,8 +300,7 @@ public class Project {
 
 			if(filter.user != null && !filter.user.isEmpty() && filter.password != null && !filter.password.isEmpty()) {
 
-				// return Git.clone("https://" + filter.user + ":" + filter.password + "@" filter.remoteRepository.substring(8));
-				return null;
+				return Git.clone("https://" + filter.user + ":" + filter.password + "@" + filter.remoteRepository.substring(8));
 			}
 
 			return Git.clone(filter.remoteRepository);

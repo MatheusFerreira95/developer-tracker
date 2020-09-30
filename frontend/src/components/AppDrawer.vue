@@ -22,9 +22,7 @@
         <!-- campo de busca -->
         <v-flex sm12>
           <v-card>
-            <div class="v-subheader theme--light primary--text">
-              {{ nameProject }}
-            </div>
+            <div class="v-subheader theme--light primary--text">{{ nameProject }}</div>
             <v-text-field
               flat
               solo
@@ -46,10 +44,10 @@
             <v-text-field
               flat
               solo
-              prepend-inner-icon="password"
+              prepend-inner-icon="vpn_key"
               placeholder="Enter password..."
               hide-details
-              type="vpn_key"
+              type="password"
               @keyup.enter="getProjectInformations"
               v-model="filter.password"
             ></v-text-field>
