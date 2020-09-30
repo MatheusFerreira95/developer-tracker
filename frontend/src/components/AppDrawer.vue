@@ -22,7 +22,9 @@
         <!-- campo de busca -->
         <v-flex sm12>
           <v-card>
-            <div class="v-subheader theme--light primary--text">{{nameProject}}</div>
+            <div class="v-subheader theme--light primary--text">
+              {{ nameProject }}
+            </div>
             <v-text-field
               flat
               solo
@@ -31,6 +33,25 @@
               hide-details
               @keyup.enter="getProjectInformations"
               v-model="filter.remoteRepository"
+            ></v-text-field>
+            <v-text-field
+              flat
+              solo
+              prepend-inner-icon="person"
+              placeholder="Enter username..."
+              hide-details
+              @keyup.enter="getProjectInformations"
+              v-model="filter.user"
+            ></v-text-field>
+            <v-text-field
+              flat
+              solo
+              prepend-inner-icon="password"
+              placeholder="Enter password..."
+              hide-details
+              type="vpn_key"
+              @keyup.enter="getProjectInformations"
+              v-model="filter.password"
             ></v-text-field>
           </v-card>
         </v-flex>
@@ -54,8 +75,8 @@ export default {
   props: {
     expanded: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data: () => ({
     mini: false,
@@ -66,6 +87,8 @@ export default {
       localRepository: "",
       zoomPath: "./",
       directory: "",
+      user: "",
+      password: "",
     },
     project: {
       numLoc: 0,
@@ -75,8 +98,8 @@ export default {
       LastCommit: "",
       numLocProgrammingLanguageList: [],
       developerList: [],
-      localRepository: ""
-    }
+      localRepository: "",
+    },
   }),
   created() {
     window.getApp.$on("APP_DRAWER_TOGGLED", () => {
@@ -92,7 +115,7 @@ export default {
 
       getProject(this.filter)
         .then(
-          response => {
+          (response) => {
             this.project = response.data;
             this.filter.localRepository = this.project.localRepository;
             this.updateNameRepository();
@@ -100,12 +123,12 @@ export default {
             window.getApp.$emit("UPDATE_PROJECT", this.project);
             window.getApp.$emit("STOP_LOADING");
           },
-          error => {
+          (error) => {
             alert("Erro: " + error);
             window.getApp.$emit("STOP_LOADING");
           }
         )
-        .catch(function(error) {
+        .catch(function (error) {
           window.getApp.$emit("STOP_LOADING");
         });
     },
@@ -116,16 +139,15 @@ export default {
         this.filter.remoteRepository.lastIndexOf(".git")
       );
       if (!this.nameProject) this.nameProject = "Repository";
-    }
+    },
   },
   watch: {
-    "filter.remoteRepository": function(value) {
+    "filter.remoteRepository": function (value) {
       this.filter.localRepository = "";
-    }
-  }
+    },
+  },
 };
 </script>
-
 
 <style lang="stylus">
 #appDrawer {

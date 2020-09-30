@@ -6,5 +6,7 @@ public class Filter {
 	public String localRepository;
 	public String directory;
 	public String zoomPath = "./";
+	public String user;
+	public String password;
 
 }

@@ -28,6 +28,8 @@ public class Git {
 
 			project = new Project(getLocalRepository(remoteRepository));
 
+			runCommand(project, "git config --global credential.helper store");
+
 			runCommand(project, "git clone " + remoteRepository);
 
 			project.localRepository = project.localRepository += "/" + project.localRepository
@@ -55,7 +57,7 @@ public class Git {
 		commands.add("/bin/sh");
 		commands.add("-c");
 		commands.add(command);
-		System.out.println(command);
+		System.out.println("run......................................." + command);
 
 		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
 		Process p = pb.start();
@@ -100,9 +102,12 @@ public class Git {
 		List<String> commands = new ArrayList<String>();
 		commands.add("/bin/sh");
 		commands.add("-c");
-		commands.add("sh commit_log_script.sh " + project.localRepository + " " + pathTF);
+		String commandTF = "git config diff.renameLimit 999999 && git log --pretty=format:\"%H-;-%aN-;-%aE-;-%at-;-%cN-;-%cE-;-%ct-;-%f\"  > commitinfo.log && git log --name-status --pretty=format:\"commit	%H\" --find-renames > log.log && git ls-files > filelist.log && git config --unset diff.renameLimit";
+		
+		commands.add(commandTF);
+	    System.out.println("Run TruckFactor 1 (on " + project.localRepository + ")................................." + commandTF);
 
-		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
+		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
 		Process p = pb.start();
 
 		StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR", gitOutput);
@@ -125,7 +130,9 @@ public class Git {
 		commands = new ArrayList<String>();
 		commands.add("/bin/sh");
 		commands.add("-c");
-		commands.add("java -jar gittruckfactor.jar " + project.localRepository + " " + pathTF);
+		commandTF = "java -jar gittruckfactor.jar " + project.localRepository + " " + pathTF;
+		commands.add(commandTF);
+	    System.out.println("Run TruckFactor 2................................." + commandTF);
 
 		pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
 		p = pb.start();
