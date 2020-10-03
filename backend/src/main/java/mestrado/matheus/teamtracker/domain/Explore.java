@@ -54,7 +54,7 @@ public class Explore {
 					if (!explore.nodeList.contains(node))
 						explore.nodeList.add(node);
 
-					calcLinks(project, explore, node, filePath);
+					calcLinks(project, explore, node, filePath, filter.devTFList);
 
 				}
 			}
@@ -68,10 +68,10 @@ public class Explore {
 		return explore;
 	}
 
-	private static void calcLinks(Project project, Explore explore, NodeExplore node, String filePath) {
+	private static void calcLinks(Project project, Explore explore, NodeExplore node, String filePath, List<Developer> devTFList) {
 
 		try {
-			project.calcDeveloperList(filePath);
+			project.calcDeveloperList(filePath, devTFList);
 
 			for (Developer developer : project.developerList) {
 

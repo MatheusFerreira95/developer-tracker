@@ -433,6 +433,7 @@ export default {
   },
   data: () => ({
     perspective: "Overview",
+    devTFList: [],
     util: Util,
     history: {
       paths: [],
@@ -492,6 +493,11 @@ export default {
       this.pie.dataset.source = this.project.numLocProgrammingLanguageList;
       this.optionsChartProgrammingLanguage = { ...pie };
 
+      this.devTFList = []
+      this.project.developerList.forEach(developer => {
+        this.devTFList.push(developer)
+      });
+
       this.tween("numCommits");
       this.tween("numLoc");
     },
@@ -503,6 +509,7 @@ export default {
         localRepository: this.project.localRepository,
         remoteRepository: this.project.remoteRepository,
         zoomPath: nodeData === null ? "Root" : nodeData.descrition,
+        devTFList: this.devTFList
       };
 
       if (nodeData !== null) this.updateHistory(nodeData);

@@ -54,7 +54,7 @@ public class Project {
 
 	}
 
-	public void calcDeveloperList(String filterPath) throws IOException, InterruptedException {
+	public void calcDeveloperList(String filterPath, List<Developer> devTFList) throws IOException, InterruptedException {
 
 		filterPath = filterPath == null ? "" : filterPath;
 
@@ -100,7 +100,14 @@ public class Project {
 			}
 		}
 
-		calcTruckFactor();
+		for (Developer dev : developerList) {
+			for (Developer devTF : devTFList) {
+			if(dev.equals(devTF) && devTF.truckFactor) {
+				dev.truckFactor = true;
+			}
+				
+			}
+		}
 
 		calcCommitsDeveloperList(filterPath);
 	}
