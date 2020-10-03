@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.io.UnsupportedEncodingException;
 
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
@@ -307,7 +310,7 @@ public class Project {
 
 			if(filter.user != null && !filter.user.isEmpty() && filter.password != null && !filter.password.isEmpty()) {
 
-				return Git.clone("https://" + filter.user + ":" + filter.password + "@" + filter.remoteRepository.substring(8));
+				return Git.clone("https://" + encodeValue(filter.user) + ":" + encodeValue(filter.password) + "@" + filter.remoteRepository.substring(8));
 			}
 
 			return Git.clone(filter.remoteRepository);
@@ -317,4 +320,12 @@ public class Project {
 			throw new RuntimeException();
 		}
 	}
+
+	private static String encodeValue(String value) {
+        try {
+            return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
+        } catch (UnsupportedEncodingException ex) {
+            throw new RuntimeException(ex.getCause());
+        }
+    }
 }
