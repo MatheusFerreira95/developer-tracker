@@ -22,7 +22,9 @@
         <!-- campo de busca -->
         <v-flex sm12>
           <v-card>
-            <div class="v-subheader theme--light primary--text">{{ nameProject }}</div>
+            <div class="v-subheader theme--light primary--text">
+              {{ nameProject }}
+            </div>
             <v-text-field
               flat
               solo
@@ -50,6 +52,25 @@
               type="password"
               @keyup.enter="getProjectInformations"
               v-model="filter.password"
+            ></v-text-field>
+            <v-text-field
+              flat
+              solo
+              prepend-inner-icon="input"
+              placeholder="v1: tag, branch or commit..."
+              hide-details
+              @keyup.enter="getProjectInformations"
+              v-model="filter.checkout1"
+            ></v-text-field>
+
+            <v-text-field
+              flat
+              solo
+              prepend-inner-icon="input"
+              placeholder="v2: tag, branch or commit..."
+              hide-details
+              @keyup.enter="getProjectInformations"
+              v-model="filter.checkout2"
             ></v-text-field>
           </v-card>
         </v-flex>
@@ -87,6 +108,8 @@ export default {
       directory: "",
       user: "",
       password: "",
+      checkout1: "",
+      checkout2: "",
     },
     project: {
       numLoc: 0,
@@ -114,11 +137,12 @@ export default {
       getProject(this.filter)
         .then(
           (response) => {
-            this.project = response.data;
-            this.filter.localRepository = this.project.localRepository;
+            this.projectVersion1 = response.data.projectVersion1;
+            this.filter.localRepository = this.projectVersion1.localRepository;
             this.updateNameRepository();
 
-            window.getApp.$emit("UPDATE_PROJECT", this.project);
+            window.getApp.$emit("UPDATE_PROJECT", this.projectVersion1); //colocar data aqui hehe
+            // voltar perspectiva pra project para evitar bugs hehe extra
             window.getApp.$emit("STOP_LOADING");
           },
           (error) => {

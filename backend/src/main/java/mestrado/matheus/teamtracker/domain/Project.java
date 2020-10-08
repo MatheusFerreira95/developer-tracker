@@ -20,18 +20,20 @@ public class Project {
 	public String firstCommit;
 	public String lastCommit;
 	public String localRepository;
+	public String checkout;
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList = new ArrayList<NumLocProgrammingLanguage>();
 	public List<Developer> developerList = new ArrayList<Developer>();
 	public Integer truckFactor = 0;
 
-	public Project(String localRepository) {
+	public Project(String localRepository, String checkout) {
 
 		this.localRepository = localRepository;
+		this.checkout = checkout != null && !checkout.isEmpty() ? checkout : "master";
 	}
 
 	public void calcNumCommits() throws IOException, InterruptedException {
 
-		GitOutput gitOutput = Git.runCommand(this, "git rev-list --all --count");
+		GitOutput gitOutput = Git.runCommand(this, "git rev-list --count HEAD");
 		this.numCommits = Integer.parseInt(gitOutput.outputList.get(0));
 	}
 
@@ -286,9 +288,9 @@ public class Project {
 
 	}
 
-	public static Project buildOverview(Filter filter) throws IOException, InterruptedException {
+	public static Project buildOverview(Filter filter, String checkout) throws IOException, InterruptedException {
 
-		Project project = Project.builderProject(filter);
+		Project project = Project.builderProject(filter, checkout);
 
 		project.calcNumCommits();
 //		project.calcNumLoc();
@@ -300,20 +302,24 @@ public class Project {
 
 	}
 
-	static Project builderProject(Filter filter) {
+	public static Project builderProject(Filter filter, String checkout) {
 
 		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
 
-			return new Project(filter.localRepository);
+			Project project = new Project(filter.localRepository, checkout);
+			
+			Git.runCheckout(project);
+			
+			return project;
 
 		} else if (filter.remoteRepository != null && !filter.remoteRepository.isEmpty()) {
 
 			if(filter.user != null && !filter.user.isEmpty() && filter.password != null && !filter.password.isEmpty()) {
 
-				return Git.clone("https://" + encodeValue(filter.user) + ":" + encodeValue(filter.password) + "@" + filter.remoteRepository.substring(8));
+				return Git.clone("https://" + encodeValue(filter.user) + ":" + encodeValue(filter.password) + "@" + filter.remoteRepository.substring(8), checkout);
 			}
 
-			return Git.clone(filter.remoteRepository);
+			return Git.clone(filter.remoteRepository, checkout);
 
 		} else {
 

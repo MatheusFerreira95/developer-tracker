@@ -15,9 +15,7 @@ public class Explore {
 	public List<NodeExplore> nodeList = new ArrayList<NodeExplore>();
 	public List<LinkExplore> linkList = new ArrayList<LinkExplore>();
 
-	public static Explore build(Filter filter) throws IOException, InterruptedException {
-
-		Project project = Project.builderProject(filter);
+	public static Explore build(Filter filter, Project project) throws IOException, InterruptedException {
 
 		if (isZoomLevelProject(filter)) {
 

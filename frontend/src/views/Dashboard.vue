@@ -97,7 +97,7 @@
                 <v-divider class="white"></v-divider>
                 <v-chip color="lightblue" text-color="gray">
                   <v-icon color="gray">local_shipping</v-icon>
-                  &nbsp;&nbsp;&nbsp;Truck Factor: {{project.truckFactor}}
+                  &nbsp;&nbsp;&nbsp;Truck Factor: {{ project.truckFactor }}
                 </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
@@ -115,11 +115,16 @@
                       <tr>
                         <td class="avatar-developer">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
-                          <v-icon v-if="props.item.truckFactor" right color="gray">local_shipping</v-icon>
+                          <v-icon
+                            v-if="props.item.truckFactor"
+                            right
+                            color="gray"
+                            >local_shipping</v-icon
+                          >
                         </td>
-                        <td
-                          class="text-xs-left"
-                        >{{ props.item.name + " (" + props.item.email + ")"}}</td>
+                        <td class="text-xs-left">
+                          {{ props.item.name + " (" + props.item.email + ")" }}
+                        </td>
                         <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
                       </tr>
                     </template>
@@ -154,7 +159,7 @@
     <!-- 1. Recomendation commit and loc -->
     <div
       class="text-center"
-      style="float:right"
+      style="float: right"
       v-if="perspective === 'Overview' && project.developerList.length > 0"
     >
       <v-menu open-on-hover left offset-x>
@@ -164,8 +169,9 @@
             v-on="on"
             color="orange"
             class="fa-blink"
-            style="position: absolute; top: 150px; font-size:25px; right: 2px;"
-          >assistant</v-icon>
+            style="position: absolute; top: 150px; font-size: 25px; right: 2px"
+            >assistant</v-icon
+          >
         </template>
 
         <v-card>
@@ -178,17 +184,31 @@
           <v-card-text class="pa-0">
             <template>
               <span>
-                <br />&nbsp;Use to understand the dimension of the project. It serves as a parameter to analyze the connections between developers and artifacts. &nbsp;
+                <br />&nbsp;Use to understand the dimension of the project. It
+                serves as a parameter to analyze the connections between
+                developers and artifacts. &nbsp;
                 <br />
               </span>
 
               <span>
                 <br />
-                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of
+                developers distorting their work to fit the metrics):
                 <br />
-                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <span
+                  >&nbsp;- When observing LOC (project and developers), consider
+                  that the team must follow the appropriate code standards of
+                  the programming language (e.g. placement of "{}"). Also
+                  consider defining a code review process, so that other
+                  developers can evaluate the solutions implemented by a team
+                  member, avoiding inappropriate or excessive LOC
+                  solutions.</span
+                >
                 <br />
-                <span>&nbsp;- When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible).</span>
+                <span
+                  >&nbsp;- When observing commmits, consider that the team must
+                  follow a commits pattern (e.g. as atomic as possible).</span
+                >
                 <br />
               </span>
             </template>
@@ -200,7 +220,7 @@
     <!-- 2. Recomendation programmimg lang -->
     <div
       class="text-center"
-      style="float:left"
+      style="float: left"
       v-if="perspective === 'Overview' && project.developerList.length > 0"
     >
       <v-menu open-on-hover left offset-x>
@@ -210,8 +230,9 @@
             v-on="on"
             color="orange"
             class="fa-blink"
-            style="position: absolute; top: 350px; font-size:25px; left: -5px;"
-          >assistant</v-icon>
+            style="position: absolute; top: 350px; font-size: 25px; left: -5px"
+            >assistant</v-icon
+          >
         </template>
 
         <v-card>
@@ -224,15 +245,27 @@
           <v-card-text class="pa-0">
             <template>
               <span>
-                <br />&nbsp;Use to understand the demand for technology in the project. Consider the different characteristics of programming languages ​​when analyzing this, some languages ​​may require more LOC due to their characteristics. &nbsp;
+                <br />&nbsp;Use to understand the demand for technology in the
+                project. Consider the different characteristics of programming
+                languages ​​when analyzing this, some languages ​​may require
+                more LOC due to their characteristics. &nbsp;
                 <br />
               </span>
 
               <span>
                 <br />
-                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of
+                developers distorting their work to fit the metrics):
                 <br />
-                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <span
+                  >&nbsp;- When observing LOC (project and developers), consider
+                  that the team must follow the appropriate code standards of
+                  the programming language (e.g. placement of "{}"). Also
+                  consider defining a code review process, so that other
+                  developers can evaluate the solutions implemented by a team
+                  member, avoiding inappropriate or excessive LOC
+                  solutions.</span
+                >
                 <br />
               </span>
             </template>
@@ -244,7 +277,7 @@
     <!-- 3. Recomendation Project Truck Factor -->
     <div
       class="text-center"
-      style="float:right"
+      style="float: right"
       v-if="perspective === 'Overview' && project.developerList.length > 0"
     >
       <v-menu open-on-hover left offset-x>
@@ -254,8 +287,9 @@
             v-on="on"
             color="orange"
             class="fa-blink"
-            style="position: absolute; top: 350px; font-size:25px; right: 2px;"
-          >assistant</v-icon>
+            style="position: absolute; top: 350px; font-size: 25px; right: 2px"
+            >assistant</v-icon
+          >
         </template>
 
         <v-card>
@@ -268,7 +302,14 @@
           <v-card-text class="pa-0">
             <template>
               <span>
-                <br />&nbsp;The Truck Factor is calculated based on the degree of authorship of the developers in the project files. Consider that Truck Factor developers can concentrate knowledge on more than half of the project's files. The lower the value of the Truck Factor, the greater the concentration of knowledge. To mitigate the concentration of knowledge, consider including practices such as pair programming and running people in the source code. &nbsp;
+                <br />&nbsp;The Truck Factor is calculated based on the degree
+                of authorship of the developers in the project files. Consider
+                that Truck Factor developers can concentrate knowledge on more
+                than half of the project's files. The lower the value of the
+                Truck Factor, the greater the concentration of knowledge. To
+                mitigate the concentration of knowledge, consider including
+                practices such as pair programming and running people in the
+                source code. &nbsp;
                 <br />
               </span>
             </template>
@@ -280,7 +321,7 @@
     <!-- 4. Recomendations developers -->
     <div
       class="text-center"
-      style="float:left"
+      style="float: left"
       v-if="perspective === 'Explore' && project.developerList.length > 0"
     >
       <v-menu open-on-hover right offset-y>
@@ -290,8 +331,9 @@
             v-on="on"
             color="orange"
             class="fa-blink"
-            style="position: absolute; top: 250px; font-size:25px; left: -5px;"
-          >assistant</v-icon>
+            style="position: absolute; top: 250px; font-size: 25px; left: -5px"
+            >assistant</v-icon
+          >
         </template>
 
         <v-card>
@@ -304,7 +346,11 @@
           <v-card-text class="pa-0">
             <template>
               <span>
-                <br />&nbsp;They are team members who can have a high degree of authorship and knowledge about the project version. Note in which regions of the source code practices such as practices such as pair programming and running people can be applied to distribute the concentration of knowledge. &nbsp;
+                <br />&nbsp;They are team members who can have a high degree of
+                authorship and knowledge about the project version. Note in
+                which regions of the source code practices such as practices
+                such as pair programming and running people can be applied to
+                distribute the concentration of knowledge. &nbsp;
                 <br />
               </span>
             </template>
@@ -316,7 +362,7 @@
     <!-- 5. Recomendations developers -->
     <div
       class="text-center"
-      style="float:right"
+      style="float: right"
       v-if="perspective === 'Explore' && project.developerList.length > 0"
     >
       <v-menu open-on-hover right offset-y>
@@ -326,8 +372,9 @@
             v-on="on"
             color="orange"
             class="fa-blink"
-            style="position: absolute; top: 325px; font-size:25px; left: -5px;"
-          >assistant</v-icon>
+            style="position: absolute; top: 325px; font-size: 25px; left: -5px"
+            >assistant</v-icon
+          >
         </template>
 
         <v-card>
@@ -340,17 +387,33 @@
           <v-card-text class="pa-0">
             <template>
               <span>
-                <br />&nbsp;This can indicate how much the developer has worked on a particular artifact. It may be possible to identify, for example, if that developer is concentrating knowledge of a certain region of the code or if he works with only a certain programming language. &nbsp;
+                <br />&nbsp;This can indicate how much the developer has worked
+                on a particular artifact. It may be possible to identify, for
+                example, if that developer is concentrating knowledge of a
+                certain region of the code or if he works with only a certain
+                programming language. &nbsp;
                 <br />
               </span>
 
               <span>
                 <br />
-                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of
+                developers distorting their work to fit the metrics):
                 <br />
-                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <span
+                  >&nbsp;- When observing LOC (project and developers), consider
+                  that the team must follow the appropriate code standards of
+                  the programming language (e.g. placement of "{}"). Also
+                  consider defining a code review process, so that other
+                  developers can evaluate the solutions implemented by a team
+                  member, avoiding inappropriate or excessive LOC
+                  solutions.</span
+                >
                 <br />
-                <span>&nbsp;- When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible).</span>
+                <span
+                  >&nbsp;- When observing commmits, consider that the team must
+                  follow a commits pattern (e.g. as atomic as possible).</span
+                >
                 <br />
               </span>
             </template>
@@ -361,7 +424,7 @@
     <!-- 6. recomendations developers -->
     <div
       class="text-center"
-      style="float:left"
+      style="float: left"
       v-if="perspective === 'Explore' && project.developerList.length > 0"
     >
       <v-menu open-on-hover right offset-y>
@@ -371,8 +434,9 @@
             v-on="on"
             color="orange"
             class="fa-blink"
-            style="position: absolute; top: 400px; font-size:25px; left: -5px;"
-          >assistant</v-icon>
+            style="position: absolute; top: 400px; font-size: 25px; left: -5px"
+            >assistant</v-icon
+          >
         </template>
 
         <v-card>
@@ -385,17 +449,32 @@
           <v-card-text class="pa-0">
             <template>
               <span>
-                <br />&nbsp;This can indicate how hard the developers worked on a particular artifact. It may be possible, for example, to identify the distribution of knowledge in the artifact and the demand for change. &nbsp;
+                <br />&nbsp;This can indicate how hard the developers worked on
+                a particular artifact. It may be possible, for example, to
+                identify the distribution of knowledge in the artifact and the
+                demand for change. &nbsp;
                 <br />
               </span>
 
               <span>
                 <br />
-                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of developers distorting their work to fit the metrics):
+                <b>&nbsp; Other notes</b> (This helps to mitigate the risk of
+                developers distorting their work to fit the metrics):
                 <br />
-                <span>&nbsp;- When observing LOC (project and developers), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of "{}"). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions.</span>
+                <span
+                  >&nbsp;- When observing LOC (project and developers), consider
+                  that the team must follow the appropriate code standards of
+                  the programming language (e.g. placement of "{}"). Also
+                  consider defining a code review process, so that other
+                  developers can evaluate the solutions implemented by a team
+                  member, avoiding inappropriate or excessive LOC
+                  solutions.</span
+                >
                 <br />
-                <span>&nbsp;- When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible).</span>
+                <span
+                  >&nbsp;- When observing commmits, consider that the team must
+                  follow a commits pattern (e.g. as atomic as possible).</span
+                >
                 <br />
               </span>
             </template>
@@ -492,10 +571,10 @@ export default {
       this.pie.dataset = {};
       this.pie.dataset.source = this.project.numLocProgrammingLanguageList;
       this.optionsChartProgrammingLanguage = { ...pie };
-
-      this.devTFList = []
-      this.project.developerList.forEach(developer => {
-        this.devTFList.push(developer)
+      //aqui precisa mudar pra ter duas devlisttf hehe
+      this.devTFList = [];
+      this.project.developerList.forEach((developer) => {
+        this.devTFList.push(developer);
       });
 
       this.tween("numCommits");
@@ -509,11 +588,13 @@ export default {
         localRepository: this.project.localRepository,
         remoteRepository: this.project.remoteRepository,
         zoomPath: nodeData === null ? "Root" : nodeData.descrition,
-        devTFList: this.devTFList
+        checkout1: this.project.checkout,
+        checkout2: this.project.checkout, // mudar essas duas linhas para pegar o checkout de cada project do projectversions
+        devTFList: this.devTFList,
       };
 
       if (nodeData !== null) this.updateHistory(nodeData);
-
+      // aqui precisa mudar o retorno pra trazer as duas versoes hehe
       getExploreProject(filter)
         .then(
           (response) => {

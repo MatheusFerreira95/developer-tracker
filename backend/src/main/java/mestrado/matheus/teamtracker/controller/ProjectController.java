@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import mestrado.matheus.teamtracker.domain.Explore;
 import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
+import mestrado.matheus.teamtracker.domain.ProjectVersions;
 
 @RestController()
 @RequestMapping("/api/project")
@@ -24,11 +25,19 @@ public class ProjectController {
 	 **/
 	@RequestMapping(path = "", method = RequestMethod.POST)
 	@CrossOrigin(origins = "http://localhost:8081")
-	public @ResponseBody Project getProjectOverview(@RequestBody Filter filter) {
+	public @ResponseBody ProjectVersions getProjectOverview(@RequestBody Filter filter) {
 
 		try {
 
-			return Project.buildOverview(filter);
+			Project projectVersion1 = Project.buildOverview(filter, filter.checkout1);
+
+			Project projectVersion2 = null;
+			if(filter.checkout2 != null && !filter.checkout2.isEmpty()){
+				
+				projectVersion2 = Project.buildOverview(filter, filter.checkout2);
+			}
+			
+			return new ProjectVersions(projectVersion1, projectVersion2);
 
 		} catch (IOException e) {
 
@@ -52,8 +61,10 @@ public class ProjectController {
 	public @ResponseBody Explore getExploreProject(@RequestBody Filter filter) {
 
 		try {
-
-			return Explore.build(filter);
+			
+			Project project = Project.builderProject(filter, filter.checkout1);
+			
+			return Explore.build(filter, project);
 
 		} catch (IOException e) {
 

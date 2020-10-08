@@ -20,13 +20,13 @@ import mestrado.matheus.teamtracker.domain.Project;
 
 public class Git {
 
-	public static Project clone(String remoteRepository) {
+	public static Project clone(String remoteRepository, String checkout) {
 
 		Project project = null;
 
 		try {
 
-			project = new Project(getLocalRepository(remoteRepository));
+			project = new Project(getLocalRepository(remoteRepository), checkout);
 
 			runCommand(project, "git config --global credential.helper store");
 
@@ -34,6 +34,8 @@ public class Git {
 
 			project.localRepository = project.localRepository += "/" + project.localRepository
 					.substring(project.localRepository.lastIndexOf("/") + 1, project.localRepository.lastIndexOf("-"));
+
+			runCheckout(project);
 
 		} catch (IOException e) {
 
@@ -103,9 +105,10 @@ public class Git {
 		commands.add("/bin/sh");
 		commands.add("-c");
 		String commandTF = "git config diff.renameLimit 999999 && git log --pretty=format:\"%H-;-%aN-;-%aE-;-%at-;-%cN-;-%cE-;-%ct-;-%f\"  > commitinfo.log && git log --name-status --pretty=format:\"commit	%H\" --find-renames > log.log && git ls-files > filelist.log && git config --unset diff.renameLimit";
-		
+
 		commands.add(commandTF);
-	    System.out.println("Run TruckFactor 1 (on " + project.localRepository + ")................................." + commandTF);
+		System.out.println(
+				"Run TruckFactor 1 (on " + project.localRepository + ")................................." + commandTF);
 
 		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
 		Process p = pb.start();
@@ -132,7 +135,7 @@ public class Git {
 		commands.add("-c");
 		commandTF = "java -jar gittruckfactor.jar " + project.localRepository + " " + pathTF;
 		commands.add(commandTF);
-	    System.out.println("Run TruckFactor 2................................." + commandTF);
+		System.out.println("Run TruckFactor 2................................." + commandTF);
 
 		pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
 		p = pb.start();
@@ -262,5 +265,26 @@ public class Git {
 				ioe.printStackTrace();
 			}
 		}
+	}
+
+	public static void runCheckout(Project project) {
+
+		try {
+
+			GitOutput testCheckout = runCommand(project, "git checkout " + project.checkout);
+
+			if (testCheckout.errorList.size() > 0) {
+				System.err.println("------------------------------ checkout error");
+				for (String error : testCheckout.errorList) {
+					System.out.println("....................: " + error);
+				}
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 	}
 }

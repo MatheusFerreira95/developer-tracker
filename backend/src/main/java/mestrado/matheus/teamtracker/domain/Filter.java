@@ -11,6 +11,8 @@ public class Filter {
 	public String zoomPath = "./";
 	public String user;
 	public String password;
+	public String checkout1;
+	public String checkout2;
 	public List<Developer> devTFList = new ArrayList<Developer>();
 
 }
