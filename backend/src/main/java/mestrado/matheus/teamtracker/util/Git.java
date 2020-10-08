@@ -51,6 +51,23 @@ public class Git {
 
 	public static GitOutput runCommand(Project project, String command) throws IOException, InterruptedException {
 
+		return run(project, command, null);
+	}
+
+	public static GitOutput runCommandReturnExitValue(Project project, String command)
+			throws IOException, InterruptedException {
+
+		Integer exit = 0;
+		GitOutput gitoutput = run(project, command, exit);
+
+		gitoutput.errorList.add("resultError: " + exit);
+
+		return gitoutput;
+	}
+
+	private static GitOutput run(Project project, String command, Integer exitValue)
+			throws IOException, InterruptedException {
+
 		GitOutput gitOutput = new GitOutput();
 
 		validateLocalRepository(project.localRepository);
@@ -74,10 +91,12 @@ public class Git {
 		errorGobbler.join();
 		outputGobbler.join();
 
-		if (exit != 0) {
+		if (exit != 0 && exitValue == null) {
 
 			throw new AssertionError(String.format("runCommand returned %d", exit));
 		}
+
+		exitValue = exit;
 
 		return gitOutput;
 	}
@@ -271,14 +290,17 @@ public class Git {
 
 		try {
 
-			GitOutput testCheckout = runCommand(project, "git checkout " + project.checkout);
+			GitOutput testCheckout = runCommandReturnExitValue(project, "git checkout " + project.checkout);
 
-			if (testCheckout.errorList.size() > 0) {
-				System.err.println("------------------------------ checkout error");
-				for (String error : testCheckout.errorList) {
-					System.out.println("....................: " + error);
-				}
+			if (testCheckout.errorList.get(testCheckout.errorList.size() - 1).equals("resultError: 0")) {
+				System.err.println(".............................checkout error, default checkout used");
 			}
+
+			GitOutput currentVersionInfo1 = runCommand(project, "git log --pretty=format:'%d' -n 1");
+			GitOutput currentVersionInfo2 = runCommand(project, "git log -n 1");
+
+			project.currentVersion = currentVersionInfo1.outputList.get(0).split(",")[0].replace("(", "").replace(")",
+					"") + " - " + currentVersionInfo2.outputList.get(0).split(" ")[1];
 
 		} catch (IOException e) {
 			e.printStackTrace();

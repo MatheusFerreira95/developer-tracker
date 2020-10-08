@@ -24,6 +24,7 @@ public class Project {
 	public List<NumLocProgrammingLanguage> numLocProgrammingLanguageList = new ArrayList<NumLocProgrammingLanguage>();
 	public List<Developer> developerList = new ArrayList<Developer>();
 	public Integer truckFactor = 0;
+	public String currentVersion;
 
 	public Project(String localRepository, String checkout) {
 

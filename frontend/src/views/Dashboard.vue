@@ -29,7 +29,20 @@
         <v-flex sm12>
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab ripple @click="perspective = 'Overview'">Project</v-tab>
+              <v-tab ripple @click="perspective = 'Overview'"
+                >Project<br />
+                <span
+                  style="
+                    font-size: 10px;
+                    text-transform: none;
+                    display: contents;
+                    font-style: italic;
+                    color: gray;
+                  "
+                >
+                  &nbsp {{ project.currentVersion }}
+                </span></v-tab
+              >
               <v-tab ripple @click="perspective = 'Explore'">Developer</v-tab>
             </v-tabs>
           </v-card>
