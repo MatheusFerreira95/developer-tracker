@@ -5,7 +5,7 @@
       <v-layout
         row
         wrap
-        v-if="!project.localRepository"
+        v-if="!projectVersions.projectVersion1.localRepository"
         class="mensagem"
         transition="slide-x-transition"
       >
@@ -15,7 +15,12 @@
               <div class="text-md-center center">
                 <div class="headline">
                   Welcome to the
-                  <strong>Developer Tracker App</strong>,
+                  <strong
+                    >Developer Tracker App
+                    {{
+                      projectVersions.projectVersion1.localRepository
+                    }}</strong
+                  >,
                 </div>
                 <span>Report a project to start tracking!</span>
               </div>
@@ -24,12 +29,19 @@
         </v-flex>
       </v-layout>
 
-      <v-layout row wrap v-if="project.localRepository">
+      <v-layout
+        row
+        wrap
+        v-if="
+          projectVersions.projectVersion1.localRepository &&
+          !projectVersions.projectVersion2.localRepository
+        "
+      >
         <!-- perspectiva -->
         <v-flex sm12>
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab ripple @click="perspective = 'Overview'"
+              <v-tab key="Overview" ripple @click="perspective = 'Overview'"
                 >Project<br />
                 <span
                   style="
@@ -40,10 +52,12 @@
                     color: gray;
                   "
                 >
-                  &nbsp {{ project.currentVersion }}
+                  &nbsp {{ projectVersions.projectVersion1.currentVersion }}
                 </span></v-tab
               >
-              <v-tab ripple @click="perspective = 'Explore'">Developer</v-tab>
+              <v-tab key="Explore" ripple @click="perspective = 'Explore'"
+                >Developer</v-tab
+              >
             </v-tabs>
           </v-card>
         </v-flex>
@@ -54,7 +68,7 @@
           <v-flex lg6 sm6 xs12>
             <mini-statistic
               icon="check"
-              :title="project.numCommits"
+              :title="projectVersions.projectVersion1.numCommits"
               sub-title="Commits"
               color="green"
             ></mini-statistic>
@@ -62,7 +76,7 @@
           <v-flex lg6 sm6 xs12>
             <mini-statistic
               icon="code"
-              :title="project.numLoc"
+              :title="projectVersions.projectVersion1.numLoc"
               sub-title="Lines of code"
               color="red"
             ></mini-statistic>
@@ -71,7 +85,7 @@
             <mini-statistic
               icon="date_range"
               title=" "
-              :sub-title="'First commit: ' + project.firstCommit"
+              :sub-title="'First commit: ' + projectVersions.projectVersion1.firstCommit"
               color="light-blue"
             ></mini-statistic>
           </v-flex>
@@ -79,7 +93,7 @@
             <mini-statistic
               icon="today"
               title=" "
-              :sub-title="'Last commit: ' + project.lastCommit"
+              :sub-title="'Last commit: ' + projectVersions.projectVersion1.lastCommit"
               color="amber"
             ></mini-statistic>
           </v-flex>-->
@@ -89,10 +103,13 @@
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
                 <chart
-                  v-if="project.numLocProgrammingLanguageList.length > 0"
-                  :options="optionsChartProgrammingLanguage"
+                  v-if="
+                    projectVersions.projectVersion1
+                      .numLocProgrammingLanguageList.length > 0
+                  "
+                  :options="optionsChartProgrammingLanguage1"
                   :init-options="initOptions"
-                  ref="pie"
+                  ref="pie1"
                   autoresize
                 />
                 <div v-else>Does not apply to this project</div>
@@ -110,7 +127,8 @@
                 <v-divider class="white"></v-divider>
                 <v-chip color="lightblue" text-color="gray">
                   <v-icon color="gray">local_shipping</v-icon>
-                  &nbsp;&nbsp;&nbsp;Truck Factor: {{ project.truckFactor }}
+                  &nbsp;&nbsp;&nbsp;Truck Factor:
+                  {{ projectVersions.projectVersion1.truckFactor }}
                 </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
@@ -118,7 +136,7 @@
                 <template>
                   <v-data-table
                     :headers="headers"
-                    :items="project.developerList"
+                    :items="projectVersions.projectVersion1.developerList"
                     class="elevation-0"
                     hide-actions
                     item-key="name"
@@ -155,10 +173,315 @@
             <v-widget title content-bg="white" :title2="history">
               <div slot="widget-content">
                 <chart
-                  v-if="explore !== null"
-                  :options="explore"
+                  v-if="explore1 !== null"
+                  :options="explore1"
                   :init-options="initOptions"
-                  ref="explore"
+                  ref="explore1"
+                  autoresize
+                />
+                <div v-else>Does not apply to this project</div>
+              </div>
+            </v-widget>
+          </v-flex>
+        </template>
+      </v-layout>
+
+      <v-layout
+        row
+        wrap
+        v-if="
+          projectVersions.projectVersion1.localRepository &&
+          projectVersions.projectVersion2.localRepository
+        "
+      >
+        <!-- perspectiva 1 -->
+        <v-flex sm12>
+          <v-card>
+            <v-tabs v-model="active" grow slider-color="primary">
+              <v-tab key="Overview" ripple @click="perspective = 'Overview'"
+                >Project<br />
+                <span
+                  style="
+                    font-size: 10px;
+                    text-transform: none;
+                    display: contents;
+                    font-style: italic;
+                    color: gray;
+                  "
+                >
+                  &nbsp {{ projectVersions.projectVersion1.currentVersion }}
+                </span></v-tab
+              >
+              <v-tab key="Explore" ripple @click="perspective = 'Explore'"
+                >Developer</v-tab
+              >
+            </v-tabs>
+          </v-card>
+        </v-flex>
+
+        <!-- Overview 1 -->
+        <template v-if="perspective === 'Overview'">
+          <!-- cartões -->
+          <v-flex lg6 sm6 xs12>
+            <mini-statistic
+              icon="check"
+              :title="projectVersions.projectVersion1.numCommits"
+              sub-title="Commits"
+              color="green"
+            ></mini-statistic>
+          </v-flex>
+          <v-flex lg6 sm6 xs12>
+            <mini-statistic
+              icon="code"
+              :title="projectVersions.projectVersion1.numLoc"
+              sub-title="Lines of code"
+              color="red"
+            ></mini-statistic>
+          </v-flex>
+          <!-- <v-flex lg3 sm6 xs12>
+            <mini-statistic
+              icon="date_range"
+              title=" "
+              :sub-title="'First commit: ' + projectVersions.projectVersion1.firstCommit"
+              color="light-blue"
+            ></mini-statistic>
+          </v-flex>
+          <v-flex lg3 sm6 xs12>
+            <mini-statistic
+              icon="today"
+              title=" "
+              :sub-title="'Last commit: ' + projectVersions.projectVersion1.lastCommit"
+              color="amber"
+            ></mini-statistic>
+          </v-flex>-->
+
+          <!-- Grafico Linguagem de programacao-->
+          <v-flex lg6 sm12 xs12>
+            <v-widget title="Programming Languages" content-bg="white">
+              <div slot="widget-content">
+                <chart
+                  v-if="
+                    projectVersions.projectVersion1
+                      .numLocProgrammingLanguageList.length > 0
+                  "
+                  :options="optionsChartProgrammingLanguage1"
+                  :init-options="initOptions"
+                  ref="pie1"
+                  autoresize
+                />
+                <div v-else>Does not apply to this project</div>
+              </div>
+            </v-widget>
+          </v-flex>
+
+          <!-- desenvolvedores -->
+          <v-flex lg6 sm12 xs12>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>Developers</h4>
+                </v-toolbar-title>
+                <v-divider class="white"></v-divider>
+                <v-chip color="lightblue" text-color="gray">
+                  <v-icon color="gray">local_shipping</v-icon>
+                  &nbsp;&nbsp;&nbsp;Truck Factor:
+                  {{ projectVersions.projectVersion1.truckFactor }}
+                </v-chip>
+              </v-toolbar>
+              <v-divider></v-divider>
+              <v-card-text class="pa-0">
+                <template>
+                  <v-data-table
+                    :headers="headers"
+                    :items="projectVersions.projectVersion1.developerList"
+                    class="elevation-0"
+                    hide-actions
+                    item-key="name"
+                    disable-initial-sort
+                  >
+                    <template slot="items" slot-scope="props">
+                      <tr>
+                        <td class="avatar-developer">
+                          <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
+                          <v-icon
+                            v-if="props.item.truckFactor"
+                            right
+                            color="gray"
+                            >local_shipping</v-icon
+                          >
+                        </td>
+                        <td class="text-xs-left">
+                          {{ props.item.name + " (" + props.item.email + ")" }}
+                        </td>
+                        <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
+                      </tr>
+                    </template>
+                  </v-data-table>
+                </template>
+                <v-divider></v-divider>
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </template>
+
+        <!-- Explore 1 -->
+        <template v-if="perspective === 'Explore'">
+          <v-flex lg12 sm12 xs12>
+            <v-widget title content-bg="white" :title2="history">
+              <div slot="widget-content">
+                <chart
+                  v-if="explore1 !== null"
+                  :options="explore1"
+                  :init-options="initOptions"
+                  ref="explore1"
+                  autoresize
+                />
+                <div v-else>Does not apply to this project</div>
+              </div>
+            </v-widget>
+          </v-flex>
+        </template>
+
+        <!-- perspectiva 2 -->
+        <v-flex sm12>
+          <v-card>
+            <v-tabs v-model="active" grow slider-color="primary">
+              <v-tab key="Overview" ripple @click="perspective = 'Overview'"
+                >Project<br />
+                <span
+                  style="
+                    font-size: 10px;
+                    text-transform: none;
+                    display: contents;
+                    font-style: italic;
+                    color: gray;
+                  "
+                >
+                  &nbsp {{ projectVersions.projectVersion2.currentVersion }}
+                </span></v-tab
+              >
+              <v-tab key="Explore" ripple @click="perspective = 'Explore'"
+                >Developer</v-tab
+              >
+            </v-tabs>
+          </v-card>
+        </v-flex>
+
+        <!-- Overview 2 -->
+        <template v-if="perspective === 'Overview'">
+          <!-- cartões -->
+          <v-flex lg6 sm6 xs12>
+            <mini-statistic
+              icon="check"
+              :title="projectVersions.projectVersion2.numCommits"
+              sub-title="Commits"
+              color="green"
+            ></mini-statistic>
+          </v-flex>
+          <v-flex lg6 sm6 xs12>
+            <mini-statistic
+              icon="code"
+              :title="projectVersions.projectVersion2.numLoc"
+              sub-title="Lines of code"
+              color="red"
+            ></mini-statistic>
+          </v-flex>
+          <!-- <v-flex lg3 sm6 xs12>
+            <mini-statistic
+              icon="date_range"
+              title=" "
+              :sub-title="'First commit: ' + projectVersions.projectVersion2.firstCommit"
+              color="light-blue"
+            ></mini-statistic>
+          </v-flex>
+          <v-flex lg3 sm6 xs12>
+            <mini-statistic
+              icon="today"
+              title=" "
+              :sub-title="'Last commit: ' + projectVersions.projectVersion2.lastCommit"
+              color="amber"
+            ></mini-statistic>
+          </v-flex>-->
+
+          <!-- Grafico Linguagem de programacao-->
+          <v-flex lg6 sm12 xs12>
+            <v-widget title="Programming Languages" content-bg="white">
+              <div slot="widget-content">
+                <chart
+                  v-if="
+                    projectVersions.projectVersion2
+                      .numLocProgrammingLanguageList.length > 0
+                  "
+                  :options="optionsChartProgrammingLanguage2"
+                  :init-options="initOptions"
+                  ref="pie2"
+                  autoresize
+                />
+                <div v-else>Does not apply to this project</div>
+              </div>
+            </v-widget>
+          </v-flex>
+
+          <!-- desenvolvedores -->
+          <v-flex lg6 sm12 xs12>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>Developers</h4>
+                </v-toolbar-title>
+                <v-divider class="white"></v-divider>
+                <v-chip color="lightblue" text-color="gray">
+                  <v-icon color="gray">local_shipping</v-icon>
+                  &nbsp;&nbsp;&nbsp;Truck Factor:
+                  {{ projectVersions.projectVersion2.truckFactor }}
+                </v-chip>
+              </v-toolbar>
+              <v-divider></v-divider>
+              <v-card-text class="pa-0">
+                <template>
+                  <v-data-table
+                    :headers="headers"
+                    :items="projectVersions.projectVersion2.developerList"
+                    class="elevation-0"
+                    hide-actions
+                    item-key="name"
+                    disable-initial-sort
+                  >
+                    <template slot="items" slot-scope="props">
+                      <tr>
+                        <td class="avatar-developer">
+                          <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
+                          <v-icon
+                            v-if="props.item.truckFactor"
+                            right
+                            color="gray"
+                            >local_shipping</v-icon
+                          >
+                        </td>
+                        <td class="text-xs-left">
+                          {{ props.item.name + " (" + props.item.email + ")" }}
+                        </td>
+                        <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
+                      </tr>
+                    </template>
+                  </v-data-table>
+                </template>
+                <v-divider></v-divider>
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </template>
+
+        <!-- Explore 2 -->
+        <template v-if="perspective === 'Explore'">
+          <v-flex lg12 sm12 xs12>
+            <v-widget title content-bg="white" :title2="history">
+              <div slot="widget-content">
+                <chart
+                  v-if="explore2 !== null"
+                  :options="explore2"
+                  :init-options="initOptions"
+                  ref="explore2"
                   autoresize
                 />
                 <div v-else>Does not apply to this project</div>
@@ -173,7 +496,10 @@
     <div
       class="text-center"
       style="float: right"
-      v-if="perspective === 'Overview' && project.developerList.length > 0"
+      v-if="
+        perspective === 'Overview' &&
+        projectVersions.projectVersion1.developerList.length > 0
+      "
     >
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
@@ -234,7 +560,10 @@
     <div
       class="text-center"
       style="float: left"
-      v-if="perspective === 'Overview' && project.developerList.length > 0"
+      v-if="
+        perspective === 'Overview' &&
+        projectVersions.projectVersion1.developerList.length > 0
+      "
     >
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
@@ -291,7 +620,10 @@
     <div
       class="text-center"
       style="float: right"
-      v-if="perspective === 'Overview' && project.developerList.length > 0"
+      v-if="
+        perspective === 'Overview' &&
+        projectVersions.projectVersion1.developerList.length > 0
+      "
     >
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
@@ -335,7 +667,10 @@
     <div
       class="text-center"
       style="float: left"
-      v-if="perspective === 'Explore' && project.developerList.length > 0"
+      v-if="
+        perspective === 'Explore' &&
+        projectVersions.projectVersion1.developerList.length > 0
+      "
     >
       <v-menu open-on-hover right offset-y>
         <template v-slot:activator="{ on }">
@@ -376,7 +711,10 @@
     <div
       class="text-center"
       style="float: right"
-      v-if="perspective === 'Explore' && project.developerList.length > 0"
+      v-if="
+        perspective === 'Explore' &&
+        projectVersions.projectVersion1.developerList.length > 0
+      "
     >
       <v-menu open-on-hover right offset-y>
         <template v-slot:activator="{ on }">
@@ -438,7 +776,10 @@
     <div
       class="text-center"
       style="float: left"
-      v-if="perspective === 'Explore' && project.developerList.length > 0"
+      v-if="
+        perspective === 'Explore' &&
+        projectVersions.projectVersion1.developerList.length > 0
+      "
     >
       <v-menu open-on-hover right offset-y>
         <template v-slot:activator="{ on }">
@@ -524,26 +865,42 @@ export default {
     chart: ECharts,
   },
   data: () => ({
+    active: "Overview",
     perspective: "Overview",
-    devTFList: [],
+    devTFListV1: [],
+    devTFListV2: [],
     util: Util,
     history: {
       paths: [],
     },
-    pie,
-    explore: null,
-    optionsChartProgrammingLanguage: null,
+    pie1: pie,
+    pie2: pie,
+    explore1: null,
+    explore2: null,
+    optionsChartProgrammingLanguage1: null,
+    optionsChartProgrammingLanguage2: null,
     initOptions: {
       renderer: "canvas",
     },
-    project: {
-      numLoc: 0,
-      numCommits: 0,
-      firstCommit: "",
-      LastCommit: "",
-      numLocProgrammingLanguageList: [],
-      developerList: [],
-      localRepository: "",
+    projectVersions: {
+      projectVersion1: {
+        numLoc: 0,
+        numCommits: 0,
+        firstCommit: "",
+        LastCommit: "",
+        numLocProgrammingLanguageList: [],
+        developerList: [],
+        localRepository: "",
+      },
+      projectVersion2: {
+        numLoc: 0,
+        numCommits: 0,
+        firstCommit: "",
+        LastCommit: "",
+        numLocProgrammingLanguageList: [],
+        developerList: [],
+        localRepository: "",
+      },
     },
     colors: [],
     headers: [
@@ -569,49 +926,80 @@ export default {
       })
         .to(
           {
-            tweeningValue: vm.project[propName],
+            tweeningValue: vm.projectVersions.projectVersion1[propName],
           },
           1000
         )
         .onUpdate(function () {
-          vm.project[propName] = this.tweeningValue.toFixed(0);
+          vm.projectVersions.projectVersion1[
+            propName
+          ] = this.tweeningValue.toFixed(0);
+          vm.projectVersions.projectVersion2[
+            propName
+          ] = this.tweeningValue.toFixed(0);
         })
         .start();
       animate();
     },
-    setProject(newProject) {
-      this.project = newProject;
-      this.pie.dataset = {};
-      this.pie.dataset.source = this.project.numLocProgrammingLanguageList;
-      this.optionsChartProgrammingLanguage = { ...pie };
-      //aqui precisa mudar pra ter duas devlisttf hehe
-      this.devTFList = [];
-      this.project.developerList.forEach((developer) => {
-        this.devTFList.push(developer);
-      });
+    setProject1(projectVersion1) {
+      this.pie1.dataset = {};
+      this.pie1.dataset.source = projectVersion1.numLocProgrammingLanguageList;
+      this.optionsChartProgrammingLanguage1 = { ...pie };
+
+      this.devTFListV1 = [];
+      this.projectVersions.projectVersion1.developerList.forEach(
+        (developer) => {
+          this.devTFListV1.push(developer);
+        }
+      );
+
+      this.tween("numCommits");
+      this.tween("numLoc");
+    },
+    setProject2(projectVersion2) {
+      this.pie2.dataset = {};
+      this.pie2.dataset.source = projectVersion2.numLocProgrammingLanguageList;
+      this.optionsChartProgrammingLanguage2 = { ...pie };
+
+      this.devTFListV2 = [];
+      this.projectVersions.projectVersion2.developerList.forEach(
+        (developer) => {
+          this.devTFListV2.push(developer);
+        }
+      );
 
       this.tween("numCommits");
       this.tween("numLoc");
     },
 
+    setProject(newProjectVersions) {
+      this.projectVersions.projectVersion1 = newProjectVersions.projectVersion1;
+      this.projectVersions.projectVersion2 =
+        newProjectVersions.projectVersion2 === null
+          ? this.projectVersions.projectVersion2
+          : newProjectVersions.projectVersion2;
+      this.setProject1(newProjectVersions.projectVersion1);
+      if (newProjectVersions.projectVersion2)
+        this.setProject2(newProjectVersions.projectVersion2);
+    },
     buildExplore(nodeData) {
       window.getApp.$emit("START_LOADING");
       let filter = {
         directory: "",
-        localRepository: this.project.localRepository,
-        remoteRepository: this.project.remoteRepository,
+        localRepository: this.projectVersions.projectVersion1.localRepository,
+        remoteRepository: this.projectVersions.projectVersion1.remoteRepository,
         zoomPath: nodeData === null ? "Root" : nodeData.descrition,
-        checkout1: this.project.checkout,
-        checkout2: this.project.checkout, // mudar essas duas linhas para pegar o checkout de cada project do projectversions
-        devTFList: this.devTFList,
+        checkout1: this.projectVersions.projectVersion1.checkout,
+        checkout2: this.projectVersions.projectVersion2.checkout,
+        devTFListV1: this.devTFListV1,
+        devTFListV2: this.devTFListV2,
       };
 
       if (nodeData !== null) this.updateHistory(nodeData);
-      // aqui precisa mudar o retorno pra trazer as duas versoes hehe
       getExploreProject(filter)
         .then(
           (response) => {
-            this.setExplore(response.data);
+            this.setExplores(response.data);
             window.getApp.$emit("STOP_LOADING");
           },
           (error) => {
@@ -646,6 +1034,14 @@ export default {
       }
     },
 
+    setExplores(explores) {
+      let explore1 = explores.explore1;
+      let explore2 = explores.explore2;
+
+      this.explore1 = setExplore(explore1);
+      if (explore2) this.explore2 = setExplore(explore2);
+    },
+
     setExplore(explore) {
       for (let i = 0; i < explore.linkList.length; i++) {
         explore.linkList[i].value = explore.linkList[i].numLoc;
@@ -677,7 +1073,7 @@ export default {
         };
       }
 
-      this.explore = getExplore(explore.nodeList, explore.linkList);
+      return getExplore(explore.nodeList, explore.linkList);
     },
   },
   created() {
@@ -691,6 +1087,7 @@ export default {
           that.buildExplore(updated.data);
         }
       } else {
+        // voltar perspectiva pra project para evitar bugs hehe extra
         that.setProject(updated);
       }
     });

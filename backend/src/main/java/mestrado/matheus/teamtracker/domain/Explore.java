@@ -15,7 +15,7 @@ public class Explore {
 	public List<NodeExplore> nodeList = new ArrayList<NodeExplore>();
 	public List<LinkExplore> linkList = new ArrayList<LinkExplore>();
 
-	public static Explore build(Filter filter, Project project) throws IOException, InterruptedException {
+	public static Explore build(Filter filter, Project project, List<Developer> devTFList) throws IOException, InterruptedException {
 
 		if (isZoomLevelProject(filter)) {
 
@@ -32,11 +32,11 @@ public class Explore {
 			filter.zoomPath += "/";
 		}
 
-		return buildExplore(filter, project);
+		return buildExplore(filter, project, devTFList);
 
 	}
 
-	private static Explore buildExplore(Filter filter, Project project) {
+	private static Explore buildExplore(Filter filter, Project project, List<Developer> devTFList) {
 
 		Explore explore = new Explore();
 		GitOutput gitOutputName;
@@ -52,7 +52,7 @@ public class Explore {
 					if (!explore.nodeList.contains(node))
 						explore.nodeList.add(node);
 
-					calcLinks(project, explore, node, filePath, filter.devTFList);
+					calcLinks(project, explore, node, filePath, devTFList);
 
 				}
 			}

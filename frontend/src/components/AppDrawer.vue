@@ -111,7 +111,7 @@ export default {
       checkout1: "",
       checkout2: "",
     },
-    project: {
+    projectVersion1: {
       numLoc: 0,
       numCommits: 0,
       numActiveDays: 0,
@@ -141,8 +141,7 @@ export default {
             this.filter.localRepository = this.projectVersion1.localRepository;
             this.updateNameRepository();
 
-            window.getApp.$emit("UPDATE_PROJECT", this.projectVersion1); //colocar data aqui hehe
-            // voltar perspectiva pra project para evitar bugs hehe extra
+            window.getApp.$emit("UPDATE_PROJECT", response.data);
             window.getApp.$emit("STOP_LOADING");
           },
           (error) => {

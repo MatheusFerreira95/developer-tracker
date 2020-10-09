@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import mestrado.matheus.teamtracker.domain.Explore;
+import mestrado.matheus.teamtracker.domain.ExploreVersions;
 import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
 import mestrado.matheus.teamtracker.domain.ProjectVersions;
@@ -32,11 +33,11 @@ public class ProjectController {
 			Project projectVersion1 = Project.buildOverview(filter, filter.checkout1);
 
 			Project projectVersion2 = null;
-			if(filter.checkout2 != null && !filter.checkout2.isEmpty()){
-				
+			if (filter.checkout2 != null && !filter.checkout2.isEmpty()) {
+
 				projectVersion2 = Project.buildOverview(filter, filter.checkout2);
 			}
-			
+
 			return new ProjectVersions(projectVersion1, projectVersion2);
 
 		} catch (IOException e) {
@@ -58,13 +59,20 @@ public class ProjectController {
 	 **/
 	@RequestMapping(path = "/explore", method = RequestMethod.POST)
 	@CrossOrigin(origins = "http://localhost:8081")
-	public @ResponseBody Explore getExploreProject(@RequestBody Filter filter) {
+	public @ResponseBody ExploreVersions getExploreProject(@RequestBody Filter filter) {
 
 		try {
-			
-			Project project = Project.builderProject(filter, filter.checkout1);
-			
-			return Explore.build(filter, project);
+
+			Project projectVersion1 = Project.builderProject(filter, filter.checkout1);
+			Explore explore1 = Explore.build(filter, projectVersion1, filter.devTFListV1);
+
+			Explore explore2 = null;
+			if (filter.checkout2 != null && !filter.checkout2.isEmpty()) {
+				Project projectVersion2 = Project.builderProject(filter, filter.checkout2);
+				explore2 = Explore.build(filter, projectVersion2, filter.devTFListV2);
+			}
+
+			return new ExploreVersions(explore1, explore2);
 
 		} catch (IOException e) {
 
