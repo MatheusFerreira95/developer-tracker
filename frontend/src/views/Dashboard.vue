@@ -28,7 +28,7 @@
           </v-card>
         </v-flex>
       </v-layout>
-
+      <!-- uma versao -->
       <v-layout
         row
         wrap
@@ -185,7 +185,7 @@
           </v-flex>
         </template>
       </v-layout>
-
+      <!-- duas versoes: comparativo -->
       <v-layout
         row
         wrap
@@ -199,18 +199,7 @@
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
               <v-tab key="Overview" ripple @click="perspective = 'Overview'"
-                >Project<br />
-                <span
-                  style="
-                    font-size: 10px;
-                    text-transform: none;
-                    display: contents;
-                    font-style: italic;
-                    color: gray;
-                  "
-                >
-                  &nbsp {{ projectVersions.projectVersion1.currentVersion }}
-                </span></v-tab
+                >Project</v-tab
               >
               <v-tab key="Explore" ripple @click="perspective = 'Explore'"
                 >Developer</v-tab
@@ -219,7 +208,18 @@
           </v-card>
         </v-flex>
 
-        <!-- Overview 1 -->
+        <!-- labels versoes -->
+        <v-flex lg5 sm5 xs12 style="text-align: center; color: gray">
+          {{ projectVersions.projectVersion2.currentVersion }}
+        </v-flex>
+        <v-flex lg2 sm2 xs12 style="text-align: center; color: gray">
+          x
+        </v-flex>
+        <v-flex lg5 sm5 xs12 style="text-align: center; color: gray">
+          {{ projectVersions.projectVersion2.currentVersion }}
+        </v-flex>
+
+        <!-- Overview -->
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
           <v-flex lg6 sm6 xs12>
@@ -232,31 +232,31 @@
           </v-flex>
           <v-flex lg6 sm6 xs12>
             <mini-statistic
+              icon="check"
+              :title="projectVersions.projectVersion2.numCommits"
+              sub-title="Commits"
+              color="green"
+            ></mini-statistic>
+          </v-flex>
+          <v-flex lg6 sm6 xs12>
+            <mini-statistic
               icon="code"
               :title="projectVersions.projectVersion1.numLoc"
               sub-title="Lines of code"
               color="red"
             ></mini-statistic>
           </v-flex>
-          <!-- <v-flex lg3 sm6 xs12>
+          <v-flex lg6 sm6 xs12>
             <mini-statistic
-              icon="date_range"
-              title=" "
-              :sub-title="'First commit: ' + projectVersions.projectVersion1.firstCommit"
-              color="light-blue"
+              icon="code"
+              :title="projectVersions.projectVersion2.numLoc"
+              sub-title="Lines of code"
+              color="red"
             ></mini-statistic>
           </v-flex>
-          <v-flex lg3 sm6 xs12>
-            <mini-statistic
-              icon="today"
-              title=" "
-              :sub-title="'Last commit: ' + projectVersions.projectVersion1.lastCommit"
-              color="amber"
-            ></mini-statistic>
-          </v-flex>-->
 
           <!-- Grafico Linguagem de programacao-->
-          <v-flex lg6 sm12 xs12>
+          <v-flex lg6 sm6 xs12>
             <v-widget title="Programming Languages" content-bg="white">
               <div slot="widget-content">
                 <chart
@@ -273,9 +273,26 @@
               </div>
             </v-widget>
           </v-flex>
+          <v-flex lg6 sm6 xs12>
+            <v-widget title="Programming Languages" content-bg="white">
+              <div slot="widget-content">
+                <chart
+                  v-if="
+                    projectVersions.projectVersion2
+                      .numLocProgrammingLanguageList.length > 0
+                  "
+                  :options="optionsChartProgrammingLanguage2"
+                  :init-options="initOptions"
+                  ref="pie2"
+                  autoresize
+                />
+                <div v-else>Does not apply to this project</div>
+              </div>
+            </v-widget>
+          </v-flex>
 
           <!-- desenvolvedores -->
-          <v-flex lg6 sm12 xs12>
+          <v-flex lg6 sm6 xs12>
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
@@ -322,108 +339,7 @@
               </v-card-text>
             </v-card>
           </v-flex>
-        </template>
-
-        <!-- Explore 1 -->
-        <template v-if="perspective === 'Explore'">
-          <v-flex lg12 sm12 xs12>
-            <v-widget title content-bg="white" :title2="history">
-              <div slot="widget-content">
-                <chart
-                  v-if="explore1 !== null"
-                  :options="explore1"
-                  :init-options="initOptions"
-                  ref="explore1"
-                  autoresize
-                />
-                <div v-else>Does not apply to this project</div>
-              </div>
-            </v-widget>
-          </v-flex>
-        </template>
-
-        <!-- perspectiva 2 -->
-        <v-flex sm12>
-          <v-card>
-            <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab key="Overview" ripple @click="perspective = 'Overview'"
-                >Project<br />
-                <span
-                  style="
-                    font-size: 10px;
-                    text-transform: none;
-                    display: contents;
-                    font-style: italic;
-                    color: gray;
-                  "
-                >
-                  &nbsp {{ projectVersions.projectVersion2.currentVersion }}
-                </span></v-tab
-              >
-              <v-tab key="Explore" ripple @click="perspective = 'Explore'"
-                >Developer</v-tab
-              >
-            </v-tabs>
-          </v-card>
-        </v-flex>
-
-        <!-- Overview 2 -->
-        <template v-if="perspective === 'Overview'">
-          <!-- cartões -->
           <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="check"
-              :title="projectVersions.projectVersion2.numCommits"
-              sub-title="Commits"
-              color="green"
-            ></mini-statistic>
-          </v-flex>
-          <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="code"
-              :title="projectVersions.projectVersion2.numLoc"
-              sub-title="Lines of code"
-              color="red"
-            ></mini-statistic>
-          </v-flex>
-          <!-- <v-flex lg3 sm6 xs12>
-            <mini-statistic
-              icon="date_range"
-              title=" "
-              :sub-title="'First commit: ' + projectVersions.projectVersion2.firstCommit"
-              color="light-blue"
-            ></mini-statistic>
-          </v-flex>
-          <v-flex lg3 sm6 xs12>
-            <mini-statistic
-              icon="today"
-              title=" "
-              :sub-title="'Last commit: ' + projectVersions.projectVersion2.lastCommit"
-              color="amber"
-            ></mini-statistic>
-          </v-flex>-->
-
-          <!-- Grafico Linguagem de programacao-->
-          <v-flex lg6 sm12 xs12>
-            <v-widget title="Programming Languages" content-bg="white">
-              <div slot="widget-content">
-                <chart
-                  v-if="
-                    projectVersions.projectVersion2
-                      .numLocProgrammingLanguageList.length > 0
-                  "
-                  :options="optionsChartProgrammingLanguage2"
-                  :init-options="initOptions"
-                  ref="pie2"
-                  autoresize
-                />
-                <div v-else>Does not apply to this project</div>
-              </div>
-            </v-widget>
-          </v-flex>
-
-          <!-- desenvolvedores -->
-          <v-flex lg6 sm12 xs12>
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
@@ -472,10 +388,29 @@
           </v-flex>
         </template>
 
-        <!-- Explore 2 -->
+        <!-- Explore -->
         <template v-if="perspective === 'Explore'">
-          <v-flex lg12 sm12 xs12>
+          <v-flex lg6 sm6 xs12>
             <v-widget title content-bg="white" :title2="history">
+              <div slot="widget-content">
+                <chart
+                  v-if="explore1 !== null"
+                  :options="explore1"
+                  :init-options="initOptions"
+                  ref="explore1"
+                  autoresize
+                />
+                <div v-else>Does not apply to this project</div>
+              </div>
+            </v-widget>
+          </v-flex>
+          <v-flex lg6 sm6 xs12>
+            <v-widget
+              title
+              content-bg="white"
+              :title2="history"
+              :showInteractions="false"
+            >
               <div slot="widget-content">
                 <chart
                   v-if="explore2 !== null"
@@ -913,34 +848,6 @@ export default {
     ],
   }),
   methods: {
-    tween(propName) {
-      var vm = this;
-
-      function animate() {
-        if (TWEEN.update()) {
-          requestAnimationFrame(animate);
-        }
-      }
-      new TWEEN.Tween({
-        tweeningValue: 0,
-      })
-        .to(
-          {
-            tweeningValue: vm.projectVersions.projectVersion1[propName],
-          },
-          1000
-        )
-        .onUpdate(function () {
-          vm.projectVersions.projectVersion1[
-            propName
-          ] = this.tweeningValue.toFixed(0);
-          vm.projectVersions.projectVersion2[
-            propName
-          ] = this.tweeningValue.toFixed(0);
-        })
-        .start();
-      animate();
-    },
     setProject1(projectVersion1) {
       this.pie1.dataset = {};
       this.pie1.dataset.source = projectVersion1.numLocProgrammingLanguageList;
@@ -952,9 +859,6 @@ export default {
           this.devTFListV1.push(developer);
         }
       );
-
-      this.tween("numCommits");
-      this.tween("numLoc");
     },
     setProject2(projectVersion2) {
       this.pie2.dataset = {};
@@ -967,20 +871,25 @@ export default {
           this.devTFListV2.push(developer);
         }
       );
-
-      this.tween("numCommits");
-      this.tween("numLoc");
     },
 
     setProject(newProjectVersions) {
       this.projectVersions.projectVersion1 = newProjectVersions.projectVersion1;
       this.projectVersions.projectVersion2 =
         newProjectVersions.projectVersion2 === null
-          ? this.projectVersions.projectVersion2
+          ? {
+              numLoc: 0,
+              numCommits: 0,
+              firstCommit: "",
+              LastCommit: "",
+              numLocProgrammingLanguageList: [],
+              developerList: [],
+              localRepository: "",
+            }
           : newProjectVersions.projectVersion2;
-      this.setProject1(newProjectVersions.projectVersion1);
-      if (newProjectVersions.projectVersion2)
-        this.setProject2(newProjectVersions.projectVersion2);
+      this.setProject1(this.projectVersions.projectVersion1);
+      if (newProjectVersions.projectVersion2.localRepository)
+        this.setProject2(this.projectVersions.projectVersion2);
     },
     buildExplore(nodeData) {
       window.getApp.$emit("START_LOADING");

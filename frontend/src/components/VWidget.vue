@@ -1,9 +1,9 @@
 <template>
   <div id="v-widget">
     <v-card>
-      <v-toolbar color="transparent" flat dense card v-if="enableHeader">
-        <v-toolbar-title style="width:100%">
-          <h4 v-if="title">{{title}}</h4>
+      <v-toolbar color="transparent" flat dense card>
+        <v-toolbar-title style="width: 100%">
+          <h4 v-if="title">{{ title }}</h4>
           <div v-else>
             <v-chip outlined label @click="changeLevel('init')">Root/</v-chip>
             <v-chip
@@ -14,16 +14,22 @@
               :key="item"
               :disabled="index === title2.paths.length - 1"
               @click="changeLevel(index)"
-            >{{ index === 0 ? item.descrition : item.name }}/</v-chip>
-            <div class="text-center" style="float:right">
+              >{{ index === 0 ? item.descrition : item.name }}/</v-chip
+            >
+            <div
+              class="text-center"
+              style="float: right"
+              v-if="!showInteractions"
+            >
               <v-menu open-on-hover bottom offset-y>
                 <template v-slot:activator="{ on }">
                   <v-icon
                     right
                     v-on="on"
                     color="primary"
-                    style="position: absolute; top: -35px; right: -10px;"
-                  >info</v-icon>
+                    style="position: absolute; top: -35px; right: -10px"
+                    >info</v-icon
+                  >
                 </template>
 
                 <v-card>
@@ -36,27 +42,33 @@
                   <v-card-text class="pa-0">
                     <template>
                       <span>
-                        <b>&nbsp; - Artifact Zoom In:</b> click on an artifact &nbsp;
+                        <b>&nbsp; - Artifact Zoom In:</b> click on an artifact
+                        &nbsp;
                       </span>
                       <br />
                       <span>
-                        <b>&nbsp; - Artifact Zoom Out:</b> click on the zoom history item positioned on the graph toolbar &nbsp;
+                        <b>&nbsp; - Artifact Zoom Out:</b> click on the zoom
+                        history item positioned on the graph toolbar &nbsp;
                       </span>
                       <br />
                       <span>
-                        <b>&nbsp; - Filter:</b> hover an artifact, developer or connection &nbsp;
+                        <b>&nbsp; - Filter:</b> hover an artifact, developer or
+                        connection &nbsp;
                       </span>
                       <br />
                       <span>
-                        <b>&nbsp; - Move item:</b> click and drag an artifact or developer &nbsp;
+                        <b>&nbsp; - Move item:</b> click and drag an artifact or
+                        developer &nbsp;
                       </span>
                       <br />
                       <span>
-                        <b>&nbsp; - Move graph:</b> click on a blank part and drag the graph &nbsp;
+                        <b>&nbsp; - Move graph:</b> click on a blank part and
+                        drag the graph &nbsp;
                       </span>
                       <br />
                       <span>
-                        <b>&nbsp; - Graphical Zoom in/out:</b> use the mouse scroll on the graph &nbsp;
+                        <b>&nbsp; - Graphical Zoom in/out:</b> use the mouse
+                        scroll on the graph &nbsp;
                       </span>
                       <br />
                     </template>
@@ -85,6 +97,10 @@ export default {
       type: String,
     },
     enableHeader: {
+      type: Boolean,
+      default: true,
+    },
+    showInteractions: {
       type: Boolean,
       default: true,
     },
