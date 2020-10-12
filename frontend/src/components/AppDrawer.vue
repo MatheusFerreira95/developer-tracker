@@ -66,6 +66,7 @@
             <v-text-field
               flat
               solo
+              :disabled="!filter.checkout1.trim()"
               prepend-inner-icon="input"
               placeholder="v2: tag, branch or commit..."
               hide-details

@@ -28,40 +28,50 @@
           </v-card>
         </v-flex>
       </v-layout>
-      <!-- uma versao -->
+
+      <!-- tabs e labels de versao -->
       <v-layout
         row
         wrap
-        v-if="
-          projectVersions.projectVersion1.localRepository &&
-          !projectVersions.projectVersion2.localRepository
-        "
+        v-if="projectVersions.projectVersion1.localRepository"
       >
-        <!-- perspectiva -->
         <v-flex sm12>
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab key="Overview" ripple @click="perspective = 'Overview'"
-                >Project<br />
-                <span
-                  style="
-                    font-size: 10px;
-                    text-transform: none;
-                    display: contents;
-                    font-style: italic;
-                    color: gray;
-                  "
-                >
-                  &nbsp {{ projectVersions.projectVersion1.currentVersion }}
-                </span></v-tab
-              >
-              <v-tab key="Explore" ripple @click="perspective = 'Explore'"
+              <v-tab ripple @click="perspective = 'Overview'"
+                >Project
+              </v-tab>
+              <v-tab ripple @click="perspective = 'Explore'"
                 >Developer</v-tab
               >
             </v-tabs>
           </v-card>
         </v-flex>
 
+        <v-flex v-if="!projectVersions.projectVersion2.currentVersion" xs12 style="text-align: center; color: gray">
+          {{ projectVersions.projectVersion1.currentVersion }}
+        </v-flex>
+        </v-flex>
+        <v-flex v-if="projectVersions.projectVersion2.currentVersion" lg5 sm5 xs12 style="text-align: center; color: gray">
+          {{ projectVersions.projectVersion1.currentVersion }}
+        </v-flex>
+        <v-flex v-if="projectVersions.projectVersion2.currentVersion" lg2 sm2 xs12 style="text-align: center; color: gray">
+          x
+        </v-flex>
+        <v-flex v-if="projectVersions.projectVersion2.currentVersion" lg5 sm5 xs12 style="text-align: center; color: gray">
+          {{ projectVersions.projectVersion2.currentVersion }}
+        </v-flex>
+      </v-layout>
+
+      <!-- uma versao -->
+      <v-layout
+        row
+        wrap
+        v-show="
+          projectVersions.projectVersion1.localRepository &&
+          !projectVersions.projectVersion2.localRepository
+        "
+      >
         <!-- Overview -->
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
@@ -185,40 +195,16 @@
           </v-flex>
         </template>
       </v-layout>
+
       <!-- duas versoes: comparativo -->
       <v-layout
         row
         wrap
-        v-if="
+        v-show="
           projectVersions.projectVersion1.localRepository &&
           projectVersions.projectVersion2.localRepository
         "
       >
-        <!-- perspectiva 1 -->
-        <v-flex sm12>
-          <v-card>
-            <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab key="Overview" ripple @click="perspective = 'Overview'"
-                >Project</v-tab
-              >
-              <v-tab key="Explore" ripple @click="perspective = 'Explore'"
-                >Developer</v-tab
-              >
-            </v-tabs>
-          </v-card>
-        </v-flex>
-
-        <!-- labels versoes -->
-        <v-flex lg5 sm5 xs12 style="text-align: center; color: gray">
-          {{ projectVersions.projectVersion2.currentVersion }}
-        </v-flex>
-        <v-flex lg2 sm2 xs12 style="text-align: center; color: gray">
-          x
-        </v-flex>
-        <v-flex lg5 sm5 xs12 style="text-align: center; color: gray">
-          {{ projectVersions.projectVersion2.currentVersion }}
-        </v-flex>
-
         <!-- Overview -->
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
@@ -800,7 +786,6 @@ export default {
     chart: ECharts,
   },
   data: () => ({
-    active: "Overview",
     perspective: "Overview",
     devTFListV1: [],
     devTFListV2: [],
@@ -888,7 +873,10 @@ export default {
             }
           : newProjectVersions.projectVersion2;
       this.setProject1(this.projectVersions.projectVersion1);
-      if (newProjectVersions.projectVersion2.localRepository)
+      if (
+        newProjectVersions.projectVersion2 &&
+        newProjectVersions.projectVersion2.localRepository
+      )
         this.setProject2(this.projectVersions.projectVersion2);
     },
     buildExplore(nodeData) {
@@ -908,7 +896,9 @@ export default {
       getExploreProject(filter)
         .then(
           (response) => {
-            this.setExplores(response.data);
+            this.explore1 = this.setExplore(response.data.explore1);
+            if (explore2)
+              this.explore2 = this.setExplore(response.data.explore1);
             window.getApp.$emit("STOP_LOADING");
           },
           (error) => {
@@ -941,14 +931,6 @@ export default {
       } else {
         this.history.paths.push(nodeData);
       }
-    },
-
-    setExplores(explores) {
-      let explore1 = explores.explore1;
-      let explore2 = explores.explore2;
-
-      this.explore1 = setExplore(explore1);
-      if (explore2) this.explore2 = setExplore(explore2);
     },
 
     setExplore(explore) {
