@@ -897,8 +897,8 @@ export default {
         .then(
           (response) => {
             this.explore1 = this.setExplore(response.data.explore1);
-            if (explore2)
-              this.explore2 = this.setExplore(response.data.explore1);
+            if (response.data.explore2)
+              this.explore2 = this.setExplore(response.data.explore2);
             window.getApp.$emit("STOP_LOADING");
           },
           (error) => {
