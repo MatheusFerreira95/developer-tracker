@@ -131,9 +131,6 @@ export default {
   methods: {
     getProjectInformations() {
       window.getApp.$emit("START_LOADING");
-      //verificar perspectiva para saber qual rota chamar
-
-      //se serviço retornar sucesso -> alterar nome label de projeto selecionado
 
       getProject(this.filter)
         .then(
@@ -166,6 +163,9 @@ export default {
   watch: {
     "filter.remoteRepository": function (value) {
       this.filter.localRepository = "";
+    },
+    "filter.checkout1": function (value) {
+      if (!value.trim()) this.filter.checkout2 = "";
     },
   },
 };

@@ -1,6 +1,24 @@
 <template>
   <div id="pageDashboard">
     <v-container grid-list-xl fluid>
+      <!-- second loading -->
+      <v-dialog
+          v-model="secondLoading"
+          persistent
+          fullscreen
+          content-class="loading-dialog"
+        >
+          <v-container fill-height>
+            <v-layout row justify-center align-center>
+              <v-progress-circular
+                indeterminate
+                :size="90"
+                :width="3"
+                color="primary"
+              ></v-progress-circular>
+            </v-layout>
+          </v-container>
+        </v-dialog>
       <!-- Mensagem vazio -->
       <v-layout
         row
@@ -786,6 +804,7 @@ export default {
     chart: ECharts,
   },
   data: () => ({
+    secondLoading: false,
     perspective: "Overview",
     devTFListV1: [],
     devTFListV2: [],
@@ -900,14 +919,17 @@ export default {
             if (response.data.explore2)
               this.explore2 = this.setExplore(response.data.explore2);
             window.getApp.$emit("STOP_LOADING");
+            this.secondLoading = false;
           },
           (error) => {
             alert("Erro: " + error);
             window.getApp.$emit("STOP_LOADING");
+            this.secondLoading = false;
           }
         )
         .catch(function (error) {
           window.getApp.$emit("STOP_LOADING");
+          this.secondLoading = false;
         });
     },
 
@@ -966,6 +988,10 @@ export default {
 
       return getExplore(explore.nodeList, explore.linkList);
     },
+    firstLoadExplore() {
+      this.history.paths = [];
+      this.buildExplore(null);
+    },
   },
   created() {
     let that = this;
@@ -978,8 +1004,11 @@ export default {
           that.buildExplore(updated.data);
         }
       } else {
-        // voltar perspectiva pra project para evitar bugs hehe extra
         that.setProject(updated);
+        if (that.perspective === "Explore") {
+          that.secondLoading = true;
+          that.firstLoadExplore();
+        }
       }
     });
     window.getApp.$on("APP_LEVEL_CHANGE", (index) => {
@@ -996,8 +1025,7 @@ export default {
   watch: {
     perspective: function (val) {
       if (val === "Explore") {
-        this.history.paths = [];
-        this.buildExplore(null);
+        this.firstLoadExplore();
       }
     },
   },
@@ -1053,5 +1081,9 @@ export default {
   -ms-animation: fa-blink 2.75s linear infinite;
   -o-animation: fa-blink 2.75s linear infinite;
   animation: fa-blink 2.75s linear infinite;
+}
+
+.v-dialog__content--active {
+  background-color: #ffffffa8;
 }
 </style>
