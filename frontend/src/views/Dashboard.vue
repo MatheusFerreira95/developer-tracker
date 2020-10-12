@@ -395,7 +395,8 @@
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
           <v-flex lg6 sm6 xs12>
-            <v-widget title content-bg="white" :title2="history">
+            <v-widget title content-bg="white" :title2="history"
+              :showInteractions="false">
               <div slot="widget-content">
                 <chart
                   v-if="explore1 !== null"
@@ -413,7 +414,6 @@
               title
               content-bg="white"
               :title2="history"
-              :showInteractions="false"
             >
               <div slot="widget-content">
                 <chart
@@ -555,13 +555,13 @@
       </v-menu>
     </div>
 
-    <!-- 3. Recomendation Project Truck Factor -->
+    <!-- 3. (uma versao) Recomendation Project Truck Factor -->
     <div
       class="text-center"
       style="float: right"
       v-if="
         perspective === 'Overview' &&
-        projectVersions.projectVersion1.developerList.length > 0
+        projectVersions.projectVersion1.developerList.length > 0 && projectVersions.projectVersion2.developerList.length === 0
       "
     >
       <v-menu open-on-hover left offset-x>
@@ -572,6 +572,54 @@
             color="orange"
             class="fa-blink"
             style="position: absolute; top: 350px; font-size: 25px; right: 2px"
+            >assistant</v-icon
+          >
+        </template>
+
+        <v-card>
+          <v-toolbar card dense color="transparent">
+            <v-toolbar-title>
+              <h4>Project Truck Factor</h4>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-divider></v-divider>
+          <v-card-text class="pa-0">
+            <template>
+              <span>
+                <br />&nbsp;The Truck Factor is calculated based on the degree
+                of authorship of the developers in the project files. Consider
+                that Truck Factor developers can concentrate knowledge on more
+                than half of the project's files. The lower the value of the
+                Truck Factor, the greater the concentration of knowledge. To
+                mitigate the concentration of knowledge, consider including
+                practices such as pair programming and running people in the
+                source code. &nbsp;
+                <br />
+              </span>
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-menu>
+    </div>
+
+
+    <!-- 3. (duas versoes - comparativo) Recomendation Project Truck Factor -->
+    <div
+      class="text-center"
+      style="float: right"
+      v-if="
+        perspective === 'Overview' &&
+        projectVersions.projectVersion1.developerList.length > 0 && projectVersions.projectVersion2.developerList.length > 0
+      "
+    >
+      <v-menu open-on-hover left offset-x>
+        <template v-slot:activator="{ on }">
+          <v-icon
+            right
+            v-on="on"
+            color="orange"
+            class="fa-blink"
+            style="position: absolute; top: 1000px; font-size: 25px; right: 2px"
             >assistant</v-icon
           >
         </template>
