@@ -34,7 +34,7 @@ public class ProjectController {
 
 			Project projectVersion2 = null;
 			if (filter.checkout2 != null && !filter.checkout2.isEmpty()) {
-
+				filter.localRepository = projectVersion1.localRepository;
 				projectVersion2 = Project.buildOverview(filter, filter.checkout2);
 			}
 

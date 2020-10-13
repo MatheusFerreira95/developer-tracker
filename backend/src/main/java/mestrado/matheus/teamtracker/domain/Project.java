@@ -307,6 +307,8 @@ public class Project {
 
 		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
 
+			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in local: " + filter.localRepository);
+
 			Project project = new Project(filter.localRepository, checkout);
 			
 			Git.runCheckout(project);
@@ -314,6 +316,8 @@ public class Project {
 			return project;
 
 		} else if (filter.remoteRepository != null && !filter.remoteRepository.isEmpty()) {
+			
+			System.out.println("info...................BuilderProject is clonning from: " + filter.remoteRepository);
 
 			if(filter.user != null && !filter.user.isEmpty() && filter.password != null && !filter.password.isEmpty()) {
 
