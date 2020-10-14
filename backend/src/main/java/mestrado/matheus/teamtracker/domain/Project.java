@@ -62,11 +62,11 @@ public class Project {
 
 	public void calcDeveloperList(String filterPath, List<Developer> devTFList) throws IOException, InterruptedException {
 
-		filterPath = filterPath == null ? "" : filterPath;
+		String filePath = filterPath == null ? "" : filterPath;
 
-		GitOutput gitOutputEmail = Git.runCommand(this, " git ls-files " + filterPath
+		GitOutput gitOutputEmail = Git.runCommand(this, " git ls-files " + filePath
 				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
-		GitOutput gitOutputName = Git.runCommand(this, " git ls-files " + filterPath
+		GitOutput gitOutputName = Git.runCommand(this, " git ls-files " + filePath
 				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
 
 		Integer avatar = 0;
@@ -102,16 +102,17 @@ public class Project {
 				}
 			} catch (Exception e) {
 
-				System.out.println("Devloper not add. See the line: " + line);
+				System.out.println("Developer not add. See the line: " + line);
 			}
 		}
 
-		for (Developer dev : developerList) {
+		for (Developer dev : this.developerList) {
+			System.out.println("Developer..................................: " + dev.name);
+
 			for (Developer devTF : devTFList) {
-			if(dev.equals(devTF) && devTF.truckFactor) {
-				dev.truckFactor = true;
-			}
-				
+				if(dev.equals(devTF) && devTF.truckFactor) {
+					dev.truckFactor = true;
+				}				
 			}
 		}
 
@@ -163,23 +164,23 @@ public class Project {
 
 		calcNumLocProjectByDeveloperList();
 
-		float percentageTotal = 0;
-		for (Developer developer : developerList) {
-			float percentage = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
-			float percentageAnterior = percentageTotal;
-			percentageTotal += percentage;
-			if (percentageTotal > 100) {
-				developer.percentLoc = 100 - percentageAnterior;
-				percentageAnterior = 100;
-				percentageTotal = 100;
-			} else {
-				developer.percentLoc = percentage;
-			}
-		}
+		// float percentageTotal = 0;
+		// for (Developer developer : developerList) {
+		// 	float percentage = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
+		// 	float percentageAnterior = percentageTotal;
+		// 	percentageTotal += percentage;
+		// 	if (percentageTotal > 100) {
+		// 		developer.percentLoc = 100 - percentageAnterior;
+		// 		percentageAnterior = 100;
+		// 		percentageTotal = 100;
+		// 	} else {
+		// 		developer.percentLoc = percentage;
+		// 	}
+		// }
 
-		if (percentageTotal < 100) {
-			developerList.get(0).percentLoc += 100 - percentageTotal;
-		}
+		// if (percentageTotal < 100) {
+		// 	developerList.get(0).percentLoc += 100 - percentageTotal;
+		// }
 
 		calcTruckFactor();
 
@@ -294,8 +295,8 @@ public class Project {
 		Project project = Project.builderProject(filter, checkout);
 
 		project.calcNumCommits();
-//		project.calcNumLoc();
-		project.calcNumActiveDaysAndFirstCommitAndLastCommit();
+		// project.calcNumLoc();
+		// project.calcNumActiveDaysAndFirstCommitAndLastCommit();
 		project.calcNumLocProgrammingLanguageList();
 		project.calcDeveloperList();
 
