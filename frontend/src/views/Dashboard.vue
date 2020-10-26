@@ -111,7 +111,7 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion1.numCommits }} commits
+                    {{ projectVersions.projectVersion1.numCommits }} Commits
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
@@ -250,19 +250,22 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion1.numCommits }} commits
+                    {{ projectVersions.projectVersion1.numCommits }} Commits
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
             </v-card>
           </v-flex>
           <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="check"
-              :title="projectVersions.projectVersion2.numCommits"
-              sub-title="Commits"
-              color="green"
-            ></mini-statistic>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>
+                    {{ projectVersions.projectVersion2.numCommits }} Commits
+                  </h4>
+                </v-toolbar-title>
+              </v-toolbar>
+            </v-card>
           </v-flex>
           <v-flex lg6 sm6 xs12>
             <v-card>
