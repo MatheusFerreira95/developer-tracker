@@ -49,7 +49,7 @@ public class Developer implements Comparable<Developer> {
 	@Override
 	public int compareTo(Developer developer) {
 
-		return this.percentLoc.compareTo(developer.percentLoc);
+		return this.numLoc.compareTo(developer.numLoc);
 	}
 
 }

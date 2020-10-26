@@ -9,7 +9,7 @@ export default function getExplore(nodeList, linkList) {
     },
     series: [{
       type: 'graph',
-      layout: 'force',
+      layout: 'circular',
       initLayout: 'circular',
       symbolSize: 40,
       edgeSymbol: ['none', 'arrow'],
@@ -18,12 +18,12 @@ export default function getExplore(nodeList, linkList) {
       roam: true, // zoom mouse e movimentar grafo 
       focusNodeAdjacency: true, // filtro -> foca em uma conexão e seus nós ou em um nó e suas conexões
       nodeScaleRatio: 0, // o zoom do filtro de foco não impacta os nós
-      force: {
-        repulsion: 400,
-        edgeLength: [200, 400, 8000],
-        layoutAnimation: false,
-        friction: 0.1
-      },
+      // force: {
+      //   repulsion: 400,
+      //   edgeLength: [200, 400, 8000],
+      //   layoutAnimation: false,
+      //   friction: 0.1
+      // },
       draggable: true,
       edgeLabel: {
         normal: {

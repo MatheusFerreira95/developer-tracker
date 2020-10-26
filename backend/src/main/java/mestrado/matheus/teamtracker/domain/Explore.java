@@ -19,7 +19,7 @@ public class Explore {
 
 		if (isZoomLevelProject(filter)) {
 
-			return buildExploreLevelProject(project);
+			return buildExploreLevelProject(project, devTFList);
 
 		}
 
@@ -118,14 +118,14 @@ public class Explore {
 
 	}
 
-	private static Explore buildExploreLevelProject(Project project) throws IOException, InterruptedException {
+	private static Explore buildExploreLevelProject(Project project, List<Developer> devTFList) throws IOException, InterruptedException {
 
 		Explore explore = new Explore();
 
 		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, NodeExplore.NODE_PROJECT, false);
 		explore.nodeList.add(nodeProject);
 
-		project.calcDeveloperList();
+		project.calcDeveloperList(null, devTFList);
 		for (Developer developer : project.developerList) {
 
 			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null,
