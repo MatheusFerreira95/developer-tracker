@@ -3,22 +3,22 @@
     <v-container grid-list-xl fluid>
       <!-- second loading -->
       <v-dialog
-          v-model="secondLoading"
-          persistent
-          fullscreen
-          content-class="loading-dialog"
-        >
-          <v-container fill-height>
-            <v-layout row justify-center align-center>
-              <v-progress-circular
-                indeterminate
-                :size="90"
-                :width="3"
-                color="primary"
-              ></v-progress-circular>
-            </v-layout>
-          </v-container>
-        </v-dialog>
+        v-model="secondLoading"
+        persistent
+        fullscreen
+        content-class="loading-dialog"
+      >
+        <v-container fill-height>
+          <v-layout row justify-center align-center>
+            <v-progress-circular
+              indeterminate
+              :size="90"
+              :width="3"
+              color="primary"
+            ></v-progress-circular>
+          </v-layout>
+        </v-container>
+      </v-dialog>
       <!-- Mensagem vazio -->
       <v-layout
         row
@@ -48,35 +48,48 @@
       </v-layout>
 
       <!-- tabs e labels de versao -->
-      <v-layout
-        row
-        wrap
-        v-if="projectVersions.projectVersion1.localRepository"
-      >
+      <v-layout row wrap v-if="projectVersions.projectVersion1.localRepository">
         <v-flex sm12>
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab ripple @click="perspective = 'Overview'"
-                >Project
-              </v-tab>
-              <v-tab ripple @click="perspective = 'Explore'"
-                >Developer</v-tab
-              >
+              <v-tab ripple @click="perspective = 'Overview'">Project </v-tab>
+              <v-tab ripple @click="perspective = 'Explore'">Developer</v-tab>
             </v-tabs>
           </v-card>
         </v-flex>
 
-        <v-flex v-if="!projectVersions.projectVersion2.currentVersion" xs12 style="text-align: center; color: gray">
+        <v-flex
+          v-if="!projectVersions.projectVersion2.currentVersion"
+          xs12
+          style="text-align: center; color: gray"
+        >
           {{ projectVersions.projectVersion1.currentVersion }}
         </v-flex>
-        </v-flex>
-        <v-flex v-if="projectVersions.projectVersion2.currentVersion" lg5 sm5 xs12 style="text-align: center; color: gray">
+        <v-flex
+          v-if="projectVersions.projectVersion2.currentVersion"
+          lg5
+          sm5
+          xs12
+          style="text-align: center; color: gray"
+        >
           {{ projectVersions.projectVersion1.currentVersion }}
         </v-flex>
-        <v-flex v-if="projectVersions.projectVersion2.currentVersion" lg2 sm2 xs12 style="text-align: center; color: gray">
+        <v-flex
+          v-if="projectVersions.projectVersion2.currentVersion"
+          lg2
+          sm2
+          xs12
+          style="text-align: center; color: gray"
+        >
           x
         </v-flex>
-        <v-flex v-if="projectVersions.projectVersion2.currentVersion" lg5 sm5 xs12 style="text-align: center; color: gray">
+        <v-flex
+          v-if="projectVersions.projectVersion2.currentVersion"
+          lg5
+          sm5
+          xs12
+          style="text-align: center; color: gray"
+        >
           {{ projectVersions.projectVersion2.currentVersion }}
         </v-flex>
       </v-layout>
@@ -94,20 +107,26 @@
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
           <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="check"
-              :title="projectVersions.projectVersion1.numCommits"
-              sub-title="Commits"
-              color="green"
-            ></mini-statistic>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>
+                    {{ projectVersions.projectVersion1.numCommits }} commits
+                  </h4>
+                </v-toolbar-title>
+              </v-toolbar>
+            </v-card>
           </v-flex>
           <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="code"
-              :title="projectVersions.projectVersion1.numLoc"
-              sub-title="Lines of code"
-              color="red"
-            ></mini-statistic>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>
+                    {{ projectVersions.projectVersion1.numLoc }} Lines Of Code
+                  </h4>
+                </v-toolbar-title>
+              </v-toolbar>
+            </v-card>
           </v-flex>
           <!-- <v-flex lg3 sm6 xs12>
             <mini-statistic
@@ -227,12 +246,15 @@
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
           <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="check"
-              :title="projectVersions.projectVersion1.numCommits"
-              sub-title="Commits"
-              color="green"
-            ></mini-statistic>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>
+                    {{ projectVersions.projectVersion1.numCommits }} commits
+                  </h4>
+                </v-toolbar-title>
+              </v-toolbar>
+            </v-card>
           </v-flex>
           <v-flex lg6 sm6 xs12>
             <mini-statistic
@@ -243,20 +265,26 @@
             ></mini-statistic>
           </v-flex>
           <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="code"
-              :title="projectVersions.projectVersion1.numLoc"
-              sub-title="Lines of code"
-              color="red"
-            ></mini-statistic>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>
+                    {{ projectVersions.projectVersion1.numLoc }} Lines Of Code
+                  </h4>
+                </v-toolbar-title>
+              </v-toolbar>
+            </v-card>
           </v-flex>
           <v-flex lg6 sm6 xs12>
-            <mini-statistic
-              icon="code"
-              :title="projectVersions.projectVersion2.numLoc"
-              sub-title="Lines of code"
-              color="red"
-            ></mini-statistic>
+            <v-card>
+              <v-toolbar card dense color="transparent">
+                <v-toolbar-title>
+                  <h4>
+                    {{ projectVersions.projectVersion2.numLoc }} Lines Of Code
+                  </h4>
+                </v-toolbar-title>
+              </v-toolbar>
+            </v-card>
           </v-flex>
 
           <!-- Grafico Linguagem de programacao-->
@@ -395,8 +423,12 @@
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
           <v-flex lg6 sm6 xs12>
-            <v-widget title content-bg="white" :title2="history"
-              :showInteractions="false">
+            <v-widget
+              title
+              content-bg="white"
+              :title2="history"
+              :showInteractions="false"
+            >
               <div slot="widget-content">
                 <chart
                   v-if="explore1 !== null"
@@ -410,11 +442,7 @@
             </v-widget>
           </v-flex>
           <v-flex lg6 sm6 xs12>
-            <v-widget
-              title
-              content-bg="white"
-              :title2="history"
-            >
+            <v-widget title content-bg="white" :title2="history">
               <div slot="widget-content">
                 <chart
                   v-if="explore2 !== null"
@@ -561,7 +589,8 @@
       style="float: right"
       v-if="
         perspective === 'Overview' &&
-        projectVersions.projectVersion1.developerList.length > 0 && projectVersions.projectVersion2.developerList.length === 0
+        projectVersions.projectVersion1.developerList.length > 0 &&
+        projectVersions.projectVersion2.developerList.length === 0
       "
     >
       <v-menu open-on-hover left offset-x>
@@ -602,14 +631,14 @@
       </v-menu>
     </div>
 
-
     <!-- 3. (duas versoes - comparativo) Recomendation Project Truck Factor -->
     <div
       class="text-center"
       style="float: right"
       v-if="
         perspective === 'Overview' &&
-        projectVersions.projectVersion1.developerList.length > 0 && projectVersions.projectVersion2.developerList.length > 0
+        projectVersions.projectVersion1.developerList.length > 0 &&
+        projectVersions.projectVersion2.developerList.length > 0
       "
     >
       <v-menu open-on-hover left offset-x>
