@@ -136,6 +136,13 @@ export default {
   },
   methods: {
     getProjectInformations() {
+      if (
+        !this.filter.remoteRepository ||
+        !this.filter.remoteRepository.trim()
+      ) {
+        alert("Please, Enter Link to Git!");
+        return;
+      }
       window.getApp.$emit("START_LOADING");
 
       getProject(this.filter)
