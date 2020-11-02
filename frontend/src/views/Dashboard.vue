@@ -40,7 +40,23 @@
                     }}</strong
                   >,
                 </div>
-                <span>Report a project to start tracking!</span>
+                <br />
+                <span
+                  >The "Tools" menu has the necessary tools for you to generate
+                  your developer tracking views. You must enter the URL for a
+                  GIT-based code repository that represents the software
+                  project. If authentication is required to access the code
+                  repository, please enter your authentication credentials. You
+                  can select two different versions for comparison, but you can
+                  also view a single version. If fields V1 and V2 are empty, the
+                  view will be referring to the default branch of the code
+                  repository (usually the master branch).</span
+                >
+                <br />
+                <br />
+                <v-btn color="secondary" @click="startButtonClick">
+                  Click here to start!
+                </v-btn>
               </div>
             </v-card-title>
           </v-card>
@@ -1071,6 +1087,10 @@ export default {
     firstLoadExplore() {
       this.history.paths = [];
       this.buildExplore(null);
+    },
+    startButtonClick() {
+      window.getApp.$emit("APP_DRAWER_TOGGLED");
+      window.linkRepository.focus();
     },
   },
   created() {

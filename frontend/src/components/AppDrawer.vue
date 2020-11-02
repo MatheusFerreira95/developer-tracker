@@ -31,6 +31,7 @@
               prepend-inner-icon="link"
               placeholder="Enter link to Git..."
               hide-details
+              ref="linkRepository"
               @keyup.enter="getProjectInformations"
               v-model="filter.remoteRepository"
             ></v-text-field>
@@ -102,7 +103,7 @@ export default {
   },
   data: () => ({
     mini: false,
-    drawer: true,
+    drawer: false,
     nameProject: "Repository",
     filter: {
       remoteRepository: "",
@@ -129,6 +130,9 @@ export default {
     window.getApp.$on("APP_DRAWER_TOGGLED", () => {
       this.drawer = !this.drawer;
     });
+  },
+  mounted() {
+    window.linkRepository = this.$refs.linkRepository;
   },
   methods: {
     getProjectInformations() {
