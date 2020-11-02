@@ -56,23 +56,25 @@
             <v-text-field
               flat
               solo
-              prepend-inner-icon="input"
-              placeholder="v1: tag, branch or commit..."
+              placeholder="Tag, branch or commit..."
               hide-details
               @keyup.enter="getProjectInformations"
               v-model="filter.checkout1"
-            ></v-text-field>
+            >
+              <div class="prependInput" slot="prepend">V1</div>
+            </v-text-field>
 
             <v-text-field
               flat
               solo
               :disabled="!filter.checkout1.trim()"
-              prepend-inner-icon="input"
-              placeholder="v2: tag, branch or commit..."
+              placeholder="Tag, branch or commit..."
               hide-details
               @keyup.enter="getProjectInformations"
               v-model="filter.checkout2"
-            ></v-text-field>
+            >
+              <div class="prependInput" slot="prepend">V2</div>
+            </v-text-field>
           </v-card>
         </v-flex>
 
@@ -178,6 +180,15 @@ export default {
   .drawer-menu--scroll {
     height: calc(100vh - 48px);
     overflow: auto;
+  }
+
+  .prependInput {
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-right: -16px;
+    z-index: 1;
+    color: #777;
+    font-weight: 900;
   }
 }
 </style>
