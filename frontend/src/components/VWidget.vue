@@ -27,7 +27,7 @@
                     right
                     v-on="on"
                     color="primary"
-                    style="position: absolute; top: -75px; right: -10px"
+                    style="position: absolute; top: -95px; right: -10px"
                     >info</v-icon
                   >
                 </template>

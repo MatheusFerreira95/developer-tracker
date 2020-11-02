@@ -74,39 +74,66 @@
           </v-card>
         </v-flex>
 
-        <v-flex
-          v-if="!projectVersions.projectVersion2.currentVersion"
-          xs12
-          style="text-align: center; color: gray"
-        >
-          {{ projectVersions.projectVersion1.currentVersion }}
+        <v-flex v-if="!projectVersions.projectVersion2.currentVersion" xs12>
+          <v-card class="cardVersionNumber">
+            <div
+              class="v-subheader theme--light primary--text"
+              style="text-align: center; display: block; padding-top: 12px"
+            >
+              {{ projectVersions.projectVersion1.currentVersion }}
+            </div>
+          </v-card>
         </v-flex>
         <v-flex
           v-if="projectVersions.projectVersion2.currentVersion"
           lg5
           sm5
           xs12
-          style="text-align: center; color: gray"
         >
-          {{ projectVersions.projectVersion1.currentVersion }}
+          <v-card class="cardVersionNumber">
+            <div
+              class="v-subheader theme--light primary--text"
+              style="text-align: center; display: block; padding-top: 12px"
+            >
+              V1: &nbsp;
+              <span style="color: gray">{{
+                projectVersions.projectVersion1.currentVersion
+              }}</span>
+            </div>
+          </v-card>
         </v-flex>
         <v-flex
           v-if="projectVersions.projectVersion2.currentVersion"
           lg2
           sm2
           xs12
-          style="text-align: center; color: gray"
         >
-          x
+          <v-card class="cardVersionNumber">
+            <div
+              class="v-subheader theme--light primary--text"
+              style="text-align: center; display: block; padding-top: 12px"
+            >
+              X
+            </div>
+          </v-card>
         </v-flex>
         <v-flex
           v-if="projectVersions.projectVersion2.currentVersion"
           lg5
           sm5
           xs12
-          style="text-align: center; color: gray"
         >
-          {{ projectVersions.projectVersion2.currentVersion }}
+          <v-card class="cardVersionNumber">
+            <div
+              class="v-subheader theme--light primary--text"
+              style="text-align: center; display: block; padding-top: 12px"
+            >
+              V2: &nbsp;
+              <span style="color: gray">{{
+                projectVersions.projectVersion2.currentVersion
+              }}</span>
+            </div>
+          </v-card>
         </v-flex>
       </v-layout>
 
@@ -1089,7 +1116,7 @@ export default {
       this.buildExplore(null);
     },
     startButtonClick() {
-      window.getApp.$emit("APP_DRAWER_TOGGLED");
+      window.getApp.$emit("APP_DRAWER_TOGGLED", true);
       window.linkRepository.focus();
     },
   },
@@ -1185,5 +1212,10 @@ export default {
 
 .v-dialog__content--active {
   background-color: #ffffffa8;
+}
+
+.cardVersionNumber {
+  box-shadow: none;
+  margin-top: -20px;
 }
 </style>

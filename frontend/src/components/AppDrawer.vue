@@ -86,6 +86,12 @@
             <v-icon dark right>check</v-icon>
           </v-btn>
         </v-flex>
+        <v-flex sm12 v-if="showClear">
+          <v-btn color="light" dark block @click="clearButtonClick">
+            Clear
+            <v-icon dark right>backspace</v-icon>
+          </v-btn>
+        </v-flex>
       </v-layout>
     </v-container>
   </v-navigation-drawer>
@@ -104,6 +110,7 @@ export default {
   data: () => ({
     mini: false,
     drawer: false,
+    showClear: false,
     nameProject: "Repository",
     filter: {
       remoteRepository: "",
@@ -127,14 +134,17 @@ export default {
     },
   }),
   created() {
-    window.getApp.$on("APP_DRAWER_TOGGLED", () => {
-      this.drawer = !this.drawer;
+    window.getApp.$on("APP_DRAWER_TOGGLED", (status) => {
+      this.drawer = status !== null ? status : !this.drawer;
     });
   },
   mounted() {
     window.linkRepository = this.$refs.linkRepository;
   },
   methods: {
+    clearButtonClick() {
+      document.location.reload(true);
+    },
     getProjectInformations() {
       if (
         !this.filter.remoteRepository ||
@@ -148,6 +158,7 @@ export default {
       getProject(this.filter)
         .then(
           (response) => {
+            this.showClear = true;
             this.projectVersion1 = response.data.projectVersion1;
             this.filter.localRepository = this.projectVersion1.localRepository;
             this.updateNameRepository();
