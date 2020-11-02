@@ -77,8 +77,7 @@
         <v-flex v-if="!projectVersions.projectVersion2.currentVersion" xs12>
           <v-card class="cardVersionNumber">
             <div
-              class="v-subheader theme--light primary--text"
-              style="text-align: center; display: block; padding-top: 12px"
+              class="v-subheader theme--light primary--text versionNumberText"
             >
               {{ projectVersions.projectVersion1.currentVersion }}
             </div>
@@ -92,8 +91,7 @@
         >
           <v-card class="cardVersionNumber">
             <div
-              class="v-subheader theme--light primary--text"
-              style="text-align: center; display: block; padding-top: 12px"
+              class="v-subheader theme--light primary--text versionNumberText"
             >
               V1: &nbsp;
               <span style="color: gray">{{
@@ -110,8 +108,7 @@
         >
           <v-card class="cardVersionNumber">
             <div
-              class="v-subheader theme--light primary--text"
-              style="text-align: center; display: block; padding-top: 12px"
+              class="v-subheader theme--light primary--text versionNumberText"
             >
               X
             </div>
@@ -125,8 +122,7 @@
         >
           <v-card class="cardVersionNumber">
             <div
-              class="v-subheader theme--light primary--text"
-              style="text-align: center; display: block; padding-top: 12px"
+              class="v-subheader theme--light primary--text versionNumberText"
             >
               V2: &nbsp;
               <span style="color: gray">{{
@@ -1217,5 +1213,13 @@ export default {
 .cardVersionNumber {
   box-shadow: none;
   margin-top: -20px;
+  word-break: break-all;
+
+  .versionNumberText {
+    text-align: center;
+    display: block;
+    padding-top: 12px;
+    font-size: 10px;
+  }
 }
 </style>
