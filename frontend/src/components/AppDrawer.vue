@@ -163,8 +163,7 @@ export default {
         !this.filter.remoteRepository ||
         !this.filter.remoteRepository.trim()
       ) {
-        this.createRecomendations();
-        // alert("Please, Enter Link to Git!");
+        alert("Please, Enter Link to Git!");
         return;
       }
       window.getApp.$emit("START_LOADING");
@@ -199,11 +198,11 @@ export default {
       if (!this.nameProject) this.nameProject = "Repository";
     },
 
-    exportRecomendations() {
-      this.$htmlToPaper("printAgora");
+    createRecomendations(project) {
+      //devo persisitir os dados para geração do pdf em uma variavel no storage no navegador ou no document.window
     },
 
-    createRecomendations(project) {
+    exportRecomendations() {
       /*     let doc = new jsPDF();
 
       let tituloCommitLOC = "Project Commits and LOC";
@@ -271,40 +270,40 @@ export default {
       var recomendationReport = document.createElement("div");
       recomendationReport.setAttribute("id", "recomendationReport");
 
-      let tituloCommitLOC = "<h4>Project Commits and LOC</h4>";
+      let tituloCommitLOC = "<h10>Project Commits and LOC</h10>";
       let conteudoCommitLOC =
         "<p>Commits e LOC do Projeto: Utilize para compreender a dimensão do projeto. Serve como um parâmetro para analisar as conexões entre desenvolvedores e artefatos.</p>";
 
-      let tituloTechDomain = "<h4>Project Programming Languages</h4>";
+      let tituloTechDomain = "<h10>Project Programming Languages</h10>";
       let conteudoTechDomain =
         "<p>Linguagens de Programação do projeto: Utilize para compreender a demanda de tencnologias no projeto. Considere as diferentes características das linguagens de programação ao analisar isso, algumas linguagens podem demandar mais LOC devido às características delas.</p>";
 
-      let tituloTF = "<h4>Project Truck Factor</h4>";
+      let tituloTF = "<h10>Project Truck Factor</h10>";
       let conteudoTF =
         "<p> Truck Factor do Projeto: O Truck Factor é calculado baseado no grau de autoria dos desenvolvedores nos arquivos projeto. Considere que os desenvolvedores do Truck Factor podem concentrar o conhecimento de mais da metade dos arquivos do projeto. Quanto menor o valor do Truck Factor maior é a concentração de conhecimento. Para mitigar a concentração de conhecimento considere incluir práticas como programação em par e rodagem de pessoas no código fonte. </p>";
 
-      let tituloTVDev = "<h4>Truck Factor developers</h4>";
+      let tituloTVDev = "<h10>Truck Factor developers</h10>";
       let conteudoTVDev =
         "<p>Desenvolvedores do Truck Factor: São os membros do time que podem possuir alto grau de autoria e conhecimento sobre a versão do projeto. Observe em quais regiões do código fonte podem ser aplicadas práticas como práticas como programação em par e rodagem de pessoas para distribuir a concentração de conhecimento.</p>";
 
       let lineCut = "<hr>";
 
       let tituloConnection =
-        "<h4>Individual connections of developers on artifacts</h4>";
+        "<h10>Individual connections of developers on artifacts</h10>";
       let conteudoConnection =
         "<p> Conexões individuais de desenvolvedores em artefatos: Isso pode indicar o quanto o desenvolvedor trabalhou em determinado artefato. Pode ser possível identificar, por exemplo, se esse desenvolvedor está concentrando o conhecimento de determinada região do código ou se ele atua com apenas uma determinada linguagem de programação.</p>";
 
       let tituloJoinConnection =
-        "<h4>Joint connections of developers on artifacts</h4>";
+        "<h10>Joint connections of developers on artifacts</h10>";
       let conteudoJoinConnection =
         "<p> Conexões conjuntas de desenvolvedores em artefatos: Isso pode indicar o quanto os desenvolvedores trabalharam em determinado artefato. Pode ser possível, por exemplo, identificar a distribuição de conhecimento no artefato e a demanda de alteração.</p>";
 
-      let tituloOthers = "<h4>Others</h4>";
+      let tituloOthers = "<h10>Others</h10>";
       let conteudoOthers =
         '<p>Outras observações (Isso ajuda a mitigar o risco dos desenvolvedores distorcerem seu trabalho para adequarem-se às  métrica): i) Ao observar LOC (projeto e desenvolvedores), considere que o time deve seguir os devidos padrões de código da linguagem de programação (e.g. posicionamento de "{}"). Considere também definir um processo de code review, para que outros desenvolvedores avaliem as soluções implementadas por um membro do time, evitando soluções inadequadas ou com excessivo LOC; ii) Ao observar commmits, considere que o time deve seguir um padrão commits (e.g. o mais atômico possível).</p>';
 
       recomendationReport.innerHTML =
-        "<style> h4 { font-size: 10px } p { font-size: 7px;} </style>" +
+        "<style> h10 { font-size: 10px } p { font-size: 7px;} </style>" +
         "<div style='width:400px; margin:20px; text-align: justify;'>" +
         tituloCommitLOC +
         conteudoCommitLOC +
@@ -351,6 +350,7 @@ export default {
 <style lang="stylus">
 #appDrawer {
   overflow: hidden;
+  background-color: #efefef;
 
   .drawer-menu--scroll {
     height: calc(100vh - 48px);

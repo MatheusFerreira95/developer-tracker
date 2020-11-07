@@ -3,10 +3,20 @@
     <template v-if="!$route.meta.public">
       <v-app id="inspire" class="app">
         <!-- loading -->
-        <v-dialog v-model="loading" persistent fullscreen content-class="loading-dialog">
+        <v-dialog
+          v-model="loading"
+          persistent
+          fullscreen
+          content-class="loading-dialog"
+        >
           <v-container fill-height>
             <v-layout row justify-center align-center>
-              <v-progress-circular indeterminate :size="90" :width="3" color="primary"></v-progress-circular>
+              <v-progress-circular
+                indeterminate
+                :size="90"
+                :width="3"
+                color="primary"
+              ></v-progress-circular>
             </v-layout>
           </v-container>
         </v-dialog>
@@ -15,7 +25,7 @@
         <!-- toolbar -->
         <app-toolbar class="app--toolbar"></app-toolbar>
         <!-- pages -->
-        <v-content>
+        <v-content class="backgroundPage">
           <div class="page-wrapper">
             <router-view></router-view>
           </div>
@@ -31,18 +41,18 @@ import AppEvents from "./event";
 export default {
   components: {
     AppDrawer,
-    AppToolbar
+    AppToolbar,
   },
   data: () => ({
-    loading: false
+    loading: false,
   }),
 
   created() {
-    AppEvents.forEach(item => {
+    AppEvents.forEach((item) => {
       this.$on(item.name, item.callback);
     });
     window.getApp = this;
-  }
+  },
 };
 </script>
 
@@ -54,5 +64,9 @@ export default {
 
 .v-dialog__content--active {
   background-color: #ffffffa8;
+}
+
+.backgroundPage {
+  background-color: #efefef;
 }
 </style>

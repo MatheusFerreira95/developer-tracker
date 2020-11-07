@@ -537,7 +537,7 @@
         <template v-slot:activator="{ on }">
           <v-chip
             v-on="on"
-            style="z-index: 10; position: absolute; top: -60px; right: 70px"
+            style="z-index: 10; position: absolute; top: -51px; right: 70px"
             color="white"
             text-color="primary"
             >Legend</v-chip
@@ -900,7 +900,7 @@ export default {
   .versionNumberText {
     text-align: center;
     display: block;
-    background-color: #fafafa;
+    background-color: #efefef;
     padding-top: 12px;
     font-weight: normal;
     margin-bottom: -20px;
