@@ -13,7 +13,7 @@
     <v-spacer></v-spacer>
 
     <v-btn icon @click="handleFullScreen()">
-      <v-icon>{{iconscreen}}</v-icon>
+      <v-icon>{{ iconscreen }}</v-icon>
     </v-btn>
   </v-toolbar>
 </template>
@@ -25,7 +25,7 @@ export default {
   name: "app-toolbar",
 
   data: () => ({
-    iconscreen: "fullscreen"
+    iconscreen: "fullscreen",
   }),
 
   methods: {
@@ -36,7 +36,7 @@ export default {
       this.iconscreen =
         this.iconscreen === "fullscreen" ? "fullscreen_exit" : "fullscreen";
       Util.toggleFullScreen();
-    }
-  }
+    },
+  },
 };
 </script>

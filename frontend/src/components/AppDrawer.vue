@@ -79,17 +79,31 @@
           </v-card>
         </v-flex>
 
-        <!-- botão de aplicar -->
+        <!-- botões -->
         <v-flex sm12>
           <v-btn color="primary" dark block @click="getProjectInformations">
             Apply
             <v-icon dark right>check</v-icon>
           </v-btn>
-        </v-flex>
-        <v-flex sm12 v-if="showClear">
-          <v-btn color="light" dark block @click="clearButtonClick">
+          <v-btn
+            v-if="showClear"
+            color="white"
+            light
+            block
+            @click="clearButtonClick"
+          >
             Clear
-            <v-icon dark right>backspace</v-icon>
+            <v-icon light right>backspace</v-icon>
+          </v-btn>
+          <v-btn
+            v-if="showClear"
+            color="secondary"
+            light
+            block
+            @click="exportRecomendations"
+          >
+            Recomendations
+            <v-icon light right> description </v-icon>
           </v-btn>
         </v-flex>
       </v-layout>
@@ -135,7 +149,7 @@ export default {
   }),
   created() {
     window.getApp.$on("APP_DRAWER_TOGGLED", (status) => {
-      this.drawer = status !== null ? status : !this.drawer;
+      this.drawer = status !== undefined ? status : !this.drawer;
     });
   },
   mounted() {

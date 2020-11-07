@@ -79,7 +79,10 @@
             <div
               class="v-subheader theme--light primary--text versionNumberText"
             >
-              {{ projectVersions.projectVersion1.currentVersion }}
+              V1: &nbsp;
+              <span style="color: gray">{{
+                projectVersions.projectVersion1.currentVersion
+              }}</span>
             </div>
           </v-card>
         </v-flex>
@@ -150,7 +153,10 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion1.numCommits }} Commits
+                    Commits:
+                    <b class="primary--text">
+                      {{ projectVersions.projectVersion1.numCommits }}
+                    </b>
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
@@ -161,7 +167,10 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion1.numLoc }} Lines Of Code
+                    Lines Of Code:
+                    <b class="primary--text">{{
+                      projectVersions.projectVersion1.numLoc
+                    }}</b>
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
@@ -186,7 +195,10 @@
 
           <!-- Grafico Linguagem de programacao-->
           <v-flex lg6 sm12 xs12>
-            <v-widget title="Programming Languages" content-bg="white">
+            <v-widget
+              title="Technology Domain - Programming Languages"
+              content-bg="white"
+            >
               <div slot="widget-content">
                 <chart
                   v-if="
@@ -208,14 +220,14 @@
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
-                  <h4>Developers</h4>
+                  <h4>
+                    Truck Factor:
+                    <b class="primary--text">{{
+                      projectVersions.projectVersion1.truckFactor
+                    }}</b>
+                  </h4>
                 </v-toolbar-title>
                 <v-divider class="white"></v-divider>
-                <v-chip color="lightblue" text-color="gray">
-                  <v-icon color="gray">local_shipping</v-icon>
-                  &nbsp;&nbsp;&nbsp;Truck Factor:
-                  {{ projectVersions.projectVersion1.truckFactor }}
-                </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
               <v-card-text class="pa-0">
@@ -230,14 +242,14 @@
                   >
                     <template slot="items" slot-scope="props">
                       <tr>
-                        <td class="avatar-developer">
+                        <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
-                          <v-icon
+                          <div
                             v-if="props.item.truckFactor"
-                            right
-                            color="gray"
-                            >local_shipping</v-icon
+                            style="color: darkblue"
                           >
+                            Yes
+                          </div>
                         </td>
                         <td class="text-xs-left">
                           {{ props.item.name + " (" + props.item.email + ")" }}
@@ -289,7 +301,10 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion1.numCommits }} Commits
+                    Commits:
+                    <b class="primary--text">
+                      {{ projectVersions.projectVersion1.numCommits }}
+                    </b>
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
@@ -300,7 +315,10 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion2.numCommits }} Commits
+                    Commits:
+                    <b class="primary--text">
+                      {{ projectVersions.projectVersion2.numCommits }}
+                    </b>
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
@@ -311,7 +329,10 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion1.numLoc }} Lines Of Code
+                    Lines Of Code:
+                    <b class="primary--text">
+                      {{ projectVersions.projectVersion1.numLoc }}</b
+                    >
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
@@ -322,7 +343,10 @@
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
                   <h4>
-                    {{ projectVersions.projectVersion2.numLoc }} Lines Of Code
+                    Lines Of Code:
+                    <b class="primary--text">
+                      {{ projectVersions.projectVersion2.numLoc }}
+                    </b>
                   </h4>
                 </v-toolbar-title>
               </v-toolbar>
@@ -331,7 +355,10 @@
 
           <!-- Grafico Linguagem de programacao-->
           <v-flex lg6 sm6 xs12>
-            <v-widget title="Programming Languages" content-bg="white">
+            <v-widget
+              title="Technology Domain - Programming Languages"
+              content-bg="white"
+            >
               <div slot="widget-content">
                 <chart
                   v-if="
@@ -348,7 +375,10 @@
             </v-widget>
           </v-flex>
           <v-flex lg6 sm6 xs12>
-            <v-widget title="Programming Languages" content-bg="white">
+            <v-widget
+              title="Technology Domain - Programming Languages"
+              content-bg="white"
+            >
               <div slot="widget-content">
                 <chart
                   v-if="
@@ -370,14 +400,14 @@
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
-                  <h4>Developers</h4>
+                  <h4>
+                    Truck Factor:
+                    <b class="primary--text">{{
+                      projectVersions.projectVersion1.truckFactor
+                    }}</b>
+                  </h4>
                 </v-toolbar-title>
                 <v-divider class="white"></v-divider>
-                <v-chip color="lightblue" text-color="gray">
-                  <v-icon color="gray">local_shipping</v-icon>
-                  &nbsp;&nbsp;&nbsp;Truck Factor:
-                  {{ projectVersions.projectVersion1.truckFactor }}
-                </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
               <v-card-text class="pa-0">
@@ -392,14 +422,14 @@
                   >
                     <template slot="items" slot-scope="props">
                       <tr>
-                        <td class="avatar-developer">
+                        <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
-                          <v-icon
+                          <div
                             v-if="props.item.truckFactor"
-                            right
-                            color="gray"
-                            >local_shipping</v-icon
+                            style="color: darkblue"
                           >
+                            Yes
+                          </div>
                         </td>
                         <td class="text-xs-left">
                           {{ props.item.name + " (" + props.item.email + ")" }}
@@ -417,14 +447,14 @@
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
-                  <h4>Developers</h4>
+                  <h4>
+                    Truck Factor:
+                    <b class="primary--text">{{
+                      projectVersions.projectVersion2.truckFactor
+                    }}</b>
+                  </h4>
                 </v-toolbar-title>
                 <v-divider class="white"></v-divider>
-                <v-chip color="lightblue" text-color="gray">
-                  <v-icon color="gray">local_shipping</v-icon>
-                  &nbsp;&nbsp;&nbsp;Truck Factor:
-                  {{ projectVersions.projectVersion2.truckFactor }}
-                </v-chip>
               </v-toolbar>
               <v-divider></v-divider>
               <v-card-text class="pa-0">
@@ -439,14 +469,14 @@
                   >
                     <template slot="items" slot-scope="props">
                       <tr>
-                        <td class="avatar-developer">
+                        <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
-                          <v-icon
+                          <div
                             v-if="props.item.truckFactor"
-                            right
-                            color="gray"
-                            >local_shipping</v-icon
+                            style="color: darkblue"
                           >
+                            Yes
+                          </div>
                         </td>
                         <td class="text-xs-left">
                           {{ props.item.name + " (" + props.item.email + ")" }}
@@ -501,6 +531,65 @@
       </v-layout>
     </v-container>
 
+    <!-- ícones do sistema -->
+    <div class="text-center" style="float: right">
+      <v-menu open-on-hover left offset-x>
+        <template v-slot:activator="{ on }">
+          <v-chip
+            v-on="on"
+            style="z-index: 10; position: absolute; top: -50px; right: 70px"
+            color="white"
+            text-color="primary"
+            >Legend</v-chip
+          >
+        </template>
+
+        <v-layout row wrap>
+          <v-flex sm12>
+            <v-card>
+              <div class="v-subheader theme--light primary--text">
+                Icons Legend
+              </div>
+              <div class="legend">
+                <div v-if="perspective !== 'Overview'">
+                  <v-icon color="#B00020"> person </v-icon>Developer <br />
+                </div>
+
+                <div v-if="perspective !== 'Overview'">
+                  <v-icon color="orange"> person </v-icon>Truck Factor Developer
+                  <br />
+                </div>
+
+                <div v-if="perspective !== 'Overview'">
+                  <v-icon color="#FFD600"> folder </v-icon>Directory Artifact
+                  <br />
+                </div>
+
+                <div v-if="perspective !== 'Overview'">
+                  <v-icon color="#1B5E20"> work </v-icon>Project Artifact
+                  <br />
+                </div>
+
+                <div v-if="perspective !== 'Overview'">
+                  <v-icon color="#90A4AE"> insert_drive_file </v-icon>File
+                  Artifact <br />
+                </div>
+
+                <div v-if="perspective !== 'Overview'">
+                  <v-icon color="#3f51b5"> trending_flat </v-icon
+                  >Artifact-Developer Relationship
+                  <br />
+                </div>
+
+                <div v-if="perspective !== 'Overview'">
+                  <v-icon color="primary"> info </v-icon>Instructions <br />
+                </div>
+              </div>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-menu>
+    </div>
     <!-- 1. Recomendation commit and loc -->
     <div
       class="text-center"
@@ -963,7 +1052,7 @@ export default {
     colors: [],
     headers: [
       {
-        text: "Truck Factor", // avatar
+        text: "Included in Truck Factor", // avatar
         value: "truckFactor",
       },
       { text: "Name (email)", value: "name" },
@@ -1218,8 +1307,17 @@ export default {
   .versionNumberText {
     text-align: center;
     display: block;
+    background-color: #fafafa;
     padding-top: 12px;
+    font-weight: normal;
+    margin-bottom: -20px;
     font-size: 10px;
   }
+}
+
+.legend {
+  padding: 10px;
+  padding-top: 0px;
+  padding-right: 2px;
 }
 </style>

@@ -4,7 +4,10 @@ export default {
     formatter: '{b0}: {d}% (LOC)'
   },
   legend: {
-    bottom: 0
+    top: 0,
+    textStyle: {
+      color: "#3f51b5"
+    }
   },
   title: {
     show: true,
