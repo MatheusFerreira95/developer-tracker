@@ -532,12 +532,12 @@
     </v-container>
 
     <!-- ícones do sistema -->
-    <div class="text-center" style="float: right">
+    <div v-show="perspective !== 'Overview'">
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
           <v-chip
             v-on="on"
-            style="z-index: 10; position: absolute; top: -50px; right: 70px"
+            style="z-index: 10; position: absolute; top: -60px; right: 70px"
             color="white"
             text-color="primary"
             >Legend</v-chip
@@ -551,39 +551,25 @@
                 Icons Legend
               </div>
               <div class="legend">
-                <div v-if="perspective !== 'Overview'">
-                  <v-icon color="#B00020"> person </v-icon>Developer <br />
-                </div>
+                <v-icon color="#B00020"> person </v-icon>Developer <br />
 
-                <div v-if="perspective !== 'Overview'">
-                  <v-icon color="orange"> person </v-icon>Truck Factor Developer
-                  <br />
-                </div>
+                <v-icon color="orange"> person </v-icon>Truck Factor Developer
+                <br />
 
-                <div v-if="perspective !== 'Overview'">
-                  <v-icon color="#FFD600"> folder </v-icon>Directory Artifact
-                  <br />
-                </div>
+                <v-icon color="#FFD600"> folder </v-icon>Directory Artifact
+                <br />
 
-                <div v-if="perspective !== 'Overview'">
-                  <v-icon color="#1B5E20"> work </v-icon>Project Artifact
-                  <br />
-                </div>
+                <v-icon color="#1B5E20"> work </v-icon>Project Artifact
+                <br />
 
-                <div v-if="perspective !== 'Overview'">
-                  <v-icon color="#90A4AE"> insert_drive_file </v-icon>File
-                  Artifact <br />
-                </div>
+                <v-icon color="#90A4AE"> insert_drive_file </v-icon>File
+                Artifact <br />
 
-                <div v-if="perspective !== 'Overview'">
-                  <v-icon color="#3f51b5"> trending_flat </v-icon
-                  >Artifact-Developer Relationship
-                  <br />
-                </div>
+                <v-icon color="#3f51b5"> trending_flat </v-icon
+                >Artifact-Developer Relationship
+                <br />
 
-                <div v-if="perspective !== 'Overview'">
-                  <v-icon color="primary"> info </v-icon>Instructions <br />
-                </div>
+                <v-icon color="primary"> info </v-icon>Instructions <br />
               </div>
             </v-card>
           </v-flex>
