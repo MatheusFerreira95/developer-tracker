@@ -145,6 +145,7 @@ export default {
       developerList: [],
       localRepository: "",
     },
+    projects: {},
   }),
   created() {
     window.getApp.$on("APP_DRAWER_TOGGLED", (status) => {
@@ -168,15 +169,27 @@ export default {
       }
       window.getApp.$emit("START_LOADING");
 
+      this.filter = {
+        remoteRepository: "https://github.com/codetrash/rest-crud.git",
+        localRepository:
+          "/home/matheus/team-tracker-clones/rest-crud-1606349516567/rest-crud",
+        zoomPath: "./",
+        directory: "",
+        user: "",
+        password: "",
+        checkout1: "",
+        checkout2: "",
+      };
+
       getProject(this.filter)
         .then(
           (response) => {
             this.showClear = true;
+            this.projects = response.data;
             this.projectVersion1 = response.data.projectVersion1;
             this.filter.localRepository = this.projectVersion1.localRepository;
             this.updateNameRepository();
 
-            this.createRecomendations(response.data);
             window.getApp.$emit("UPDATE_PROJECT", response.data);
             window.getApp.$emit("STOP_LOADING");
           },
@@ -198,79 +211,13 @@ export default {
       if (!this.nameProject) this.nameProject = "Repository";
     },
 
-    createRecomendations(project) {
-      //devo persisitir os dados para geração do pdf em uma variavel no storage no navegador ou no document.window
-    },
-
     exportRecomendations() {
-      /*     let doc = new jsPDF();
-
-      let tituloCommitLOC = "Project Commits and LOC";
-      let conteudoCommitLOC =
-        "Linguagens de Programação do projeto: Utilize para compreender a demanda de tencnologias no projeto. Considere as diferentes características das linguagens de programação ao analisar isso, algumas linguagens podem demandar mais LOC devido às características delas.";
-
-      let tituloTechDomain = "Project Programming Languages";
-      let conteudoTechDomain =
-        "Linguagens de Programação do projeto: Utilize para compreender a demanda de tencnologias no projeto. Considere as diferentes características das linguagens de programação ao analisar isso, algumas linguagens podem demandar mais LOC devido às características delas.";
-
-      let tituloTF = "Project Truck Factor";
-      let conteudoTF =
-        "Truck Factor do Projeto: O Truck Factor é calculado baseado no grau de autoria dos desenvolvedores nos arquivos projeto. Considere que os desenvolvedores do Truck Factor podem concentrar o conhecimento de mais da metade dos arquivos do projeto. Quanto menor o valor do Truck Factor maior é a concentração de conhecimento. Para mitigar a concentração de conhecimento considere incluir práticas como programação em par e rodagem de pessoas no código fonte. ";
-
-      let tituloTVDev = "Truck Factor developers";
-      let conteudoTVDev =
-        "Desenvolvedores do Truck Factor: São os membros do time que podem possuir alto grau de autoria e conhecimento sobre a versão do projeto. Observe em quais regiões do código fonte podem ser aplicadas práticas como práticas como programação em par e rodagem de pessoas para distribuir a concentração de conhecimento.";
-
-      let tituloConnection =
-        "Individual connections of developers on artifacts";
-      let conteudoConnection =
-        "Conexões individuais de desenvolvedores em artefatos: Isso pode indicar o quanto o desenvolvedor trabalhou em determinado artefato. Pode ser possível identificar, por exemplo, se esse desenvolvedor está concentrando o conhecimento de determinada região do código ou se ele atua com apenas uma determinada linguagem de programação.";
-
-      let tituloJoinConnection = "Joint connections of developers on artifacts";
-      let conteudoJoinConnection =
-        "Conexões conjuntas de desenvolvedores em artefatos: Isso pode indicar o quanto os desenvolvedores trabalharam em determinado artefato. Pode ser possível, por exemplo, identificar a distribuição de conhecimento no artefato e a demanda de alteração.";
-
-      let tituloOthers = "Others";
-      let conteudoOthers =
-        'Outras observações (Isso ajuda a mitigar o risco dos desenvolvedores distorcerem seu trabalho para adequarem-se às  métrica): i) Ao observar LOC (projeto e desenvolvedores), considere que o time deve seguir os devidos padrões de código da linguagem de programação (e.g. posicionamento de "{}"). Considere também definir um processo de code review, para que outros desenvolvedores avaliem as soluções implementadas por um membro do time, evitando soluções inadequadas ou com excessivo LOC; ii) Ao observar commmits, considere que o time deve seguir um padrão commits (e.g. o mais atômico possível).';
-
-      let content = [
-        tituloCommitLOC,
-        conteudoCommitLOC,
-        " ",
-        tituloTechDomain,
-        conteudoTechDomain,
-        " ",
-        tituloTF,
-        conteudoTF,
-        " ",
-        tituloTVDev,
-        conteudoTVDev,
-        " ",
-        tituloConnection,
-        conteudoConnection,
-        " ",
-        tituloJoinConnection,
-        conteudoJoinConnection,
-        " ",
-        tituloOthers,
-        conteudoOthers,
-      ];
-      doc.text(10, 20, "Recomendations");
-
-      let position = 40;
-      content.forEach((item) => {
-        doc.text(10, position, item);
-        position += 10;
-      });
-
-       doc.save("recomendations.pdf");
-*/
-
       var recomendationReport = document.createElement("div");
       recomendationReport.setAttribute("id", "recomendationReport");
-
-      let tituloCommitLOC = "<h10>Project Commits and LOC</h10>";
+      /*
+      let tituloCommitLOC =
+        "<h10>Project Commits and LOC</h10>" +
+        this.projectVersion1.localRepository;
       let conteudoCommitLOC =
         "<p>Commits e LOC do Projeto: Utilize para compreender a dimensão do projeto. Serve como um parâmetro para analisar as conexões entre desenvolvedores e artefatos.</p>";
 
@@ -301,6 +248,93 @@ export default {
       let tituloOthers = "<h10>Others</h10>";
       let conteudoOthers =
         '<p>Outras observações (Isso ajuda a mitigar o risco dos desenvolvedores distorcerem seu trabalho para adequarem-se às  métrica): i) Ao observar LOC (projeto e desenvolvedores), considere que o time deve seguir os devidos padrões de código da linguagem de programação (e.g. posicionamento de "{}"). Considere também definir um processo de code review, para que outros desenvolvedores avaliem as soluções implementadas por um membro do time, evitando soluções inadequadas ou com excessivo LOC; ii) Ao observar commmits, considere que o time deve seguir um padrão commits (e.g. o mais atômico possível).</p>';
+*/
+
+      let countElement = 0;
+
+      let diagnostic1V1 =
+        "<p><b>Diagnóstico (" +
+        ++countElement +
+        "):</b><br>DevTracker detectou que a versão <b>111</b><br>possui um time composto por <b>222 desenvolvedores</b><br>Além disso, os desenvolvedores <b>333,444...</b><br><b>concentram o conhecimento sobre 50% ou mais</b><br> dos artefatos da versão 111.</p>";
+      let recomendation1V1 =
+        "<p><b>Recomendação (" +
+        countElement +
+        "):</b><br>Quando uma pequena parcela de pessoas do time concentram o conhecimento sobre a implementação há um risco de dependência dessas pessoas no projeto. Observe em quais regiões do código fonte podem ser aplicadas práticas como práticas como programação em par e rodagem de pessoas para distribuir o conhecimento entre todos do time de uma forma mais homogênea.</p>";
+
+      let diagnostic1V2 = diagnostic1V1; // + alteraçoes
+      let recomendation1V2 = recomendation1V1;
+
+      let diagnostic2V1 = "";
+      let recomendation2V1 = "";
+
+      let diagnostic2V2 = "";
+      let recomendation2V2 = "";
+
+      let diagnosticComparative = "";
+      let recomendationComparative = "";
+
+      recomendationReport.innerHTML =
+        "<style> h10 { font-size: 15px } p { font-size: 7px;} </style>" +
+        "<div style='width:400px; margin:20px; text-align: justify;'>" +
+        "<h10>Developer Tracker App Recomendations</h10><br><br>" +
+        diagnostic1V1 +
+        recomendation1V1 +
+        "<hr><br>" +
+        diagnostic1V2 +
+        recomendation1V2 +
+        "<hr><br>" +
+        diagnostic2V1 +
+        recomendation2V1 +
+        "<hr><br>" +
+        diagnostic2V2 +
+        recomendation2V2 +
+        "<hr><br>" +
+        diagnosticComparative +
+        recomendationComparative +
+        "</div>";
+      /* 
+--------por versao-------------
+
+<p><b>Diagnóstico 555count:</b><br>
+DevTracker detectou que a versão <b>111</b><br>
+possui um time composto por <b>222 desenvolvedores</b><br>.
+Além disso, os desenvolvedores <b>333,444...</b><br>
+<b>concentram o conhecimento sobre 50% ou mais</b><br> dos artefatos da versão 111.</p>
+
+<p><b>Recomendação 555count:</b><br>
+Quando uma pequena parcela de pessoas do time concentram o conhecimento sobre a implementação há um risco de dependência dessas pessoas no projeto. Observe em quais regiões do código fonte podem ser aplicadas práticas como práticas como programação em par e rodagem de pessoas para distribuir o conhecimento entre todos do time de uma forma mais homogênea.</p>
+
+<br>
+
+<p><b>Diagnóstico 6count:</b><br>
+DevTracker detectou que a versão <b>111</b><br>
+foi construída utilizando as seguintes tecnologias: <b>tec (%), ...</b><br>.</p>
+
+<p><b>Recomendação 6count:</b><br>
+Observe que há linguagens de promação que estão demandando maior esforço (em LOC). Certifique-se dos desenvolvedores que estão atuando nos módulos do software que utilizam como tecnologia as linguagens de programação que possuem maior porcentagem de LOC. Pode ser necessário alocar outros colaboradores com o skill dessa tecnologia para o projeto. Certifique-se também se a capacidade técnica do time do projeto está coerente com a demanda de linguagens de programação. Isso pode ajudá-lo a otimizar a alocação de pessoas, evitando a subutilização e/ou a sobrecarga de trabalho para determinados desenvolvedores.</p>
+
+
+---------quando houver comparação---------------------
+<hr>
+<br>
+
+<p><b>Diagnóstico 7count:</b><br>
+DevTracker detectou que a versão <b>111</b><br>
+possui as seguintes características:<br>
+LOC <b>loc888</b><br>
+Commits <b>commits999</b><br>.</p>
+
+DevTracker detectou que a versão <b>111</b><br>
+possui as seguintes características:<br>
+LOC <b>loc888</b><br>
+Commits <b>commits999</b><br>.</p>
+
+
+<p><b>Recomendação 7count:</b><br>
+Commits e LOC do Projeto: Utilize para compreender a dimensão do projeto. Ao observar LOC (perspectiva projeto e desenvolvedores), considere que o time deve seguir os devidos padrões de código da linguagem de programação (e.g. posicionamento de "{}"). Considere também definir um processo de code review, para que outros desenvolvedores avaliem as soluções implementadas por um membro do time, evitando soluções inadequadas ou com excessivo LOC. Ao observar commmits, considere que o time deve seguir um padrão commits (e.g. o mais atômico possível). Com esses cuidados agora você pode comparar a diferença das dimensões das duas versões. Observe também se a demanda tecnlógica e a atuação dos desenvolvedores foi diferente nas duas versões. Esses resultados podem ser indicativos de resultados de decisões tomadas ao longo do projeto e do lançamento de versões.</p>
+*/
+
+      /*
 
       recomendationReport.innerHTML =
         "<style> h10 { font-size: 10px } p { font-size: 7px;} </style>" +
@@ -321,13 +355,7 @@ export default {
         tituloOthers +
         conteudoOthers +
         "</div>";
-
-      try {
-        document.body.appendChild(recomendationReport);
-      } catch (e) {
-        console.log(e);
-      }
-      // this.$htmlToPaper("recomendationReport");
+*/
       let doc2 = new jsPDF({ unit: "px" });
       doc2.html(recomendationReport, {
         callback: function (doc2) {
