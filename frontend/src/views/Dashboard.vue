@@ -661,7 +661,8 @@ export default {
       this.devTFListV1 = [];
       this.projectVersions.projectVersion1.developerList.forEach(
         (developer) => {
-          this.devTFListV1.push(developer);
+          if (developer.truckFactor) this.devTFListV1.push(developer);
+          console.log(this.devTFListV1);
         }
       );
     },
@@ -673,7 +674,8 @@ export default {
       this.devTFListV2 = [];
       this.projectVersions.projectVersion2.developerList.forEach(
         (developer) => {
-          this.devTFListV2.push(developer);
+          if (developer.truckFactor) this.devTFListV2.push(developer);
+          console.log(this.devTFListV2);
         }
       );
     },

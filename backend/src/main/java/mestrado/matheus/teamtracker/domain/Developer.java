@@ -40,10 +40,10 @@ public class Developer implements Comparable<Developer> {
 
 		Developer other = (Developer) obj;
 
-		if (!name.equals(other.name) && !email.equals(other.email))
-			return false;
+		if (name.equals(other.name))
+			return true;
 
-		return true;
+		return false;
 	}
 
 	@Override

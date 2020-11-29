@@ -110,9 +110,9 @@ public class Project {
 			System.out.println("Developer..................................: " + dev.name);
 
 			for (Developer devTF : devTFList) {
-				if(dev.equals(devTF) && devTF.truckFactor) {
+				if(dev.equals(devTF)) {
 					dev.truckFactor = true;
-				}				
+				}
 			}
 		}
 
