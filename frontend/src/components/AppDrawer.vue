@@ -98,9 +98,9 @@
             color="secondary"
             light
             block
-            @click="exportRecomendations"
+            @click="exportRecommendations"
           >
-            Recomendations
+            Recommendations
             <v-icon light right> description </v-icon>
           </v-btn>
         </v-flex>
@@ -145,7 +145,7 @@ export default {
       developerList: [],
       localRepository: "",
     },
-    projects: {},
+    projectVersions: {},
   }),
   created() {
     window.getApp.$on("APP_DRAWER_TOGGLED", (status) => {
@@ -185,7 +185,7 @@ export default {
         .then(
           (response) => {
             this.showClear = true;
-            this.projects = response.data;
+            this.projectVersions = response.data;
             this.projectVersion1 = response.data.projectVersion1;
             this.filter.localRepository = this.projectVersion1.localRepository;
             this.updateNameRepository();
@@ -211,9 +211,9 @@ export default {
       if (!this.nameProject) this.nameProject = "Repository";
     },
 
-    exportRecomendations() {
-      var recomendationReport = document.createElement("div");
-      recomendationReport.setAttribute("id", "recomendationReport");
+    exportRecommendations() {
+      var RecommendationReport = document.createElement("div");
+      RecommendationReport.setAttribute("id", "RecommendationReport");
       /*
       let tituloCommitLOC =
         "<h10>Project Commits and LOC</h10>" +
@@ -253,44 +253,77 @@ export default {
       let countElement = 0;
 
       let diagnostic1V1 =
-        "<p><b>Diagnóstico (" +
+        "<p> <b> Diagnosis &nbsp;" +
         ++countElement +
-        "):</b><br>DevTracker detectou que a versão <b>111</b><br>possui um time composto por <b>222 desenvolvedores</b><br>Além disso, os desenvolvedores <b>333,444...</b><br><b>concentram o conhecimento sobre 50% ou mais</b><br> dos artefatos da versão 111.</p>";
-      let recomendation1V1 =
-        "<p><b>Recomendação (" +
-        countElement +
-        "):</b><br>Quando uma pequena parcela de pessoas do time concentram o conhecimento sobre a implementação há um risco de dependência dessas pessoas no projeto. Observe em quais regiões do código fonte podem ser aplicadas práticas como práticas como programação em par e rodagem de pessoas para distribuir o conhecimento entre todos do time de uma forma mais homogênea.</p>";
+        ": </b> <br> DevTracker has detected that version <b> " +
+        this.projectVersions.projectVersion1.currentVersion +
+        " </b> has the effort of a team of <b> " +
+        this.projectVersions.projectVersion1.developerList.length +
+        " developers</b>. In addition, <b> " +
+        this.getTruckFactorNames(
+          this.projectVersions.projectVersion1.developerList
+        ) +
+        " </b>&nbsp;concentrate knowledge on 50% or more of version artifacts. ";
 
-      let diagnostic1V2 = diagnostic1V1; // + alteraçoes
-      let recomendation1V2 = recomendation1V1;
+      let diagnostic1V2 = this.projectVersions.projectVersion2
+        ? "&nbsp; Regarding version <b> " +
+          this.projectVersions.projectVersion2.currentVersion +
+          "</b>, DevTracker has detected that it has has the effort of a team of <b> " +
+          this.projectVersions.projectVersion2.developerList.length +
+          " developers </b>. In addition, <b> " +
+          this.getTruckFactorNames(
+            this.projectVersions.projectVersion2.developerList
+          ) +
+          " </b>&nbsp; concentrate knowledge on 50% or more of version artifacts. "
+        : "</p>";
+
+      let Recommendation1 =
+        "<p> <b> Recommendation &nbsp;" +
+        countElement +
+        ": </b> <br> When a small number of people on the team concentrate the knowledge about the implementation there is a risk of dependence on these people in the project. Investigate in which regions of the source code practices such as programming in peer and turnover of people to distribute knowledge among everyone on the team in a more homogeneous way. </p> ";
+
+      /** TRADUÇÃO
+ 
+      let diagnostic1V1 =
+        "<p><b>Diagnóstico &nbsp;" +
+        ++countElement +
+        ":</b><br>DevTracker detectou que a versão <b>111</b> possui esforço do time composto por <b>222 desenvolvedores</b>. Além disso, os desenvolvedores <b>333,444...</b><b>concentram o conhecimento sobre 50% ou mais</b> dos artefatos da versão 111.";
+
+      let diagnostic1V2 = !this.projectVersion1.projectVersion2
+        ? "&nbsp;Com relação à versão <b>111</b>, DevTracker detectou que ela possui esforço do time composto por <b>222 desenvolvedores</b>. Além disso, os desenvolvedores <b>333,444...</b><b>concentram o conhecimento sobre 50% ou mais</b> dos artefatos da versão 111. </p>"
+        : "</p>";
+
+      let Recommendation1 =
+        "<p><b>Recomendação &nbsp; " +
+        countElement +
+        ":</b><br>Quando uma pequena parcela de pessoas do time concentram o conhecimento sobre a implementação há um risco de dependência dessas pessoas no projeto. Investigue em quais regiões do código fonte podem ser aplicadas práticas como  programação em par e rotatividade de pessoas para distribuir o conhecimento entre todos do time de uma forma mais homogênea.</p>";
+      */
 
       let diagnostic2V1 = "";
-      let recomendation2V1 = "";
+      let Recommendation2V1 = "";
 
       let diagnostic2V2 = "";
-      let recomendation2V2 = "";
+      let Recommendation2V2 = "";
 
       let diagnosticComparative = "";
-      let recomendationComparative = "";
+      let RecommendationComparative = "";
 
-      recomendationReport.innerHTML =
+      RecommendationReport.innerHTML =
         "<style> h10 { font-size: 15px } p { font-size: 7px;} </style>" +
         "<div style='width:400px; margin:20px; text-align: justify;'>" +
-        "<h10>Developer Tracker App Recomendations</h10><br><br>" +
+        "<h10>Developer Tracker App Recommendations</h10><br><br>" +
         diagnostic1V1 +
-        recomendation1V1 +
-        "<hr><br>" +
         diagnostic1V2 +
-        recomendation1V2 +
+        Recommendation1 +
         "<hr><br>" +
         diagnostic2V1 +
-        recomendation2V1 +
+        Recommendation2V1 +
         "<hr><br>" +
         diagnostic2V2 +
-        recomendation2V2 +
+        Recommendation2V2 +
         "<hr><br>" +
         diagnosticComparative +
-        recomendationComparative +
+        RecommendationComparative +
         "</div>";
       /* 
 --------por versao-------------
@@ -336,7 +369,7 @@ Commits e LOC do Projeto: Utilize para compreender a dimensão do projeto. Ao ob
 
       /*
 
-      recomendationReport.innerHTML =
+      RecommendationReport.innerHTML =
         "<style> h10 { font-size: 10px } p { font-size: 7px;} </style>" +
         "<div style='width:400px; margin:20px; text-align: justify;'>" +
         tituloCommitLOC +
@@ -357,11 +390,23 @@ Commits e LOC do Projeto: Utilize para compreender a dimensão do projeto. Ao ob
         "</div>";
 */
       let doc2 = new jsPDF({ unit: "px" });
-      doc2.html(recomendationReport, {
+      doc2.html(RecommendationReport, {
         callback: function (doc2) {
           doc2.save();
         },
       });
+    },
+
+    getTruckFactorNames(developerList) {
+      let names = "";
+
+      developerList.forEach((dev) => {
+        if (dev.truckFactor) {
+          names = names.trim() ? ", " + dev.name : dev.name;
+        }
+      });
+
+      return names;
     },
   },
   watch: {
