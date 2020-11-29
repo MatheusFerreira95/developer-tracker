@@ -167,19 +167,8 @@ export default {
         alert("Please, Enter Link to Git!");
         return;
       }
-      window.getApp.$emit("START_LOADING");
 
-      this.filter = {
-        remoteRepository: "https://github.com/codetrash/rest-crud.git",
-        localRepository:
-          "/home/matheus/team-tracker-clones/rest-crud-1606349516567/rest-crud",
-        zoomPath: "./",
-        directory: "",
-        user: "",
-        password: "",
-        checkout1: "",
-        checkout2: "",
-      };
+      window.getApp.$emit("START_LOADING");
 
       getProject(this.filter)
         .then(
@@ -221,7 +210,7 @@ export default {
         ++countElement +
         ": </b> <br> DevTracker has detected that version <b> " +
         this.projectVersions.projectVersion1.currentVersion +
-        " </b> has the effort of a team of <b> " +
+        "&nbsp;(V1) </b> has the effort of a team of <b> " +
         this.projectVersions.projectVersion1.developerList.length +
         " developers</b>. In addition, <b> " +
         this.getTruckFactorNames(
@@ -232,7 +221,7 @@ export default {
       let diagnosis1V2 = this.projectVersions.projectVersion2
         ? "&nbsp; Regarding version <b> " +
           this.projectVersions.projectVersion2.currentVersion +
-          "</b>, DevTracker has detected that it has has the effort of a team of <b> " +
+          "&nbsp;(V2),</b> DevTracker has detected that it has has the effort of a team of <b> " +
           this.projectVersions.projectVersion2.developerList.length +
           " developers </b>. In addition, <b> " +
           this.getTruckFactorNames(
@@ -246,7 +235,7 @@ export default {
         countElement +
         ": </b> <br> When a small number of people on the team concentrate the knowledge about the implementation there is a risk of dependence on these people in the project. Investigate in which regions of the source code practices such as programming in peer and turnover of people to distribute knowledge among everyone on the team in a more homogeneous way. </p> ";
 
-      /** TRADUÇÃO
+      /** TRADUÇÃO 1
  
       let diagnosis1V1 =
         "<p><b>Diagnóstico &nbsp;" +
@@ -268,7 +257,7 @@ export default {
         ++countElement +
         ":</b><br>DevTracker has detected that version <b>" +
         this.projectVersions.projectVersion1.currentVersion +
-        "</b> was built using the following technologies (proportionally): <b> " +
+        "&nbsp;(V1)</b> was built using the following technologies (proportionally): <b> " +
         this.getTechList(
           this.projectVersions.projectVersion1.numLocProgrammingLanguageList
         ) +
@@ -277,7 +266,7 @@ export default {
       let diagnosis2V2 = this.projectVersions.projectVersion2
         ? "&nbsp; DevTracker has detected that version <b>" +
           this.projectVersions.projectVersion2.currentVersion +
-          "</b> was built using the following technologies (proportionally): <b> " +
+          "&nbsp;(V2)</b> was built using the following technologies (proportionally): <b> " +
           this.getTechList(
             this.projectVersions.projectVersion2.numLocProgrammingLanguageList
           ) +
@@ -289,7 +278,7 @@ export default {
         countElement +
         ":</b><br> Note that there are some languages that require more effort (in LOC). Make sure the developers working on the software modules that use the programming languages that have the highest percentage of LOC as technology. It may be necessary to allocate other employees with the skill of this technology to the project. Also make sure that the technical capacity of the project team is consistent with the demand for programming languages. This can help you to optimize the allocation of people, avoiding underutilization and/or work overload for certain developers. </p>";
 
-      /** TRADUÇÃO
+      /** TRADUÇÃO 2
  
       <p><b>Diagnóstico 6count:</b><br>
       DevTracker detectou que a versão <b>111</b><br>
@@ -304,16 +293,16 @@ export default {
         ++countElement +
         ":</b><br>DevTracker has detected that version <b>" +
         this.projectVersions.projectVersion1.currentVersion +
-        "</b> has the following characteristics: <br> <b> Commits:&nbsp;" +
+        "&nbsp;(V1)</b> has the following characteristics: <br> <b> Commits:&nbsp;" +
         this.projectVersions.projectVersion1.numCommits +
         "<br> LOC:&nbsp;" +
         this.projectVersions.projectVersion1.numLoc +
         "</b>.<br> ";
 
       let diagnosis3V2 = this.projectVersions.projectVersion2
-        ? "&nbsp; DevTracker has detected that version <b>" +
+        ? "DevTracker has detected that version <b>" +
           this.projectVersions.projectVersion2.currentVersion +
-          "</b> has the following characteristics: <br> <b> Commits:&nbsp;" +
+          "&nbsp;(V2)</b> has the following characteristics: <br> <b> Commits:&nbsp;" +
           this.projectVersions.projectVersion2.numCommits +
           "<br> LOC:&nbsp;" +
           this.projectVersions.projectVersion2.numLoc +
@@ -325,7 +314,7 @@ export default {
         countElement +
         ":</b><br> Project Commits and LOC: Use to understand the dimension of the project. When looking at LOC (project and developer perspective), consider that the team must follow the appropriate code standards of the programming language (e.g. placement of {}}). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions. When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible). With this care you can now compare the difference in dimensions of the two versions. Also note if the technological demand and the performance of the developers was different in the two versions. These results can be indicative of the results of decisions taken throughout the project and the release of versions. </p>";
 
-      /** TRADUÇÃO
+      /** TRADUÇÃO 3
        * 
       <p><b>Diagnóstico 7count:</b><br>
       DevTracker detectou que a versão <b>111</b><br>
@@ -363,7 +352,7 @@ export default {
       let doc2 = new jsPDF({ unit: "px" });
       doc2.html(RecommendationReport, {
         callback: function (doc2) {
-          doc2.save();
+          doc2.save("RecommendationReport.pdf");
         },
       });
     },
