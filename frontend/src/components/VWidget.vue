@@ -5,6 +5,7 @@
         <v-toolbar-title style="width: 100%">
           <h4 v-if="title">{{ title }}</h4>
           <div v-else>
+            <label style="font-size: 12px; color: gray">Paths:</label>
             <v-chip outlined label @click="changeLevel('init')">Root/</v-chip>
             <v-chip
               outlined

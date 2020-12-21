@@ -68,8 +68,12 @@
         <v-flex sm12>
           <v-card>
             <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab ripple @click="perspective = 'Overview'">Project </v-tab>
-              <v-tab ripple @click="perspective = 'Explore'">Developer</v-tab>
+              <v-tab ripple @click="perspective = 'Overview'">
+                Project Perspective
+              </v-tab>
+              <v-tab ripple @click="perspective = 'Explore'">
+                Developer Perspective</v-tab
+              >
             </v-tabs>
           </v-card>
         </v-flex>

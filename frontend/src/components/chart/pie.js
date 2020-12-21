@@ -25,6 +25,12 @@ export default {
   yAxis: {
     show: false
   },
+  label: {
+    show: true,
+    formatter: function (params) {
+      return params.value.nameProgrammingLanguage + "\n" + params.value.percentLOC + '%'
+    },
+  },
   series: [{
     type: 'pie',
     avoidLabelOverlap: true,
