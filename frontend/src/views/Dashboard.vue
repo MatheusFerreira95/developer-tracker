@@ -199,10 +199,7 @@
 
           <!-- Grafico Linguagem de programacao-->
           <v-flex lg6 sm12 xs12>
-            <v-widget
-              title="Technology Domain - Programming Languages"
-              content-bg="white"
-            >
+            <v-widget title="Technology Domain" content-bg="white">
               <div slot="widget-content">
                 <chart
                   v-if="
@@ -359,10 +356,7 @@
 
           <!-- Grafico Linguagem de programacao-->
           <v-flex lg6 sm6 xs12>
-            <v-widget
-              title="Technology Domain - Programming Languages"
-              content-bg="white"
-            >
+            <v-widget title="Technology Domain" content-bg="white">
               <div slot="widget-content">
                 <chart
                   v-if="
@@ -379,10 +373,7 @@
             </v-widget>
           </v-flex>
           <v-flex lg6 sm6 xs12>
-            <v-widget
-              title="Technology Domain - Programming Languages"
-              content-bg="white"
-            >
+            <v-widget title="Technology Domain" content-bg="white">
               <div slot="widget-content">
                 <chart
                   v-if="
