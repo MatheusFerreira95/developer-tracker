@@ -69,7 +69,6 @@
           <v-tabs
             v-model="active"
             icons-and-text
-            centered
             slider-color="primary"
             active-class="active-tab"
           >
@@ -212,6 +211,47 @@
 
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
+          <v-flex xs12 class="button-show-hide">
+            <v-menu
+              key="showHide"
+              rounded="true"
+              offset-y
+              :close-on-content-click="false"
+              max-height="400px"
+            >
+              <template v-slot:activator="{ attrs, on }">
+                <v-btn
+                  color="primary"
+                  class="white--text"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Show/Hide
+                </v-btn>
+              </template>
+
+              <v-list subheader two-line>
+                <v-list-tile
+                  v-for="node in this.bkpExplore1.nodeList"
+                  @click="showHideNode(node.name)"
+                  :key="node"
+                >
+                  <v-list-tile-action>
+                    <v-icon medium v-if="node.hide">visibility_off</v-icon>
+                    <v-icon medium v-else>visibility</v-icon>
+                  </v-list-tile-action>
+
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ node.name }}</v-list-tile-title>
+                    <v-list-tile-sub-title>{{
+                      node.nodeType
+                    }}</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
+          </v-flex>
+
           <v-flex lg12 sm12 xs12>
             <v-widget title content-bg="white" :title2="history">
               <div slot="widget-content">
@@ -431,13 +471,73 @@
 
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
-          <v-flex lg6 sm6 xs12>
-            <v-widget
-              title
-              content-bg="white"
-              :title2="history"
-              :showInteractions="false"
+          <v-flex xs12 class="button-show-hide">
+            <v-menu
+              key="showHide"
+              rounded="true"
+              offset-y
+              :close-on-content-click="false"
+              max-height="400px"
             >
+              <template v-slot:activator="{ attrs, on }">
+                <v-btn
+                  color="primary"
+                  class="white--text"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Show/Hide
+                </v-btn>
+              </template>
+
+              <v-list subheader two-line>
+                <v-subheader class="theme--light primary--text"
+                  >V1 - {{ bkpExplore1.nodeList.length }} developers in this
+                  path level</v-subheader
+                >
+                <v-list-tile
+                  v-for="node in this.bkpExplore1.nodeList"
+                  @click="showHideNode(node.name)"
+                  :key="node"
+                >
+                  <v-list-tile-action>
+                    <v-icon medium v-if="node.hide">visibility_off</v-icon>
+                    <v-icon medium v-else>visibility</v-icon>
+                  </v-list-tile-action>
+
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ node.name }}</v-list-tile-title>
+                    <v-list-tile-sub-title>{{
+                      node.nodeType
+                    }}</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+                <v-subheader class="theme--light primary--text"
+                  >V2 - {{ bkpExplore2.nodeList.length }} nodes in this path
+                  level</v-subheader
+                >
+                <v-list-tile
+                  v-for="node in this.bkpExplore2.nodeList"
+                  @click="showHideNode(node.name)"
+                  :key="node"
+                >
+                  <v-list-tile-action>
+                    <v-icon medium v-if="node.hide">visibility_off</v-icon>
+                    <v-icon medium v-else>visibility</v-icon>
+                  </v-list-tile-action>
+
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ node.name }}</v-list-tile-title>
+                    <v-list-tile-sub-title>{{
+                      node.nodeType
+                    }}</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
+          </v-flex>
+          <v-flex lg6 sm6 xs12>
+            <v-widget title content-bg="white" :title2="history">
               <div slot="widget-content">
                 <chart
                   v-if="explore1 !== null"
@@ -514,7 +614,7 @@
     </v-container>
 
     <!-- ícones do sistema -->
-    <div v-show="perspective !== 'Overview'">
+    <div>
       <v-menu open-on-hover left offset-x>
         <template v-slot:activator="{ on }">
           <v-chip
@@ -522,7 +622,7 @@
             style="z-index: 10; position: absolute; top: -51px; right: 70px"
             color="white"
             text-color="primary"
-            >Legend</v-chip
+            >Help</v-chip
           >
         </template>
 
@@ -550,8 +650,61 @@
                 <v-icon color="#3f51b5"> trending_flat </v-icon
                 >Artifact-Developer Relationship
                 <br />
-
-                <v-icon color="primary"> info </v-icon>Instructions <br />
+              </div>
+            </v-card>
+            <v-card>
+              <div class="v-subheader theme--light primary--text">
+                Interactions
+              </div>
+              <div class="legend">
+                <span>
+                  <b>&nbsp; - Artifact Zoom In:</b> click on an artifact &nbsp;
+                </span>
+                <br />
+                <span>
+                  <b>&nbsp; - Artifact Zoom Out:</b> click on the zoom history
+                  item positioned on the graph toolbar &nbsp;
+                </span>
+                <br />
+                <span>
+                  <b>&nbsp; - Filter:</b> hover an artifact, developer or
+                  connection &nbsp;
+                </span>
+                <br />
+                <span>
+                  <b>&nbsp; - Move item:</b> click and drag an artifact or
+                  developer &nbsp;
+                </span>
+                <br />
+                <span>
+                  <b>&nbsp; - Move graph:</b> click on a blank part and drag the
+                  graph &nbsp;
+                </span>
+                <br />
+                <span>
+                  <b>&nbsp; - Graphical Zoom in/out:</b> use the mouse scroll on
+                  the graph &nbsp;
+                </span>
+                <br />
+              </div>
+            </v-card>
+            <v-card>
+              <div class="v-subheader theme--light primary--text">
+                Get Started
+              </div>
+              <div class="legend">
+                <span
+                  >- The "Tools" menu has the necessary tools for you to
+                  generate your developer tracking views. <br />- You must enter
+                  the URL for a GIT-based code repository that represents the
+                  software project. <br />- If authentication is required to
+                  access the code repository, please enter your authentication
+                  credentials.<br />
+                  - You can select two different versions for comparison, but
+                  you can also view a single version. <br />- If fields V1 and
+                  V2 are empty, the view will be referring to the default branch
+                  of the code repository (usually the master branch).</span
+                >
               </div>
             </v-card>
           </v-flex>
@@ -587,10 +740,13 @@ export default {
     chart: ECharts,
   },
   data: () => ({
+    selecteds: [],
     secondLoading: false,
     perspective: "Overview",
     devTFListV1: [],
     devTFListV2: [],
+    bkpExplore1: [],
+    bkpExplore2: [],
     util: Util,
     history: {
       paths: [],
@@ -635,6 +791,49 @@ export default {
     ],
   }),
   methods: {
+    showHideNode(nodeName) {
+      this.bkpExplore1.nodeList.forEach((node) => {
+        if (node.name === nodeName) {
+          node.hide = !node.hide;
+
+          this.bkpExplore1.linkList.forEach((link) => {
+            if (link.target === nodeName || link.source === nodeName)
+              link.hide = !link.hide;
+          });
+        }
+      });
+
+      this.explore1 = getExplore(
+        this.bkpExplore1.nodeList.filter(function (el) {
+          return !el.hide;
+        }),
+        this.bkpExplore1.linkList.filter(function (el) {
+          return !el.hide;
+        })
+      );
+
+      if (this.bkpExplore2.length === 0) return;
+
+      this.bkpExplore2.nodeList.forEach((node) => {
+        if (node.name === nodeName) {
+          node.hide = !node.hide;
+
+          this.bkpExplore2.linkList.forEach((link) => {
+            if (link.target === nodeName || link.source === nodeName)
+              link.hide = !link.hide;
+          });
+        }
+      });
+
+      this.explore2 = getExplore(
+        this.bkpExplore2.nodeList.filter(function (el) {
+          return !el.hide;
+        }),
+        this.bkpExplore2.linkList.filter(function (el) {
+          return !el.hide;
+        })
+      );
+    },
     setProject1(projectVersion1) {
       this.pie1.dataset = {};
       this.pie1.dataset.source = projectVersion1.numLocProgrammingLanguageList;
@@ -644,7 +843,6 @@ export default {
       this.projectVersions.projectVersion1.developerList.forEach(
         (developer) => {
           if (developer.truckFactor) this.devTFListV1.push(developer);
-          console.log(this.devTFListV1);
         }
       );
     },
@@ -657,7 +855,6 @@ export default {
       this.projectVersions.projectVersion2.developerList.forEach(
         (developer) => {
           if (developer.truckFactor) this.devTFListV2.push(developer);
-          console.log(this.devTFListV2);
         }
       );
     },
@@ -700,9 +897,15 @@ export default {
       getExploreProject(filter)
         .then(
           (response) => {
-            this.explore1 = this.setExplore(response.data.explore1);
+            this.explore1 = this.setExplore(
+              response.data.explore1,
+              "bkpExplore1"
+            );
             if (response.data.explore2)
-              this.explore2 = this.setExplore(response.data.explore2);
+              this.explore2 = this.setExplore(
+                response.data.explore2,
+                "bkpExplore2"
+              );
             window.getApp.$emit("STOP_LOADING");
             this.secondLoading = false;
           },
@@ -740,7 +943,7 @@ export default {
       }
     },
 
-    setExplore(explore) {
+    setExplore(explore, bkpExplore) {
       for (let i = 0; i < explore.linkList.length; i++) {
         explore.linkList[i].value = explore.linkList[i].numLoc;
         explore.linkList[i].label = {
@@ -770,6 +973,8 @@ export default {
           },
         };
       }
+
+      this[bkpExplore] = explore;
 
       return getExplore(explore.nodeList, explore.linkList);
     },
@@ -851,6 +1056,11 @@ export default {
   background-color: transparent;
 }
 
+.v-tabs__container {
+  border: 1px solid #bbb;
+  border-bottom: 1px;
+}
+
 .active-tab {
   color: #4056b5 !important;
   opacity: 1 !important;
@@ -915,9 +1125,18 @@ export default {
   }
 }
 
+.button-show-hide {
+  text-align: right;
+  padding: 0;
+  padding-right: 4px;
+  margin-top: -35px;
+  margin-bottom: -10px;
+}
+
 .legend {
   padding: 10px;
   padding-top: 0px;
   padding-right: 2px;
+  font-size: 13px;
 }
 </style>
