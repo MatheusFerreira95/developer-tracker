@@ -63,80 +63,25 @@
         </v-flex>
       </v-layout>
 
-      <!-- tabs e labels de versao -->
+      <!-- tabs -->
       <v-layout row wrap v-if="projectVersions.projectVersion1.localRepository">
-        <v-flex sm12>
-          <v-card>
-            <v-tabs v-model="active" grow slider-color="primary">
-              <v-tab ripple @click="perspective = 'Overview'">
-                Project Perspective
-              </v-tab>
-              <v-tab ripple @click="perspective = 'Explore'">
-                Developer Perspective</v-tab
-              >
-            </v-tabs>
-          </v-card>
-        </v-flex>
-
-        <v-flex v-if="!projectVersions.projectVersion2.currentVersion" xs12>
-          <v-card class="cardVersionNumber">
-            <div
-              class="v-subheader theme--light primary--text versionNumberText"
+        <v-flex xs12 style="padding-top: 0">
+          <v-tabs
+            v-model="active"
+            icons-and-text
+            centered
+            slider-color="primary"
+            active-class="active-tab"
+          >
+            <v-tab @click="perspective = 'Overview'">
+              Project Perspective
+              <v-icon>work</v-icon>
+            </v-tab>
+            <v-tab @click="perspective = 'Explore'">
+              Developer Perspective
+              <v-icon>device_hub</v-icon></v-tab
             >
-              V1: &nbsp;
-              <span style="color: gray">{{
-                projectVersions.projectVersion1.currentVersion
-              }}</span>
-            </div>
-          </v-card>
-        </v-flex>
-        <v-flex
-          v-if="projectVersions.projectVersion2.currentVersion"
-          lg5
-          sm5
-          xs12
-        >
-          <v-card class="cardVersionNumber">
-            <div
-              class="v-subheader theme--light primary--text versionNumberText"
-            >
-              V1: &nbsp;
-              <span style="color: gray">{{
-                projectVersions.projectVersion1.currentVersion
-              }}</span>
-            </div>
-          </v-card>
-        </v-flex>
-        <v-flex
-          v-if="projectVersions.projectVersion2.currentVersion"
-          lg2
-          sm2
-          xs12
-        >
-          <v-card class="cardVersionNumber">
-            <div
-              class="v-subheader theme--light primary--text versionNumberText"
-            >
-              X
-            </div>
-          </v-card>
-        </v-flex>
-        <v-flex
-          v-if="projectVersions.projectVersion2.currentVersion"
-          lg5
-          sm5
-          xs12
-        >
-          <v-card class="cardVersionNumber">
-            <div
-              class="v-subheader theme--light primary--text versionNumberText"
-            >
-              V2: &nbsp;
-              <span style="color: gray">{{
-                projectVersions.projectVersion2.currentVersion
-              }}</span>
-            </div>
-          </v-card>
+          </v-tabs>
         </v-flex>
       </v-layout>
 
@@ -152,7 +97,7 @@
         <!-- Overview -->
         <template v-if="perspective === 'Overview'">
           <!-- cartões -->
-          <v-flex lg6 sm6 xs12>
+          <v-flex xs12>
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
@@ -166,7 +111,7 @@
               </v-toolbar>
             </v-card>
           </v-flex>
-          <v-flex lg6 sm6 xs12>
+          <v-flex xs12>
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
@@ -198,7 +143,7 @@
           </v-flex>-->
 
           <!-- Grafico Linguagem de programacao-->
-          <v-flex lg6 sm12 xs12>
+          <v-flex sm12 xs12>
             <v-widget title="Technology Domain" content-bg="white">
               <div slot="widget-content">
                 <chart
@@ -217,7 +162,7 @@
           </v-flex>
 
           <!-- desenvolvedores -->
-          <v-flex lg6 sm12 xs12>
+          <v-flex sm12 xs12>
             <v-card>
               <v-toolbar card dense color="transparent">
                 <v-toolbar-title>
@@ -239,21 +184,20 @@
                     class="elevation-0"
                     hide-actions
                     item-key="name"
-                    disable-initial-sort
                   >
                     <template slot="items" slot-scope="props">
                       <tr>
+                        <td class="text-xs-left">
+                          {{ props.item.name + " (" + props.item.email + ")" }}
+                        </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
                           <div
                             v-if="props.item.truckFactor"
                             style="color: darkblue"
                           >
-                            Yes
+                            <b>Yes</b>
                           </div>
-                        </td>
-                        <td class="text-xs-left">
-                          {{ props.item.name + " (" + props.item.email + ")" }}
                         </td>
                         <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
                       </tr>
@@ -413,21 +357,20 @@
                     class="elevation-0"
                     hide-actions
                     item-key="name"
-                    disable-initial-sort
                   >
                     <template slot="items" slot-scope="props">
                       <tr>
+                        <td class="text-xs-left">
+                          {{ props.item.name + " (" + props.item.email + ")" }}
+                        </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
                           <div
                             v-if="props.item.truckFactor"
                             style="color: darkblue"
                           >
-                            Yes
+                            <b>Yes</b>
                           </div>
-                        </td>
-                        <td class="text-xs-left">
-                          {{ props.item.name + " (" + props.item.email + ")" }}
                         </td>
                         <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
                       </tr>
@@ -460,21 +403,20 @@
                     class="elevation-0"
                     hide-actions
                     item-key="name"
-                    disable-initial-sort
                   >
                     <template slot="items" slot-scope="props">
                       <tr>
+                        <td class="text-xs-left">
+                          {{ props.item.name + " (" + props.item.email + ")" }}
+                        </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
                           <div
                             v-if="props.item.truckFactor"
                             style="color: darkblue"
                           >
-                            Yes
+                            <b>Yes</b>
                           </div>
-                        </td>
-                        <td class="text-xs-left">
-                          {{ props.item.name + " (" + props.item.email + ")" }}
                         </td>
                         <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
                       </tr>
@@ -523,6 +465,51 @@
             </v-widget>
           </v-flex>
         </template>
+      </v-layout>
+
+      <!-- labels de versao -->
+      <v-layout row wrap v-if="projectVersions.projectVersion1.localRepository">
+        <v-flex v-if="!projectVersions.projectVersion2.currentVersion" xs12>
+          <v-card class="cardVersionNumber">
+            <div class="v-subheader theme--light versionNumberText">
+              <span style="color: #000"
+                >Project Version Reference Information: </span
+              ><br />
+              <span>{{ projectVersions.projectVersion1.currentVersion }}</span>
+            </div>
+          </v-card>
+        </v-flex>
+        <v-flex
+          v-if="projectVersions.projectVersion2.currentVersion"
+          lg6
+          sm6
+          xs12
+        >
+          <v-card class="cardVersionNumber">
+            <div class="v-subheader theme--light versionNumberText">
+              <span style="color: #000"
+                >Project Version Reference Information (V1): </span
+              ><br />
+              <span>{{ projectVersions.projectVersion1.currentVersion }}</span>
+            </div>
+          </v-card>
+        </v-flex>
+
+        <v-flex
+          v-if="projectVersions.projectVersion2.currentVersion"
+          lg6
+          sm6
+          xs12
+        >
+          <v-card class="cardVersionNumber">
+            <div class="v-subheader theme--light versionNumberText">
+              <span style="color: #000"
+                >Project Version Reference Information (V2): </span
+              ><br />
+              <span>{{ projectVersions.projectVersion2.currentVersion }}</span>
+            </div>
+          </v-card>
+        </v-flex>
       </v-layout>
     </v-container>
 
@@ -639,11 +626,11 @@ export default {
     },
     colors: [],
     headers: [
+      { text: "Name (email)", value: "name" },
       {
         text: "Included in Truck Factor", // avatar
         value: "truckFactor",
       },
-      { text: "Name (email)", value: "name" },
       // { text: "NLOC", value: "numLoc" }
     ],
   }),
@@ -847,6 +834,32 @@ export default {
 };
 </script>
 <style lang="stylus">
+.v-tabs__bar theme--light {
+  background-color: transparent;
+}
+
+.theme--light.v-tabs__bar {
+  background-color: transparent;
+}
+
+.v-tabs__item {
+  background-color: transparent;
+  // border: 1px solid #bbb;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.active-tab {
+  color: #4056b5 !important;
+  opacity: 1 !important;
+
+  .v-icon {
+    color: #4056b5 !important;
+  }
+}
+
 .center {
   width: 100%;
 }
@@ -890,18 +903,15 @@ export default {
 }
 
 .cardVersionNumber {
-  box-shadow: none;
-  margin-top: -20px;
   word-break: break-all;
+  text-align: center !important;
 
   .versionNumberText {
-    text-align: center;
+    font-size: 13px;
     display: block;
-    background-color: #efefef;
-    padding-top: 12px;
-    font-weight: normal;
-    margin-bottom: -20px;
-    font-size: 10px;
+    text-align: center !important;
+    font-weight: normal !important;
+    padding-top: 4px;
   }
 }
 

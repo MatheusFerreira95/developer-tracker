@@ -184,8 +184,6 @@ public class Project {
 
 		calcTruckFactor();
 
-		Collections.sort(this.developerList, Collections.reverseOrder());
-
 		calcCommitsDeveloperList(null);
 	}
 
