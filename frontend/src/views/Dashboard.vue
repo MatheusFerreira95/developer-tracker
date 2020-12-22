@@ -231,6 +231,10 @@
               </template>
 
               <v-list subheader two-line>
+                <v-subheader class="theme--light primary--text"
+                  >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
+                  level</v-subheader
+                >
                 <v-list-tile
                   v-for="node in this.bkpExplore1.nodeList"
                   @click="showHideNode(node.name)"
@@ -470,7 +474,7 @@
         </template>
 
         <!-- Explore -->
-        <template v-if="perspective === 'Explore'">
+        <template v-if="perspective === 'Explore' && bkpExplore2.nodeList">
           <v-flex xs12 class="button-show-hide">
             <v-menu
               key="showHide"
@@ -492,8 +496,8 @@
 
               <v-list subheader two-line>
                 <v-subheader class="theme--light primary--text"
-                  >V1 - {{ bkpExplore1.nodeList.length }} developers in this
-                  path level</v-subheader
+                  >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
+                  level</v-subheader
                 >
                 <v-list-tile
                   v-for="node in this.bkpExplore1.nodeList"
@@ -835,6 +839,16 @@ export default {
       );
     },
     setProject1(projectVersion1) {
+      projectVersion1.numLocProgrammingLanguageList.sort((a, b) =>
+        a.nameProgrammingLanguage === "Others"
+          ? 2
+          : a.percentLOC < b.percentLOC
+          ? 1
+          : b.percentLOC < a.percentLOC
+          ? -1
+          : 0
+      );
+
       this.pie1.dataset = {};
       this.pie1.dataset.source = projectVersion1.numLocProgrammingLanguageList;
       this.optionsChartProgrammingLanguage1 = { ...pie };
@@ -847,6 +861,16 @@ export default {
       );
     },
     setProject2(projectVersion2) {
+      projectVersion2.numLocProgrammingLanguageList.sort((a, b) =>
+        a.nameProgrammingLanguage === "Others"
+          ? 2
+          : a.percentLOC < b.percentLOC
+          ? 1
+          : b.percentLOC < a.percentLOC
+          ? -1
+          : 0
+      );
+
       this.pie2.dataset = {};
       this.pie2.dataset.source = projectVersion2.numLocProgrammingLanguageList;
       this.optionsChartProgrammingLanguage2 = { ...pie };
@@ -1127,8 +1151,8 @@ export default {
 
 .button-show-hide {
   text-align: right;
-  padding: 0;
-  padding-right: 4px;
+  padding: 0 !important;
+  padding-right: 4px !important;
   margin-top: -35px;
   margin-bottom: -10px;
 }
