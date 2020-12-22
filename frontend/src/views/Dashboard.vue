@@ -65,10 +65,12 @@
 
       <!-- tabs -->
       <v-layout row wrap v-if="projectVersions.projectVersion1.localRepository">
-        <v-flex xs12 style="padding-top: 0">
+        <v-card style="margin: 0px 12px 12px 12px">
+          <!-- <v-flex xs12 style="padding-top: 0"> -->
           <v-tabs
             v-model="active"
             icons-and-text
+            centered
             slider-color="primary"
             active-class="active-tab"
           >
@@ -81,7 +83,8 @@
               <v-icon>device_hub</v-icon></v-tab
             >
           </v-tabs>
-        </v-flex>
+        </v-card>
+        <!-- </v-flex> -->
       </v-layout>
 
       <!-- uma versao -->
@@ -1063,28 +1066,27 @@ export default {
 };
 </script>
 <style lang="stylus">
-.v-tabs__bar theme--light {
-  background-color: transparent;
-}
+// .v-tabs__bar theme--light {
+// background-color: transparent;
+// }
 
-.theme--light.v-tabs__bar {
-  background-color: transparent;
-}
+// .theme--light.v-tabs__bar {
+// background-color: transparent;
+// }
 
-.v-tabs__item {
-  background-color: transparent;
-  // border: 1px solid #bbb;
-}
+// .v-tabs__item {
+// background-color: transparent;
+// // border: 1px solid #bbb;
+// }
 
-.transparent {
-  background-color: transparent;
-}
+// .transparent {
+// background-color: transparent;
+// }
 
-.v-tabs__container {
-  border: 1px solid #bbb;
-  border-bottom: 1px;
-}
-
+// .v-tabs__container {
+// border: 1px solid #bbb;
+// border-bottom: 1px;
+// }
 .active-tab {
   color: #4056b5 !important;
   opacity: 1 !important;
@@ -1152,8 +1154,8 @@ export default {
 .button-show-hide {
   text-align: right;
   padding: 0 !important;
-  padding-right: 4px !important;
-  margin-top: -35px;
+  padding-right: 16px !important;
+  margin-top: -72px;
   margin-bottom: -10px;
 }
 
