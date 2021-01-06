@@ -190,7 +190,7 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="text-xs-left">
-                          {{ props.item.name + " (" + props.item.email + ")" }}
+                          {{ props.item.name }}
                         </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
@@ -408,7 +408,7 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="text-xs-left">
-                          {{ props.item.name + " (" + props.item.email + ")" }}
+                          {{ props.item.name }}
                         </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
@@ -454,7 +454,7 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="text-xs-left">
-                          {{ props.item.name + " (" + props.item.email + ")" }}
+                          {{ props.item.name }}
                         </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
@@ -626,7 +626,7 @@
         <template v-slot:activator="{ on }">
           <v-chip
             v-on="on"
-            style="z-index: 10; position: absolute; top: -51px; right: 70px"
+            style="z-index: 10; position: fixed; top: 12px; right: 70px"
             color="white"
             text-color="primary"
             >Help</v-chip
@@ -789,7 +789,7 @@ export default {
     },
     colors: [],
     headers: [
-      { text: "Name (email)", value: "name" },
+      { text: "Name", value: "name" },
       {
         text: "Included in Truck Factor", // avatar
         value: "truckFactor",

@@ -64,8 +64,8 @@ public class Project {
 
 		String filePath = filterPath == null ? "" : filterPath;
 
-		GitOutput gitOutputEmail = Git.runCommand(this, " git ls-files " + filePath
-				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
+		// GitOutput gitOutputEmail = Git.runCommand(this, " git ls-files " + filePath
+		// 		+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
 		GitOutput gitOutputName = Git.runCommand(this, " git ls-files " + filePath
 				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
 
@@ -75,15 +75,15 @@ public class Project {
 
 			try {
 
-				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
+//				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
 
-				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
+//				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
 
 				String name = line.substring(8);
 
 				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
 
-				Developer dev = new Developer(name, email, numLoc, avatar++);
+				Developer dev = new Developer(name, "email", numLoc, avatar++);
 
 				if (this.developerList.contains(dev)) {
 
@@ -121,8 +121,8 @@ public class Project {
 
 	public void calcDeveloperList() throws IOException, InterruptedException {
 
-		GitOutput gitOutputEmail = Git.runCommand(this,
-				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
+		// GitOutput gitOutputEmail = Git.runCommand(this,
+		// 		" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
 		GitOutput gitOutputName = Git.runCommand(this,
 				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
 
@@ -131,15 +131,15 @@ public class Project {
 
 			try {
 
-				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
+//				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
 
-				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
+//				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
 
 				String name = line.substring(8);
 
 				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
 
-				Developer dev = new Developer(name, email, numLoc, avatar++);
+				Developer dev = new Developer(name, "email", numLoc, avatar++);
 
 				if (this.developerList.contains(dev)) {
 
