@@ -190,7 +190,7 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="text-xs-left">
-                          {{ props.item.name }}
+                          {{ props.item.version }}
                         </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
@@ -400,7 +400,7 @@
                 <template>
                   <v-data-table
                     :headers="headers"
-                    :items="projectVersions.projectVersion1.developerList"
+                    :items="developersListComparative"
                     class="elevation-0"
                     hide-actions
                     item-key="name"
@@ -408,7 +408,7 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="text-xs-left">
-                          {{ props.item.name }}
+                          {{ props.item.version === 2 ? "" : props.item.name }}
                         </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
@@ -416,7 +416,7 @@
                             v-if="props.item.truckFactor"
                             style="color: darkblue"
                           >
-                            <b>Yes</b>
+                            <b>{{ props.item.version === 2 ? "" : "Yes" }}</b>
                           </div>
                         </td>
                         <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
@@ -446,7 +446,7 @@
                 <template>
                   <v-data-table
                     :headers="headers"
-                    :items="projectVersions.projectVersion2.developerList"
+                    :items="developersListComparative"
                     class="elevation-0"
                     hide-actions
                     item-key="name"
@@ -454,7 +454,7 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="text-xs-left">
-                          {{ props.item.name }}
+                          {{ props.item.version === 1 ? "" : props.item.name }}
                         </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
@@ -462,7 +462,7 @@
                             v-if="props.item.truckFactor"
                             style="color: darkblue"
                           >
-                            <b>Yes</b>
+                            <b>{{ props.item.version === 1 ? "" : "Yes" }}</b>
                           </div>
                         </td>
                         <!-- <td class="text-xs-left">{{ props.item.numLoc + ""}}</td> -->
@@ -884,6 +884,60 @@ export default {
           if (developer.truckFactor) this.devTFListV2.push(developer);
         }
       );
+
+      //exibição lista devs
+      this.developersListComparative = [];
+      let devList1 =
+        this.projectVersions.projectVersion1.developerList.length >=
+        this.projectVersions.projectVersion2.developerList.length
+          ? this.projectVersions.projectVersion1.developerList
+          : this.projectVersions.projectVersion2.developerList;
+      let devList2 =
+        this.projectVersions.projectVersion1.developerList.length <
+        this.projectVersions.projectVersion2.developerList.length
+          ? this.projectVersions.projectVersion1.developerList
+          : this.projectVersions.projectVersion2.developerList;
+
+      for (let i = 0; i < devList1.length; i++) {
+        let dev1 = devList1[i];
+        let exist = false;
+        for (let j = 0; j < devList2.length; j++) {
+          let dev2 = devList2[j];
+          if (dev1.name === dev2.name) {
+            exist = true;
+            break;
+          }
+        }
+        if (exist) {
+          dev1.version = -1;
+          this.developersListComparative.push(dev1);
+        } else {
+          dev1.version =
+            devList1 === this.projectVersions.projectVersion1.developerList
+              ? 1
+              : 2;
+          this.developersListComparative.push(dev1);
+        }
+      }
+
+      for (let i = 0; i < devList2.length; i++) {
+        let dev1 = devList2[i];
+        let exist = false;
+        for (let j = 0; j < devList1.length; j++) {
+          let dev2 = devList1[j];
+          if (dev1.name === dev2.name) {
+            exist = true;
+            break;
+          }
+        }
+        if (!exist) {
+          dev1.version =
+            devList2 === this.projectVersions.projectVersion1.developerList
+              ? 1
+              : 2;
+          this.developersListComparative.push(dev1);
+        }
+      }
     },
 
     setProject(newProjectVersions) {
