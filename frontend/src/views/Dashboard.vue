@@ -190,7 +190,7 @@
                     <template slot="items" slot-scope="props">
                       <tr>
                         <td class="text-xs-left">
-                          {{ props.item.version }}
+                          {{ props.item.name }}
                         </td>
                         <td class="text-xs-left">
                           <!-- <v-icon dark medium :color="util.getColors()[props.item.avatar]">person</v-icon> -->
