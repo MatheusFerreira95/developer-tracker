@@ -385,7 +385,7 @@ export default {
             diagnosis4 +=
               "<p><b>Diagnosis &nbsp;" +
               ++countElement +
-              ":</b><br>Detected the fastest developers to participate in projects that require certain programming languages</b>.<br> ";
+              ":</b><br>The most capable developers were found to participate in projects that require certain programming languages</b>.<br> ";
 
             recommendation4Text = recommendation4Text.replace(
               "version V1",
