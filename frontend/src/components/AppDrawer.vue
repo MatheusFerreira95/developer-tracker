@@ -109,8 +109,9 @@
   </v-navigation-drawer>
 </template>
 <script>
-import { getProject } from "@/api/project";
+import { getProject, getRecomendationByFileExtension } from "@/api/project";
 import { jsPDF } from "jspdf";
+import Util from "@/util";
 
 export default {
   name: "app-drawer",
@@ -331,30 +332,111 @@ export default {
       <p><b>Recomendação 7count:</b><br>
       Commits e LOC do Projeto: Utilize para compreender a dimensão do projeto. Ao observar LOC (perspectiva projeto e desenvolvedores), considere que o time deve seguir os devidos padrões de código da linguagem de programação (e.g. posicionamento de "{}"). Considere também definir um processo de code review, para que outros desenvolvedores avaliem as soluções implementadas por um membro do time, evitando soluções inadequadas ou com excessivo LOC. Ao observar commmits, considere que o time deve seguir um padrão commits (e.g. o mais atômico possível). Com esses cuidados agora você pode comparar a diferença das dimensões das duas versões. Observe também se a demanda tecnlógica e a atuação dos desenvolvedores foi diferente nas duas versões. Esses resultados podem ser indicativos de resultados de decisões tomadas ao longo do projeto e do lançamento de versões.</p>
       */
+      this.filter.extensionListVersion1 = [];
+      this.projectVersions.projectVersion1.numLocProgrammingLanguageList.forEach(
+        (lp) => {
+          let extension = this.getExtensionByName(lp.nameProgrammingLanguage);
+          if (extension != null) {
+            this.filter.extensionListVersion1.push({
+              extensionDescription: lp.nameProgrammingLanguage,
+              extension: extension,
+            });
+          }
+        }
+      );
+      if (
+        this.projectVersions.projectVersion2 &&
+        this.projectVersions.projectVersion2.localRepository
+      ) {
+        this.filter.extensionListVersion2 = [];
+        this.projectVersions.projectVersion2.numLocProgrammingLanguageList.forEach(
+          (lp) => {
+            let extension = this.getExtensionByName(lp.nameProgrammingLanguage);
+            if (extension != null) {
+              this.filter.extensionListVersion2.push({
+                extensionDescription: lp.nameProgrammingLanguage,
+                extension: extension,
+              });
+            }
+          }
+        );
+      }
 
-      RecommendationReport.innerHTML =
-        "<style> h10 { font-size: 15px } p { font-size: 7px;} </style>" +
-        "<div style='width:400px; margin:20px; text-align: justify;'>" +
-        "<h10>Developer Tracker App Recommendations</h10><br><br>" +
-        diagnosis1V1 +
-        diagnosis1V2 +
-        Recommendation1 +
-        "<hr><br>" +
-        diagnosis2V1 +
-        diagnosis2V2 +
-        recommendation2 +
-        "<hr><br>" +
-        diagnosis3V1 +
-        diagnosis3V2 +
-        recommendation3 +
-        "</div>";
+      window.getApp.$emit("START_LOADING");
+      getRecomendationByFileExtension(this.filter)
+        .then(
+          (response) => {
+            let diagnosis4 = "";
+            let recommendation4Text = response.data;
 
-      let doc2 = new jsPDF({ unit: "px" });
-      doc2.html(RecommendationReport, {
-        callback: function (doc2) {
-          doc2.save("RecommendationReport.pdf");
-        },
-      });
+            if (
+              this.projectVersions.projectVersion2 &&
+              this.projectVersions.projectVersion2.localRepository
+            ) {
+              diagnosis4 = "<br><br><br><br>";
+              recommendation4Text = recommendation4Text.replace(
+                "version V2",
+                "version <b>" +
+                  this.projectVersions.projectVersion2.currentVersion +
+                  "</b>"
+              );
+            }
+
+            diagnosis4 +=
+              "<p><b>Diagnosis &nbsp;" +
+              ++countElement +
+              ":</b><br>Detected the fastest developers to participate in projects that require certain programming languages</b>.<br> ";
+
+            recommendation4Text = recommendation4Text.replace(
+              "version V1",
+              "version <b>" +
+                this.projectVersions.projectVersion1.currentVersion +
+                "</b>"
+            );
+
+            let recommendation4 =
+              "<p><b>Recommendation &nbsp; " +
+              countElement +
+              ":</b><br>" +
+              recommendation4Text;
+
+            RecommendationReport.innerHTML =
+              "<style> h10 { font-size: 15px } p { font-size: 7px;} </style>" +
+              "<div style='width:400px; margin:20px; text-align: justify;'>" +
+              "<h10>Developer Tracker App Recommendations</h10><br><br>" +
+              diagnosis1V1 +
+              diagnosis1V2 +
+              Recommendation1 +
+              "<hr><br>" +
+              diagnosis2V1 +
+              diagnosis2V2 +
+              recommendation2 +
+              "<hr><br>" +
+              diagnosis3V1 +
+              diagnosis3V2 +
+              recommendation3 +
+              "<hr><br>" +
+              diagnosis4 +
+              recommendation4;
+            ("</div>");
+
+            let doc2 = new jsPDF({ unit: "px" });
+            doc2.html(RecommendationReport, {
+              callback: function (doc2) {
+                doc2.save("RecommendationReport.pdf");
+              },
+            });
+
+            window.getApp.$emit("STOP_LOADING");
+          },
+          (error) => {
+            alert("Erro: " + error);
+            window.getApp.$emit("STOP_LOADING");
+          }
+        )
+        .catch(function (error) {
+          window.getApp.$emit("STOP_LOADING");
+        });
     },
 
     getTruckFactorNames(developerList) {
@@ -367,6 +449,19 @@ export default {
       });
 
       return names;
+    },
+
+    getExtensionByName(nameLP) {
+      let extension = null;
+
+      Util.getFileExtensions.forEach((lp) => {
+        if (lp.name === nameLP) {
+          extension = lp.extensions[0];
+          return;
+        }
+      });
+
+      return extension;
     },
 
     getTechList(LPlist) {

@@ -15,5 +15,7 @@ public class Filter {
 	public String checkout2;
 	public List<Developer> devTFListV1 = new ArrayList<Developer>();
 	public List<Developer> devTFListV2 = new ArrayList<Developer>();
+	public List<FileExtension> extensionListVersion1;
+	public List<FileExtension> extensionListVersion2;
 
 }

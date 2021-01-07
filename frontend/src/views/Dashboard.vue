@@ -747,6 +747,7 @@ export default {
     chart: ECharts,
   },
   data: () => ({
+    developersListComparative: [],
     selecteds: [],
     secondLoading: false,
     perspective: "Overview",

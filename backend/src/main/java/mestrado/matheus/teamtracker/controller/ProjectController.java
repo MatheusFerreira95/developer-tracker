@@ -89,6 +89,42 @@ public class ProjectController {
 		return null;
 	}
 
+	/**
+	 * A partir da lista de Extensoes de arquivo deve retornar o desenvolvedor mais
+	 * indicado para trabalhar no tipo de arquivo em questão
+	 **/
+	@RequestMapping(path = "/recomendationByFileExtension", method = RequestMethod.POST)
+	@CrossOrigin(origins = "http://localhost:8081")
+	public @ResponseBody String getRecomendationByFileExtension(@RequestBody Filter filter) {
+
+		try {
+
+			Project projectVersion1 = Project.builderProject(filter, filter.checkout1);
+			String recommendationsV1 = Explore.generateRecommendations(filter, projectVersion1, filter.extensionListVersion1, "V1");
+
+			String recommendationsV2 = null;
+			if (filter.checkout2 != null && !filter.checkout2.isEmpty()) {
+				Project projectVersion2 = Project.builderProject(filter, filter.checkout2);
+				recommendationsV2 = Explore.generateRecommendations(filter, projectVersion2, filter.extensionListVersion2, "V2");
+			}
+
+			recommendationsV2 = recommendationsV2 != null ? "<br>"+recommendationsV2 : "";
+
+			return recommendationsV1 + recommendationsV2;
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+
+		}
+
+		return null;
+	}
+
 	/*
 	 * private static final Logger LOG =
 	 * LoggerFactory.getLogger(ProjectController.class); public static final String

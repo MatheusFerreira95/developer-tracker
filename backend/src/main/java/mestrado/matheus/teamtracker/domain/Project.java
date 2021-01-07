@@ -1,12 +1,11 @@
 package mestrado.matheus.teamtracker.domain;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
@@ -187,7 +186,7 @@ public class Project {
 		calcCommitsDeveloperList(null);
 	}
 
-	private void calcCommitsDeveloperList(String pathFile) throws IOException, InterruptedException {
+	public void calcCommitsDeveloperList(String pathFile) throws IOException, InterruptedException {
 		GitOutput gitOutputName;
 		if (pathFile == null) { // project level
 

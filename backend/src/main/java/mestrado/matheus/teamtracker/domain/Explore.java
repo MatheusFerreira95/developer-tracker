@@ -2,6 +2,7 @@ package mestrado.matheus.teamtracker.domain;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import mestrado.matheus.teamtracker.util.Git;
@@ -15,7 +16,8 @@ public class Explore {
 	public List<NodeExplore> nodeList = new ArrayList<NodeExplore>();
 	public List<LinkExplore> linkList = new ArrayList<LinkExplore>();
 
-	public static Explore build(Filter filter, Project project, List<Developer> devTFList) throws IOException, InterruptedException {
+	public static Explore build(Filter filter, Project project, List<Developer> devTFList)
+			throws IOException, InterruptedException {
 
 		if (isZoomLevelProject(filter)) {
 
@@ -26,7 +28,7 @@ public class Explore {
 		if (isFirstZoomLevel(filter)) {
 
 			filter.zoomPath = "";
-		
+
 		} else {
 
 			filter.zoomPath += "/";
@@ -66,7 +68,8 @@ public class Explore {
 		return explore;
 	}
 
-	private static void calcLinks(Project project, Explore explore, NodeExplore node, String filePath, List<Developer> devTFList) {
+	private static void calcLinks(Project project, Explore explore, NodeExplore node, String filePath,
+			List<Developer> devTFList) {
 
 		try {
 			project.calcDeveloperList(filePath, devTFList);
@@ -118,7 +121,8 @@ public class Explore {
 
 	}
 
-	private static Explore buildExploreLevelProject(Project project, List<Developer> devTFList) throws IOException, InterruptedException {
+	private static Explore buildExploreLevelProject(Project project, List<Developer> devTFList)
+			throws IOException, InterruptedException {
 
 		Explore explore = new Explore();
 
@@ -148,6 +152,28 @@ public class Explore {
 	private static boolean isFirstZoomLevel(Filter filter) {
 
 		return filter.zoomPath.equals("Project");
+	}
+
+	public static String generateRecommendations(Filter filter, Project project,
+			List<FileExtension> extensionListVersion1, String version) throws IOException, InterruptedException {
+
+		String recommentationsText = "Recommended developers for programming languages (referring to version " + version
+				+ "):<br>";
+
+		project.developerList = new ArrayList<Developer>();
+
+		for (FileExtension fileExtension : extensionListVersion1) {
+
+			project.calcDeveloperList("*" + fileExtension.extension, new ArrayList<Developer>());
+
+			Collections.sort(project.developerList, Collections.reverseOrder());
+
+			if (!project.developerList.isEmpty())
+				recommentationsText += fileExtension.extensionDescription + ": " + project.developerList.get(0).name
+						+ "<br>";
+		}
+
+		return recommentationsText;
 	}
 
 }
