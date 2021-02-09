@@ -901,17 +901,27 @@ export default {
 
       for (let i = 0; i < devList1.length; i++) {
         let dev1 = devList1[i];
-        let exist = false;
+        let exist = 'no';
         for (let j = 0; j < devList2.length; j++) {
           let dev2 = devList2[j];
           if (dev1.name === dev2.name) {
-            exist = true;
+            exist = dev1.truckFactor === dev2.truckFactor ? 'equal' : 'diff';
             break;
           }
         }
-        if (exist) {
+        if (exist === 'equal') {
           dev1.version = -1;
           this.developersListComparative.push(dev1);
+        }else if (exist === 'diff') {
+          dev1.version = 
+            devList1 === this.projectVersions.projectVersion1.developerList
+              ? 1
+              : 2;
+          this.developersListComparative.push(dev1);
+          let dev2 = JSON.parse(JSON.stringify(dev1));
+          dev2.version = dev1.version === 2 ? 1 : 2;
+          dev2.truckFactor = !dev1.truckFactor;
+          this.developersListComparative.push(dev2);
         } else {
           dev1.version =
             devList1 === this.projectVersions.projectVersion1.developerList
