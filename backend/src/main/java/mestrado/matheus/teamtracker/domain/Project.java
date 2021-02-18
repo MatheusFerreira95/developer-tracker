@@ -74,9 +74,9 @@ public class Project {
 
 			try {
 
-//				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
+				//String emailNotTrim = gitOutputEmail.outputList.get(avatar);
 
-//				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
+				//String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
 
 				String name = line.substring(8);
 
@@ -101,12 +101,12 @@ public class Project {
 				}
 			} catch (Exception e) {
 
-				System.out.println("Developer not add. See the line: " + line);
+				print System.out.println("Developer not add. See the line: " + line);
 			}
 		}
 
 		for (Developer dev : this.developerList) {
-			System.out.println("Developer..................................: " + dev.name);
+			//print System.out.println("Developer..................................: " + dev.name);
 
 			for (Developer devTF : devTFList) {
 				if(dev.equals(devTF)) {
@@ -130,9 +130,9 @@ public class Project {
 
 			try {
 
-//				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
+				//String emailNotTrim = gitOutputEmail.outputList.get(avatar);
 
-//				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
+				//String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
 
 				String name = line.substring(8);
 
@@ -157,7 +157,7 @@ public class Project {
 				}
 			} catch (Exception e) {
 
-				System.out.println("Devloper not add. See the line: " + line);
+				print System.out.println("Devloper not add. See the line: " + line);
 			}
 		}
 
@@ -202,14 +202,15 @@ public class Project {
 
 					for (Developer developer : developerList) {
 						if (developer.name.equals(name)) {
-
-							developer.numCommits = numCommits;
+							if(numCommits == null) numCommits = 0;
+							if(developer.numCommits == null) developer.numCommits = 0;
+							developer.numCommits += numCommits;
 							break;
 						}
 					}
 				} catch (Exception e) {
 
-					System.out.println("Devloper not add. See the line: " + line);
+					print System.out.println("Devloper not add. See the line: " + line);
 				}
 			}
 		} else {
@@ -227,13 +228,15 @@ public class Project {
 					for (Developer developer : developerList) {
 						if (developer.name.equals(name)) {
 
-							developer.numCommits = numCommits;
-							break;
+							if (developer.numCommits == null) developer.numCommits = 0;
+							if (numCommits == null) numCommits = 0;
+							
+							developer.numCommits += numCommits;
 						}
 					}
 				} catch (Exception e) {
 
-					System.out.println("Devloper not add. See the line: " + line);
+					print System.out.println("Devloper not add. See the line: " + line);
 				}
 
 			}
@@ -255,7 +258,7 @@ public class Project {
 		int isAuthors = 0;
 		for (String line : gitOutput.outputList) {
 
-			System.out.println(line);
+			//print System.out.println(line);
 
 			if (line.contains("TF authors")) {
 				isAuthors++;
@@ -279,7 +282,7 @@ public class Project {
 				if (developer.equals(developerTF)) {
 
 					this.truckFactor++;
-					developer.truckFactor = developer.equals(developerTF);
+					developer.truckFactor = true;
 				}
 			}
 
@@ -305,7 +308,7 @@ public class Project {
 
 		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
 
-			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in local: " + filter.localRepository);
+			//print System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in local: " + filter.localRepository);
 
 			Project project = new Project(filter.localRepository, checkout);
 			
@@ -315,7 +318,7 @@ public class Project {
 
 		} else if (filter.remoteRepository != null && !filter.remoteRepository.isEmpty()) {
 			
-			System.out.println("info...................BuilderProject is clonning from: " + filter.remoteRepository);
+			//print System.out.println("info...................BuilderProject is clonning from: " + filter.remoteRepository);
 
 			if(filter.user != null && !filter.user.isEmpty() && filter.password != null && !filter.password.isEmpty()) {
 

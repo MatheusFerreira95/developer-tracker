@@ -49,6 +49,9 @@ public class Developer implements Comparable<Developer> {
 	@Override
 	public int compareTo(Developer developer) {
 
+		if(this.numCommits == null) this.numCommits = 0;
+		if(developer.numCommits == null) developer.numCommits = 0;
+		
 		return this.numCommits.compareTo(developer.numCommits);
 	}
 
