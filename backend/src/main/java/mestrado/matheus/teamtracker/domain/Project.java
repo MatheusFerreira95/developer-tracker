@@ -101,7 +101,7 @@ public class Project {
 				}
 			} catch (Exception e) {
 
-				print System.out.println("Developer not add. See the line: " + line);
+				System.out.println("Developer not add. See the line: " + line);
 			}
 		}
 
@@ -157,7 +157,7 @@ public class Project {
 				}
 			} catch (Exception e) {
 
-				print System.out.println("Devloper not add. See the line: " + line);
+				System.out.println("Devloper not add. See the line: " + line);
 			}
 		}
 
@@ -210,7 +210,7 @@ public class Project {
 					}
 				} catch (Exception e) {
 
-					print System.out.println("Devloper not add. See the line: " + line);
+					System.out.println("Devloper not add. See the line: " + line);
 				}
 			}
 		} else {
@@ -236,7 +236,7 @@ public class Project {
 					}
 				} catch (Exception e) {
 
-					print System.out.println("Devloper not add. See the line: " + line);
+					System.out.println("Devloper not add. See the line: " + line);
 				}
 
 			}

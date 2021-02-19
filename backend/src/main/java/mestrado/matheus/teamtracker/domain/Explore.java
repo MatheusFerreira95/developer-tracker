@@ -7,6 +7,7 @@ import java.util.List;
 
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
+import java.io.File;
 
 public class Explore {
 
@@ -44,19 +45,16 @@ public class Explore {
 		GitOutput gitOutputName;
 
 		try {
-			gitOutputName = Git.runCommand(project, " git ls-files " + filter.zoomPath);
+			gitOutputName = Git.runCommand(project, " git ls-tree --name-only HEAD " + filter.zoomPath);
 
 			for (String filePath : gitOutputName.outputList) {
 
-				if (filePath.startsWith(filter.zoomPath)) {
-
-					NodeExplore node = buildNode(filePath, filter.zoomPath);
+					NodeExplore node = buildNode(filePath, filter.zoomPath, project.localRepository);
 					if (!explore.nodeList.contains(node))
 						explore.nodeList.add(node);
 
 					calcLinks(project, explore, node, filePath, devTFList);
 
-				}
 			}
 
 		} catch (IOException e) {
@@ -99,19 +97,17 @@ public class Explore {
 
 	}
 
-	private static NodeExplore buildNode(String filePath, String prefixFromFilter) {
+	private static NodeExplore buildNode(String filePath, String prefixFromFilter, String localRepository) {
 
 		NodeExplore node = null;
 
 		String pathRemovedFilter = prefixFromFilter.isEmpty() ? filePath
 				: filePath.substring(prefixFromFilter.length());
 
-		if (pathRemovedFilter.contains("/")) {
+		if (new File(localRepository + "/" + filePath).isDirectory()) {
 
-			String formattedName = pathRemovedFilter.substring(0, pathRemovedFilter.indexOf("/"));
+			node = new NodeExplore(NodeExplore.NODE_FOLDER, pathRemovedFilter, filePath, false);
 
-			node = new NodeExplore(NodeExplore.NODE_FOLDER, formattedName,
-					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter + formattedName, false);
 		} else {
 
 			node = new NodeExplore(NodeExplore.NODE_FILE, pathRemovedFilter, filePath, false);
