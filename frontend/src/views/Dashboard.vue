@@ -238,6 +238,8 @@
                   >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
                   level</v-subheader
                 >
+                <v-subheader @click="showHideAll(false)" class="theme--light gray--text">Show all</v-subheader>
+                <v-subheader @click="showHideAll(true)" class="theme--light gray--text">Hide all</v-subheader>
                 <v-list-tile
                   v-for="node in this.bkpExplore1.nodeList"
                   @click="showHideNode(node.name)"
@@ -502,6 +504,8 @@
                   >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
                   level</v-subheader
                 >
+                <v-subheader @click="showHideAll(false)" class="theme--light gray--text">Show all</v-subheader>
+                <v-subheader @click="showHideAll(true)" class="theme--light gray--text">Hide all</v-subheader>
                 <v-list-tile
                   v-for="node in this.bkpExplore1.nodeList"
                   @click="showHideNode(node.name)"
@@ -799,6 +803,44 @@ export default {
     ],
   }),
   methods: {
+    /*showHideAll(showHide) {
+      this.bkpExplore1.nodeList.forEach((node) => {
+          node.hide = showHide;
+          this.bkpExplore1.linkList.forEach((link) => {
+              link.hide = showHide;
+          });
+        }
+      });
+
+      this.explore1 = getExplore(
+        this.bkpExplore1.nodeList.filter(function (el) {
+          return !el.hide;
+        }),
+        this.bkpExplore1.linkList.filter(function (el) {
+          return !el.hide;
+        })
+      );
+
+      if (this.bkpExplore2.length === 0) return;
+
+      this.bkpExplore2.nodeList.forEach((node) => {
+          node.hide = showHide;
+          this.bkpExplore2.linkList.forEach((link) => {
+              link.hide = showHide;
+          });
+        }
+      });
+
+      this.explore2 = getExplore(
+        this.bkpExplore2.nodeList.filter(function (el) {
+          return !el.hide;
+        }),
+        this.bkpExplore2.linkList.filter(function (el) {
+          return !el.hide;
+        })
+      );
+    },*/
+
     showHideNode(nodeName) {
       this.bkpExplore1.nodeList.forEach((node) => {
         if (node.name === nodeName) {
@@ -1068,8 +1110,23 @@ export default {
 
       this[bkpExplore] = explore;
 
+   /*   let dynamicSort = function (property) {
+        var sortOrder = 1;
+        if(property[0] === "-") {
+            sortOrder = -1;
+            property = property.substr(1);
+        }
+        return function (a,b) {
+            var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+            return result * sortOrder;
+        }
+      };
+     
+     this[bkpExplore].nodeList.sort(dynamicSort("name"));
+*/
       return getExplore(explore.nodeList, explore.linkList);
     },
+
     firstLoadExplore() {
       this.history.paths = [];
       this.buildExplore(null);
