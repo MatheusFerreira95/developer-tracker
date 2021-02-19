@@ -240,6 +240,42 @@ public class Git {
 		String nameLocalRepository = remoteRepository.substring(remoteRepository.lastIndexOf("/"),
 				remoteRepository.indexOf(".git"));
 
+		String cloneFolderPath = getCloneFolderPath();
+
+		File localRepository = new File(
+				cloneFolderPath + File.separator + nameLocalRepository + "-" + new Date().getTime());
+		if (!localRepository.exists())
+			localRepository.mkdir();
+
+		return localRepository.getPath();
+
+	}
+
+	public static String getLocalRepositoryFromLocalProject() {
+
+		String localFromLocal = "";
+
+		try {
+
+			String cloneFolderPath = getCloneFolderPath();
+
+			File localRepository = new File(cloneFolderPath + File.separator + "local");
+			if (!localRepository.exists())
+				localRepository.mkdir();
+	
+			localFromLocal = localRepository.getPath();
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
+		return localFromLocal;
+	}
+
+	private static String getCloneFolderPath() throws IOException {
+
 		String currentUsersHomePath = System.getProperty("user.home");
 		String cloneFolderPath = currentUsersHomePath + File.separator + "team-tracker-clones";
 
@@ -248,12 +284,7 @@ public class Git {
 			cloneFolder.mkdir();
 		}
 
-		File localRepository = new File(
-				cloneFolderPath + File.separator + nameLocalRepository + "-" + new Date().getTime());
-		if (!localRepository.exists())
-			localRepository.mkdir();
-
-		return localRepository.getPath();
+		return cloneFolderPath;
 
 	}
 
@@ -290,7 +321,7 @@ public class Git {
 
 		try {
 
-			GitOutput testCheckout = runCommandReturnExitValue(project, "git checkout " + project.checkout);
+			GitOutput testCheckout = runCommandReturnExitValue(project, "git checkout -f " + project.checkout);
 
 			if (testCheckout.errorList.get(testCheckout.errorList.size() - 1).equals("resultError: 0")) {
 				System.err.println(".............................checkout error, default checkout used");

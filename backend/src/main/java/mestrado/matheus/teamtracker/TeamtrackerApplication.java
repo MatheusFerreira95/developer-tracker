@@ -1,5 +1,7 @@
 package mestrado.matheus.teamtracker;
 
+import mestrado.matheus.teamtracker.util.Git;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TeamtrackerApplication {
 
 	public static void main(String[] args) {
+
+		Git.getLocalRepositoryFromLocalProject();
 		SpringApplication.run(TeamtrackerApplication.class, args);
 	}
 

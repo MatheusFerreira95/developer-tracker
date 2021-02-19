@@ -63,8 +63,6 @@ public class Project {
 
 		String filePath = filterPath == null ? "" : filterPath;
 
-		// GitOutput gitOutputEmail = Git.runCommand(this, " git ls-files " + filePath
-		// 		+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
 		GitOutput gitOutputName = Git.runCommand(this, " git ls-files " + filePath
 				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
 
@@ -73,10 +71,6 @@ public class Project {
 		for (String line : gitOutputName.outputList) {
 
 			try {
-
-				//String emailNotTrim = gitOutputEmail.outputList.get(avatar);
-
-				//String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
 
 				String name = line.substring(8);
 
@@ -106,7 +100,6 @@ public class Project {
 		}
 
 		for (Developer dev : this.developerList) {
-			//print System.out.println("Developer..................................: " + dev.name);
 
 			for (Developer devTF : devTFList) {
 				if(dev.equals(devTF)) {
@@ -120,8 +113,6 @@ public class Project {
 
 	public void calcDeveloperList() throws IOException, InterruptedException {
 
-		// GitOutput gitOutputEmail = Git.runCommand(this,
-		// 		" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
 		GitOutput gitOutputName = Git.runCommand(this,
 				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
 
@@ -129,10 +120,6 @@ public class Project {
 		for (String line : gitOutputName.outputList) {
 
 			try {
-
-				//String emailNotTrim = gitOutputEmail.outputList.get(avatar);
-
-				//String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
 
 				String name = line.substring(8);
 
@@ -162,27 +149,7 @@ public class Project {
 		}
 
 		calcNumLocProjectByDeveloperList();
-
-		// float percentageTotal = 0;
-		// for (Developer developer : developerList) {
-		// 	float percentage = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
-		// 	float percentageAnterior = percentageTotal;
-		// 	percentageTotal += percentage;
-		// 	if (percentageTotal > 100) {
-		// 		developer.percentLoc = 100 - percentageAnterior;
-		// 		percentageAnterior = 100;
-		// 		percentageTotal = 100;
-		// 	} else {
-		// 		developer.percentLoc = percentage;
-		// 	}
-		// }
-
-		// if (percentageTotal < 100) {
-		// 	developerList.get(0).percentLoc += 100 - percentageTotal;
-		// }
-
 		calcTruckFactor();
-
 		calcCommitsDeveloperList(null);
 	}
 
@@ -258,8 +225,6 @@ public class Project {
 		int isAuthors = 0;
 		for (String line : gitOutput.outputList) {
 
-			//print System.out.println(line);
-
 			if (line.contains("TF authors")) {
 				isAuthors++;
 			}
@@ -295,8 +260,6 @@ public class Project {
 		Project project = Project.builderProject(filter, checkout);
 
 		project.calcNumCommits();
-		// project.calcNumLoc();
-		// project.calcNumActiveDaysAndFirstCommitAndLastCommit();
 		project.calcNumLocProgrammingLanguageList();
 		project.calcDeveloperList();
 
@@ -306,9 +269,19 @@ public class Project {
 
 	public static Project builderProject(Filter filter, String checkout) {
 
-		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
+		if (filter.remoteRepository != null && filter.remoteRepository.equals("[local]")) {
 
-			//print System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in local: " + filter.localRepository);
+			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in 100% local: " + filter.localRepository);
+
+			Project project = new Project(Git.getLocalRepositoryFromLocalProject(), checkout);
+			// entre na pasta do seu projeto local, use 'docker cp . nomeContainer:/root/team-tracker-clones/local/ 
+			Git.runCheckout(project);
+			
+			return project;
+		
+		} else if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
+
+			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in local: " + filter.localRepository);
 
 			Project project = new Project(filter.localRepository, checkout);
 			
@@ -318,7 +291,7 @@ public class Project {
 
 		} else if (filter.remoteRepository != null && !filter.remoteRepository.isEmpty()) {
 			
-			//print System.out.println("info...................BuilderProject is clonning from: " + filter.remoteRepository);
+			System.out.println("info...................BuilderProject is clonning from: " + filter.remoteRepository);
 
 			if(filter.user != null && !filter.user.isEmpty() && filter.password != null && !filter.password.isEmpty()) {
 
