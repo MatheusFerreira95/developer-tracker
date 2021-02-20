@@ -235,31 +235,64 @@
 
               <v-subheader
                 class="theme--light primary--text"
-                style="background-color: white; border-bottom: 1px solid"
-                >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
-                level</v-subheader
+                style="background-color: white; border-bottom-top: 1px solid"
+                >V1</v-subheader
               >
-              <table style="background-color: white">
+              <table
+                style="
+                  background-color: white;
+                  table-layout: fixed;
+                  width: 450px;
+                "
+              >
                 <tr>
-                  <th>Developers</th>
-                  <th>Artifacts</th>
+                  <th
+                    style="
+                      text-align: left;
+                      center-align: top;
+                      padding-top: 5px;
+                      padding-left: 15px;
+                    "
+                  >
+                    Developers
+                  </th>
+                  <th
+                    style="
+                      text-align: left;
+                      center-align: top;
+                      padding-top: 5px;
+                      padding-left: 15px;
+                    "
+                  >
+                    Artifacts
+                  </th>
                 </tr>
                 <tr>
                   <td>
-                    <v-subheader class="theme--light gray--text"
-                      ><span @click="showHideAll(false, 'Developer')"
+                    <v-subheader class="theme--light blue--text"
+                      ><span
+                        style="cursor: pointer"
+                        @click="showHideAll(false, 'Developer')"
                         >Show all</span
                       >&nbsp;/&nbsp;
-                      <span @click="showHideAll(true, 'Developer')"
+                      <span
+                        style="cursor: pointer"
+                        @click="showHideAll(true, 'Developer')"
                         >Hide all</span
                       ></v-subheader
                     >
                   </td>
-                  <v-subheader class="theme--light gray--text"
-                    ><span @click="showHideAll(false, 'Project,File,Folder')"
+                  <v-subheader
+                    class="theme--light blue--text"
+                    style="cursor: pointer; margin-right: 5px"
+                    ><span
+                      style="cursor: pointer"
+                      @click="showHideAll(false, 'Project,File,Folder')"
                       >Show all</span
                     >&nbsp;/&nbsp;
-                    <span @click="showHideAll(true, 'Project,File,Folder')"
+                    <span
+                      style="cursor: pointer"
+                      @click="showHideAll(true, 'Project,File,Folder')"
                       >Hide all</span
                     ></v-subheader
                   >
@@ -275,7 +308,9 @@
                       >
                         <div v-if="node.nodeType === 'Developer'">
                           <v-icon small v-if="node.hide">visibility_off</v-icon>
-                          <v-icon small v-else>visibility</v-icon>
+                          <v-icon small v-else class="blue--text"
+                            >visibility</v-icon
+                          >
                           {{ node.name }}
                         </div>
                       </li>
@@ -291,7 +326,9 @@
                       >
                         <div v-if="node.nodeType !== 'Developer'">
                           <v-icon small v-if="node.hide">visibility_off</v-icon>
-                          <v-icon small v-else>visibility</v-icon>
+                          <v-icon small v-else class="blue--text"
+                            >visibility</v-icon
+                          >
                           {{ node.name }}
                         </div>
                       </li>
@@ -542,31 +579,64 @@
               <div style="background-color: white">
                 <v-subheader
                   class="theme--light primary--text"
-                  style="background-color: white; border: 1px solid"
-                  >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
-                  level</v-subheader
+                  style="background-color: white; border-top: 1px solid"
+                  >V1</v-subheader
                 >
-                <table style="background-color: white">
+                <table
+                  style="
+                    background-color: white;
+                    table-layout: fixed;
+                    width: 450px;
+                  "
+                >
                   <tr>
-                    <th>Developers</th>
-                    <th>Artifacts</th>
+                    <th
+                      style="
+                        text-align: left;
+                        vertical-align: top;
+                        padding-top: 5px;
+                        padding-left: 15px;
+                      "
+                    >
+                      Developers
+                    </th>
+                    <th
+                      style="
+                        text-align: left;
+                        vertical-align: top;
+                        padding-top: 5px;
+                        padding-left: 15px;
+                      "
+                    >
+                      Artifacts
+                    </th>
                   </tr>
                   <tr>
                     <td>
-                      <v-subheader class="theme--light gray--text"
-                        ><span @click="showHideAll(false, 'Developer')"
+                      <v-subheader class="theme--light blue--text"
+                        ><span
+                          style="cursor: pointer"
+                          @click="showHideAll(false, 'Developer')"
                           >Show all</span
                         >&nbsp;/&nbsp;
-                        <span @click="showHideAll(true, 'Developer')"
+                        <span
+                          style="cursor: pointer"
+                          @click="showHideAll(true, 'Developer')"
                           >Hide all</span
                         ></v-subheader
                       >
                     </td>
-                    <v-subheader class="theme--light gray--text"
-                      ><span @click="showHideAll(false, 'Project,File,Folder')"
+                    <v-subheader
+                      class="theme--light blue--text"
+                      style="margin-right: 5px"
+                      ><span
+                        style="cursor: pointer"
+                        @click="showHideAll(false, 'Project,File,Folder')"
                         >Show all</span
                       >&nbsp;/&nbsp;
-                      <span @click="showHideAll(true, 'Project,File,Folder')"
+                      <span
+                        style="cursor: pointer"
+                        @click="showHideAll(true, 'Project,File,Folder')"
                         >Hide all</span
                       ></v-subheader
                     >
@@ -586,7 +656,9 @@
                             <v-icon small v-if="node.hide"
                               >visibility_off</v-icon
                             >
-                            <v-icon small v-else>visibility</v-icon>
+                            <v-icon small v-else class="blue--text"
+                              >visibility</v-icon
+                            >
                             {{ node.name }}
                           </div>
                         </li>
@@ -606,7 +678,9 @@
                             <v-icon small v-if="node.hide"
                               >visibility_off</v-icon
                             >
-                            <v-icon small v-else>visibility</v-icon>
+                            <v-icon small v-else class="blue--text"
+                              >visibility</v-icon
+                            >
                             {{ node.name }}
                           </div>
                         </li>
@@ -617,14 +691,37 @@
                 <br />
                 <v-subheader
                   class="theme--light primary--text"
-                  style="background-color: white; border: 1px solid"
-                  >V2 - {{ bkpExplore2.nodeList.length }} nodes in this path
-                  level</v-subheader
+                  style="background-color: white; border-top: 1px solid"
+                  >V2</v-subheader
                 >
-                <table style="background-color: white">
+                <table
+                  style="
+                    background-color: white;
+                    table-layout: fixed;
+                    width: 450px;
+                  "
+                >
                   <tr>
-                    <th>Developers</th>
-                    <th>Artifacts</th>
+                    <th
+                      style="
+                        text-align: left;
+                        vertical-align: top;
+                        padding-top: 5px;
+                        padding-left: 15px;
+                      "
+                    >
+                      Developers
+                    </th>
+                    <th
+                      style="
+                        text-align: left;
+                        vertical-align: top;
+                        padding-top: 5px;
+                        padding-left: 15px;
+                      "
+                    >
+                      Artifacts
+                    </th>
                   </tr>
                   <tr>
                     <td
@@ -641,7 +738,9 @@
                             <v-icon small v-if="node.hide"
                               >visibility_off</v-icon
                             >
-                            <v-icon small v-else>visibility</v-icon>
+                            <v-icon small v-else class="blue--text"
+                              >visibility</v-icon
+                            >
                             {{ node.name }}
                           </div>
                         </li>
@@ -661,7 +760,9 @@
                             <v-icon small v-if="node.hide"
                               >visibility_off</v-icon
                             >
-                            <v-icon small v-else>visibility</v-icon>
+                            <v-icon small v-else class="blue--text"
+                              >visibility</v-icon
+                            >
                             {{ node.name }}
                           </div>
                         </li>
