@@ -233,31 +233,72 @@
                 </v-btn>
               </template>
 
-              <v-list subheader two-line>
-                <v-subheader class="theme--light primary--text"
-                  >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
-                  level</v-subheader
-                >
-                <v-subheader @click="showHideAll(false)" class="theme--light gray--text">Show all</v-subheader>
-                <v-subheader @click="showHideAll(true)" class="theme--light gray--text">Hide all</v-subheader>
-                <v-list-tile
-                  v-for="node in this.bkpExplore1.nodeList"
-                  @click="showHideNode(node.name)"
-                  :key="node"
-                >
-                  <v-list-tile-action>
-                    <v-icon medium v-if="node.hide">visibility_off</v-icon>
-                    <v-icon medium v-else>visibility</v-icon>
-                  </v-list-tile-action>
-
-                  <v-list-tile-content>
-                    <v-list-tile-title>{{ node.name }}</v-list-tile-title>
-                    <v-list-tile-sub-title>{{
-                      node.nodeType
-                    }}</v-list-tile-sub-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-              </v-list>
+              <v-subheader
+                class="theme--light primary--text"
+                style="background-color: white; border-bottom: 1px solid"
+                >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
+                level</v-subheader
+              >
+              <table style="background-color: white">
+                <tr>
+                  <th>Developers</th>
+                  <th>Artifacts</th>
+                </tr>
+                <tr>
+                  <td>
+                    <v-subheader class="theme--light gray--text"
+                      ><span @click="showHideAll(false, 'Developer')"
+                        >Show all</span
+                      >&nbsp;/&nbsp;
+                      <span @click="showHideAll(true, 'Developer')"
+                        >Hide all</span
+                      ></v-subheader
+                    >
+                  </td>
+                  <v-subheader class="theme--light gray--text"
+                    ><span @click="showHideAll(false, 'Project,File,Folder')"
+                      >Show all</span
+                    >&nbsp;/&nbsp;
+                    <span @click="showHideAll(true, 'Project,File,Folder')"
+                      >Hide all</span
+                    ></v-subheader
+                  >
+                </tr>
+                <tr>
+                  <td style="text-align: left; vertical-align: top; padding: 0">
+                    <!--devs-->
+                    <ul style="list-style-type: none">
+                      <li
+                        v-for="node in this.bkpExplore1.nodeList"
+                        :key="node.name"
+                        @click="showHideNode(node.name)"
+                      >
+                        <div v-if="node.nodeType === 'Developer'">
+                          <v-icon small v-if="node.hide">visibility_off</v-icon>
+                          <v-icon small v-else>visibility</v-icon>
+                          {{ node.name }}
+                        </div>
+                      </li>
+                    </ul>
+                  </td>
+                  <td style="text-align: left; vertical-align: top; padding: 0">
+                    <!--artifacts-->
+                    <ul style="list-style-type: none">
+                      <li
+                        v-for="node in this.bkpExplore1.nodeList"
+                        :key="node.name"
+                        @click="showHideNode(node.name)"
+                      >
+                        <div v-if="node.nodeType !== 'Developer'">
+                          <v-icon small v-if="node.hide">visibility_off</v-icon>
+                          <v-icon small v-else>visibility</v-icon>
+                          {{ node.name }}
+                        </div>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
             </v-menu>
           </v-flex>
 
@@ -498,53 +539,137 @@
                   Show/Hide
                 </v-btn>
               </template>
-
-              <v-list subheader two-line>
-                <v-subheader class="theme--light primary--text"
+              <div style="background-color: white">
+                <v-subheader
+                  class="theme--light primary--text"
+                  style="background-color: white; border: 1px solid"
                   >V1 - {{ bkpExplore1.nodeList.length }} nodes in this path
                   level</v-subheader
                 >
-                <v-subheader @click="showHideAll(false)" class="theme--light gray--text">Show all</v-subheader>
-                <v-subheader @click="showHideAll(true)" class="theme--light gray--text">Hide all</v-subheader>
-                <v-list-tile
-                  v-for="node in this.bkpExplore1.nodeList"
-                  @click="showHideNode(node.name)"
-                  :key="node"
-                >
-                  <v-list-tile-action>
-                    <v-icon medium v-if="node.hide">visibility_off</v-icon>
-                    <v-icon medium v-else>visibility</v-icon>
-                  </v-list-tile-action>
-
-                  <v-list-tile-content>
-                    <v-list-tile-title>{{ node.name }}</v-list-tile-title>
-                    <v-list-tile-sub-title>{{
-                      node.nodeType
-                    }}</v-list-tile-sub-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-subheader class="theme--light primary--text"
+                <table style="background-color: white">
+                  <tr>
+                    <th>Developers</th>
+                    <th>Artifacts</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <v-subheader class="theme--light gray--text"
+                        ><span @click="showHideAll(false, 'Developer')"
+                          >Show all</span
+                        >&nbsp;/&nbsp;
+                        <span @click="showHideAll(true, 'Developer')"
+                          >Hide all</span
+                        ></v-subheader
+                      >
+                    </td>
+                    <v-subheader class="theme--light gray--text"
+                      ><span @click="showHideAll(false, 'Project,File,Folder')"
+                        >Show all</span
+                      >&nbsp;/&nbsp;
+                      <span @click="showHideAll(true, 'Project,File,Folder')"
+                        >Hide all</span
+                      ></v-subheader
+                    >
+                  </tr>
+                  <tr>
+                    <td
+                      style="text-align: left; vertical-align: top; padding: 0"
+                    >
+                      <!--devs-->
+                      <ul style="list-style-type: none">
+                        <li
+                          v-for="node in this.bkpExplore1.nodeList"
+                          :key="node.name"
+                          @click="showHideNode(node.name)"
+                        >
+                          <div v-if="node.nodeType === 'Developer'">
+                            <v-icon small v-if="node.hide"
+                              >visibility_off</v-icon
+                            >
+                            <v-icon small v-else>visibility</v-icon>
+                            {{ node.name }}
+                          </div>
+                        </li>
+                      </ul>
+                    </td>
+                    <td
+                      style="text-align: left; vertical-align: top; padding: 0"
+                    >
+                      <!--artifacts-->
+                      <ul style="list-style-type: none">
+                        <li
+                          v-for="node in this.bkpExplore1.nodeList"
+                          :key="node.name"
+                          @click="showHideNode(node.name)"
+                        >
+                          <div v-if="node.nodeType !== 'Developer'">
+                            <v-icon small v-if="node.hide"
+                              >visibility_off</v-icon
+                            >
+                            <v-icon small v-else>visibility</v-icon>
+                            {{ node.name }}
+                          </div>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <v-subheader
+                  class="theme--light primary--text"
+                  style="background-color: white; border: 1px solid"
                   >V2 - {{ bkpExplore2.nodeList.length }} nodes in this path
                   level</v-subheader
                 >
-                <v-list-tile
-                  v-for="node in this.bkpExplore2.nodeList"
-                  @click="showHideNode(node.name)"
-                  :key="node"
-                >
-                  <v-list-tile-action>
-                    <v-icon medium v-if="node.hide">visibility_off</v-icon>
-                    <v-icon medium v-else>visibility</v-icon>
-                  </v-list-tile-action>
-
-                  <v-list-tile-content>
-                    <v-list-tile-title>{{ node.name }}</v-list-tile-title>
-                    <v-list-tile-sub-title>{{
-                      node.nodeType
-                    }}</v-list-tile-sub-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-              </v-list>
+                <table style="background-color: white">
+                  <tr>
+                    <th>Developers</th>
+                    <th>Artifacts</th>
+                  </tr>
+                  <tr>
+                    <td
+                      style="text-align: left; vertical-align: top; padding: 0"
+                    >
+                      <!--devs-->
+                      <ul style="list-style-type: none">
+                        <li
+                          v-for="node in this.bkpExplore2.nodeList"
+                          :key="node.name"
+                          @click="showHideNode(node.name)"
+                        >
+                          <div v-if="node.nodeType === 'Developer'">
+                            <v-icon small v-if="node.hide"
+                              >visibility_off</v-icon
+                            >
+                            <v-icon small v-else>visibility</v-icon>
+                            {{ node.name }}
+                          </div>
+                        </li>
+                      </ul>
+                    </td>
+                    <td
+                      style="text-align: left; vertical-align: top; padding: 0"
+                    >
+                      <!--artifacts-->
+                      <ul style="list-style-type: none">
+                        <li
+                          v-for="node in this.bkpExplore2.nodeList"
+                          :key="node.name"
+                          @click="showHideNode(node.name)"
+                        >
+                          <div v-if="node.nodeType !== 'Developer'">
+                            <v-icon small v-if="node.hide"
+                              >visibility_off</v-icon
+                            >
+                            <v-icon small v-else>visibility</v-icon>
+                            {{ node.name }}
+                          </div>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </v-menu>
           </v-flex>
           <v-flex lg6 sm6 xs12>
@@ -803,11 +928,12 @@ export default {
     ],
   }),
   methods: {
-    /*showHideAll(showHide) {
+    showHideAll(showHide, nodeTypes) {
       this.bkpExplore1.nodeList.forEach((node) => {
+        if (nodeTypes.includes(node.nodeType)) {
           node.hide = showHide;
           this.bkpExplore1.linkList.forEach((link) => {
-              link.hide = showHide;
+            link.hide = showHide;
           });
         }
       });
@@ -824,9 +950,10 @@ export default {
       if (this.bkpExplore2.length === 0) return;
 
       this.bkpExplore2.nodeList.forEach((node) => {
+        if (nodeTypes.includes(node.nodeType)) {
           node.hide = showHide;
           this.bkpExplore2.linkList.forEach((link) => {
-              link.hide = showHide;
+            link.hide = showHide;
           });
         }
       });
@@ -839,7 +966,7 @@ export default {
           return !el.hide;
         })
       );
-    },*/
+    },
 
     showHideNode(nodeName) {
       this.bkpExplore1.nodeList.forEach((node) => {
@@ -943,19 +1070,19 @@ export default {
 
       for (let i = 0; i < devList1.length; i++) {
         let dev1 = devList1[i];
-        let exist = 'no';
+        let exist = "no";
         for (let j = 0; j < devList2.length; j++) {
           let dev2 = devList2[j];
           if (dev1.name === dev2.name) {
-            exist = dev1.truckFactor === dev2.truckFactor ? 'equal' : 'diff';
+            exist = dev1.truckFactor === dev2.truckFactor ? "equal" : "diff";
             break;
           }
         }
-        if (exist === 'equal') {
+        if (exist === "equal") {
           dev1.version = -1;
           this.developersListComparative.push(dev1);
-        }else if (exist === 'diff') {
-          dev1.version = 
+        } else if (exist === "diff") {
+          dev1.version =
             devList1 === this.projectVersions.projectVersion1.developerList
               ? 1
               : 2;
@@ -1110,20 +1237,21 @@ export default {
 
       this[bkpExplore] = explore;
 
-   /*   let dynamicSort = function (property) {
+      let dynamicSort = function (property) {
         var sortOrder = 1;
-        if(property[0] === "-") {
-            sortOrder = -1;
-            property = property.substr(1);
+        if (property[0] === "-") {
+          sortOrder = -1;
+          property = property.substr(1);
         }
-        return function (a,b) {
-            var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-            return result * sortOrder;
-        }
+        return function (a, b) {
+          var result =
+            a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
+          return result * sortOrder;
+        };
       };
-     
-     this[bkpExplore].nodeList.sort(dynamicSort("name"));
-*/
+
+      this[bkpExplore].nodeList.sort(dynamicSort("name"));
+
       return getExplore(explore.nodeList, explore.linkList);
     },
 
