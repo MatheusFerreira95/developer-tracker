@@ -159,7 +159,11 @@ export default {
       // expose ECharts events as custom events
       EVENTS.forEach((event) => {
         chart.on(event, (params) => {
-          if (event === "click" && params.seriesType !== "pie") {
+          if (
+            event === "click" &&
+            params.seriesType !== "pie" &&
+            params.data.nodeType !== "Developer"
+          ) {
             window.getApp.$emit("UPDATE_PROJECT", params);
           }
           this.$emit(event, params);
