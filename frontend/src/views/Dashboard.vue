@@ -305,6 +305,7 @@
                         v-for="node in this.bkpExplore1.nodeList"
                         :key="node.name"
                         @click="showHideNode(node.name)"
+                        class="click-pointer"
                       >
                         <div v-if="node.nodeType === 'Developer'">
                           <v-icon small v-if="node.hide">visibility_off</v-icon>
@@ -323,6 +324,7 @@
                         v-for="node in this.bkpExplore1.nodeList"
                         :key="node.name"
                         @click="showHideNode(node.name)"
+                        class="click-pointer"
                       >
                         <div v-if="node.nodeType !== 'Developer'">
                           <v-icon small v-if="node.hide">visibility_off</v-icon>
@@ -651,6 +653,7 @@
                           v-for="node in this.bkpExplore1.nodeList"
                           :key="node.name"
                           @click="showHideNode(node.name)"
+                          class="click-pointer"
                         >
                           <div v-if="node.nodeType === 'Developer'">
                             <v-icon small v-if="node.hide"
@@ -673,6 +676,7 @@
                           v-for="node in this.bkpExplore1.nodeList"
                           :key="node.name"
                           @click="showHideNode(node.name)"
+                          class="click-pointer"
                         >
                           <div v-if="node.nodeType !== 'Developer'">
                             <v-icon small v-if="node.hide"
@@ -733,6 +737,7 @@
                           v-for="node in this.bkpExplore2.nodeList"
                           :key="node.name"
                           @click="showHideNode(node.name)"
+                          class="click-pointer"
                         >
                           <div v-if="node.nodeType === 'Developer'">
                             <v-icon small v-if="node.hide"
@@ -755,6 +760,7 @@
                           v-for="node in this.bkpExplore2.nodeList"
                           :key="node.name"
                           @click="showHideNode(node.name)"
+                          class="click-pointer"
                         >
                           <div v-if="node.nodeType !== 'Developer'">
                             <v-icon small v-if="node.hide"
