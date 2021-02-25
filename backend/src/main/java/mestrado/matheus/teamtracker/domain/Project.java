@@ -5,11 +5,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-
-import org.hibernate.validator.internal.metadata.provider.ProgrammaticMetaDataProvider;
 
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
@@ -77,180 +76,161 @@ public class Project {
 
 	}
 
-	public void calcDeveloperList(String filterPath, List<Developer> devTFList)
-			throws IOException, InterruptedException {
+	public static List<Developer> calcLocCommitDeveloperList(Project project, String filterPath,
+			List<Developer> devTFList) throws IOException, InterruptedException {
+
+		final CompletableFuture<List<Developer>> calcLocsDeveloperListRun = CompletableFuture
+				.supplyAsync(() -> calcLocsDeveloperList(project, filterPath));
+
+		final CompletableFuture<HashMap<String, Integer>> calcCommitsDeveloperListRun = CompletableFuture
+				.supplyAsync(() -> calcCommitsDeveloperList(project, filterPath));
+
+		try {
+
+			List<Developer> developerList = calcLocsDeveloperListRun.get();
+			HashMap<String, Integer> developerCommitsMap = calcCommitsDeveloperListRun.get();
+
+			for (Developer developer : developerList) {
+
+				if (developerCommitsMap.containsKey(developer.name))
+					developer.numCommits = developerCommitsMap.get(developer.name);
+
+			}
+
+			for (Developer dev : developerList) {
+
+				for (Developer devTF : devTFList) {
+					if (dev.equals(devTF)) {
+						dev.truckFactor = true;
+					}
+				}
+			}
+
+			return developerList;
+
+		} catch (InterruptedException | ExecutionException e) {
+
+			System.err.println("findResume process error" + e);
+			throw new RuntimeException();
+		}
+
+	}
+
+	private static List<Developer> calcLocsDeveloperList(Project project, String filterPath) {
+
+		GitOutput gitOutputName = null;
 
 		String filePath = filterPath == null ? "" : filterPath;
 
-		GitOutput gitOutputName = Git.runCommand(this, " git ls-files " + filePath
-				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
+		List<Developer> locDeveloperList = new ArrayList<Developer>();
 
-		Integer avatar = 0;
-		this.developerList = new ArrayList<Developer>();
-		for (String line : gitOutputName.outputList) {
+		try {
 
-			try {
+			gitOutputName = Git.runCommand(project, " git ls-files " + filePath
+					+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
 
-				String name = line.substring(8);
+			for (String line : gitOutputName.outputList) {
 
-				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
+				try {
 
-				Developer dev = new Developer(name, "email", numLoc, avatar++);
+					String name = line.substring(8);
 
-				if (this.developerList.contains(dev)) {
+					Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
 
-					for (Developer developer : this.developerList) {
+					Developer dev = new Developer(name, "email", numLoc, 0);
 
-						if (developer.equals(dev)) {
+					if (locDeveloperList.contains(dev)) {
 
-							developer.numLoc += dev.numLoc;
+						for (Developer developer : locDeveloperList) {
+
+							if (developer.equals(dev)) {
+
+								developer.numLoc += dev.numLoc;
+							}
 						}
+
+					} else {
+
+						locDeveloperList.add(dev);
+
 					}
 
-				} else {
+				} catch (Exception e) {
 
-					this.developerList.add(dev);
-
-				}
-			} catch (Exception e) {
-
-				System.out.println("Developer not add. See the line: " + line);
-			}
-		}
-
-		for (Developer dev : this.developerList) {
-
-			for (Developer devTF : devTFList) {
-				if (dev.equals(devTF)) {
-					dev.truckFactor = true;
+					System.out.println("Developer not add. See the line: " + line);
 				}
 			}
+
+		} catch (IOException | InterruptedException e1) {
+
+			e1.printStackTrace();
 		}
 
-		calcCommitsDeveloperList(filterPath);
+		return locDeveloperList;
 	}
 
 	public static List<Developer> calcDeveloperList(Project project) {
 
 		GitOutput gitOutputName = null;
-		
+
 		try {
-			
+
 			gitOutputName = Git.runCommand(project,
 					" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
-			
+
+			for (String line : gitOutputName.outputList) {
+
+				try {
+
+					String name = line.substring(8);
+
+					Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
+
+					Developer dev = new Developer(name, "email", numLoc, 0);
+
+					if (project.developerList.contains(dev)) {
+
+						for (Developer developer : project.developerList) {
+
+							if (developer.equals(dev)) {
+
+								developer.numLoc += dev.numLoc;
+							}
+						}
+
+					} else {
+
+						project.developerList.add(dev);
+
+					}
+
+				} catch (Exception e) {
+
+					System.out.println("Devloper not add. See the line: " + line);
+				}
+			}
+
 		} catch (IOException | InterruptedException e1) {
-			
+
 			e1.printStackTrace();
 		}
 
-		Integer avatar = 0;
-		for (String line : gitOutputName.outputList) {
-
-			try {
-
-				String name = line.substring(8);
-
-				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
-
-				Developer dev = new Developer(name, "email", numLoc, avatar++);
-
-				if (project.developerList.contains(dev)) {
-
-					for (Developer developer : project.developerList) {
-
-						if (developer.equals(dev)) {
-
-							developer.numLoc += dev.numLoc;
-						}
-					}
-
-				} else {
-
-					project.developerList.add(dev);
-
-				}
-			} catch (Exception e) {
-
-				System.out.println("Devloper not add. See the line: " + line);
-			}
-		}
-
-		calcCommitsDeveloperList(project);
-		
 		return project.developerList;
 	}
-	
-	public static void calcCommitsDeveloperList(Project project) {
-		
+
+	public static HashMap<String, Integer> calcCommitsDeveloperList(Project project, String filterPath) {
+
 		GitOutput gitOutputName = null;
 
-			try {
-				
-				gitOutputName = Git.runCommand(project, " git log | grep Author: | sort | uniq -c | sort -nr");
-				
-			} catch (IOException | InterruptedException e1) {
+		HashMap<String, Integer> developerCommitsMap = new HashMap<String, Integer>();
 
-				e1.printStackTrace();
-			}
+		String pathFile = filterPath == null ? "." : filterPath;
 
-			for (String line : gitOutputName.outputList) {
+		try {
 
-				try {
-
-					String name = line.substring(line.indexOf(": ") + 2, line.indexOf(" <"));
-
-					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
-
-					for (Developer developer : project.developerList) {
-						if (developer.name.equals(name)) {
-							if (numCommits == null)
-								numCommits = 0;
-							if (developer.numCommits == null)
-								developer.numCommits = 0;
-							developer.numCommits += numCommits;
-							break;
-						}
-					}
-				} catch (Exception e) {
-
-					System.out.println("Devloper not add. See the line: " + line);
-				}
-			}
-	}
-
-	public void calcCommitsDeveloperList(String pathFile) throws IOException, InterruptedException {
-		GitOutput gitOutputName;
-		if (pathFile == null) { // project level
-
-			gitOutputName = Git.runCommand(this, " git log | grep Author: | sort | uniq -c | sort -nr");
-
-			for (String line : gitOutputName.outputList) {
-
-				try {
-
-					String name = line.substring(line.indexOf(": ") + 2, line.indexOf(" <"));
-
-					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
-
-					for (Developer developer : developerList) {
-						if (developer.name.equals(name)) {
-							if (numCommits == null)
-								numCommits = 0;
-							if (developer.numCommits == null)
-								developer.numCommits = 0;
-							developer.numCommits += numCommits;
-							break;
-						}
-					}
-				} catch (Exception e) {
-
-					System.out.println("Devloper not add. See the line: " + line);
-				}
-			}
-		} else {
-			gitOutputName = Git.runCommand(this,
+			gitOutputName = Git.runCommand(project,
 					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | sort -f | uniq -ic | sort -nr");
+
 			for (String line : gitOutputName.outputList) {
 
 				try {
@@ -259,24 +239,31 @@ public class Project {
 
 					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
 
-					for (Developer developer : developerList) {
-						if (developer.name.equals(name)) {
+					numCommits = numCommits == null ? 0 : numCommits;
 
-							if (developer.numCommits == null)
-								developer.numCommits = 0;
-							if (numCommits == null)
-								numCommits = 0;
+					if (developerCommitsMap.containsKey(name)) {
 
-							developer.numCommits += numCommits;
-						}
+						developerCommitsMap.put(name, developerCommitsMap.get(name) + numCommits);
+
+					} else {
+
+						developerCommitsMap.put(name, numCommits);
 					}
+
 				} catch (Exception e) {
 
 					System.out.println("Devloper not add. See the line: " + line);
 				}
 
 			}
+
+		} catch (IOException | InterruptedException e1) {
+
+			System.err.println(e1.getMessage());
 		}
+
+		return developerCommitsMap;
+
 	}
 
 	private void calcNumLocProjectByDeveloperList() {

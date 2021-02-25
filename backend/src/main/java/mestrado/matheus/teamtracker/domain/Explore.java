@@ -70,7 +70,7 @@ public class Explore {
 			List<Developer> devTFList) {
 
 		try {
-			project.calcDeveloperList(filePath, devTFList);
+			project.developerList = Project.calcLocCommitDeveloperList(project, filePath, devTFList);
 
 			for (Developer developer : project.developerList) {
 
@@ -125,8 +125,9 @@ public class Explore {
 		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, NodeExplore.NODE_PROJECT, false);
 		explore.nodeList.add(nodeProject);
 
-		project.calcDeveloperList(null, devTFList);
-		for (Developer developer : project.developerList) {
+		List<Developer> devList = Project.calcLocCommitDeveloperList(project, null, devTFList);
+
+		for (Developer developer : devList) {
 
 			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null,
 					developer.truckFactor);
@@ -156,11 +157,9 @@ public class Explore {
 		String recommentationsText = "Recommended developers for programming languages (referring to version " + version
 				+ "):<br>";
 
-		project.developerList = new ArrayList<Developer>();
-
 		for (FileExtension fileExtension : extensionListVersion1) {
 
-			project.calcDeveloperList("*" + fileExtension.extension, new ArrayList<Developer>());
+			project.developerList = Project.calcLocCommitDeveloperList(project, "*" + fileExtension.extension, new ArrayList<Developer>());
 
 			Collections.sort(project.developerList, Collections.reverseOrder());
 
