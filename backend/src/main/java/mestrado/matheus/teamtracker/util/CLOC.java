@@ -35,7 +35,7 @@ public class CLOC {
 
 		while (!outpupFile.exists()) {
 
-			System.out.println("loading...");
+			System.out.println("loading CLOC...");
 		}
 
 		Scanner scanner = new Scanner(outpupFile);
@@ -95,6 +95,6 @@ public class CLOC {
 			}
 
 		}
-
+		
 	}
 }

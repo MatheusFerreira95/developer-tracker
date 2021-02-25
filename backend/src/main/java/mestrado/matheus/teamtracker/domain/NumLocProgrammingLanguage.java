@@ -5,9 +5,9 @@ public class NumLocProgrammingLanguage {
 	public String nameProgrammingLanguage;
 	public Integer percentLOC;
 
-	public NumLocProgrammingLanguage(String nameProgrammingLanguage, Integer numFile) {
+	public NumLocProgrammingLanguage(String nameProgrammingLanguage, Integer sumLOC) {
 
 		this.nameProgrammingLanguage = nameProgrammingLanguage;
-		this.percentLOC = numFile;
+		this.percentLOC = sumLOC;
 	}
 }

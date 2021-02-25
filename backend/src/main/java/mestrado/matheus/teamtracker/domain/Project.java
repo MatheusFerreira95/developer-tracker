@@ -182,8 +182,7 @@ public class Project {
 			}
 		} else {
 			gitOutputName = Git.runCommand(this,
-					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | uniq -c | sort -nr");
-
+					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | sort -f | uniq -ic | sort -nr");
 			for (String line : gitOutputName.outputList) {
 
 				try {
