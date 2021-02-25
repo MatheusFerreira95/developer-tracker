@@ -45,7 +45,7 @@ public class Explore {
 		GitOutput gitOutputName;
 
 		try {
-			gitOutputName = Git.runCommand(project, " git ls-tree --name-only HEAD " + filter.zoomPath);
+			gitOutputName = Git.runCommand(project, " git ls-tree --name-only HEAD " + filter.zoomPath, true);
 
 			for (String filePath : gitOutputName.outputList) {
 

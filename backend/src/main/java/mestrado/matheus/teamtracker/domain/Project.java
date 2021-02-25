@@ -40,7 +40,7 @@ public class Project {
 
 		try {
 
-			gitOutput = Git.runCommand(project, "git rev-list --count HEAD");
+			gitOutput = Git.runCommand(project, "git rev-list --count HEAD", true);
 			return Integer.parseInt(gitOutput.outputList.get(0));
 
 		} catch (IOException | InterruptedException e) {
@@ -53,7 +53,7 @@ public class Project {
 
 	public void calcNumActiveDaysAndFirstCommitAndLastCommit() throws IOException, InterruptedException {
 
-		GitOutput gitOutput = Git.runCommand(this, "git log --date=short --pretty=format:%ad | sort | uniq -c");
+		GitOutput gitOutput = Git.runCommand(this, "git log --date=short --pretty=format:%ad | sort | uniq -c", true);
 		this.numActiveDays = gitOutput.outputList.size();
 		this.firstCommit = gitOutput.outputList.get(0).substring(gitOutput.outputList.get(0).lastIndexOf(" "));
 		this.lastCommit = gitOutput.outputList.get(this.numActiveDays - 1)
@@ -127,7 +127,7 @@ public class Project {
 		try {
 
 			gitOutputName = Git.runCommand(project, " git ls-files " + filePath
-					+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
+					+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr", true);
 
 			for (String line : gitOutputName.outputList) {
 
@@ -176,7 +176,7 @@ public class Project {
 		try {
 
 			gitOutputName = Git.runCommand(project,
-					" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
+					" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr", true);
 
 			for (String line : gitOutputName.outputList) {
 
@@ -229,7 +229,7 @@ public class Project {
 		try {
 
 			gitOutputName = Git.runCommand(project,
-					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | sort -f | uniq -ic | sort -nr");
+					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | sort -f | uniq -ic | sort -nr", true);
 
 			for (String line : gitOutputName.outputList) {
 
