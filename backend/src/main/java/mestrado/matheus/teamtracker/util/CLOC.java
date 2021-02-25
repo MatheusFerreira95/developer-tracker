@@ -2,6 +2,8 @@ package mestrado.matheus.teamtracker.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import mestrado.matheus.teamtracker.domain.NumLocProgrammingLanguage;
@@ -12,7 +14,7 @@ public class CLOC {
 	public static final String LIST_LANG_EXLUDED = "XML,Markdown,JSON,Maven,YAML,SVG,Bourne Shell,DOS Batch";
 
 	// Requer https://github.com/AlDanial/cloc/blob/master/cloc instalada
-	public static void buildNumLocProgrammingLanguageList(Project project) throws IOException, InterruptedException {
+	public static List<NumLocProgrammingLanguage> buildNumLocProgrammingLanguageList(Project project) throws IOException, InterruptedException {
 		
 		String pathApp = new File(".").getCanonicalPath();
 		String pathCLOC = pathApp.equals("/") ? pathApp + "cloc-1.86.pl" : pathApp + "/backend/cloc-tool/cloc-1.86.pl"; // tratando para imagens docker (ver cópia realizada no arquivo dockerfile)
@@ -31,7 +33,7 @@ public class CLOC {
 		}
 
 		if (!outputFileCreated)
-			return;
+			return new ArrayList<NumLocProgrammingLanguage>();
 
 		while (!outpupFile.exists()) {
 
@@ -96,5 +98,7 @@ public class CLOC {
 
 		}
 		
+		return project.numLocProgrammingLanguageList;
 	}
+	
 }
