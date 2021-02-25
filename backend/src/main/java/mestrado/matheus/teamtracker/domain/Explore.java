@@ -164,10 +164,19 @@ public class Explore {
 
 			Collections.sort(project.developerList, Collections.reverseOrder());
 
-			if (!project.developerList.isEmpty())
-				recommentationsText += fileExtension.extensionDescription + ": " + project.developerList.get(0).name
-						+ "<br>";
+			if (!project.developerList.isEmpty()) {
+
+				recommentationsText += fileExtension.extensionDescription + ": ";
+				
+				int count = 0;
+				for (Developer dev : project.developerList){
+					if(count++ > 3) break;
+					recommentationsText += dev.name + "; ";
+				}
+				
+				recommentationsText += "<br>";
 		}
+			}
 
 		return recommentationsText;
 	}
