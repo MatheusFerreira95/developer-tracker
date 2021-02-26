@@ -214,7 +214,7 @@
 
         <!-- Explore -->
         <template v-if="perspective === 'Explore'">
-          <v-flex xs12 class="button-show-hide">
+          <v-flex xs12 class="button-view-configuration">
             <v-menu
               key="showHide"
               rounded="true"
@@ -229,7 +229,8 @@
                   v-bind="attrs"
                   v-on="on"
                 >
-                  Show/Hide
+                  View Configuration
+                  <v-icon dark right>settings</v-icon>
                 </v-btn>
               </template>
 
@@ -1039,7 +1040,7 @@
               </div>
             </v-menu>
           </v-flex>
-          <v-flex lg2 sm2 xs12 style="z-index: 11">
+          <v-flex lg2 sm2 xs12 style="z-index: 1">
             <v-widget title="V1" content-bg="white">
               <div slot="widget-content">
                 <span style="word-break: break-all">{{
