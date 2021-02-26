@@ -626,7 +626,7 @@
           </v-flex>
         </template>
 
-        <!-- Explore -->
+        <!-- Explore 2 versoes: comparativo -->
         <template
           v-if="perspective === 'Explore' && bkpExplore2.nodeList && !showDiff"
         >
@@ -930,7 +930,7 @@
             </v-widget>
           </v-flex>
         </template>
-
+        <!-- Explore diff 2 versoes: comparativo -->
         <template
           v-if="perspective === 'Explore' && bkpExplore2.nodeList && showDiff"
         >
@@ -1205,7 +1205,7 @@
               </div>
             </v-menu>
           </v-flex>
-          <v-flex lg2 sm2 xs12 style="z-index: 1">
+          <v-flex lg2 sm2 xs12 style="z-index: 1; margin-right: -25px">
             <v-widget title="V1" content-bg="white">
               <div slot="widget-content">
                 <span style="word-break: break-all">{{
@@ -1242,7 +1242,7 @@
               </div>
             </v-widget>
           </v-flex>
-          <v-flex lg2 sm2 xs12>
+          <v-flex lg2 sm2 xs12 style="margin-left: -25px">
             <v-widget title="V2" content-bg="white">
               <div slot="widget-content">
                 <span style="word-break: break-all">{{
