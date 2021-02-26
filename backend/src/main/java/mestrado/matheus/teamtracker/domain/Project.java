@@ -127,7 +127,8 @@ public class Project {
 		try {
 
 			gitOutputName = Git.runCommand(project, " git ls-files " + filePath
-					+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr", true);
+					+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr",
+					true);
 
 			for (String line : gitOutputName.outputList) {
 
@@ -176,7 +177,8 @@ public class Project {
 		try {
 
 			gitOutputName = Git.runCommand(project,
-					" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr", true);
+					" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr",
+					true);
 
 			for (String line : gitOutputName.outputList) {
 
@@ -224,20 +226,23 @@ public class Project {
 
 		HashMap<String, Integer> developerCommitsMap = new HashMap<String, Integer>();
 
-		String pathFile = filterPath == null ? "." : filterPath;
+		boolean isLevelRootCalc = filterPath == null;
+		String command = isLevelRootCalc ? " git log | grep Author: | sort | uniq -c | sort -nr"
+				: "git log --pretty=format:\"%an\" --follow \"" + filterPath + "\" | sort -f | uniq -ic | sort -nr";
 
 		try {
 
-			gitOutputName = Git.runCommand(project,
-					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | sort -f | uniq -ic | sort -nr", true);
+			gitOutputName = Git.runCommand(project, command, true);
 
 			for (String line : gitOutputName.outputList) {
 
 				try {
 
-					String name = line.substring(8);
+					String name = isLevelRootCalc ? line.substring(line.indexOf(": ") + 2, line.indexOf(" <"))
+							: line.substring(8);
 
-					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
+					Integer numCommits = isLevelRootCalc ? Integer.parseInt(line.substring(0, 8).trim())
+							: Integer.parseInt(line.substring(0, 8).trim());
 
 					numCommits = numCommits == null ? 0 : numCommits;
 
