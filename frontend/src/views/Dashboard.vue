@@ -234,111 +234,178 @@
                 </v-btn>
               </template>
 
-              <v-subheader
-                class="theme--light primary--text"
-                style="background-color: white; border-bottom-top: 1px solid"
-                >V1</v-subheader
-              >
-              <table
-                style="
-                  background-color: white;
-                  table-layout: fixed;
-                  width: 450px;
-                "
-              >
-                <tr>
-                  <th
-                    style="
-                      text-align: left;
-                      center-align: top;
-                      padding-top: 5px;
-                      padding-left: 15px;
-                    "
-                  >
+              <v-card>
+                <v-tabs vertical>
+                  <v-tab>
+                    <v-icon left> person </v-icon>
                     Developers
-                  </th>
-                  <th
-                    style="
-                      text-align: left;
-                      center-align: top;
-                      padding-top: 5px;
-                      padding-left: 15px;
-                    "
-                  >
+                  </v-tab>
+                  <v-tab>
+                    <v-icon left> folder </v-icon>
                     Artifacts
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <v-subheader class="theme--light blue--text"
-                      ><span
-                        style="cursor: pointer"
-                        @click="showHideAll(false, 'Developer')"
-                        >Show all</span
-                      >&nbsp;/&nbsp;
-                      <span
-                        style="cursor: pointer"
-                        @click="showHideAll(true, 'Developer')"
-                        >Hide all</span
-                      ></v-subheader
-                    >
-                  </td>
-                  <v-subheader
-                    class="theme--light blue--text"
-                    style="cursor: pointer; margin-right: 5px"
-                    ><span
-                      style="cursor: pointer"
-                      @click="showHideAll(false, 'Project,File,Folder')"
-                      >Show all</span
-                    >&nbsp;/&nbsp;
-                    <span
-                      style="cursor: pointer"
-                      @click="showHideAll(true, 'Project,File,Folder')"
-                      >Hide all</span
-                    ></v-subheader
-                  >
-                </tr>
-                <tr>
-                  <td style="text-align: left; vertical-align: top; padding: 0">
-                    <!--devs-->
-                    <ul style="list-style-type: none">
-                      <li
-                        v-for="node in this.bkpExplore1.nodeList"
-                        :key="node.name"
-                        @click="showHideNode(node.name)"
-                        class="click-pointer"
-                      >
-                        <div v-if="node.nodeType === 'Developer'">
-                          <v-icon small v-if="node.hide">visibility_off</v-icon>
-                          <v-icon small v-else class="blue--text"
-                            >visibility</v-icon
-                          >
-                          {{ node.name }}
-                        </div>
-                      </li>
-                    </ul>
-                  </td>
-                  <td style="text-align: left; vertical-align: top; padding: 0">
-                    <!--artifacts-->
-                    <ul style="list-style-type: none">
-                      <li
-                        v-for="node in this.bkpExplore1.nodeList"
-                        :key="node.name"
-                        @click="showHideNode(node.name)"
-                        class="click-pointer"
-                      >
-                        <div v-if="node.nodeType !== 'Developer'">
-                          <v-icon small v-if="node.hide">visibility_off</v-icon>
-                          <v-icon small v-else class="blue--text"
-                            >visibility</v-icon
-                          >
-                          {{ node.name }}
-                        </div>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              </table>
+                  </v-tab>
+                  <v-tab>
+                    <v-icon left> description </v-icon>
+                    File Extensions
+                  </v-tab>
+
+                  <v-tab-item>
+                    <v-card flat>
+                      <v-card-text>
+                        <v-subheader class="theme--light blue--text"
+                          ><span
+                            style="cursor: pointer"
+                            @click="showHideAll(false, 'Developer')"
+                            >Show all</span
+                          >&nbsp;/&nbsp;
+                          <span
+                            style="cursor: pointer"
+                            @click="showHideAll(true, 'Developer')"
+                            >Hide all</span
+                          ></v-subheader
+                        >
+                        <table
+                          style="
+                            background-color: white;
+                            table-layout: fixed;
+                            width: 450px;
+                          "
+                        >
+                          <tr>
+                            <th
+                              style="
+                                text-align: left;
+                                center-align: top;
+                                padding-top: 5px;
+                                padding-left: 15px;
+                              "
+                            >
+                              V1
+                            </th>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                text-align: left;
+                                vertical-align: top;
+                                padding: 0;
+                              "
+                            >
+                              <!--devs-->
+                              <ul style="list-style-type: none">
+                                <li
+                                  v-for="node in this.bkpExplore1.nodeList"
+                                  :key="node.name"
+                                  @click="showHideNode(node.name)"
+                                  class="click-pointer"
+                                >
+                                  <div v-if="node.nodeType === 'Developer'">
+                                    <v-icon small v-if="node.hide"
+                                      >visibility_off</v-icon
+                                    >
+                                    <v-icon small v-else class="blue--text"
+                                      >visibility</v-icon
+                                    >
+                                    {{ node.name }}
+                                  </div>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                        </table>
+                      </v-card-text>
+                    </v-card>
+                  </v-tab-item>
+                  <v-tab-item>
+                    <v-card flat>
+                      <v-card-text>
+                        <v-subheader
+                          class="theme--light blue--text"
+                          style="cursor: pointer; margin-right: 5px"
+                          ><span
+                            style="cursor: pointer"
+                            @click="showHideAll(false, 'Project,File,Folder')"
+                            >Show all</span
+                          >&nbsp;/&nbsp;
+                          <span
+                            style="cursor: pointer"
+                            @click="showHideAll(true, 'Project,File,Folder')"
+                            >Hide all</span
+                          ></v-subheader
+                        >
+                        <table
+                          style="
+                            background-color: white;
+                            table-layout: fixed;
+                            width: 450px;
+                          "
+                        >
+                          <tr>
+                            <th
+                              style="
+                                text-align: left;
+                                center-align: top;
+                                padding-top: 5px;
+                                padding-left: 15px;
+                              "
+                            >
+                              V1
+                            </th>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                text-align: left;
+                                vertical-align: top;
+                                padding: 0;
+                              "
+                            >
+                              <!--artifacts-->
+                              <ul style="list-style-type: none">
+                                <li
+                                  v-for="node in this.bkpExplore1.nodeList"
+                                  :key="node.name"
+                                  @click="showHideNode(node.name)"
+                                  class="click-pointer"
+                                >
+                                  <div v-if="node.nodeType !== 'Developer'">
+                                    <v-icon small v-if="node.hide"
+                                      >visibility_off</v-icon
+                                    >
+                                    <v-icon small v-else class="blue--text"
+                                      >visibility</v-icon
+                                    >
+                                    {{ node.name }}
+                                  </div>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                        </table>
+                      </v-card-text>
+                    </v-card>
+                  </v-tab-item>
+                  <v-tab-item>
+                    <v-card flat>
+                      <v-card-text>
+                        <p>
+                          Type the file extension that will be visible and press
+                          enter. If the field is empty, then press enter to
+                          reset the filter.
+                        </p>
+
+                        <v-text-field
+                          flat
+                          solo
+                          prepend-inner-icon="keyboard"
+                          placeholder="example: js"
+                          @keyup.enter="test($event)"
+                        ></v-text-field>
+                      </v-card-text>
+                    </v-card>
+                  </v-tab-item>
+                </v-tabs>
+              </v-card>
             </v-menu>
           </v-flex>
 
@@ -585,203 +652,252 @@
               <div style="background-color: white">
                 <br />
                 <v-switch v-model="showDiff" label="Show Difference"></v-switch>
-                <v-subheader
-                  class="theme--light primary--text"
-                  style="background-color: white; border-top: 1px solid"
-                  >V1</v-subheader
-                >
-                <table
-                  style="
-                    background-color: white;
-                    table-layout: fixed;
-                    width: 450px;
-                  "
-                >
-                  <tr>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
+                <v-card>
+                  <v-tabs vertical>
+                    <v-tab>
+                      <v-icon left> person </v-icon>
                       Developers
-                    </th>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
+                    </v-tab>
+                    <v-tab>
+                      <v-icon left> folder </v-icon>
                       Artifacts
-                    </th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <v-subheader class="theme--light blue--text"
-                        ><span
-                          style="cursor: pointer"
-                          @click="showHideAll(false, 'Developer')"
-                          >Show all</span
-                        >&nbsp;/&nbsp;
-                        <span
-                          style="cursor: pointer"
-                          @click="showHideAll(true, 'Developer')"
-                          >Hide all</span
-                        ></v-subheader
-                      >
-                    </td>
-                    <v-subheader
-                      class="theme--light blue--text"
-                      style="margin-right: 5px"
-                      ><span
-                        style="cursor: pointer"
-                        @click="showHideAll(false, 'Project,File,Folder')"
-                        >Show all</span
-                      >&nbsp;/&nbsp;
-                      <span
-                        style="cursor: pointer"
-                        @click="showHideAll(true, 'Project,File,Folder')"
-                        >Hide all</span
-                      ></v-subheader
-                    >
-                  </tr>
-                  <tr>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--devs-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore1.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType === 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--artifacts-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore1.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType !== 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                </table>
-                <br />
-                <v-subheader
-                  class="theme--light primary--text"
-                  style="background-color: white; border-top: 1px solid"
-                  >V2</v-subheader
-                >
-                <table
-                  style="
-                    background-color: white;
-                    table-layout: fixed;
-                    width: 450px;
-                  "
-                >
-                  <tr>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
-                      Developers
-                    </th>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
-                      Artifacts
-                    </th>
-                  </tr>
-                  <tr>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--devs-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore2.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType === 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--artifacts-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore2.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType !== 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                </table>
+                    </v-tab>
+                    <v-tab>
+                      <v-icon left> description </v-icon>
+                      File Extensions
+                    </v-tab>
+
+                    <v-tab-item>
+                      <v-card flat>
+                        <v-card-text>
+                          <v-subheader class="theme--light blue--text"
+                            ><span
+                              style="cursor: pointer"
+                              @click="showHideAll(false, 'Developer')"
+                              >Show all</span
+                            >&nbsp;/&nbsp;
+                            <span
+                              style="cursor: pointer"
+                              @click="showHideAll(true, 'Developer')"
+                              >Hide all</span
+                            ></v-subheader
+                          >
+                          <table
+                            style="
+                              background-color: white;
+                              table-layout: fixed;
+                              width: 450px;
+                            "
+                          >
+                            <tr>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V1
+                              </th>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V2
+                              </th>
+                            </tr>
+                            <tr>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--devs-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore1.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType === 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--devs-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore2.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType === 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </table>
+                        </v-card-text>
+                      </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                      <v-card flat>
+                        <v-card-text>
+                          <v-subheader
+                            class="theme--light blue--text"
+                            style="cursor: pointer; margin-right: 5px"
+                            ><span
+                              style="cursor: pointer"
+                              @click="showHideAll(false, 'Project,File,Folder')"
+                              >Show all</span
+                            >&nbsp;/&nbsp;
+                            <span
+                              style="cursor: pointer"
+                              @click="showHideAll(true, 'Project,File,Folder')"
+                              >Hide all</span
+                            ></v-subheader
+                          >
+                          <table
+                            style="
+                              background-color: white;
+                              table-layout: fixed;
+                              width: 450px;
+                            "
+                          >
+                            <tr>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V1
+                              </th>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V2
+                              </th>
+                            </tr>
+                            <tr>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--artifacts-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore1.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType !== 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--artifacts-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore2.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType !== 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </table>
+                        </v-card-text>
+                      </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                      <v-card flat>
+                        <v-card-text>
+                          <p>
+                            Type the file extension that will be visible and
+                            press enter. If the field is empty, then press enter
+                            to reset the filter.
+                          </p>
+
+                          <v-text-field
+                            flat
+                            solo
+                            prepend-inner-icon="keyboard"
+                            placeholder="example: js"
+                            @keyup.enter="test($event)"
+                          ></v-text-field>
+                        </v-card-text>
+                      </v-card>
+                    </v-tab-item>
+                  </v-tabs>
+                </v-card>
               </div>
             </v-menu>
           </v-flex>
@@ -840,203 +956,252 @@
               <div style="background-color: white">
                 <br />
                 <v-switch v-model="showDiff" label="Show Difference"></v-switch>
-                <v-subheader
-                  class="theme--light primary--text"
-                  style="background-color: white; border-top: 1px solid"
-                  >V1</v-subheader
-                >
-                <table
-                  style="
-                    background-color: white;
-                    table-layout: fixed;
-                    width: 450px;
-                  "
-                >
-                  <tr>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
+                <v-card>
+                  <v-tabs vertical>
+                    <v-tab>
+                      <v-icon left> person </v-icon>
                       Developers
-                    </th>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
+                    </v-tab>
+                    <v-tab>
+                      <v-icon left> folder </v-icon>
                       Artifacts
-                    </th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <v-subheader class="theme--light blue--text"
-                        ><span
-                          style="cursor: pointer"
-                          @click="showHideAll(false, 'Developer')"
-                          >Show all</span
-                        >&nbsp;/&nbsp;
-                        <span
-                          style="cursor: pointer"
-                          @click="showHideAll(true, 'Developer')"
-                          >Hide all</span
-                        ></v-subheader
-                      >
-                    </td>
-                    <v-subheader
-                      class="theme--light blue--text"
-                      style="margin-right: 5px"
-                      ><span
-                        style="cursor: pointer"
-                        @click="showHideAll(false, 'Project,File,Folder')"
-                        >Show all</span
-                      >&nbsp;/&nbsp;
-                      <span
-                        style="cursor: pointer"
-                        @click="showHideAll(true, 'Project,File,Folder')"
-                        >Hide all</span
-                      ></v-subheader
-                    >
-                  </tr>
-                  <tr>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--devs-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore1.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType === 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--artifacts-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore1.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType !== 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                </table>
-                <br />
-                <v-subheader
-                  class="theme--light primary--text"
-                  style="background-color: white; border-top: 1px solid"
-                  >V2</v-subheader
-                >
-                <table
-                  style="
-                    background-color: white;
-                    table-layout: fixed;
-                    width: 450px;
-                  "
-                >
-                  <tr>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
-                      Developers
-                    </th>
-                    <th
-                      style="
-                        text-align: left;
-                        vertical-align: top;
-                        padding-top: 5px;
-                        padding-left: 15px;
-                      "
-                    >
-                      Artifacts
-                    </th>
-                  </tr>
-                  <tr>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--devs-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore2.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType === 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                    <td
-                      style="text-align: left; vertical-align: top; padding: 0"
-                    >
-                      <!--artifacts-->
-                      <ul style="list-style-type: none">
-                        <li
-                          v-for="node in this.bkpExplore2.nodeList"
-                          :key="node.name"
-                          @click="showHideNode(node.name)"
-                          class="click-pointer"
-                        >
-                          <div v-if="node.nodeType !== 'Developer'">
-                            <v-icon small v-if="node.hide"
-                              >visibility_off</v-icon
-                            >
-                            <v-icon small v-else class="blue--text"
-                              >visibility</v-icon
-                            >
-                            {{ node.name }}
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                </table>
+                    </v-tab>
+                    <v-tab>
+                      <v-icon left> description </v-icon>
+                      File Extensions
+                    </v-tab>
+
+                    <v-tab-item>
+                      <v-card flat>
+                        <v-card-text>
+                          <v-subheader class="theme--light blue--text"
+                            ><span
+                              style="cursor: pointer"
+                              @click="showHideAll(false, 'Developer')"
+                              >Show all</span
+                            >&nbsp;/&nbsp;
+                            <span
+                              style="cursor: pointer"
+                              @click="showHideAll(true, 'Developer')"
+                              >Hide all</span
+                            ></v-subheader
+                          >
+                          <table
+                            style="
+                              background-color: white;
+                              table-layout: fixed;
+                              width: 450px;
+                            "
+                          >
+                            <tr>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V1
+                              </th>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V2
+                              </th>
+                            </tr>
+                            <tr>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--devs-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore1.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType === 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--devs-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore2.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType === 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </table>
+                        </v-card-text>
+                      </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                      <v-card flat>
+                        <v-card-text>
+                          <v-subheader
+                            class="theme--light blue--text"
+                            style="cursor: pointer; margin-right: 5px"
+                            ><span
+                              style="cursor: pointer"
+                              @click="showHideAll(false, 'Project,File,Folder')"
+                              >Show all</span
+                            >&nbsp;/&nbsp;
+                            <span
+                              style="cursor: pointer"
+                              @click="showHideAll(true, 'Project,File,Folder')"
+                              >Hide all</span
+                            ></v-subheader
+                          >
+                          <table
+                            style="
+                              background-color: white;
+                              table-layout: fixed;
+                              width: 450px;
+                            "
+                          >
+                            <tr>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V1
+                              </th>
+                              <th
+                                style="
+                                  text-align: left;
+                                  center-align: top;
+                                  padding-top: 5px;
+                                  padding-left: 15px;
+                                "
+                              >
+                                V2
+                              </th>
+                            </tr>
+                            <tr>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--artifacts-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore1.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType !== 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td
+                                style="
+                                  text-align: left;
+                                  vertical-align: top;
+                                  padding: 0;
+                                "
+                              >
+                                <!--artifacts-->
+                                <ul style="list-style-type: none">
+                                  <li
+                                    v-for="node in this.bkpExplore2.nodeList"
+                                    :key="node.name"
+                                    @click="showHideNode(node.name)"
+                                    class="click-pointer"
+                                  >
+                                    <div v-if="node.nodeType !== 'Developer'">
+                                      <v-icon small v-if="node.hide"
+                                        >visibility_off</v-icon
+                                      >
+                                      <v-icon small v-else class="blue--text"
+                                        >visibility</v-icon
+                                      >
+                                      {{ node.name }}
+                                    </div>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </table>
+                        </v-card-text>
+                      </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                      <v-card flat>
+                        <v-card-text>
+                          <p>
+                            Type the file extension that will be visible and
+                            press enter. If the field is empty, then press enter
+                            to reset the filter.
+                          </p>
+
+                          <v-text-field
+                            flat
+                            solo
+                            prepend-inner-icon="keyboard"
+                            placeholder="example: js"
+                            @keyup.enter="test($event)"
+                          ></v-text-field>
+                        </v-card-text>
+                      </v-card>
+                    </v-tab-item>
+                  </v-tabs>
+                </v-card>
               </div>
             </v-menu>
           </v-flex>
@@ -1330,13 +1495,13 @@ export default {
     ],
   }),
   methods: {
+    test(event) {
+      console.log(event.path[0].value);
+    },
     showHideAll(showHide, nodeTypes) {
       this.bkpExplore1.nodeList.forEach((node) => {
         if (nodeTypes.includes(node.nodeType)) {
           node.hide = showHide;
-          this.bkpExplore1.linkList.forEach((link) => {
-            link.hide = showHide;
-          });
         }
       });
 
@@ -1354,9 +1519,6 @@ export default {
       this.bkpExplore2.nodeList.forEach((node) => {
         if (nodeTypes.includes(node.nodeType)) {
           node.hide = showHide;
-          this.bkpExplore2.linkList.forEach((link) => {
-            link.hide = showHide;
-          });
         }
       });
 
@@ -1369,16 +1531,10 @@ export default {
         })
       );
     },
-
     showHideNode(nodeName) {
       this.bkpExplore1.nodeList.forEach((node) => {
         if (node.name === nodeName) {
           node.hide = !node.hide;
-
-          this.bkpExplore1.linkList.forEach((link) => {
-            if (link.target === nodeName || link.source === nodeName)
-              link.hide = !link.hide;
-          });
         }
       });
 
@@ -1396,11 +1552,6 @@ export default {
       this.bkpExplore2.nodeList.forEach((node) => {
         if (node.name === nodeName) {
           node.hide = !node.hide;
-
-          this.bkpExplore2.linkList.forEach((link) => {
-            if (link.target === nodeName || link.source === nodeName)
-              link.hide = !link.hide;
-          });
         }
       });
 
