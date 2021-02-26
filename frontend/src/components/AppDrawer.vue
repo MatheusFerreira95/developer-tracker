@@ -10,9 +10,7 @@
   >
     <!-- Titulo -->
     <v-toolbar color="primary darken-1" dark>
-      <v-icon dark right>build</v-icon>
-
-      <v-toolbar-title> Tools </v-toolbar-title>
+      <v-toolbar-title> Menu </v-toolbar-title>
     </v-toolbar>
 
     <v-container grid-list-xl fluid>

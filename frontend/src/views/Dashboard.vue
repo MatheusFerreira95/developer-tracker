@@ -560,7 +560,7 @@
 
         <!-- Explore -->
         <template v-if="perspective === 'Explore' && bkpExplore2.nodeList">
-          <v-flex xs12 class="button-show-hide">
+          <v-flex xs12 class="button-view-configuration">
             <v-menu
               key="showHide"
               rounded="true"
@@ -575,10 +575,13 @@
                   v-bind="attrs"
                   v-on="on"
                 >
-                  Show/Hide
+                  View Configuration
+                  <v-icon dark right>settings</v-icon>
                 </v-btn>
               </template>
               <div style="background-color: white">
+                <br />
+                <v-switch v-model="showDiff" label="Show Difference"></v-switch>
                 <v-subheader
                   class="theme--light primary--text"
                   style="background-color: white; border-top: 1px solid"
@@ -984,6 +987,7 @@ export default {
   },
   data: () => ({
     developersListComparative: [],
+    showDiff: false,
     selecteds: [],
     secondLoading: false,
     perspective: "Overview",
@@ -1508,7 +1512,7 @@ export default {
   }
 }
 
-.button-show-hide {
+.button-view-configuration {
   text-align: right;
   padding: 0 !important;
   padding-right: 16px !important;
