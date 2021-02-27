@@ -1443,6 +1443,7 @@ export default {
   },
   data: () => ({
     developersListComparative: [],
+    nodesHide: [],
     showDiff: false,
     selecteds: [],
     secondLoading: false,
@@ -1496,7 +1497,30 @@ export default {
   }),
   methods: {
     test(event) {
-      console.log(event.path[0].value);
+      if (event.path[0].value === "") {
+        this.explore1 = getExplore(
+          this.bkpExplore1.nodeList.filter(function (el) {
+            return (
+              !el.hide &&
+              (el.name.endsWith("." + event.path[0].value) ||
+                el.nodeType !== "File")
+            );
+          }),
+          this.bkpExplore1.linkList
+        );
+        return;
+      }
+
+      this.explore1 = getExplore(
+        this.bkpExplore1.nodeList.filter(function (el) {
+          return (
+            !el.hide &&
+            (el.name.endsWith("." + event.path[0].value) ||
+              el.nodeType !== "File")
+          );
+        }),
+        this.bkpExplore1.linkList
+      );
     },
     showHideAll(showHide, nodeTypes) {
       this.bkpExplore1.nodeList.forEach((node) => {
