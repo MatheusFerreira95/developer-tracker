@@ -1320,10 +1320,10 @@
             <v-widget title content-bg="white" :title2="history">
               <div slot="widget-content">
                 <chart
-                  v-if="explore2 !== null"
-                  :options="explore2"
+                  v-if="exploreDiff !== null"
+                  :options="exploreDiff"
                   :init-options="initOptions"
-                  ref="explore2"
+                  ref="exploreDiff"
                   autoresize
                 />
                 <div v-else>Does not apply to this project</div>
@@ -1541,6 +1541,7 @@ export default {
     devTFListV2: [],
     bkpExplore1: [],
     bkpExplore2: [],
+    bkpExploreDiff: [],
     util: Util,
     history: {
       paths: [],
@@ -1549,6 +1550,7 @@ export default {
     pie2: pie,
     explore1: null,
     explore2: null,
+    exploreDiff: null,
     optionsChartProgrammingLanguage1: null,
     optionsChartProgrammingLanguage2: null,
     initOptions: {
@@ -1807,6 +1809,7 @@ export default {
                 response.data.explore2,
                 "bkpExplore2"
               );
+            this.exploreDiff = this.buildExploreDiff();
             window.getApp.$emit("STOP_LOADING");
             this.secondLoading = false;
           },
@@ -1893,6 +1896,128 @@ export default {
       this[bkpExplore].nodeList.sort(dynamicSort("name"));
 
       return getExplore(explore.nodeList, explore.linkList);
+    },
+
+    buildExploreDiff() {
+      this.bkpExploreDiff = [];
+      let exploreDiffTemp = { nodeList: [], linkList: [] };
+
+      this.bkpExplore1.linkList.forEach((linkV1) => {
+        let linkFound = null;
+        linkFound = this.bkpExplore2.linkList.filter(function (linkV2) {
+          return (
+            linkV1.source === linkV2.source && linkV1.target === linkV2.target
+          );
+        });
+
+        if (linkFound[0]) {
+          let linkV2 = linkFound[0];
+          let linkDiff = Object.assign({}, linkV1);
+
+          linkDiff.difLoc = linkV2.numLoc - linkV1.numLoc;
+          linkDiff.difCommit = linkV2.numCommits - linkV1.numCommits;
+
+          let difLocLabel =
+            linkDiff.difLoc > 0 ? "+" + linkDiff.difLoc : linkDiff.difLoc;
+
+          let difCommitLabel =
+            linkDiff.numCommits > 0
+              ? "+" + linkDiff.numCommits
+              : linkDiff.numCommits;
+
+          linkDiff.label.formatter =
+            difLocLabel + " LOC (" + difCommitLabel + " Commits)";
+
+          linkDiff.lineStyle.normal.color =
+            linkDiff.difCommit > 0
+              ? "green"
+              : linkDiff.difCommit < 0
+              ? "red"
+              : linkDiff.lineStyle.normal.color;
+
+          exploreDiffTemp.linkList.push(linkDiff);
+
+          let nodesToAdd = this.bkpExplore1.nodeList.filter(function (nodeV1) {
+            return (
+              nodeV1.name === linkDiff.source || nodeV1.name === linkDiff.target
+            );
+          });
+
+          let nodesToAddNotRepeat = [];
+
+          nodesToAdd.forEach((nodeAdd) => {
+            let exist = false;
+            exploreDiffTemp.nodeList.forEach((node) => {
+              if (node.name === nodeAdd.name) exist = true;
+            });
+
+            if (!exist) {
+              nodesToAddNotRepeat.push(nodeAdd);
+            }
+          });
+
+          exploreDiffTemp.nodeList = exploreDiffTemp.nodeList.concat(
+            nodesToAddNotRepeat
+          );
+        } else {
+          linkDiff.difLoc = 0;
+          linkDiff.difCommit = 0;
+
+          linkDiff.label.formatter = "Removed in V2";
+
+          linkDiff.lineStyle.normal.color = "pink";
+
+          let linkDiff = Object.assign({}, linkV1);
+
+          exploreDiffTemp.linkList.push(linkDiff);
+
+          // let exist = exploreDiffTemp.nodeList.filter(function (nodeDiff) {
+          //   return (
+          //     nodeDiff.name !== linkDiff.source &&
+          //     nodeDiff.name !== linkDiff.target
+          //   );
+          // });
+
+          // if (exist.length === 0) {
+          let nodesToAdd = this.bkpExplore1.nodeList.filter(function (nodeV1) {
+            return (
+              nodeV1.name === linkDiff.source || nodeV1.name === linkDiff.target
+            );
+          });
+
+          exploreDiffTemp.nodeList = exploreDiffTemp.nodeList.concat(
+            nodesToAdd
+          );
+          // }
+        }
+      });
+
+      // percorro links de v2
+      //   retorno filter de v1 para dados de v2
+      //   se vazio, eu nao achei o link v2 na lista v1
+      //     copio o link v2 para linkDiffs adicionando label added e cor
+      //     retorno filtro de nodes v2 por nomes de origem e destino e dou append em listnodesDiff
+
+      // montar bkpExploreDiff
+
+      this.bkpExploreDiff = exploreDiffTemp;
+
+      let dynamicSort = function (property) {
+        var sortOrder = 1;
+        if (property[0] === "-") {
+          sortOrder = -1;
+          property = property.substr(1);
+        }
+        return function (a, b) {
+          var result =
+            a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
+          return result * sortOrder;
+        };
+      };
+
+      this.bkpExploreDiff.nodeList.sort(dynamicSort("name"));
+
+      return getExplore(exploreDiffTemp.nodeList, exploreDiffTemp.linkList);
     },
 
     firstLoadExplore() {
