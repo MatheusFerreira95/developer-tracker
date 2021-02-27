@@ -244,26 +244,29 @@
                     <v-icon left> folder </v-icon>
                     Artifacts
                   </v-tab>
-                  <v-tab>
-                    <v-icon left> description </v-icon>
-                    File Extensions
-                  </v-tab>
 
                   <v-tab-item>
                     <v-card flat>
                       <v-card-text>
-                        <v-subheader class="theme--light blue--text"
-                          ><span
-                            style="cursor: pointer"
-                            @click="showHideAll(false, 'Developer')"
-                            >Show all</span
-                          >&nbsp;/&nbsp;
-                          <span
-                            style="cursor: pointer"
-                            @click="showHideAll(true, 'Developer')"
-                            >Hide all</span
-                          ></v-subheader
-                        >
+                        <div style="display: inline-flex">
+                          <v-subheader class="theme--light blue--text"
+                            ><span
+                              style="cursor: pointer"
+                              @click="showHideAll(false, 'Developer')"
+                              >Show all</span
+                            >&nbsp;/&nbsp;
+                            <span
+                              style="cursor: pointer"
+                              @click="showHideAll(true, 'Developer')"
+                              >Hide all</span
+                            ></v-subheader
+                          >
+                          <v-text-field
+                            filled
+                            label="Filter developers list"
+                            v-model="filterListDevelopers"
+                          ></v-text-field>
+                        </div>
                         <table
                           style="
                             background-color: white;
@@ -299,7 +302,17 @@
                                   @click="showHideNode(node.name)"
                                   class="click-pointer"
                                 >
-                                  <div v-if="node.nodeType === 'Developer'">
+                                  <div
+                                    v-if="
+                                      node.nodeType === 'Developer' &&
+                                      (filterListDevelopers === '' ||
+                                        node.name
+                                          .toLowerCase()
+                                          .includes(
+                                            filterListDevelopers.toLowerCase()
+                                          ))
+                                    "
+                                  >
                                     <v-icon small v-if="node.hide"
                                       >visibility_off</v-icon
                                     >
@@ -319,20 +332,27 @@
                   <v-tab-item>
                     <v-card flat>
                       <v-card-text>
-                        <v-subheader
-                          class="theme--light blue--text"
-                          style="cursor: pointer; margin-right: 5px"
-                          ><span
-                            style="cursor: pointer"
-                            @click="showHideAll(false, 'Project,File,Folder')"
-                            >Show all</span
-                          >&nbsp;/&nbsp;
-                          <span
-                            style="cursor: pointer"
-                            @click="showHideAll(true, 'Project,File,Folder')"
-                            >Hide all</span
-                          ></v-subheader
-                        >
+                        <div style="display: inline-flex">
+                          <v-subheader
+                            class="theme--light blue--text"
+                            style="cursor: pointer; margin-right: 5px"
+                            ><span
+                              style="cursor: pointer"
+                              @click="showHideAll(false, 'Project,File,Folder')"
+                              >Show all</span
+                            >&nbsp;/&nbsp;
+                            <span
+                              style="cursor: pointer"
+                              @click="showHideAll(true, 'Project,File,Folder')"
+                              >Hide all</span
+                            ></v-subheader
+                          >
+                          <v-text-field
+                            filled
+                            label="Filter artifacts list"
+                            v-model="filterListArtifacts"
+                          ></v-text-field>
+                        </div>
                         <table
                           style="
                             background-color: white;
@@ -368,7 +388,17 @@
                                   @click="showHideNode(node.name)"
                                   class="click-pointer"
                                 >
-                                  <div v-if="node.nodeType !== 'Developer'">
+                                  <div
+                                    v-if="
+                                      node.nodeType !== 'Developer' &&
+                                      (filterListArtifacts === '' ||
+                                        node.name
+                                          .toLowerCase()
+                                          .includes(
+                                            filterListArtifacts.toLowerCase()
+                                          ))
+                                    "
+                                  >
                                     <v-icon small v-if="node.hide"
                                       >visibility_off</v-icon
                                     >
@@ -382,25 +412,6 @@
                             </td>
                           </tr>
                         </table>
-                      </v-card-text>
-                    </v-card>
-                  </v-tab-item>
-                  <v-tab-item>
-                    <v-card flat>
-                      <v-card-text>
-                        <p>
-                          Type the file extension that will be visible and press
-                          enter. If the field is empty, then press enter to
-                          reset the filter.
-                        </p>
-
-                        <v-text-field
-                          flat
-                          solo
-                          prepend-inner-icon="keyboard"
-                          placeholder="example: js"
-                          @keyup.enter="test($event)"
-                        ></v-text-field>
                       </v-card-text>
                     </v-card>
                   </v-tab-item>
@@ -1443,6 +1454,8 @@ export default {
   },
   data: () => ({
     developersListComparative: [],
+    filterListArtifacts: "",
+    filterListDevelopers: "",
     nodesHide: [],
     showDiff: false,
     selecteds: [],
@@ -1496,32 +1509,6 @@ export default {
     ],
   }),
   methods: {
-    test(event) {
-      if (event.path[0].value === "") {
-        this.explore1 = getExplore(
-          this.bkpExplore1.nodeList.filter(function (el) {
-            return (
-              !el.hide &&
-              (el.name.endsWith("." + event.path[0].value) ||
-                el.nodeType !== "File")
-            );
-          }),
-          this.bkpExplore1.linkList
-        );
-        return;
-      }
-
-      this.explore1 = getExplore(
-        this.bkpExplore1.nodeList.filter(function (el) {
-          return (
-            !el.hide &&
-            (el.name.endsWith("." + event.path[0].value) ||
-              el.nodeType !== "File")
-          );
-        }),
-        this.bkpExplore1.linkList
-      );
-    },
     showHideAll(showHide, nodeTypes) {
       this.bkpExplore1.nodeList.forEach((node) => {
         if (nodeTypes.includes(node.nodeType)) {
