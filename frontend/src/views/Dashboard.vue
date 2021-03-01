@@ -1370,7 +1370,10 @@
           </v-card>
         </v-flex>
         <v-flex
-          v-if="projectVersions.projectVersion2.currentVersion && !showDiff"
+          v-if="
+            projectVersions.projectVersion2.currentVersion &&
+            (perspective === 'Overview' || !showDiff)
+          "
           lg6
           sm6
           xs12
@@ -1386,7 +1389,10 @@
         </v-flex>
 
         <v-flex
-          v-if="projectVersions.projectVersion2.currentVersion && !showDiff"
+          v-if="
+            projectVersions.projectVersion2.currentVersion &&
+            (perspective === 'Overview' || !showDiff)
+          "
           lg6
           sm6
           xs12
