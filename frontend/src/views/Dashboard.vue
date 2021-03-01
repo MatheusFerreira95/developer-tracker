@@ -1069,9 +1069,7 @@
                                   padding-top: 5px;
                                   padding-left: 15px;
                                 "
-                              >
-                                V1
-                              </th>
+                              ></th>
                             </tr>
                             <tr>
                               <td
@@ -1159,9 +1157,7 @@
                                   padding-top: 5px;
                                   padding-left: 15px;
                                 "
-                              >
-                                V1
-                              </th>
+                              ></th>
                             </tr>
                             <tr>
                               <td
