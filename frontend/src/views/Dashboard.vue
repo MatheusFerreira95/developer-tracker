@@ -235,7 +235,11 @@
               </template>
 
               <v-card>
-                <v-tabs vertical>
+                <v-tabs
+                  vertical
+                  slider-color="primary"
+                  active-class="active-tab"
+                >
                   <v-tab>
                     <v-icon left> person </v-icon>
                     Developers
@@ -670,7 +674,11 @@
                 <br />
                 <v-switch v-model="showDiff" label="Show Difference"></v-switch>
                 <v-card>
-                  <v-tabs vertical>
+                  <v-tabs
+                    vertical
+                    slider-color="primary"
+                    active-class="active-tab"
+                  >
                     <v-tab>
                       <v-icon left> person </v-icon>
                       Developers
@@ -1010,7 +1018,11 @@
                 <br />
                 <v-switch v-model="showDiff" label="Show Difference"></v-switch>
                 <v-card>
-                  <v-tabs vertical>
+                  <v-tabs
+                    vertical
+                    slider-color="primary"
+                    active-class="active-tab"
+                  >
                     <v-tab>
                       <v-icon left> person </v-icon>
                       Developers
