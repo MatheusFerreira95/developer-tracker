@@ -1936,7 +1936,11 @@ export default {
               ? "V1 = V2"
               : difLocLabel + "LOC in V2\n" + difCommitLabel + " Commit in V2";
 
-          this.addNodesEndLinkToDiff(linkDiff, exploreDiffTemp);
+          this.addNodesEndLinkToDiff(
+            linkDiff,
+            exploreDiffTemp,
+            this.bkpExplore1.nodeList
+          );
         } else {
           linkDiff.numLoc = 0;
           linkDiff.value = linkDiff.numCommits = 0;
@@ -1945,7 +1949,35 @@ export default {
 
           linkDiff.lineStyle.normal.color = "red";
 
-          this.addNodesEndLinkToDiff(linkDiff, exploreDiffTemp);
+          this.addNodesEndLinkToDiff(
+            linkDiff,
+            exploreDiffTemp,
+            this.bkpExplore1.nodeList
+          );
+        }
+      });
+
+      this.bkpExplore2.linkList.forEach((linkV2) => {
+        let linkDiffFound = [];
+        linkDiffFound = exploreDiffTemp.linkList.filter(function (linkDiff) {
+          return (
+            linkDiff.source === linkV2.source &&
+            linkDiff.target === linkV2.target
+          );
+        });
+
+        if (!linkDiffFound[0]) {
+          let linkDiff = JSON.parse(JSON.stringify(linkV2));
+          linkDiff.label.normal.formatter =
+            "Added " + linkDiff.label.normal.formatter;
+
+          linkDiff.lineStyle.normal.color = "green";
+
+          this.addNodesEndLinkToDiff(
+            linkDiff,
+            exploreDiffTemp,
+            this.bkpExplore2.nodeList
+          );
         }
       });
 
@@ -1969,13 +2001,11 @@ export default {
       return getExplore(exploreDiffTemp.nodeList, exploreDiffTemp.linkList);
     },
 
-    addNodesEndLinkToDiff(linkDiff, exploreDiffTemp) {
+    addNodesEndLinkToDiff(linkDiff, exploreDiffTemp, listNodesRef) {
       exploreDiffTemp.linkList.push(linkDiff);
 
-      let nodesToAdd = this.bkpExplore1.nodeList.filter(function (nodeV1) {
-        return (
-          nodeV1.name === linkDiff.source || nodeV1.name === linkDiff.target
-        );
+      let nodesToAdd = listNodesRef.filter(function (nodeV) {
+        return nodeV.name === linkDiff.source || nodeV.name === linkDiff.target;
       });
 
       let nodesToAddNotRepeat = [];
