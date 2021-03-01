@@ -1060,16 +1060,6 @@
                               >
                                 V1
                               </th>
-                              <th
-                                style="
-                                  text-align: left;
-                                  center-align: top;
-                                  padding-top: 5px;
-                                  padding-left: 15px;
-                                "
-                              >
-                                V2
-                              </th>
                             </tr>
                             <tr>
                               <td
@@ -1082,44 +1072,7 @@
                                 <!--devs-->
                                 <ul style="list-style-type: none">
                                   <li
-                                    v-for="node in this.bkpExplore1.nodeList"
-                                    :key="node.name"
-                                    @click="showHideNode(node.name)"
-                                    class="click-pointer"
-                                  >
-                                    <div
-                                      v-if="
-                                        node.nodeType === 'Developer' &&
-                                        (filterListDevelopers === '' ||
-                                          node.name
-                                            .toLowerCase()
-                                            .includes(
-                                              filterListDevelopers.toLowerCase()
-                                            ))
-                                      "
-                                    >
-                                      <v-icon small v-if="node.hide"
-                                        >visibility_off</v-icon
-                                      >
-                                      <v-icon small v-else class="blue--text"
-                                        >visibility</v-icon
-                                      >
-                                      {{ node.name }}
-                                    </div>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td
-                                style="
-                                  text-align: left;
-                                  vertical-align: top;
-                                  padding: 0;
-                                "
-                              >
-                                <!--devs-->
-                                <ul style="list-style-type: none">
-                                  <li
-                                    v-for="node in this.bkpExplore2.nodeList"
+                                    v-for="node in this.bkpExploreDiff.nodeList"
                                     :key="node.name"
                                     @click="showHideNode(node.name)"
                                     class="click-pointer"
@@ -1197,16 +1150,6 @@
                               >
                                 V1
                               </th>
-                              <th
-                                style="
-                                  text-align: left;
-                                  center-align: top;
-                                  padding-top: 5px;
-                                  padding-left: 15px;
-                                "
-                              >
-                                V2
-                              </th>
                             </tr>
                             <tr>
                               <td
@@ -1219,7 +1162,7 @@
                                 <!--artifacts-->
                                 <ul style="list-style-type: none">
                                   <li
-                                    v-for="node in this.bkpExplore1.nodeList"
+                                    v-for="node in this.bkpExploreDiff.nodeList"
                                     :key="node.name"
                                     @click="showHideNode(node.name)"
                                     class="click-pointer"
@@ -1232,38 +1175,7 @@
                                             .toLowerCase()
                                             .includes(
                                               filterListArtifacts.toLowerCase()
-                                            ))
-                                      "
-                                    >
-                                      <v-icon small v-if="node.hide"
-                                        >visibility_off</v-icon
-                                      >
-                                      <v-icon small v-else class="blue--text"
-                                        >visibility</v-icon
-                                      >
-                                      {{ node.name }}
-                                    </div>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td
-                                style="
-                                  text-align: left;
-                                  vertical-align: top;
-                                  padding: 0;
-                                "
-                              >
-                                <!--artifacts-->
-                                <ul style="list-style-type: none">
-                                  <li
-                                    v-for="node in this.bkpExplore2.nodeList"
-                                    :key="node.name"
-                                    @click="showHideNode(node.name)"
-                                    class="click-pointer"
-                                  >
-                                    <div
-                                      v-if="
-                                        node.nodeType !== 'Developer' &&
+                                            )) &&
                                         (filterListArtifacts === '' ||
                                           node.name
                                             .toLowerCase()
@@ -1444,7 +1356,13 @@
                 Artifact <br />
 
                 <v-icon color="#3f51b5"> trending_flat </v-icon
-                >Artifact-Developer Relationship
+                >Artifact-Developer Relationship <br />
+
+                <v-icon color="green"> trending_flat </v-icon>Artifact-Developer
+                New Relationship <br />
+
+                <v-icon color="red"> trending_flat </v-icon>Artifact-Developer
+                Removed Relationship
                 <br />
               </div>
             </v-card>
@@ -1625,6 +1543,22 @@ export default {
           return !el.hide;
         })
       );
+
+      //bkpExplorediff
+      this.bkpExploreDiff.nodeList.forEach((node) => {
+        if (nodeTypes.includes(node.nodeType)) {
+          node.hide = showHide;
+        }
+      });
+
+      this.exploreDiff = getExplore(
+        this.bkpExploreDiff.nodeList.filter(function (el) {
+          return !el.hide;
+        }),
+        this.bkpExploreDiff.linkList.filter(function (el) {
+          return !el.hide;
+        })
+      );
     },
     showHideNode(nodeName) {
       this.bkpExplore1.nodeList.forEach((node) => {
@@ -1655,6 +1589,22 @@ export default {
           return !el.hide;
         }),
         this.bkpExplore2.linkList.filter(function (el) {
+          return !el.hide;
+        })
+      );
+
+      //bkpExplorediff
+      this.bkpExploreDiff.nodeList.forEach((node) => {
+        if (node.name === nodeName) {
+          node.hide = !node.hide;
+        }
+      });
+
+      this.exploreDiff = getExplore(
+        this.bkpExploreDiff.nodeList.filter(function (el) {
+          return !el.hide;
+        }),
+        this.bkpExploreDiff.linkList.filter(function (el) {
           return !el.hide;
         })
       );
@@ -1975,7 +1925,7 @@ export default {
         if (!linkDiffFound[0]) {
           let linkDiff = JSON.parse(JSON.stringify(linkV2));
           linkDiff.label.normal.formatter =
-            "Added " + linkDiff.label.normal.formatter;
+            "New in V2: " + linkDiff.label.normal.formatter;
 
           linkDiff.lineStyle.normal.color = "green";
 
@@ -2023,7 +1973,7 @@ export default {
         });
 
         if (!exist) {
-          nodesToAddNotRepeat.push(nodeAdd);
+          nodesToAddNotRepeat.push(JSON.parse(JSON.stringify(nodeAdd)));
         }
       });
 
