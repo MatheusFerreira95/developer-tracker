@@ -107,6 +107,8 @@ public class Git {
 	public static GitOutput runGitTruckFactor(Project project) throws IOException, InterruptedException {
 		System.out.println("Run TruckFactor");
 
+		runCommand(project, "git clean --force", true);
+
 		GitOutput gitOutput = new GitOutput();
 
 		validateLocalRepository(project.localRepository);
