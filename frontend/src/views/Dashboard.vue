@@ -1902,7 +1902,7 @@ export default {
           linkDiff.label.normal.formatter =
             linkDiff.numLoc === 0 && linkDiff.numCommits === 0
               ? "V1 = V2"
-              : difLocLabel + "LOC in V2\n" + difCommitLabel + " Commit in V2";
+              : difLocLabel + " LOC in V2\n" + difCommitLabel + " Commit in V2";
 
           this.addNodesEndLinkToDiff(
             linkDiff,
