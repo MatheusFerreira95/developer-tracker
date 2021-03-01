@@ -1533,7 +1533,7 @@ export default {
     developersListComparative: [],
     filterListArtifacts: "",
     filterListDevelopers: "",
-    showDiff: false,
+    showDiff: true,
     selecteds: [],
     secondLoading: false,
     perspective: "Overview",
@@ -1797,6 +1797,7 @@ export default {
       };
 
       if (nodeData !== null) this.updateHistory(nodeData);
+      let that = this;
       getExploreProject(filter)
         .then(
           (response) => {
@@ -1821,7 +1822,8 @@ export default {
         )
         .catch(function (error) {
           window.getApp.$emit("STOP_LOADING");
-          this.secondLoading = false;
+          that.secondLoading = false;
+          console.log(error);
         });
     },
 
@@ -1910,95 +1912,42 @@ export default {
           );
         });
 
+        let linkDiff = JSON.parse(JSON.stringify(linkV1));
+        linkDiff.commits = "";
+        linkDiff.loc = "";
+
         if (linkFound[0]) {
           let linkV2 = linkFound[0];
-          let linkDiff = Object.assign({}, linkV1);
 
-          linkDiff.difLoc = linkV2.numLoc - linkV1.numLoc;
-          linkDiff.difCommit = linkV2.numCommits - linkV1.numCommits;
+          linkDiff.numLoc = linkV2.numLoc - linkV1.numLoc;
+          linkDiff.value = linkDiff.numCommits =
+            linkV2.numCommits - linkV1.numCommits;
 
           let difLocLabel =
-            linkDiff.difLoc > 0 ? "+" + linkDiff.difLoc : linkDiff.difLoc;
+            linkDiff.numLoc > 0 ? "+" + linkDiff.numLoc : linkDiff.numLoc;
 
           let difCommitLabel =
             linkDiff.numCommits > 0
               ? "+" + linkDiff.numCommits
               : linkDiff.numCommits;
 
-          linkDiff.label.formatter =
-            difLocLabel + " LOC (" + difCommitLabel + " Commits)";
+          linkDiff.label.normal.formatter =
+            linkDiff.numLoc === 0 && linkDiff.numCommits === 0
+              ? "V1 = V2"
+              : difLocLabel + "LOC in V2\n" + difCommitLabel + " Commit in V2";
 
-          linkDiff.lineStyle.normal.color =
-            linkDiff.difCommit > 0
-              ? "green"
-              : linkDiff.difCommit < 0
-              ? "red"
-              : linkDiff.lineStyle.normal.color;
-
-          exploreDiffTemp.linkList.push(linkDiff);
-
-          let nodesToAdd = this.bkpExplore1.nodeList.filter(function (nodeV1) {
-            return (
-              nodeV1.name === linkDiff.source || nodeV1.name === linkDiff.target
-            );
-          });
-
-          let nodesToAddNotRepeat = [];
-
-          nodesToAdd.forEach((nodeAdd) => {
-            let exist = false;
-            exploreDiffTemp.nodeList.forEach((node) => {
-              if (node.name === nodeAdd.name) exist = true;
-            });
-
-            if (!exist) {
-              nodesToAddNotRepeat.push(nodeAdd);
-            }
-          });
-
-          exploreDiffTemp.nodeList = exploreDiffTemp.nodeList.concat(
-            nodesToAddNotRepeat
-          );
+          this.addNodesEndLinkToDiff(linkDiff, exploreDiffTemp);
         } else {
-          linkDiff.difLoc = 0;
-          linkDiff.difCommit = 0;
+          linkDiff.numLoc = 0;
+          linkDiff.value = linkDiff.numCommits = 0;
 
-          linkDiff.label.formatter = "Removed in V2";
+          linkDiff.label.normal.formatter = "Removed in V2";
 
-          linkDiff.lineStyle.normal.color = "pink";
+          linkDiff.lineStyle.normal.color = "red";
 
-          let linkDiff = Object.assign({}, linkV1);
-
-          exploreDiffTemp.linkList.push(linkDiff);
-
-          // let exist = exploreDiffTemp.nodeList.filter(function (nodeDiff) {
-          //   return (
-          //     nodeDiff.name !== linkDiff.source &&
-          //     nodeDiff.name !== linkDiff.target
-          //   );
-          // });
-
-          // if (exist.length === 0) {
-          let nodesToAdd = this.bkpExplore1.nodeList.filter(function (nodeV1) {
-            return (
-              nodeV1.name === linkDiff.source || nodeV1.name === linkDiff.target
-            );
-          });
-
-          exploreDiffTemp.nodeList = exploreDiffTemp.nodeList.concat(
-            nodesToAdd
-          );
-          // }
+          this.addNodesEndLinkToDiff(linkDiff, exploreDiffTemp);
         }
       });
-
-      // percorro links de v2
-      //   retorno filter de v1 para dados de v2
-      //   se vazio, eu nao achei o link v2 na lista v1
-      //     copio o link v2 para linkDiffs adicionando label added e cor
-      //     retorno filtro de nodes v2 por nomes de origem e destino e dou append em listnodesDiff
-
-      // montar bkpExploreDiff
 
       this.bkpExploreDiff = exploreDiffTemp;
 
@@ -2018,6 +1967,33 @@ export default {
       this.bkpExploreDiff.nodeList.sort(dynamicSort("name"));
 
       return getExplore(exploreDiffTemp.nodeList, exploreDiffTemp.linkList);
+    },
+
+    addNodesEndLinkToDiff(linkDiff, exploreDiffTemp) {
+      exploreDiffTemp.linkList.push(linkDiff);
+
+      let nodesToAdd = this.bkpExplore1.nodeList.filter(function (nodeV1) {
+        return (
+          nodeV1.name === linkDiff.source || nodeV1.name === linkDiff.target
+        );
+      });
+
+      let nodesToAddNotRepeat = [];
+
+      nodesToAdd.forEach((nodeAdd) => {
+        let exist = false;
+        exploreDiffTemp.nodeList.forEach((node) => {
+          if (node.name === nodeAdd.name) exist = true;
+        });
+
+        if (!exist) {
+          nodesToAddNotRepeat.push(nodeAdd);
+        }
+      });
+
+      exploreDiffTemp.nodeList = exploreDiffTemp.nodeList.concat(
+        nodesToAddNotRepeat
+      );
     },
 
     firstLoadExplore() {
