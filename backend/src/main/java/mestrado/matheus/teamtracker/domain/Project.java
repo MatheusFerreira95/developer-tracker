@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+import mestrado.matheus.teamtracker.domain.entity.EntityProjectService;
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
@@ -322,6 +323,9 @@ public class Project {
 
 		Project project = Project.builderProject(filter, checkout);
 
+		if (project.truckFactor != null)
+			return project;
+
 		final CompletableFuture<List<Developer>> calcDeveloperListRun = CompletableFuture
 				.supplyAsync(() -> calcDeveloperList(project));
 
@@ -369,6 +373,12 @@ public class Project {
 
 	public static Project builderProject(Filter filter, String checkout) {
 
+		Project saveProject = EntityProjectService.getProject(filter.localRepository, checkout,
+				filter.remoteRepository);
+
+		if (saveProject != null)
+			return saveProject;
+
 		if (filter.remoteRepository != null && filter.remoteRepository.equals("[local]")) {
 
 			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in 100% local: "
@@ -378,6 +388,8 @@ public class Project {
 			// entre na pasta do seu projeto local, use 'docker cp .
 			// nomeContainer:/root/team-tracker-clones/local/
 			Git.runCheckout(project);
+
+			EntityProjectService.saveProject(project);
 
 			return project;
 
@@ -389,6 +401,8 @@ public class Project {
 			Project project = new Project(filter.localRepository, checkout);
 
 			Git.runCheckout(project);
+
+			EntityProjectService.saveProject(project);
 
 			return project;
 
@@ -403,7 +417,11 @@ public class Project {
 						+ filter.remoteRepository.substring(8), checkout);
 			}
 
-			return Git.clone(filter.remoteRepository, checkout);
+			Project project = Git.clone(filter.remoteRepository, checkout);
+
+			EntityProjectService.saveProject(project);
+
+			return project;
 
 		} else {
 
