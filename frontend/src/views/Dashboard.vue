@@ -1962,6 +1962,28 @@ export default {
 
       this.bkpExploreDiff.nodeList.sort(dynamicSort("name"));
 
+      this.bkpExploreDiff.nodeList.forEach((nodeDiff) => {
+        if (nodeDiff.nodeType === "Developer") {
+          let devTFV1 = this.devTFListV1.filter(function (dev) {
+            return nodeDiff.name === dev.name;
+          });
+          let devTFV2 = this.devTFListV2.filter(function (dev) {
+            return nodeDiff.name === dev.name;
+          });
+
+          if (devTFV1[0] && devTFV2[0]) {
+            nodeDiff.descrition = nodeDiff.name + " - TF in V1 and V2";
+            nodeDiff.itemStyle.normal.color = "darkorange";
+          } else if (devTFV1[0]) {
+            nodeDiff.descrition = nodeDiff.name + " - TF in V1";
+            nodeDiff.itemStyle.normal.color = "darkorange";
+          } else if (devTFV2[0]) {
+            nodeDiff.descrition = nodeDiff.name + " - TF in V2";
+            nodeDiff.itemStyle.normal.color = "darkorange";
+          }
+        }
+      });
+
       return getExplore(exploreDiffTemp.nodeList, exploreDiffTemp.linkList);
     },
 
