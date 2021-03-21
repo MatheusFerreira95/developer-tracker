@@ -1380,26 +1380,17 @@
               </div>
               <div class="legend">
                 <span>
-                  <b>&nbsp; - Artifact Zoom In:</b> click on an artifact &nbsp;
-                </span>
-                <br />
-                <span>
-                  <b>&nbsp; - Artifact Zoom Out:</b> click on the zoom history
+                  <b>&nbsp; - Artifact Explore:</b> click on an artifact or click on the paths history
                   item positioned on the graph toolbar &nbsp;
                 </span>
                 <br />
                 <span>
                   <b>&nbsp; - Filter:</b> hover an artifact, developer or
-                  connection &nbsp;
+                  connection or use the configuration view &nbsp;
                 </span>
                 <br />
                 <span>
-                  <b>&nbsp; - Move item:</b> click and drag an artifact or
-                  developer &nbsp;
-                </span>
-                <br />
-                <span>
-                  <b>&nbsp; - Move graph:</b> click on a blank part and drag the
+                  <b>&nbsp; - Drag And Drop graph:</b> click on any region of the graph and drag and drop the
                   graph &nbsp;
                 </span>
                 <br />
