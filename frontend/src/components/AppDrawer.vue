@@ -169,15 +169,31 @@ export default {
 
       window.getApp.$emit("START_LOADING");
 
+      // prints block start
+      let json = JSON.stringify(this.filter);
+      let dev1 = json.replaceAll('Dev 1', 'Budy');
+      let dev12 = dev1.replaceAll('Dev 2', 'Gabriel Pedro');
+      let dev123 = dev12.replaceAll('Dev 3', 'protonss4FuN');
+      this.filter = JSON.parse(dev123);
+      // prints block end
+
       getProject(this.filter)
         .then(
           (response) => {
             this.showClear = true;
+
+            // prints block start
+            let json = JSON.stringify(response.data);
+            let dev1 = json.replaceAll('Budy', 'Dev 1');
+            let dev12 = dev1.replaceAll('Gabriel Pedro', 'Dev 2');
+            let dev123 = dev12.replaceAll('protonss4FuN', 'Dev 3');
+            response.data = JSON.parse(dev123);
+            // prints block end
+
             this.projectVersions = response.data;
             this.projectVersion1 = response.data.projectVersion1;
             this.filter.localRepository = this.projectVersion1.localRepository;
-            this.updateNameRepository();
-
+            // prints block line this.updateNameRepository();
             window.getApp.$emit("UPDATE_PROJECT", response.data);
             window.getApp.$emit("STOP_LOADING");
           },
@@ -361,9 +377,27 @@ export default {
       }
 
       window.getApp.$emit("START_LOADING");
+
+      // prints block start
+      let json = JSON.stringify(this.filter);
+      let dev1 = json.replaceAll('Dev 1', 'Budy');
+      let dev12 = dev1.replaceAll('Dev 2', 'Gabriel Pedro');
+      let dev123 = dev12.replaceAll('Dev 3', 'protonss4FuN');
+      this.filter = JSON.parse(dev123);
+      // prints block end
+
       getRecomendationByFileExtension(this.filter)
         .then(
           (response) => {
+
+            // prints block start
+            let json = JSON.stringify(response.data);
+            let dev1 = json.replaceAll('Budy', 'Dev 1');
+            let dev12 = dev1.replaceAll('Gabriel Pedro', 'Dev 2');
+            let dev123 = dev12.replaceAll('protonss4FuN', 'Dev 3');
+            response.data = JSON.parse(dev123);
+            // prints block end
+
             let diagnosis4 = "";
             let recommendation4Text = response.data;
 

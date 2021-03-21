@@ -1753,9 +1753,27 @@ export default {
 
       if (nodeData !== null) this.updateHistory(nodeData);
       let that = this;
+
+      // prints block start
+      let json = JSON.stringify(filter);
+      let dev1 = json.replaceAll('Dev 1', 'Budy');
+      let dev12 = dev1.replaceAll('Dev 2', 'Gabriel Pedro');
+      let dev123 = dev12.replaceAll('Dev 3', 'protonss4FuN');
+      filter = JSON.parse(dev123);
+      // prints block end
+
       getExploreProject(filter)
         .then(
           (response) => {
+            
+            // prints block start
+            let json = JSON.stringify(response.data);
+            let dev1 = json.replaceAll('Budy', 'Dev 1');
+            let dev12 = dev1.replaceAll('Gabriel Pedro', 'Dev 2');
+            let dev123 = dev12.replaceAll('protonss4FuN', 'Dev 3');
+            response.data = JSON.parse(dev123);
+            // prints block end
+
             this.explore1 = this.setExplore(
               response.data.explore1,
               "bkpExplore1"
