@@ -28,9 +28,9 @@ public class Git {
 
 			project = new Project(getLocalRepository(remoteRepository), checkout);
 
-			runCommand(project, "git config --global credential.helper store");
+			runCommand(project, "git config --global credential.helper store", true);
 
-			runCommand(project, "git clone " + remoteRepository);
+			runCommand(project, "git clone " + remoteRepository, false);
 
 			project.localRepository = project.localRepository += "/" + project.localRepository
 					.substring(project.localRepository.lastIndexOf("/") + 1, project.localRepository.lastIndexOf("-"));
@@ -49,23 +49,24 @@ public class Git {
 		return project;
 	}
 
-	public static GitOutput runCommand(Project project, String command) throws IOException, InterruptedException {
+	public static GitOutput runCommand(Project project, String command, boolean showLog)
+			throws IOException, InterruptedException {
 
-		return run(project, command, null);
+		return run(project, command, null, showLog);
 	}
 
 	public static GitOutput runCommandReturnExitValue(Project project, String command)
 			throws IOException, InterruptedException {
 
 		Integer exit = 0;
-		GitOutput gitoutput = run(project, command, exit);
+		GitOutput gitoutput = run(project, command, exit, true);
 
 		gitoutput.errorList.add("resultError: " + exit);
 
 		return gitoutput;
 	}
 
-	private static GitOutput run(Project project, String command, Integer exitValue)
+	private static GitOutput run(Project project, String command, Integer exitValue, boolean showLog)
 			throws IOException, InterruptedException {
 
 		GitOutput gitOutput = new GitOutput();
@@ -76,7 +77,9 @@ public class Git {
 		commands.add("/bin/sh");
 		commands.add("-c");
 		commands.add(command);
-		System.out.println("run......................................." + command);
+
+		String logCommand = showLog ? command : "command in execution not logged";
+		System.out.println("run......................................." + logCommand);
 
 		ProcessBuilder pb = new ProcessBuilder().command(commands).directory(new File(project.localRepository));
 		Process p = pb.start();
@@ -103,6 +106,8 @@ public class Git {
 
 	public static GitOutput runGitTruckFactor(Project project) throws IOException, InterruptedException {
 		System.out.println("Run TruckFactor");
+
+		runCommand(project, "git clean --force", true);
 
 		GitOutput gitOutput = new GitOutput();
 
@@ -240,6 +245,42 @@ public class Git {
 		String nameLocalRepository = remoteRepository.substring(remoteRepository.lastIndexOf("/"),
 				remoteRepository.indexOf(".git"));
 
+		String cloneFolderPath = getCloneFolderPath();
+
+		File localRepository = new File(
+				cloneFolderPath + File.separator + nameLocalRepository + "-" + new Date().getTime());
+		if (!localRepository.exists())
+			localRepository.mkdir();
+
+		return localRepository.getPath();
+
+	}
+
+	public static String getLocalRepositoryFromLocalProject() {
+
+		String localFromLocal = "";
+
+		try {
+
+			String cloneFolderPath = getCloneFolderPath();
+
+			File localRepository = new File(cloneFolderPath + File.separator + "local");
+			if (!localRepository.exists())
+				localRepository.mkdir();
+
+			localFromLocal = localRepository.getPath();
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
+		return localFromLocal;
+	}
+
+	private static String getCloneFolderPath() throws IOException {
+
 		String currentUsersHomePath = System.getProperty("user.home");
 		String cloneFolderPath = currentUsersHomePath + File.separator + "team-tracker-clones";
 
@@ -248,12 +289,7 @@ public class Git {
 			cloneFolder.mkdir();
 		}
 
-		File localRepository = new File(
-				cloneFolderPath + File.separator + nameLocalRepository + "-" + new Date().getTime());
-		if (!localRepository.exists())
-			localRepository.mkdir();
-
-		return localRepository.getPath();
+		return cloneFolderPath;
 
 	}
 
@@ -290,14 +326,14 @@ public class Git {
 
 		try {
 
-			GitOutput testCheckout = runCommandReturnExitValue(project, "git checkout " + project.checkout);
+			GitOutput testCheckout = runCommandReturnExitValue(project, "git checkout -f " + project.checkout);
 
 			if (testCheckout.errorList.get(testCheckout.errorList.size() - 1).equals("resultError: 0")) {
 				System.err.println(".............................checkout error, default checkout used");
 			}
 
-			GitOutput currentVersionInfo1 = runCommand(project, "git log --pretty=format:'%d' -n 1");
-			GitOutput currentVersionInfo2 = runCommand(project, "git log -n 1");
+			GitOutput currentVersionInfo1 = runCommand(project, "git log --pretty=format:'%d' -n 1", true);
+			GitOutput currentVersionInfo2 = runCommand(project, "git log -n 1", true);
 
 			project.currentVersion = currentVersionInfo1.outputList.get(0).split(",")[0].replace("(", "").replace(")",
 					"") + " - " + currentVersionInfo2.outputList.get(0).split(" ")[1];

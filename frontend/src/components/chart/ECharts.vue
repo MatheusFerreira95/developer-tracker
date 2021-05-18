@@ -51,7 +51,7 @@ const EVENTS = [
   "mousedown",
   "mouseup",
   "globalout",
-  "contextmenu"
+  "contextmenu",
 ];
 
 const INIT_TRIGGERS = ["theme", "initOptions", "autoresize", "options"];
@@ -65,17 +65,17 @@ export default {
     group: String,
     autoresize: Boolean,
     watchShallow: Boolean,
-    manualUpdate: Boolean
+    manualUpdate: Boolean,
   },
   data() {
     return {
-      lastArea: 0
+      lastArea: 0,
     };
   },
   watch: {
     group(group) {
       this.chart.group = group;
-    }
+    },
   },
   methods: {
     // provide a explicit merge option method
@@ -157,9 +157,13 @@ export default {
       chart.setOption(this.manualOptions || this.options || {}, true);
 
       // expose ECharts events as custom events
-      EVENTS.forEach(event => {
-        chart.on(event, params => {
-          if (event === "click") {
+      EVENTS.forEach((event) => {
+        chart.on(event, (params) => {
+          if (
+            event === "click" &&
+            params.seriesType !== "pie" &&
+            params.data.nodeType !== "Developer"
+          ) {
             window.getApp.$emit("UPDATE_PROJECT", params);
           }
           this.$emit(event, params);
@@ -194,26 +198,26 @@ export default {
           configurable: true,
           get: () => {
             return this.delegateGet("getWidth");
-          }
+          },
         },
         height: {
           configurable: true,
           get: () => {
             return this.delegateGet("getHeight");
-          }
+          },
         },
         isDisposed: {
           configurable: true,
           get: () => {
             return !!this.delegateGet("isDisposed");
-          }
+          },
         },
         computedOptions: {
           configurable: true,
           get: () => {
             return this.delegateGet("getOption");
-          }
-        }
+          },
+        },
       });
 
       this.chart = chart;
@@ -257,12 +261,12 @@ export default {
         this.destroy();
         this.init();
       }
-    }
+    },
   },
   created() {
     this.initOptionsWatcher();
 
-    INIT_TRIGGERS.forEach(prop => {
+    INIT_TRIGGERS.forEach((prop) => {
       this.$watch(
         prop,
         () => {
@@ -272,7 +276,7 @@ export default {
       );
     });
 
-    REWATCH_TRIGGERS.forEach(prop => {
+    REWATCH_TRIGGERS.forEach((prop) => {
       this.$watch(prop, () => {
         this.initOptionsWatcher();
         this.refresh();
@@ -298,7 +302,7 @@ export default {
   },
   connect(group) {
     if (typeof group !== "string") {
-      group = group.map(chart => chart.chart);
+      group = group.map((chart) => chart.chart);
     }
     echarts.connect(group);
   },
@@ -311,6 +315,6 @@ export default {
   registerTheme(name, theme) {
     echarts.registerTheme(name, theme);
   },
-  graphic: echarts.graphic
+  graphic: echarts.graphic,
 };
 </script>

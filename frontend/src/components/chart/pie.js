@@ -4,7 +4,10 @@ export default {
     formatter: '{b0}: {d}% (LOC)'
   },
   legend: {
-    bottom: 0
+    top: 0,
+    textStyle: {
+      color: "#3f51b5"
+    }
   },
   title: {
     show: true,
@@ -21,6 +24,12 @@ export default {
   },
   yAxis: {
     show: false
+  },
+  label: {
+    show: true,
+    formatter: function (params) {
+      return params.value.nameProgrammingLanguage + "\n" + params.value.percentLOC + '%'
+    },
   },
   series: [{
     type: 'pie',

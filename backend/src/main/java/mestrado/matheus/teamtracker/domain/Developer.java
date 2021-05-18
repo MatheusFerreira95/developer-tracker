@@ -40,16 +40,19 @@ public class Developer implements Comparable<Developer> {
 
 		Developer other = (Developer) obj;
 
-		if (!name.equals(other.name) && !email.equals(other.email))
-			return false;
+		if (name.equals(other.name))
+			return true;
 
-		return true;
+		return false;
 	}
 
 	@Override
 	public int compareTo(Developer developer) {
 
-		return this.percentLoc.compareTo(developer.percentLoc);
+		if(this.numCommits == null) this.numCommits = 0;
+		if(developer.numCommits == null) developer.numCommits = 0;
+		
+		return this.numCommits.compareTo(developer.numCommits);
 	}
 
 }

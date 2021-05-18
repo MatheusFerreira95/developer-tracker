@@ -13,6 +13,9 @@ public class Filter {
 	public String password;
 	public String checkout1;
 	public String checkout2;
-	public List<Developer> devTFList = new ArrayList<Developer>();
+	public List<Developer> devTFListV1 = new ArrayList<Developer>();
+	public List<Developer> devTFListV2 = new ArrayList<Developer>();
+	public List<FileExtension> extensionListVersion1;
+	public List<FileExtension> extensionListVersion2;
 
 }

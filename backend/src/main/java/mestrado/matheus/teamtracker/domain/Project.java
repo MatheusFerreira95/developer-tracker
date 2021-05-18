@@ -1,12 +1,14 @@
 package mestrado.matheus.teamtracker.domain;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
@@ -32,21 +34,26 @@ public class Project {
 		this.checkout = checkout != null && !checkout.isEmpty() ? checkout : "master";
 	}
 
-	public void calcNumCommits() throws IOException, InterruptedException {
+	public static Integer calcNumCommits(Project project) {
 
-		GitOutput gitOutput = Git.runCommand(this, "git rev-list --count HEAD");
-		this.numCommits = Integer.parseInt(gitOutput.outputList.get(0));
-	}
+		GitOutput gitOutput;
 
-	public void calcNumLoc() throws IOException, InterruptedException {
+		try {
 
-		GitOutput gitOutput = Git.runCommand(this, "git ls-files | xargs cat | wc -l");
-		this.numLoc = Integer.parseInt(gitOutput.outputList.get(0));
+			gitOutput = Git.runCommand(project, "git rev-list --count HEAD", true);
+			return Integer.parseInt(gitOutput.outputList.get(0));
+
+		} catch (IOException | InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+		return 0;
 	}
 
 	public void calcNumActiveDaysAndFirstCommitAndLastCommit() throws IOException, InterruptedException {
 
-		GitOutput gitOutput = Git.runCommand(this, "git log --date=short --pretty=format:%ad | sort | uniq -c");
+		GitOutput gitOutput = Git.runCommand(this, "git log --date=short --pretty=format:%ad | sort | uniq -c", true);
 		this.numActiveDays = gitOutput.outputList.size();
 		this.firstCommit = gitOutput.outputList.get(0).substring(gitOutput.outputList.get(0).lastIndexOf(" "));
 		this.lastCommit = gitOutput.outputList.get(this.numActiveDays - 1)
@@ -54,169 +61,74 @@ public class Project {
 
 	}
 
-	private void calcNumLocProgrammingLanguageList() throws IOException, InterruptedException {
+	private static List<NumLocProgrammingLanguage> calcNumLocProgrammingLanguageList(Project project) {
 
-		CLOC.buildNumLocProgrammingLanguageList(this);
+		try {
+
+			return CLOC.buildNumLocProgrammingLanguageList(project);
+
+		} catch (IOException | InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+		return new ArrayList<NumLocProgrammingLanguage>();
 
 	}
 
-	public void calcDeveloperList(String filterPath, List<Developer> devTFList) throws IOException, InterruptedException {
+	public static List<Developer> calcLocCommitDeveloperList(Project project, String filterPath,
+			List<Developer> devTFList) throws IOException, InterruptedException {
 
-		filterPath = filterPath == null ? "" : filterPath;
+		final CompletableFuture<List<Developer>> calcLocsDeveloperListRun = CompletableFuture
+				.supplyAsync(() -> calcLocsDeveloperList(project, filterPath));
 
-		GitOutput gitOutputEmail = Git.runCommand(this, " git ls-files " + filterPath
-				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
-		GitOutput gitOutputName = Git.runCommand(this, " git ls-files " + filterPath
-				+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
+		final CompletableFuture<HashMap<String, Integer>> calcCommitsDeveloperListRun = CompletableFuture
+				.supplyAsync(() -> calcCommitsDeveloperList(project, filterPath));
 
-		Integer avatar = 0;
-		this.developerList = new ArrayList<Developer>();
-		for (String line : gitOutputName.outputList) {
+		try {
 
-			try {
+			List<Developer> developerList = calcLocsDeveloperListRun.get();
+			HashMap<String, Integer> developerCommitsMap = calcCommitsDeveloperListRun.get();
 
-				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
+			for (Developer developer : developerList) {
 
-				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
+				if (developerCommitsMap.containsKey(developer.name))
+					developer.numCommits = developerCommitsMap.get(developer.name);
 
-				String name = line.substring(8);
+			}
 
-				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
+			for (Developer dev : developerList) {
 
-				Developer dev = new Developer(name, email, numLoc, avatar++);
-
-				if (this.developerList.contains(dev)) {
-
-					for (Developer developer : this.developerList) {
-
-						if (developer.equals(dev)) {
-
-							developer.numLoc += dev.numLoc;
-						}
+				for (Developer devTF : devTFList) {
+					if (dev.equals(devTF)) {
+						dev.truckFactor = true;
 					}
-
-				} else {
-
-					this.developerList.add(dev);
-
 				}
-			} catch (Exception e) {
-
-				System.out.println("Devloper not add. See the line: " + line);
 			}
+
+			return developerList;
+
+		} catch (InterruptedException | ExecutionException e) {
+
+			System.err.println("findResume process error" + e);
+			throw new RuntimeException();
 		}
 
-		for (Developer dev : developerList) {
-			for (Developer devTF : devTFList) {
-			if(dev.equals(devTF) && devTF.truckFactor) {
-				dev.truckFactor = true;
-			}
-				
-			}
-		}
-
-		calcCommitsDeveloperList(filterPath);
 	}
 
-	public void calcDeveloperList() throws IOException, InterruptedException {
+	private static List<Developer> calcLocsDeveloperList(Project project, String filterPath) {
 
-		GitOutput gitOutputEmail = Git.runCommand(this,
-				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author-mail //p' | sort -f | uniq -ic | sort -nr");
-		GitOutput gitOutputName = Git.runCommand(this,
-				" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr");
+		GitOutput gitOutputName = null;
 
-		Integer avatar = 0;
-		for (String line : gitOutputName.outputList) {
+		String filePath = filterPath == null ? "" : filterPath;
 
-			try {
+		List<Developer> locDeveloperList = new ArrayList<Developer>();
 
-				String emailNotTrim = gitOutputEmail.outputList.get(avatar);
+		try {
 
-				String email = emailNotTrim.substring(emailNotTrim.indexOf("<") + 1, emailNotTrim.indexOf(">"));
-
-				String name = line.substring(8);
-
-				Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
-
-				Developer dev = new Developer(name, email, numLoc, avatar++);
-
-				if (this.developerList.contains(dev)) {
-
-					for (Developer developer : this.developerList) {
-
-						if (developer.equals(dev)) {
-
-							developer.numLoc += dev.numLoc;
-						}
-					}
-
-				} else {
-
-					this.developerList.add(dev);
-
-				}
-			} catch (Exception e) {
-
-				System.out.println("Devloper not add. See the line: " + line);
-			}
-		}
-
-		calcNumLocProjectByDeveloperList();
-
-		float percentageTotal = 0;
-		for (Developer developer : developerList) {
-			float percentage = (float) (1000 * developer.numLoc / this.numLoc / 10.0);
-			float percentageAnterior = percentageTotal;
-			percentageTotal += percentage;
-			if (percentageTotal > 100) {
-				developer.percentLoc = 100 - percentageAnterior;
-				percentageAnterior = 100;
-				percentageTotal = 100;
-			} else {
-				developer.percentLoc = percentage;
-			}
-		}
-
-		if (percentageTotal < 100) {
-			developerList.get(0).percentLoc += 100 - percentageTotal;
-		}
-
-		calcTruckFactor();
-
-		Collections.sort(this.developerList, Collections.reverseOrder());
-
-		calcCommitsDeveloperList(null);
-	}
-
-	private void calcCommitsDeveloperList(String pathFile) throws IOException, InterruptedException {
-		GitOutput gitOutputName;
-		if (pathFile == null) { // project level
-
-			gitOutputName = Git.runCommand(this, " git log | grep Author: | sort | uniq -c | sort -nr");
-
-			for (String line : gitOutputName.outputList) {
-
-				try {
-
-					String name = line.substring(line.indexOf(": ") + 2, line.indexOf(" <"));
-
-					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
-
-					for (Developer developer : developerList) {
-						if (developer.name.equals(name)) {
-
-							developer.numCommits = numCommits;
-							break;
-						}
-					}
-				} catch (Exception e) {
-
-					System.out.println("Devloper not add. See the line: " + line);
-				}
-			}
-		} else {
-			gitOutputName = Git.runCommand(this,
-					" git log --pretty=format:\"%an\" --follow \"" + pathFile + "\" | uniq -c | sort -nr");
+			gitOutputName = Git.runCommand(project, " git ls-files " + filePath
+					+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr",
+					true);
 
 			for (String line : gitOutputName.outputList) {
 
@@ -224,22 +136,139 @@ public class Project {
 
 					String name = line.substring(8);
 
-					Integer numCommits = Integer.parseInt(line.substring(0, 8).trim());
+					Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
 
-					for (Developer developer : developerList) {
-						if (developer.name.equals(name)) {
+					Developer dev = new Developer(name, "email", numLoc, 0);
 
-							developer.numCommits = numCommits;
-							break;
+					if (locDeveloperList.contains(dev)) {
+
+						for (Developer developer : locDeveloperList) {
+
+							if (developer.equals(dev)) {
+
+								developer.numLoc += dev.numLoc;
+							}
 						}
+
+					} else {
+
+						locDeveloperList.add(dev);
+
 					}
+
+				} catch (Exception e) {
+
+					System.out.println("Developer not add. See the line: " + line);
+				}
+			}
+
+		} catch (IOException | InterruptedException e1) {
+
+			e1.printStackTrace();
+		}
+
+		return locDeveloperList;
+	}
+
+	public static List<Developer> calcDeveloperList(Project project) {
+
+		GitOutput gitOutputName = null;
+
+		try {
+
+			gitOutputName = Git.runCommand(project,
+					" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr",
+					true);
+
+			for (String line : gitOutputName.outputList) {
+
+				try {
+
+					String name = line.substring(8);
+
+					Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
+
+					Developer dev = new Developer(name, "email", numLoc, 0);
+
+					if (project.developerList.contains(dev)) {
+
+						for (Developer developer : project.developerList) {
+
+							if (developer.equals(dev)) {
+
+								developer.numLoc += dev.numLoc;
+							}
+						}
+
+					} else {
+
+						project.developerList.add(dev);
+
+					}
+
+				} catch (Exception e) {
+
+					System.out.println("Devloper not add. See the line: " + line);
+				}
+			}
+
+		} catch (IOException | InterruptedException e1) {
+
+			e1.printStackTrace();
+		}
+
+		return project.developerList;
+	}
+
+	public static HashMap<String, Integer> calcCommitsDeveloperList(Project project, String filterPath) {
+
+		GitOutput gitOutputName = null;
+
+		HashMap<String, Integer> developerCommitsMap = new HashMap<String, Integer>();
+
+		boolean isLevelRootCalc = filterPath == null;
+		String command = isLevelRootCalc ? " git log | grep Author: | sort | uniq -c | sort -nr"
+				: "git log --pretty=format:\"%an\" --follow \"" + filterPath + "\" | sort -f | uniq -ic | sort -nr";
+
+		try {
+
+			gitOutputName = Git.runCommand(project, command, true);
+
+			for (String line : gitOutputName.outputList) {
+
+				try {
+
+					String name = isLevelRootCalc ? line.substring(line.indexOf(": ") + 2, line.indexOf(" <"))
+							: line.substring(8);
+
+					Integer numCommits = isLevelRootCalc ? Integer.parseInt(line.substring(0, 8).trim())
+							: Integer.parseInt(line.substring(0, 8).trim());
+
+					numCommits = numCommits == null ? 0 : numCommits;
+
+					if (developerCommitsMap.containsKey(name)) {
+
+						developerCommitsMap.put(name, developerCommitsMap.get(name) + numCommits);
+
+					} else {
+
+						developerCommitsMap.put(name, numCommits);
+					}
+
 				} catch (Exception e) {
 
 					System.out.println("Devloper not add. See the line: " + line);
 				}
 
 			}
+
+		} catch (IOException | InterruptedException e1) {
+
+			System.err.println(e1.getMessage());
 		}
+
+		return developerCommitsMap;
+
 	}
 
 	private void calcNumLocProjectByDeveloperList() {
@@ -250,74 +279,128 @@ public class Project {
 
 	}
 
-	private void calcTruckFactor() throws IOException, InterruptedException {
+	private static List<Developer> calcTruckFactor(Project project) {
 
-		GitOutput gitOutput = Git.runGitTruckFactor(this);
+		List<Developer> developerListTF = new ArrayList<Developer>();
 
-		int isAuthors = 0;
-		for (String line : gitOutput.outputList) {
+		try {
+			GitOutput gitOutput;
 
-			System.out.println(line);
+			gitOutput = Git.runGitTruckFactor(project);
 
-			if (line.contains("TF authors")) {
-				isAuthors++;
-			}
+			int isAuthors = 0;
+			for (String line : gitOutput.outputList) {
 
-			if (isAuthors < 1)
-				continue;
-
-			if (isAuthors == 1) {
-				isAuthors++;
-				continue;
-			}
-			if (!line.contains(";")) {
-				continue;
-			}
-
-			Developer developerTF = new Developer(line.substring(0, line.indexOf(";")));
-
-			for (Developer developer : this.developerList) {
-
-				if (developer.equals(developerTF)) {
-
-					this.truckFactor++;
-					developer.truckFactor = developer.equals(developerTF);
+				if (line.contains("TF authors")) {
+					isAuthors++;
 				}
+
+				if (isAuthors < 1)
+					continue;
+
+				if (isAuthors == 1) {
+					isAuthors++;
+					continue;
+				}
+				if (!line.contains(";")) {
+					continue;
+				}
+
+				developerListTF.add(new Developer(line.substring(0, line.indexOf(";"))));
 			}
 
+			return developerListTF;
+
+		} catch (IOException | InterruptedException e) {
+			e.printStackTrace();
 		}
 
+		return developerListTF;
 	}
 
 	public static Project buildOverview(Filter filter, String checkout) throws IOException, InterruptedException {
 
 		Project project = Project.builderProject(filter, checkout);
 
-		project.calcNumCommits();
-//		project.calcNumLoc();
-		project.calcNumActiveDaysAndFirstCommitAndLastCommit();
-		project.calcNumLocProgrammingLanguageList();
-		project.calcDeveloperList();
+		final CompletableFuture<List<Developer>> calcDeveloperListRun = CompletableFuture
+				.supplyAsync(() -> calcDeveloperList(project));
 
-		return project;
+		final CompletableFuture<List<Developer>> calcTruckFactorRun = CompletableFuture
+				.supplyAsync(() -> calcTruckFactor(project));
+
+		final CompletableFuture<Integer> calcNumCommitsRun = CompletableFuture
+				.supplyAsync(() -> calcNumCommits(project));
+
+		final CompletableFuture<List<NumLocProgrammingLanguage>> calcNumLocProgrammingLanguageListRun = CompletableFuture
+				.supplyAsync(() -> calcNumLocProgrammingLanguageList(project));
+
+		try {
+
+			project.developerList = calcDeveloperListRun.get();
+
+			project.calcNumLocProjectByDeveloperList();
+
+			project.numCommits = calcNumCommitsRun.get();
+
+			project.numLocProgrammingLanguageList = calcNumLocProgrammingLanguageListRun.get();
+
+			List<Developer> devTFList = calcTruckFactorRun.get();
+
+			for (Developer devTF : devTFList) {
+				for (Developer developer : project.developerList) {
+
+					if (developer.equals(devTF)) {
+
+						project.truckFactor++;
+						developer.truckFactor = true;
+					}
+				}
+			}
+
+			return project;
+
+		} catch (InterruptedException | ExecutionException e) {
+
+			System.err.println("findResume process error" + e);
+			throw new RuntimeException();
+		}
 
 	}
 
 	public static Project builderProject(Filter filter, String checkout) {
 
-		if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
+		if (filter.remoteRepository != null && filter.remoteRepository.equals("[local]")) {
+
+			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in 100% local: "
+					+ filter.localRepository);
+
+			Project project = new Project(Git.getLocalRepositoryFromLocalProject(), checkout);
+			// entre na pasta do seu projeto local, use 'docker cp .
+			// nomeContainer:/root/team-tracker-clones/local/
+			Git.runCheckout(project);
+
+			return project;
+
+		} else if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
+
+			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in local: "
+					+ filter.localRepository);
 
 			Project project = new Project(filter.localRepository, checkout);
-			
+
 			Git.runCheckout(project);
-			
+
 			return project;
 
 		} else if (filter.remoteRepository != null && !filter.remoteRepository.isEmpty()) {
 
-			if(filter.user != null && !filter.user.isEmpty() && filter.password != null && !filter.password.isEmpty()) {
+			System.out.println("info...................BuilderProject is clonning from: " + filter.remoteRepository);
 
-				return Git.clone("https://" + encodeValue(filter.user) + ":" + encodeValue(filter.password) + "@" + filter.remoteRepository.substring(8), checkout);
+			if (filter.user != null && !filter.user.isEmpty() && filter.password != null
+					&& !filter.password.isEmpty()) {
+
+				return Git.clone("https://" + encodeValue(filter.user) + ":" + encodeValue(filter.password) + "@"
+						+ filter.remoteRepository.substring(8), checkout);
 			}
 
 			return Git.clone(filter.remoteRepository, checkout);
@@ -329,10 +412,10 @@ public class Project {
 	}
 
 	private static String encodeValue(String value) {
-        try {
-            return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
-        } catch (UnsupportedEncodingException ex) {
-            throw new RuntimeException(ex.getCause());
-        }
-    }
+		try {
+			return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
+		} catch (UnsupportedEncodingException ex) {
+			throw new RuntimeException(ex.getCause());
+		}
+	}
 }

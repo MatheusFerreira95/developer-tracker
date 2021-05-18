@@ -28,12 +28,20 @@ public class LinkExplore {
 	}
 
 	public void increaseLoc(Integer numLoc) {
+		
+		if (numLoc == null) numLoc = 0;
+		if (this.numLoc == null) this.numLoc = 0;
+
 		this.numLoc += numLoc;
 		this.loc = this.numLoc + " LOC";
 
 	}
 
 	public void increaseCommits(Integer numCommits) {
+		
+		if (numCommits == null) numCommits = 0;
+		if (this.numCommits == null) this.numCommits = 0;
+		
 		this.numCommits += numCommits;
 		this.commits = numCommits + " commits";
 

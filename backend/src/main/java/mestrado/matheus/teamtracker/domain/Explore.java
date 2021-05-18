@@ -2,10 +2,12 @@ package mestrado.matheus.teamtracker.domain;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
+import java.io.File;
 
 public class Explore {
 
@@ -15,46 +17,44 @@ public class Explore {
 	public List<NodeExplore> nodeList = new ArrayList<NodeExplore>();
 	public List<LinkExplore> linkList = new ArrayList<LinkExplore>();
 
-	public static Explore build(Filter filter, Project project) throws IOException, InterruptedException {
+	public static Explore build(Filter filter, Project project, List<Developer> devTFList)
+			throws IOException, InterruptedException {
 
 		if (isZoomLevelProject(filter)) {
 
-			return buildExploreLevelProject(project);
+			return buildExploreLevelProject(project, devTFList);
 
 		}
 
 		if (isFirstZoomLevel(filter)) {
 
 			filter.zoomPath = "";
-		
+
 		} else {
 
 			filter.zoomPath += "/";
 		}
 
-		return buildExplore(filter, project);
+		return buildExplore(filter, project, devTFList);
 
 	}
 
-	private static Explore buildExplore(Filter filter, Project project) {
+	private static Explore buildExplore(Filter filter, Project project, List<Developer> devTFList) {
 
 		Explore explore = new Explore();
 		GitOutput gitOutputName;
 
 		try {
-			gitOutputName = Git.runCommand(project, " git ls-files " + filter.zoomPath);
+			gitOutputName = Git.runCommand(project, " git ls-tree --name-only HEAD " + filter.zoomPath, true);
 
 			for (String filePath : gitOutputName.outputList) {
 
-				if (filePath.startsWith(filter.zoomPath)) {
-
-					NodeExplore node = buildNode(filePath, filter.zoomPath);
+					NodeExplore node = buildNode(filePath, filter.zoomPath, project.localRepository);
 					if (!explore.nodeList.contains(node))
 						explore.nodeList.add(node);
 
-					calcLinks(project, explore, node, filePath, filter.devTFList);
+					calcLinks(project, explore, node, filePath, devTFList);
 
-				}
 			}
 
 		} catch (IOException e) {
@@ -66,10 +66,11 @@ public class Explore {
 		return explore;
 	}
 
-	private static void calcLinks(Project project, Explore explore, NodeExplore node, String filePath, List<Developer> devTFList) {
+	private static void calcLinks(Project project, Explore explore, NodeExplore node, String filePath,
+			List<Developer> devTFList) {
 
 		try {
-			project.calcDeveloperList(filePath, devTFList);
+			project.developerList = Project.calcLocCommitDeveloperList(project, filePath, devTFList);
 
 			for (Developer developer : project.developerList) {
 
@@ -96,19 +97,17 @@ public class Explore {
 
 	}
 
-	private static NodeExplore buildNode(String filePath, String prefixFromFilter) {
+	private static NodeExplore buildNode(String filePath, String prefixFromFilter, String localRepository) {
 
 		NodeExplore node = null;
 
 		String pathRemovedFilter = prefixFromFilter.isEmpty() ? filePath
 				: filePath.substring(prefixFromFilter.length());
 
-		if (pathRemovedFilter.contains("/")) {
+		if (new File(localRepository + "/" + filePath).isDirectory()) {
 
-			String formattedName = pathRemovedFilter.substring(0, pathRemovedFilter.indexOf("/"));
+			node = new NodeExplore(NodeExplore.NODE_FOLDER, pathRemovedFilter, filePath, false);
 
-			node = new NodeExplore(NodeExplore.NODE_FOLDER, formattedName,
-					prefixFromFilter.isEmpty() ? formattedName : prefixFromFilter + formattedName, false);
 		} else {
 
 			node = new NodeExplore(NodeExplore.NODE_FILE, pathRemovedFilter, filePath, false);
@@ -118,15 +117,17 @@ public class Explore {
 
 	}
 
-	private static Explore buildExploreLevelProject(Project project) throws IOException, InterruptedException {
+	private static Explore buildExploreLevelProject(Project project, List<Developer> devTFList)
+			throws IOException, InterruptedException {
 
 		Explore explore = new Explore();
 
 		NodeExplore nodeProject = new NodeExplore(NodeExplore.NODE_PROJECT, null, NodeExplore.NODE_PROJECT, false);
 		explore.nodeList.add(nodeProject);
 
-		project.calcDeveloperList();
-		for (Developer developer : project.developerList) {
+		List<Developer> devList = Project.calcLocCommitDeveloperList(project, null, devTFList);
+
+		for (Developer developer : devList) {
 
 			NodeExplore nodeDeveloper = new NodeExplore(NodeExplore.NODE_DEVELOPER, developer.name, null,
 					developer.truckFactor);
@@ -148,6 +149,35 @@ public class Explore {
 	private static boolean isFirstZoomLevel(Filter filter) {
 
 		return filter.zoomPath.equals("Project");
+	}
+
+	public static String generateRecommendations(Filter filter, Project project,
+			List<FileExtension> extensionListVersion1, String version) throws IOException, InterruptedException {
+
+		String recommentationsText = "Recommended developers for programming languages (referring to version " + version
+				+ "):<br>";
+
+		for (FileExtension fileExtension : extensionListVersion1) {
+
+			project.developerList = Project.calcLocCommitDeveloperList(project, "*" + fileExtension.extension, new ArrayList<Developer>());
+
+			Collections.sort(project.developerList, Collections.reverseOrder());
+
+			if (!project.developerList.isEmpty()) {
+
+				recommentationsText += fileExtension.extensionDescription + ": ";
+				
+				int count = 0;
+				for (Developer dev : project.developerList){
+					if(count++ > 3) break;
+					recommentationsText += dev.name + "; ";
+				}
+				
+				recommentationsText += "<br>";
+		}
+			}
+
+		return recommentationsText;
 	}
 
 }
