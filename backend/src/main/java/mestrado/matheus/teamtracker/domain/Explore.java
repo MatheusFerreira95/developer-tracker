@@ -169,7 +169,7 @@ public class Explore {
 				
 				int count = 0;
 				for (Developer dev : project.developerList){
-					if(count++ > 3) break;
+					if(count++ == 3) break;
 					recommentationsText += dev.name + "; ";
 				}
 				
