@@ -232,7 +232,7 @@ export default {
       let Recommendation1 =
         "<p> <b> Recommendation &nbsp;" +
         countElement +
-        ": </b> <br> When a small number of people on the team concentrate the knowledge about the implementation there is a risk of dependence on these people in the project. Investigate in which regions of the source code practices such as programming in peer and turnover of people to distribute knowledge among everyone on the team in a more homogeneous way. </p> ";
+        ": </b> <br> When a small number of people on the team concentrate the knowledge in parts of the implementation, the project can be dependent on these people. Thus, you should investigate that knowledge in the source code and rearrange the people for the knowledge to be more homogeneous among team members. </p> ";
 
       /** TRADUÇÃO 1
  
@@ -275,7 +275,7 @@ export default {
       let recommendation2 =
         "<p><b>Recommendation &nbsp; " +
         countElement +
-        ":</b><br> Note that there are some languages that require more effort (in LOC). Make sure the developers working on the software modules that use the programming languages that have the highest percentage of LOC as technology. It may be necessary to allocate other employees with the skill of this technology to the project. Also make sure that the technical capacity of the project team is consistent with the demand for programming languages. This can help you to optimize the allocation of people, avoiding underutilization and/or work overload for certain developers. </p>";
+        ":</b><br> Project Managers can need human resources in specific programming languages. Thus, you should know who developers who work on the software modules use that programming language because they can be allocated to other projects. This knowledge can help you optimize people's allocation, avoiding underutilization or work overload of developers </p>";
 
       /** TRADUÇÃO 2
  
@@ -311,7 +311,7 @@ export default {
       let recommendation3 =
         "<p><b>Recommendation &nbsp; " +
         countElement +
-        ":</b><br> Project Commits and LOC: Use to understand the dimension of the project. When looking at LOC (project and developer perspective), consider that the team must follow the appropriate code standards of the programming language (e.g. open/close of {}). Also consider defining a code review process, so that other developers can evaluate the solutions implemented by a team member, avoiding inappropriate or excessive LOC solutions. When observing commmits, consider that the team must follow a commits pattern (e.g. as atomic as possible). With this care you can now compare the difference in dimensions of the two versions. Also note if the technological demand and the performance of the developers was different in the two versions. These results can be indicative of the results of decisions taken throughout the project and the release of versions. </p>";
+        ":</b><br> When looking at LOC (project and developer perspective), you should consider that the team must follow the appropriate code standards of the programming language. Also, it would help if you considered defining a code review process so that other developers can evaluate the solutions implemented by a team member, avoiding LOC inappropriate or excessive solutions. When observing commits, you should consider that the team must follow a commits pattern. Thus, you can compare the difference in dimensions of the two versions. Also, note if the technological demand and the performance of the developers were different in the two versions. These results can indicate the results of decisions taken throughout the project and the release of versions. </p>";
 
       /** TRADUÇÃO 3
        * 
