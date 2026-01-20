@@ -2,6 +2,8 @@ package mestrado.matheus.teamtracker.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,12 +19,17 @@ public class CLOC {
 	public static List<NumLocProgrammingLanguage> buildNumLocProgrammingLanguageList(Project project) throws IOException, InterruptedException {
 		
 		String pathApp = new File(".").getCanonicalPath();
-		String pathCLOC = pathApp.equals("/") ? pathApp + "cloc-1.86.pl" : pathApp + "/backend/cloc-tool/cloc-1.86.pl"; // tratando para imagens docker (ver cópia realizada no arquivo dockerfile)
+
+		// In Docker image, cloc script is copied to "/cloc-1.86.pl"
+		// In local dev, it lives at "backend/cloc-tool/cloc-1.86.pl"
+		Path clocDocker = Paths.get(pathApp, "cloc-1.86.pl");
+		Path clocLocal = Paths.get(pathApp, "backend", "cloc-tool", "cloc-1.86.pl");
+		String pathCLOC = clocDocker.toFile().exists() ? clocDocker.toString() : clocLocal.toString();
 		
 		GitOutput gitOutput = Git.runCommand(project,
 				"perl " + pathCLOC + " ./ --json --exclude-lang=\"" + CLOC.LIST_LANG_EXLUDED + "\" --out cloc-out.txt", true);
 
-		File outpupFile = new File(project.localRepository + "/cloc-out.txt");
+		File outpupFile = Paths.get(project.localRepository, "cloc-out.txt").toFile();
 
 		Boolean outputFileCreated = false;
 		for (String line : gitOutput.outputList) {
@@ -40,35 +47,35 @@ public class CLOC {
 			System.out.println("loading CLOC...");
 		}
 
-		Scanner scanner = new Scanner(outpupFile);
+		try (Scanner scanner = new Scanner(outpupFile)) {
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
 
-		while (scanner.hasNextLine()) {
-			String line = scanner.nextLine();
+				String nameProgrammingLanguage = line.substring(1, line.lastIndexOf("\""));
+				if (!line.contains("{") || line.contains("header"))
+					continue;
 
-			String nameProgrammingLanguage = line.substring(1, line.lastIndexOf("\""));
-			if (!line.contains("{") || line.contains("header"))
-				continue;
+				String lastCaracter = ",";
+				if (!nameProgrammingLanguage.contentEquals("SUM")) {
 
-			String lastCaracter = ",";
-			if (!nameProgrammingLanguage.contentEquals("SUM")) {
+					lastCaracter = "}";
+					line = scanner.nextLine();
 
-				lastCaracter = "}";
+				}
+
 				line = scanner.nextLine();
+				String blank = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(","));
 
+				line = scanner.nextLine();
+				String comment = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(","));
+
+				line = scanner.nextLine();
+				String code = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(lastCaracter));
+
+				Integer sumLOC = Integer.parseInt(blank) + Integer.parseInt(comment) + Integer.parseInt(code);
+
+				project.numLocProgrammingLanguageList.add(new NumLocProgrammingLanguage(nameProgrammingLanguage, sumLOC));
 			}
-
-			line = scanner.nextLine();
-			String blank = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(","));
-
-			line = scanner.nextLine();
-			String comment = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(","));
-
-			line = scanner.nextLine();
-			String code = line.substring(line.lastIndexOf(" ") + 1, line.indexOf(lastCaracter));
-
-			Integer sumLOC = Integer.parseInt(blank) + Integer.parseInt(comment) + Integer.parseInt(code);
-
-			project.numLocProgrammingLanguageList.add(new NumLocProgrammingLanguage(nameProgrammingLanguage, sumLOC));
 		}
 
 		Integer sumTotal = project.numLocProgrammingLanguageList

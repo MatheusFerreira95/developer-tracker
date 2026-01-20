@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.nio.file.Paths;
 
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
-import java.io.File;
 
 public class Explore {
 
@@ -104,7 +104,7 @@ public class Explore {
 		String pathRemovedFilter = prefixFromFilter.isEmpty() ? filePath
 				: filePath.substring(prefixFromFilter.length());
 
-		if (new File(localRepository + "/" + filePath).isDirectory()) {
+		if (Paths.get(localRepository, filePath).toFile().isDirectory()) {
 
 			node = new NodeExplore(NodeExplore.NODE_FOLDER, pathRemovedFilter, filePath, false);
 

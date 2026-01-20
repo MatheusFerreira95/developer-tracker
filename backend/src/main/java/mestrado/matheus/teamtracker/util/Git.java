@@ -15,10 +15,37 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.Locale;
 
 import mestrado.matheus.teamtracker.domain.Project;
 
 public class Git {
+
+	private static boolean isWindows() {
+		String osName = System.getProperty("os.name");
+		return osName != null && osName.toLowerCase(Locale.ROOT).contains("win");
+	}
+
+	/**
+	 * Run a command through the native shell for the current OS.
+	 * - Windows: cmd.exe /c
+	 * - Linux/Mac: sh -c
+	 */
+	private static List<String> shellCommand(String command) {
+		List<String> commands = new ArrayList<String>();
+
+		if (isWindows()) {
+			commands.add("cmd.exe");
+			commands.add("/c");
+			commands.add(command);
+		} else {
+			commands.add("sh");
+			commands.add("-c");
+			commands.add(command);
+		}
+
+		return commands;
+	}
 
 	public static Project clone(String remoteRepository, String checkout) {
 
@@ -32,8 +59,9 @@ public class Git {
 
 			runCommand(project, "git clone " + remoteRepository, false);
 
-			project.localRepository = project.localRepository += "/" + project.localRepository
-					.substring(project.localRepository.lastIndexOf("/") + 1, project.localRepository.lastIndexOf("-"));
+			String repoFolderName = project.localRepository.substring(project.localRepository.lastIndexOf(File.separator) + 1,
+					project.localRepository.lastIndexOf("-"));
+			project.localRepository = Paths.get(project.localRepository, repoFolderName).toString();
 
 			runCheckout(project);
 
@@ -73,10 +101,7 @@ public class Git {
 
 		validateLocalRepository(project.localRepository);
 
-		List<String> commands = new ArrayList<String>();
-		commands.add("/bin/sh");
-		commands.add("-c");
-		commands.add(command);
+		List<String> commands = shellCommand(command);
 
 		String logCommand = showLog ? command : "command in execution not logged";
 		System.out.println("run......................................." + logCommand);
@@ -114,23 +139,16 @@ public class Git {
 		validateLocalRepository(project.localRepository);
 
 		String pathApp = new File(".").getCanonicalPath();
-		String pathTF = pathApp.equals("/") ? pathApp + "truckfactor-tool" : "backend/truckfactor-tool"; // tratando
-																											// para
-																											// imagens
-																											// docker
-																											// (ver
-																											// cópia
-																											// realizada
-																											// no
-																											// arquivo
-																											// dockerfile)
+		// In Docker image, truckfactor-tool is copied to "/truckfactor-tool"
+		// In local dev, it lives at "backend/truckfactor-tool"
+		String pathTF = Paths.get(pathApp, "truckfactor-tool").toString();
+		if (!new File(pathTF).exists()) {
+			pathTF = Paths.get(pathApp, "backend", "truckfactor-tool").toString();
+		}
 
-		List<String> commands = new ArrayList<String>();
-		commands.add("/bin/sh");
-		commands.add("-c");
 		String commandTF = "git config diff.renameLimit 999999 && git log --pretty=format:\"%H-;-%aN-;-%aE-;-%at-;-%cN-;-%cE-;-%ct-;-%f\"  > commitinfo.log && git log --name-status --pretty=format:\"commit	%H\" --find-renames > log.log && git ls-files > filelist.log && git config --unset diff.renameLimit";
 
-		commands.add(commandTF);
+		List<String> commands = shellCommand(commandTF);
 		System.out.println(
 				"Run TruckFactor 1 (on " + project.localRepository + ")................................." + commandTF);
 
@@ -155,10 +173,8 @@ public class Git {
 		createCommitFileInfoLog(project.localRepository);
 
 		commands = new ArrayList<String>();
-		commands.add("/bin/sh");
-		commands.add("-c");
 		commandTF = "java -jar gittruckfactor.jar " + project.localRepository + " " + pathTF;
-		commands.add(commandTF);
+		commands = shellCommand(commandTF);
 		System.out.println("Run TruckFactor 2................................." + commandTF);
 
 		pb = new ProcessBuilder().command(commands).directory(new File(pathTF));
@@ -185,10 +201,10 @@ public class Git {
 	private static void createCommitFileInfoLog(String localRepository) {
 
 		try {
-			FileReader reader = new FileReader(localRepository + "/log.log");
+			FileReader reader = new FileReader(Paths.get(localRepository, "log.log").toString());
 			BufferedReader bufferedReader = new BufferedReader(reader);
 
-			FileWriter writer = new FileWriter(localRepository + "/commitfileinfo.log", true);
+			FileWriter writer = new FileWriter(Paths.get(localRepository, "commitfileinfo.log").toString(), true);
 
 			String readedLine;
 			String commitHash = "";
