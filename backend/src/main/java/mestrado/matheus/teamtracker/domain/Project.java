@@ -119,6 +119,10 @@ public class Project {
 
 	}
 
+	/**
+	 * Calculate LOC per developer by processing git blame for each file.
+	 * Replaces the shell pipeline: git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr
+	 */
 	private static List<Developer> calcLocsDeveloperList(Project project, String filterPath) {
 
 		List<Developer> locDeveloperList = new ArrayList<Developer>();
@@ -174,143 +178,68 @@ public class Project {
 				}
 			});
 
-				try {
-
-					String name = line.substring(8);
-
-					Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
-
-					Developer dev = new Developer(name, "email", numLoc, 0);
-
-					if (locDeveloperList.contains(dev)) {
-
-						for (Developer developer : locDeveloperList) {
-
-							if (developer.equals(dev)) {
-
-								developer.numLoc += dev.numLoc;
-							}
-						}
-
-					} else {
-
-						locDeveloperList.add(dev);
-
-					}
-
-				} catch (Exception e) {
-
-					System.out.println("Developer not add. See the line: " + line);
-				}
-			}
-
 		} catch (IOException | InterruptedException e1) {
-
+			System.err.println("Error in calcLocsDeveloperList: " + e1.getMessage());
 			e1.printStackTrace();
 		}
 
 		return locDeveloperList;
 	}
 
+	/**
+	 * Calculate developer list for entire project (no filter).
+	 * Reuses calcLocsDeveloperList with null filter.
+	 */
 	public static List<Developer> calcDeveloperList(Project project) {
 
-		GitOutput gitOutputName = null;
-
 		try {
-
-			gitOutputName = Git.runCommand(project,
-					" git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr",
-					true);
-
-			for (String line : gitOutputName.outputList) {
-
-				try {
-
-					String name = line.substring(8);
-
-					Integer numLoc = Integer.parseInt(line.substring(0, 8).trim());
-
-					Developer dev = new Developer(name, "email", numLoc, 0);
-
-					if (project.developerList.contains(dev)) {
-
-						for (Developer developer : project.developerList) {
-
-							if (developer.equals(dev)) {
-
-								developer.numLoc += dev.numLoc;
-							}
-						}
-
-					} else {
-
-						project.developerList.add(dev);
-
-					}
-
-				} catch (Exception e) {
-
-					System.out.println("Devloper not add. See the line: " + line);
-				}
-			}
-
-		} catch (IOException | InterruptedException e1) {
-
-			e1.printStackTrace();
+			// Reuse calcLocsDeveloperList with no filter (all files)
+			List<Developer> developers = calcLocsDeveloperList(project, null);
+			project.developerList = developers;
+		} catch (Exception e) {
+			System.err.println("Error in calcDeveloperList: " + e.getMessage());
+			e.printStackTrace();
 		}
 
 		return project.developerList;
 	}
 
+	/**
+	 * Calculate commits per developer.
+	 * Replaces: git log | grep Author: | sort | uniq -c | sort -nr (for root)
+	 * or: git log --pretty=format:"%an" --follow "<path>" | sort -f | uniq -ic | sort -nr (for specific path)
+	 */
 	public static HashMap<String, Integer> calcCommitsDeveloperList(Project project, String filterPath) {
-
-		GitOutput gitOutputName = null;
 
 		HashMap<String, Integer> developerCommitsMap = new HashMap<String, Integer>();
 
-		boolean isLevelRootCalc = filterPath == null;
-		String command = isLevelRootCalc ? " git log | grep Author: | sort | uniq -c | sort -nr"
-				: "git log --pretty=format:\"%an\" --follow \"" + filterPath + "\" | sort -f | uniq -ic | sort -nr";
-
 		try {
+			// Build git log command - use --pretty=format:"%an" to get author names directly
+			String command;
+			if (filterPath == null) {
+				// Root level: get all authors from all commits
+				command = "git log --pretty=format:\"%an\"";
+			} else {
+				// Specific path: get authors for commits that touched this path
+				command = "git log --pretty=format:\"%an\" --follow \"" + filterPath + "\"";
+			}
 
-			gitOutputName = Git.runCommand(project, command, true);
+			GitOutput gitOutput = Git.runCommand(project, command, true);
 
-			for (String line : gitOutputName.outputList) {
-
-				try {
-
-					String name = isLevelRootCalc ? line.substring(line.indexOf(": ") + 2, line.indexOf(" <"))
-							: line.substring(8);
-
-					Integer numCommits = isLevelRootCalc ? Integer.parseInt(line.substring(0, 8).trim())
-							: Integer.parseInt(line.substring(0, 8).trim());
-
-					numCommits = numCommits == null ? 0 : numCommits;
-
-					if (developerCommitsMap.containsKey(name)) {
-
-						developerCommitsMap.put(name, developerCommitsMap.get(name) + numCommits);
-
-					} else {
-
-						developerCommitsMap.put(name, numCommits);
-					}
-
-				} catch (Exception e) {
-
-					System.out.println("Devloper not add. See the line: " + line);
+			// Count occurrences of each author name (replaces sort | uniq -c)
+			for (String line : gitOutput.outputList) {
+				if (line != null && !line.trim().isEmpty()) {
+					String authorName = line.trim();
+					developerCommitsMap.put(authorName, developerCommitsMap.getOrDefault(authorName, 0) + 1);
 				}
-
 			}
 
 		} catch (IOException | InterruptedException e1) {
-
-			System.err.println(e1.getMessage());
+			System.err.println("Error in calcCommitsDeveloperList: " + e1.getMessage());
+			e1.printStackTrace();
 		}
 
 		return developerCommitsMap;
-
 	}
 
 	private void calcNumLocProjectByDeveloperList() {
