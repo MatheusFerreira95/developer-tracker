@@ -45,7 +45,8 @@
 						<phase>generate-resources</phase>
 						<!-- Optional configuration which provides for running any npm command -->
 						<configuration>
-							<arguments>install</arguments>
+							<!-- Use 'ci' for reproducible installs and to avoid flaky Windows rename issues in node_modules -->
+							<arguments>ci --no-audit --no-fund</arguments>
 						</configuration>
 					</execution>
 					<!-- Build and minify static files -->
