@@ -80,21 +80,17 @@ public class Git {
 	public static GitOutput runCommand(Project project, String command, boolean showLog)
 			throws IOException, InterruptedException {
 
-		return run(project, command, null, showLog);
+		return run(project, command, showLog);
 	}
 
 	public static GitOutput runCommandReturnExitValue(Project project, String command)
 			throws IOException, InterruptedException {
 
-		Integer exit = 0;
-		GitOutput gitoutput = run(project, command, exit, true);
-
-		gitoutput.errorList.add("resultError: " + exit);
-
+		GitOutput gitoutput = run(project, command, true);
 		return gitoutput;
 	}
 
-	private static GitOutput run(Project project, String command, Integer exitValue, boolean showLog)
+	private static GitOutput run(Project project, String command, boolean showLog)
 			throws IOException, InterruptedException {
 
 		GitOutput gitOutput = new GitOutput();
@@ -119,12 +115,14 @@ public class Git {
 		errorGobbler.join();
 		outputGobbler.join();
 
-		if (exit != 0 && exitValue == null) {
-
-			throw new AssertionError(String.format("runCommand returned %d", exit));
+		if (exit != 0) {
+			StringBuilder msg = new StringBuilder();
+			msg.append("Command failed with exit code ").append(exit).append(": ").append(command);
+			if (!gitOutput.errorList.isEmpty()) {
+				msg.append(" | stderr: ").append(String.join(" | ", gitOutput.errorList));
+			}
+			throw new AssertionError(msg.toString());
 		}
-
-		exitValue = exit;
 
 		return gitOutput;
 	}
@@ -166,8 +164,12 @@ public class Git {
 		outputGobbler.join();
 
 		if (exit != 0) {
-
-			throw new AssertionError(String.format("runCommand returned %d", exit));
+			StringBuilder msg = new StringBuilder();
+			msg.append("TruckFactor step 1 failed with exit code ").append(exit).append(": ").append(commandTF);
+			if (!gitOutput.errorList.isEmpty()) {
+				msg.append(" | stderr: ").append(String.join(" | ", gitOutput.errorList));
+			}
+			throw new AssertionError(msg.toString());
 		}
 
 		createCommitFileInfoLog(project.localRepository);
@@ -191,8 +193,12 @@ public class Git {
 		outputGobbler.join();
 
 		if (exit != 0) {
-
-			throw new AssertionError(String.format("runCommand returned %d", exit));
+			StringBuilder msg = new StringBuilder();
+			msg.append("TruckFactor step 2 failed with exit code ").append(exit).append(": ").append(commandTF);
+			if (!gitOutput.errorList.isEmpty()) {
+				msg.append(" | stderr: ").append(String.join(" | ", gitOutput.errorList));
+			}
+			throw new AssertionError(msg.toString());
 		}
 
 		return gitOutput;

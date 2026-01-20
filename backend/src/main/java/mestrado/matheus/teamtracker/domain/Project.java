@@ -361,8 +361,11 @@ public class Project {
 
 		} catch (InterruptedException | ExecutionException e) {
 
-			System.err.println("findResume process error" + e);
-			throw new RuntimeException();
+			System.err.println("findResume process error: " + e.getMessage());
+			if (e.getCause() != null) {
+				System.err.println("root cause: " + e.getCause().getMessage());
+			}
+			throw new RuntimeException("Error while building project overview", e);
 		}
 
 	}
