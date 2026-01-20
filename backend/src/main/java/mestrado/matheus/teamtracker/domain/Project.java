@@ -5,8 +5,11 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -118,19 +121,58 @@ public class Project {
 
 	private static List<Developer> calcLocsDeveloperList(Project project, String filterPath) {
 
-		GitOutput gitOutputName = null;
-
-		String filePath = filterPath == null ? "" : filterPath;
-
 		List<Developer> locDeveloperList = new ArrayList<Developer>();
+		Map<String, Integer> authorLocMap = new HashMap<String, Integer>();
 
 		try {
+			// Step 1: Get list of files
+			String lsFilesCommand = filterPath == null || filterPath.isEmpty() 
+				? "git ls-files" 
+				: "git ls-files " + filterPath;
+			
+			GitOutput filesOutput = Git.runCommand(project, lsFilesCommand, true);
+			
+			if (filesOutput.outputList.isEmpty()) {
+				return locDeveloperList;
+			}
 
-			gitOutputName = Git.runCommand(project, " git ls-files " + filePath
-					+ " | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr",
-					true);
+			// Step 2: For each file, run git blame and extract authors
+			for (String filePath : filesOutput.outputList) {
+				if (filePath == null || filePath.trim().isEmpty()) {
+					continue;
+				}
+				
+				try {
+					GitOutput blameOutput = Git.runCommand(project, "git blame --line-porcelain \"" + filePath + "\"", true);
+					
+					// Parse blame output: look for lines starting with "author "
+					for (String line : blameOutput.outputList) {
+						if (line != null && line.startsWith("author ")) {
+							String authorName = line.substring(7).trim(); // Remove "author " prefix
+							if (!authorName.isEmpty()) {
+								authorLocMap.put(authorName, authorLocMap.getOrDefault(authorName, 0) + 1);
+							}
+						}
+					}
+				} catch (IOException | InterruptedException e) {
+					System.err.println("Error processing file " + filePath + ": " + e.getMessage());
+					// Continue with next file
+				}
+			}
 
-			for (String line : gitOutputName.outputList) {
+			// Step 3: Convert map to List<Developer> and sort by LOC (descending)
+			for (Map.Entry<String, Integer> entry : authorLocMap.entrySet()) {
+				Developer dev = new Developer(entry.getKey(), "email", entry.getValue(), 0);
+				locDeveloperList.add(dev);
+			}
+
+			// Sort by LOC descending (same as "sort -nr" in the original pipeline)
+			Collections.sort(locDeveloperList, new Comparator<Developer>() {
+				@Override
+				public int compare(Developer d1, Developer d2) {
+					return Integer.compare(d2.numLoc, d1.numLoc); // Descending order
+				}
+			});
 
 				try {
 
