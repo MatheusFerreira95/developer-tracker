@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 import mestrado.matheus.teamtracker.domain.NumLocProgrammingLanguage;
@@ -15,19 +16,35 @@ public class CLOC {
 
 	public static final String LIST_LANG_EXLUDED = "XML,Markdown,JSON,Maven,YAML,SVG,Bourne Shell,DOS Batch";
 
+	private static boolean isWindows() {
+		String osName = System.getProperty("os.name");
+		return osName != null && osName.toLowerCase(Locale.ROOT).contains("win");
+	}
+
 	// Requer https://github.com/AlDanial/cloc/blob/master/cloc instalada
 	public static List<NumLocProgrammingLanguage> buildNumLocProgrammingLanguageList(Project project) throws IOException, InterruptedException {
 		
 		String pathApp = new File(".").getCanonicalPath();
+		String pathCLOC;
+		String command;
 
-		// In Docker image, cloc script is copied to "/cloc-1.86.pl"
-		// In local dev, it lives at "backend/cloc-tool/cloc-1.86.pl"
-		Path clocDocker = Paths.get(pathApp, "cloc-1.86.pl");
-		Path clocLocal = Paths.get(pathApp, "backend", "cloc-tool", "cloc-1.86.pl");
-		String pathCLOC = clocDocker.toFile().exists() ? clocDocker.toString() : clocLocal.toString();
+		if (isWindows()) {
+			// Windows: use cloc-2.06.exe directly (no perl needed)
+			Path clocDocker = Paths.get(pathApp, "cloc-2.06.exe");
+			Path clocLocal = Paths.get(pathApp, "backend", "cloc-tool", "cloc-2.06.exe");
+			pathCLOC = clocDocker.toFile().exists() ? clocDocker.toString() : clocLocal.toString();
+			// On Windows, run the .exe directly
+			command = "\"" + pathCLOC + "\" ./ --json --exclude-lang=\"" + CLOC.LIST_LANG_EXLUDED + "\" --out cloc-out.txt";
+		} else {
+			// Linux/Mac/Docker: use cloc-1.86.pl with perl
+			Path clocDocker = Paths.get(pathApp, "cloc-1.86.pl");
+			Path clocLocal = Paths.get(pathApp, "backend", "cloc-tool", "cloc-1.86.pl");
+			pathCLOC = clocDocker.toFile().exists() ? clocDocker.toString() : clocLocal.toString();
+			// On Linux/Mac, run with perl
+			command = "perl " + pathCLOC + " ./ --json --exclude-lang=\"" + CLOC.LIST_LANG_EXLUDED + "\" --out cloc-out.txt";
+		}
 		
-		GitOutput gitOutput = Git.runCommand(project,
-				"perl " + pathCLOC + " ./ --json --exclude-lang=\"" + CLOC.LIST_LANG_EXLUDED + "\" --out cloc-out.txt", true);
+		GitOutput gitOutput = Git.runCommand(project, command, true);
 
 		File outpupFile = Paths.get(project.localRepository, "cloc-out.txt").toFile();
 
