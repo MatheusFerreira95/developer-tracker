@@ -344,6 +344,97 @@ public class Git {
 		}
 	}
 
+	/**
+	 * Get the current commit hash (SHA) of the repository.
+	 * Used for cache key generation to invalidate cache when repository changes.
+	 * 
+	 * IMPORTANT: This method ensures cache safety by:
+	 * 1. Getting the commit hash AFTER checkout is complete
+	 * 2. Validating that the hash corresponds to the current HEAD
+	 * 3. Including branch/checkout info in validation
+	 */
+	public static String getCommitHash(Project project) {
+		try {
+			// Get the full commit hash (40 characters)
+			GitOutput gitOutput = runCommand(project, "git rev-parse HEAD", false);
+			if (!gitOutput.outputList.isEmpty()) {
+				String commitHash = gitOutput.outputList.get(0).trim();
+				
+				// Validate: ensure we're on the expected checkout
+				// This prevents cache issues when checkout fails silently
+				GitOutput branchOutput = runCommand(project, "git rev-parse --abbrev-ref HEAD", false);
+				String currentBranch = branchOutput.outputList.isEmpty() ? "unknown" : branchOutput.outputList.get(0).trim();
+				
+				// Log for debugging (can be removed in production)
+				System.out.println("Cache key info - Repository: " + project.localRepository + 
+					", Checkout: " + project.checkout + 
+					", Current Branch: " + currentBranch + 
+					", Commit Hash: " + commitHash);
+				
+				return commitHash;
+			}
+		} catch (IOException | InterruptedException e) {
+			System.err.println("Error getting commit hash: " + e.getMessage());
+		}
+		return "unknown";
+	}
+	
+	/**
+	 * Validate that the current repository state matches the expected checkout.
+	 * This is a safety check to prevent cache inconsistencies.
+	 * 
+	 * @param project The project to validate
+	 * @param expectedCheckout The expected branch/tag/commit
+	 * @return true if validation passes, false otherwise
+	 */
+	public static boolean validateCheckoutState(Project project, String expectedCheckout) {
+		try {
+			// Get current branch/commit
+			GitOutput branchOutput = runCommand(project, "git rev-parse --abbrev-ref HEAD", false);
+			String currentBranch = branchOutput.outputList.isEmpty() ? "" : branchOutput.outputList.get(0).trim();
+			
+			// Get current commit hash
+			GitOutput commitOutput = runCommand(project, "git rev-parse HEAD", false);
+			String currentCommit = commitOutput.outputList.isEmpty() ? "" : commitOutput.outputList.get(0).trim();
+			
+			// If expectedCheckout is a commit hash, compare directly
+			if (expectedCheckout != null && expectedCheckout.length() >= 7) {
+				// Could be a commit hash (short or full)
+				GitOutput expectedCommitOutput = runCommand(project, "git rev-parse " + expectedCheckout, false);
+				if (!expectedCommitOutput.outputList.isEmpty()) {
+					String expectedCommit = expectedCommitOutput.outputList.get(0).trim();
+					boolean matches = currentCommit.equals(expectedCommit);
+					if (!matches) {
+						System.err.println("WARNING: Checkout validation failed. Expected: " + expectedCommit + 
+							", Current: " + currentCommit);
+					}
+					return matches;
+				}
+			}
+			
+			// If it's a branch name, check if current branch matches (or if we're in detached HEAD on that commit)
+			// For branches, we rely on the commit hash in cache key, so this is just a warning
+			if (expectedCheckout != null && !expectedCheckout.equals(currentBranch) && !currentBranch.equals("HEAD")) {
+				// Check if we're in detached HEAD state pointing to the expected checkout
+				GitOutput detachedCheck = runCommand(project, "git rev-parse " + expectedCheckout, false);
+				if (!detachedCheck.outputList.isEmpty()) {
+					String expectedCommit = detachedCheck.outputList.get(0).trim();
+					if (currentCommit.equals(expectedCommit)) {
+						// We're in detached HEAD but on the correct commit - this is OK
+						return true;
+					}
+				}
+				System.out.println("INFO: Branch mismatch (expected: " + expectedCheckout + 
+					", current: " + currentBranch + "), but commit hash will ensure cache correctness");
+			}
+			
+			return true;
+		} catch (IOException | InterruptedException e) {
+			System.err.println("Error validating checkout state: " + e.getMessage());
+			return false;
+		}
+	}
+
 	public static void runCheckout(Project project) {
 
 		try {

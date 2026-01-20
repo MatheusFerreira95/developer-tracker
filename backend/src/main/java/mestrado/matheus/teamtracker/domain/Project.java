@@ -17,12 +17,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
+import mestrado.matheus.teamtracker.util.ProjectCacheManager;
 
 public class Project {
 
@@ -50,17 +50,32 @@ public class Project {
 		this.checkout = checkout != null && !checkout.isEmpty() ? checkout : "master";
 	}
 
+	/**
+	 * Calculate number of commits with caching support.
+	 */
 	public static Integer calcNumCommits(Project project) {
+		// Get commit hash for cache key
+		String commitHash = Git.getCommitHash(project);
+		String cacheKey = ProjectCacheManager.getCommitsCacheKey(
+			project.localRepository, project.checkout, commitHash);
 
+		// Check cache first
+		Integer cached = ProjectCacheManager.getCommits(cacheKey);
+		if (cached != null) {
+			System.out.println("Cache HIT: commits for " + project.localRepository);
+			return cached;
+		}
+
+		// Cache miss - calculate
 		GitOutput gitOutput;
-
 		try {
-
 			gitOutput = Git.runCommand(project, "git rev-list --count HEAD", true);
-			return Integer.parseInt(gitOutput.outputList.get(0));
-
+			Integer commits = Integer.parseInt(gitOutput.outputList.get(0));
+			
+			// Store in cache
+			ProjectCacheManager.putCommits(cacheKey, commits);
+			return commits;
 		} catch (IOException | InterruptedException e) {
-
 			e.printStackTrace();
 		}
 
@@ -77,19 +92,34 @@ public class Project {
 
 	}
 
+	/**
+	 * Calculate programming language statistics with caching support.
+	 */
 	private static List<NumLocProgrammingLanguage> calcNumLocProgrammingLanguageList(Project project) {
+		// Get commit hash for cache key
+		String commitHash = Git.getCommitHash(project);
+		String cacheKey = ProjectCacheManager.getLanguageStatsCacheKey(
+			project.localRepository, project.checkout, commitHash);
 
+		// Check cache first
+		List<NumLocProgrammingLanguage> cached = ProjectCacheManager.getLanguageStats(cacheKey);
+		if (cached != null) {
+			System.out.println("Cache HIT: language stats for " + project.localRepository);
+			return cached;
+		}
+
+		// Cache miss - calculate
 		try {
-
-			return CLOC.buildNumLocProgrammingLanguageList(project);
-
+			List<NumLocProgrammingLanguage> stats = CLOC.buildNumLocProgrammingLanguageList(project);
+			
+			// Store in cache
+			ProjectCacheManager.putLanguageStats(cacheKey, stats);
+			return stats;
 		} catch (IOException | InterruptedException e) {
-
 			e.printStackTrace();
 		}
 
 		return new ArrayList<NumLocProgrammingLanguage>();
-
 	}
 
 	public static List<Developer> calcLocCommitDeveloperList(Project project, String filterPath,
@@ -165,17 +195,47 @@ public class Project {
 				}
 			}
 
-			// Step 2: Process files in parallel using CompletableFuture
+			// Get commit hash for cache key (AFTER checkout is complete)
+			// This ensures cache keys are unique per commit, preventing cross-branch contamination
+			String commitHash = Git.getCommitHash(project);
+			boolean useCache = !"unknown".equals(commitHash);
+
+			// Step 2: Process files in parallel using CompletableFuture (with caching support)
 			List<CompletableFuture<Void>> blameTasks = new ArrayList<CompletableFuture<Void>>(validFiles.size());
 			
 			for (String filePath : validFiles) {
 				CompletableFuture<Void> task = CompletableFuture.runAsync(() -> {
 					try {
-						GitOutput blameOutput = Git.runCommand(project, "git blame --line-porcelain \"" + filePath + "\"", true);
+						List<String> blameLines;
+						
+						// Check cache first (thread-safe - Caffeine handles concurrency)
+						if (useCache) {
+							String blameCacheKey = ProjectCacheManager.getGitBlameCacheKey(
+								project.localRepository, filePath, commitHash);
+							List<String> cachedBlame = ProjectCacheManager.getGitBlame(blameCacheKey);
+							
+							if (cachedBlame != null) {
+								// Cache hit - use cached output
+								blameLines = cachedBlame;
+							} else {
+								// Cache miss - run git blame
+								GitOutput blameOutput = Git.runCommand(project, 
+									"git blame --line-porcelain \"" + filePath + "\"", true);
+								blameLines = blameOutput.outputList;
+								
+								// Store in cache (thread-safe)
+								ProjectCacheManager.putGitBlame(blameCacheKey, blameLines);
+							}
+						} else {
+							// Cache disabled (unknown commit hash) - always calculate
+							GitOutput blameOutput = Git.runCommand(project, 
+								"git blame --line-porcelain \"" + filePath + "\"", true);
+							blameLines = blameOutput.outputList;
+						}
 						
 						// Parse blame output: look for lines starting with "author "
 						// Optimize: use indexOf instead of startsWith for better performance
-						for (String line : blameOutput.outputList) {
+						for (String line : blameLines) {
 							if (line != null && line.length() > 7) {
 								int authorIdx = line.indexOf("author ");
 								if (authorIdx == 0) {
@@ -224,15 +284,32 @@ public class Project {
 	}
 
 	/**
-	 * Calculate developer list for entire project (no filter).
+	 * Calculate developer list for entire project (no filter) with caching support.
 	 * Reuses calcLocsDeveloperList with null filter.
 	 */
 	public static List<Developer> calcDeveloperList(Project project) {
+		// Get commit hash for cache key
+		String commitHash = Git.getCommitHash(project);
+		String cacheKey = ProjectCacheManager.getDeveloperListCacheKey(
+			project.localRepository, project.checkout, null, commitHash);
 
+		// Check cache first
+		List<Developer> cached = ProjectCacheManager.getDeveloperList(cacheKey);
+		if (cached != null) {
+			System.out.println("Cache HIT: developer list for " + project.localRepository);
+			project.developerList = cached;
+			return cached;
+		}
+
+		// Cache miss - calculate
 		try {
 			// Reuse calcLocsDeveloperList with no filter (all files)
 			List<Developer> developers = calcLocsDeveloperList(project, null);
 			project.developerList = developers;
+			
+			// Store in cache
+			ProjectCacheManager.putDeveloperList(cacheKey, developers);
+			return developers;
 		} catch (Exception e) {
 			System.err.println("Error in calcDeveloperList: " + e.getMessage());
 			e.printStackTrace();
@@ -300,8 +377,23 @@ public class Project {
 
 	}
 
+	/**
+	 * Calculate truck factor with caching support (most expensive operation).
+	 */
 	private static List<Developer> calcTruckFactor(Project project) {
+		// Get commit hash for cache key
+		String commitHash = Git.getCommitHash(project);
+		String cacheKey = ProjectCacheManager.getTruckFactorCacheKey(
+			project.localRepository, project.checkout, commitHash);
 
+		// Check cache first (truck factor is very expensive)
+		List<Developer> cached = ProjectCacheManager.getTruckFactor(cacheKey);
+		if (cached != null) {
+			System.out.println("Cache HIT: truck factor for " + project.localRepository);
+			return cached;
+		}
+
+		// Cache miss - calculate (expensive operation)
 		List<Developer> developerListTF = new ArrayList<Developer>();
 
 		try {
@@ -330,6 +422,8 @@ public class Project {
 				developerListTF.add(new Developer(line.substring(0, line.indexOf(";"))));
 			}
 
+			// Store in cache
+			ProjectCacheManager.putTruckFactor(cacheKey, developerListTF);
 			return developerListTF;
 
 		} catch (IOException | InterruptedException e) {
@@ -339,10 +433,47 @@ public class Project {
 		return developerListTF;
 	}
 
+	/**
+	 * Build project overview with caching support.
+	 * Checks cache first before performing expensive calculations.
+	 */
 	public static Project buildOverview(Filter filter, String checkout) throws IOException, InterruptedException {
 
 		Project project = Project.builderProject(filter, checkout);
+		
+		// Validate checkout state to ensure cache safety
+		// This prevents cache issues if checkout failed silently
+		boolean checkoutValid = Git.validateCheckoutState(project, checkout);
+		if (!checkoutValid) {
+			System.err.println("WARNING: Checkout validation failed. Cache may be invalidated.");
+		}
+		
+		// Get commit hash for cache key (AFTER checkout is complete)
+		// The commit hash uniquely identifies the repository state
+		String commitHash = Git.getCommitHash(project);
+		
+		// Safety check: if commit hash is unknown, don't use cache
+		Project cachedProject = null;
+		String projectCacheKey = null;
+		
+		if (!"unknown".equals(commitHash)) {
+			projectCacheKey = ProjectCacheManager.getProjectCacheKey(
+				project.localRepository, project.checkout, commitHash);
 
+			// Check cache for complete project overview first
+			cachedProject = ProjectCacheManager.getProject(projectCacheKey);
+			if (cachedProject != null) {
+				// Additional validation: verify the cached project's commit hash matches
+				// This is a safety check for edge cases
+				System.out.println("Cache HIT: complete project overview for " + project.localRepository + 
+					" (commit: " + commitHash.substring(0, Math.min(7, commitHash.length())) + ")");
+				return cachedProject;
+			}
+		} else {
+			System.err.println("WARNING: Could not determine commit hash. Cache will be bypassed for safety.");
+		}
+
+		// Cache miss - calculate all metrics in parallel
 		final CompletableFuture<List<Developer>> calcDeveloperListRun = CompletableFuture
 				.supplyAsync(() -> calcDeveloperList(project));
 
@@ -380,6 +511,10 @@ public class Project {
 				}
 			}
 
+			// Store complete project in cache (only if we have a valid cache key)
+			if (projectCacheKey != null) {
+				ProjectCacheManager.putProject(projectCacheKey, project);
+			}
 			return project;
 
 		} catch (InterruptedException | ExecutionException e) {
