@@ -345,27 +345,42 @@ public class Git {
 	}
 
 	/**
-	 * Get the current commit hash (SHA) of the repository.
-	 * Used for cache key generation to invalidate cache when repository changes.
+	 * Obtém o hash do commit atual (SHA) do repositório.
 	 * 
-	 * IMPORTANT: This method ensures cache safety by:
-	 * 1. Getting the commit hash AFTER checkout is complete
-	 * 2. Validating that the hash corresponds to the current HEAD
-	 * 3. Including branch/checkout info in validation
+	 * PROPÓSITO:
+	 * Este método é usado para gerar chaves de cache únicas. O commit hash
+	 * identifica unicamente o estado do repositório, garantindo que:
+	 * - Diferentes branches tenham chaves de cache diferentes
+	 * - Diferentes commits tenham chaves diferentes
+	 * - Mudanças no código invalidem cache automaticamente
+	 * 
+	 * SEGURANÇA DO CACHE:
+	 * 1. Obtém hash APÓS checkout estar completo
+	 * 2. Valida que hash corresponde ao HEAD atual
+	 * 3. Inclui informações de branch/checkout na validação
+	 * 
+	 * FLUXO:
+	 * 1. Executa "git rev-parse HEAD" para obter hash completo (40 caracteres)
+	 * 2. Valida branch atual para garantir consistência
+	 * 3. Retorna hash ou "unknown" em caso de erro
+	 * 
+	 * @param project Projeto do qual obter o commit hash
+	 * @return Hash do commit (40 caracteres) ou "unknown" se houver erro
 	 */
 	public static String getCommitHash(Project project) {
 		try {
-			// Get the full commit hash (40 characters)
+			// PASSO 1: Obter hash completo do commit atual (40 caracteres)
+			// Exemplo: "abc123def456..."
 			GitOutput gitOutput = runCommand(project, "git rev-parse HEAD", false);
 			if (!gitOutput.outputList.isEmpty()) {
 				String commitHash = gitOutput.outputList.get(0).trim();
 				
-				// Validate: ensure we're on the expected checkout
-				// This prevents cache issues when checkout fails silently
+				// PASSO 2: Validar que estamos na branch esperada
+				// Isso previne problemas de cache se checkout falhar silenciosamente
 				GitOutput branchOutput = runCommand(project, "git rev-parse --abbrev-ref HEAD", false);
 				String currentBranch = branchOutput.outputList.isEmpty() ? "unknown" : branchOutput.outputList.get(0).trim();
 				
-				// Log for debugging (can be removed in production)
+				// Log para debug (pode ser removido em produção)
 				System.out.println("Cache key info - Repository: " + project.localRepository + 
 					", Checkout: " + project.checkout + 
 					", Current Branch: " + currentBranch + 
@@ -376,16 +391,32 @@ public class Git {
 		} catch (IOException | InterruptedException e) {
 			System.err.println("Error getting commit hash: " + e.getMessage());
 		}
+		// Retorna "unknown" se não conseguir obter hash
+		// Isso desabilita cache por segurança
 		return "unknown";
 	}
 	
 	/**
-	 * Validate that the current repository state matches the expected checkout.
-	 * This is a safety check to prevent cache inconsistencies.
+	 * Valida que o estado atual do repositório corresponde ao checkout esperado.
 	 * 
-	 * @param project The project to validate
-	 * @param expectedCheckout The expected branch/tag/commit
-	 * @return true if validation passes, false otherwise
+	 * PROPÓSITO:
+	 * Este é um check de segurança para prevenir inconsistências no cache.
+	 * Se o checkout falhar silenciosamente, podemos ter cache de uma branch
+	 * diferente sendo usado incorretamente.
+	 * 
+	 * FLUXO:
+	 * 1. Obtém branch/commit atual do repositório
+	 * 2. Compara com o checkout esperado
+	 * 3. Se expectedCheckout for um hash, compara commits diretamente
+	 * 4. Se for uma branch, verifica se estamos nela (ou em detached HEAD no commit correto)
+	 * 
+	 * RETORNO:
+	 * - true: Validação passou, cache pode ser usado com segurança
+	 * - false: Validação falhou, cache pode estar incorreto
+	 * 
+	 * @param project Projeto a ser validado
+	 * @param expectedCheckout Branch/tag/commit esperado
+	 * @return true se validação passar, false caso contrário
 	 */
 	public static boolean validateCheckoutState(Project project, String expectedCheckout) {
 		try {

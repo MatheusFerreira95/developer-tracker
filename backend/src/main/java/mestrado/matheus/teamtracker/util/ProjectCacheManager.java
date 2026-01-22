@@ -11,61 +11,136 @@ import mestrado.matheus.teamtracker.domain.NumLocProgrammingLanguage;
 import mestrado.matheus.teamtracker.domain.Project;
 
 /**
- * Cache manager for project analysis results.
- * Uses Caffeine cache for high-performance in-memory caching.
+ * Gerenciador de Cache para resultados de análise de projetos.
  * 
- * Cache Strategy:
- * - Project overview results: cached by repository + checkout + commit hash
- * - Git blame results: cached by repository + file path + commit hash
- * - Truck factor results: cached by repository + checkout + commit hash
+ * RESPONSABILIDADES:
+ * - Armazenar resultados de análises em memória para evitar recálculos
+ * - Gerar chaves de cache únicas baseadas em repositório + branch + commit
+ * - Gerenciar múltiplos caches com diferentes TTLs e tamanhos
+ * - Fornecer estatísticas de uso do cache
  * 
- * Cache invalidation:
- * - TTL: 1 hour (configurable)
- * - Max size: 1000 entries per cache
- * - Automatic eviction based on size and time
+ * TECNOLOGIA:
+ * Usa a biblioteca Caffeine, que é uma implementação de cache em memória
+ * de alta performance, thread-safe e com políticas de eviction inteligentes.
+ * 
+ * ESTRATÉGIA DE CACHE:
+ * - Resultados de projeto completo: cacheado por repositório + checkout + commit hash
+ * - Resultados de git blame: cacheado por repositório + caminho do arquivo + commit hash
+ * - Resultados de truck factor: cacheado por repositório + checkout + commit hash
+ * 
+ * INVALIDAÇÃO DE CACHE:
+ * - TTL (Time To Live): Entradas expiram após tempo configurado
+ * - Tamanho máximo: Quando limite é atingido, remove entradas menos usadas (LRU)
+ * - Commit hash: Mudanças no commit invalidam cache automaticamente (chave diferente)
+ * 
+ * THREAD-SAFETY:
+ * Todos os caches são thread-safe. Múltiplas threads podem ler/escrever
+ * simultaneamente sem problemas de concorrência.
  */
 public class ProjectCacheManager {
 
-	// Cache for complete project overview results
+	/**
+	 * Cache para resultados completos de análise de projeto.
+	 * 
+	 * CONTEÚDO: Objeto Project completo com todas as métricas calculadas
+	 * TAMANHO: Até 100 projetos
+	 * TTL: 1 hora
+	 * 
+	 * USO: Quando usuário solicita análise completa, verifica este cache primeiro.
+	 * Se encontrado, retorna instantaneamente sem recalcular nada.
+	 */
 	private static final Cache<String, Project> PROJECT_CACHE = Caffeine.newBuilder()
-			.maximumSize(100) // Cache up to 100 project analyses
-			.expireAfterWrite(1, TimeUnit.HOURS) // Expire after 1 hour
-			.recordStats() // Enable statistics
+			.maximumSize(100) // Armazena até 100 análises de projeto
+			.expireAfterWrite(1, TimeUnit.HOURS) // Expira após 1 hora sem escrita
+			.recordStats() // Habilita estatísticas (hit rate, miss rate, etc.)
 			.build();
 
-	// Cache for git blame results per file (most frequently accessed)
+	/**
+	 * Cache para resultados de git blame por arquivo.
+	 * 
+	 * CONTEÚDO: Lista de linhas da saída do git blame --line-porcelain
+	 * TAMANHO: Até 1000 arquivos
+	 * TTL: 30 minutos
+	 * 
+	 * USO: Este é o cache mais acessado durante cálculo de LOC por desenvolvedor.
+	 * Cada arquivo processado verifica este cache antes de executar git blame.
+	 * 
+	 * POR QUE TTL MENOR?
+	 * - Arquivos podem mudar com mais frequência que análises completas
+	 * - 30 minutos é suficiente para múltiplas requisições
+	 * - Libera memória mais rapidamente se não usado
+	 */
 	private static final Cache<String, List<String>> GIT_BLAME_CACHE = Caffeine.newBuilder()
-			.maximumSize(1000) // Cache up to 1000 file blame results
-			.expireAfterWrite(30, TimeUnit.MINUTES) // Expire after 30 minutes
-			.recordStats()
+			.maximumSize(1000) // Armazena até 1000 resultados de git blame
+			.expireAfterWrite(30, TimeUnit.MINUTES) // Expira após 30 minutos
+			.recordStats() // Habilita estatísticas
 			.build();
 
-	// Cache for developer lists (LOC calculations)
+	/**
+	 * Cache para listas de desenvolvedores com estatísticas de LOC.
+	 * 
+	 * CONTEÚDO: Lista de objetos Developer com LOC calculado
+	 * TAMANHO: Até 200 listas
+	 * TTL: 1 hora
+	 * 
+	 * USO: Armazena resultado final do cálculo de LOC por desenvolvedor.
+	 * Evita reprocessar todos os arquivos quando mesma análise é solicitada.
+	 */
 	private static final Cache<String, List<Developer>> DEVELOPER_LIST_CACHE = Caffeine.newBuilder()
-			.maximumSize(200) // Cache up to 200 developer lists
-			.expireAfterWrite(1, TimeUnit.HOURS)
-			.recordStats()
+			.maximumSize(200) // Armazena até 200 listas de desenvolvedores
+			.expireAfterWrite(1, TimeUnit.HOURS) // Expira após 1 hora
+			.recordStats() // Habilita estatísticas
 			.build();
 
-	// Cache for commits count
+	/**
+	 * Cache para contagem de commits.
+	 * 
+	 * CONTEÚDO: Número inteiro representando total de commits
+	 * TAMANHO: Até 200 entradas
+	 * TTL: 1 hora
+	 * 
+	 * USO: Armazena resultado de "git rev-list --count HEAD".
+	 * Operação rápida, mas cache evita executar Git repetidamente.
+	 */
 	private static final Cache<String, Integer> COMMITS_CACHE = Caffeine.newBuilder()
-			.maximumSize(200)
-			.expireAfterWrite(1, TimeUnit.HOURS)
-			.recordStats()
+			.maximumSize(200) // Armazena até 200 contagens de commits
+			.expireAfterWrite(1, TimeUnit.HOURS) // Expira após 1 hora
+			.recordStats() // Habilita estatísticas
 			.build();
 
-	// Cache for programming language statistics
+	/**
+	 * Cache para estatísticas de linguagens de programação.
+	 * 
+	 * CONTEÚDO: Lista de NumLocProgrammingLanguage com LOC por linguagem
+	 * TAMANHO: Até 200 entradas
+	 * TTL: 1 hora
+	 * 
+	 * USO: Armazena resultado da execução do CLOC.
+	 * CLOC pode ser lento em projetos grandes, então cache é importante.
+	 */
 	private static final Cache<String, List<NumLocProgrammingLanguage>> LANGUAGE_STATS_CACHE = Caffeine.newBuilder()
-			.maximumSize(200)
-			.expireAfterWrite(1, TimeUnit.HOURS)
-			.recordStats()
+			.maximumSize(200) // Armazena até 200 estatísticas de linguagens
+			.expireAfterWrite(1, TimeUnit.HOURS) // Expira após 1 hora
+			.recordStats() // Habilita estatísticas
 			.build();
 
-	// Cache for truck factor results (most expensive operation)
+	/**
+	 * Cache para resultados de truck factor.
+	 * 
+	 * CONTEÚDO: Lista de desenvolvedores que são "truck factor"
+	 * TAMANHO: Até 100 entradas
+	 * TTL: 2 horas
+	 * 
+	 * USO: Truck factor é a operação mais cara do sistema.
+	 * TTL maior (2 horas) porque:
+	 * - Operação muito lenta (pode levar minutos)
+	 * - Resultado não muda frequentemente
+	 * - Vale a pena manter em cache por mais tempo
+	 */
 	private static final Cache<String, List<Developer>> TRUCK_FACTOR_CACHE = Caffeine.newBuilder()
-			.maximumSize(100)
-			.expireAfterWrite(2, TimeUnit.HOURS) // Longer TTL for expensive operations
-			.recordStats()
+			.maximumSize(100) // Armazena até 100 resultados de truck factor
+			.expireAfterWrite(2, TimeUnit.HOURS) // TTL maior para operação cara
+			.recordStats() // Habilita estatísticas
 			.build();
 
 	/**
