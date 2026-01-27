@@ -8,16 +8,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
 
 public class Project {
+
+	// Thread pool for parallel git operations (I/O bound tasks)
+	// Using a fixed pool size to avoid overwhelming the system
+	private static final ExecutorService GIT_EXECUTOR = Executors.newFixedThreadPool(
+		Math.max(4, Runtime.getRuntime().availableProcessors())
+	);
 
 	public Integer numLoc;
 	public Integer numCommits;
@@ -100,12 +113,15 @@ public class Project {
 
 			}
 
+			// Optimize: Use HashSet for O(1) lookup instead of O(n²) nested loop
+			Set<String> devTFNames = new HashSet<String>(devTFList.size());
+			for (Developer devTF : devTFList) {
+				devTFNames.add(devTF.name);
+			}
+			
 			for (Developer dev : developerList) {
-
-				for (Developer devTF : devTFList) {
-					if (dev.equals(devTF)) {
-						dev.truckFactor = true;
-					}
+				if (devTFNames.contains(dev.name)) {
+					dev.truckFactor = true;
 				}
 			}
 
@@ -121,12 +137,13 @@ public class Project {
 
 	/**
 	 * Calculate LOC per developer by processing git blame for each file.
+	 * OPTIMIZED: Parallelizes git blame operations for multiple files.
 	 * Replaces the shell pipeline: git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr
 	 */
 	private static List<Developer> calcLocsDeveloperList(Project project, String filterPath) {
 
-		List<Developer> locDeveloperList = new ArrayList<Developer>();
-		Map<String, Integer> authorLocMap = new HashMap<String, Integer>();
+		// Use ConcurrentHashMap for thread-safe parallel updates
+		Map<String, AtomicInteger> authorLocMap = new ConcurrentHashMap<String, AtomicInteger>();
 
 		try {
 			// Step 1: Get list of files
@@ -137,36 +154,55 @@ public class Project {
 			GitOutput filesOutput = Git.runCommand(project, lsFilesCommand, true);
 			
 			if (filesOutput.outputList.isEmpty()) {
-				return locDeveloperList;
+				return new ArrayList<Developer>();
 			}
 
-			// Step 2: For each file, run git blame and extract authors
+			// Pre-allocate with estimated size
+			List<String> validFiles = new ArrayList<String>(filesOutput.outputList.size());
 			for (String filePath : filesOutput.outputList) {
-				if (filePath == null || filePath.trim().isEmpty()) {
-					continue;
+				if (filePath != null && !filePath.trim().isEmpty()) {
+					validFiles.add(filePath.trim());
 				}
-				
-				try {
-					GitOutput blameOutput = Git.runCommand(project, "git blame --line-porcelain \"" + filePath + "\"", true);
-					
-					// Parse blame output: look for lines starting with "author "
-					for (String line : blameOutput.outputList) {
-						if (line != null && line.startsWith("author ")) {
-							String authorName = line.substring(7).trim(); // Remove "author " prefix
-							if (!authorName.isEmpty()) {
-								authorLocMap.put(authorName, authorLocMap.getOrDefault(authorName, 0) + 1);
+			}
+
+			// Step 2: Process files in parallel using CompletableFuture
+			List<CompletableFuture<Void>> blameTasks = new ArrayList<CompletableFuture<Void>>(validFiles.size());
+			
+			for (String filePath : validFiles) {
+				CompletableFuture<Void> task = CompletableFuture.runAsync(() -> {
+					try {
+						GitOutput blameOutput = Git.runCommand(project, "git blame --line-porcelain \"" + filePath + "\"", true);
+						
+						// Parse blame output: look for lines starting with "author "
+						// Optimize: use indexOf instead of startsWith for better performance
+						for (String line : blameOutput.outputList) {
+							if (line != null && line.length() > 7) {
+								int authorIdx = line.indexOf("author ");
+								if (authorIdx == 0) {
+									String authorName = line.substring(7).trim();
+									if (!authorName.isEmpty()) {
+										// Thread-safe increment using AtomicInteger
+										authorLocMap.computeIfAbsent(authorName, k -> new AtomicInteger(0)).incrementAndGet();
+									}
+								}
 							}
 						}
+					} catch (IOException | InterruptedException e) {
+						System.err.println("Error processing file " + filePath + ": " + e.getMessage());
+						// Continue with next file
 					}
-				} catch (IOException | InterruptedException e) {
-					System.err.println("Error processing file " + filePath + ": " + e.getMessage());
-					// Continue with next file
-				}
+				}, GIT_EXECUTOR);
+				
+				blameTasks.add(task);
 			}
 
+			// Wait for all parallel tasks to complete
+			CompletableFuture.allOf(blameTasks.toArray(new CompletableFuture[0])).join();
+
 			// Step 3: Convert map to List<Developer> and sort by LOC (descending)
-			for (Map.Entry<String, Integer> entry : authorLocMap.entrySet()) {
-				Developer dev = new Developer(entry.getKey(), "email", entry.getValue(), 0);
+			List<Developer> locDeveloperList = new ArrayList<Developer>(authorLocMap.size());
+			for (Map.Entry<String, AtomicInteger> entry : authorLocMap.entrySet()) {
+				Developer dev = new Developer(entry.getKey(), "email", entry.getValue().get(), 0);
 				locDeveloperList.add(dev);
 			}
 
@@ -178,12 +214,13 @@ public class Project {
 				}
 			});
 
-		} catch (IOException | InterruptedException e1) {
+			return locDeveloperList;
+
+		} catch (Exception e1) {
 			System.err.println("Error in calcLocsDeveloperList: " + e1.getMessage());
 			e1.printStackTrace();
+			return new ArrayList<Developer>();
 		}
-
-		return locDeveloperList;
 	}
 
 	/**
@@ -209,6 +246,12 @@ public class Project {
 	 * Replaces: git log | grep Author: | sort | uniq -c | sort -nr (for root)
 	 * or: git log --pretty=format:"%an" --follow "<path>" | sort -f | uniq -ic | sort -nr (for specific path)
 	 */
+	/**
+	 * Calculate commits per developer.
+	 * OPTIMIZED: Pre-allocates HashMap with estimated size for better performance.
+	 * Replaces: git log | grep Author: | sort | uniq -c | sort -nr (for root)
+	 * or: git log --pretty=format:"%an" --follow "<path>" | sort -f | uniq -ic | sort -nr (for specific path)
+	 */
 	public static HashMap<String, Integer> calcCommitsDeveloperList(Project project, String filterPath) {
 
 		HashMap<String, Integer> developerCommitsMap = new HashMap<String, Integer>();
@@ -226,11 +269,18 @@ public class Project {
 
 			GitOutput gitOutput = Git.runCommand(project, command, true);
 
+			// Pre-allocate HashMap with estimated size (assuming ~50% unique authors)
+			int estimatedSize = Math.max(16, (gitOutput.outputList.size() / 2));
+			developerCommitsMap = new HashMap<String, Integer>(estimatedSize);
+
 			// Count occurrences of each author name (replaces sort | uniq -c)
+			// Optimize: avoid trim() when not needed
 			for (String line : gitOutput.outputList) {
-				if (line != null && !line.trim().isEmpty()) {
-					String authorName = line.trim();
-					developerCommitsMap.put(authorName, developerCommitsMap.getOrDefault(authorName, 0) + 1);
+				if (line != null) {
+					String trimmed = line.trim();
+					if (!trimmed.isEmpty()) {
+						developerCommitsMap.put(trimmed, developerCommitsMap.getOrDefault(trimmed, 0) + 1);
+					}
 				}
 			}
 
@@ -317,14 +367,16 @@ public class Project {
 
 			List<Developer> devTFList = calcTruckFactorRun.get();
 
+			// Optimize: Use HashSet for O(1) lookup instead of O(n²) nested loop
+			Set<String> devTFNames = new HashSet<String>(devTFList.size());
 			for (Developer devTF : devTFList) {
-				for (Developer developer : project.developerList) {
-
-					if (developer.equals(devTF)) {
-
-						project.truckFactor++;
-						developer.truckFactor = true;
-					}
+				devTFNames.add(devTF.name);
+			}
+			
+			for (Developer developer : project.developerList) {
+				if (devTFNames.contains(developer.name)) {
+					project.truckFactor++;
+					developer.truckFactor = true;
 				}
 			}
 
