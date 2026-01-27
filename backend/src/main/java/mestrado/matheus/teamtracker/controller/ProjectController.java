@@ -70,13 +70,13 @@ public class ProjectController {
 			validateFilter(filter);
 
 			String originalZoomPath = filter.zoomPath != null ? filter.zoomPath : "./";
-			Project projectVersion1 = Project.builderProject(filter, filter.checkout1);
+			Project projectVersion1 = Project.buildProject(filter, filter.checkout1);
 			Explore explore1 = Explore.build(filter, projectVersion1, filter.devTFListV1);
 
 			Explore explore2 = null;
 			if (hasSecondCheckout(filter)) {
 				filter.zoomPath = originalZoomPath;
-				Project projectVersion2 = Project.builderProject(filter, filter.checkout2);
+				Project projectVersion2 = Project.buildProject(filter, filter.checkout2);
 				explore2 = Explore.build(filter, projectVersion2, filter.devTFListV2);
 			}
 
@@ -106,13 +106,13 @@ public class ProjectController {
 		try {
 			validateFilter(filter);
 
-			Project projectVersion1 = Project.builderProject(filter, filter.checkout1);
+			Project projectVersion1 = Project.buildProject(filter, filter.checkout1);
 			String recommendationsV1 = Explore.generateRecommendations(filter, projectVersion1,
 					filter.extensionListVersion1, "V1");
 
 			String recommendationsV2 = null;
 			if (hasSecondCheckout(filter)) {
-				Project projectVersion2 = Project.builderProject(filter, filter.checkout2);
+				Project projectVersion2 = Project.buildProject(filter, filter.checkout2);
 				recommendationsV2 = Explore.generateRecommendations(filter, projectVersion2,
 						filter.extensionListVersion2, "V2");
 			}

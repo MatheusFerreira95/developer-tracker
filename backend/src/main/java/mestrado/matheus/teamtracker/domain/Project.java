@@ -1,9 +1,6 @@
 package mestrado.matheus.teamtracker.domain;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,6 +17,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import mestrado.matheus.teamtracker.domain.factory.ProjectBuilder;
+import mestrado.matheus.teamtracker.domain.factory.ProjectBuilderFactory;
 import mestrado.matheus.teamtracker.util.CLOC;
 import mestrado.matheus.teamtracker.util.Git;
 import mestrado.matheus.teamtracker.util.GitOutput;
@@ -341,7 +340,7 @@ public class Project {
 
 	public static Project buildOverview(Filter filter, String checkout) throws IOException, InterruptedException {
 
-		Project project = Project.builderProject(filter, checkout);
+		Project project = Project.buildProject(filter, checkout);
 
 		final CompletableFuture<List<Developer>> calcDeveloperListRun = CompletableFuture
 				.supplyAsync(() -> calcDeveloperList(project));
@@ -393,55 +392,17 @@ public class Project {
 
 	}
 
-	public static Project builderProject(Filter filter, String checkout) {
-
-		if (filter.remoteRepository != null && filter.remoteRepository.equals("[local]")) {
-
-			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in 100% local: "
-					+ filter.localRepository);
-
-			Project project = new Project(Git.getLocalRepositoryFromLocalProject(), checkout);
-			// entre na pasta do seu projeto local, use 'docker cp .
-			// nomeContainer:/root/team-tracker-clones/local/
-			Git.runCheckout(project);
-
-			return project;
-
-		} else if (filter.localRepository != null && !filter.localRepository.isEmpty()) {
-
-			System.out.println("info...................BuilderProject is checkouting (" + checkout + ") in local: "
-					+ filter.localRepository);
-
-			Project project = new Project(filter.localRepository, checkout);
-
-			Git.runCheckout(project);
-
-			return project;
-
-		} else if (filter.remoteRepository != null && !filter.remoteRepository.isEmpty()) {
-
-			System.out.println("info...................BuilderProject is clonning from: " + filter.remoteRepository);
-
-			if (filter.user != null && !filter.user.isEmpty() && filter.password != null
-					&& !filter.password.isEmpty()) {
-
-				return Git.clone("https://" + encodeValue(filter.user) + ":" + encodeValue(filter.password) + "@"
-						+ filter.remoteRepository.substring(8), checkout);
-			}
-
-			return Git.clone(filter.remoteRepository, checkout);
-
-		} else {
-
-			throw new RuntimeException();
-		}
-	}
-
-	private static String encodeValue(String value) {
-		try {
-			return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
-		} catch (UnsupportedEncodingException ex) {
-			throw new RuntimeException(ex.getCause());
-		}
+	/**
+	 * Constrói um Project usando o Factory Pattern.
+	 * Este método agora delega a construção para o ProjectBuilder apropriado,
+	 * seguindo o Open/Closed Principle (OCP).
+	 * 
+	 * @param filter Filtro contendo informações sobre o repositório
+	 * @param checkout Branch ou tag para checkout
+	 * @return Project construído e com checkout realizado
+	 */
+	public static Project buildProject(Filter filter, String checkout) {
+		ProjectBuilder builder = ProjectBuilderFactory.createBuilder(filter);
+		return builder.build(filter, checkout);
 	}
 }
