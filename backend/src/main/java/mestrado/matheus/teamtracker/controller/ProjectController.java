@@ -17,13 +17,21 @@ import mestrado.matheus.teamtracker.domain.ExploreVersions;
 import mestrado.matheus.teamtracker.domain.Filter;
 import mestrado.matheus.teamtracker.domain.Project;
 import mestrado.matheus.teamtracker.domain.ProjectVersions;
+import mestrado.matheus.teamtracker.service.ExploreService;
+import mestrado.matheus.teamtracker.service.ProjectService;
 
 @RestController
 @RequestMapping("/api/project")
 @CrossOrigin(origins = "http://localhost:8081")
 public class ProjectController {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ProjectController.class);
+	private final ProjectService projectService;
+	private final ExploreService exploreService;
+
+	public ProjectController(ProjectService projectService, ExploreService exploreService) {
+		this.projectService = projectService;
+		this.exploreService = exploreService;
+	}
 
 	/**
 	 * A partir do filtro deve retornar os dados gerais do projeto (loc, commits,
@@ -35,12 +43,12 @@ public class ProjectController {
 		try {
 			validateFilter(filter);
 
-			Project projectVersion1 = Project.buildOverview(filter, filter.checkout1);
+			Project projectVersion1 = projectService.buildOverview(filter, filter.checkout1);
 			Project projectVersion2 = null;
 
 			if (hasSecondCheckout(filter)) {
 				filter.localRepository = projectVersion1.localRepository;
-				projectVersion2 = Project.buildOverview(filter, filter.checkout2);
+				projectVersion2 = projectService.buildOverview(filter, filter.checkout2);
 			}
 
 			return ResponseEntity.ok(new ProjectVersions(projectVersion1, projectVersion2));
@@ -70,14 +78,14 @@ public class ProjectController {
 			validateFilter(filter);
 
 			String originalZoomPath = filter.zoomPath != null ? filter.zoomPath : "./";
-			Project projectVersion1 = Project.buildProject(filter, filter.checkout1);
-			Explore explore1 = Explore.build(filter, projectVersion1, filter.devTFListV1);
+			Project projectVersion1 = projectService.buildProject(filter, filter.checkout1);
+			Explore explore1 = exploreService.build(filter, projectVersion1, filter.devTFListV1);
 
 			Explore explore2 = null;
 			if (hasSecondCheckout(filter)) {
 				filter.zoomPath = originalZoomPath;
-				Project projectVersion2 = Project.buildProject(filter, filter.checkout2);
-				explore2 = Explore.build(filter, projectVersion2, filter.devTFListV2);
+				Project projectVersion2 = projectService.buildProject(filter, filter.checkout2);
+				explore2 = exploreService.build(filter, projectVersion2, filter.devTFListV2);
 			}
 
 			return ResponseEntity.ok(new ExploreVersions(explore1, explore2));
@@ -106,14 +114,14 @@ public class ProjectController {
 		try {
 			validateFilter(filter);
 
-			Project projectVersion1 = Project.buildProject(filter, filter.checkout1);
-			String recommendationsV1 = Explore.generateRecommendations(filter, projectVersion1,
+			Project projectVersion1 = projectService.buildProject(filter, filter.checkout1);
+			String recommendationsV1 = exploreService.generateRecommendations(filter, projectVersion1,
 					filter.extensionListVersion1, "V1");
 
 			String recommendationsV2 = null;
 			if (hasSecondCheckout(filter)) {
-				Project projectVersion2 = Project.buildProject(filter, filter.checkout2);
-				recommendationsV2 = Explore.generateRecommendations(filter, projectVersion2,
+				Project projectVersion2 = projectService.buildProject(filter, filter.checkout2);
+				recommendationsV2 = exploreService.generateRecommendations(filter, projectVersion2,
 						filter.extensionListVersion2, "V2");
 			}
 
