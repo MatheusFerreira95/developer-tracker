@@ -129,24 +129,4 @@ public class ExploreService {
 	private boolean isFirstZoomLevel(Filter filter) {
 		return filter.zoomPath.equals("Project");
 	}
-
-	public String generateRecommendations(Filter filter, Project project, List<FileExtension> listFileExtension,
-			String version) throws IOException, InterruptedException {
-
-		StringBuilder result = new StringBuilder("<b>Recomendações " + version + ":</b><br>");
-		for (FileExtension fileExtension : listFileExtension) {
-			// Usa o ProjectService injetado
-			project.developerList = projectService.calculateLocCommitDeveloperList(project, "*" + fileExtension.extension,
-					new ArrayList<>());
-
-			if (!project.developerList.isEmpty()) {
-				result.append("Para a extensão <b>").append(fileExtension.extension).append("</b> o desenvolvedor <b>")
-						.append(project.developerList.get(0).name).append("</b> é o mais indicado.<br>");
-			} else {
-				result.append("Para a extensão <b>").append(fileExtension.extension)
-						.append("</b> não há desenvolvedor indicado.<br>");
-			}
-		}
-		return result.toString();
-	}
 }

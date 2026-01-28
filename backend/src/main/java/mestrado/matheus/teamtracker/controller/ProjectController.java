@@ -19,6 +19,7 @@ import mestrado.matheus.teamtracker.domain.Project;
 import mestrado.matheus.teamtracker.domain.ProjectVersions;
 import mestrado.matheus.teamtracker.service.ExploreService;
 import mestrado.matheus.teamtracker.service.ProjectService;
+import mestrado.matheus.teamtracker.service.RecommendationService;
 
 @RestController
 @RequestMapping("/api/project")
@@ -27,10 +28,12 @@ public class ProjectController {
 
 	private final ProjectService projectService;
 	private final ExploreService exploreService;
+	private final RecommendationService recommendationService;
 
-	public ProjectController(ProjectService projectService, ExploreService exploreService) {
+	public ProjectController(ProjectService projectService, ExploreService exploreService, RecommendationService recommendationService) {
 		this.projectService = projectService;
 		this.exploreService = exploreService;
+		this.recommendationService = recommendationService;
 	}
 
 	/**
@@ -115,13 +118,13 @@ public class ProjectController {
 			validateFilter(filter);
 
 			Project projectVersion1 = projectService.buildProject(filter, filter.checkout1);
-			String recommendationsV1 = exploreService.generateRecommendations(filter, projectVersion1,
+			String recommendationsV1 = recommendationService.generateRecommendations(filter, projectVersion1,
 					filter.extensionListVersion1, "V1");
 
 			String recommendationsV2 = null;
 			if (hasSecondCheckout(filter)) {
 				Project projectVersion2 = projectService.buildProject(filter, filter.checkout2);
-				recommendationsV2 = exploreService.generateRecommendations(filter, projectVersion2,
+				recommendationsV2 = recommendationService.generateRecommendations(filter, projectVersion2,
 						filter.extensionListVersion2, "V2");
 			}
 
