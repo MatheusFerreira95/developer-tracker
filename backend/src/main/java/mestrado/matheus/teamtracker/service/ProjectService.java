@@ -2,8 +2,6 @@ package mestrado.matheus.teamtracker.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -38,6 +36,16 @@ public class ProjectService {
 	private static final ExecutorService GIT_EXECUTOR = Executors.newFixedThreadPool(
 		Math.max(4, Runtime.getRuntime().availableProcessors())
 	);
+
+	/**
+	 * Constrói um projeto básico sem calcular todas as métricas do overview.
+	 * Usado quando apenas precisamos do projeto para cálculos específicos.
+	 */
+	public Project buildProject(Filter filter, String checkout) throws IOException, InterruptedException {
+		ProjectBuilder builder = ProjectBuilderFactory.createBuilder(filter);
+		Project project = builder.build(filter, checkout);
+		return project;
+	}
 
 	/**
 	 * Constrói o overview completo do projeto.
@@ -76,6 +84,21 @@ public class ProjectService {
 	public List<Developer> calculateLocCommitDeveloperList(Project project, String filterPath,
 			List<Developer> devTFList) throws IOException, InterruptedException {
 
+		// Verifica se já existe no cache
+		String normalizedCheckout = project.checkout != null ? project.checkout : "master";
+		List<Developer> cachedResult = FileMetricsCache.get(project.localRepository, normalizedCheckout, filterPath);
+		if (cachedResult != null) {
+			// Cria uma cópia para não modificar o cache e marca Truck Factor
+			List<Developer> result = new ArrayList<>();
+			for (Developer dev : cachedResult) {
+				Developer copy = new Developer(dev.name, dev.email, dev.numLoc, dev.numCommits);
+				result.add(copy);
+			}
+			markTruckFactorDevelopers(result, devTFList);
+			return result;
+		}
+
+		// Se não estiver em cache, calcula
 		final CompletableFuture<List<Developer>> calcLocsDeveloperListRun = 
 			CompletableFuture.supplyAsync(() -> calculateLocsDeveloperList(project, filterPath));
 
@@ -92,6 +115,15 @@ public class ProjectService {
 			}
 
 			markTruckFactorDevelopers(developerList, devTFList);
+			
+			// Armazena no cache (sem Truck Factor marcado, pois isso pode variar)
+			List<Developer> cacheCopy = new ArrayList<>();
+			for (Developer dev : developerList) {
+				Developer copy = new Developer(dev.name, dev.email, dev.numLoc, dev.numCommits);
+				cacheCopy.add(copy);
+			}
+			FileMetricsCache.put(project.localRepository, normalizedCheckout, filterPath, cacheCopy);
+			
 			return developerList;
 		} catch (InterruptedException | ExecutionException e) {
 			throw new RuntimeException("Erro ao calcular métricas de desenvolvedores", e);
@@ -116,7 +148,29 @@ public class ProjectService {
 	}
 
 	private List<Developer> calculateDeveloperList(Project project) {
-		return calculateLocsDeveloperList(project, null);
+		// Tenta usar o cache primeiro (quando filterPath = null, significa projeto inteiro)
+		String normalizedCheckout = project.checkout != null ? project.checkout : "master";
+		List<Developer> cachedResult = FileMetricsCache.get(project.localRepository, normalizedCheckout, null);
+		if (cachedResult != null) {
+			// Retorna cópia para não modificar o cache
+			List<Developer> result = new ArrayList<>();
+			for (Developer dev : cachedResult) {
+				result.add(new Developer(dev.name, dev.email, dev.numLoc, dev.numCommits));
+			}
+			return result;
+		}
+		
+		// Se não estiver em cache, calcula e armazena
+		List<Developer> result = calculateLocsDeveloperList(project, null);
+		
+		// Armazena no cache
+		List<Developer> cacheCopy = new ArrayList<>();
+		for (Developer dev : result) {
+			cacheCopy.add(new Developer(dev.name, dev.email, dev.numLoc, dev.numCommits));
+		}
+		FileMetricsCache.put(project.localRepository, normalizedCheckout, null, cacheCopy);
+		
+		return result;
 	}
 
 	private List<Developer> calculateLocsDeveloperList(Project project, String filterPath) {

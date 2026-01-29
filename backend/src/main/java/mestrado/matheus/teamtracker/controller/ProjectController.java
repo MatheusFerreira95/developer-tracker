@@ -26,6 +26,8 @@ import mestrado.matheus.teamtracker.service.RecommendationService;
 @CrossOrigin(origins = "http://localhost:8081")
 public class ProjectController {
 
+	private static final Logger LOG = LoggerFactory.getLogger(ProjectController.class);
+
 	private final ProjectService projectService;
 	private final ExploreService exploreService;
 	private final RecommendationService recommendationService;

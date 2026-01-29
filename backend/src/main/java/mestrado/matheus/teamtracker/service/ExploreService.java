@@ -37,22 +37,24 @@ public class ExploreService {
 			return buildExploreLevelProject(project, devTFList);
 		}
 
+		// Trabalha com uma cópia do zoomPath para não modificar o filtro original
+		String zoomPath = filter.zoomPath;
 		if (isFirstZoomLevel(filter)) {
-			filter.zoomPath = "";
+			zoomPath = "";
 		} else {
-			filter.zoomPath += "/";
+			zoomPath = zoomPath + "/";
 		}
 
-		return buildExplore(filter, project, devTFList);
+		return buildExplore(filter, project, devTFList, zoomPath);
 	}
 
-	private Explore buildExplore(Filter filter, Project project, List<Developer> devTFList) {
+	private Explore buildExplore(Filter filter, Project project, List<Developer> devTFList, String zoomPath) {
 		Explore explore = new Explore();
 		try {
-			GitOutput gitOutputName = Git.runCommand(project, " git ls-tree --name-only HEAD " + filter.zoomPath, true);
+			GitOutput gitOutputName = Git.runCommand(project, " git ls-tree --name-only HEAD " + zoomPath, true);
 
 			for (String filePath : gitOutputName.outputList) {
-				NodeExplore node = buildNode(filePath, filter.zoomPath, project.localRepository);
+				NodeExplore node = buildNode(filePath, zoomPath, project.localRepository);
 				if (!explore.nodeList.contains(node))
 					explore.nodeList.add(node);
 
