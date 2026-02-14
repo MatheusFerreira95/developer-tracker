@@ -1,6 +1,6 @@
 # Docker multi-stage build
 
-# 1. 0.0. Building the App with Maven
+# 1. Building the App with Maven
 FROM maven:3-jdk-11
 
 ADD . /developer-tracker
